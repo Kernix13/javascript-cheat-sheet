@@ -5,24 +5,31 @@ This is not an all-inclusive list of every possible JavaScript method, property,
 **use `every()` to compare one array to other arrays and to return a match:**
 
 ```js
-   const hasSameElements = (a, b) => {
-       return a.length === b.length && a.every((v,i) => v===b[i])
-   }
+const hasSameElements = (a, b) => {
+    return a.length === b.length && a.every((v,i) => v===b[i])
+}
+// But do the elements need to be in the same order?
 ```
 
 Js methods and functions that return true or false: 
-- Comparison operators: ==, ===, !=, !==, <, <=, >, >=, &&, ||, 
-- `valueOf()`: method to convert an object to a primitive value
-- hasOwnProperty(): Checks for
-- Object.is(a, b): Checks for
-- isArray(): Checks for
-- every(): Checks for
-- some(): Checks for
-- incudes(): Checks for
-- endsWith(): Checks for
-- `in` operator: Checks for
-- `isInteger()`: Checks for
-- typeof with a comparison operator, <, <=, >, or >= with return before the comparison: ????????
+
+| Comparison:       | Checks against:               |
+| :----------       | :--------------               |
+| <, >, <=, >, >=   | number, .length, typeof, ...  |
+| !=, !==           | Anything |
+| &&. \|\|          | Checking multiple and/or conditions |
+| hasOwnProperty()  | If an object has a property   | 
+| Object.is(a, b)   | if 2 values are the same value |
+| isArray()         | If item checked is an array or not |
+| every()           | if ALL elements pass a test |
+| some()            | if at least ONE elements passes a test |
+| incudes()         | if arr or str contains the search value |
+| endsWith()        | if str ends with the search value |
+| isInteger()       | if value is an integer            |
+| in operator       | if property is in the object or prototype | 
+| typeof            | Check for a specific type         | 
+
+<br>
 
 ## Table Comparisons
 

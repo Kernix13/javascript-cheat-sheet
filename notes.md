@@ -1,11 +1,13 @@
 # Notes: Basic JavaScript & ES6
 
-Notes on specifics in README and other important notes and definitions
+Notes on specifics in README and other important notes, definitions, concepts, tips, tricks, etc. Currently, this file is a mess...
 
 ## Table of Contents
 
 1. [Tips and Tricks](#tips-and-tricks)
-1. [Terms]{#terms}
+1. [Terms](#terms)
+   1. [Code Specific](#code-specific)
+   1. [Concepts](#concepts)
 1. [Variables](#variables)
 1. [Arrays and Strings](#arrays-and-strings)
    1. [Common Methods unique to Strings](#common-methods-unique-to-strings)
@@ -18,7 +20,7 @@ Notes on specifics in README and other important notes and definitions
 1. [Objects](#objects)
 1. [Functions and Return](#functions-and-return)
 1. [Conditional Logic](#conditional-logic)
-1. If, Else, Else If, Switch
+1. If, Else, Else If, Switch, Ternary
 1. Loops
 1. ES6
 1. RegEx
@@ -70,25 +72,35 @@ Notes on specifics in README and other important notes and definitions
 - https://github.com/wilfredinni/javascript-cheatsheet
 - https://github.com/alhassy/JavaScriptCheatSheet 
 
+Js methods and functions that return true or false: 
+
+- Comparison operators: ==, ===, !=, !==, <, <=, >, >=, &&, ||, 
+- hasOwnProperty(): Checks if a property is a direct property of an object
+- Object.is(a, b): Determines whether two values are the same value.
+- isArray(): Determines whether the passed value is an Array
+- every(): Tests whether all elements in the array pass the test implemented by the provided function
+- some(): Tests whether at least one element in the array passes the test implemented by the provided function
+- incudes(): Determines whether an array includes a certain value among its entries
+- endsWith(): Determines whether a string ends with the characters of a specified string
+- `isInteger()`: Determines whether the passed value is an integer
+- `in` operator: Checks if the specified property is in the specified object or its prototype chain
+
+Others (maybe):
+- `valueOf()`: method to convert an object to a primitive value???
+- typeof with a comparison operator, <, <=, >, or >= with return before the comparison: ????????
+
 ## Terms
 
-- arguments: 
-- parameters: 
-- arity: 
+Concepts vs specific parts of code vs ...
+
+### Code Specific
+- arguments vs parameters: 
 - arrow function: ( ) =>
 - callback function: 
 - currentTarget: 
-- currying: 
-- error:
-- event bubbling: 
-- event delegation: 
 - exponential operator: 
-- falsy = [false, 0, "", NaN, undefined, null]
-- function statement vs var function: 
-- hoisting: 
 - if, else, else if, switch() case break default:
 - IIFE: 
-- inheritance:
 - JSON.parse()
 - JSON.stringify()
 - Loops: for, while, do while, for in, for of
@@ -97,14 +109,27 @@ Notes on specifics in README and other important notes and definitions
 - parseInt:
 - rest parameter
 - spread operator
-- recursion: 
 - remainder %
 - Rest Parameter: (...theArgs)
-- scope: 
 - Spread Operator: 
 - target: 
 - "use strict": 
 - `${variable}`: 
+
+### Concepts
+
+- arity: 
+- currying: 
+- error:
+- event bubbling: 
+- event delegation: 
+- falsy = [false, 0, "", NaN, undefined, null]
+- function statement vs var function: 
+- hoisting: 
+- inheritance:
+- recursion: 
+- scope: 
+
 
 ## Variables
 
@@ -142,7 +167,7 @@ Strings and Arrays: Same Methods, Same Effect n detail:
 - `concat()`, str | Joins two or more strings and returns the new string
   - Alternate: `str1 + str2`
 - `concat()`, arr | Joins two or more arrays and returns a copy of the joined arrays
-- `includes()`, str | Check if an string contains the specified string 
+- `includes()`, str | Check if a string contains the specified string 
   - Alternate: `includes(searchVal, beginIndex)`
 - `includes()`, arr | Check if an array contains the specified element
   - Alternate: includes(searchVal, beginIndex)` 
