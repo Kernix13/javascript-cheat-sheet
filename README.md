@@ -12,7 +12,7 @@ This is not an all-inclusive list of every possible JavaScript method, property,
 
 Js methods and functions that return true or false: 
 - Comparison operators: ==, ===, !=, !==, <, <=, >, >=, &&, ||, 
-- valueOf(): 
+- `valueOf()`: method to convert an object to a primitive value
 - hasOwnProperty(): Checks for
 - Object.is(a, b): Checks for
 - isArray(): Checks for

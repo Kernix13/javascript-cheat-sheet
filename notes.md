@@ -50,8 +50,9 @@ Notes on specifics in README and other important notes and definitions
 - undefined vs null
 - arr.slice(-1) to get last item
 - use `array.slice(0, #);` to truncate an array
-- Destructuring Assignment for objects
+- Destructuring Assignment for objects and arrays
 - short circuit operators
+- primitive types: number, string, boolean, symbol, null, and undefined
 - Dealing With Empty and Non-Empty Values: 
 
 ```js
@@ -60,17 +61,14 @@ Notes on specifics in README and other important notes and definitions
    console.log("nonEmptyValues: ", nonEmptyValues); //[1, 2]
 ```
 
+- **Excellent**: https://www.freecodecamp.org/news/how-to-learn-javascript-a-little-faster/
+- **Great**: https://www.codemotion.com/magazine/frontend/javascript/javascript-speed-up-tips/
+- **Great**: https://samwalpole.com/my-top-5-javascript-tips-and-tricks-for-writing-cleaner-code
+- Good: https://blog.yogeshchavan.dev/super-useful-tips-and-tricks-for-javascript-developers
+- Good: https://www.jesssica.tech/post/Javascript-Tips-and-Tricks
+- Good: https://pratapsharma.in/javascript-tips-and-tricks
 - https://github.com/wilfredinni/javascript-cheatsheet
 - https://github.com/alhassy/JavaScriptCheatSheet 
-- Great: https://www.codemotion.com/magazine/frontend/javascript/javascript-speed-up-tips/
-- Great: https://samwalpole.com/my-top-5-javascript-tips-and-tricks-for-writing-cleaner-code
-
-
-https://blog.yogeshchavan.dev/super-useful-tips-and-tricks-for-javascript-developers
-https://www.jesssica.tech/post/Javascript-Tips-and-Tricks
-https://www.bytesized.xyz/three-es6-javascript-tricks-you-should-know/
-https://www.freecodecamp.org/news/how-to-learn-javascript-a-little-faster/
-https://pratapsharma.in/javascript-tips-and-tricks
 
 ## Terms
 
