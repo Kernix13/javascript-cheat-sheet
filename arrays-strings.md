@@ -43,10 +43,10 @@ In detail:
 
 |    Method       | Returns:               |  Code         | 
 | :-------------  | :--------------------: | :-----------: |
-| str.charAt() | Returns the character at the specified index | charAt(index) | 
-| arr.at()     | Returns the array item at the given index    | at(index)     | 
-| str.substring() | Returns part of a string              | substring(indexStart)|
-| arr.splice() | Adds/Removes elements from an array | splice(start) |
+| str.charAt() | Returns the character at the specified index | str.charAt(index) | 
+| arr.at()     | Returns the array item at the given index    | arr.at(index)     | 
+| str.substring() | Returns part of a string                  | str.substring(indexStart)|
+| arr.splice() | Adds/Removes elements from an array          | arr.splice(start) |
 
 Additional notes:
 - `arr.at()`: Accepts negative #’s, which counts from back
@@ -82,76 +82,47 @@ Additional notes:
 
 - `every()`: Checks if **every** element in an array pass a test, returns boolean. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every).
 - `some()`: tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some).
-- `push()`: adds item onto the end of an array, requires an argument, mutates array
-- `unshift()`: adds item onto the beginning of an array, requires an argument, mutates array
-- `shift()`: removes 1st item in an array, no argument, mutates array
-- `pop()`: removes last item in an array, no argument, mutates array
+- `push()`: adds one or more elements to the end of an array and returns the new length of the array: 'push(elem1, elem2, ...)`
+- `unshift()`: adds one or more elements to the beginning of an array and returns the new length of the array: `unshift(elem1, elem2, ...)`
+- `shift()`: removes the first element from an array and returns that removed element. This method changes the length of the array (no arguments)
+- `pop()`: removes the last element from an array and returns that element. This method changes the length of the array (no arguments)
 
-
-### Higher Order Array Methods
+### High Order Array Methods
 
 - `filter()`: ?
-- `forEach()`: function to run on each item of an array, common in `for` loops
 - `map()`: ?
+- `forEach()`: function to run on each item of an array, common in `for` loops
 - `reduce()`: ?
 - `sort()`: self-explanatory
 - `reverse()`: reverse sort (why use?)
+- `find()`: ?
+- `every()`: Above
+- `some()`: Above
+- `includes()`: Above
+- 
 
 ## Array Methods Notes
 
 - `.length`: used often in `for` loops
 - arr.[index]: to return a value at a specific index
 
-Returns Boolean:
-- `every()`:	Checks if every element in an array pass a test
-- `includes()`:	Check if an array contains the specified element
-- `some()`: Checks if any of the elements in an array pass a test
+Returns Boolean: `every()`, `includes()`, `some()`
 
-Returns String
-- `join()`: **Combines** elements of an array into a single string and **returns** the string
-- `toString()`: **Converts** an array to a string  and returns the result
+Returns String: `join()`, `toString()`
 
-Anything:
-- `forEach()`: Calls a function for each array element
+Anything: `forEach()`
 
-Returns Array
-- `filter()`:	**Creates** a new array with every element in an array that pass a test
-- `map()`: **Creates** a new array with the result of calling a function for each array element
-- `concat()`:	**Joins** two or more arrays and returns a copy of the joined arrays
+Returns Array: `filter()`, `map()`, `concat()`
 
-Return Value/Position
-- `find()`	Returns the **value** of the first element in an array that pass a test
-- `indexOf()`: Returns the first **position** at which a given element appears in an array. Compare with `lastIndexOf()`.
-- `reduce()`: Reduce the **values** of an array to a single value (going left-to-right)
+Return Value/Position: `find()`, `indexOf()` (compare with `lastIndexOf()`, `reduce()`
 
-Add, remove, sort
-- `pop()`: Removes the last element of an array and returns that element
-- `shift()`: Removes the first element of an array and returns that element
-- `push()` Adds new elements to the end of an array and returns the new length
-- `unshift()`: Adds new elements to the beginning of an array and returns the new length
-- `slice(start, end)`: Selects a part of an array and returns the **new** array
-- `splice()`: Adds/Removes elements from an array. Changes the contents of an array by removing or replacing existing elements and/or adding new elements
-- `reverse()`: Sort elements in a descending order
-- `sort()`: Sorts elements alphabetically
+Add, remove, sort: pop()`, shift()`, `push()`, `unshift()`, `slice(start, end)`, `splice()`, `reverse()`, `sort()`
 
 
 ## String Methods Notes
 
 There are many different ways to work with strings:
 
-- `charAt()` — Returns a character at a specified position inside a string
-- `charCodeAt()` — Gives you the Unicode of a character at that position
-- `concat()` — Concatenates (joins) two or more strings into one
-- `fromCharCode()` — Returns a string created from the specified sequence of UTF-16 code units
-- `indexOf()` — Provides the position of the first occurrence of a specified text within a string
-- `lastIndexOf() `— Same as indexOf() but with the last occurrence, searching backward
-- `match()` — Retrieves the matches of a string against a search pattern
-- `replace()` — Find and replace specified text in a string
-- `search()` — Executes a search for a matching text and returns its position
-- `slice()` — Extracts a section of a string and returns it as a new string
-- `split()` — Splits a string object into an array of strings at a specified position
-- `substr()` —  Similar to slice() but extracts a substring depending on a specified number of characters
-- `substring()` — Also similar to slice() but can’t accept negative indices
-- `toLowerCase()` — Convert strings to lower case
-- `toUpperCase()` — Convert strings to upper case
+- `charCodeAt(index)` — Gives you the Unicode of a character at that position
+- `fromCharCode(num1, num2, ...)` — Returns a string created from the specified sequence of UTF-16 code units
 - `valueOf()` — Returns the primitive value (that has no properties or methods) of a string object
