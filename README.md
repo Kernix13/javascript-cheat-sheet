@@ -1,6 +1,6 @@
 # JAVASCRIPT CHEAT SHEET
 
-This is not an all-inclusive list of every possible JavaScript method, property, etc. 
+This is not an all-inclusive list of every possible JavaScript method, property, etc. This file has tables of comparisons or for quick reference. 
 
 **use `every()` to compare one array to other arrays and to return a match:**
 
@@ -10,6 +10,21 @@ const hasSameElements = (a, b) => {
 }
 // But do the elements need to be in the same order?
 ```
+
+
+
+## Table Comparisons
+
+Math:
+|    Purpose      | Symbol | 
+| :-----------    | :----: |
+| Addition        | +      |
+| Subtraction     | -      | 
+| Multiplication  | *      |
+| Division        | /      | 
+| Remainder       | %      |
+
+<br>
 
 Js methods and functions that return true or false: 
 
@@ -31,23 +46,10 @@ Js methods and functions that return true or false:
 
 <br>
 
-## Table Comparisons
-
-Math:
-|    Purpose      | Symbol | 
-| :-----------    | :----: |
-| Addition        | +      |
-| Subtraction     | -      | 
-| Multiplication  | *      |
-| Division        | /      | 
-| Remainder       | %      |
-
-<br>
-
 Operators:
 | Type       | Type 1 | Type 2 | Type 3  | Type 4  | Type 5 | 
 | :--------- | :----- | :----- | :------ | :------ | :------ | 
-| Assigment  | =      | +, +=  | -, -=   | *, -=   | /, /=   |
+| Assigment  | =      | +=     | -=      | *=      | /=      |
 | Comparison | <, >   | <=, >= | ==, === | !=, !== |         |
 | Arithmetic | %      | ++     | --      |         |         |
 | Logical    | &&     | \|\|   | !       |         |         |
@@ -87,13 +89,13 @@ Comparisons for conditionals:
 <br>
 
 var, let, const:
-| Topic  | var  | let     | const  |
-| :--------  | :----: | :---: | :----: |
-| Scope      | Global | Block | Block |
-| Overwrite? | Yes    | No    | No    |
-| Updated?   | Yes    | Yes   | No    |
-| Redeclared? | Yes  | No    | No    |
-| Hoisted?   | Yes    | Yes   | Yes   | 
+| Topic       | var  | let     | const  |
+| :--------   | :----: | :---: | :----: |
+| Scope       | Global | Block | Block |
+| Overwrite?  | ?    | ?    | ?    |
+| Redeclared? | Yes    | No    | No    |
+| Reassigned? | Yes    | Yes   | No    |
+| Hoisted?    | Yes    | Yes   | Yes   | 
 | initialized? | undefined | No | No  |
 
 <br>
@@ -103,6 +105,7 @@ Strings and Arrays: Same Methods, Same Effect:
 | :---------- | -------: | :------:   | :------------: | :-----------:  |
 | slice()     | creates: | new str/arr | arr.slice(start, end) | str.slice(start, end) | 
 | concat()    | creates: | new str/arr | arr1.concat(arr2) | str1.concat(' ', str2)  | 
+| concat. operator| creates: | new str | -             | str1 + str2    |
 | includes()  | checks:  | Boolean    | includes(searchVal) | includes(searchStr) | 
 | endsWith(() | checks:  | Boolean    | -                   | endsWith(searchStr) | 
 | indexOf()   | returns: | index #    | indexOf(searchVal)  | indexOf(searchStr) | 

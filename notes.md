@@ -2,6 +2,15 @@
 
 Notes on specifics in README and other important notes, definitions, concepts, tips, tricks, etc. Currently, this file is a mess...
 
+Important things I need to memorize and incorporate:
+- num1 % num2 = remainder
+- the use of +=, -=, *=, /= with numbers and += with strings
+- Escaping single and double quotes (\'\"), new line and tab (\n\t)
+- Working with multi-dimensional arrays 
+- Great data scructures article: https://www.educative.io/blog/javascript-data-structures
+- Memorize and fully understand JSON.stringify() vs JSON.parse() 
+- 
+
 <div id="back-to-top"></div>
 
 ## Table of Contents
@@ -22,12 +31,33 @@ Notes on specifics in README and other important notes, definitions, concepts, t
 1. [Objects](#objects)
 1. [Functions and Return](#functions-and-return)
 1. [Conditional Logic](#conditional-logic)
-1. If, Else, Else If, Switch, Ternary
-1. Loops
-1. ES6
-1. RegEx
+1. [Conditional Statements](#conditional-statements)
+1. [Loops](#loops)
+1. [ES6](#es6)
+1. [RegEx](#regex)
+1. [Debugging](#debugging)
+1. [Data Structures](#data-structures)
+1. [Basic Algorithms](#basic-algorithms)
+   1. [PRACTICE](#practice)
+1. [OOP](#oop)
+1. [Functional Programming](#functional-programming)
+1. [The DOM](#the-dom)
+1. [DOM Elements](#dom-elements)
+   1. [DOM Node Properties](#dom-node-properties)
+   1. [DOM Element Methods](#dom-element-methods)
+1. [JavaScript Events](#javaScript-events)
+   1. [Mouse](#mouse)
+   1. [Keyboard](#keyboard)
+   1. [Frame](#frame)
+   1. [Form](#form)
+   1. [Drag](#drag)
+   1. [Clipboard](#clipboard)
+   1. [Media](#media)
+   1. [Animation](#animation)
+   1. [Other Events](#other-events)
+1. [Errors](#errors)
 
-## Tips and Tricks
+<h2 id="tips-and-tricks" align="center">Tips and Tricks</h2>
 
 - '=== better than ==
 - filter falsy values out of an array
@@ -93,7 +123,7 @@ Others (maybe):
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Terms
+<h2 id="terms" align="center">Terms</h2>
 
 Concepts vs specific parts of code vs ...
 
@@ -135,10 +165,12 @@ Concepts vs specific parts of code vs ...
 - inheritance:
 - recursion: 
 - scope: 
+- Type Coercion: 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Variables
+<!-- ## Variables -->
+<h2 id="variables" align="center">Variables</h2>
 
 - It is common to initialize a var to an initial value in the same line as it is declared, e.g. `let a = 0;`
 - When JS variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN`
@@ -151,7 +183,7 @@ Concepts vs specific parts of code vs ...
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Arrays and Strings
+<h2 id="arrays-and-strings" align="center">Arrays and Strings</h2>
 
 - Bracket notation to access & modify array data: `[0]`
 - Unlike strings, the entries of arrays are mutable and can be changed
@@ -265,7 +297,7 @@ Strings and Arrays: Different Methods, Opposite Effect (Additional notes):
 - `some()`: tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some).
 - `push()`: adds one or more elements to the end of an array and returns the new length of the array: 'push(elem1, elem2, ...)`
 - `unshift()`: adds one or more elements to the beginning of an array and returns the new length of the array: `unshift(elem1, elem2, ...)`
-- `shift()`: removes the first element from an array and returns that removed element. This method changes the length of the array (no arguments)
+- `shift()`: removes the first element from an array and returns that removed element. This method changes the length of the array (no arguments). To get the removed item make sure to set it to a var: `let removedItem = arr.shift();`
 - `pop()`: removes the last element from an array and returns that element. This method changes the length of the array (no arguments)
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -315,7 +347,7 @@ There are many different ways to work with strings:
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Numbers
+<h2 id="numbers" align="center">Numbers</h2>
 
 Number Methods
 
@@ -327,7 +359,7 @@ Number Methods
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Dates
+<h2 id="dates" align="center">Dates</h2>
 
 Pulling Date and Time Values:
 - getDate() — Get the day of the month as a number (1-31)
@@ -387,7 +419,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objec
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Functions and Return
+<h2 id="functions-and-return" align="center">Functions and Return</h2>
 
 - Parameters are variables that act as placeholders for the values that are to be input to a function when it is called
 - When a function is defined, it is typically defined along with one or more parameters
@@ -405,7 +437,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objec
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Conditional Logic
+<h2 id="conditional-logic" align="center">Conditional Logic</h2>
 
 - `Boolean` and `if` statements: 
 
@@ -422,8 +454,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objec
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## If, Else, Else If, Switch
+<h2 id="conditional-statements" align="center">Conditional Statements</h2>
 
+If, Else, Else If, Switch:
 - `else` statements: used when the condition in an `if` statement is not met and an alternate block of code is executed
 - `else if` statements:  If you have multiple conditions that need to be addressed, you can chain `if` statements together with `else if` statements; be careful of what statement comes first
 - `switch` statements: tests a value and can have many `case` statements which define various possible values. Statements are executed from the first matched `case` value until a `break` is encountered
@@ -432,7 +465,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objec
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Loops 
+<h2 id="loops" align="center">Loops</h2>
 
 - `while` loop: runs while a specified condition is true and stops once that condition is no longer true
 - `for` loop: The most common type of JavaScript loop is called a `for` loop because it runs for a specific number of times
@@ -446,7 +479,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objec
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## ES6
+<h2 id="es6" align="center">ES6</h2>
 
 - Random numbers: 
   - Random whole numbers: `Math.floor(Math.random() * 20); `
@@ -510,14 +543,14 @@ const maximus = Math.max(...arr);
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## RegEx
+<h2 id="regex" align="center">RegEx</h2>
 
 CAPTURE GROUPS, LOOKAHEADS
 - 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## DEBUGGING - skip
+<h2 id="debugging" align="center">Debugging</h2>
 
 `console.log()`, `typeof`, ONE OFF ERRORS, INDEXING, INFINITE LOOPS
 - JavaScript recognizes six primitive (immutable) data types: Boolean, Null, Undefined, Number, String, and Symbol (new with ES6) and one type for mutable items: Object. Note that in JavaScript, arrays are technically a type of object
@@ -526,52 +559,78 @@ CAPTURE GROUPS, LOOKAHEADS
 - Thins *VS Code* catches: 1) typos of function and ariables names, 2) unclosed parentheses, bracket, braces, and quotes, 3) mixed usage of single and double quotes, 4) 
 - Things VS Code does not catch: 1) open and closing parentheses after a Function call, 2) argumants passed in the wrong order. 3) Off by one errors
 
-## DATA STRUCTURES
+<h2 id="data-structures" align="center">Data Structures</h2>
 
 - 
 
-## BASIC ALGORITHMS
+<h2 id="basic-algorithms" align="center">Basic Algorithms</h2>
 
 ### PRACTICE
 
-## OOP
+<h2 id="oop" align="center">OOP</h2>
 
-### THIS, PROTOTYPE, CONSTRUCTOR, INHERITANCE
+THIS, PROTOTYPE, CONSTRUCTOR, INHERITANCE
 
-## FUNCTIONAL PROGRAMMING
+<h2 id="functional-programming" align="center">Functional Programming</h2>
 
-### MAP, FILTER, REDUCE, SORT, SPLIT
+MAP, FILTER, REDUCE, SORT, SPLIT
 
 REMEMBER LWC 10 DAYS OF JS
 
-## Strings
 
+# The DOM 
 
-## Numbers
+something here...
 
+<h2 id="dom-elements" align="center">DOM Elements</h2>
 
-## DOM Nodes
+something here...
 
-Node Properties
+### DOM Node Properties
 
+- attributes — Returns a live collection of all attributes registered to an element
+- baseURI — Provides the absolute base URL of an HTML element
+- childNodes — Gives a collection of an element’s child nodes
+- firstChild — Returns the first child node of an element
+- lastChild — The last child node of an element
+- nextSibling — Gives you the next node at the same node tree level
+- nodeName —Returns the name of a node
+- nodeType —  Returns the type of a node
+- nodeValue — Sets or returns the value of a node
+- ownerDocument — The top-level document object for this node
+- parentNode — Returns the parent node of an element
+- previousSibling — Returns the node immediately preceding the current one
+- textContent — Sets or returns the textual content of a node and its descendants
 
-Node Methods
+### DOM Node Methods
 
+- appendChild() — Adds a new child node to an element as the last child node
+- cloneNode() — Clones an HTML element
+- compareDocumentPosition() — Compares the document position of two elements
+- getFeature() — Returns an object which implements the APIs of a specified feature
+- hasAttributes() — Returns true if an element has any attributes, otherwise false
+- hasChildNodes() — Returns true if an element has any child nodes, otherwise false
+- insertBefore() — Inserts a new child node before a specified, existing child node
+- isEqualNode() — Checks if two elements are equal
+- isSameNode() — Checks if two elements are the same node
+- isSupported() — Returns true if a specified feature is supported on the element
+- removeChild() — Removes a child node from an element
+- replaceChild() — Replaces a child node in an element
 
-## DOM Elements
+### DOM Element Methods
 
-Element Methods
+- getAttribute() — Returns the specified attribute value of an element node
+- getAttributeNode() — Gets the specified attribute node
+- getElementsByTagName() — Provides a collection of all child elements with the specified tag name
+- hasAttribute() — Returns true if an element has any attributes, otherwise false
+- removeAttribute() — Removes a specified attribute from an element
+- setAttribute() — Sets or changes the specified attribute to a specified value
 
-## Errors
+<h2 id="javaScript-events" align="center">JavaScript Events</h2>
 
-## Events
-
-# DOM Events
-
-## JavaScript Events
 Events are things that can happen to HTML elements and are performed by the user. The programming language can listen for these events and trigger actions in the code. No JavaScript cheat sheet would be complete without them.
 
-Mouse
+### Mouse
 - onclick — The event occurs when the user clicks on an element
 - oncontextmenu — User right-clicks on an element to open a context menu
 - ondblclick — The user double-clicks on an element
@@ -582,12 +641,15 @@ Mouse
 - onmouseover — When the pointer is moved onto an element or one of its children
 - onmouseout — User moves the mouse pointer out of an element or one of its children
 - onmouseup — The user releases a mouse button while over an element
-Keyboard
+
+### Keyboard
+
 - onkeydown — When the user is pressing a key down
 - onkeypress — The moment the user starts pressing a key
 - onkeyup — The user releases a key
 
-Frame
+### Frame
+
 - onabort — The loading of a media is aborted
 - onbeforeunload — Event occurs before the document is about to be unloaded
 - onerror — An error occurs while loading an external file
@@ -599,7 +661,8 @@ Frame
 - onscroll — An element’s scrollbar is being scrolled
 - onunload — Event occurs when a page has unloaded
 
-Form
+### Form 
+
 - onblur — When an element loses focus
 - onchange — The content of a form element changes (for <input>, <select> and <textarea>)
 - onfocus — An element gets focus
@@ -612,7 +675,8 @@ Form
 - onselect — The user selects some text (for <input> and <textarea>)
 - onsubmit — A form is submitted
 
-Drag
+### Drag
+
 - ondrag — An element is dragged
 - ondragend — The user has finished dragging the element
 - ondragenter — The dragged element enters a drop target
@@ -620,12 +684,15 @@ Drag
 - ondragover — The dragged element is on top of the drop target
 - ondragstart — User starts to drag an element
 - ondrop — Dragged element is dropped on the drop target
-Clipboard
+
+### Clipboard
+
 - oncopy — User copies the content of an element
 - oncut — The user cuts an element’s content
 - onpaste — A user pastes the content in an element
 
-Media
+### Media
+
 - onabort — Media loading is aborted
 - oncanplay — The browser can start playing media (e.g. a file has buffered enough)
 - oncanplaythrough — The browser can play through media without stopping
@@ -648,12 +715,14 @@ Media
 - onvolumechange — Media volume has changed (including mute)
 - onwaiting — Media paused but expected to resume (for example, buffering)
 
-Animation
+### Animation
+
 - animationend — A CSS animation is complete
 - animationiteration — CSS animation is repeated
 - animationstart — CSS animation has started
 
-Other
+### Other Events
+
 - transitionend — Fired when a CSS transition has completed
 - onmessage — A message is received through the event source
 - onoffline — The browser starts to work offline
@@ -670,11 +739,9 @@ Other
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-# Errors
+<h2 id="errors" align="center">Errors</h2>
 
-Errors
 When working with JavaScript, different errors can occur. There are several ways of handling them:
-
 - try — Lets you define a block of code to test for errors
 - catch — Set up a block of code to execute in case of an error
 - throw — Create custom error messages instead of the standard JavaScript errors
@@ -682,12 +749,10 @@ When working with JavaScript, different errors can occur. There are several ways
 
 Error Name Values
 - JavaScript also has a built-in error object. It has two properties:
-
 - name — Sets or returns the error name
 - message — Sets or returns an error message in a string from
 
 The error property can return six different values as its name:
-
 - EvalError — An error has occurred in the eval() function
 - RangeError — A number is “out of range”
 - ReferenceError — An illegal reference has occurred
@@ -697,44 +762,3 @@ The error property can return six different values as its name:
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-# DOM
-
-## DOM Node Properties
-
-- attributes — Returns a live collection of all attributes registered to an element
-- baseURI — Provides the absolute base URL of an HTML element
-- childNodes — Gives a collection of an element’s child nodes
-- firstChild — Returns the first child node of an element
-- lastChild — The last child node of an element
-- nextSibling — Gives you the next node at the same node tree level
-- nodeName —Returns the name of a node
-- nodeType —  Returns the type of a node
-- nodeValue — Sets or returns the value of a node
-- ownerDocument — The top-level document object for this node
-- parentNode — Returns the parent node of an element
-- previousSibling — Returns the node immediately preceding the current one
-- textContent — Sets or returns the textual content of a node and its descendants
-
-## DOM Node Methods
-
-- appendChild() — Adds a new child node to an element as the last child node
-- cloneNode() — Clones an HTML element
-- compareDocumentPosition() — Compares the document position of two elements
-- getFeature() — Returns an object which implements the APIs of a specified feature
-- hasAttributes() — Returns true if an element has any attributes, otherwise false
-- hasChildNodes() — Returns true if an element has any child nodes, otherwise false
-- insertBefore() — Inserts a new child node before a specified, existing child node
-- isEqualNode() — Checks if two elements are equal
-- isSameNode() — Checks if two elements are the same node
-- isSupported() — Returns true if a specified feature is supported on the element
-- removeChild() — Removes a child node from an element
-- replaceChild() — Replaces a child node in an element
-
-## DOM Element Methods
-
-- getAttribute() — Returns the specified attribute value of an element node
-- getAttributeNode() — Gets the specified attribute node
-- getElementsByTagName() — Provides a collection of all child elements with the specified tag name
-- hasAttribute() — Returns true if an element has any attributes, otherwise false
-- removeAttribute() — Removes a specified attribute from an element
-- setAttribute() — Sets or changes the specified attribute to a specified value
