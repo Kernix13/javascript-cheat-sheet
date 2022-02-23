@@ -1,6 +1,11 @@
 # Arrays and Strings
 
-### Strings and Arrays: Same Methods, Same Effect
+There are methods in common to both arrays and strings so I am combining them for more easily visualixe them. Check out the following MDN links:
+
+- [MDN String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- [MDN Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+## Strings and Arrays: Same Methods, Same Effect
 
 |    Method   | Purpose: | Returns:   | Arr basic code | Str basic code | 
 | :---------- | -------: | :------:   | :------------: | :-----------:  |
@@ -34,7 +39,8 @@ In detail:
 - `lastIndexOf()`, arr | returns the index of the last occurrence of the specified value
   - Alternate: `lastIndexOf(searchVal, fromIndex)`
 
-Strings and Arrays: Different Methods, Same Effect
+## Strings and Arrays: Different Methods, Same Effect
+
 |    Method       | Returns:               |  Code         | 
 | :-------------  | :--------------------: | :-----------: |
 | str.charAt() | Returns the character at the specified index | charAt(index) | 
@@ -49,9 +55,7 @@ Additional notes:
 - `arr.splice()`: changes the contents of an array by removing or replacing existing elements and/or adding new elements
   - Alternate: `splice(start, deleteCount)`
 
-
-
-### Strings and Arrays: Different Methods, Opposite Effect
+## Strings and Arrays: Different Methods, Opposite Effect
 
 > These two are used in unison, first to split a string, then to join. 
 
@@ -67,21 +71,25 @@ Additional notes:
 
 ### Common Methods unique to Strings
 
-- toLowerCase(): self-explanatory
-- toUpperCase(): self-explanatory
-- trim(): removes whitespace from both sides of a string
-
+- `toLowerCase()`: Converts string to lowercase
+- `toUpperCase()`: Converts string to uppercase
+- `trim()`: removes whitespace from both ends of a string and returns a new string, without modifying the original string
+- `test()`:	Though, not a string method, it executes a search for a match between a regular expression and a specified string. Returns true or false: `test(str)`
+- `match()`: Used to match regular expression against a string; retrieves the result of matching a string against a regular expression: `match(RegEx)`
+- `replace()`: returns a new string with some or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. If pattern is a string, only the first occurrence will be replaced: `replace(regexp, newSubstr)`, `replace(regexp, replacerFunction)`, `replace(substr, newSubstr)`, or `replace(substr, replacerFunction)`
 
 ### Common Methods unique to Arrays
-- every(): Checks if **every** element in an array pass a test, returns boolean
-- some(): Checks if any of the elements in an array pass a test, returns boolean
-- push(): adds item onto the end of an array, requires an argument, mutates array
-- unshift(): adds item onto the beginning of an array, requires an argument, mutates array
-- shift(): removes 1st item in an array, no argument, mutates array
-- pop(): removes last item in an array, no argument, mutates array
+
+- `every()`: Checks if **every** element in an array pass a test, returns boolean. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every).
+- `some()`: tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some).
+- `push()`: adds item onto the end of an array, requires an argument, mutates array
+- `unshift()`: adds item onto the beginning of an array, requires an argument, mutates array
+- `shift()`: removes 1st item in an array, no argument, mutates array
+- `pop()`: removes last item in an array, no argument, mutates array
 
 
 ### Higher Order Array Methods
+
 - `filter()`: ?
 - `forEach()`: function to run on each item of an array, common in `for` loops
 - `map()`: ?
@@ -126,8 +134,6 @@ Add, remove, sort
 - `reverse()`: Sort elements in a descending order
 - `sort()`: Sorts elements alphabetically
 
-
-# Strings
 
 ## String Methods Notes
 

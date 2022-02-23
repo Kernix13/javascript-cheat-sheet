@@ -71,39 +71,39 @@ Comparisons for conditionals:
 
 ### Terms
 
-arguments: 
-parameters: 
-arity: 
-arrow function: ( ) =>
-callback function: 
-currentTarget: 
-currying: 
-error:
-event bubbling: 
-event delegation: 
-exponential operator: 
-falsy = [false, 0, "", NaN, undefined, null]
-function statement vs var function: 
-hoisting: 
-if, else, else if, switch() case break default:
-IIFE: 
-inheritance:
-JSON.parse()
-JSON.stringify()
-Loops: for, while, do while, for in, for of
-new Date(): 
-parse: 
-parseInt:
-rest parameter
-spread operator
-recursion: 
-remainder %
-Rest Parameter: (...theArgs)
-scope: 
-Spread Operator: 
-target: 
-"use strict": 
-`${variable}`: 
+- arguments: 
+- parameters: 
+- arity: 
+- arrow function: ( ) =>
+- callback function: 
+- currentTarget: 
+- currying: 
+- error:
+- event bubbling: 
+- event delegation: 
+- exponential operator: 
+- falsy = [false, 0, "", NaN, undefined, null]
+- function statement vs var function: 
+- hoisting: 
+- if, else, else if, switch() case break default:
+- IIFE: 
+- inheritance:
+- JSON.parse()
+- JSON.stringify()
+- Loops: for, while, do while, for in, for of
+- new Date(): 
+- parse: 
+- parseInt:
+- rest parameter
+- spread operator
+- recursion: 
+- remainder %
+- Rest Parameter: (...theArgs)
+- scope: 
+- Spread Operator: 
+- target: 
+- "use strict": 
+- `${variable}`: 
 
 
 ## Variables 
