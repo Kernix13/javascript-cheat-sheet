@@ -319,39 +319,39 @@ There are many different ways to work with strings:
 
 Number Methods
 
-toExponential() — Returns the string with a rounded number written as exponential notation
-toFixed() — Returns the string of a number with a specified number of decimals
-toPrecision() — String of a number written with a specified length
-toString() — Returns a number as a string
-valueOf() — Returns a number as a number
+- toExponential() — Returns the string with a rounded number written as exponential notation
+- toFixed() — Returns the string of a number with a specified number of decimals
+- toPrecision() — String of a number written with a specified length
+- toString() — Returns a number as a string
+- valueOf() — Returns a number as a number
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Dates
 
-Pulling Date and Time Values
-getDate() — Get the day of the month as a number (1-31)
-getDay() —  The weekday as a number (0-6)
-getFullYear() — Year as a four-digit number (yyyy)
-getHours() — Get the hour (0-23)
-getMilliseconds() — The millisecond (0-999)
-getMinutes() — Get the minute (0-59)
-getMonth() —  Month as a number (0-11)
-getSeconds() — Get the second (0-59)
-getTime() — Get the milliseconds since January 1, 1970
-getUTCDate() — The day (date) of the month in the specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
-parse — Parses a string representation of a date and returns the number of milliseconds since January 1, 1970
+Pulling Date and Time Values:
+- getDate() — Get the day of the month as a number (1-31)
+- getDay() —  The weekday as a number (0-6)
+- getFullYear() — Year as a four-digit number (yyyy)
+- getHours() — Get the hour (0-23)
+- getMilliseconds() — The millisecond (0-999)
+- getMinutes() — Get the minute (0-59)
+- getMonth() —  Month as a number (0-11)
+- getSeconds() — Get the second (0-59)
+- getTime() — Get the milliseconds since January 1, 1970
+- getUTCDate() — The day (date) of the month in the specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
+- parse — Parses a string representation of a date and returns the number of milliseconds since January 1, 1970
 
 Set Part of a Date
-setDate() — Set the day as a number (1-31)
-setFullYear() — Sets the year (optionally month and day)
-setHours() — Set the hour (0-23)
-setMilliseconds() — Set milliseconds (0-999)
-setMinutes() — Sets the minutes (0-59)
-setMonth() — Set the month (0-11)
-setSeconds() — Sets the seconds (0-59)
-setTime() — Set the time (milliseconds since January 1, 1970)
-setUTCDate() — Sets the day of the month for a specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
+- setDate() — Set the day as a number (1-31)
+- setFullYear() — Sets the year (optionally month and day)
+- setHours() — Set the hour (0-23)
+- setMilliseconds() — Set milliseconds (0-999)
+- setMinutes() — Sets the minutes (0-59)
+- setMonth() — Set the month (0-11)
+- setSeconds() — Sets the seconds (0-59)
+- setTime() — Set the time (milliseconds since January 1, 1970)
+- setUTCDate() — Sets the day of the month for a specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -370,18 +370,18 @@ setUTCDate() — Sets the day of the month for a specified date according to uni
 Defining getters and setters
 A getter is a method that gets the value of a specific property. A setter is a method that sets the value of a specific property. You can define getters and setters on any predefined core object or user-defined object that supports the addition of new properties.
 
-`Object.prototype.toString()`:	Returns a string representation of the object.
-Object.prototype.valueOf():	Returns the primitive value of the specified object.
-Object.prototype.hasOwnProperty():	Returns a boolean indicating whether an object contains the specified property as a direct property of that object and not inherited through the prototype chain.
+- `Object.prototype.toString()`:	Returns a string representation of the object.
+- Object.prototype.valueOf():	Returns the primitive value of the specified object.
+- Object.prototype.hasOwnProperty():	Returns a boolean indicating whether an object contains the specified property as a direct property of that object and not inherited through the prototype chain.
 
 There are three native ways to list/traverse object properties:
 
-for...in loops. This method traverses all enumerable properties of an object and its prototype chain.
-Object.keys(o). This method returns an array with all the own (not in the prototype chain) enumerable properties' names ("keys") of an object o.
-Object.getOwnPropertyNames(o). This method returns an array containing all own properties' names (enumerable or not) of an object o.
+- for...in loops. This method traverses all enumerable properties of an object and its prototype chain.
+- Object.keys(o). This method returns an array with all the own (not in the prototype chain) enumerable properties' names ("keys") of an object o.
+- Object.getOwnPropertyNames(o). This method returns an array containing all own properties' names (enumerable or not) of an object o.
 
-`Object.keys()`:	Returns an array containing the names of all of the given object's own enumerable string properties.
-`Object.values()`:	Returns an array containing the values that correspond to all of a given object's own enumerable string properties
+- `Object.keys()`:	Returns an array containing the names of all of the given object's own enumerable string properties.
+- `Object.values()`:	Returns an array containing the values that correspond to all of a given object's own enumerable string properties
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
 
@@ -572,100 +572,101 @@ Element Methods
 Events are things that can happen to HTML elements and are performed by the user. The programming language can listen for these events and trigger actions in the code. No JavaScript cheat sheet would be complete without them.
 
 Mouse
-onclick — The event occurs when the user clicks on an element
-oncontextmenu — User right-clicks on an element to open a context menu
-ondblclick — The user double-clicks on an element
-onmousedown — User presses a mouse button over an element
-onmouseenter — The pointer moves onto an element
-onmouseleave — Pointer moves out of an element
-onmousemove — The pointer is moving while it is over an element
-onmouseover — When the pointer is moved onto an element or one of its children
-onmouseout — User moves the mouse pointer out of an element or one of its children
-onmouseup — The user releases a mouse button while over an element
+- onclick — The event occurs when the user clicks on an element
+- oncontextmenu — User right-clicks on an element to open a context menu
+- ondblclick — The user double-clicks on an element
+- onmousedown — User presses a mouse button over an element
+- onmouseenter — The pointer moves onto an element
+- onmouseleave — Pointer moves out of an element
+- onmousemove — The pointer is moving while it is over an element
+- onmouseover — When the pointer is moved onto an element or one of its children
+- onmouseout — User moves the mouse pointer out of an element or one of its children
+- onmouseup — The user releases a mouse button while over an element
 Keyboard
-onkeydown — When the user is pressing a key down
-onkeypress — The moment the user starts pressing a key
-onkeyup — The user releases a key
+- onkeydown — When the user is pressing a key down
+- onkeypress — The moment the user starts pressing a key
+- onkeyup — The user releases a key
 
 Frame
-onabort — The loading of a media is aborted
-onbeforeunload — Event occurs before the document is about to be unloaded
-onerror — An error occurs while loading an external file
-onhashchange — There have been changes to the anchor part of a URL
-onload — When an object has loaded
-onpagehide — The user navigates away from a webpage
-onpageshow — When the user navigates to a webpage
-onresize — The document view is resized
-onscroll — An element’s scrollbar is being scrolled
-onunload — Event occurs when a page has unloaded
+- onabort — The loading of a media is aborted
+- onbeforeunload — Event occurs before the document is about to be unloaded
+- onerror — An error occurs while loading an external file
+- onhashchange — There have been changes to the anchor part of a URL
+- onload — When an object has loaded
+- onpagehide — The user navigates away from a webpage
+- onpageshow — When the user navigates to a webpage
+- onresize — The document view is resized
+- onscroll — An element’s scrollbar is being scrolled
+- onunload — Event occurs when a page has unloaded
 
 Form
-onblur — When an element loses focus
-onchange — The content of a form element changes (for <input>, <select> and <textarea>)
-onfocus — An element gets focus
-onfocusin — When an element is about to get focus
-onfocusout — The element is about to lose focus
-oninput — User input on an element
-oninvalid — An element is invalid
-onreset — A form is reset
-onsearch — The user writes something in a search field (for <input="search">)
-onselect — The user selects some text (for <input> and <textarea>)
-onsubmit — A form is submitted
+- onblur — When an element loses focus
+- onchange — The content of a form element changes (for <input>, <select> and <textarea>)
+- onfocus — An element gets focus
+- onfocusin — When an element is about to get focus
+- onfocusout — The element is about to lose focus
+- oninput — User input on an element
+- oninvalid — An element is invalid
+- onreset — A form is reset
+- onsearch — The user writes something in a search field (for <input="search">)
+- onselect — The user selects some text (for <input> and <textarea>)
+- onsubmit — A form is submitted
 
 Drag
-ondrag — An element is dragged
-ondragend — The user has finished dragging the element
-ondragenter — The dragged element enters a drop target
-ondragleave — A dragged element leaves the drop target
-ondragover — The dragged element is on top of the drop target
-ondragstart — User starts to drag an element
-ondrop — Dragged element is dropped on the drop target
+- ondrag — An element is dragged
+- ondragend — The user has finished dragging the element
+- ondragenter — The dragged element enters a drop target
+- ondragleave — A dragged element leaves the drop target
+- ondragover — The dragged element is on top of the drop target
+- ondragstart — User starts to drag an element
+- ondrop — Dragged element is dropped on the drop target
 Clipboard
-oncopy — User copies the content of an element
-oncut — The user cuts an element’s content
-onpaste — A user pastes the content in an element
+- oncopy — User copies the content of an element
+- oncut — The user cuts an element’s content
+- onpaste — A user pastes the content in an element
 
 Media
-onabort — Media loading is aborted
-oncanplay — The browser can start playing media (e.g. a file has buffered enough)
-oncanplaythrough — The browser can play through media without stopping
-ondurationchange — The duration of the media changes
-onended — The media has reached its end
-onerror — Happens when an error occurs while loading an external file
-onloadeddata — Media data is loaded
-onloadedmetadata — Metadata (like dimensions and duration) are loaded
-onloadstart —  The browser starts looking for specified media
-onpause — Media is paused either by the user or automatically
-onplay — The media has been started or is no longer paused
-onplaying — Media is playing after having been paused or stopped for buffering
-onprogress — The browser is in the process of downloading the media
-onratechange — The playing speed of the media changes
-onseeked — User is finished moving/skipping to a new position in the media
-onseeking — The user starts moving/skipping
-onstalled — The browser is trying to load the media but it is not available
-onsuspend — The browser is intentionally not loading media
-ontimeupdate — The playing position has changed (e.g. because of fast forward)
-onvolumechange — Media volume has changed (including mute)
-onwaiting — Media paused but expected to resume (for example, buffering)
+- onabort — Media loading is aborted
+- oncanplay — The browser can start playing media (e.g. a file has buffered enough)
+- oncanplaythrough — The browser can play through media without stopping
+- ondurationchange — The duration of the media changes
+- onended — The media has reached its end
+- onerror — Happens when an error occurs while loading an external file
+- onloadeddata — Media data is loaded
+- onloadedmetadata — Metadata (like dimensions and duration) are loaded
+- onloadstart —  The browser starts looking for specified media
+- onpause — Media is paused either by the user or automatically
+- onplay — The media has been started or is no longer paused
+- onplaying — Media is playing after having been paused or stopped for buffering
+- onprogress — The browser is in the process of downloading the media
+- onratechange — The playing speed of the media changes
+- onseeked — User is finished moving/skipping to a new position in the media
+- onseeking — The user starts moving/skipping
+- onstalled — The browser is trying to load the media but it is not available
+- onsuspend — The browser is intentionally not loading media
+- ontimeupdate — The playing position has changed (e.g. because of fast forward)
+- onvolumechange — Media volume has changed (including mute)
+- onwaiting — Media paused but expected to resume (for example, buffering)
+
 Animation
-animationend — A CSS animation is complete
-animationiteration — CSS animation is repeated
-animationstart — CSS animation has started
+- animationend — A CSS animation is complete
+- animationiteration — CSS animation is repeated
+- animationstart — CSS animation has started
 
 Other
-transitionend — Fired when a CSS transition has completed
-onmessage — A message is received through the event source
-onoffline — The browser starts to work offline
-ononline — The browser starts to work online
-onpopstate — When the window’s history changes
-onshow — A <menu> element is shown as a context menu
-onstorage — A Web Storage area is updated
-ontoggle — The user opens or closes the <details> element
-onwheel — Mouse wheel rolls up or down over an element
-ontouchcancel — Screen-touch is interrupted
-ontouchend — User’s finger is removed from a touch-screen
-ontouchmove — A finger is dragged across the screen
-ontouchstart — A finger is placed on the touch-screen
+- transitionend — Fired when a CSS transition has completed
+- onmessage — A message is received through the event source
+- onoffline — The browser starts to work offline
+- ononline — The browser starts to work online
+- onpopstate — When the window’s history changes
+- onshow — A <menu> element is shown as a context menu
+- onstorage — A Web Storage area is updated
+- ontoggle — The user opens or closes the <details> element
+- onwheel — Mouse wheel rolls up or down over an element
+- ontouchcancel — Screen-touch is interrupted
+- ontouchend — User’s finger is removed from a touch-screen
+- ontouchmove — A finger is dragged across the screen
+- ontouchstart — A finger is placed on the touch-screen
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -674,24 +675,25 @@ ontouchstart — A finger is placed on the touch-screen
 Errors
 When working with JavaScript, different errors can occur. There are several ways of handling them:
 
-try — Lets you define a block of code to test for errors
-catch — Set up a block of code to execute in case of an error
-throw — Create custom error messages instead of the standard JavaScript errors
-finally — Lets you execute code, after try and catch, regardless of the result
+- try — Lets you define a block of code to test for errors
+- catch — Set up a block of code to execute in case of an error
+- throw — Create custom error messages instead of the standard JavaScript errors
+- finally — Lets you execute code, after try and catch, regardless of the result
 
 Error Name Values
-JavaScript also has a built-in error object. It has two properties:
+- JavaScript also has a built-in error object. It has two properties:
 
-name — Sets or returns the error name
-message — Sets or returns an error message in a string from
+- name — Sets or returns the error name
+- message — Sets or returns an error message in a string from
+
 The error property can return six different values as its name:
 
-EvalError — An error has occurred in the eval() function
-RangeError — A number is “out of range”
-ReferenceError — An illegal reference has occurred
-SyntaxError — A syntax error has occurred
-TypeError — A type error has occurred
-URIError — An encodeURI() error has occurred
+- EvalError — An error has occurred in the eval() function
+- RangeError — A number is “out of range”
+- ReferenceError — An illegal reference has occurred
+- SyntaxError — A syntax error has occurred
+- TypeError — A type error has occurred
+- URIError — An encodeURI() error has occurred
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -699,40 +701,40 @@ URIError — An encodeURI() error has occurred
 
 ## DOM Node Properties
 
-attributes — Returns a live collection of all attributes registered to an element
-baseURI — Provides the absolute base URL of an HTML element
-childNodes — Gives a collection of an element’s child nodes
-firstChild — Returns the first child node of an element
-lastChild — The last child node of an element
-nextSibling — Gives you the next node at the same node tree level
-nodeName —Returns the name of a node
-nodeType —  Returns the type of a node
-nodeValue — Sets or returns the value of a node
-ownerDocument — The top-level document object for this node
-parentNode — Returns the parent node of an element
-previousSibling — Returns the node immediately preceding the current one
-textContent — Sets or returns the textual content of a node and its descendants
+- attributes — Returns a live collection of all attributes registered to an element
+- baseURI — Provides the absolute base URL of an HTML element
+- childNodes — Gives a collection of an element’s child nodes
+- firstChild — Returns the first child node of an element
+- lastChild — The last child node of an element
+- nextSibling — Gives you the next node at the same node tree level
+- nodeName —Returns the name of a node
+- nodeType —  Returns the type of a node
+- nodeValue — Sets or returns the value of a node
+- ownerDocument — The top-level document object for this node
+- parentNode — Returns the parent node of an element
+- previousSibling — Returns the node immediately preceding the current one
+- textContent — Sets or returns the textual content of a node and its descendants
 
 ## DOM Node Methods
 
-appendChild() — Adds a new child node to an element as the last child node
-cloneNode() — Clones an HTML element
-compareDocumentPosition() — Compares the document position of two elements
-getFeature() — Returns an object which implements the APIs of a specified feature
-hasAttributes() — Returns true if an element has any attributes, otherwise false
-hasChildNodes() — Returns true if an element has any child nodes, otherwise false
-insertBefore() — Inserts a new child node before a specified, existing child node
-isEqualNode() — Checks if two elements are equal
-isSameNode() — Checks if two elements are the same node
-isSupported() — Returns true if a specified feature is supported on the element
-removeChild() — Removes a child node from an element
-replaceChild() — Replaces a child node in an element
+- appendChild() — Adds a new child node to an element as the last child node
+- cloneNode() — Clones an HTML element
+- compareDocumentPosition() — Compares the document position of two elements
+- getFeature() — Returns an object which implements the APIs of a specified feature
+- hasAttributes() — Returns true if an element has any attributes, otherwise false
+- hasChildNodes() — Returns true if an element has any child nodes, otherwise false
+- insertBefore() — Inserts a new child node before a specified, existing child node
+- isEqualNode() — Checks if two elements are equal
+- isSameNode() — Checks if two elements are the same node
+- isSupported() — Returns true if a specified feature is supported on the element
+- removeChild() — Removes a child node from an element
+- replaceChild() — Replaces a child node in an element
 
 ## DOM Element Methods
 
-getAttribute() — Returns the specified attribute value of an element node
-getAttributeNode() — Gets the specified attribute node
-getElementsByTagName() — Provides a collection of all child elements with the specified tag name
-hasAttribute() — Returns true if an element has any attributes, otherwise false
-removeAttribute() — Removes a specified attribute from an element
-setAttribute() — Sets or changes the specified attribute to a specified value
+- getAttribute() — Returns the specified attribute value of an element node
+- getAttributeNode() — Gets the specified attribute node
+- getElementsByTagName() — Provides a collection of all child elements with the specified tag name
+- hasAttribute() — Returns true if an element has any attributes, otherwise false
+- removeAttribute() — Removes a specified attribute from an element
+- setAttribute() — Sets or changes the specified attribute to a specified value
