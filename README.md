@@ -2,39 +2,49 @@
 
 This is not an all-inclusive list of every possible JavaScript method, property, etc. 
 
-- https://github.com/wilfredinni/javascript-cheatsheet
-- https://github.com/alhassy/JavaScriptCheatSheet 
+**use `every()` to compare one array to other arrays and to return a match:**
+
+```js
+   const hasSameElements = (a, b) => {
+       return a.length === b.length && a.every((v,i) => v===b[i])
+   }
+```
 
 Js methods and functions that return true or false: 
 - Comparison operators: ==, ===, !=, !==, <, <=, >, >=, &&, ||, 
-- valueOf
-- hasOwnProperty 
-- isArray
-- every()
-- some()
-- incudes()
-- endsWith()
-- 'in" operator
-- typeof with a comparison operator, <, <=, >, or >= with return before the comparison, 
-- Object.is(a, b)
-
-### Operators	
-
-Comparison operators: <, >, <=, >=, !=, ==, !==, ===
-Arithmetic operators: %, ++, –, 
-Logical operators: 	&&, \|\|, !
-String operators:	=. +, +=
-Conditional (ternary) operator: 	a ? b : c	
+- valueOf(): 
+- hasOwnProperty(): Checks for
+- Object.is(a, b): Checks for
+- isArray(): Checks for
+- every(): Checks for
+- some(): Checks for
+- incudes(): Checks for
+- endsWith(): Checks for
+- `in` operator: Checks for
+- `isInteger()`: Checks for
+- typeof with a comparison operator, <, <=, >, or >= with return before the comparison: ????????
 
 ## Table Comparisons
 
-Math symbols:
+Math:
 |    Purpose      | Symbol | 
 | :-----------    | :----: |
 | Addition        | +      |
 | Subtraction     | -      | 
 | Multiplication  | *      |
 | Division        | /      | 
+| Remainder       | %      |
+
+<br>
+
+Operators:
+| Type       | Type 1 | Type 2 | Type 3  | Type 4  | Type 5 | 
+| :--------- | :----- | :----- | :------ | :------ | :------ | 
+| Assigment  | =      | +, +=  | -, -=   | *, -=   | /, /=   |
+| Comparison | <, >   | <=, >= | ==, === | !=, !== |         |
+| Arithmetic | %      | ++     | --      |         |         |
+| Logical    | &&     | \|\|   | !       |         |         |
+| String     | =      | +      | +=      |         |         |
 
 <br>
 
@@ -61,89 +71,77 @@ Comparisons for conditionals:
 | Greater than              | >      |
 | Less than or equal to     | <=     |
 | Less than or equal to     | >=     |
-| if thing exists           | (the-thing) |
-| if thing doesn't exist    | (!the-thing) |
-| multiple things true      | &&     |
-| 1 **or** more things true | \|\|   |
+| if `a` exists             | (a)    |
+| if `a` doesn't exist      | (!a)   |
+| **all** things true      | &&     |
+| 2 **or** more things true | \|\|   |
 | ternary operator          | a ? b : c |
 
 <br>
 
-### Terms
+var, let, const:
+| Topic  | var  | let     | const  |
+| :--------  | :----: | :---: | :----: |
+| Scope      | Global | Block | Block |
+| Overwrite? | Yes    | No    | No    |
+| Updated?   | Yes    | Yes   | No    |
+| Redeclared? | Yes  | No    | No    |
+| Hoisted?   | Yes    | Yes   | Yes   | 
+| initialized? | undefined | No | No  |
 
-- arguments: 
-- parameters: 
-- arity: 
-- arrow function: ( ) =>
-- callback function: 
-- currentTarget: 
-- currying: 
-- error:
-- event bubbling: 
-- event delegation: 
-- exponential operator: 
-- falsy = [false, 0, "", NaN, undefined, null]
-- function statement vs var function: 
-- hoisting: 
-- if, else, else if, switch() case break default:
-- IIFE: 
-- inheritance:
-- JSON.parse()
-- JSON.stringify()
-- Loops: for, while, do while, for in, for of
-- new Date(): 
-- parse: 
-- parseInt:
-- rest parameter
-- spread operator
-- recursion: 
-- remainder %
-- Rest Parameter: (...theArgs)
-- scope: 
-- Spread Operator: 
-- target: 
-- "use strict": 
-- `${variable}`: 
+<br>
 
+Strings and Arrays: Same Methods, Same Effect:
+|    Method   | Purpose: | Returns:   | Arr basic code | Str basic code | 
+| :---------- | -------: | :------:   | :------------: | :-----------:  |
+| slice()     | creates: | new str/arr | arr.slice(start, end) | str.slice(start, end) | 
+| concat()    | creates: | new str/arr | arr1.concat(arr2) | str1.concat(' ', str2)  | 
+| includes()  | checks:  | Boolean    | includes(searchVal) | includes(searchStr) | 
+| endsWith(()* | checks: | Boolean    | -                   | endsWith(searchStr) | 
+| indexOf()   | returns: | index #    | indexOf(searchVal)  | indexOf(searchStr) | 
+| lastIndexOf() | returns: | index #  | lastIndexOf(searchVal) | lastIndexOf(searchStr) |
+| [index]     | returns: | specific value | arr.[index]     | str[index] | 
+| length      | returns: | str/arr len | arr.length         | str.length | 
 
-## Variables 
+<br>
 
+Strings and Arrays: Different Methods, Same Effect: 
+|    Method       | Returns:               |  Code         | 
+| :-------------  | :--------------------: | :-----------: |
+| str.charAt() | Returns the character at the specified index | str.charAt(index) | 
+| arr.at()     | Returns the array item at the given index    | arr.at(index)     | 
+| str.substring() | Returns part of a string                  | str.substring(indexStart)|
+| arr.splice() | Adds/Removes elements from an array          | arr.splice(start) |
 
+<br>
 
-## Arrays
+Strings and Arrays: Different Methods, Opposite Effect
 
-Array Methods
-Once you have created arrays, there are a few things you can do with them:
+> These two are used in unison, first to split a string, then to join. 
 
-## Objects
+|    Method       | Returns:               |  Code         | 
+| :-------------  | :--------------------: | :-----------: |
+| split()  | divides str into substrings | str.split() | 
+| join()  | Joins all elements of an array into a string | arr.join() | 
 
+<br>
 
-## Strings
+Common Object methods:
+| Method               | Returns: | Returns what?       |
+| :------------------- | :------- | :-------            |       
+| obj.keys()           | array    | obj property names  |
+| obj.values()         | array    | obj property values |
+| obj.toString()       | string   | obj as a string     |
+| obj.hasOwnProperty() | boolean  | if obj has (prop)   |
+| obj.getOwnPropertyNames() | array | all prop names except symbols |
 
-
-## Numbers
+<br>
 
 Number Methods
 
-## Dates
-
-Pulling Date and Time Values
-
-Set Part of a Date
-
-
-## DOM Nodes
-
-Node Properties
-
-
-Node Methods
-
-
-## DOM Elements
-
-Element Methods
-
-## Errors
-
-## Events
+| Method | Returns: | Result/Purpose: | 
+| :---   | :------ | :---- |
+| toExponential() | string | rounded, exp. notation |
+| toFixed() | string | specified decimal places | 
+| toPrecision() | string | specified length |
+| toString() | string | number to string | 
