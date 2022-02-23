@@ -2,6 +2,8 @@
 
 Notes on specifics in README and other important notes, definitions, concepts, tips, tricks, etc. Currently, this file is a mess...
 
+<div id="back-to-top"></div>
+
 ## Table of Contents
 
 1. [Tips and Tricks](#tips-and-tricks)
@@ -89,6 +91,8 @@ Others (maybe):
 - `valueOf()`: method to convert an object to a primitive value???
 - typeof with a comparison operator, <, <=, >, or >= with return before the comparison: ????????
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## Terms
 
 Concepts vs specific parts of code vs ...
@@ -116,6 +120,8 @@ Concepts vs specific parts of code vs ...
 - "use strict": 
 - `${variable}`: 
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ### Concepts
 
 - arity: 
@@ -130,6 +136,7 @@ Concepts vs specific parts of code vs ...
 - recursion: 
 - scope: 
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Variables
 
@@ -141,6 +148,8 @@ Concepts vs specific parts of code vs ...
 - Bracket notation is a way to get a character at a specific index within a string: `string[index]`
 - Bracket notation to find the Nth-to-last character: `string.length - n`, where `n` is a # from end
 - String immutability: they cannot be altered once created
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Arrays and Strings
 
@@ -237,6 +246,7 @@ Strings and Arrays: Different Methods, Opposite Effect (Additional notes):
 - `arr.join()` alternate code: `join(separator)`
 - These two are used in unison, first to split a string, then to join
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Common Methods unique to Strings
 
@@ -247,6 +257,8 @@ Strings and Arrays: Different Methods, Opposite Effect (Additional notes):
 - `match()`: Used to match regular expression against a string; retrieves the result of matching a string against a regular expression: `match(RegEx)`
 - `replace()`: returns a new string with some or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. If pattern is a string, only the first occurrence will be replaced: `replace(regexp, newSubstr)`, `replace(regexp, replacerFunction)`, `replace(substr, newSubstr)`, or `replace(substr, replacerFunction)`
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ### Common Methods unique to Arrays
 
 - `every()`: Checks if **every** element in an array pass a test, returns boolean. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every).
@@ -255,6 +267,8 @@ Strings and Arrays: Different Methods, Opposite Effect (Additional notes):
 - `unshift()`: adds one or more elements to the beginning of an array and returns the new length of the array: `unshift(elem1, elem2, ...)`
 - `shift()`: removes the first element from an array and returns that removed element. This method changes the length of the array (no arguments)
 - `pop()`: removes the last element from an array and returns that element. This method changes the length of the array (no arguments)
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### High Order Array Methods
 
@@ -269,6 +283,8 @@ Strings and Arrays: Different Methods, Opposite Effect (Additional notes):
 - `some()`: Above
 - `includes()`: Above
 - 
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Array Methods Notes
 
@@ -287,6 +303,7 @@ Return Value/Position: `find()`, `indexOf()` (compare with `lastIndexOf()`, `red
 
 Add, remove, sort: pop()`, shift()`, `push()`, `unshift()`, `slice(start, end)`, `splice()`, `reverse()`, `sort()`
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## String Methods Notes
 
@@ -295,6 +312,8 @@ There are many different ways to work with strings:
 - `charCodeAt(index)` — Gives you the Unicode of a character at that position
 - `fromCharCode(num1, num2, ...)` — Returns a string created from the specified sequence of UTF-16 code units
 - `valueOf()` — Returns the primitive value (that has no properties or methods) of a string object
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Numbers
 
@@ -305,6 +324,8 @@ toFixed() — Returns the string of a number with a specified number of decimals
 toPrecision() — String of a number written with a specified length
 toString() — Returns a number as a string
 valueOf() — Returns a number as a number
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Dates
 
@@ -331,6 +352,8 @@ setMonth() — Set the month (0-11)
 setSeconds() — Sets the seconds (0-59)
 setTime() — Set the time (milliseconds since January 1, 1970)
 setUTCDate() — Sets the day of the month for a specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Objects
 
@@ -362,6 +385,8 @@ Object.getOwnPropertyNames(o). This method returns an array containing all own p
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## Functions and Return
 
 - Parameters are variables that act as placeholders for the values that are to be input to a function when it is called
@@ -378,6 +403,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objec
 - If specified, a given value is returned to the function caller
 - In the case that the function doesn't have a `return` statement, when you call it, the function processes the inner code but the returned value is `undefined`
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## Conditional Logic
 
 - `Boolean` and `if` statements: 
@@ -393,6 +420,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objec
 - Or operator: The logical or operator (`||`) returns `true` if either of the operands is true
 - Ternary
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## If, Else, Else If, Switch
 
 - `else` statements: used when the condition in an `if` statement is not met and an alternate block of code is executed
@@ -400,6 +429,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objec
 - `switch` statements: tests a value and can have many `case` statements which define various possible values. Statements are executed from the first matched `case` value until a `break` is encountered
 - `case` statements are tested with strick equality (`===`): `switch(check value(s)) {case value: varname = something; break; next case check…}`
 - `default` means `else` in a `switch` statement – you can also have multiple cases before a `break`
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Loops 
 
@@ -412,6 +443,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objec
 - `do...while` loops: it will first `do` one pass of the code inside the loop no matter what, and then continue to run the loop `while` the specified condition evaluates to `true`
 - Conditional (ternary) operator: 	a ? b : c	
 - Recursion: ???
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## ES6
 
@@ -475,10 +508,14 @@ const maximus = Math.max(...arr);
 - Create an export fallback with `export default` - omit the curly brackets when you import a default export
 - SKIPPED PROMISES - DO NOT GET REST AND SPREAD
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## RegEx
 
 CAPTURE GROUPS, LOOKAHEADS
 - 
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## DEBUGGING - skip
 
@@ -630,6 +667,8 @@ ontouchend — User’s finger is removed from a touch-screen
 ontouchmove — A finger is dragged across the screen
 ontouchstart — A finger is placed on the touch-screen
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 # Errors
 
 Errors
@@ -653,6 +692,8 @@ ReferenceError — An illegal reference has occurred
 SyntaxError — A syntax error has occurred
 TypeError — A type error has occurred
 URIError — An encodeURI() error has occurred
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 # DOM
 

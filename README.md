@@ -20,9 +20,9 @@ Js methods and functions that return true or false:
 | &&. \|\|          | Checking multiple and/or conditions |
 | hasOwnProperty()  | If an object has a property   | 
 | Object.is(a, b)   | if 2 values are the same value |
-| isArray()         | If item checked is an array or not |
-| every()           | if ALL elements pass a test |
-| some()            | if at least ONE elements passes a test |
+| isArray()         | If item checked is an array   |
+| every()           | if ALL elements pass a test   |
+| some()            | if at least ONE element passes a test |
 | incudes()         | if arr or str contains the search value |
 | endsWith()        | if str ends with the search value |
 | isInteger()       | if value is an integer            |
@@ -78,11 +78,11 @@ Comparisons for conditionals:
 | Greater than              | >      |
 | Less than or equal to     | <=     |
 | Less than or equal to     | >=     |
-| if `a` exists             | (a)    |
-| if `a` doesn't exist      | (!a)   |
+| if `a` exists             | if (a) {...} |
+| if `a` doesn't exist      |if  (!a) {...} |
 | **all** things true      | &&     |
 | 2 **or** more things true | \|\|   |
-| ternary operator          | a ? b : c |
+| Ternary operator          | a ? b : c |
 
 <br>
 
@@ -104,7 +104,7 @@ Strings and Arrays: Same Methods, Same Effect:
 | slice()     | creates: | new str/arr | arr.slice(start, end) | str.slice(start, end) | 
 | concat()    | creates: | new str/arr | arr1.concat(arr2) | str1.concat(' ', str2)  | 
 | includes()  | checks:  | Boolean    | includes(searchVal) | includes(searchStr) | 
-| endsWith(()* | checks: | Boolean    | -                   | endsWith(searchStr) | 
+| endsWith(() | checks:  | Boolean    | -                   | endsWith(searchStr) | 
 | indexOf()   | returns: | index #    | indexOf(searchVal)  | indexOf(searchStr) | 
 | lastIndexOf() | returns: | index #  | lastIndexOf(searchVal) | lastIndexOf(searchStr) |
 | [index]     | returns: | specific value | arr.[index]     | str[index] | 
