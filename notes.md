@@ -8,8 +8,11 @@ Important things I need to memorize and incorporate:
 - Escaping single and double quotes (\'\"), new line and tab (\n\t)
 - Working with multi-dimensional arrays 
 - Great data scructures article: https://www.educative.io/blog/javascript-data-structures
-- Memorize and fully understand JSON.stringify() vs JSON.parse() 
-- 
+- Memorize and fully understand JSON.stringify() vs JSON.parse() - why would you use them with arrays?
+- Since ==, <, >, <=, >= do type coercion, you may need to include && typeof == "type you want"
+- remember not to use `=` in an if condition but use `==` or `===`
+- switch(), case, break, default - freeCodeCamp basic JS section, lessons: Golf Code and Counting Cards!
+- Learn shorthand for if statements: if (a, b) return a === b;
 
 <div id="back-to-top"></div>
 
@@ -63,7 +66,7 @@ Important things I need to memorize and incorporate:
 - filter falsy values out of an array
 - constructors
 - IIFE
-- math.floor(math.random
+- Math.floor(Math.random())
 - trim()
 - push.apply()
 - splice instead of delete
@@ -141,8 +144,6 @@ Concepts vs specific parts of code vs ...
 - new Date(): 
 - parse: 
 - parseInt:
-- rest parameter
-- spread operator
 - remainder %
 - Rest Parameter: (...theArgs)
 - Spread Operator: 
@@ -304,17 +305,17 @@ Strings and Arrays: Different Methods, Opposite Effect (Additional notes):
 
 ### High Order Array Methods
 
-- `filter()`: ?
-- `map()`: ?
-- `forEach()`: function to run on each item of an array, common in `for` loops
-- `reduce()`: ?
-- `sort()`: self-explanatory
-- `reverse()`: reverse sort (why use?)
+- `filter()`: takes a function containing a test and returns a new array with all the elements that pass that test. The filtration is done using a function that returns a boolean value
+- `map()`: performs a function on every element in your array and places the result in a new array
+- `forEach()`: function to run on each item of an array, common in `for` loops, performs a function on each item in your array, similar to using a "for" loop to apply a function to an array but with much less work to code. Unlike map(), forEach() does not create a new array automatically, you would have to code a specific function to do so
+- `reduce()`: takes a reducer function and executes it on each array element to output a single value while returning. It takes a `reducer` function with an `accumulator` variable and a `current` element variable as required parameters. The accumulator's value is remembered across all the iterations and is ultimately returned after the final iteration
+- `sort()`: one of the most common operations performed on an array, used to sort an array of numbers or even strings with just a single line of code, returns original array but modified
+- `reverse()`: reverses the order of the array items, does NOT do a reverse sort
 - `find()`: ?
 - `every()`: Above
 - `some()`: Above
 - `includes()`: Above
-- 
+- `indexOf()`: used to find out the index at which the first occurrence of a  specified element can be found in the array, similar to `includes()`; uses strict equality
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -439,12 +440,11 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objec
 
 <h2 id="conditional-logic" align="center">Conditional Logic</h2>
 
-- `Boolean` and `if` statements: 
-
-`if (boolean condition) { code if true}`
+- `Boolean` and `if` statements: `if (boolean condition) { code if true}`
 
 - if no `<` or `>` or other comparison symbol is used, the statement is considered `true` if the value is anything other than 0
 - Comparison operators: `<`, `>`, `<=`, `>=`, `!=`, `==`, `!==`, `===`
+- Like the `equality operator` (& `inequality operator`), the `greater than` operator **will convert data types of values while comparing** - same for `<`, `>=`, `<=`.
 - Equality operator (`==`) vs. strict equality operator (`===`): the strict equality operator compares both the data type and value
 - The same is true for the inequality operators: `!=` and `!==`
 - You can determine the type of a variable or a value with the typeof operator

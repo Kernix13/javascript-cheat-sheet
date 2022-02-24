@@ -26,6 +26,34 @@ Math:
 
 <br>
 
+var, let, const:
+| Topic                | var       | let                  | const                |
+| :--------            | :----:    | :---:                | :----:               |
+| Scope                | Global    | Block                | Block                |
+| Declared (no value)  | undefined | undefined            | Uncaught SyntaxError |
+| Redeclared?          | Yes       | Uncaught SyntaxError | Uncaught SyntaxError |
+| Reassigned?          | Yes       | Yes                  | Uncaught TypeError   |
+
+Code examples showing results with `console.log()`:
+
+```js
+// Global scope:
+var test1; // Declared, NOT assigned a value: undefined (Ok, not recommended)
+test1 = 1; // Assigned a value: 1 (Ok)
+test1 = 10; // Reassigned value: 10 (Ok)
+var test1 = 1; // Declared with a value: 1 (Ok)
+var test1 = 10; // Redeclared and reassigned value: 10 (MAJOR ISSUE!)
+
+let test2; // Declared, NOT assigned a value: undefined (Ok, not recommended)
+test2 = 2; // Assigned a value: 2 (Ok)
+test2 = 20; // Reassigned value: 20 (Ok)
+let test2 = 2; // Uncaught SyntaxError
+let test2 = 20; // Uncaught SyntaxError
+```
+
+
+<br>
+
 Js methods and functions that return true or false: 
 
 | Comparison:       | Checks against:               |
@@ -88,15 +116,14 @@ Comparisons for conditionals:
 
 <br>
 
-var, let, const:
-| Topic       | var  | let     | const  |
-| :--------   | :----: | :---: | :----: |
-| Scope       | Global | Block | Block |
-| Overwrite?  | ?    | ?    | ?    |
-| Redeclared? | Yes    | No    | No    |
-| Reassigned? | Yes    | Yes   | No    |
-| Hoisted?    | Yes    | Yes   | Yes   | 
-| initialized? | undefined | No | No  |
+Conditional Statements 
+| Type    | Syntax 1        | Syntax 2             | Syntax 3     | Syntax 4 | Syntax 5  |
+| :-----  | :-------:       | :------:             | :--------:   | :------: | :-------: |
+| if      | if (cond) {run} |                      |              |          |           |   
+| else    | if (cond) {run} | else {run}           |              |          |           |
+| else if | if (cond) {run} | else if (cond) {run} | `else {run}` |          |           |
+| ternary | a ? b : c       |                      |              |          |           |
+| switch  | switch(val)     |  case "a":           | {run}        | `break`  | `default` | 
 
 <br>
 
