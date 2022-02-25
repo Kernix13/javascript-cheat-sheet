@@ -62,7 +62,6 @@ function isEqual(a, b) {
 1. [Terms](#terms)
    1. [Code Specific](#code-specific)
    1. [Concepts](#concepts)
-1. [Objects](#objects)
 1. [Dates](#dates)
 1. [Functions and Return](#functions-and-return)
 1. [Conditional Logic](#conditional-logic)
@@ -73,7 +72,6 @@ function isEqual(a, b) {
 1. [Debugging](#debugging)
 1. [Data Structures](#data-structures)
 1. [Basic Algorithms](#basic-algorithms)
-   1. [PRACTICE](#practice)
 1. [OOP](#oop)
 1. [Functional Programming](#functional-programming)
 1. [The DOM](#the-dom)
@@ -198,9 +196,6 @@ Definition test
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 
-
-
-
 Strings and Arrays: Same Methods, Same Effect in detail, Code examples:
 
 ```js
@@ -246,37 +241,7 @@ str1.concat(' ', str2) // output "Hey there."
 
 
 
-## Objects
 
-- instead of using indexes to access and modify their data, you access the data in objects through what are called `properties`
-- Properties are often `strings` - you can omit the quotes for single-word string properties; property names with spaces in them must be in quotes
-- Objects can be thought of as a `key`/`value` storage, like a dictionary `{word: definition}`
-- There are two ways to access the properties of an object: dot notation (`.`) and bracket notation (`[]`), similar to an array. 
-- Dot notation is what you use when you know the name of the property you're trying to access
-- If the property of the object you are trying to access has a space in its name, you will need to use bracket notation
-- USe dot or bracket notation to update a property
-- Testing objects for properties: use the `.hasOwnProperty(propname)` method of objects to determine if that object has the given property name
-- The sub-properties of objects can be accessed by chaining together the dot or bracket notation
-
-Defining getters and setters
-- A getter is a method that gets the value of a specific property. A setter is a method that sets the value of a specific property. You can define getters and setters on any predefined core object or user-defined object that supports the addition of new properties.
-
-- `Object.prototype.toString()`:	Returns a string representation of the object.
-- Object.prototype.valueOf():	Returns the primitive value of the specified object.
-- Object.prototype.hasOwnProperty():	Returns a boolean indicating whether an object contains the specified property as a direct property of that object and not inherited through the prototype chain.
-
-There are three native ways to list/traverse object properties:
-
-- for...in loops. This method traverses all enumerable properties of an object and its prototype chain.
-- Object.keys(o). This method returns an array with all the own (not in the prototype chain) enumerable properties' names ("keys") of an object o.
-- Object.getOwnPropertyNames(o). This method returns an array containing all own properties' names (enumerable or not) of an object o.
-
-- `Object.keys()`:	Returns an array containing the names of all of the given object's own enumerable string properties.
-- `Object.values()`:	Returns an array containing the values that correspond to all of a given object's own enumerable string properties
-
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Dates
 
@@ -309,7 +274,6 @@ week1.setTime(weekOne.getTime());
 week1Format = week1.toLocaleDateString('en-us', format);
 ```
 
-
 <h2 id="functions-and-return" align="center">Functions and Return</h2>
 
 - Parameters are variables that act as placeholders for the values that are to be input to a function when it is called
@@ -331,7 +295,6 @@ week1Format = week1.toLocaleDateString('en-us', format);
 <h2 id="conditional-logic" align="center">Conditional Logic</h2>
 
 - `Boolean` and `if` statements: `if (boolean condition) { code if true}`
-
 - if no `<` or `>` or other comparison symbol is used, the statement is considered `true` if the value is anything other than 0
 - Comparison operators: `<`, `>`, `<=`, `>=`, `!=`, `==`, `!==`, `===`
 - Like the `equality operator` (& `inequality operator`), the `greater than` operator **will convert data types of values while comparing** - same for `<`, `>=`, `<=`.
@@ -403,7 +366,6 @@ If, Else, Else If, Switch:
 
 
 **Arrow functions, Rest parameter, Spread operator, Template literals**:
-
 - inline functions - When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword `return` as well as the brackets surrounding the code 
 - If an arrow function has a single parameter, the parentheses enclosing the parameter may be omitted
 - Default parameters?
@@ -411,10 +373,12 @@ If, Else, Else If, Switch:
 - The rest parameter eliminates the need to check the args array and allows us to apply `map()`, `filter()` and `reduce()` on the parameters array
 - Only the last parameter in a function definition can be a rest parameter
 - **Spread operator**: allows you to expand arrays and other expressions in places where multiple parameters or elements are expected
+
 ```
 const arr = [6, 89, 3, 45];
 const maximus = Math.max(...arr);
 ```
+
 - `...arr` returns an unpacked array
 - the spread operator only works in-place, like in an argument to a function or in an array literal
 - **Template literals** allow you to create multi-line strings 
@@ -455,7 +419,7 @@ CAPTURE GROUPS, LOOKAHEADS
 
 <h2 id="basic-algorithms" align="center">Basic Algorithms</h2>
 
-### PRACTICE
+
 
 <h2 id="oop" align="center">OOP</h2>
 

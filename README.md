@@ -6,12 +6,35 @@ This is not an all-inclusive list of every possible JavaScript method, property,
 
 ## Table of Contents
 
-1. [Table Comparisons](#table-comparisons)
+1. Table Comparisons
+   1. [Data types](#data-types)
+   1. [Math and variables](#math-and-variables)
+   1. [Boolean methods](#boolean-methods)
+   1. [Operators and conditionals](#operators-and-conditionals)
+   1. [String and array methods](#string-and-array-methods)
+   1. [Object methods](#object-methods)
+   1. [Number Methods](#number-methods)
+   1. [Date methods](#date-methods)
+   1. [Console Commands](#console-commands)
 1. [Important Notes](#important-otes)
-   1. [Miscellaneous](#miscellaneous)
-   1. [Arrays and Strings](#arrays-and-strings)
+1. [Miscellaneous](#miscellaneous)
+1. [Arrays and Strings](#arrays-and-strings)
+   1. [Same Methods and Same Effect](#same-methods-and-same-effect)
+   1. [Different Methods and Same Effect](#different-methods-and-same-effect)
+   1. [Different Methods and Opposite Effect](#different-methods-and-opposite-effect)
+   1. [Common Methods unique to Strings](#common-methods-unique-to-strings)
+   1. [String Methods Notes](#string-methods-notes)
+   1. [Other Methods unique to Arrays](#other-methods-unique-to-arrays)
+   1. [High Order Array Methods](#high-order-array-methods)
+   1. [Array Methods Notes](#array-methods-notes)
+1. [Object Notes](#object-notes)
+1. [Date Notes](#date-notes)
 
 ## Table Comparisons
+
+The following tables are for visual memorization. It is easy to see similarites and differences between different methods for the various data types.
+
+### Data types
 
 JavaScript Primitive Data Types:
 
@@ -41,6 +64,8 @@ Object Types (everything in JS is consdered an object):
 
 <br>
 
+### Math and variables
+
 Basic math operators:
 |    Purpose      | Symbol | 
 | :-----------    | :----: |
@@ -62,25 +87,29 @@ var, let, const:
 
 <br>
 
+### Boolean methods
+
 Js methods that return true or false: 
 
 | Type:                | Checks against:                      |
 | :----------          | :--------------                      |
-| `<`, `>`, `<=`, `>=` | number, .length, typeof, ...         |
-| `!=`, `!== `         | Anything                             |
-| `&&`, `\|\|`         | Checking multiple and/or conditions  |
-| `hasOwnProperty()`   | If an object has a property          | 
-| `obj.is(a, b)`       | if 2 values are the same value       |
-| `isArray() `         | If item checked is an array          |
-| `every()`            | if ALL elements pass a test          |
-| `some() `            | if at least ONE element passes a test |
-| `incudes(val)`       | if arr or str contains the search value |
-| `endsWith(val) `     | if str ends with the search value    |
-| `isInteger() `       | if value is an integer               |
-| `in` operator        | if property is in the object or prototype | 
-| `typeof`             | used with ==, ===, !=, !==           |
+| <, >, <=, >= | number, .length, typeof, ...         |
+| !=, !==          | Anything                             |
+| &&, \|\|         | Checking multiple and/or conditions  |
+| hasOwnProperty()   | If an object has a property          | 
+| obj.is(a, b)       | if 2 values are the same value       |
+| isArray()          | If item checked is an array          |
+| every()            | if ALL elements pass a test          |
+| some()             | if at least ONE element passes a test |
+| incudes(val)       | if arr or str contains the search value |
+| endsWith(val)      | if str ends with the search value    |
+| isInteger()        | if value is an integer               |
+| in operator        | if property is in the object or prototype | 
+| typeof             | used with ==, ===, !=, !==           |
 
 <br>
+
+### Operators and conditionals
 
 Operators:
 | Type       | Ex. 1  | Ex. 2  | Ex. 3   | Ex. 4   | Ex. 5  | 
@@ -135,6 +164,8 @@ Conditional Statements
 
 <br>
 
+### String and array methods
+
 Strings and Arrays: Same Methods, Same Effect:
 |    Method   | Purpose: | Returns:   | Arr basic code | Str basic code | 
 | :---------- | -------: | :------:   | :------------: | :-----------:  |
@@ -169,6 +200,8 @@ Strings and Arrays: Different Methods, Opposite Effect
 
 <br>
 
+### Object methods
+
 Common Object methods:
 | Method, Class term   | Returns: | Returns what?       |
 | :------------------- | :------- | :-------            |       
@@ -198,6 +231,8 @@ Look into [MDN Method definitions](https://developer.mozilla.org/en-US/docs/Web/
 
 <br>
 
+### Number methods
+
 Number Methods
 
 | Method | Returns: | Result/Purpose: | 
@@ -208,6 +243,8 @@ Number Methods
 | toString() | string | number to string | 
 
 <br>
+
+### Date methods
 
 Common Date Methods: Pulling Date and Time Values
 
@@ -239,6 +276,8 @@ Set Part of a Date
 
 <br>
 
+### Console commands
+
 Useful console commands:
 
 | Command                  | Purpose |
@@ -253,11 +292,13 @@ Useful console commands:
 
 > `console.time`: requires `timeEnd` as well to work. Put `time` before the function and `timeEnd` after the function.
 
-## Important Notes
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+# Important Notes
 
 Notes on various tables for specific methods and syntax.
 
-### Miscellaneous
+## Miscellaneous
 
 - When JS variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN`
 - Remainder operator `%` - gives the remainder of the division of two numbers
@@ -266,7 +307,7 @@ Notes on various tables for specific methods and syntax.
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-### Arrays and Strings 
+## Arrays and Strings 
 
 Miscellaneous notes:
 - Unlike strings, the entries of arrays are mutable and can be changed
@@ -274,7 +315,7 @@ Miscellaneous notes:
 
 There are methods in common to both arrays and strings so I am combining them for more easily visualixe them. Check out the following MDN links: [MDN String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [MDN Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
 
-#### Strings and Arrays: Same Methods, Same Effect:
+### Same Methods and Same Effect
 
 - `slice()`, str | Extracts a section of a string and returns a new string
 - `slice()`, arr | Extracts a section of the calling array and returns a new array
@@ -297,7 +338,7 @@ There are methods in common to both arrays and strings so I am combining them fo
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-#### Strings and Arrays: Different Methods, Same Effect:
+### Different Methods and Same Effect
 
 - `arr.at()`: Accepts negative #’s, which counts from back
 - `str.substring()`: returns the part of the string between the start and end indexes, or to the end of the string
@@ -305,7 +346,7 @@ There are methods in common to both arrays and strings so I am combining them fo
 - `arr.splice()`: changes the contents of an array by removing or replacing existing elements and/or adding new elements
   - Alternate: `splice(start, deleteCount)`
 
-#### Strings and Arrays: Different Methods, Opposite Effect:
+### Different Methods and Opposite Effect
 
 - `str.split()`: alternate code: `split(separator)`, `split(separator, limit)`
 - `arr.join()`: alternate code: `join(separator)`
@@ -369,43 +410,69 @@ There are methods in common to both arrays and strings so I am combining them fo
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-### Array Methods Notes
+## Object Notes
 
+- instead of using indexes to access and modify their data, you access the data in objects through what are called `properties`
+- Properties are often `strings` - you can omit the quotes for single-word string properties; property names with spaces in them must be in quotes
+- Objects can be thought of as a `key`/`value` storage, like a dictionary `{word: definition}`
+- There are two ways to access the properties of an object: dot notation (`.`) and bracket notation (`[]`), similar to an array. 
+- Dot notation is what you use when you know the name of the property you're trying to access
+- If the property of the object you are trying to access has a space in its name, you will need to use bracket notation
+- Use dot or bracket notation to update a property
+- Testing objects for properties: use the `.hasOwnProperty(propname)` method of objects to determine if that object has the given property name
+- The sub-properties of objects can be accessed by chaining together the dot or bracket notation
 
+Defining getters and setters
+- A **getter** is a method that gets the value of a specific property. A **setter** is a method that sets the value of a specific property. You can define getters and setters on any predefined core object or user-defined object that supports the addition of new properties.
+
+- `Object.prototype.toString()`:	Returns a string representation of the object.
+- `Object.prototype.valueOf()`:	Returns the primitive value of the specified object.
+- `Object.prototype.hasOwnProperty()`:	Returns a boolean indicating whether an object contains the specified property as a direct property of that object and not inherited through the prototype chain.
+
+There are three native ways to list/traverse object properties:
+- `for...in` loops: This method traverses all enumerable properties of an object and its prototype chain.
+- `Object.keys(o)`: This method returns an array with all the own (not in the prototype chain) enumerable properties' names ("keys") of an object o.
+- `Object.getOwnPropertyNames(o)`: This method returns an array containing all own properties' names (enumerable or not) of an object o.
+
+- `Object.keys()`:	Returns an array containing the names of all of the given object's own enumerable string properties.
+- `Object.values()`:	Returns an array containing the values that correspond to all of a given object's own enumerable string properties
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-### Date Notes
+## Date Notes
 
 Pulling Date and Time Values:
-- getUTCDate() — The day (date) of the month in the specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
-- parse — Parses a string representation of a date and returns the number of milliseconds since January 1, 1970
+- `getUTCDate()` — The day (date) of the month in the specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
+- `parse` — Parses a string representation of a date and returns the number of milliseconds since January 1, 1970
 
 Pulling Date and Time Values:
 
-- getDate(): returns the day of the month for the specified date according to local time as a number (1-31)
-- getDay(): returns the day of the week as a number (0-6) for the specified date according to local time, where 0 represents Sunday 
-- getFullYear(): returns the year as a four-digit number (yyyy) of the specified date according to local time 
-- getHours(): Get the hour (0-23), returns the hour for the specified date, according to local time
-- getMilliseconds(): The millisecond (0-999), returns the milliseconds in the specified date according to local time
-- getMinutes(): Get the minute (0-59), returns the minutes in the specified date according to local time
-- getMonth(): Month as a number (0-11)m returns the month in the specified date according to local time, as a zero-based value (where zero indicates the first month of the year)
-- getSeconds(): Get the second (0-59), returns the seconds in the specified date according to local time
-- getTime(): Get the milliseconds since January 1, 1970, returns the number of milliseconds since the ECMAScript epoch
+- `getDate()`: returns the day of the month for the specified date according to local time as a number (1-31)
+- `getDay()`: returns the day of the week as a number (0-6) for the specified date according to local time, where 0 represents Sunday 
+- `getFullYear()`: returns the year as a four-digit number (yyyy) of the specified date according to local time 
+- `getHours()`: Get the hour (0-23), returns the hour for the specified date, according to local time
+- `getMilliseconds()`: The millisecond (0-999), returns the milliseconds in the specified date according to local time
+- `getMinutes()`: Get the minute (0-59), returns the minutes in the specified date according to local time
+- `getMonth()`: Month as a number (0-11)m returns the month in the specified date according to local time, as a zero-based value (where zero indicates the first month of the year)
+- `getSeconds()`: Get the second (0-59), returns the seconds in the specified date according to local time
+- `getTime()`: Get the milliseconds since January 1, 1970, returns the number of milliseconds since the ECMAScript epoch
 
 Set Date Methods:
-- setDate(dayValue): Set the day as a number (1-31), changes the day of the month of a given Date instance, based on local time
-- setFullYear(yearValue): Sets the year (optionally month and day), sets the full year for a specified date according to local time. Returns new timestamp
-  - Additional syntax: setFullYear(yearValue, monthValue), setFullYear(yearValue, monthValue, dateValue)
-- setHours(hoursValue): Set the hour (0-23), sets the hours for a specified date according to local time, and returns the number of milliseconds since January 1, 1970
-  - Additional syntax: setHours(hoursValue, minutesValue), setHours(hoursValue, minutesValue, secondsValue), setHours(hoursValue, minutesValue, secondsValue, msValue)
-- setMilliseconds(millisecondsValue): Set milliseconds (0-999), sets the milliseconds for a specified date according to local time
-- setMinutes(minutesValue): Sets the minutes (0-59), sets the minutes for a specified date according to local time
-  - Additional syntax: setMinutes(minutesValue, secondsValue), setMinutes(minutesValue, secondsValue, msValue)
-- setMonth(monthValue): Set the month (0-11), sets the month for a specified date according to the currently set year
-  - Additional syntax: setMonth(monthValue, dayValue)
-- setSeconds(secondsValue): Sets the seconds (0-59), sets the seconds for a specified date according to local time
-  - Additional syntax: setSeconds(secondsValue, msValue)
-- setTime(timeValue): Set the time (milliseconds since January 1, 1970), sets the Date object to the time represented by a number of milliseconds since January 1, 1970
-  - Additional syntax: 
-- setUTCDate(dayValue): Sets the day of the month for a specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
+- `setDate(dayValue)`: Set the day as a number (1-31), changes the day of the month of a given Date instance, based on local time
+- `setFullYear(yearValue)`: Sets the year (optionally month and day), sets the full year for a specified date according to local time. Returns new timestamp
+  - **Additional syntax**: `setFullYear(yearValue, monthValue)`, `setFullYear(yearValue, monthValue, dateValue)`
+- `setHours(hoursValue)`: Set the hour (0-23), sets the hours for a specified date according to local time, and returns the number of milliseconds since January 1, 1970
+  - **Additional syntax**: `setHours(hoursValue, minutesValue)`, `setHours(hoursValue, minutesValue, secondsValue)`, `setHours(hoursValue, minutesValue, secondsValue, msValue)`
+- `setMilliseconds(millisecondsValue)`: Set milliseconds (0-999), sets the milliseconds for a specified date according to local time
+- `setMinutes(minutesValue)`: Sets the minutes (0-59), sets the minutes for a specified date according to local time
+  - **Additional syntax**: `setMinutes(minutesValue, secondsValue)`, `setMinutes(minutesValue, secondsValue, msValue)`
+- `setMonth(monthValue)`: Set the month (0-11), sets the month for a specified date according to the currently set year
+  - **Additional syntax**: `setMonth(monthValue, dayValue)`
+- `setSeconds(secondsValue)`: Sets the seconds (0-59), sets the seconds for a specified date according to local time
+  - **Additional syntax**: `setSeconds(secondsValue, msValue)`
+- `setTime(timeValue)`: Set the time (milliseconds since January 1, 1970), sets the Date object to the time represented by a number of milliseconds since January 1, 1970
+- `setUTCDate(dayValue)`: Sets the day of the month for a specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
