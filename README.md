@@ -2,27 +2,44 @@
 
 This is not an all-inclusive list of every possible JavaScript method, property, etc. This file has tables of comparisons or for quick reference. 
 
-**use `every()` to compare one array to other arrays and to return a match:**
-
-```js
-const hasSameElements = (a, b) => {
-    return a.length === b.length && a.every((v,i) => v===b[i])
-}
-// But do the elements need to be in the same order?
-```
-
-
-
 ## Table Comparisons
 
-Math:
+JavaScript Primitive Data Types:
+
+|    Name   | Type              | 
+| :-------- | :----:            |
+| Boolean   | `true` or `false` | 
+| Null      | `null`            | 
+| Undefined | `undefined`       | 
+| Number    | self-explanatory  | 
+| String    | text              | 
+| Object*   | See below |
+
+SKIPPED: `Bigint` (huge numbers) and `Symbol` (can be used an object keys).
+
+<br>
+
+Object Types (everything in JS is consdered an object):
+|  Name    | Type   | 
+| :-----   | :----: |
+| Objects  | a collection of properties with values of any type in key-value pairs | 
+| Array    | values are most commonly str, num, obj, and arr  | 
+| Function | self-explanatory | 
+| Date     | self-explanatory | 
+| JSON     | an object type most often used for data retrieved from an API | 
+| `keys`   | keys are strings and are the *name* of the property |
+| `value`  | the value that foloows `"keyName": value`|
+
+<br>
+
+Basic math operators:
 |    Purpose      | Symbol | 
 | :-----------    | :----: |
 | Addition        | +      |
 | Subtraction     | -      | 
 | Multiplication  | *      |
 | Division        | /      | 
-| Remainder       | %      |
+| **Remainder**       | %      |
 
 <br>
 
@@ -31,55 +48,36 @@ var, let, const:
 | :--------            | :----:    | :---:                | :----:               |
 | Scope                | Global    | Block                | Block                |
 | Declared (no value)  | undefined | undefined            | Uncaught SyntaxError |
-| Redeclared?          | Yes       | Uncaught SyntaxError | Uncaught SyntaxError |
-| Reassigned?          | Yes       | Yes                  | Uncaught TypeError   |
-
-Code examples showing results with `console.log()`:
-
-```js
-// Global scope:
-var test1; // Declared, NOT assigned a value: undefined (Ok, not recommended)
-test1 = 1; // Assigned a value: 1 (Ok)
-test1 = 10; // Reassigned value: 10 (Ok)
-var test1 = 1; // Declared with a value: 1 (Ok)
-var test1 = 10; // Redeclared and reassigned value: 10 (MAJOR ISSUE!)
-
-let test2; // Declared, NOT assigned a value: undefined (Ok, not recommended)
-test2 = 2; // Assigned a value: 2 (Ok)
-test2 = 20; // Reassigned value: 20 (Ok)
-let test2 = 2; // Uncaught SyntaxError
-let test2 = 20; // Uncaught SyntaxError
-```
-
+| Redeclare?           | Yes       | Uncaught SyntaxError | Uncaught SyntaxError |
+| Reassign?            | Yes       | Yes                  | Uncaught TypeError   |
 
 <br>
 
-Js methods and functions that return true or false: 
+Js methods that return true or false: 
 
 | Comparison:       | Checks against:               |
 | :----------       | :--------------               |
-| <, >, <=, >, >=   | number, .length, typeof, ...  |
-| !=, !==           | Anything |
-| &&. \|\|          | Checking multiple and/or conditions |
-| hasOwnProperty()  | If an object has a property   | 
-| Object.is(a, b)   | if 2 values are the same value |
-| isArray()         | If item checked is an array   |
-| every()           | if ALL elements pass a test   |
-| some()            | if at least ONE element passes a test |
-| incudes()         | if arr or str contains the search value |
-| endsWith()        | if str ends with the search value |
-| isInteger()       | if value is an integer            |
-| in operator       | if property is in the object or prototype | 
-| typeof            | Check for a specific type         | 
+| `<`, `>`, `<=`, `>=`      | number, .length, typeof, ...  |
+| `!=`, `!== `          | Anything |
+| `&&`, `\|\|`         | Checking multiple and/or conditions |
+| `hasOwnProperty()`  | If an object has a property   | 
+| `obj.is(a, b)`   | if 2 values are the same value |
+| `isArray() `        | If item checked is an array   |
+| `every()`           | if ALL elements pass a test   |
+| `some() `           | if at least ONE element passes a test |
+| `incudes(val)`         | if arr or str contains the search value |
+| `endsWith(val) `       | if str ends with the search value |
+| `isInteger() `      | if value is an integer            |
+| `in` operator       | if property is in the object or prototype | 
 
 <br>
 
 Operators:
-| Type       | Type 1 | Type 2 | Type 3  | Type 4  | Type 5 | 
+| Type       | Ex. 1  | Ex. 2  | Ex. 3   | Ex. 4   | Ex. 5  | 
 | :--------- | :----- | :----- | :------ | :------ | :------ | 
 | Assigment  | =      | +=     | -=      | *=      | /=      |
 | Comparison | <, >   | <=, >= | ==, === | !=, !== |         |
-| Arithmetic | %      | ++     | --      |         |         |
+| Arithmetic | +, -, *, /      | %      | ++      | --      |         |
 | Logical    | &&     | \|\|   | !       |         |         |
 | String     | =      | +      | +=      |         |         |
 
@@ -119,9 +117,9 @@ Comparisons for conditionals:
 Conditional Statements 
 | Type    | Syntax 1        | Syntax 2             | Syntax 3     | Syntax 4 | Syntax 5  |
 | :-----  | :-------:       | :------:             | :--------:   | :------: | :-------: |
-| if      | if (cond) {run} |                      |              |          |           |   
-| else    | if (cond) {run} | else {run}           |              |          |           |
-| else if | if (cond) {run} | else if (cond) {run} | `else {run}` |          |           |
+| if      | if (a) {run} |                      |              |          |           |   
+| else    | if (a) {run} | else {run}           |              |          |           |
+| else if | if (a) {run} | else if (a) {run} | `else {run}` |          |           |
 | ternary | a ? b : c       |                      |              |          |           |
 | switch  | switch(val)     |  case "a":           | {run}        | `break`  | `default` | 
 
@@ -137,7 +135,7 @@ Strings and Arrays: Same Methods, Same Effect:
 | endsWith(() | checks:  | Boolean    | -                   | endsWith(searchStr) | 
 | indexOf()   | returns: | index #    | indexOf(searchVal)  | indexOf(searchStr) | 
 | lastIndexOf() | returns: | index #  | lastIndexOf(searchVal) | lastIndexOf(searchStr) |
-| [index]     | returns: | specific value | arr.[index]     | str[index] | 
+| [index]     | returns: | specific value | arr[index]     | str[index] | 
 | length      | returns: | str/arr len | arr.length         | str.length | 
 
 <br>
@@ -164,13 +162,31 @@ Strings and Arrays: Different Methods, Opposite Effect
 <br>
 
 Common Object methods:
-| Method               | Returns: | Returns what?       |
+| Method, Class term   | Returns: | Returns what?       |
 | :------------------- | :------- | :-------            |       
-| obj.keys()           | array    | obj property names  |
+| obj.keys()           | array    | obj property keys   |
 | obj.values()         | array    | obj property values |
+| obj.entries()        | array    | obj key-value pairs  |
+| obj.getOwnPropertyNames() | array | all prop names except symbols |
 | obj.toString()       | string   | obj as a string     |
 | obj.hasOwnProperty() | boolean  | if obj has (prop)   |
-| obj.getOwnPropertyNames() | array | all prop names except symbols |
+| obj.prop[i] or obj.[prop][i] | value | values for array in object at position i |
+| obj.prop.length      | value    | length of array in object |
+
+<br>
+
+Object Class syntax and terms (Fx = 'function'):
+| Class term  | Purpose:                                        | Other?       |
+| :---------- | :-------                                        | :-------            |    
+| class       | template for creating objects                   | - |
+| constructor | for creating and initializing an object created with a class | - |
+| this        | the value of this is determined by how a function is called | - |
+| new         | create a new instance of the class              | - | 
+| get         | binds an obj prop to a Fx, called when that prop is looked up | - |
+| set         | binds an obj prop to a Fx, called when there is an attempt to set that prop | - |
+| extends     | used to create a class as a child of another class | - |
+
+Look into [MDN Method definitions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions).
 
 <br>
 
@@ -182,3 +198,19 @@ Number Methods
 | toFixed() | string | specified decimal places | 
 | toPrecision() | string | specified length |
 | toString() | string | number to string | 
+
+<br>
+
+Useful console commands:
+
+| Command                  | Purpose |
+| :------                  | :------- | 
+| console.log( )           | Debugging |
+| console.error( )         | Same as `.log` but wraps message is red error box | 
+| console.table( )       | Dispay arrays and objects as a table |
+| console.time("label")    | Displays how long the function took to run | 
+| console.timeEnd("label") | Used in tandem with the .time() | 
+| console.dir(obj)         | Prints everything about a JS object | 
+| console.clear( )         | clears the console of all other results | 
+
+- console.time: requires timeEnd as well to work. Put time before the function and timeEnd after the function

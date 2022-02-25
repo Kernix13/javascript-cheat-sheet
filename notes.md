@@ -2,6 +2,17 @@
 
 Notes on specifics in README and other important notes, definitions, concepts, tips, tricks, etc. Currently, this file is a mess...
 
+The code block below is a quick note for myself for a project I am stuck on (ignore):
+
+**use `every()` to compare one array to other arrays and to return a match:**
+
+```js
+const hasSameElements = (a, b) => {
+    return a.length === b.length && a.every((v,i) => v===b[i])
+}
+// But do the elements need to be in the same order?
+```
+
 Important things I need to memorize and incorporate:
 - num1 % num2 = remainder
 - the use of +=, -=, *=, /= with numbers and += with strings
@@ -13,6 +24,35 @@ Important things I need to memorize and incorporate:
 - remember not to use `=` in an if condition but use `==` or `===`
 - switch(), case, break, default - freeCodeCamp basic JS section, lessons: Golf Code and Counting Cards!
 - Learn shorthand for if statements: if (a, b) return a === b;
+- `freeCodeCamp`: 
+   - 25 escape sequences in strings, 
+   - 42 manipulate arrays with push ...45. manipulate arrays with unshift, 
+   - 73 golf code, 
+   - 74 selecting from many options with switch statements...77. replacing if else chains with switch, 
+   - 78 returning boolean values from functions
+   - 80 counting cards, 
+   - 84 accessing object properties with variables is really good and the reference to lookup tables => link https://dev.to/k_penguin_sato/use-lookup-tables-for-cleaning-up-your-js-ts-code-9gk - similar to setting city = "Philadelphia" then using city in weather app, 
+   - 86 add new properties to a js object - obj, newProp = "value"
+   - 87 delete properties from a js object: delete obj.propname
+   - 88 using objects for lookups - why does `lookup[val]` work but `lookup.val` does NOT? 
+   - 89 hasOwnProperty, 92. accessing nested arrays for nice []. notation, 93. record collection WOW, 
+
+
+78) returning boolean values from functions:
+```js
+function isEqual(a, b) {
+  if (a === b) {
+    return true;
+  } else {
+    return false;
+  }
+}
+// reduced to
+function isEqual(a, b) {
+  return a === b;
+}
+```
+> Therefore, `return a === b` shorthand for entire if statement
 
 <div id="back-to-top"></div>
 
@@ -762,3 +802,19 @@ The error property can return six different values as its name:
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+Code examples showing results with `console.log()` for `var`, `let`, and `const`:
+
+```js
+// Global scope:
+var test1; // Declared, NOT assigned a value: undefined (Ok, not recommended)
+test1 = 1; // Assigned a value: 1 (Ok)
+test1 = 10; // Reassigned value: 10 (Ok)
+var test1 = 1; // Declared with a value: 1 (Ok)
+var test1 = 10; // Redeclared and reassigned value: 10 (MAJOR ISSUE!)
+
+let test2; // Declared, NOT assigned a value: undefined (Ok, not recommended)
+test2 = 2; // Assigned a value: 2 (Ok)
+test2 = 20; // Reassigned value: 20 (Ok)
+let test2 = 2; // Uncaught SyntaxError
+let test2 = 20; // Uncaught SyntaxError
+```
