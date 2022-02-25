@@ -16,7 +16,7 @@ This is not an all-inclusive list of every possible JavaScript method, property,
    1. [Number Methods](#number-methods)
    1. [Date methods](#date-methods)
    1. [Console Commands](#console-commands)
-1. [Important Notes](#important-otes)
+1. Important Notes
 1. [Miscellaneous](#miscellaneous)
 1. [Arrays and Strings](#arrays-and-strings)
    1. [Same Methods and Same Effect](#same-methods-and-same-effect)
@@ -158,9 +158,9 @@ Conditional Statements
 | :-----  | :-------:       | :------:             | :--------:   | :------: | :-------: |
 | if      | if (a) {run} |                      |              |          |           |   
 | else    | if (a) {run} | else {run}           |              |          |           |
-| else if | if (a) {run} | else if (a) {run} | `else {run}` |          |           |
+| else if | if (a) {run} | else if (a) {run} | *else {run}* |          |           |
 | ternary | a ? b : c       |                      |              |          |           |
-| switch  | switch(val)     |  case "a":           | {run}        | `break`  | `default` | 
+| switch  | switch(val)     |  case "a":           | {run}        | *break*  | *default* | 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -171,7 +171,7 @@ Strings and Arrays: Same Methods, Same Effect:
 | :---------- | -------: | :------:   | :------------: | :-----------:  |
 | slice()     | creates: | new str/arr | arr.slice(start, end) | str.slice(start, end) | 
 | concat()    | creates: | new str/arr | arr1.concat(arr2) | str1.concat(' ', str2)  | 
-| concat. operator| creates: | new str | -             | str1 + str2    |
+| concat. op.| creates: | new str | -             | str1 + str2    |
 | includes()  | checks:  | Boolean    | includes(searchVal) | includes(searchStr) | 
 | endsWith(() | checks:  | Boolean    | -                   | endsWith(searchStr) | 
 | indexOf()   | returns: | index #    | indexOf(searchVal)  | indexOf(searchStr) | 
@@ -216,7 +216,7 @@ Common Object methods:
 
 <br>
 
-Object Class syntax and terms (Fx = 'function'):
+Object Ccass syntax and terms (Fx = 'function'):
 | Class term  | Purpose:                                        | Other?       |
 | :---------- | :-------                                        | :-------            |    
 | class       | template for creating objects                   | - |
@@ -233,14 +233,26 @@ Look into [MDN Method definitions](https://developer.mozilla.org/en-US/docs/Web/
 
 ### Number methods
 
-Number Methods
+Common Number Methods
 
-| Method | Returns: | Result/Purpose: | 
-| :---   | :------ | :---- |
-| toExponential() | string | rounded, exp. notation |
-| toFixed() | string | specified decimal places | 
-| toPrecision() | string | specified length |
-| toString() | string | number to string | 
+| Method | Result/Purpose: | 
+| :---   | :----            |
+| toExponential() | rounded, exp. notation |
+| toFixed()       | specified decimal places | 
+| toPrecision()   | specified length |
+| toString()      | number to string | 
+| Math.abs(x)     | Returns the absolute value of x | 
+| Math.ceil(x)    | Returns the smallest integer greater than or equal to x |
+| Math.floor(x)   | Returns the largest integer less than or equal to x. |
+| Math.max([x[, y[, …]]]) | Returns the largest of zero or more numbers |
+| Math.min([x[, y[, …]]]) | Returns the smallest of zero or more numbers. |
+| Math.pow(x, y)  | Returns base x to the exponent power y (that is, x^y). |
+| Math.random(x)  | Returns a pseudo-random number between 0 and 1. |
+| Math.round(x)   | Returns the value of the number x rounded to the nearest integer. |
+| Math.sign(x)    | Returns the sign of the x, indicating whether x is positive, negative, or zero. |
+| Math.sqrt(x)    | Returns the positive square root of x. |
+| Math.trunc(x)   | Returns the integer portion of x, removing any fractional digits. |
+
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -378,6 +390,8 @@ There are methods in common to both arrays and strings so I am combining them fo
 - `shift()`: removes the first element from an array and returns that removed element. This method changes the length of the array (no arguments). To get the removed item make sure to set it to a var: `let removedItem = arr.shift();`
 - `pop()`: removes the last element from an array and returns that element. This method changes the length of the array (no arguments)
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ### High Order Array Methods
 
 - `forEach()`: function to run on each item of an array, common in `for` loops, performs a function on each item in your array, similar to using a "for" loop to apply a function to an array but with much less work to code. Unlike map(), forEach() does not create a new array automatically, you would have to code a specific function to do so
@@ -435,7 +449,7 @@ There are three native ways to list/traverse object properties:
 - `Object.keys()`:	Returns an array containing the names of all of the given object's own enumerable string properties.
 - `Object.values()`:	Returns an array containing the values that correspond to all of a given object's own enumerable string properties
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+Check out the [MDN Working with Objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects) page.
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
