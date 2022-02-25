@@ -62,7 +62,7 @@ Object Types (everything in JS is consdered an object):
 | `keys`   | keys are strings and are the *name* of the property |
 | `value`  | the value that foloows `"keyName": value`|
 
-<br>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Math and variables
 
@@ -85,7 +85,7 @@ var, let, const:
 | Redeclare?           | Yes       | Uncaught SyntaxError | Uncaught SyntaxError |
 | Reassign?            | Yes       | Yes                  | Uncaught TypeError   |
 
-<br>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Boolean methods
 
@@ -107,7 +107,7 @@ Js methods that return true or false:
 | in operator        | if property is in the object or prototype | 
 | typeof             | used with ==, ===, !=, !==           |
 
-<br>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Operators and conditionals
 
@@ -162,7 +162,7 @@ Conditional Statements
 | ternary | a ? b : c       |                      |              |          |           |
 | switch  | switch(val)     |  case "a":           | {run}        | `break`  | `default` | 
 
-<br>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### String and array methods
 
@@ -198,7 +198,7 @@ Strings and Arrays: Different Methods, Opposite Effect
 | split()  | divides str into substrings | str.split() | 
 | join()  | Joins all elements of an array into a string | arr.join() | 
 
-<br>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Object methods
 
@@ -229,7 +229,7 @@ Object Class syntax and terms (Fx = 'function'):
 
 Look into [MDN Method definitions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions).
 
-<br>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Number methods
 
@@ -242,7 +242,7 @@ Number Methods
 | toPrecision() | string | specified length |
 | toString() | string | number to string | 
 
-<br>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Date methods
 
@@ -274,7 +274,7 @@ Set Part of a Date
 | setTime()         | Set the time (ms since Jan 1, 1970) | setTime(timeValue)    | 
 | setUTCDate()      | Set day of the month for spec. UT   | setUTCDate(dayValue)  | 
 
-<br>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Console commands
 
@@ -377,8 +377,6 @@ There are methods in common to both arrays and strings so I am combining them fo
 - `unshift()`: adds one or more elements to the beginning of an array and returns the new length of the array: `unshift(elem1, elem2, ...)`
 - `shift()`: removes the first element from an array and returns that removed element. This method changes the length of the array (no arguments). To get the removed item make sure to set it to a var: `let removedItem = arr.shift();`
 - `pop()`: removes the last element from an array and returns that element. This method changes the length of the array (no arguments)
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### High Order Array Methods
 
