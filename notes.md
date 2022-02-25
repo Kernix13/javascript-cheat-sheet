@@ -62,16 +62,8 @@ function isEqual(a, b) {
 1. [Terms](#terms)
    1. [Code Specific](#code-specific)
    1. [Concepts](#concepts)
-1. [Variables](#variables)
-1. [Arrays and Strings](#arrays-and-strings)
-   1. [Common Methods unique to Strings](#common-methods-unique-to-strings)
-   1. [Common Methods unique to Arrays](#common-methods-unique-to-arrays)
-   1. [High Order Array Methods](#high-order-array-methods)
-   1. [Array Methods Notes](#array-methods-notes)
-   1. [String Methods Notes](#string-methods-notes)
-1. [Numbers](#numbers)
-1. [Dates](#dates)
 1. [Objects](#objects)
+1. [Dates](#dates)
 1. [Functions and Return](#functions-and-return)
 1. [Conditional Logic](#conditional-logic)
 1. [Conditional Statements](#conditional-statements)
@@ -147,23 +139,6 @@ function isEqual(a, b) {
 - https://github.com/wilfredinni/javascript-cheatsheet
 - https://github.com/alhassy/JavaScriptCheatSheet 
 
-Js methods and functions that return true or false: 
-
-- Comparison operators: ==, ===, !=, !==, <, <=, >, >=, &&, ||, 
-- hasOwnProperty(): Checks if a property is a direct property of an object
-- Object.is(a, b): Determines whether two values are the same value.
-- isArray(): Determines whether the passed value is an Array
-- every(): Tests whether all elements in the array pass the test implemented by the provided function
-- some(): Tests whether at least one element in the array passes the test implemented by the provided function
-- incudes(): Determines whether an array includes a certain value among its entries
-- endsWith(): Determines whether a string ends with the characters of a specified string
-- `isInteger()`: Determines whether the passed value is an integer
-- `in` operator: Checks if the specified property is in the specified object or its prototype chain
-
-Others (maybe):
-- `valueOf()`: method to convert an object to a primitive value???
-- typeof with a comparison operator, <, <=, >, or >= with return before the comparison: ????????
-
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <h2 id="terms" align="center">Terms</h2>
@@ -208,63 +183,25 @@ Concepts vs specific parts of code vs ...
 - scope: 
 - Type Coercion: 
 
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+Definition test
 
-<!-- ## Variables -->
-<h2 id="variables" align="center">Variables</h2>
-
-- It is common to initialize a var to an initial value in the same line as it is declared, e.g. `let a = 0;`
-- When JS variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN`
-- `+`, `-`, `*`, `/`, `i++`, `i--`, 
-- Remainder operator `%` - gives the remainder of the division of two numbers
-- Escaping: use a backslash (`\`) in front of the quote in a string: `\'` or `\"`
-- Bracket notation is a way to get a character at a specific index within a string: `string[index]`
-- Bracket notation to find the Nth-to-last character: `string.length - n`, where `n` is a # from end
-- String immutability: they cannot be altered once created
+<dl>
+  <dt>Hoisting</dt>
+  <dd>refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code. JavaScript's default behavior of moving declarations to the top</dd>
+</dl>
+<dl>
+  <dt>Scope</dt>
+  <dd>Scope determines the accessibility (visibility) of variables. There are 
+  3 types: 1) Block scope, 2) Function scope, 3) Global scope.</dd>
+</dl>
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-<h2 id="arrays-and-strings" align="center">Arrays and Strings</h2>
-
-- Bracket notation to access & modify array data: `[0]`
-- Unlike strings, the entries of arrays are mutable and can be changed
-- Access multi-dimensional arrays  with indexes:
-
-`var arr = [ [1, 2], [2, 3], [ [3, 4], 5] ] arr[2][0][1] = 4`
-
-- Manipulate arrays with `push()` = append / add, takes one or more parameters and "pushes" them onto the **end** of the array|
-- Manipulate arrays with `unshift()` = add elements in front of the array, takes one or more parameters and adds them onto the **beginning** of the array
-- Manipulate arrays with `pop()` = remove a value off of the **end** (last item) of an array |
-- Manipulate arrays with `shift()` = removes the **first** item
-
-There are methods in common to both arrays and strings so I am combining them for more easily visualixe them. Check out the following MDN links:
-
-- [MDN String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [MDN Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 
-Strings and Arrays: Same Methods, Same Effect n detail:
-- `slice()`, str | Extracts a section of a string and returns a new string
-- `slice()`, arr | Extracts a section of the calling array and returns a new array
-- `concat()`, str | Joins two or more strings and returns the new string
-  - Alternate: `str1 + str2`
-- `concat()`, arr | Joins two or more arrays and returns a copy of the joined arrays
-- `includes()`, str | Check if a string contains the specified string 
-  - Alternate: `includes(searchVal, beginIndex)`
-- `includes()`, arr | Check if an array contains the specified element
-  - Alternate: includes(searchVal, beginIndex)` 
-- `endsWith()`, str | Checks whether a string ends with the characters of a given string 
-  - Alternate: `endsWith(searchString, length)`
-- `indexOf()`, str | returns the index of the first occurrence of the specified substring
-  - Alternate: indexOf(searchString, pos)
-- `indexOf()`, arr | returns the first index at which a given element can be found
-  - Alternate: `indexOf(searchVal, pos)`
-- `lastIndexOf()`, str | returns the index of the last occurrence of the specified substring: 
-  - Alternate: lastIndexOf(searchStr, fromIndex)
-- `lastIndexOf()`, arr | returns the index of the last occurrence of the specified value
-  - Alternate: `lastIndexOf(searchVal, fromIndex)`
 
-Code examples:
+
+Strings and Arrays: Same Methods, Same Effect in detail, Code examples:
 
 ```js
 // slice string
@@ -305,128 +242,9 @@ str1.concat(' ', str2) // output "Hey there."
 
 ```
 
-Strings and Arrays: Different Methods, Same Effect (Additional notes):
-- `arr.at()`: Accepts negative #’s, which counts from back
-- `str.substring()`: returns the part of the string between the start and end indexes, or to the end of the string
-  - Alernate: `substring(indexStart, indexEnd)`
-- `arr.splice()`: changes the contents of an array by removing or replacing existing elements and/or adding new elements
-  - Alternate: `splice(start, deleteCount)`
-
-| join()  | Joins all elements of an array into a string | arr.join() | 
-
-Strings and Arrays: Different Methods, Opposite Effect (Additional notes):
-- `str.split()` alternate code: `split(separator)`, `split(separator, limit)`
-- `arr.join()` alternate code: `join(separator)`
-- These two are used in unison, first to split a string, then to join
-
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-### Common Methods unique to Strings
 
-- `toLowerCase()`: Converts string to lowercase
-- `toUpperCase()`: Converts string to uppercase
-- `trim()`: removes whitespace from both ends of a string and returns a new string, without modifying the original string
-- `test()`:	Though, not a string method, it executes a search for a match between a regular expression and a specified string. Returns true or false: `test(str)`
-- `match()`: Used to match regular expression against a string; retrieves the result of matching a string against a regular expression: `match(RegEx)`
-- `replace()`: returns a new string with some or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. If pattern is a string, only the first occurrence will be replaced: `replace(regexp, newSubstr)`, `replace(regexp, replacerFunction)`, `replace(substr, newSubstr)`, or `replace(substr, replacerFunction)`
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-### Common Methods unique to Arrays
-
-- `every()`: Checks if **every** element in an array pass a test, returns boolean. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every).
-- `some()`: tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some).
-- `push()`: adds one or more elements to the end of an array and returns the new length of the array: 'push(elem1, elem2, ...)`
-- `unshift()`: adds one or more elements to the beginning of an array and returns the new length of the array: `unshift(elem1, elem2, ...)`
-- `shift()`: removes the first element from an array and returns that removed element. This method changes the length of the array (no arguments). To get the removed item make sure to set it to a var: `let removedItem = arr.shift();`
-- `pop()`: removes the last element from an array and returns that element. This method changes the length of the array (no arguments)
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-### High Order Array Methods
-
-- `filter()`: takes a function containing a test and returns a new array with all the elements that pass that test. The filtration is done using a function that returns a boolean value
-- `map()`: performs a function on every element in your array and places the result in a new array
-- `forEach()`: function to run on each item of an array, common in `for` loops, performs a function on each item in your array, similar to using a "for" loop to apply a function to an array but with much less work to code. Unlike map(), forEach() does not create a new array automatically, you would have to code a specific function to do so
-- `reduce()`: takes a reducer function and executes it on each array element to output a single value while returning. It takes a `reducer` function with an `accumulator` variable and a `current` element variable as required parameters. The accumulator's value is remembered across all the iterations and is ultimately returned after the final iteration
-- `sort()`: one of the most common operations performed on an array, used to sort an array of numbers or even strings with just a single line of code, returns original array but modified
-- `reverse()`: reverses the order of the array items, does NOT do a reverse sort
-- `find()`: ?
-- `every()`: Above
-- `some()`: Above
-- `includes()`: Above
-- `indexOf()`: used to find out the index at which the first occurrence of a  specified element can be found in the array, similar to `includes()`; uses strict equality
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-### Array Methods Notes
-
-- `.length`: used often in `for` loops
-- arr.[index]: to return a value at a specific index
-
-Returns Boolean: `every()`, `includes()`, `some()`
-
-Returns String: `join()`, `toString()`
-
-Anything: `forEach()`
-
-Returns Array: `filter()`, `map()`, `concat()`
-
-Return Value/Position: `find()`, `indexOf()` (compare with `lastIndexOf()`, `reduce()`
-
-Add, remove, sort: pop()`, shift()`, `push()`, `unshift()`, `slice(start, end)`, `splice()`, `reverse()`, `sort()`
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-## String Methods Notes
-
-There are many different ways to work with strings:
-
-- `charCodeAt(index)` — Gives you the Unicode of a character at that position
-- `fromCharCode(num1, num2, ...)` — Returns a string created from the specified sequence of UTF-16 code units
-- `valueOf()` — Returns the primitive value (that has no properties or methods) of a string object
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-<h2 id="numbers" align="center">Numbers</h2>
-
-Number Methods
-
-- toExponential() — Returns the string with a rounded number written as exponential notation
-- toFixed() — Returns the string of a number with a specified number of decimals
-- toPrecision() — String of a number written with a specified length
-- toString() — Returns a number as a string
-- valueOf() — Returns a number as a number
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-<h2 id="dates" align="center">Dates</h2>
-
-Pulling Date and Time Values:
-- getDate() — Get the day of the month as a number (1-31)
-- getDay() —  The weekday as a number (0-6)
-- getFullYear() — Year as a four-digit number (yyyy)
-- getHours() — Get the hour (0-23)
-- getMilliseconds() — The millisecond (0-999)
-- getMinutes() — Get the minute (0-59)
-- getMonth() —  Month as a number (0-11)
-- getSeconds() — Get the second (0-59)
-- getTime() — Get the milliseconds since January 1, 1970
-- getUTCDate() — The day (date) of the month in the specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
-- parse — Parses a string representation of a date and returns the number of milliseconds since January 1, 1970
-
-Set Part of a Date
-- setDate() — Set the day as a number (1-31)
-- setFullYear() — Sets the year (optionally month and day)
-- setHours() — Set the hour (0-23)
-- setMilliseconds() — Set milliseconds (0-999)
-- setMinutes() — Sets the minutes (0-59)
-- setMonth() — Set the month (0-11)
-- setSeconds() — Sets the seconds (0-59)
-- setTime() — Set the time (milliseconds since January 1, 1970)
-- setUTCDate() — Sets the day of the month for a specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Objects
 
@@ -441,7 +259,7 @@ Set Part of a Date
 - The sub-properties of objects can be accessed by chaining together the dot or bracket notation
 
 Defining getters and setters
-A getter is a method that gets the value of a specific property. A setter is a method that sets the value of a specific property. You can define getters and setters on any predefined core object or user-defined object that supports the addition of new properties.
+- A getter is a method that gets the value of a specific property. A setter is a method that sets the value of a specific property. You can define getters and setters on any predefined core object or user-defined object that supports the addition of new properties.
 
 - `Object.prototype.toString()`:	Returns a string representation of the object.
 - Object.prototype.valueOf():	Returns the primitive value of the specified object.
@@ -459,6 +277,38 @@ There are three native ways to list/traverse object properties:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Dates
+
+**DATE CHEAT SHEET TO GET REAL DATES AND TIMES**:
+- code examples from leafpickup.js:
+
+```js
+// Get day of week for November 1st for the current year
+const d = new Date();
+const year = d.getFullYear();
+let currentNovFirst = '11/01/' + year;
+let novFirstDay = new Date(currentNovFirst).getDay();
+```
+```js
+// check the current year and update the startYr variable. 
+if (year < 2032) {
+  let startYr = 2021;
+} else if (year >= 2032 && year <= 2042) {
+  let startYr = 2032;
+```
+
+```js
+/* CALCULATING AND FORMATTING THE MONDAY DATES FOR THE 6 WEEKS */
+let week1 = new Date(), week2 = new Date(), week3 = new Date(), 
+week4 = new Date(), week5 = new Date(), week6 = new Date();
+
+const format = { year: "numeric", month: "short", day: "numeric" };
+
+week1.setTime(weekOne.getTime());
+week1Format = week1.toLocaleDateString('en-us', format);
+```
+
 
 <h2 id="functions-and-return" align="center">Functions and Return</h2>
 

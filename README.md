@@ -2,6 +2,15 @@
 
 This is not an all-inclusive list of every possible JavaScript method, property, etc. This file has tables of comparisons or for quick reference. 
 
+<div id="back-to-top"></div>
+
+## Table of Contents
+
+1. [Table Comparisons](#table-comparisons)
+1. [Important Notes](#important-otes)
+   1. [Miscellaneous](#miscellaneous)
+   1. [Arrays and Strings](#arrays-and-strings)
+
 ## Table Comparisons
 
 JavaScript Primitive Data Types:
@@ -55,20 +64,21 @@ var, let, const:
 
 Js methods that return true or false: 
 
-| Comparison:       | Checks against:               |
-| :----------       | :--------------               |
-| `<`, `>`, `<=`, `>=`      | number, .length, typeof, ...  |
-| `!=`, `!== `          | Anything |
-| `&&`, `\|\|`         | Checking multiple and/or conditions |
-| `hasOwnProperty()`  | If an object has a property   | 
-| `obj.is(a, b)`   | if 2 values are the same value |
-| `isArray() `        | If item checked is an array   |
-| `every()`           | if ALL elements pass a test   |
-| `some() `           | if at least ONE element passes a test |
-| `incudes(val)`         | if arr or str contains the search value |
-| `endsWith(val) `       | if str ends with the search value |
-| `isInteger() `      | if value is an integer            |
-| `in` operator       | if property is in the object or prototype | 
+| Type:                | Checks against:                      |
+| :----------          | :--------------                      |
+| `<`, `>`, `<=`, `>=` | number, .length, typeof, ...         |
+| `!=`, `!== `         | Anything                             |
+| `&&`, `\|\|`         | Checking multiple and/or conditions  |
+| `hasOwnProperty()`   | If an object has a property          | 
+| `obj.is(a, b)`       | if 2 values are the same value       |
+| `isArray() `         | If item checked is an array          |
+| `every()`            | if ALL elements pass a test          |
+| `some() `            | if at least ONE element passes a test |
+| `incudes(val)`       | if arr or str contains the search value |
+| `endsWith(val) `     | if str ends with the search value    |
+| `isInteger() `       | if value is an integer               |
+| `in` operator        | if property is in the object or prototype | 
+| `typeof`             | used with ==, ===, !=, !==           |
 
 <br>
 
@@ -152,8 +162,6 @@ Strings and Arrays: Different Methods, Same Effect:
 
 Strings and Arrays: Different Methods, Opposite Effect
 
-> These two are used in unison, first to split a string, then to join. 
-
 |    Method       | Returns:               |  Code         | 
 | :-------------  | :--------------------: | :-----------: |
 | split()  | divides str into substrings | str.split() | 
@@ -201,6 +209,36 @@ Number Methods
 
 <br>
 
+Common Date Methods: Pulling Date and Time Values
+
+| Method            | Description:                                      | 
+| :---              | :------                                           | 
+| getDate()         | Returns the day of the month as a # (1-31)        | 
+| getDay()          | Weekday as a number (local time, 0-6, 0 = Sunday) | 
+| getFullYear()     | Year as a four-digit number (yyyy)                | 
+| getHours()        | Get the hour (0-23)                               | 
+| getMilliseconds() | The millisecond (0-999)                           | 
+| getMinutes()      | Get the minute (0-59)                             | 
+| getMonth()        | Month as a number (0-11)                          | 
+| getSeconds()      | Get the second (0-59)                             | 
+| getTime()         | Get the ms since January 1, 1970                  | 
+| getUTCDate()      | Date according to universal time                  | 
+
+Set Part of a Date
+| Method            | Description:                        | Syntax:               | 
+| :---              | :------                             | :----                 |
+| setDate()         | Set the day as a number (1-31)      | setDate(dayValue)     | 
+| setFullYear()     | Sets the year (optional month & day) | setFullYear(yrValue) | 
+| setHours()        | Set the hour (0-23)                 | setHours(hrsValue)    | 
+| setMilliseconds() | Set milliseconds (0-999)            | setMilliseconds(msValue) | 
+| setMinutes()      | Sets the minutes (0-59)             | setMinutes(minsValue) | 
+| setMonth()        | Set the month (0-11)                | setMonth(moValue)     | 
+| setSeconds()      | Sets the seconds (0-59)             | setSeconds(secsValue) | 
+| setTime()         | Set the time (ms since Jan 1, 1970) | setTime(timeValue)    | 
+| setUTCDate()      | Set day of the month for spec. UT   | setUTCDate(dayValue)  | 
+
+<br>
+
 Useful console commands:
 
 | Command                  | Purpose |
@@ -213,4 +251,161 @@ Useful console commands:
 | console.dir(obj)         | Prints everything about a JS object | 
 | console.clear( )         | clears the console of all other results | 
 
-- console.time: requires timeEnd as well to work. Put time before the function and timeEnd after the function
+> `console.time`: requires `timeEnd` as well to work. Put `time` before the function and `timeEnd` after the function.
+
+## Important Notes
+
+Notes on various tables for specific methods and syntax.
+
+### Miscellaneous
+
+- When JS variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN`
+- Remainder operator `%` - gives the remainder of the division of two numbers
+- Escaping: use a backslash (`\`) in front of the quote in a string: `\'` or `\"`
+- Bracket notation to find the Nth-to-last character: `string.length - n`, where `n` is a # from end
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Arrays and Strings 
+
+Miscellaneous notes:
+- Unlike strings, the entries of arrays are mutable and can be changed
+- Access multi-dimensional arrays  with indexes: `var arr = [ [1, 2], [2, 3], [ [3, 4], 5] ] arr[2][0][1] = 4`
+
+There are methods in common to both arrays and strings so I am combining them for more easily visualixe them. Check out the following MDN links: [MDN String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [MDN Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
+
+#### Strings and Arrays: Same Methods, Same Effect:
+
+- `slice()`, str | Extracts a section of a string and returns a new string
+- `slice()`, arr | Extracts a section of the calling array and returns a new array
+- `concat()`, str | Joins two or more strings and returns the new string
+- `concat()`, arr | Joins two or more arrays and returns a copy of the joined arrays
+- `includes()`, str | Check if a string contains the specified string 
+  - Alternate: `includes(searchVal, beginIndex)`
+- `includes()`, arr | Check if an array contains the specified element
+  - Alternate: `includes(searchVal, beginIndex)` 
+- `endsWith()`, str | Checks whether a string ends with the characters of a given string 
+  - Alternate: `endsWith(searchString, length)`
+- `indexOf()`, str | returns the index of the first occurrence of the specified substring
+  - Alternate: indexOf(searchString, pos)
+- `indexOf()`, arr | returns the first index at which a given element can be found, similar to `includes()`; uses strict equality
+  - Alternate: `indexOf(searchVal, pos)`
+- `lastIndexOf()`, str | returns the index of the last occurrence of the specified substring: 
+  - Alternate: lastIndexOf(searchStr, fromIndex)
+- `lastIndexOf()`, arr | returns the index of the last occurrence of the specified value
+  - Alternate: `lastIndexOf(searchVal, fromIndex)`
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+#### Strings and Arrays: Different Methods, Same Effect:
+
+- `arr.at()`: Accepts negative #’s, which counts from back
+- `str.substring()`: returns the part of the string between the start and end indexes, or to the end of the string
+  - Alernate: `substring(indexStart, indexEnd)`
+- `arr.splice()`: changes the contents of an array by removing or replacing existing elements and/or adding new elements
+  - Alternate: `splice(start, deleteCount)`
+
+#### Strings and Arrays: Different Methods, Opposite Effect:
+
+- `str.split()`: alternate code: `split(separator)`, `split(separator, limit)`
+- `arr.join()`: alternate code: `join(separator)`
+- These two are used in unison, first to split a string, then to join. 
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Common Methods unique to Strings
+
+- `toLowerCase()`: Converts string to lowercase
+- `toUpperCase()`: Converts string to uppercase
+- `trim()`: removes whitespace from both ends of a string and returns a new string, without modifying the original string
+- `test()`:	Though, not a string method, it executes a search for a match between a regular expression and a specified string. Returns true or false: `test(str)`
+- `match()`: Used to match regular expression against a string; retrieves the result of matching a string against a regular expression: `match(RegEx)`
+- `replace()`: returns a new string with some or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. If pattern is a string, only the first occurrence will be replaced: `replace(regexp, newSubstr)`, `replace(regexp, replacerFunction)`, `replace(substr, newSubstr)`, or `replace(substr, replacerFunction)`
+
+### String Methods Notes
+
+- `charCodeAt(index)` — Gives you the Unicode of a character at that position
+- `fromCharCode(num1, num2, ...)` — Returns a string created from the specified sequence of UTF-16 code units
+- `valueOf()` — Returns the primitive value (that has no properties or methods) of a string object
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Other Methods unique to Arrays
+
+- `push()`: adds one or more elements to the end of an array and returns the new length of the array: 'push(elem1, elem2, ...)`
+- `unshift()`: adds one or more elements to the beginning of an array and returns the new length of the array: `unshift(elem1, elem2, ...)`
+- `shift()`: removes the first element from an array and returns that removed element. This method changes the length of the array (no arguments). To get the removed item make sure to set it to a var: `let removedItem = arr.shift();`
+- `pop()`: removes the last element from an array and returns that element. This method changes the length of the array (no arguments)
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### High Order Array Methods
+
+- `forEach()`: function to run on each item of an array, common in `for` loops, performs a function on each item in your array, similar to using a "for" loop to apply a function to an array but with much less work to code. Unlike map(), forEach() does not create a new array automatically, you would have to code a specific function to do so
+- `filter()`: takes a function containing a test and returns a new array with all the elements that pass that test. The filtration is done using a function that returns a boolean value
+- `map()`: performs a function on every element in your array and places the result in a new array
+- `reduce()`: takes a reducer function and executes it on each array element to output a single value while returning. It takes a `reducer` function with an `accumulator` variable and a `current` element variable as required parameters. The accumulator's value is remembered across all the iterations and is ultimately returned after the final iteration
+- `every()`: Checks if **every** element in an array pass a test, returns boolean. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every).
+- `some()`: tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some).
+- `sort()`: one of the most common operations performed on an array, used to sort an array of numbers or even strings with just a single line of code, returns original array but modified
+- `reverse()`: reverses the order of the array items, does NOT do a reverse sort
+- `find()`: return the first element value (for find) or index (for findIndex) in the array that passes on the test provided by callback. If there is no match, it returns undefined (for find) or -1 (for findIndex).
+- Link: [Mastering ES6 higher-order functions for Arrays](https://www.airpair.com/javascript/posts/mastering-es6-higher-order-functions-for-arrays).
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Array Methods Notes
+
+- `.length`: used often in `for` loops
+- arr.[index]: to return a value at a specific index
+- Returns Boolean: `every()`, `includes()`, `some()`
+- Returns String: `join()`, `toString()`
+- Various: `forEach()`, `reduce()`
+- Return New Array: `filter()`, `map()`, `concat()`
+- Return Value/Position: `find()`, `indexOf()`, `lastIndexOf()`, 
+- Add:  `push()', `unshift()`,  
+- Remove: `pop()`, shift()`, `slice(start, end)`, `splice()`
+- Index change: `reverse()`, `sort()`
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Array Methods Notes
+
+
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Date Notes
+
+Pulling Date and Time Values:
+- getUTCDate() — The day (date) of the month in the specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
+- parse — Parses a string representation of a date and returns the number of milliseconds since January 1, 1970
+
+Pulling Date and Time Values:
+
+- getDate(): returns the day of the month for the specified date according to local time as a number (1-31)
+- getDay(): returns the day of the week as a number (0-6) for the specified date according to local time, where 0 represents Sunday 
+- getFullYear(): returns the year as a four-digit number (yyyy) of the specified date according to local time 
+- getHours(): Get the hour (0-23), returns the hour for the specified date, according to local time
+- getMilliseconds(): The millisecond (0-999), returns the milliseconds in the specified date according to local time
+- getMinutes(): Get the minute (0-59), returns the minutes in the specified date according to local time
+- getMonth(): Month as a number (0-11)m returns the month in the specified date according to local time, as a zero-based value (where zero indicates the first month of the year)
+- getSeconds(): Get the second (0-59), returns the seconds in the specified date according to local time
+- getTime(): Get the milliseconds since January 1, 1970, returns the number of milliseconds since the ECMAScript epoch
+
+Set Date Methods:
+- setDate(dayValue): Set the day as a number (1-31), changes the day of the month of a given Date instance, based on local time
+- setFullYear(yearValue): Sets the year (optionally month and day), sets the full year for a specified date according to local time. Returns new timestamp
+  - Additional syntax: setFullYear(yearValue, monthValue), setFullYear(yearValue, monthValue, dateValue)
+- setHours(hoursValue): Set the hour (0-23), sets the hours for a specified date according to local time, and returns the number of milliseconds since January 1, 1970
+  - Additional syntax: setHours(hoursValue, minutesValue), setHours(hoursValue, minutesValue, secondsValue), setHours(hoursValue, minutesValue, secondsValue, msValue)
+- setMilliseconds(millisecondsValue): Set milliseconds (0-999), sets the milliseconds for a specified date according to local time
+- setMinutes(minutesValue): Sets the minutes (0-59), sets the minutes for a specified date according to local time
+  - Additional syntax: setMinutes(minutesValue, secondsValue), setMinutes(minutesValue, secondsValue, msValue)
+- setMonth(monthValue): Set the month (0-11), sets the month for a specified date according to the currently set year
+  - Additional syntax: setMonth(monthValue, dayValue)
+- setSeconds(secondsValue): Sets the seconds (0-59), sets the seconds for a specified date according to local time
+  - Additional syntax: setSeconds(secondsValue, msValue)
+- setTime(timeValue): Set the time (milliseconds since January 1, 1970), sets the Date object to the time represented by a number of milliseconds since January 1, 1970
+  - Additional syntax: 
+- setUTCDate(dayValue): Sets the day of the month for a specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
