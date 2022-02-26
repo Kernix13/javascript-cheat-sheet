@@ -35,8 +35,11 @@ Important things I need to memorize and incorporate:
    - 86 add new properties to a js object - obj, newProp = "value"
    - 87 delete properties from a js object: delete obj.propname
    - 88 using objects for lookups - why does `lookup[val]` work but `lookup.val` does NOT? 
-   - 89 hasOwnProperty, 92. accessing nested arrays for nice []. notation, 93. record collection WOW, 
+   - 89 hasOwnProperty, 92. accessing nested arrays for nice []. notation, 93. record collection WOW,
+   - 96 iterate w\ js while loops 
 
+**Notes on Record Collection**:
+- 
 
 78) returning boolean values from functions:
 ```js

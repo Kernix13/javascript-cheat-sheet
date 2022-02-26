@@ -11,13 +11,13 @@ This is not an all-inclusive list of every possible JavaScript method, property,
    1. [Math and variables](#math-and-variables)
    1. [Boolean methods](#boolean-methods)
    1. [Operators and conditionals](#operators-and-conditionals)
+   1. [Loops](#loops)
    1. [String and array methods](#string-and-array-methods)
    1. [Object methods](#object-methods)
    1. [Number Methods](#number-methods)
    1. [Date methods](#date-methods)
    1. [Console Commands](#console-commands)
 1. Important Notes
-1. [Miscellaneous](#miscellaneous)
 1. [Arrays and Strings](#arrays-and-strings)
    1. [Same Methods and Same Effect](#same-methods-and-same-effect)
    1. [Different Methods and Same Effect](#different-methods-and-same-effect)
@@ -30,6 +30,8 @@ This is not an all-inclusive list of every possible JavaScript method, property,
 1. [Object Notes](#object-notes)
 1. [Number notes](#number-notes)
 1. [Date Notes](#date-notes)
+1. [Loop Notes](#loo-notes)
+1. [Miscellaneous](#miscellaneous)
 
 ## Table Comparisons
 
@@ -60,8 +62,8 @@ Object Types (everything in JS is consdered an object):
 | Function | self-explanatory | 
 | Date     | self-explanatory | 
 | JSON     | an object type most often used for data retrieved from an API | 
-| `keys`   | keys are strings and are the *name* of the property |
-| `value`  | the value that foloows `"keyName": value`|
+| `keys`   | keys are strings and are the *name* of an object property |
+| `value`  | the value that follows `"keyName": value`|
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -93,11 +95,11 @@ var, let, const:
 
 Js methods that return true or false: 
 
-| Type:                | Checks against:                      |
-| :----------          | :--------------                      |
-| <, >, <=, >= | number, .length, typeof, ...         |
-| !=, !==          | Anything                             |
-| &&, \|\|         | Checking multiple and/or conditions  |
+| Type:              | Checks against:                      |
+| :----------        | :--------------                      |
+| <, >, <=, >=       | number, .length, typeof, ...         |
+| !=, !==            | Anything                             |
+| &&, \|\|           | Checking multiple and/or conditions  |
 | hasOwnProperty()   | If an object has a property          | 
 | obj.is(a, b)       | if 2 values are the same value       |
 | isArray()          | If item checked is an array          |
@@ -106,8 +108,10 @@ Js methods that return true or false:
 | incudes(val)       | if arr or str contains the search value |
 | endsWith(val)      | if str ends with the search value    |
 | isInteger()        | if value is an integer               |
-| in operator        | if property is in the object or prototype | 
+| in operator        | if prop is `in` the obj or prototype (prop in obj) | 
 | typeof             | used with ==, ===, !=, !==           |
+
+> Common to see `typeof` with ==, ===, !=, !==
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -118,21 +122,9 @@ Operators:
 | :--------- | :----- | :----- | :------ | :------ | :------ | 
 | Assigment  | =      | +=     | -=      | *=      | /=      |
 | Comparison | <, >   | <=, >= | ==, === | !=, !== |         |
-| Arithmetic | +, -, *, /      | %      | ++      | --      |         |
+| Arithmetic | +, -, *, /      | %      | ++      | --      | **   |
 | Logical    | &&     | \|\|   | !       |         |         |
 | String     | =      | +      | +=      |         |         |
-
-<br>
-
-Loop specific:
-|    Purpose          | Symbol | 
-| :-----------        | :----: |
-| Loop addition       | +=     |
-| Loop subtraction    | -=     |
-| Loop multiplication | *=     |
-| Loop division       | /=     |
-| Loop increment      | ++     |
-| Loop decrement      | --     |
 
 <br>
 
@@ -166,30 +158,59 @@ Conditional Statements
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+### Loops
+
+Types of Loops:
+
+|    Type        | Syntax | Syntax 2          | Syntax 2 |
+| :-----------   | :----: | :----:            | :----: | 
+| while    | let i = num  | while (i cond)    | {code with i; i++} | 
+| for      | for (a; b; c) | {code with i}    |                  |
+| for in   | let i `in` obj | {code with i}   |                 |
+| for of   | let i `of` obj  | {code with i}  |                |
+| do while | let i = num  | do {code with i; i++} | while (i cond) |
+| forEach  | forEach(el)  | =>                | {code with el} | 
+
+<br>
+
+Loop specific arithmetic:
+|    Purpose          | Symbol | 
+| :-----------        | :----: |
+| Loop addition       | +=     |
+| Loop subtraction    | -=     |
+| Loop multiplication | *=     |
+| Loop division       | /=     |
+| Loop increment      | ++     |
+| Loop decrement      | --     |
+
+<br>
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ### String and array methods
 
 Strings and Arrays: Same Methods, Same Effect:
 |    Method   | Purpose: | Returns:   | Arr basic code | Str basic code | 
 | :---------- | -------: | :------:   | :------------: | :-----------:  |
-| slice()     | creates: | new str/arr | arr.slice(start, end) | str.slice(start, end) | 
-| concat()    | creates: | new str/arr | arr1.concat(arr2) | str1.concat(' ', str2)  | 
-| concat. op.| creates: | new str | -             | str1 + str2    |
+| slice()     | creates: | new arr/str | arr.slice(start, end) | str.slice(start, end) | 
+| concat()    | creates: | new arr/str | arr1.concat(arr2) | str1.concat(' ', str2)  | 
+| concat. op. | creates: | new str    | -              | str1 + str2    |
 | includes()  | checks:  | Boolean    | includes(searchVal) | includes(searchStr) | 
 | endsWith(() | checks:  | Boolean    | -                   | endsWith(searchStr) | 
 | indexOf()   | returns: | index #    | indexOf(searchVal)  | indexOf(searchStr) | 
 | lastIndexOf() | returns: | index #  | lastIndexOf(searchVal) | lastIndexOf(searchStr) |
 | [index]     | returns: | specific value | arr[index]     | str[index] | 
-| length      | returns: | str/arr len | arr.length         | str.length | 
+| length      | returns: | arr/str len | arr.length         | str.length | 
 
 <br>
 
 Strings and Arrays: Different Methods, Same Effect: 
 |    Method       | Returns:               |  Code         | 
 | :-------------  | :--------------------: | :-----------: |
-| str.charAt() | Returns the character at the specified index | str.charAt(index) | 
-| arr.at()     | Returns the array item at the given index    | arr.at(index)     | 
-| str.substring() | Returns part of a string                  | str.substring(indexStart)|
-| arr.splice() | Adds/Removes elements from an array          | arr.splice(start) |
+| str.charAt(i) | Returns the character at the specified index | str.charAt(index) | 
+| arr.at(i)     | Returns the array item at the given index    | arr.at(index)     | 
+| str.substring(i) | Returns part of a string                  | str.substring(indexStart)|
+| arr.splice(i) | Adds/Removes elements from an array          | arr.splice(start) |
 
 <br>
 
@@ -315,16 +336,6 @@ Useful console commands:
 # Important Notes
 
 Notes on various tables for specific methods and syntax.
-
-## Miscellaneous
-
-- When JS variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN`
-- Remainder operator `%` - gives the remainder of the division of two numbers
-- Escaping: use a backslash (`\`) in front of the quote in a string: `\'` or `\"`
-- Bracket notation to find the Nth-to-last character: `string.length - n`, where `n` is a # from end
-- falsy = [false, 0, "", NaN, undefined, null] | Filter falsy values out of an array. 
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Arrays and Strings 
 
@@ -505,5 +516,41 @@ Set Date Methods:
   - **Additional syntax**: `setSeconds(secondsValue, msValue)`
 - `setTime(timeValue)`: Set the time (milliseconds since January 1, 1970), sets the Date object to the time represented by a number of milliseconds since January 1, 1970
 - `setUTCDate(dayValue)`: Sets the day of the month for a specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Loop Notes
+
+- *While loops*: runs while a specified condition is true and stops once that condition is no longer true. 
+  - Be careful! It is very easy to create an infinite loop and have your computer lock up.
+- *For loops*: The most common type of JavaScript loop, it runs **`for`** a specific number of times; are declared with three optional expressions separated by semicolons; it’s also common for a loop to iterate thru an array
+  - `(a; b; c)`: stands for ( initialization; condition; final-expression ), or are declared with three optional expressions separated by semicolons
+  - The initialization statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable
+  - The condition statement is evaluated at the beginning of every loop iteration and will continue as long as it evaluates to true. When the condition is false at the start of the iteration, the loop will stop executing. This means if the condition starts as false, your loop will never execute
+  - The final expression is executed at the end of each loop iteration, prior to the next condition check and is usually used to increment or decrement your loop counter
+- *Nested for loops*: If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays
+- *Do...while loops*: it will first do one pass of the code inside the loop no matter what, and then continue to run the loop while the specified condition evaluates to true - a do...while loop ensures that the code inside the loop will run at least once
+- ***Recursion***: 
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Miscellaneous
+
+- When JS variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN`
+- Remainder operator `%` - gives the remainder of the division of two numbers
+- Escaping: use a backslash (`\`) in front of the quote in a string: `\'` or `\"`
+- Bracket notation to find the Nth-to-last character: `string.length - n`, where `n` is a # from end
+- falsy = [false, 0, "", NaN, undefined, null] | Filter falsy values out of an array. 
+- Variables which are declared without the let or const keywords are automatically created in the global scope
+- Another use of bracket notation on objects is to access a property which is stored as the value of a variable
+- You should always name variables you don't want to reassign using the const keyword
+- use the spread operator to evaluate arrays, `Math.max(...arr);`
+- use destructuring assignment to extract values from objects
+- use destructuring assignment w\ the rest parameter to reassign array elements
+- Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears, is irrelevant when referencing or accessing that key
+- An algorithm is a series of step-by-step instructions that describe how to do something 
+- To write an effective algorithm, it helps to break a problem down into smaller parts and think carefully about how to solve each part with code
+- Constructors define properties and behaviors instead of returning a value as other functions might 
+-The Fx passed to map() will run as many times as the # of items in the array it is called on 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
