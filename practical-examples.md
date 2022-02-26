@@ -50,4 +50,23 @@ Other ideas:
 
 ## Practical 2
 
-- 
+- indexOf(str): why do you want to find where a substr or arr item starts?
+```js
+let str = 'finding substring in string';
+let index = str.indexOf('str');
+
+console.log(index); // 11
+```
+
+- indexOf(str): find count (TIPS AND TRICKS)
+```js
+let str = 'You do not know what you do not know until you know.';
+let substr = 'know';
+let count = 0;
+let index = str.indexOf(substr);
+while(index !== -1) {
+    count++;
+    index = str.indexOf(substr, index + 1);
+}
+console.log(count); // 3
+```

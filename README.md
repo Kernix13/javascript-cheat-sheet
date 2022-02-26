@@ -1,4 +1,4 @@
-# JAVASCRIPT CHEAT SHEET
+# VANILLA JAVASCRIPT CHEAT SHEET
 
 This is not an all-inclusive list of every possible JavaScript method, property, etc. This file has tables of comparisons or for quick reference. 
 
@@ -35,6 +35,10 @@ This is not an all-inclusive list of every possible JavaScript method, property,
 1. [Loop Notes](#loo-notes)
 1. [Miscellaneous](#miscellaneous)
 1. [Basics](#basics)
+   1. [Read and return index and length](#read-and-return-index-and-length)
+   1. [Read and return values](#read-and-return-values)
+   1. [Create](#create)
+   1. [Update and mutate](#update-and-mutate)
 
 ## Table Comparisons
 
@@ -623,8 +627,9 @@ Set Date Methods:
   - R = Read: e.g., reading values from arrays, or objects
   - U = Update: Changing a value for an existing record like client/customer contact information
   - D = Delete: Removing a record
-- But before you can Read, Update, or Delete, you need to check if that piece of data exists. If it does not, then you can Create it. This is done with some kind of conditional statement, often as part of an if statment, though you can also use the methods that check for something:
+- But before you can Read, Update, or Delete, you need to check if that piece of data exists. This is done with some kind of conditional statement, often as part of an if statment, though you can also use the methods that check for something:
   - Review [Boolean methods](#boolean-methods) and [Operators and conditionals](#operators-and-conditionals) and [Loops](#loops) and [Regex](#regex) sections.
+- If the element does not, then you can **Create** it.
 
 If `the thing` exists, then you can read, update and/or delete. First are READ methods. 
 
@@ -638,6 +643,30 @@ Return position:
 | .length | returns the count of items | str & arr |
 | [i] | returns the value at position | str & arr |
 -->
+
+### Create
+
+Create (requires a variable):
+| Method            | Creates: |
+| :----             | :----  |
+| str.trim()        | new str |
+| str.substring(i)  | new str | 
+| str.replace()     | new str | 
+| arr.join()        | new string from array | 
+| arr or str.concat() | new array or string | 
+| arr.slice()       | new array | 
+| arr.splice()      | new array | 
+| str.split()       | new array | 
+| arr.filter()      | new array |
+| arr.map()         | new array |
+| obj.keys()        | new array of object keys | 
+| obj.values()      | new array of object values | 
+| class syntax      | create objects from a class and the `new` keyword |
+| new Date()        | create a date, month, hour, etc and asign to a var |
+| =                 | assign values using `let` or `const` |
+| user input        | create var from `getElementById`, `querySelector`, etc. |
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Read and return index and length
 
@@ -681,27 +710,11 @@ More involved returns / read:
 | Math.abs(x)   | returns the absolute value of a number |
 | Date Methods  | date values in various formats | 
 
-### Create
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-Create (requires a variable):
-| Method            | Creates: |
-| :----             | :----  |
-| str.trim()        | new str |
-| str.substring(i)  | new str | 
-| str.replace()     | new str | 
-| arr.join()        | new string from array | 
-| arr or str.concat() | new array or string | 
-| arr.slice()       | new array | 
-| arr.splice()      | new array | 
-| str.split()       | new array | 
-| arr.filter()      | new array |
-| arr.map()         | new array |
-| obj.keys()        | new array of object keys | 
-| obj.values()      | new array of object values | 
+### Update and Delete
 
-### Update and mutate
-
-Update / Mutate (assign to a variable):
+Update, Mutate, Delete (assign to a variable):
 | Method          | Returns: |
 | :----           | :----  |
 | str.replace()   | new str with updated values |
@@ -716,11 +729,27 @@ Update / Mutate (assign to a variable):
 | arr.reverse()   | changes array order | 
 | obj[prop] = val | change property value, or set if empty |
 | obj.prop = val  | variation of above |
+| `delete` obj.prop | removes prop from an object, returns `true` |
+| obj.prop = ''   | update obj.prop to empty value, also try `null`|
+| arr.length = 0  | empties the array |  
 
+<!--  
+CRUD operations for the DOM:
+| Method          | Returns: |
+| :----           | :----  |
+| innerHTML       | gets or sets the HTML contained within the element | 
+| insertAdjacentHTML | to append nodes at a specified position | 
+| appendChild     | adds a node to the end of the list of children | 
+| innerText       | the text inside an element | 
+| textContent     | outputting plain text without HTML tags | 
+| createElement   | ? | 
+-->
 
 > Look into `arr.entries()` in conjuction with `.next().value`. Also, obj.entries() is confusing as well.
 
 > What about assigning with a variable name and value? Where does that fit in?
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 BOOLEAN:
 - includes()
