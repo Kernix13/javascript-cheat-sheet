@@ -4,12 +4,12 @@ This is not an all-inclusive list of every possible JavaScript method, property,
 
 The file [notes.md](https://github.com/Kernix13/javascript-cheat-sheet/blob/master/notes.md) has a large amount of notes for me for everything and anything about JavaScript that helps me. 
 
-The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sheet/blob/master/practical-examples.md) has code blocks for everything in this file all with practical application. It does not have arrays or objects of animals or fruit, but as many real-life examples as I have used myself or can image, such as:
+The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sheet/blob/master/practical-examples.md) has code blocks for everything in this file all with practical applications. It does not have arrays or objects of animals or fruit, but as many real-life examples as I have used myself or can image, such as:
 
-1. Business client/cuustomer contact information and other pertinent data as objects
+1. Business client/cuustomer contact information and other pertinent data stored as objects
 1. Inventory and supply chain records in objects and arrays
 1. Examples for email subscriptions or user profile areas with personl greetings, messages, etc.
-1. Examples for personal hobbies and interests such as music CD/song collections, supplies needed for painting, steps for performing complex tasks, etc.
+1. Examples for personal hobbies and interests such as music CD/song collections, supplies needed for painting, steps for performing complex tasks, music theory tables, etc.
 
 <div id="back-to-top"></div>
 
@@ -51,7 +51,7 @@ The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sh
 
 ## Table Comparisons
 
-The following tables are for visual memorization. It is easy to see similarites and differences between different methods for the various data types.
+The following tables are for visual memorization. It is easy to see similarites and differences between different methods, as well as, for variabes, data types, operators, etc.
 
 ### Data types
 
