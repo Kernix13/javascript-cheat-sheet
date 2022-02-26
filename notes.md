@@ -93,10 +93,8 @@ function isEqual(a, b) {
 <h2 id="tips-and-tricks" align="center">Tips and Tricks</h2>
 
 - '=== better than ==
-- filter falsy values out of an array
 - constructors
 - IIFE
-- Math.floor(Math.random())
 - trim()
 - push.apply()
 - splice instead of delete
@@ -145,8 +143,17 @@ Concepts vs specific parts of code vs ...
 
 ### Code Specific
 
+- arguments vs parameters: 
+- arrow function: ( ) =>
+- exponential operator: 
+- Loops: for, while, do while, for in, for of
+- new Date(): 
+- Rest Parameter: (...theArgs)
+- Spread Operator: 
+- `${variable}`: 
+
 <dl>
-  <dt>callback function</dt>
+  <dt>Callback function</dt>
   <dd>lorem ipsum solve coagula </dd>
 </dl>
 <dl>
@@ -166,7 +173,7 @@ Concepts vs specific parts of code vs ...
   <dd>lorem ipsum solve coagula </dd>
 </dl>
 <dl>
-  <dt>parse</dt>
+  <dt>arse</dt>
   <dd>lorem ipsum solve coagula </dd>
 </dl>
 <dl>
@@ -190,41 +197,30 @@ Concepts vs specific parts of code vs ...
   <dd>lorem ipsum solve coagula </dd>
 </dl>
 
-- arguments vs parameters: 
-- arrow function: ( ) =>
-- exponential operator: 
-- if, else, else if, switch() case break default:
-- Loops: for, while, do while, for in, for of
-- new Date(): 
-- Rest Parameter: (...theArgs)
-- Spread Operator: 
-- `${variable}`: 
-
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Concepts
 
-- falsy = [false, 0, "", NaN, undefined, null]
 - function statement vs var function: 
 
 <dl>
-  <dt>arity</dt>
+  <dt>Arity</dt>
   <dd>lorem ipsum solve coagula </dd>
 </dl>
 <dl>
-  <dt>currying</dt>
+  <dt>Currying</dt>
   <dd>lorem ipsum solve coagula </dd>
 </dl>
 <dl>
-  <dt>error</dt>
+  <dt>Error</dt>
   <dd>lorem ipsum solve coagula </dd>
 </dl>
 <dl>
-  <dt>event bubbling</dt>
+  <dt>Event bubbling</dt>
   <dd>lorem ipsum solve coagula </dd>
 </dl>
 <dl>
-  <dtevent delegation></dt>
+  <dt>Event delegation></dt>
   <dd>lorem ipsum solve coagula </dd>
 </dl>
 <dl>
@@ -232,7 +228,7 @@ Concepts vs specific parts of code vs ...
   <dd>refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code. JavaScript's default behavior of moving declarations to the top</dd>
 </dl>
 <dl>
-  <dt>inheritance</dt>
+  <dt>Inheritance</dt>
   <dd>lorem ipsum solve coagula </dd>
 </dl>
 <dl>
@@ -245,7 +241,7 @@ Concepts vs specific parts of code vs ...
   3 types: 1) Block scope, 2) Function scope, 3) Global scope.</dd>
 </dl>
 <dl>
-  <dt>Type Coercion</dt>
+  <dt>Type coercion</dt>
   <dd>lorem ipsum solve coagula </dd>
 </dl>
 
@@ -328,6 +324,8 @@ const format = { year: "numeric", month: "short", day: "numeric" };
 
 week1.setTime(weekOne.getTime());
 week1Format = week1.toLocaleDateString('en-us', format);
+// weekOne is the output from a switch() statement which finds the day of the 
+// week for the 1st of Nov then return the date for the first Monday in November
 ```
 
 <h2 id="functions-and-return" align="center">Functions and Return</h2>

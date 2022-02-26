@@ -218,7 +218,7 @@ Common Object methods:
 
 <br>
 
-Object Ccass syntax and terms (Fx = 'function'):
+Object class syntax and terms (Fx = 'function'):
 | Class term  | Purpose:                                        | Other?       |
 | :---------- | :-------                                        | :-------            |    
 | class       | template for creating objects                   | - |
@@ -238,9 +238,9 @@ Look into [MDN Method definitions](https://developer.mozilla.org/en-US/docs/Web/
 Common Number Methods (single argument):
 | Method          | Result/Purpose: | 
 | :---            | :----            |
-| toExponential(x) | returns a string representing the Number object in exponential notation |
+| toExponential(n) | returns a string representing the Number object in exponential notation |
 | toFixed(n)       | Returns number with a specified # of decimal places | 
-| toPrecision()   | Returns a # to a specified # of significant digits |
+| toPrecision(n)   | Returns a # to a specified # of significant digits |
 | pasreFloat()    | Parses an argument and returns a floating point number |
 | toString()      | number to string | 
 | Math.abs(x)     | Returns the absolute value of x | 
@@ -322,6 +322,7 @@ Notes on various tables for specific methods and syntax.
 - Remainder operator `%` - gives the remainder of the division of two numbers
 - Escaping: use a backslash (`\`) in front of the quote in a string: `\'` or `\"`
 - Bracket notation to find the Nth-to-last character: `string.length - n`, where `n` is a # from end
+- falsy = [false, 0, "", NaN, undefined, null] | Filter falsy values out of an array. 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -467,6 +468,7 @@ Check out the [MDN Working with Objects](https://developer.mozilla.org/en-US/doc
 - `Math.random()`: returns a floating-point, pseudo-random number in the range 0 to less than 1 (inclusive of 0, but not 1) with approximately uniform distribution over that range — which you can then scale to your desired range
 - `Math.sign()`: returns either a positive or negative +/- 1, indicating the sign of a number passed into the argument
 - `Number.parseFloat()`: parses an argument and returns a floating point number. If a number cannot be parsed from the argument, it returns NaN: `Number.parseFloat(string)` where `string` is value to parse
+- `Math.floor(Math.random())`: 
 
 
 
