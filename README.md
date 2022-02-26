@@ -1,6 +1,15 @@
 # VANILLA JAVASCRIPT CHEAT SHEET
 
-This is not an all-inclusive list of every possible JavaScript method, property, etc. This file has tables of comparisons or for quick reference. 
+This is not an all-inclusive list of every possible JavaScript method, property, etc. This file has tables of comparisons for quick reference, notes on elements in the tables. At the bottom of the file is a repeat of the methods in the tables but from the perspective of CRUD.
+
+The file [notes.md](https://github.com/Kernix13/javascript-cheat-sheet/blob/master/notes.md) has a large amount of notes for me for everything and anything about JavaScript that helps me. 
+
+The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sheet/blob/master/practical-examples.md) has code blocks for everything in this file all with practical application. It does not have arrays or objects of animals or fruit, but as many real-life examples as I have used myself or can image, such as:
+
+1. Business client/cuustomer contact information and other pertinent data as objects
+1. Inventory and supply chain records in objects and arrays
+1. Examples for email subscriptions or user profile areas with personl greetings, messages, etc.
+1. Examples for personal hobbies and interests such as music CD/song collections, supplies needed for painting, steps for performing complex tasks, etc.
 
 <div id="back-to-top"></div>
 
@@ -35,9 +44,9 @@ This is not an all-inclusive list of every possible JavaScript method, property,
 1. [Loop Notes](#loo-notes)
 1. [Miscellaneous](#miscellaneous)
 1. [Basics](#basics)
+   1. [Create](#create)
    1. [Read and return index and length](#read-and-return-index-and-length)
    1. [Read and return values](#read-and-return-values)
-   1. [Create](#create)
    1. [Update and mutate](#update-and-mutate)
 
 ## Table Comparisons
