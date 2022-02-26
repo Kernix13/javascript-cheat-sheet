@@ -16,6 +16,8 @@ This is not an all-inclusive list of every possible JavaScript method, property,
    1. [Object methods](#object-methods)
    1. [Number Methods](#number-methods)
    1. [Date methods](#date-methods)
+   1. [Functions and Escaping](#functions-and-escaping)
+   1. [Regex](#regex)
    1. [Console Commands](#console-commands)
 1. Important Notes
 1. [Arrays and Strings](#arrays-and-strings)
@@ -234,7 +236,8 @@ Common Object methods:
 | obj.getOwnPropertyNames() | array | all prop names except symbols |
 | obj.toString()       | string   | obj as a string     |
 | obj.hasOwnProperty() | boolean  | if obj has (prop)   |
-| obj.prop[i] or obj.[prop][i] | value | values for array in object at position i |
+| obj.prop or obj[prop] | value   | return value for `prop` |
+| obj.prop[i] or obj.[prop][i] | value |  at pos [i] for array in object |
 | obj.prop.length      | value    | length of array in object |
 
 <br>
@@ -315,6 +318,67 @@ Set Part of a Date
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+### Functions and Escaping
+
+Basic function expressions:
+| Type     | Declare            | Call | 
+| :---     | :----- |           | :----- |
+| Standard | function() {...}   | function(); | 
+| Arrow    | () => {...}        | - | 
+| Arrow2   | () => "value"      | - | 
+| Arrow3   | (item) => {item...} | - | 
+| IIFE     | (function() {...}) | (); |
+
+
+Escaping characters:
+| Code | Character output |
+| :--- | :----- |
+| `\'` | Single quote `'` | 
+| `\"` | Double quote `"` | 
+| `\\` | Backslash `\`| 
+| `\\|` | Pipe `\|` | 
+| `\n` | New line | 
+| `\r` | Carriage return | 
+| `\t` | <kbd>TAB</kbd> | 
+
+### RegEx
+
+General: 
+
+| Char | Description | 
+| :--- | :---- |
+| \	| Escapes a special character. | 
+| i	| This flag is used to ignore upper and lowercase. /ignorecase/i. | 
+| g	|  or extract a pattern more than once. | 
+| .	| The wildcard character . will match any character except new lines. | 
+| []	| Allow you to define the characters to match. /b[au]g/ will match "bag", "bug" but not "bog". | 
+| [a-z]	| Match all the characters between a and z. | 
+| [1-9]	| Match all the numbers between 1 and 9. | 
+| [a-z1-9] | Match all the character between a and z, and the numbers between 1 and 9. | 
+| [^]	| Match the characters not in the set. [^a-e] match all other characters except A, B, C, D, and E. | 
+| +	| Match 1 or more occurrences of the previous character in a row. | 
+| *	| Match 0 or more occurrences of the previous character. | 
+| ?	| Match 0 or 1 occurrence of the previous character. Useful for Lazy matching. | 
+| ^	| Search for patterns at the beginning of strings. | 
+| $	| Search for patterns at the end of a string. | 
+| \w	| Equal to [A-Za-z0-9_]. Matches upper, lowercase, numbers the and underscore character (-). | 
+| \W	| Matches any nonword character. Equivalent to [^a-za-z0-9_]. | 
+| \d	| Equal to [0-9]. Match one digit. | 
+| \D	| Equal to [^0-9]. Match one non digit. | 
+| \s	| Match a whitespace. | 
+| \S	| Match everything except whitespace. | 
+| a{2,5}	| Match the letter a between 3 and 5 times | 
+| a{2,}	| Specify only the lower number of matches | 
+| a{5}	| Specify the exact number of matches | 
+| (...)	| Specify a group that can be acceded with number (from 1) | 
+
+Regex Methods
+| Method	| Description |
+| :-----  | :---- |
+| test()	| Returns true or false if the pattern match a string or not | 
+| match()	| Extract the actual matches found | 
+| replace()	| Search and replace text in a string | 
+
 ### Console commands
 
 Useful console commands:
@@ -388,10 +452,10 @@ There are methods in common to both arrays and strings so I am combining them fo
 
 - `toLowerCase()`: Converts string to lowercase
 - `toUpperCase()`: Converts string to uppercase
-- `trim()`: removes whitespace from both ends of a string and returns a new string, without modifying the original string
+- `trim()`: Removes whitespace from both ends of a string and returns a new string, without modifying the original string
 - `test()`:	Though, not a string method, it executes a search for a match between a regular expression and a specified string. Returns true or false: `test(str)`
 - `match()`: Used to match regular expression against a string; retrieves the result of matching a string against a regular expression: `match(RegEx)`
-- `replace()`: returns a new string with some or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. If pattern is a string, only the first occurrence will be replaced: `replace(regexp, newSubstr)`, `replace(regexp, replacerFunction)`, `replace(substr, newSubstr)`, or `replace(substr, replacerFunction)`
+- `replace()`: Returns a new string with some or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. If pattern is a string, only the first occurrence will be replaced: `replace(regexp, newSubstr)`, `replace(regexp, replacerFunction)`, `replace(substr, newSubstr)`, or `replace(substr, replacerFunction)`
 
 ### String Methods Notes
 
@@ -403,69 +467,68 @@ There are methods in common to both arrays and strings so I am combining them fo
 
 ### Other Methods unique to Arrays
 
-- `push()`: adds one or more elements to the end of an array and returns the new length of the array: 'push(elem1, elem2, ...)`
-- `unshift()`: adds one or more elements to the beginning of an array and returns the new length of the array: `unshift(elem1, elem2, ...)`
-- `shift()`: removes the first element from an array and returns that removed element. This method changes the length of the array (no arguments). To get the removed item make sure to set it to a var: `let removedItem = arr.shift();`
-- `pop()`: removes the last element from an array and returns that element. This method changes the length of the array (no arguments)
+- `push()`: Adds one or more elements to the end of an array and returns the new length of the array: 'push(elem1, elem2, ...)`
+- `unshift()`: Adds one or more elements to the beginning of an array and returns the new length of the array: `unshift(elem1, elem2, ...)`
+- `shift()`: Removes the first element from an array and returns that removed element. This method changes the length of the array (no arguments). To get the removed item make sure to set it to a var: `let removedItem = arr.shift();`
+- `pop()`: Removes the last element from an array and returns that element. This method changes the length of the array (no arguments)
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### High Order Array Methods
 
-- `forEach()`: function to run on each item of an array, common in `for` loops, performs a function on each item in your array, similar to using a "for" loop to apply a function to an array but with much less work to code. Unlike map(), forEach() does not create a new array automatically, you would have to code a specific function to do so
-- `filter()`: takes a function containing a test and returns a new array with all the elements that pass that test. The filtration is done using a function that returns a boolean value
-- `map()`: performs a function on every element in your array and places the result in a new array
-- `reduce()`: takes a reducer function and executes it on each array element to output a single value while returning. It takes a `reducer` function with an `accumulator` variable and a `current` element variable as required parameters. The accumulator's value is remembered across all the iterations and is ultimately returned after the final iteration
+- `forEach()`: Function to run on each item of an array, common in `for` loops, performs a function on each item in your array, similar to using a "for" loop to apply a function to an array but with much less work to code. Unlike map(), forEach() does not create a new array automatically, you would have to code a specific function to do so
+- `filter()`: Takes a function containing a test and returns a new array with all the elements that pass that test. The filtration is done using a function that returns a boolean value
+- `map()`: Performs a function on every element in your array and places the result in a new array
+- `reduce()`: Takes a _reducer_ function and executes it on each array element to output a single value while returning. It takes a `reducer` function with an `accumulator` variable and a `current` element variable as required parameters. The accumulator's value is remembered across all the iterations and is ultimately returned after the final iteration
 - `every()`: Checks if **every** element in an array pass a test, returns boolean. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every).
-- `some()`: tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some).
-- `sort()`: one of the most common operations performed on an array, used to sort an array of numbers or even strings with just a single line of code, returns original array but modified
-- `reverse()`: reverses the order of the array items, does NOT do a reverse sort
-- `find()`: return the first element value (for find) or index (for findIndex) in the array that passes on the test provided by callback. If there is no match, it returns undefined (for find) or -1 (for findIndex).
+- `some()`: Tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some).
+- `sort()`: One of the most common operations performed on an array, used to sort an array of numbers or even strings with just a single line of code, returns original array but modified
+- `reverse()`: Reverses the order of the array items, does NOT do a reverse sort
+- `find()` and `findIndex()`: Returns the first element value (for `find`) or index (for `findIndex`) in the array that passes on the test provided by callback. If there is no match, it returns `undefined` (for find) or `-1` (for findIndex).
 - Link: [Mastering ES6 higher-order functions for Arrays](https://www.airpair.com/javascript/posts/mastering-es6-higher-order-functions-for-arrays).
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Array Methods Notes
 
-- `.length`: used often in `for` loops
-- arr.[index]: to return a value at a specific index
-- Returns Boolean: `every()`, `includes()`, `some()`
-- Returns String: `join()`, `toString()`
-- Various: `forEach()`, `reduce()`
+- `.length`: used often in `for` loops to loop for each element
+- `arr.[index]`: to return a value at a specific index, e.g. `arr[3]` to return value at the 4th position
+- Returns boolean: `every()`, `includes()`, `some()`
+- Returns string: `join()`, `toString()`
 - Return New Array: `filter()`, `map()`, `concat()`
 - Return Value/Position: `find()`, `indexOf()`, `lastIndexOf()`, 
-- Add:  `push()', `unshift()`,  
-- Remove: `pop()`, shift()`, `slice(start, end)`, `splice()`
+- Add:  `push()`, `unshift()`,  
+- Remove: `pop()`, `shift()`, `slice(start, end)`, `splice()`
 - Index change: `reverse()`, `sort()`
+- Various: `forEach()`, `reduce()`
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Object Notes
 
-- instead of using indexes to access and modify their data, you access the data in objects through what are called `properties`
-- Properties are often `strings` - you can omit the quotes for single-word string properties; property names with spaces in them must be in quotes
+- Instead of using indexes to access and modify their data, you access the data in objects through what are called `properties`
+- Properties are often `strings` - you can omit the quotes for single-word string properties and for numbers; property names with spaces in them must be in quotes
 - Objects can be thought of as a `key`/`value` storage, like a dictionary `{word: definition}`
 - There are two ways to access the properties of an object: dot notation (`.`) and bracket notation (`[]`), similar to an array. 
 - Dot notation is what you use when you know the name of the property you're trying to access
 - If the property of the object you are trying to access has a space in its name, you will need to use bracket notation
+- It's also best to use bracket notation when a variable name is substituted for a key name, especially if the name may contain multiple words
 - Use dot or bracket notation to update a property
-- Testing objects for properties: use the `.hasOwnProperty(propname)` method of objects to determine if that object has the given property name
+- Testing objects for properties: use the `.hasOwnProperty(propName)` method of objects to determine if that object has the given property
 - The sub-properties of objects can be accessed by chaining together the dot or bracket notation
-
-Defining getters and setters
-- A **getter** is a method that gets the value of a specific property. A **setter** is a method that sets the value of a specific property. You can define getters and setters on any predefined core object or user-defined object that supports the addition of new properties.
-
 - `Object.prototype.toString()`:	Returns a string representation of the object.
 - `Object.prototype.valueOf()`:	Returns the primitive value of the specified object.
-- `Object.prototype.hasOwnProperty()`:	Returns a boolean indicating whether an object contains the specified property as a direct property of that object and not inherited through the prototype chain.
-
-There are three native ways to list/traverse object properties:
-- `for...in` loops: This method traverses all enumerable properties of an object and its prototype chain.
-- `Object.keys(o)`: This method returns an array with all the own (not in the prototype chain) enumerable properties' names ("keys") of an object o.
-- `Object.getOwnPropertyNames(o)`: This method returns an array containing all own properties' names (enumerable or not) of an object o.
-
+- `Object.prototype.hasOwnProperty()`:	Returns a boolean indicating whether an object contains the specified property as a direct property of that object _and not inherited through the prototype chain_.
 - `Object.keys()`:	Returns an array containing the names of all of the given object's own enumerable string properties.
 - `Object.values()`:	Returns an array containing the values that correspond to all of a given object's own enumerable string properties
+
+Defining getters and setters
+- A **getter** is a method that gets the value of a specific property. A **setter** is a method that sets the value of a specific property. You can define getters and setters on any predefined core object or user-defined object _that supports the addition of new properties_.
+
+There are three native ways to list/traverse object properties:
+- `for...in` loops: This method traverses all enumerable properties of an object _and its prototype chain_.
+- `Object.keys(o)`: This method returns an array with all the own (not in the prototype chain) enumerable properties names ("keys") of an object `o`.
+- `Object.getOwnPropertyNames(o)`: This method returns an array containing all own properties names (enumerable or not) of an object `o`.
 
 Check out the [MDN Working with Objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects) page.
 
@@ -479,27 +542,22 @@ Check out the [MDN Working with Objects](https://developer.mozilla.org/en-US/doc
 - `Math.random()`: returns a floating-point, pseudo-random number in the range 0 to less than 1 (inclusive of 0, but not 1) with approximately uniform distribution over that range — which you can then scale to your desired range
 - `Math.sign()`: returns either a positive or negative +/- 1, indicating the sign of a number passed into the argument
 - `Number.parseFloat()`: parses an argument and returns a floating point number. If a number cannot be parsed from the argument, it returns NaN: `Number.parseFloat(string)` where `string` is value to parse
-- `Math.floor(Math.random())`: 
-
-
+- `Math.floor(Math.random())`: "Trick" to get a random number within a certain interger range, e.g. `* 100` returns whole numbers between 0 and 99.
 
 ## Date Notes
 
 Pulling Date and Time Values:
-- `getUTCDate()` — The day (date) of the month in the specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
-- `parse` — Parses a string representation of a date and returns the number of milliseconds since January 1, 1970
-
-Pulling Date and Time Values:
-
-- `getDate()`: returns the day of the month for the specified date according to local time as a number (1-31)
-- `getDay()`: returns the day of the week as a number (0-6) for the specified date according to local time, where 0 represents Sunday 
-- `getFullYear()`: returns the year as a four-digit number (yyyy) of the specified date according to local time 
+- `getDate()`: Returns the day of the month for the specified date according to local time as a number (1-31)
+- `getDay()`: Returns the day of the week as a number (0-6) for the specified date according to local time, where 0 represents Sunday 
+- `getFullYear()`: Returns the year as a four-digit number (yyyy) of the specified date according to local time 
 - `getHours()`: Get the hour (0-23), returns the hour for the specified date, according to local time
 - `getMilliseconds()`: The millisecond (0-999), returns the milliseconds in the specified date according to local time
 - `getMinutes()`: Get the minute (0-59), returns the minutes in the specified date according to local time
 - `getMonth()`: Month as a number (0-11)m returns the month in the specified date according to local time, as a zero-based value (where zero indicates the first month of the year)
 - `getSeconds()`: Get the second (0-59), returns the seconds in the specified date according to local time
 - `getTime()`: Get the milliseconds since January 1, 1970, returns the number of milliseconds since the ECMAScript epoch
+- `getUTCDate()`: The day (date) of the month in the specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
+- `parse`: Parses a string representation of a date and returns the number of milliseconds since January 1, 1970
 
 Set Date Methods:
 - `setDate(dayValue)`: Set the day as a number (1-31), changes the day of the month of a given Date instance, based on local time
@@ -530,7 +588,8 @@ Set Date Methods:
   - The final expression is executed at the end of each loop iteration, prior to the next condition check and is usually used to increment or decrement your loop counter
 - *Nested for loops*: If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays
 - *Do...while loops*: it will first do one pass of the code inside the loop no matter what, and then continue to run the loop while the specified condition evaluates to true - a do...while loop ensures that the code inside the loop will run at least once
-- ***Recursion***: 
+- `forEach loops`: An array method that runs a function for each element in an array
+- ***Recursion***: ???
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -540,17 +599,17 @@ Set Date Methods:
 - Remainder operator `%` - gives the remainder of the division of two numbers
 - Escaping: use a backslash (`\`) in front of the quote in a string: `\'` or `\"`
 - Bracket notation to find the Nth-to-last character: `string.length - n`, where `n` is a # from end
-- falsy = [false, 0, "", NaN, undefined, null] | Filter falsy values out of an array. 
-- Variables which are declared without the let or const keywords are automatically created in the global scope
-- Another use of bracket notation on objects is to access a property which is stored as the value of a variable
-- You should always name variables you don't want to reassign using the const keyword
-- use the spread operator to evaluate arrays, `Math.max(...arr);`
-- use destructuring assignment to extract values from objects
-- use destructuring assignment w\ the rest parameter to reassign array elements
-- Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears, is irrelevant when referencing or accessing that key
+- **_Falsy_** = [`false`, `0`, `""` or `''`, `NaN`, `undefined`, and `null`]. Make sure to filter falsy values out of an array. 
+- Variables which are declared without the `let` or `const` keywords are automatically created in the global scope
+- Another use of bracket notation on objects is to access a property which is stored as the value of a variable (?)
+- You should always name variables you don't want to reassign using the `const` keyword
+- Use the spread operator to evaluate arrays, `Math.max(...arr);`
+- Use destructuring assignment to extract values from objects (?)
+- Use destructuring assignment w\ the rest parameter to reassign array elements
+- Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears is irrelevant when referencing or accessing that key
 - An algorithm is a series of step-by-step instructions that describe how to do something 
 - To write an effective algorithm, it helps to break a problem down into smaller parts and think carefully about how to solve each part with code
 - Constructors define properties and behaviors instead of returning a value as other functions might 
--The Fx passed to map() will run as many times as the # of items in the array it is called on 
+- The function passed to High Order Array Methods will run as many times as the # of items in the array it is called on 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>

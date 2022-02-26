@@ -15,13 +15,13 @@ const hasSameElements = (a, b) => {
 
 Important things I need to memorize and incorporate:
 - num1 % num2 = remainder
-- the use of +=, -=, *=, /= with numbers and += with strings
-- Escaping single and double quotes (\'\"), new line and tab (\n\t)
+- the use of +=, -=, *=, /= with numbers
+- Escaping single and double quotes (`\'\"`), new line and tab (`\n\t`)
 - Working with multi-dimensional arrays 
 - Great data scructures article: https://www.educative.io/blog/javascript-data-structures
-- Memorize and fully understand JSON.stringify() vs JSON.parse() - why would you use them with arrays?
-- Since ==, <, >, <=, >= do type coercion, you may need to include && typeof == "type you want"
-- remember not to use `=` in an if condition but use `==` or `===`
+- Memorize and fully understand `JSON.stringify()` vs `JSON.parse()` - why would you use them with arrays?
+- Since ==, <, >, <=, >= do type coercion, you may need to include `&& typeof` == "type you want"
+- Remember not to use `=` in an if condition but use `==` or `===`
 - switch(), case, break, default - freeCodeCamp basic JS section, lessons: Golf Code and Counting Cards!
 - Learn shorthand for if statements: if (a, b) return a === b;
 - `freeCodeCamp`: 
@@ -95,7 +95,7 @@ function isEqual(a, b) {
 
 <h2 id="tips-and-tricks" align="center">Tips and Tricks</h2>
 
-- '=== better than ==
+- === better than ==
 - constructors
 - IIFE
 - trim()
@@ -104,8 +104,8 @@ function isEqual(a, b) {
 - num.toFixed(#)
 - setTimeout() 
 - setInterval()
-- Avoid using try-catch-finally inside a loop
 - Set timeouts to XMLHttpRequests
+- Avoid using try-catch-finally inside a loop
 - Declare and Initialize Arrays
 - reduce!
 - Sorting Array of String, Numbers or Objects
@@ -120,7 +120,6 @@ function isEqual(a, b) {
 - use `array.slice(0, #);` to truncate an array
 - Destructuring Assignment for objects and arrays
 - short circuit operators
-- primitive types: number, string, boolean, symbol, null, and undefined
 - Dealing With Empty and Non-Empty Values: 
 
 ```js
