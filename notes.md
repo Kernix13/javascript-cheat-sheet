@@ -121,6 +121,7 @@ function isEqual(a, b) {
 - Destructuring Assignment for objects and arrays
 - short circuit operators
 - Dealing With Empty and Non-Empty Values: 
+- template literals
 
 ```js
    const arr = [0,1,2,null,undefined,"",false];
@@ -134,7 +135,7 @@ function isEqual(a, b) {
 - Good: https://blog.yogeshchavan.dev/super-useful-tips-and-tricks-for-javascript-developers
 - Good: https://www.jesssica.tech/post/Javascript-Tips-and-Tricks
 - Good: https://pratapsharma.in/javascript-tips-and-tricks
-- https://github.com/wilfredinni/javascript-cheatsheet
+- Good: https://github.com/wilfredinni/javascript-cheatsheet
 - https://github.com/alhassy/JavaScriptCheatSheet 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -175,7 +176,7 @@ Concepts vs specific parts of code vs ...
   <dd>lorem ipsum solve coagula </dd>
 </dl>
 <dl>
-  <dt>arse</dt>
+  <dt>parse</dt>
   <dd>lorem ipsum solve coagula </dd>
 </dl>
 <dl>
@@ -455,7 +456,7 @@ const maximus = Math.max(...arr);
 
 <h2 id="regex" align="center">RegEx</h2>
 
-CAPTURE GROUPS, LOOKAHEADS
+Capture Groups, Lookaheads
 - 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>

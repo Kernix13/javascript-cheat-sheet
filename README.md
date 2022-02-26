@@ -110,8 +110,8 @@ Js methods that return true or false:
 | incudes(val)       | if arr or str contains the search value |
 | endsWith(val)      | if str ends with the search value    |
 | isInteger()        | if value is an integer               |
+| test()             | RegEx test if the string contains the match expression |
 | in operator        | if prop is `in` the obj or prototype (prop in obj) | 
-| typeof             | used with ==, ===, !=, !==           |
 
 > Common to see `typeof` with ==, ===, !=, !==
 
@@ -126,7 +126,6 @@ Operators:
 | Comparison | <, >   | <=, >= | ==, === | !=, !== |         |
 | Arithmetic | +, -, *, /      | %      | ++      | --      | **   |
 | Logical    | &&     | \|\|   | !       |         |         |
-| String     | =      | +      | +=      |         |         |
 
 <br>
 
@@ -220,7 +219,7 @@ Strings and Arrays: Different Methods, Opposite Effect
 
 |    Method       | Returns:               |  Code         | 
 | :-------------  | :--------------------: | :-----------: |
-| split()  | divides str into substrings | str.split() | 
+| split()  | divides str into substrings   | str.split() | 
 | join()  | Joins all elements of an array into a string | arr.join() | 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -266,7 +265,6 @@ Common Number Methods (single argument):
 | toFixed(n)       | Returns number with a specified # of decimal places | 
 | toPrecision(n)   | Returns a # to a specified # of significant digits |
 | pasreFloat()    | Parses an argument and returns a floating point number |
-| toString()      | number to string | 
 | Math.abs(x)     | Returns the absolute value of x | 
 | Math.ceil(x)    | Always rounds a number up to the next largest integer |
 | Math.floor(x)   | Returns the largest integer less than or equal to x. |
@@ -322,7 +320,7 @@ Set Part of a Date
 
 Basic function expressions:
 | Type     | Declare            | Call | 
-| :---     | :----- |           | :----- |
+| :---     | :-----            | :----- |
 | Standard | function() {...}   | function(); | 
 | Arrow    | () => {...}        | - | 
 | Arrow2   | () => "value"      | - | 
@@ -351,7 +349,7 @@ General:
 | i	| This flag is used to ignore upper and lowercase. /ignorecase/i. | 
 | g	|  or extract a pattern more than once. | 
 | .	| The wildcard character . will match any character except new lines. | 
-| []	| Allow you to define the characters to match. /b[au]g/ will match "bag", "bug" but not "bog". | 
+| [ ]	| Allow you to define the characters to match. /b[au]g/ will match "bag", "bug" but not "bog". | 
 | [a-z]	| Match all the characters between a and z. | 
 | [1-9]	| Match all the numbers between 1 and 9. | 
 | [a-z1-9] | Match all the character between a and z, and the numbers between 1 and 9. | 
@@ -378,6 +376,8 @@ Regex Methods
 | test()	| Returns true or false if the pattern match a string or not | 
 | match()	| Extract the actual matches found | 
 | replace()	| Search and replace text in a string | 
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Console commands
 
@@ -528,7 +528,7 @@ Defining getters and setters
 There are three native ways to list/traverse object properties:
 - `for...in` loops: This method traverses all enumerable properties of an object _and its prototype chain_.
 - `Object.keys(o)`: This method returns an array with all the own (not in the prototype chain) enumerable properties names ("keys") of an object `o`.
-- `Object.getOwnPropertyNames(o)`: This method returns an array containing all own properties names (enumerable or not) of an object `o`.
+- `Object.getOwnPropertyNames(o)`: This method returns an array containing all own properties names (enumerable or not) of an object `o`. I don't see the difference with `obj.keys()`.
 
 Check out the [MDN Working with Objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects) page.
 
@@ -543,6 +543,7 @@ Check out the [MDN Working with Objects](https://developer.mozilla.org/en-US/doc
 - `Math.sign()`: returns either a positive or negative +/- 1, indicating the sign of a number passed into the argument
 - `Number.parseFloat()`: parses an argument and returns a floating point number. If a number cannot be parsed from the argument, it returns NaN: `Number.parseFloat(string)` where `string` is value to parse
 - `Math.floor(Math.random())`: "Trick" to get a random number within a certain interger range, e.g. `* 100` returns whole numbers between 0 and 99.
+- `toString()`: converts a number to a string
 
 ## Date Notes
 
@@ -613,3 +614,98 @@ Set Date Methods:
 - The function passed to High Order Array Methods will run as many times as the # of items in the array it is called on 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Basics
+
+- Any programming language accomplishes all or some of the CRUD operations:
+  - C = Create: e.g., writing to the dom, creating a copy of an array
+  - R = Read: e.g., reading values from arrays, or objects
+  - U = Update: Changing a value for an existing record like client/customer contact information
+  - D = Delete: Removing a record
+- But before you can Read, Update, or Delete, you need to check if that piece of data exists. If it does not, then you can Create it. This is done with some kind of conditional statement, often as part of an if statment, though you can also use the methods that check for something:
+  - Review [Boolean methods](#boolean-methods) and [Operators and conditionals](#operators-and-conditionals) and [Loops](#loops) and [Regex](#regex) sections.
+
+If `the thing` exists, then you can read, update and/or delete. First are READ methods. 
+
+You can read for the purpose of 1) returning the value, or 2) returning the length or the object (arr, str) or the key name for an object:
+
+
+| Method | Does: | Data Type:
+| :----  | :----  | :---- | 
+| indexOf()     | returns position | str & arr |
+| lastIndexOf() | returns position | str & arr |
+| .length | returns the count of items | str & arr |
+| [i] | returns the value at position | str & arr |
+
+Table for methods by function regardless of data type:
+
+Create (requires a variable):
+| Method    | Creates: |
+| :----     | :----  |
+| slice()   | new array | 
+| concat()  | new array | 
+| str.substring(i) | new str | 
+| arr.splice(i) | new array | 
+| str.split() | new array | 
+| arr.join() | new string | 
+| obj.keys() | new array | 
+| obj.values() | new array | 
+| str.replace() | new str | 
+| str.trim() | new str |
+| arr.filter() | new array |
+| arr.map() | new array |
+
+
+Read / Return (no variable required unless to be used later): index #, length, or item
+| Method    | Returns: |
+| :----     | :----  |
+| indexOf() | index # |
+| lastIndexOf() | index # |
+| .length   | length of arr/str |
+| arr.findIndex() | item index for first occurrence that passes test | 
+| arr.push() | new length of arr | 
+| arr.unshift() | new length of arr | 
+
+
+Read / Return (more than likely requires a variable to be useful, though not necessary):
+| Method    | Returns: |
+| :----     | :----  |
+| str[i]        | str value at index position |
+| arr[i]        | arr value at index position |
+| obj.prop      | obj value for prop |
+| obj[prop]     | obj value for prop |
+| obj.prop[i]   | arr value at index position for obj prop |
+| obj[prop][i]  | arr value at index position for obj prop |
+| str.charAt(i) | character at index # |
+| arr.at(i)     | item at index # |
+| arr.find()    | item value for first occurrence that passes test |   
+| arr.reduce()  | single value | 
+| arr.shift()   | item value removed | 
+| arr.pop()     | item value removed | 
+| str.match()   | str value(s) that matches RegEx |
+| Number methods | formatted number, e.g.: | 
+| num.toFixed(2) | returns number with 2 decimal places |
+| Math methods | calculated number, e.g.: | 
+| Math.abs(x)  | returns the absolute value of a number |
+| Date Methods | date values in various formats | 
+
+Update / Mutate (assign to a variable maybe???):
+| Method    | Returns: |
+| :----     | :----  |
+| arr.splice(i) | changes array contents | 
+| str.replace() | new str with updated values |
+| str.toLowerCase() | returns str as lowercase |  
+| str.toUpperCase() | returns str as uppercase |
+| arr.push() | changes array contents | 
+| arr.unshift() | changes array contents | 
+| arr.shift() | changes array contents | 
+| arr.pop() | changes array contents | 
+| arr.sort() | changes array order | 
+| arr.reverse() | changes array order | 
+| obj[prop] = val | change property value, or set if empty |
+| obj.prop = val | variation of above |
+
+
+> Look into `arr.entries()` in conjuction with `.next().value`. Also, obj.entries() is confusing as well.
+
+> What about assigning with a variable name and value? Where does that fit in?
