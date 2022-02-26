@@ -28,6 +28,7 @@ This is not an all-inclusive list of every possible JavaScript method, property,
    1. [High Order Array Methods](#high-order-array-methods)
    1. [Array Methods Notes](#array-methods-notes)
 1. [Object Notes](#object-notes)
+1. [Number notes](#number-notes)
 1. [Date Notes](#date-notes)
 
 ## Table Comparisons
@@ -73,7 +74,8 @@ Basic math operators:
 | Subtraction     | -      | 
 | Multiplication  | *      |
 | Division        | /      | 
-| **Remainder**       | %      |
+| **Remainder**   | %      |
+| Exponentiation  | a**b   | 
 
 <br>
 
@@ -233,25 +235,29 @@ Look into [MDN Method definitions](https://developer.mozilla.org/en-US/docs/Web/
 
 ### Number methods
 
-Common Number Methods
-
-| Method | Result/Purpose: | 
-| :---   | :----            |
-| toExponential() | rounded, exp. notation |
-| toFixed()       | specified decimal places | 
-| toPrecision()   | specified length |
+Common Number Methods (single argument):
+| Method          | Result/Purpose: | 
+| :---            | :----            |
+| toExponential(x) | returns a string representing the Number object in exponential notation |
+| toFixed(n)       | Returns number with a specified # of decimal places | 
+| toPrecision()   | Returns a # to a specified # of significant digits |
+| pasreFloat()    | Parses an argument and returns a floating point number |
 | toString()      | number to string | 
 | Math.abs(x)     | Returns the absolute value of x | 
-| Math.ceil(x)    | Returns the smallest integer greater than or equal to x |
+| Math.ceil(x)    | Always rounds a number up to the next largest integer |
 | Math.floor(x)   | Returns the largest integer less than or equal to x. |
-| Math.max([x[, y[, …]]]) | Returns the largest of zero or more numbers |
-| Math.min([x[, y[, …]]]) | Returns the smallest of zero or more numbers. |
-| Math.pow(x, y)  | Returns base x to the exponent power y (that is, x^y). |
 | Math.random(x)  | Returns a pseudo-random number between 0 and 1. |
 | Math.round(x)   | Returns the value of the number x rounded to the nearest integer. |
 | Math.sign(x)    | Returns the sign of the x, indicating whether x is positive, negative, or zero. |
 | Math.sqrt(x)    | Returns the positive square root of x. |
-| Math.trunc(x)   | Returns the integer portion of x, removing any fractional digits. |
+| Math.trunc(x)   | Returns the integer portion of `x`, removing any fractional digits. |
+
+Common Number Methods (2 or more arguments):
+| Method | Result/Purpose: | 
+| :---   | :----           |
+| Math.max(n1, n2, ...)   | Returns the largest of zero or more numbers |
+| Math.min(n1, n2, ...))  | Returns the smallest of zero or more numbers. |
+| Math.pow(x, y)          | Returns base x to the exponent power y (that is, x^y). |
 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -452,6 +458,17 @@ There are three native ways to list/traverse object properties:
 Check out the [MDN Working with Objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects) page.
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Number notes
+
+- `Math.max()`: returns the largest of the zero or more numbers given as input parameters, or NaN if any parameter isn't a number and can't be converted into one: `Math.max(value0, value1)`, `Math.max(value0, value1, /* ... ,*/ valueN)`
+- `Math.min()`: returns the lowest-valued number passed into it, or NaN if any parameter isn't a number and can't be converted into one: `Math.min(value0, value1)`, `Math.min(value0, value1, ... , valueN)`
+- `Math.pow()`: static method, given two arguments, base and exponent, returns baseexponent: `Math.pow(base, exponent)`
+- `Math.random()`: returns a floating-point, pseudo-random number in the range 0 to less than 1 (inclusive of 0, but not 1) with approximately uniform distribution over that range — which you can then scale to your desired range
+- `Math.sign()`: returns either a positive or negative +/- 1, indicating the sign of a number passed into the argument
+- `Number.parseFloat()`: parses an argument and returns a floating point number. If a number cannot be parsed from the argument, it returns NaN: `Number.parseFloat(string)` where `string` is value to parse
+
+
 
 ## Date Notes
 

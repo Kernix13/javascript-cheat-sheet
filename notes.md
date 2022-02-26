@@ -144,53 +144,109 @@ function isEqual(a, b) {
 Concepts vs specific parts of code vs ...
 
 ### Code Specific
+
+<dl>
+  <dt>callback function</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+<dl>
+  <dt>currentTarget</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+<dl>
+  <dt>IIFE</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+<dl>
+  <dt>JSON.parse()</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+<dl>
+  <dt>JSON.stringify()</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+<dl>
+  <dt>parse</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+<dl>
+  <dt>parseInt</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+<dl>
+  <dt>Rest Parameter</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+<dl>
+  <dt>Spread Operator</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+<dl>
+  <dt>target</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+<dl>
+  <dt>"use strict"</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+
 - arguments vs parameters: 
 - arrow function: ( ) =>
-- callback function: 
-- currentTarget: 
 - exponential operator: 
 - if, else, else if, switch() case break default:
-- IIFE: 
-- JSON.parse()
-- JSON.stringify()
 - Loops: for, while, do while, for in, for of
 - new Date(): 
-- parse: 
-- parseInt:
-- remainder %
 - Rest Parameter: (...theArgs)
 - Spread Operator: 
-- target: 
-- "use strict": 
 - `${variable}`: 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Concepts
 
-- arity: 
-- currying: 
-- error:
-- event bubbling: 
-- event delegation: 
 - falsy = [false, 0, "", NaN, undefined, null]
 - function statement vs var function: 
-- hoisting: 
-- inheritance:
-- recursion: 
-- scope: 
-- Type Coercion: 
 
-Definition test
-
+<dl>
+  <dt>arity</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+<dl>
+  <dt>currying</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+<dl>
+  <dt>error</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+<dl>
+  <dt>event bubbling</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+<dl>
+  <dtevent delegation></dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
 <dl>
   <dt>Hoisting</dt>
   <dd>refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code. JavaScript's default behavior of moving declarations to the top</dd>
 </dl>
 <dl>
+  <dt>inheritance</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+<dl>
+  <dt>recursion</dt>
+  <dd>lorem ipsum solve coagula </dd>
+</dl>
+<dl>
   <dt>Scope</dt>
   <dd>Scope determines the accessibility (visibility) of variables. There are 
   3 types: 1) Block scope, 2) Function scope, 3) Global scope.</dd>
+</dl>
+<dl>
+  <dt>Type Coercion</dt>
+  <dd>lorem ipsum solve coagula </dd>
 </dl>
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
