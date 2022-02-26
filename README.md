@@ -694,10 +694,10 @@ Create (requires a variable):
 | arr.slice()       | new array | 
 | arr.splice()      | new array | 
 | str.split()       | new array | 
-| obj.keys()        | new array | 
-| obj.values()      | new array | 
 | arr.filter()      | new array |
 | arr.map()         | new array |
+| obj.keys()        | new array of object keys | 
+| obj.values()      | new array of object values | 
 
 ### Update and mutate
 
