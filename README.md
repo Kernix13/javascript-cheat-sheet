@@ -629,7 +629,7 @@ Set Date Methods:
 If `the thing` exists, then you can read, update and/or delete. First are READ methods. 
 
 You can read for the purpose of 1) returning the value, or 2) returning the length or the index # (arr, str) of an item, or 3) the key name for an object:
-
+<!--  
 Return position:
 | Method | Does: | Data Type:
 | :----  | :----  | :---- | 
@@ -637,8 +637,9 @@ Return position:
 | lastIndexOf() | returns position | str & arr |
 | .length | returns the count of items | str & arr |
 | [i] | returns the value at position | str & arr |
+-->
 
-Table for methods by function regardless of data type:
+### Read and return index and length
 
 Read / Return index # and length (no variable required unless to be used later): 
 | Method          | Returns: |
@@ -650,19 +651,21 @@ Read / Return index # and length (no variable required unless to be used later):
 | arr.push()      | length of new arr after mutating arr | 
 | arr.unshift()   | length of new arr after mutating arr | 
 
-Read / Return (more than likely requires a variable to be useful, though not necessary):
+### Read and return values
 
-Simple returns / read:
+Simple returns / read (more than likely requires a variable to be useful, though not necessary):
 | Method        | Returns: |
 | :----         | :----  |
 | str[i]        | str value at index position |
-| str.charAt(i) | str value at index position |
+| str.charAt(i) | same as above |
 | arr[i]        | arr value at index position |
-| arr.at(i)     | arr value at index position|
+| arr.at(i)     | same as above, try `arr.at(-1)` for last item |
 | obj.prop      | obj value for prop |
 | obj[prop]     | variation of above |
 | obj.prop[i]   | arr value at index position for obj prop |
 | obj[prop][i]  | variation of above |
+
+<br>
 
 More involved returns / read:
 | Method        | Returns: |
@@ -678,6 +681,8 @@ More involved returns / read:
 | Math.abs(x)   | returns the absolute value of a number |
 | Date Methods  | date values in various formats | 
 
+### Create
+
 Create (requires a variable):
 | Method            | Creates: |
 | :----             | :----  |
@@ -685,7 +690,7 @@ Create (requires a variable):
 | str.substring(i)  | new str | 
 | str.replace()     | new str | 
 | arr.join()        | new string from array | 
-| arr or str.concat()  | new array or string | 
+| arr or str.concat() | new array or string | 
 | arr.slice()       | new array | 
 | arr.splice()      | new array | 
 | str.split()       | new array | 
@@ -693,6 +698,8 @@ Create (requires a variable):
 | obj.values()      | new array | 
 | arr.filter()      | new array |
 | arr.map()         | new array |
+
+### Update and mutate
 
 Update / Mutate (assign to a variable):
 | Method          | Returns: |
