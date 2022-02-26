@@ -34,6 +34,7 @@ This is not an all-inclusive list of every possible JavaScript method, property,
 1. [Date Notes](#date-notes)
 1. [Loop Notes](#loo-notes)
 1. [Miscellaneous](#miscellaneous)
+1. [Basics](#basics)
 
 ## Table Comparisons
 
@@ -627,9 +628,9 @@ Set Date Methods:
 
 If `the thing` exists, then you can read, update and/or delete. First are READ methods. 
 
-You can read for the purpose of 1) returning the value, or 2) returning the length or the object (arr, str) or the key name for an object:
+You can read for the purpose of 1) returning the value, or 2) returning the length or the index # (arr, str) of an item, or 3) the key name for an object:
 
-
+Return position:
 | Method | Does: | Data Type:
 | :----  | :----  | :---- | 
 | indexOf()     | returns position | str & arr |
@@ -639,73 +640,85 @@ You can read for the purpose of 1) returning the value, or 2) returning the leng
 
 Table for methods by function regardless of data type:
 
-Create (requires a variable):
-| Method    | Creates: |
-| :----     | :----  |
-| slice()   | new array | 
-| concat()  | new array | 
-| str.substring(i) | new str | 
-| arr.splice(i) | new array | 
-| str.split() | new array | 
-| arr.join() | new string | 
-| obj.keys() | new array | 
-| obj.values() | new array | 
-| str.replace() | new str | 
-| str.trim() | new str |
-| arr.filter() | new array |
-| arr.map() | new array |
-
-
-Read / Return (no variable required unless to be used later): index #, length, or item
-| Method    | Returns: |
-| :----     | :----  |
-| indexOf() | index # |
-| lastIndexOf() | index # |
-| .length   | length of arr/str |
-| arr.findIndex() | item index for first occurrence that passes test | 
-| arr.push() | new length of arr | 
-| arr.unshift() | new length of arr | 
-
+Read / Return index # and length (no variable required unless to be used later): 
+| Method          | Returns: |
+| :----           | :----  |
+| indexOf()       | index # |
+| lastIndexOf()   | index # |
+| arr.findIndex() | index # for first occurrence that passes test | 
+| .length         | length of arr/str |
+| arr.push()      | length of new arr after mutating arr | 
+| arr.unshift()   | length of new arr after mutating arr | 
 
 Read / Return (more than likely requires a variable to be useful, though not necessary):
-| Method    | Returns: |
-| :----     | :----  |
+
+Simple returns / read:
+| Method        | Returns: |
+| :----         | :----  |
 | str[i]        | str value at index position |
+| str.charAt(i) | str value at index position |
 | arr[i]        | arr value at index position |
+| arr.at(i)     | arr value at index position|
 | obj.prop      | obj value for prop |
-| obj[prop]     | obj value for prop |
+| obj[prop]     | variation of above |
 | obj.prop[i]   | arr value at index position for obj prop |
-| obj[prop][i]  | arr value at index position for obj prop |
-| str.charAt(i) | character at index # |
-| arr.at(i)     | item at index # |
-| arr.find()    | item value for first occurrence that passes test |   
-| arr.reduce()  | single value | 
-| arr.shift()   | item value removed | 
-| arr.pop()     | item value removed | 
+| obj[prop][i]  | variation of above |
+
+More involved returns / read:
+| Method        | Returns: |
+| :----         | :----  |
+| arr.find()    | arr value for first occurrence that passes test |   
+| arr.reduce()  | single value after function | 
+| arr.shift()   | item value removed from arr | 
+| arr.pop()     | item value removed from arr | 
 | str.match()   | str value(s) that matches RegEx |
 | Number methods | formatted number, e.g.: | 
 | num.toFixed(2) | returns number with 2 decimal places |
-| Math methods | calculated number, e.g.: | 
-| Math.abs(x)  | returns the absolute value of a number |
-| Date Methods | date values in various formats | 
+| Math methods  | calculated number, e.g.: | 
+| Math.abs(x)   | returns the absolute value of a number |
+| Date Methods  | date values in various formats | 
 
-Update / Mutate (assign to a variable maybe???):
-| Method    | Returns: |
-| :----     | :----  |
-| arr.splice(i) | changes array contents | 
-| str.replace() | new str with updated values |
+Create (requires a variable):
+| Method            | Creates: |
+| :----             | :----  |
+| str.trim()        | new str |
+| str.substring(i)  | new str | 
+| str.replace()     | new str | 
+| arr.join()        | new string from array | 
+| arr or str.concat()  | new array or string | 
+| arr.slice()       | new array | 
+| arr.splice()      | new array | 
+| str.split()       | new array | 
+| obj.keys()        | new array | 
+| obj.values()      | new array | 
+| arr.filter()      | new array |
+| arr.map()         | new array |
+
+Update / Mutate (assign to a variable):
+| Method          | Returns: |
+| :----           | :----  |
+| str.replace()   | new str with updated values |
 | str.toLowerCase() | returns str as lowercase |  
 | str.toUpperCase() | returns str as uppercase |
-| arr.push() | changes array contents | 
-| arr.unshift() | changes array contents | 
-| arr.shift() | changes array contents | 
-| arr.pop() | changes array contents | 
-| arr.sort() | changes array order | 
-| arr.reverse() | changes array order | 
+| arr.splice(i)   | changes array contents | 
+| arr.push()      | changes array contents | 
+| arr.unshift()   | changes array contents | 
+| arr.shift()     | changes array contents | 
+| arr.pop()       | changes array contents | 
+| arr.sort()      | changes array order | 
+| arr.reverse()   | changes array order | 
 | obj[prop] = val | change property value, or set if empty |
-| obj.prop = val | variation of above |
+| obj.prop = val  | variation of above |
 
 
 > Look into `arr.entries()` in conjuction with `.next().value`. Also, obj.entries() is confusing as well.
 
 > What about assigning with a variable name and value? Where does that fit in?
+
+BOOLEAN:
+- includes()
+- endsWith(()
+- obj.hasOwnProperty()
+- str.test()
+- arr.every()
+- arr.some() 
