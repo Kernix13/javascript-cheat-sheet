@@ -128,9 +128,9 @@ Js methods that return true or false:
 | isInteger()        | if value is an integer               |
 | test()             | RegEx test if the string contains the match expression |
 | in operator        | if prop is `in` the obj or prototype (prop in obj) | 
-| 0, "", let x;      | all equal `false` | 
-| NaN, undefined, false | also equal `false` |
-| 1, all things with a value | equal `true` | 
+| false, 0, "", let x; | all equal `false`                  | 
+| NaN, undefined,    | also equal `false`                   |
+| 1 & any non-false value | equals `true`                    | 
 
 > Common to see `typeof` with ==, ===, !=, !==
 
