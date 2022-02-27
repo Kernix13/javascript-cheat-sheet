@@ -118,6 +118,7 @@ Js methods that return true or false:
 | &&, \|\|           | Checking multiple and/or conditions  |
 | hasOwnProperty()   | If an object has a property          | 
 | obj.is(a, b)       | if 2 values are the same value       |
+| obj instanceof objType | if object is of the specified object type | 
 | isArray()          | If item checked is an array          |
 | isNaN()            | if a value is NaN or not             | 
 | every()            | if ALL elements pass a test          |
@@ -127,6 +128,8 @@ Js methods that return true or false:
 | isInteger()        | if value is an integer               |
 | test()             | RegEx test if the string contains the match expression |
 | in operator        | if prop is `in` the obj or prototype (prop in obj) | 
+| 0, "", let x;      | all equal false | 
+| NaN, undefined, false | also equal false |
 
 > Common to see `typeof` with ==, ===, !=, !==
 
@@ -141,6 +144,7 @@ Operators:
 | Comparison | <, >   | <=, >= | ==, === | !=, !== |         |
 | Arithmetic | +, -, *, /      | %      | ++      | --      | **   |
 | Logical    | &&     | \|\|   | !       |         |         |
+| Type       | typeof | instanceof |    |         |           | 
 
 <br>
 
@@ -414,6 +418,12 @@ Useful console commands:
 # Important Notes
 
 Notes on various tables for specific methods and syntax.
+
+Miscellaneous:
+
+- `typeof`: Returns the type of a variable
+- `instanceof`: Returns true if an object is an instance of an object type
+
 
 ## Arrays and Strings 
 

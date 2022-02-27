@@ -115,7 +115,7 @@ function isEqual(a, b) {
 - ways to shorten if statements: ternary, &&, 
 - comma operator
 - spread operator to merge 2 objects
-- undefined vs null
+- undefined (a variable that has not been assigned a value) vs null (intentional empty value)
 - arr.slice(-1) to get last item
 - use `array.slice(0, #);` to truncate an array
 - Destructuring Assignment for objects and arrays
