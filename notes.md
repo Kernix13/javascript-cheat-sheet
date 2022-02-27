@@ -177,7 +177,7 @@ Concepts vs specific parts of code vs ...
 </dl>
 <dl>
   <dt>parse</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>Data parsing is a process in which a string of data is converted from one format to another</dd>
 </dl>
 <dl>
   <dt>parseInt</dt>
@@ -220,11 +220,11 @@ Concepts vs specific parts of code vs ...
 </dl>
 <dl>
   <dt>Event bubbling</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>the bubbling up of events thru the DOM – so when an event happens it will bubble up thru its parents -  all the way to the body tag</dd>
 </dl>
 <dl>
   <dt>Event delegation></dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>the opposite – it’s when we put the listener on one of the parents elements, then we use logic inside of the event handler to target the element we actually want</dd>
 </dl>
 <dl>
   <dt>Hoisting</dt>
@@ -247,6 +247,75 @@ Concepts vs specific parts of code vs ...
   <dt>Type coercion</dt>
   <dd>lorem ipsum solve coagula </dd>
 </dl>
+
+The best of my notes from Traversy course:
+
+- 8 - primitive data types: string, number, boolean, null, undefined - stored directly in the location that the variables accesses - stored on the stack
+- reference types: arrays, object literals, functions, dates - accessed by reference, so the data isn’t actually stored in the variable – objects that are stored on the heap, the heap being dynalically alocated memory
+- typeof operator – used with the reference data types will return ‘object’ for all of them 
+- 9 - type conversion is where you change the datatype of a variable – e.g., data from a form will be a string by default but you may want to parse it
+- `length - 1`
+- 12 - template literals / template strings: ${ variables names or expressions/math or a function call or use conditionals / ternary op  }
+- 13 - arr.sort() - great for strings but not the right result for a numbers based array
+- `find()` method which takes in a testing Fx: arr.find(functionName) where functionName does a simple comparison and it gets an argument which s\b your array items I think – it returns the first number that neets the criteria
+- the THIS keyword – trying to access another key in an object inside a Fx
+- 15 – dates & times: new Date() - defaults to the present day if you don’t pass it anything
+- new Date(year, monthIndex, day, hours, minutes, seconds)
+- 16 - if (typeof thing !== 'undefined') – now you won’t get an error
+- 18 - FUNCTION EXPRESSIONS: it’s when a Fx is the value of a variable, usually they are anonymous
+- OBJECT ORIENTED PROGRAMMING: Fx’s inside of objects as opposed to in the global scope - in this case they are called METHODS – a Fx in an object `todo` called `add` or `edit` and you call it by `todo.add()` - or `todo.edit(id)`
+- 19 - array specific iteration with forEach and map 
+- BREAK and CONTINUE are really important things to know for loops
+- forEach: takes in a callback function, an anonymous Fx – the anon Fx can take in 3 parameters, but you only need one – whatever you want to use as the current iteration, or the iterator -
+- the first of the 3 things the Fx takes in is the iterator – the next is the index which is the index for each item in the array – and you can also pass in array for the actual array 
+- map: map can work in a few diff ways – it’s used to return something diff – to return a diff array
+- `for in` loop: often used for objects – create a user object > then for (let x in user) returns the names of the keys – user[x]) returns the values
+- 24 - DOM selectors (methods) for single elements: getElementById, querySelector, getElementsByClassName, getElementsByTagName, querySelectorAll
+- creating elements: className, setAttribute, appendChild, createTextNode, createElement, replaceChild, getAttribute, hasAttribute, removeAttribute, 
+- 29 - NOTE: some elements have default behaviors – to stop the default behavior, pass a parm into the cb Fx and do e.preventDefault()
+- Event Target Element: can get e.taget.className or to get a collection change className to classList - TARGET is really important especially for event delegation 
+- 33 - localStorage: JSON.stringify, JSON.parse, clear, getItem, removeItem, setItem
+- SKIP 4) DOM Projects 
+- 44 - OOP: constructors & _this_ Keyword: the most important things in OOP is the Constructor and the `this` keyword: if you want to create multiple instances of a certain type of object then you want to create a constructor
+- the `this` keyword refers to the current instance of the object, the function scope
+- NOTE: constructors are really powerful when they have fx’s w\in them known as methods
+- 46 - each object in JS has a prototype – a prototype is an object itself – all objects inherit their properties and methods from their prototypes = Object.prototype vs Client.prototype 
+- Object.prototype – you can see its methods like hasOwnProperty, toString, valueOf
+- 47 - prototype inheritance: to have one object or one object type inherit from another 
+- use .call(a, b, c, ...) - call is a fx that allows us to call another Fx from somewhere else in the current context 
+- 49 – ES6 classes: Any method you add inside the class gets added to the prototype and you still have Object.prototype 
+- Static Methods – ones you can use without instantiating a new object or instance
+- 50 inheritance and extending classes – or known as sub-classes 
+- when you instantiate a sub-class you want to call the class constructor and you do that with a Fx called super() - that calls the parent class constructor – you have to pass in the parameters in common
+
+7) Async JS, AJAX & Fetch API
+- ajax and the fetch api to make http requests to files, apis, and services whether they are your own or not - 
+- asynchronous Fx’s – you pass in a callback Fx which is one method for handling asynchronous code
+- most async code you work with will come from an API or a library s\a AJAX and the XHR object – also jquery, libs like Axios, the fetch api, the Node.js filesystem (fs) module, XMLHttpRequest – these are all async technologies 
+- the ways to work w\ Async code: 1. Callbacks, 2. Promises, 3. Async/Await 
+- 58 Ajax – a set of web technologies to send and receeive data from the client & server asynchronously – done behind the scenes w\o having to relaod the page 
+- updating a section of the page is faster w\ AJAX than having to reload the page - this happens by making an asynchronous AJAX or JS call – it goes thru an AJAX engine and uses the XmlHttpRequest object 
+- the server returns the data usually in JSON format - then we parse and use that data in our application - 
+- when we send and receive requests it can be from something on out local machine or from a public API - these APIS must have permissions granted for us to be able to use them - they usually have CORS enabled which allows for cross domain communication meaning we can make requests to their API even though we are on a different domain name 
+- 59 - use new kw to instantiate a new instance of XMLHttpRequest which has properties like open()
+- SUMMARY: 1. an event listener that 2. calls a Fx which 3. creates a new instance of the xhr object, 4. .open() is called and we pass in 4a. the type of request and the 4b. url/filename and 4c. true for asynchronous, when ready, 5. onload is called where we 6. check for staus = 200, 7. we do something w\ the response text, 8. .send to make it work
+- there are also something called readyState values
+- 61 - if you built a full-stack app it can be from your own api or from an external api - .open(), .send(), .onload() - 
+- 62 - REST stands for REpresentational State Transfer – it’s a architecture style for designing networked applications – it works by relying on a stateless client-server communication protocol and is almost always HTTP 
+- REST was made to treat objects on the server side as resources that can be created, updated, read and deleted (CRUD)
+- what makes REST awesome is that since it operates using just HTTP requests and usually a standard like JSON 
+- an API is the messenger and REST lets us use HTTP requests to format the message
+- a REST API takes in multiple types of HTTP requests → GET, POST, PUT, DELETE, HEAD, OPTIONS, PATCH 
+- ENDPOINTS: the url’s that you access to do certain things
+- with POST, PUT and DELETE you will send data long w\ your rquest – the API needs to know what data to add, update or delete 
+- 63 – callback Fxs: function that is passed in as a parameter to another function and is then ran inside the Fx body - the one in forEach is synchronous – setTimeout uses an asynchronous cb
+- 64, 65 - confusing 
+- 66 – ES6 promises: 
+- 67 – Fetch API: 
+- 68 – Error handling w\ Fetch: 
+- 69 – arrow Fxs: 
+- 71 – async & await: 
+
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 

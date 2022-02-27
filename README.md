@@ -42,12 +42,12 @@ The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sh
 1. [Number notes](#number-notes)
 1. [Date Notes](#date-notes)
 1. [Loop Notes](#loo-notes)
-1. [Miscellaneous](#miscellaneous)
-1. [Basics](#basics)
+1. [JavaScript version of CRUD](#javascript-version-of-crud)
    1. [Create](#create)
    1. [Read and return index and length](#read-and-return-index-and-length)
    1. [Read and return values](#read-and-return-values)
    1. [Update and mutate](#update-and-mutate)
+1. [Miscellaneous](#miscellaneous)
 
 ## Table Comparisons
 
@@ -119,6 +119,7 @@ Js methods that return true or false:
 | hasOwnProperty()   | If an object has a property          | 
 | obj.is(a, b)       | if 2 values are the same value       |
 | isArray()          | If item checked is an array          |
+| isNaN              | if a value is NaN or not             | 
 | every()            | if ALL elements pass a test          |
 | some()             | if at least ONE element passes a test |
 | incudes(val)       | if arr or str contains the search value |
@@ -608,41 +609,22 @@ Set Date Methods:
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Miscellaneous
+## JavaScript version of CRUD
 
-- When JS variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN`
-- Remainder operator `%` - gives the remainder of the division of two numbers
-- Escaping: use a backslash (`\`) in front of the quote in a string: `\'` or `\"`
-- Bracket notation to find the Nth-to-last character: `string.length - n`, where `n` is a # from end
-- **_Falsy_** = [`false`, `0`, `""` or `''`, `NaN`, `undefined`, and `null`]. Make sure to filter falsy values out of an array. 
-- Variables which are declared without the `let` or `const` keywords are automatically created in the global scope
-- Another use of bracket notation on objects is to access a property which is stored as the value of a variable (?)
-- You should always name variables you don't want to reassign using the `const` keyword
-- Use the spread operator to evaluate arrays, `Math.max(...arr);`
-- Use destructuring assignment to extract values from objects (?)
-- Use destructuring assignment w\ the rest parameter to reassign array elements
-- Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears is irrelevant when referencing or accessing that key
-- An algorithm is a series of step-by-step instructions that describe how to do something 
-- To write an effective algorithm, it helps to break a problem down into smaller parts and think carefully about how to solve each part with code
-- Constructors define properties and behaviors instead of returning a value as other functions might 
-- The function passed to High Order Array Methods will run as many times as the # of items in the array it is called on 
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-## Basics
-
-- Any programming language accomplishes all or some of the CRUD operations:
+Any programming language accomplishes all or some of the CRUD operations:
   - C = Create: e.g., writing to the dom, creating a copy of an array
   - R = Read: e.g., reading values from arrays, or objects
   - U = Update: Changing a value for an existing record like client/customer contact information
   - D = Delete: Removing a record
-- But before you can Read, Update, or Delete, you need to check if that piece of data exists. This is done with some kind of conditional statement, often as part of an if statment, though you can also use the methods that check for something:
-  - Review [Boolean methods](#boolean-methods) and [Operators and conditionals](#operators-and-conditionals) and [Loops](#loops) and [Regex](#regex) sections.
-- If the element does not, then you can **Create** it.
 
-If `the thing` exists, then you can read, update and/or delete. First are READ methods. 
+Although, that tends to be when ineracting with databases. However, you can apply that acronym to front-end JavaScript as well. This is just another way of visualizing and understanding JS. 
 
-You can read for the purpose of 1) returning the value, or 2) returning the length or the index # (arr, str) of an item, or 3) the key name for an object:
+But before you can Read, Update, or Delete, you need to check if a piece of data exists. This is done with some kind of conditional statement, often as part of an if statment, though you can also use the methods and conditionals for that:
+  - Go back to the [Boolean methods](#boolean-methods) and [Operators and conditionals](#operators-and-conditionals) and [Loops](#loops) and [Regex](#regex) sections.
+
+If the element does not, then you can **Create** it. If `the thing` exists, then you can read, update and/or delete. First are READ methods. You can **read** for the purpose of 1) returning the value, or 2) returning the length or the index # (arr, str) of an item. 
+
+Let's look at create, then read/return, and finally update/mutate and delete.
 <!--  
 Return position:
 | Method | Does: | Data Type:
@@ -670,6 +652,7 @@ Create (requires a variable):
 | arr.map()         | new array |
 | obj.keys()        | new array of object keys | 
 | obj.values()      | new array of object values | 
+| Object.create     | new object, using an existing object as the prototype |
 | class syntax      | create objects from a class and the `new` keyword |
 | new Date()        | create a date, month, hour, etc and asign to a var |
 | =                 | assign values using `let` or `const` |
@@ -758,8 +741,6 @@ CRUD operations for the DOM:
 
 > What about assigning with a variable name and value? Where does that fit in?
 
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
 BOOLEAN:
 - includes()
 - endsWith(()
@@ -767,3 +748,28 @@ BOOLEAN:
 - str.test()
 - arr.every()
 - arr.some() 
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Miscellaneous
+
+Here are the best of my notes or tips and tricks:
+
+- When JS variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN`
+- Remainder operator `%` - gives the remainder of the division of two numbers
+- Escaping: use a backslash (`\`) in front of the quote in a string: `\'` or `\"`
+- Bracket notation to find the Nth-to-last character: `string.length - n`, where `n` is a # from end
+- **_Falsy_** = [`false`, `0`, `""` or `''`, `NaN`, `undefined`, and `null`]. Make sure to filter falsy values out of an array. 
+- Variables which are declared without the `let` or `const` keywords are automatically created in the global scope
+- Another use of bracket notation on objects is to access a property which is stored as the value of a variable (?)
+- You should always name variables you don't want to reassign using the `const` keyword
+- Use the spread operator to evaluate arrays, `Math.max(...arr);`
+- Use destructuring assignment to extract values from objects (?)
+- Use destructuring assignment w\ the rest parameter to reassign array elements
+- Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears is irrelevant when referencing or accessing that key
+- An algorithm is a series of step-by-step instructions that describe how to do something 
+- To write an effective algorithm, it helps to break a problem down into smaller parts and think carefully about how to solve each part with code
+- Constructors define properties and behaviors instead of returning a value as other functions might 
+- The function passed to High Order Array Methods will run as many times as the # of items in the array it is called on 
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
