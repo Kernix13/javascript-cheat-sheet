@@ -1,10 +1,10 @@
 # VANILLA JAVASCRIPT CHEAT SHEET
 
-This is not an all-inclusive list of every possible JavaScript method, property, etc. This file has tables of comparisons for quick reference, notes on elements in the tables. At the bottom of the file is a repeat of the methods in the tables but from the perspective of CRUD.
+This is not an all-inclusive list of every possible JavaScript method, property, etc. This file has tables of comparisons for quick reference. Notes on elements in the tables are at the bottom of the file.
 
 The file [notes.md](https://github.com/Kernix13/javascript-cheat-sheet/blob/master/notes.md) has a large amount of notes for me for everything and anything about JavaScript that helps me. 
 
-The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sheet/blob/master/practical-examples.md) has code blocks for everything in this file all with practical applications. It does not have arrays or objects of animals or fruit, but as many real-life examples as I have used myself or can image, such as:
+The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sheet/blob/master/practical-examples.md) has code blocks for everything in this file all with practical applications (coming soon). It does not have arrays or objects of animals or fruit, but as many real-life examples as I have used myself or can image, such as:
 
 1. Business client/cuustomer contact information and other pertinent data stored as objects
 1. Inventory and supply chain records in objects and arrays
@@ -66,7 +66,7 @@ JavaScript Primitive Data Types:
 | String    | text              | 
 | Object*   | See below |
 
-SKIPPED: `Bigint` (huge numbers) and `Symbol` (can be used an object keys).
+SKIPPED: `Bigint` (huge numbers) and `Symbol` (can be used as object keys).
 
 <br>
 
@@ -119,7 +119,7 @@ Js methods that return true or false:
 | hasOwnProperty()   | If an object has a property          | 
 | obj.is(a, b)       | if 2 values are the same value       |
 | isArray()          | If item checked is an array          |
-| isNaN              | if a value is NaN or not             | 
+| isNaN()            | if a value is NaN or not             | 
 | every()            | if ALL elements pass a test          |
 | some()             | if at least ONE element passes a test |
 | incudes(val)       | if arr or str contains the search value |
@@ -185,7 +185,6 @@ Types of Loops:
 | for in   | let i `in` obj | {code with i}   |                 |
 | for of   | let i `of` obj  | {code with i}  |                |
 | do while | let i = num  | do {code with i; i++} | while (i cond) |
-| forEach  | forEach(el)  | =>                | {code with el} | 
 
 <br>
 
@@ -232,10 +231,10 @@ Strings and Arrays: Different Methods, Same Effect:
 
 Strings and Arrays: Different Methods, Opposite Effect
 
-|    Method       | Returns:               |  Code         | 
-| :-------------  | :--------------------: | :-----------: |
-| split()  | divides str into substrings   | str.split() | 
-| join()  | Joins all elements of an array into a string | arr.join() | 
+|    Method       | Returns:               |  Code        | 
+| :-------------  | :--------------------: | :----------: |
+| split() | divides str into substrings and into an array | str.split() | 
+| join()  | Joins all elements of an array into a string  | arr.join() | 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -362,12 +361,12 @@ General:
 | :--- | :---- |
 | \	| Escapes a special character. | 
 | i	| This flag is used to ignore upper and lowercase. /ignorecase/i. | 
-| g	|  or extract a pattern more than once. | 
+| g	|  global flag, extract a pattern more than once. | 
 | .	| The wildcard character . will match any character except new lines. | 
 | [ ]	| Allow you to define the characters to match. /b[au]g/ will match "bag", "bug" but not "bog". | 
-| [a-z]	| Match all the characters between a and z. | 
-| [1-9]	| Match all the numbers between 1 and 9. | 
-| [a-z1-9] | Match all the character between a and z, and the numbers between 1 and 9. | 
+| [a-zA-Z]	| Match all the characters between a and z and A-Z. | 
+| [0-9]	| Match all the numbers between 1 and 9. | 
+| [a-z0-9] | Match all the character between a and z, and the numbers between 1 and 9. | 
 | [^]	| Match the characters not in the set. [^a-e] match all other characters except A, B, C, D, and E. | 
 | +	| Match 1 or more occurrences of the previous character in a row. | 
 | *	| Match 0 or more occurrences of the previous character. | 
@@ -515,14 +514,14 @@ There are methods in common to both arrays and strings so I am combining them fo
 - Add:  `push()`, `unshift()`,  
 - Remove: `pop()`, `shift()`, `slice(start, end)`, `splice()`
 - Index change: `reverse()`, `sort()`
-- Various: `forEach()`, `reduce()`
+- Various: `forEach()`, `reduce()` (although mosty for simple arithmetic)
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Object Notes
 
 - Instead of using indexes to access and modify their data, you access the data in objects through what are called `properties`
-- Properties are often `strings` - you can omit the quotes for single-word string properties and for numbers; property names with spaces in them must be in quotes
+- Properties are often `strings` - you can omit the quotes for single-word string properties and for numbers
 - Objects can be thought of as a `key`/`value` storage, like a dictionary `{word: definition}`
 - There are two ways to access the properties of an object: dot notation (`.`) and bracket notation (`[]`), similar to an array. 
 - Dot notation is what you use when you know the name of the property you're trying to access
@@ -530,7 +529,7 @@ There are methods in common to both arrays and strings so I am combining them fo
 - It's also best to use bracket notation when a variable name is substituted for a key name, especially if the name may contain multiple words
 - Use dot or bracket notation to update a property
 - Testing objects for properties: use the `.hasOwnProperty(propName)` method of objects to determine if that object has the given property
-- The sub-properties of objects can be accessed by chaining together the dot or bracket notation
+- Sub-properties of objects can be accessed by chaining together the dot or bracket notation
 - `Object.prototype.toString()`:	Returns a string representation of the object.
 - `Object.prototype.valueOf()`:	Returns the primitive value of the specified object.
 - `Object.prototype.hasOwnProperty()`:	Returns a boolean indicating whether an object contains the specified property as a direct property of that object _and not inherited through the prototype chain_.
@@ -683,8 +682,14 @@ Simple returns / read (more than likely requires a variable to be useful, though
 | arr.at(i)     | same as above, try `arr.at(-1)` for last item |
 | obj.prop      | obj value for prop |
 | obj[prop]     | variation of above |
-| obj.prop[i]   | arr value at index position for obj prop |
+| obj.prop[i]   | value at index position for arr in obj prop |
 | obj[prop][i]  | variation of above |
+| includes()    | boolean value, arr/str | 
+| str.endsWith(()   | boolean value, str | 
+| obj.hasOwnProperty() | boolean value | 
+| str.test()    | boolean value | 
+| arr.every()   | boolean value | 
+| arr.some()    | boolean value | 
 
 <br>
 
@@ -722,7 +727,7 @@ Update, Mutate, Delete (assign to a variable):
 | obj[prop] = val | change property value, or set if empty |
 | obj.prop = val  | variation of above |
 | `delete` obj.prop | removes prop from an object, returns `true` |
-| obj.prop = ''   | update obj.prop to empty value, also try `null`|
+| obj.prop = " "  | update obj.prop to empty value, also try `null`|
 | arr.length = 0  | empties the array |  
 
 <!--  
@@ -738,16 +743,6 @@ CRUD operations for the DOM:
 -->
 
 > Look into `arr.entries()` in conjuction with `.next().value`. Also, obj.entries() is confusing as well.
-
-> What about assigning with a variable name and value? Where does that fit in?
-
-BOOLEAN:
-- includes()
-- endsWith(()
-- obj.hasOwnProperty()
-- str.test()
-- arr.every()
-- arr.some() 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
