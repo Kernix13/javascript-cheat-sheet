@@ -102,7 +102,7 @@ Basic math operators:
 var, let, const:
 | Topic                | var       | let                  | const                |
 | :--------            | :----:    | :---:                | :----:               |
-| Scope                | Global    | Block                | Block                |
+| Scope                | Global or local | Block only     | Block only           |
 | Declared (no value)  | undefined | undefined            | Uncaught SyntaxError |
 | Redeclare?           | Yes       | Uncaught SyntaxError | Uncaught SyntaxError |
 | Reassign?            | Yes       | Yes                  | Uncaught TypeError   |
@@ -127,10 +127,10 @@ JavaScript methods, conditionals, etc. that return true or false:
 | some()             | if at least ONE element passes a test |
 | incudes()          | if arr or str contains the search value |
 | endsWith()         | if str ends with the search value    |
-| isInteger()        | if value is an integer               |
+| Number.isInteger(num) | if value is an integer            |
 | test()             | RegEx test if the string contains the match expression |
 | in operator        | if prop is `in` the obj or prototype (prop in obj) | 
-| true, false        | equals `true` and `false`             | 
+| true, false        | equals `true` and `false`            | 
 
 > Common to see `typeof` with ==, ===, !=, !==
 
@@ -143,9 +143,9 @@ Operators:
 | :--------- | :----- | :----- | :------ | :------ | :------ | 
 | Assigment  | =      | +=     | -=      | *=      | /=      |
 | Comparison | <, >   | <=, >= | ==, === | !=, !== |         |
-| Arithmetic | +, -, *, /      | %      | ++      | --      | **   |
-| Logical    | &&     | \|\|   | !       |         |         |
-| Type       | typeof | instanceof |    |         |           | 
+| Arithmetic | +, -, *, /      | %       | ++      | --      | **   |
+| Logical    | &&     | \|\|   | !       | ,       |         |
+| Type       | typeof | instanceof |     |         |         | 
 
 <br>
 
@@ -251,6 +251,7 @@ Common Object methods:
 | obj.keys()           | array    | obj property keys   |
 | obj.values()         | array    | obj property values |
 | obj.entries()        | array    | obj key-value pairs  |
+| Object.freeze(obj)   | NA       | prevents mutation for entire object |  
 | obj.getOwnPropertyNames() | array | all prop names except symbols |
 | obj.toString()       | string   | obj as a string     |
 | obj.hasOwnProperty() | boolean  | if obj has (prop)   |
@@ -338,13 +339,14 @@ Set Part of a Date
 ### Functions and Escaping
 
 Basic function expressions:
-| Type     | Declare            | Call | 
-| :---     | :-----            | :----- |
-| Standard | function() {...}   | function(); | 
-| Arrow    | () => {...}        | - | 
-| Arrow2   | () => "value"      | - | 
-| Arrow3   | (item) => {item...} | - | 
-| IIFE     | (function() {...}) | (); |
+| Type     | Declare                        | Call | 
+| :---     | :-----                         | :----- |
+| Standard | function name() {...}          | name(); | 
+| Arrow    | () => {...}                    | -   
+| Arrow2   | () => "value"                  | -   | 
+| Arrow3   | item => {item...}              | -   | 
+| Arrow4   | (arr1, arr2) => {arr1...arr2}  | -   | 
+| IIFE     | (function() {...})             | (); |
 
 
 Escaping characters:
@@ -783,12 +785,16 @@ General:
 - Use `import *` to import everything from a file - 
 - Create an export fallback with `export default` - omit the curly brackets when you import a default export
 - Almost every value on its own in JavaScript evaluates to true, except what are known as the "falsy" values: `false`, `0`, `""`, `NaN`, `undefined`, and `null`
+- THIS IS HUGE: The **_comma operator_** (`, `) allows multiple expressions to be evaluated in a single statement and returns the result of the last expression: `function isLess(a, b) { return a <= b; }` AND `function isEqual(a, b) { return a === b; }`
+- 
 
 Variables and values: 
 - When JS variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN`
 - Variables which are declared without the `let` or `const` keywords are automatically created in the global scope
 - **_Falsy_** = [`false`, `0`, `""` or `''`, `NaN`, `undefined`, and `null`]. Make sure to filter falsy values out of an array. 
 - `let` is block scoped - A block is a chunk of code bounded by `{ }` - So a variable declared in a block with let is only available for use within that block
+- you do not want to declare a variable 2 times in the same scope - 
+- variables assigned using `const` should be uppercase: const WEATHER = "It's cold!";
 
 Objects:
 - Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears is irrelevant when referencing or accessing that key
@@ -800,7 +806,7 @@ Objects:
 - NOTE: constructors are really powerful when they have functions w\in them known as methods
 - each object in JS has a prototype – a prototype is an object itself – all objects inherit their properties and methods from their prototypes = Object.prototype vs Client.prototype 
 - Object.prototype – you can see its methods like hasOwnProperty, toString, valueOf
-- prevent object mutation: To ensure your data doesn't change, use the function `Object.freeze` to prevent data mutation. Once frozen, you can no longer add, update, or delete properties from it
+- prevent object mutation: To ensure your data doesn't change, use the function `Object.freeze` to prevent data mutation. Once frozen, you can no longer add, update, or delete properties from that object
 
 Syntax:
 - Bracket notation to find the Nth-to-last character: `string.length - n`, where `n` is a # from end
@@ -811,12 +817,17 @@ Syntax:
 
 Functions:
 - The function passed to High Order Array Methods will run as many times as the # of items in the array it is called on 
-- FUNCTION EXPRESSIONS: it’s when a function is the value of a variable, usually they are anonymous
-- inline functions - When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword `return` as well as the brackets surrounding the code
+- FUNCTION EXPRESSIONS: it’s when a function is the value of a variable, usually they are anonymous: `let one = function() {...}`
+- inline functions - When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword `return` as well as the brackets surrounding the code: `const magic = () => new Date();`
+- WHENEVER YOU HAVE AN ANONYMOUS FUNCTION, YOU CAN CONVERT IT INTO AN ARROW FUNCTION
+- arrow function with arguments: `let myConcat = (arr1, arr2) => arr1.concat(arr2);`
+- arrow functions work great with higher order functions b\c they take functions as arguments (Arrow) - 
+- **Default parameters**: allow named parameters to be initialized with default values if no value or undefined is passed: `function fnName(parm1 = val1) {...}` or `function fnName(parm1, parm2 = val, ...) {...}`
 - **Rest parameter**: you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function: `(...args)`
 - The rest parameter eliminates the need to check the args array and allows us to apply `map()`, `filter()` and `reduce()` on the parameters array
 - Only the last parameter in a function definition can be a rest parameter
-- **Spread operator**: allows you to expand arrays and other expressions in places where multiple parameters or elements are expected
+- **Spread operator**: allows you to expand arrays and other expressions in places where multiple parameters or elements are expected - confusing - it looks like a copy but isn't???
+- Destructuring assignment - a special syntax for taking values from an object to a variable - it's a quicker way of assigning values from an object into variables - it's seems like the assignment is reversed with the var name to the right of `=` and the destructuring of the object to the left - 
 
 Other:
 - template literals / template strings: 
@@ -826,3 +837,20 @@ ${ "vars or expressions/math or a function call or use conditionals / ternary op
 - next...
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+Table for ES6 syntax:
+| ES6 topic | Code example | 
+| -------:   | :----------- |
+| Arrow functions: | const varName = () => {code} | 
+| Default parameters: | function fnName(parm1 = val1) {...} |
+| Rest parameter: | const product = (...n) => {code} | 
+|                 | product(2, 4, 6, 2) |
+| Spread operator: | let numbers = [-12, 160, 0, -3, 51, -50]; | 
+|                 | let minNum = Math.min(...numbers); |
+| Destructuring assig.: | const user = { name: 'John Doe', age: 34 }; | 
+| `// instead of:` | const name = user.name; | 
+|                | const age = user.age; | 
+| `// use:`       | const { name, age } = user; | 
+| `// assign to var names:` | const { name: userName, age: userAge } = user; | 
+| Destructuring  with Rest Parm: | const [a, b, ...arr] = [1, 2, 3, 4, 5, 7]; | 
+| Template literals ${var}: | `Hello, my name is ${name}.` | 

@@ -496,13 +496,13 @@ If, Else, Else If, Switch:
 - This behavior is somehow different when it comes to objects declared with `const`. While a `const` object cannot be updated, the properties of this objects can be updated
 - Use `let` when you know their values will be changing
 - Mutate an array declared with `const`: Objects assigned to a variable using `const` are still mutable
-- prevent object mutation: To ensure your data doesn't change, use the function `Object.freeze` to prevent data mutation. Once frozen, you can no longer add, update, or delete properties from it
+- prevent object mutation: To ensure your data doesn't change, use the function `Object.freeze` to prevent data mutation. Once frozen, you can no longer add, update, or delete properties from it: `Object.freeze(objName);`
 
 
 **Arrow functions, Rest parameter, Spread operator, Template literals**:
 - inline functions - When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword `return` as well as the brackets surrounding the code 
 - If an arrow function has a single parameter, the parentheses enclosing the parameter may be omitted
-- Default parameters?
+- Default parameters: allow named parameters to be initialized with default values if no value or undefined is passed: `function fnName(parm1 = val1) {```}` or `function fnName(parm1, parm2 = val, ...) {...}`
 - **Rest parameter**: you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function: `(...args)`
 - The rest parameter eliminates the need to check the args array and allows us to apply `map()`, `filter()` and `reduce()` on the parameters array
 - Only the last parameter in a function definition can be a rest parameter
