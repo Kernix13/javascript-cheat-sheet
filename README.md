@@ -125,8 +125,8 @@ JavaScript methods, conditionals, etc. that return true or false:
 | isNaN()            | if a value is NaN or not             | 
 | every()            | if ALL elements pass a test          |
 | some()             | if at least ONE element passes a test |
-| incudes(val)       | if arr or str contains the search value |
-| endsWith(val)      | if str ends with the search value    |
+| incudes()          | if arr or str contains the search value |
+| endsWith()         | if str ends with the search value    |
 | isInteger()        | if value is an integer               |
 | test()             | RegEx test if the string contains the match expression |
 | in operator        | if prop is `in` the obj or prototype (prop in obj) | 
@@ -418,7 +418,7 @@ Useful console commands:
 
 # Important Notes
 
-Notes on various tables for specific methods and syntax.
+Notes on various tables for specific methods and syntax for everything listed above. For notes on other topics or code, check notes.md.
 
 Miscellaneous:
 
@@ -499,22 +499,22 @@ Read / Return index # and length:
 ### Read and return values
 
 Simple returns / read:
-| Method        | Returns: |
-| :----         | :----  |
+| Method        | Returns:            |
+| :----         | :----               |
 | str[i]        | str value at index position |
-| str.charAt(i) | same as above |
+| str.charAt(i) | same as above       |
 | arr[i]        | arr value at index position |
 | arr.at(i)     | same as above, try `arr.at(-1)` for last item |
-| obj.prop      | obj value for prop |
-| obj[prop]     | variation of above |
+| obj.prop      | obj value for prop  |
+| obj[prop]     | variation of above  |
 | obj.prop[i]   | value at index position for arr in obj prop |
-| obj[prop][i]  | variation of above |
+| obj[prop][i]  | variation of above  |
 | includes()    | boolean value, arr/str | 
-| str.endsWith(()   | boolean value, str | 
+| str.endsWith() | boolean value      | 
 | obj.hasOwnProperty() | boolean value | 
-| str.test()    | boolean value | 
-| arr.every()   | boolean value | 
-| arr.some()    | boolean value | 
+| str.test()    | boolean value       | 
+| arr.every()   | boolean value       |   
+| arr.some()    | boolean value       | 
 
 <br>
 
@@ -528,7 +528,7 @@ More involved returns / read:
 | str.match()   | str value(s) that matches RegEx |
 | Number methods | formatted number, e.g.: | 
 | num.toFixed(2) | returns number with 2 decimal places |
-| Math methods  | calculated number, e.g.: | 
+| Math() methods | calculated number, e.g.: | 
 | Math.abs(x)   | returns the absolute value of a number |
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -771,11 +771,24 @@ General:
 - An algorithm is a series of step-by-step instructions that describe how to do something 
 - To write an effective algorithm, it helps to break a problem down into smaller parts and think carefully about how to solve each part with code
 - BREAK and CONTINUE are really important things to know for loops
+- if no `<` or `>` or other comparison symbol is used, the statement is considered `true` if the value is anything other than 0
+- `switch` statements: tests a value and can have many `case` statements which define various possible values. Statements are executed from the first matched `case` value until a `break` is encountered
+- `case` statements are tested with strick equality (`===`): `switch(check value(s)) {case value: varname = something; break; next case check…}`
+- `default` means `else` in a `switch` statement – you can also have multiple cases before a `break`
+- **Module** script: You need to create a script in your HTML document with a type of module: `<script type="module" src="filename.js"></script>`
+- Use the keywords `export` and `import` - 
+- When you export a variable or function, you can import it in another file and use it without having to rewrite the code 
+- Export multiple things: `export { thing1, thing2 };`
+- `import` allows you to choose which parts of a file or module to load: `import { add } from './math_functions.js'; `
+- Use `import *` to import everything from a file - 
+- Create an export fallback with `export default` - omit the curly brackets when you import a default export
+- Almost every value on its own in JavaScript evaluates to true, except what are known as the "falsy" values: `false`, `0`, `""`, `NaN`, `undefined`, and `null`
 
 Variables and values: 
 - When JS variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN`
 - Variables which are declared without the `let` or `const` keywords are automatically created in the global scope
 - **_Falsy_** = [`false`, `0`, `""` or `''`, `NaN`, `undefined`, and `null`]. Make sure to filter falsy values out of an array. 
+- `let` is block scoped - A block is a chunk of code bounded by `{ }` - So a variable declared in a block with let is only available for use within that block
 
 Objects:
 - Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears is irrelevant when referencing or accessing that key
@@ -787,6 +800,7 @@ Objects:
 - NOTE: constructors are really powerful when they have functions w\in them known as methods
 - each object in JS has a prototype – a prototype is an object itself – all objects inherit their properties and methods from their prototypes = Object.prototype vs Client.prototype 
 - Object.prototype – you can see its methods like hasOwnProperty, toString, valueOf
+- prevent object mutation: To ensure your data doesn't change, use the function `Object.freeze` to prevent data mutation. Once frozen, you can no longer add, update, or delete properties from it
 
 Syntax:
 - Bracket notation to find the Nth-to-last character: `string.length - n`, where `n` is a # from end
@@ -798,7 +812,11 @@ Syntax:
 Functions:
 - The function passed to High Order Array Methods will run as many times as the # of items in the array it is called on 
 - FUNCTION EXPRESSIONS: it’s when a function is the value of a variable, usually they are anonymous
-
+- inline functions - When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword `return` as well as the brackets surrounding the code
+- **Rest parameter**: you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function: `(...args)`
+- The rest parameter eliminates the need to check the args array and allows us to apply `map()`, `filter()` and `reduce()` on the parameters array
+- Only the last parameter in a function definition can be a rest parameter
+- **Spread operator**: allows you to expand arrays and other expressions in places where multiple parameters or elements are expected
 
 Other:
 - template literals / template strings: 

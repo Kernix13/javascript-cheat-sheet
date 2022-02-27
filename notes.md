@@ -249,7 +249,7 @@ function isEqual(a, b) {
 
 <div id="back-to-top"></div>
 
-The best of my notes from Traversy course:
+The best of my notes from Traversy Modern JS course:
 
 - 8 - primitive data types: string, number, boolean, null, undefined - stored directly in the location that the variables accesses - stored on the stack
 - reference types: arrays, object literals, functions, dates - accessed by reference, so the data isn’t actually stored in the variable – objects that are stored on the heap, the heap being dynalically alocated memory
@@ -306,7 +306,7 @@ The best of my notes from Traversy course:
 - REST was made to treat objects on the server side as resources that can be created, updated, read and deleted (CRUD)
 - what makes REST awesome is that since it operates using just HTTP requests and usually a standard like JSON 
 - an API is the messenger and REST lets us use HTTP requests to format the message
-- a REST API takes in multiple types of HTTP requests → GET, POST, PUT, DELETE, HEAD, OPTIONS, PATCH 
+- a REST API takes in multiple types of HTTP requests → GET, POST, PUT, DELETE, HEAD, CONNECT, TRACE, OPTIONS, PATCH 
 - ENDPOINTS: the url’s that you access to do certain things
 - with POST, PUT and DELETE you will send data long w\ your rquest – the API needs to know what data to add, update or delete 
 - 63 – callback Fxs: function that is passed in as a parameter to another function and is then ran inside the Fx body - the one in forEach is synchronous – setTimeout uses an asynchronous cb
@@ -317,6 +317,13 @@ The best of my notes from Traversy course:
 - 69 – arrow Fxs: 
 - 71 – async & await: 
 
+The best of my notes from Traversy 20 web projects with vanilla javascript course:
+
+- for a number input fied, using `typeof` shows it as a string - add a + symbol to turn it into a number
+- `console.log(e.target);` - gives you the exact element that is clicked on
+- the spread operator converts the nodes list into an array - then to map thru that use the high order array method called map() 
+- Fetch is built into the browser so you don’t need to use a CDN or install it
+- fetch runs asynchronously which means in the background and it returns a promise – when it’s done fetching it will return a promise – you catch that promise with .then() - .then() takes a function; res.json(); 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -472,7 +479,7 @@ If, Else, Else If, Switch:
 - Hoisting allows functions to be safely used in code before they are declared - variables and function declarations are moved to the top of their scope before code execution
 - When you declare a variable without a statement it is automatically declared as `var` 
 - The scope is global when a `var` variable is declared outside a function
-- `let` vs `var`: `var` can be overwritten, `let` cannot
+- `let` vs `var`: `var` can be overwritten, `CONST` cannot
 - `let` is block scoped - A block is a chunk of code bounded by `{ }` - So a variable declared in a block with let is only available for use within that block
 - `let` can be updated but not re-declared
 - a variable declared with `let` can be updated within its scope
@@ -537,7 +544,7 @@ Capture Groups, Lookaheads
 - JavaScript recognizes six primitive (immutable) data types: Boolean, Null, Undefined, Number, String, and Symbol (new with ES6) and one type for mutable items: Object. Note that in JavaScript, arrays are technically a type of object
 - Almost every value on its own in JavaScript evaluates to true, except what are known as the "falsy" values: `false`, `0`, `""`, `NaN`, `undefined`, and `null`
 - Use of assignment operator (`=`) instead of equality operator (`==` and `===`)
-- Thins *VS Code* catches: 1) typos of function and ariables names, 2) unclosed parentheses, bracket, braces, and quotes, 3) mixed usage of single and double quotes, 4) 
+- Thins *VS Code* catches: 1) typos of function and Variables names, 2) unclosed parentheses, bracket, braces, and quotes, 3) mixed usage of single and double quotes, 4) 
 - Things VS Code does not catch: 1) open and closing parentheses after a Function call, 2) argumants passed in the wrong order. 3) Off by one errors
 
 <h2 id="data-structures" align="center">Data Structures</h2>
