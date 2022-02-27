@@ -129,7 +129,7 @@ Js methods that return true or false:
 | test()             | RegEx test if the string contains the match expression |
 | in operator        | if prop is `in` the obj or prototype (prop in obj) | 
 | false, 0, "", let x; | all equal `false`                  | 
-| NaN, undefined,    | also equal `false`                   |
+| NaN, null, undefined | also equal `false`                   |
 | 1 & any non-false value | equals `true`                    | 
 
 > Common to see `typeof` with ==, ===, !=, !==
