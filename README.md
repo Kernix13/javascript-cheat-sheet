@@ -28,7 +28,14 @@ The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sh
    1. [Functions and Escaping](#functions-and-escaping)
    1. [Regex](#regex)
    1. [Console Commands](#console-commands)
-1. Important Notes
+
+
+Important Notes
+1. [JavaScript version of CRUD](#javascript-version-of-crud)
+   1. [Create](#create)
+   1. [Read and return index and length](#read-and-return-index-and-length)
+   1. [Read and return values](#read-and-return-values)
+   1. [Update and mutate](#update-and-mutate)
 1. [Arrays and Strings](#arrays-and-strings)
    1. [Same Methods and Same Effect](#same-methods-and-same-effect)
    1. [Different Methods and Same Effect](#different-methods-and-same-effect)
@@ -42,11 +49,6 @@ The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sh
 1. [Number notes](#number-notes)
 1. [Date Notes](#date-notes)
 1. [Loop Notes](#loo-notes)
-1. [JavaScript version of CRUD](#javascript-version-of-crud)
-   1. [Create](#create)
-   1. [Read and return index and length](#read-and-return-index-and-length)
-   1. [Read and return values](#read-and-return-values)
-   1. [Update and mutate](#update-and-mutate)
 1. [Miscellaneous](#miscellaneous)
 
 ## Table Comparisons
@@ -425,6 +427,150 @@ Miscellaneous:
 - `typeof`: Returns the type of a variable
 - `instanceof`: Returns true if an object is an instance of an object type
 
+## JavaScript version of CRUD
+
+There are 4 ways to work with data that are known collectively as CRUD:
+  - C = _Create_: e.g., writing to the dom, creating a copy of an array or a new instance of an object.
+  - R = _Read_: e.g., reading values from arrays or objects, getting user input values, etc.
+  - U = _Update_: Changing a value for an existing record like client/customer contact information, user password, mutating an array, ...
+  - D = _Delete_: Removing a record or item from an object or array, ...
+
+Most often CRUD involves when ineracting with databases. However, you can apply that acronym to front-end JavaScript as well. This is just another way of visualizing and understanding JS. 
+
+But before you can **Read**, **Update**, or **Delete**, you need to check if a piece of data exists. This is done with some kind of conditional statement:
+  - Go back and view the [Boolean methods](#boolean-methods) and/or [Operators and conditionals](#operators-and-conditionals) and/or [Loops](#loops) and/or [Regex](#regex) sections.
+
+If an element does not, then you can **Create** it. If `the thing` exists, then you can read, update and/or delete. In JavaScript you can **read** for the purpose of 1) returning the value, or 2) returning the length or the index # (arr, str) of an item. 
+
+And whatever you can read, you can do so for the purpose of updating or deleting the values. 
+
+Let's look at create, then read/return, and finally update/mutate and delete.
+<!--  
+Return position:
+| Method | Does: | Data Type:
+| :----  | :----  | :---- | 
+| indexOf()     | returns position | str & arr |
+| lastIndexOf() | returns position | str & arr |
+| .length | returns the count of items | str & arr |
+| [i] | returns the value at position | str & arr |
+-->
+
+### Create
+
+Create new objects or variables:
+| Method            | Creates: |
+| :----             | :----  |
+| =                 | assign values using `let` or `const` |
+| user input        | create from `getElementById`, `querySelector`, etc. |
+| obj.keys()        | new array of object keys | 
+| obj.values()      | new array of object values | 
+| Object.create()   | new object, using an existing object as the prototype |
+| class syntax      | create objects from a class and the `new` keyword |
+| Date methods, new Date() | create a date, year, month, hour, etc. |
+
+<br>
+
+Create from existing objects:
+| Method            | Creates: |
+| :----             | :----  |
+| str.trim()        | new str |
+| str.substring()   | new str | 
+| str.replace()     | new str | 
+| arr.join()        | new string from array | 
+| arr or str.concat() | new array or string | 
+| arr.slice()       | new array | 
+| arr.splice()      | new array | 
+| str.split()       | new array | 
+| arr.filter()      | new array |
+| arr.map()         | new array |
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Read and return index and length
+
+Read / Return index # and length: 
+| Method          | Returns: |
+| :----           | :----  |
+| indexOf()       | index # |
+| lastIndexOf()   | index # |
+| arr.findIndex() | index # for first occurrence that passes test | 
+| .length         | length of arr/str |
+| arr.push()      | length of new arr after mutating arr | 
+| arr.unshift()   | length of new arr after mutating arr | 
+
+### Read and return values
+
+Simple returns / read:
+| Method        | Returns: |
+| :----         | :----  |
+| str[i]        | str value at index position |
+| str.charAt(i) | same as above |
+| arr[i]        | arr value at index position |
+| arr.at(i)     | same as above, try `arr.at(-1)` for last item |
+| obj.prop      | obj value for prop |
+| obj[prop]     | variation of above |
+| obj.prop[i]   | value at index position for arr in obj prop |
+| obj[prop][i]  | variation of above |
+| includes()    | boolean value, arr/str | 
+| str.endsWith(()   | boolean value, str | 
+| obj.hasOwnProperty() | boolean value | 
+| str.test()    | boolean value | 
+| arr.every()   | boolean value | 
+| arr.some()    | boolean value | 
+
+<br>
+
+More involved returns / read:
+| Method        | Returns: |
+| :----         | :----  |
+| arr.find()    | arr value for first occurrence that passes test |   
+| arr.reduce()  | single value after function | 
+| arr.shift()   | the item value removed from array | 
+| arr.pop()     | the item value removed from array | 
+| str.match()   | str value(s) that matches RegEx |
+| Number methods | formatted number, e.g.: | 
+| num.toFixed(2) | returns number with 2 decimal places |
+| Math methods  | calculated number, e.g.: | 
+| Math.abs(x)   | returns the absolute value of a number |
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Update and Delete
+
+Update, Mutate, Delete:
+| Method          | Returns: |
+| :----           | :----  |
+| str.replace()   | new str with updated values |
+| str.toLowerCase() | returns str as lowercase |  
+| str.toUpperCase() | returns str as uppercase |
+| arr.splice(i)   | changes array contents | 
+| arr.push()      | changes array contents | 
+| arr.unshift()   | changes array contents | 
+| arr.shift()     | changes array contents | 
+| arr.pop()       | changes array contents | 
+| arr.sort()      | changes array order | 
+| arr.reverse()   | changes array order | 
+| obj[prop] = val | change property value, or set if empty |
+| obj.prop = val  | variation of above |
+| `delete` obj.prop | removes prop from an object, returns `true` |
+| obj.prop = " "  | update obj.prop to empty value, also try `null`|
+| arr.length = 0  | empties the array |  
+
+<!--  
+CRUD operations for the DOM:
+| Method          | Returns: |
+| :----           | :----  |
+| innerHTML       | gets or sets the HTML contained within the element | 
+| insertAdjacentHTML | to append nodes at a specified position | 
+| appendChild     | adds a node to the end of the list of children | 
+| innerText       | the text inside an element | 
+| textContent     | outputting plain text without HTML tags | 
+| createElement   | ? | 
+-->
+
+> Look into `arr.entries()` in conjuction with `.next().value`. Also, obj.entries() is confusing as well.
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Arrays and Strings 
 
@@ -432,7 +578,7 @@ Miscellaneous notes:
 - Unlike strings, the entries of arrays are mutable and can be changed
 - Access multi-dimensional arrays  with indexes: `var arr = [ [1, 2], [2, 3], [ [3, 4], 5] ] arr[2][0][1] = 4`
 
-There are methods in common to both arrays and strings so I am combining them for more easily visualixe them. Check out the following MDN links: [MDN String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [MDN Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
+There are methods in common to both arrays and strings so I am combining them for more easily visualize them. Check out the following MDN links: [MDN String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [MDN Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
 
 ### Same Methods and Same Effect
 
@@ -619,163 +765,49 @@ Set Date Methods:
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## JavaScript version of CRUD
-
-Any programming language accomplishes all or some of the CRUD operations:
-  - C = Create: e.g., writing to the dom, creating a copy of an array
-  - R = Read: e.g., reading values from arrays, or objects
-  - U = Update: Changing a value for an existing record like client/customer contact information
-  - D = Delete: Removing a record
-
-Although, that tends to be when ineracting with databases. However, you can apply that acronym to front-end JavaScript as well. This is just another way of visualizing and understanding JS. 
-
-But before you can Read, Update, or Delete, you need to check if a piece of data exists. This is done with some kind of conditional statement, often as part of an if statment, though you can also use the methods and conditionals for that:
-  - Go back to the [Boolean methods](#boolean-methods) and [Operators and conditionals](#operators-and-conditionals) and [Loops](#loops) and [Regex](#regex) sections.
-
-If the element does not, then you can **Create** it. If `the thing` exists, then you can read, update and/or delete. First are READ methods. You can **read** for the purpose of 1) returning the value, or 2) returning the length or the index # (arr, str) of an item. 
-
-Let's look at create, then read/return, and finally update/mutate and delete.
-<!--  
-Return position:
-| Method | Does: | Data Type:
-| :----  | :----  | :---- | 
-| indexOf()     | returns position | str & arr |
-| lastIndexOf() | returns position | str & arr |
-| .length | returns the count of items | str & arr |
-| [i] | returns the value at position | str & arr |
--->
-
-### Create
-
-Create (requires a variable):
-| Method            | Creates: |
-| :----             | :----  |
-| str.trim()        | new str |
-| str.substring(i)  | new str | 
-| str.replace()     | new str | 
-| arr.join()        | new string from array | 
-| arr or str.concat() | new array or string | 
-| arr.slice()       | new array | 
-| arr.splice()      | new array | 
-| str.split()       | new array | 
-| arr.filter()      | new array |
-| arr.map()         | new array |
-| obj.keys()        | new array of object keys | 
-| obj.values()      | new array of object values | 
-| Object.create     | new object, using an existing object as the prototype |
-| class syntax      | create objects from a class and the `new` keyword |
-| new Date()        | create a date, month, hour, etc and asign to a var |
-| =                 | assign values using `let` or `const` |
-| user input        | create var from `getElementById`, `querySelector`, etc. |
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-### Read and return index and length
-
-Read / Return index # and length (no variable required unless to be used later): 
-| Method          | Returns: |
-| :----           | :----  |
-| indexOf()       | index # |
-| lastIndexOf()   | index # |
-| arr.findIndex() | index # for first occurrence that passes test | 
-| .length         | length of arr/str |
-| arr.push()      | length of new arr after mutating arr | 
-| arr.unshift()   | length of new arr after mutating arr | 
-
-### Read and return values
-
-Simple returns / read (more than likely requires a variable to be useful, though not necessary):
-| Method        | Returns: |
-| :----         | :----  |
-| str[i]        | str value at index position |
-| str.charAt(i) | same as above |
-| arr[i]        | arr value at index position |
-| arr.at(i)     | same as above, try `arr.at(-1)` for last item |
-| obj.prop      | obj value for prop |
-| obj[prop]     | variation of above |
-| obj.prop[i]   | value at index position for arr in obj prop |
-| obj[prop][i]  | variation of above |
-| includes()    | boolean value, arr/str | 
-| str.endsWith(()   | boolean value, str | 
-| obj.hasOwnProperty() | boolean value | 
-| str.test()    | boolean value | 
-| arr.every()   | boolean value | 
-| arr.some()    | boolean value | 
-
-<br>
-
-More involved returns / read:
-| Method        | Returns: |
-| :----         | :----  |
-| arr.find()    | arr value for first occurrence that passes test |   
-| arr.reduce()  | single value after function | 
-| arr.shift()   | item value removed from arr | 
-| arr.pop()     | item value removed from arr | 
-| str.match()   | str value(s) that matches RegEx |
-| Number methods | formatted number, e.g.: | 
-| num.toFixed(2) | returns number with 2 decimal places |
-| Math methods  | calculated number, e.g.: | 
-| Math.abs(x)   | returns the absolute value of a number |
-| Date Methods  | date values in various formats | 
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-### Update and Delete
-
-Update, Mutate, Delete (assign to a variable):
-| Method          | Returns: |
-| :----           | :----  |
-| str.replace()   | new str with updated values |
-| str.toLowerCase() | returns str as lowercase |  
-| str.toUpperCase() | returns str as uppercase |
-| arr.splice(i)   | changes array contents | 
-| arr.push()      | changes array contents | 
-| arr.unshift()   | changes array contents | 
-| arr.shift()     | changes array contents | 
-| arr.pop()       | changes array contents | 
-| arr.sort()      | changes array order | 
-| arr.reverse()   | changes array order | 
-| obj[prop] = val | change property value, or set if empty |
-| obj.prop = val  | variation of above |
-| `delete` obj.prop | removes prop from an object, returns `true` |
-| obj.prop = " "  | update obj.prop to empty value, also try `null`|
-| arr.length = 0  | empties the array |  
-
-<!--  
-CRUD operations for the DOM:
-| Method          | Returns: |
-| :----           | :----  |
-| innerHTML       | gets or sets the HTML contained within the element | 
-| insertAdjacentHTML | to append nodes at a specified position | 
-| appendChild     | adds a node to the end of the list of children | 
-| innerText       | the text inside an element | 
-| textContent     | outputting plain text without HTML tags | 
-| createElement   | ? | 
--->
-
-> Look into `arr.entries()` in conjuction with `.next().value`. Also, obj.entries() is confusing as well.
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
 ## Miscellaneous
 
 Here are the best of my notes or tips and tricks:
 
-- When JS variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN`
-- Remainder operator `%` - gives the remainder of the division of two numbers
+General:
 - Escaping: use a backslash (`\`) in front of the quote in a string: `\'` or `\"`
-- Bracket notation to find the Nth-to-last character: `string.length - n`, where `n` is a # from end
-- **_Falsy_** = [`false`, `0`, `""` or `''`, `NaN`, `undefined`, and `null`]. Make sure to filter falsy values out of an array. 
+- An algorithm is a series of step-by-step instructions that describe how to do something 
+- To write an effective algorithm, it helps to break a problem down into smaller parts and think carefully about how to solve each part with code
+- BREAK and CONTINUE are really important things to know for loops
+
+Variables and values: 
+- When JS variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN`
 - Variables which are declared without the `let` or `const` keywords are automatically created in the global scope
+- **_Falsy_** = [`false`, `0`, `""` or `''`, `NaN`, `undefined`, and `null`]. Make sure to filter falsy values out of an array. 
+
+Objects:
+- Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears is irrelevant when referencing or accessing that key
+- Constructors define properties and behaviors instead of returning a value as other functions might 
+- OBJECT ORIENTED PROGRAMMING: Functions inside of objects as opposed to in the global scope - in this case they are called METHODS – a Fx in an object `todo` called `add` or `edit` and you call it by `todo.add()` - or `todo.edit(id)`
+- `for in` loop: often used for objects – create a user object > then for `(let x in user)` returns the names of the keys – user([x]) returns the values
+- OOP: constructors & the _this_ Keyword: the most important things in OOP is the Constructor and the `this` keyword: if you want to create multiple instances of a certain type of object then you want to create a constructor
+- the `this` keyword refers to the current instance of the object, the function scope
+- NOTE: constructors are really powerful when they have functions w\in them known as methods
+- each object in JS has a prototype – a prototype is an object itself – all objects inherit their properties and methods from their prototypes = Object.prototype vs Client.prototype 
+- Object.prototype – you can see its methods like hasOwnProperty, toString, valueOf
+
+Syntax:
+- Bracket notation to find the Nth-to-last character: `string.length - n`, where `n` is a # from end
 - Another use of bracket notation on objects is to access a property which is stored as the value of a variable (?)
-- You should always name variables you don't want to reassign using the `const` keyword
 - Use the spread operator to evaluate arrays, `Math.max(...arr);`
 - Use destructuring assignment to extract values from objects (?)
 - Use destructuring assignment w\ the rest parameter to reassign array elements
-- Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears is irrelevant when referencing or accessing that key
-- An algorithm is a series of step-by-step instructions that describe how to do something 
-- To write an effective algorithm, it helps to break a problem down into smaller parts and think carefully about how to solve each part with code
-- Constructors define properties and behaviors instead of returning a value as other functions might 
+
+Functions:
 - The function passed to High Order Array Methods will run as many times as the # of items in the array it is called on 
+- FUNCTION EXPRESSIONS: it’s when a function is the value of a variable, usually they are anonymous
+
+
+Other:
+- template literals / template strings: 
+```js
+${ "vars or expressions/math or a function call or use conditionals / ternary op"  }
+```
+- next...
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>

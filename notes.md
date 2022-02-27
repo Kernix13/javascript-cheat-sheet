@@ -146,58 +146,61 @@ Concepts vs specific parts of code vs ...
 
 ### Code Specific
 
-- arguments vs parameters: 
 - arrow function: ( ) =>
-- exponential operator: 
-- Loops: for, while, do while, for in, for of
 - new Date(): 
-- Rest Parameter: (...theArgs)
-- Spread Operator: 
 - `${variable}`: 
 
 <dl>
   <dt>Callback function</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.</dd>
 </dl>
 <dl>
   <dt>currentTarget</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>The read-only property of the Event interface identifies the current target for the event, as the event traverses the DOM. It always refers to the element to which the event handler has been attached, as opposed to Event.target</dd>
 </dl>
 <dl>
   <dt>IIFE</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>A function that runs as soon as it is defined.</dd>
+</dl>
+<dl>
+  <dt>parsing</dt>
+  <dd>Data parsing is a process in which a string of data is converted from one format to another. Parsing means analyzing and converting a program into an internal format that a runtime environment can actually run</dd>
 </dl>
 <dl>
   <dt>JSON.parse()</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>A method that parses a JSON string, constructing the JavaScript value or object described by the string.</dd>
 </dl>
 <dl>
   <dt>JSON.stringify()</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>A method that converts a JavaScript object or value to a JSON string.</dd>
 </dl>
 <dl>
-  <dt>parse</dt>
-  <dd>Data parsing is a process in which a string of data is converted from one format to another</dd>
+  <dt>Parameters</dt>
+  <dd>Parameters are variables that act as placeholders for the values that are to be input to a function when it is called.</dd>
+</dl>
+<dl>
+  <dt>Arguments</dt>
+  <dd>Are the actual values passed into a function that are represented by the parameters in the function declaration.</dd>
 </dl>
 <dl>
   <dt>parseInt</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>A function that parses a string argument and returns an integer.</dd>
 </dl>
 <dl>
   <dt>Rest Parameter</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>A syntax that allows a function to accept an indefinite number of arguments as an array.</dd>
 </dl>
 <dl>
   <dt>Spread Operator</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>A syntax that can be used when all elements from an object or array need to be included in a list of some kind. he spread operator is commonly used to make shallow copies of JS objects. Using this operator makes the code concise and enhances its readability</dd>
 </dl>
 <dl>
-  <dt>target</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dt>Event.target</dt>
+  <dd>The read-only target property of the Event interface is a reference to the object onto which the event was dispatched.</dd>
 </dl>
 <dl>
   <dt>"use strict"</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>Strict mode: a way to opt in to a restricted variant of JavaScript. </dd>
 </dl>
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -208,15 +211,15 @@ Concepts vs specific parts of code vs ...
 
 <dl>
   <dt>Arity</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>Is the term used to refer to the number of arguments or operands in a function or operation; is the number of functions you can pass into an object; is the number of parameters the function contains; ...</dd>
 </dl>
 <dl>
   <dt>Currying</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>currying is when a function — instead of taking all arguments at one time — takes the first one and returns a new function, which takes the second one and returns a new function, which takes the third one, etc. until all arguments are completed. It is a process in functional programming in which we can transform a function with multiple arguments into a sequence of nested functions. It returns a new function that expects the next argument inline</dd>
 </dl>
 <dl>
   <dt>Error</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>Error objects are thrown when runtime errors occur. The Error object can also be used as a base object for user-defined exceptions. Runtime errors result in new Error objects being created and thrown.</dd>
 </dl>
 <dl>
   <dt>Event bubbling</dt>
@@ -224,29 +227,32 @@ Concepts vs specific parts of code vs ...
 </dl>
 <dl>
   <dt>Event delegation></dt>
-  <dd>the opposite – it’s when we put the listener on one of the parents elements, then we use logic inside of the event handler to target the element we actually want</dd>
+  <dd>The opposite of event bubbling – it's when we put the listener on one of the parents elements, then we use logic inside of the event handler to target the element we actually want</dd>
 </dl>
 <dl>
   <dt>Hoisting</dt>
-  <dd>refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code. JavaScript's default behavior of moving declarations to the top</dd>
+  <dd>Refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code. JavaScript's default behavior of moving declarations to the top</dd>
 </dl>
 <dl>
   <dt>Inheritance</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>Is an important concept in object oriented programming...</dd>
 </dl>
 <dl>
   <dt>recursion</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>Is a process of calling itself. A function that calls itself is called a recursive function. The act of a function calling itself, recursion is used to solve problems that contain smaller sub-problems. A recursive function can receive two inputs: a base case (ends recursion) or a recursive case (resumes recursion).</dd>
 </dl>
 <dl>
   <dt>Scope</dt>
-  <dd>Scope determines the accessibility (visibility) of variables. There are 
-  3 types: 1) Block scope, 2) Function scope, 3) Global scope.</dd>
+  <dd>Scope determines the accessibility (visibility) of variables. There are 3 types: 1) Block scope, 2) Function scope, 3) Global scope.</dd>
 </dl>
 <dl>
   <dt>Type coercion</dt>
-  <dd>lorem ipsum solve coagula </dd>
+  <dd>is the automatic or implicit conversion of values from one data type to another (such as strings to numbers).</dd>
 </dl>
+
+# Sloppy notes
+
+Everything below here is a sloppy notebook: unordered notes, unclear notes, a true **_scratch-pad_**. 
 
 The best of my notes from Traversy course:
 
@@ -258,12 +264,12 @@ The best of my notes from Traversy course:
 - 12 - template literals / template strings: ${ variables names or expressions/math or a function call or use conditionals / ternary op  }
 - 13 - arr.sort() - great for strings but not the right result for a numbers based array
 - `find()` method which takes in a testing Fx: arr.find(functionName) where functionName does a simple comparison and it gets an argument which s\b your array items I think – it returns the first number that neets the criteria
-- the THIS keyword – trying to access another key in an object inside a Fx
+- the `this` keyword – trying to access another key in an object inside a Fx
 - 15 – dates & times: new Date() - defaults to the present day if you don’t pass it anything
 - new Date(year, monthIndex, day, hours, minutes, seconds)
 - 16 - if (typeof thing !== 'undefined') – now you won’t get an error
 - 18 - FUNCTION EXPRESSIONS: it’s when a Fx is the value of a variable, usually they are anonymous
-- OBJECT ORIENTED PROGRAMMING: Fx’s inside of objects as opposed to in the global scope - in this case they are called METHODS – a Fx in an object `todo` called `add` or `edit` and you call it by `todo.add()` - or `todo.edit(id)`
+- OBJECT ORIENTED PROGRAMMING: Functions inside of objects as opposed to in the global scope - in this case they are called METHODS – a Fx in an object `todo` called `add` or `edit` and you call it by `todo.add()` - or `todo.edit(id)`
 - 19 - array specific iteration with forEach and map 
 - BREAK and CONTINUE are really important things to know for loops
 - forEach: takes in a callback function, an anonymous Fx – the anon Fx can take in 3 parameters, but you only need one – whatever you want to use as the current iteration, or the iterator -
@@ -273,16 +279,16 @@ The best of my notes from Traversy course:
 - 24 - DOM selectors (methods) for single elements: getElementById, querySelector, getElementsByClassName, getElementsByTagName, querySelectorAll
 - creating elements: className, setAttribute, appendChild, createTextNode, createElement, replaceChild, getAttribute, hasAttribute, removeAttribute, 
 - 29 - NOTE: some elements have default behaviors – to stop the default behavior, pass a parm into the cb Fx and do e.preventDefault()
-- Event Target Element: can get e.taget.className or to get a collection change className to classList - TARGET is really important especially for event delegation 
+- Event Target Element: can get `e.taget.className` or to get a collection change className to classList - TARGET is really important especially for event delegation 
 - 33 - localStorage: JSON.stringify, JSON.parse, clear, getItem, removeItem, setItem
 - SKIP 4) DOM Projects 
-- 44 - OOP: constructors & _this_ Keyword: the most important things in OOP is the Constructor and the `this` keyword: if you want to create multiple instances of a certain type of object then you want to create a constructor
+- 44 - OOP: constructors & the _this_ Keyword: the most important things in OOP is the Constructor and the `this` keyword: if you want to create multiple instances of a certain type of object then you want to create a constructor
 - the `this` keyword refers to the current instance of the object, the function scope
-- NOTE: constructors are really powerful when they have fx’s w\in them known as methods
+- NOTE: constructors are really powerful when they have functions w\in them known as methods
 - 46 - each object in JS has a prototype – a prototype is an object itself – all objects inherit their properties and methods from their prototypes = Object.prototype vs Client.prototype 
 - Object.prototype – you can see its methods like hasOwnProperty, toString, valueOf
 - 47 - prototype inheritance: to have one object or one object type inherit from another 
-- use .call(a, b, c, ...) - call is a fx that allows us to call another Fx from somewhere else in the current context 
+- use .call(a, b, c, ...) - `call()` is a fx that allows us to call another Fx from somewhere else in the current context 
 - 49 – ES6 classes: Any method you add inside the class gets added to the prototype and you still have Object.prototype 
 - Static Methods – ones you can use without instantiating a new object or instance
 - 50 inheritance and extending classes – or known as sub-classes 
