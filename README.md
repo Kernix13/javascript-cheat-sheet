@@ -130,6 +130,7 @@ Js methods that return true or false:
 | in operator        | if prop is `in` the obj or prototype (prop in obj) | 
 | 0, "", let x;      | all equal `false` | 
 | NaN, undefined, false | also equal `false` |
+| 1, all things with a value | equal `true` | 
 
 > Common to see `typeof` with ==, ===, !=, !==
 
