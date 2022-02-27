@@ -416,7 +416,7 @@ Table for ES6 syntax:
 | `// instead of:` | const name = user.name; | 
 |                | const age = user.age; | 
 | `// use:`       | const { name, age } = user; | 
-| _// assign to var names:_ | const { name: userName, age: userAge } = user; | 
+| `// assign to var names:` | const { name: userName, age: userAge } = user; | 
 | Destructuring  with Rest Parm: | const [a, b, ...arr] = [1, 2, 3, 4, 5, 7]; | 
 | Template literals ${var}: | \`Hello, my name is ${name}.\` | 
 
