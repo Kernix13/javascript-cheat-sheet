@@ -56,8 +56,7 @@ const hasSameElements = (a, b) => {
 - push.apply()
 - splice instead of delete
 - num.toFixed(#)
-- setTimeout() 
-- setInterval()
+- setTimeout(), setInterval()
 - Set timeouts to XMLHttpRequests
 - Avoid using try-catch-finally inside a loop
 - Declare and Initialize Arrays
@@ -75,7 +74,6 @@ const hasSameElements = (a, b) => {
 - Destructuring Assignment for objects and arrays
 - short circuit operators
 - Dealing With Empty and Non-Empty Values: 
-- template literals
 
 ```js
    const arr = [0,1,2,null,undefined,"",false];
@@ -90,19 +88,15 @@ const hasSameElements = (a, b) => {
 - Good: https://www.jesssica.tech/post/Javascript-Tips-and-Tricks
 - Good: https://pratapsharma.in/javascript-tips-and-tricks
 - Good: https://github.com/wilfredinni/javascript-cheatsheet
-- https://github.com/alhassy/JavaScriptCheatSheet 
+- Maybe: https://github.com/alhassy/JavaScriptCheatSheet 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <h2 id="terms" align="center">Terms</h2>
 
-Concepts vs specific parts of code vs ...
+Concepts, specific code syntax, ...
 
 ### Code Specific
-
-- arrow function: ( ) =>
-- new Date(): 
-- `${variable}`: 
 
 <dl>
   <dt>Callback function</dt>
@@ -161,8 +155,6 @@ Concepts vs specific parts of code vs ...
 
 ### Concepts
 
-- function statement vs var function: 
-
 <dl>
   <dt>Arity</dt>
   <dd>Is the term used to refer to the number of arguments or operands in a function or operation; is the number of functions you can pass into an object; is the number of parameters the function contains; ...</dd>
@@ -209,6 +201,10 @@ Concepts vs specific parts of code vs ...
 Everything below here is a sloppy notebook: unordered notes, unclear notes, a true **_scratch-pad_**. 
 
 Important things I need to memorize and incorporate:
+- function statement vs var function: 
+- arrow function: ( ) =>
+- new Date(): 
+- `${variable}`: 
 - the use of +=, -=, *=, /= with numbers
 - Escaping single and double quotes (`\'\"`), new line and tab (`\n\t`)
 - Working with multi-dimensional arrays 
