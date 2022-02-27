@@ -419,6 +419,11 @@ Table for ES6 syntax:
 | `// assign to var names:` | const { name: userName, age: userAge } = user; | 
 | Destructuring  with Rest Parm: | const [a, b, ...arr] = [1, 2, 3, 4, 5, 7]; | 
 | Template literals ${var}: | \`Hello, my name is ${name}.\` | 
+| Object literal: | const person = (name, age, gender) => ( {name, age, gender} ); |
+| Declarative functions: | | 
+| Class syntax: | | 
+| Module script | | 
+| JavaScript Promise: | | 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
