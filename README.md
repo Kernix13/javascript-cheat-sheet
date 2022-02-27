@@ -30,7 +30,7 @@ The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sh
    1. [Console Commands](#console-commands)
 
 
-Important Notes
+[Important Notes](#important-notes)
 1. [JavaScript version of CRUD](#javascript-version-of-crud)
    1. [Create](#create)
    1. [Read and return index and length](#read-and-return-index-and-length)
@@ -538,23 +538,22 @@ More involved returns / read:
 ### Update and Delete
 
 Update, Mutate, Delete:
-| Method          | Returns: |
-| :----           | :----  |
-| str.replace()   | new str with updated values |
-| str.toLowerCase() | returns str as lowercase |  
-| str.toUpperCase() | returns str as uppercase |
-| arr.splice(i)   | changes array contents | 
-| arr.push()      | changes array contents | 
-| arr.unshift()   | changes array contents | 
-| arr.shift()     | changes array contents | 
-| arr.pop()       | changes array contents | 
-| arr.sort()      | changes array order | 
-| arr.reverse()   | changes array order | 
-| obj[prop] = val | change property value, or set if empty |
-| obj.prop = val  | variation of above |
+| Method          | Returns:                    |
+| :----           | :----                       |
+| str.toLowerCase() | returns str as lowercase  |  
+| str.toUpperCase() | returns str as uppercase  |
+| arr.splice(i)   | changes array contents      | 
+| arr.push()      | changes array contents      | 
+| arr.unshift()   | changes array contents      | 
+| arr.shift()     | changes array contents      | 
+| arr.pop()       | changes array contents      | 
+| arr.sort()      | changes array order         | 
+| arr.reverse()   | changes array order         | 
+| obj[prop] = val | change property value, or set value if empty |
+| obj.prop = val  | variation of above          |
 | `delete` obj.prop | removes prop from an object, returns `true` |
 | obj.prop = " "  | update obj.prop to empty value, also try `null`|
-| arr.length = 0  | empties the array |  
+| arr.length = 0  | empties the array           |  
 
 <!--  
 CRUD operations for the DOM:

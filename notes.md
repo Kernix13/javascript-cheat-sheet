@@ -13,52 +13,6 @@ const hasSameElements = (a, b) => {
 // But do the elements need to be in the same order?
 ```
 
-Important things I need to memorize and incorporate:
-- num1 % num2 = remainder
-- the use of +=, -=, *=, /= with numbers
-- Escaping single and double quotes (`\'\"`), new line and tab (`\n\t`)
-- Working with multi-dimensional arrays 
-- Great data scructures article: https://www.educative.io/blog/javascript-data-structures
-- Memorize and fully understand `JSON.stringify()` vs `JSON.parse()` - why would you use them with arrays?
-- Since ==, <, >, <=, >= do type coercion, you may need to include `&& typeof` == "type you want"
-- Remember not to use `=` in an if condition but use `==` or `===`
-- switch(), case, break, default - freeCodeCamp basic JS section, lessons: Golf Code and Counting Cards!
-- Learn shorthand for if statements: if (a, b) return a === b;
-- `freeCodeCamp`: 
-   - 25 escape sequences in strings, 
-   - 42 manipulate arrays with push ...45. manipulate arrays with unshift, 
-   - 73 golf code, 
-   - 74 selecting from many options with switch statements...77. replacing if else chains with switch, 
-   - 78 returning boolean values from functions
-   - 80 counting cards, 
-   - 84 accessing object properties with variables is really good and the reference to lookup tables => link https://dev.to/k_penguin_sato/use-lookup-tables-for-cleaning-up-your-js-ts-code-9gk - similar to setting city = "Philadelphia" then using city in weather app, 
-   - 86 add new properties to a js object - obj, newProp = "value"
-   - 87 delete properties from a js object: delete obj.propname
-   - 88 using objects for lookups - why does `lookup[val]` work but `lookup.val` does NOT? 
-   - 89 hasOwnProperty, 92. accessing nested arrays for nice []. notation, 93. record collection WOW,
-   - 96 iterate w\ js while loops 
-
-**Notes on Record Collection**:
-- 
-
-78) returning boolean values from functions:
-```js
-function isEqual(a, b) {
-  if (a === b) {
-    return true;
-  } else {
-    return false;
-  }
-}
-// reduced to
-function isEqual(a, b) {
-  return a === b;
-}
-```
-> Therefore, `return a === b` shorthand for entire if statement
-
-<div id="back-to-top"></div>
-
 ## Table of Contents
 
 1. [Tips and Tricks](#tips-and-tricks)
@@ -238,7 +192,7 @@ Concepts vs specific parts of code vs ...
   <dd>Is an important concept in object oriented programming...</dd>
 </dl>
 <dl>
-  <dt>recursion</dt>
+  <dt>Recursion</dt>
   <dd>Is a process of calling itself. A function that calls itself is called a recursive function. The act of a function calling itself, recursion is used to solve problems that contain smaller sub-problems. A recursive function can receive two inputs: a base case (ends recursion) or a recursive case (resumes recursion).</dd>
 </dl>
 <dl>
@@ -253,6 +207,51 @@ Concepts vs specific parts of code vs ...
 # Sloppy notes
 
 Everything below here is a sloppy notebook: unordered notes, unclear notes, a true **_scratch-pad_**. 
+
+Important things I need to memorize and incorporate:
+- the use of +=, -=, *=, /= with numbers
+- Escaping single and double quotes (`\'\"`), new line and tab (`\n\t`)
+- Working with multi-dimensional arrays 
+- Great data structures article: https://www.educative.io/blog/javascript-data-structures
+- Memorize and fully understand `JSON.stringify()` vs `JSON.parse()` - why would you use them with arrays?
+- Since ==, <, >, <=, >= do type coercion, you may need to include `&& typeof` == "type you want"
+- Remember not to use `=` in an if condition but use `==` or `===`
+- switch(), case, break, default - freeCodeCamp basic JS section, lessons: Golf Code and Counting Cards!
+- Learn shorthand for if statements: if (a, b) return a === b;
+- `freeCodeCamp`: 
+   - 25 escape sequences in strings, 
+   - 42 manipulate arrays with push ...45. manipulate arrays with unshift, 
+   - 73 golf code, 
+   - 74 selecting from many options with switch statements...77. replacing if else chains with switch, 
+   - 78 returning boolean values from functions
+   - 80 counting cards, 
+   - 84 accessing object properties with variables is really good and the reference to lookup tables => link https://dev.to/k_penguin_sato/use-lookup-tables-for-cleaning-up-your-js-ts-code-9gk - similar to setting city = "Philadelphia" then using city in weather app, 
+   - 86 add new properties to a js object - obj, newProp = "value"
+   - 87 delete properties from a js object: delete obj.propname
+   - 88 using objects for lookups - why does `lookup[val]` work but `lookup.val` does NOT? 
+   - 89 hasOwnProperty, 92. accessing nested arrays for nice []. notation, 93. record collection WOW,
+   - 96 iterate w\ js while loops 
+
+**Notes on Record Collection**:
+- 
+
+78) returning boolean values from functions:
+```js
+function isEqual(a, b) {
+  if (a === b) {
+    return true;
+  } else {
+    return false;
+  }
+}
+// reduced to
+function isEqual(a, b) {
+  return a === b;
+}
+```
+> Therefore, `return a === b` shorthand for entire if statement
+
+<div id="back-to-top"></div>
 
 The best of my notes from Traversy course:
 
