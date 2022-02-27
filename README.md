@@ -111,7 +111,7 @@ var, let, const:
 
 ### Boolean methods
 
-Js methods that return true or false: 
+JavaScript methods, conditionals, etc. that return true or false: 
 
 | Type:              | Checks against:                      |
 | :----------        | :--------------                      |
@@ -130,9 +130,7 @@ Js methods that return true or false:
 | isInteger()        | if value is an integer               |
 | test()             | RegEx test if the string contains the match expression |
 | in operator        | if prop is `in` the obj or prototype (prop in obj) | 
-| false, 0, "", let x; | all equal `false`                  | 
-| NaN, null, undefined | also equal `false`                   |
-| 1 & any non-false value | equals `true`                    | 
+| true, false        | equals `true` and `false`             | 
 
 > Common to see `typeof` with ==, ===, !=, !==
 

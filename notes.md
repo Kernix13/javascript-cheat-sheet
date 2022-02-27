@@ -107,6 +107,10 @@ Concepts, specific code syntax, ...
   <dd>The read-only property of the Event interface identifies the current target for the event, as the event traverses the DOM. It always refers to the element to which the event handler has been attached, as opposed to Event.target</dd>
 </dl>
 <dl>
+  <dt>Error</dt>
+  <dd>Error objects are thrown when runtime errors occur. The Error object can also be used as a base object for user-defined exceptions. Runtime errors result in new Error objects being created and thrown.</dd>
+</dl>
+<dl>
   <dt>IIFE</dt>
   <dd>A function that runs as soon as it is defined.</dd>
 </dl>
@@ -164,15 +168,11 @@ Concepts, specific code syntax, ...
   <dd>currying is when a function — instead of taking all arguments at one time — takes the first one and returns a new function, which takes the second one and returns a new function, which takes the third one, etc. until all arguments are completed. It is a process in functional programming in which we can transform a function with multiple arguments into a sequence of nested functions. It returns a new function that expects the next argument inline</dd>
 </dl>
 <dl>
-  <dt>Error</dt>
-  <dd>Error objects are thrown when runtime errors occur. The Error object can also be used as a base object for user-defined exceptions. Runtime errors result in new Error objects being created and thrown.</dd>
-</dl>
-<dl>
   <dt>Event bubbling</dt>
   <dd>the bubbling up of events thru the DOM – so when an event happens it will bubble up thru its parents -  all the way to the body tag</dd>
 </dl>
 <dl>
-  <dt>Event delegation></dt>
+  <dt>Event delegation</dt>
   <dd>The opposite of event bubbling – it's when we put the listener on one of the parents elements, then we use logic inside of the event handler to target the element we actually want</dd>
 </dl>
 <dl>
