@@ -26,6 +26,7 @@ The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sh
    1. [Number Methods](#number-methods)
    1. [Date methods](#date-methods)
    1. [Functions and Escaping](#functions-and-escaping)
+   1. [ES6 Syntax](#es6-syntax)
    1. [Regex](#regex)
    1. [Console Commands](#console-commands)
 
@@ -397,6 +398,27 @@ Regex Methods
 | test()	| Returns true or false if the pattern match a string or not | 
 | match()	| Extract the actual matches found | 
 | replace()	| Search and replace text in a string | 
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### ES6 Syntax
+
+Table for ES6 syntax:
+| ES6 topic | Code example | 
+| -------:   | :----------- |
+| Arrow functions: | const varName = () => {code} | 
+| Default parameters: | function fnName(parm1 = val1) {...} |
+| Rest parameter: | const product = (...n) => {code} | 
+|                 | product(2, 4, 6, 2) |
+| Spread operator: | let numbers = [-12, 160, 0, -3, 51, -50]; | 
+|                 | let minNum = Math.min(...numbers); |
+| Destructuring assigment.: | const user = { name: 'John Doe', age: 34 }; | 
+| `// instead of:` | const name = user.name; | 
+|                | const age = user.age; | 
+| `// use:`       | const { name, age } = user; | 
+| _// assign to var names:_ | const { name: userName, age: userAge } = user; | 
+| Destructuring  with Rest Parm: | const [a, b, ...arr] = [1, 2, 3, 4, 5, 7]; | 
+| Template literals ${var}: | \`Hello, my name is ${name}.\` | 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -838,19 +860,3 @@ ${ "vars or expressions/math or a function call or use conditionals / ternary op
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-Table for ES6 syntax:
-| ES6 topic | Code example | 
-| -------:   | :----------- |
-| Arrow functions: | const varName = () => {code} | 
-| Default parameters: | function fnName(parm1 = val1) {...} |
-| Rest parameter: | const product = (...n) => {code} | 
-|                 | product(2, 4, 6, 2) |
-| Spread operator: | let numbers = [-12, 160, 0, -3, 51, -50]; | 
-|                 | let minNum = Math.min(...numbers); |
-| Destructuring assig.: | const user = { name: 'John Doe', age: 34 }; | 
-| `// instead of:` | const name = user.name; | 
-|                | const age = user.age; | 
-| `// use:`       | const { name, age } = user; | 
-| `// assign to var names:` | const { name: userName, age: userAge } = user; | 
-| Destructuring  with Rest Parm: | const [a, b, ...arr] = [1, 2, 3, 4, 5, 7]; | 
-| Template literals ${var}: | `Hello, my name is ${name}.` | 
