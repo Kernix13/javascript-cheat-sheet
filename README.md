@@ -403,9 +403,9 @@ Regex Methods
 
 ### ES6 Syntax
 
-Table for ES6 syntax:
-| ES6 topic | Code example | 
-| -------:   | :----------- |
+Table for ES6 syntax (Really slopp table!!!):
+| ES6 topic             | Code example                          | 
+| -------:              | :-----------                          |
 | Arrow functions:      | const varName = () => {code}          | 
 | Default parameters:   | function fnName(parm1 = val1) {...}   |
 | Rest parameter:       | const product = (...n) => {code}      | 
@@ -424,15 +424,16 @@ Table for ES6 syntax:
 | Class syntax:         | class ConstrFunc { constructor(x) {this._x = x}} | 
 | `// getter:`          | get something() { return this.x; }      |
 | `// setter:`          | set something(updateX) this.x = updateX |
+| `this._var`:          | private var, only accessible within the class | 
 | Module script:        | <script type="module" src="script.js"></script> | 
 | `// export1`          | export const add = (x, y) => {...}      | 
 | `// export2`          | export { add };                         | 
-| `// export default`   | export default (x, y) => {...}                         | 
-| `// import`           | import { add } from './functions.js';   | 
+| `// export default`   | export default function(x, y) => {...}  | 
+| `// import`           | import { add } from './functions';   | 
+| `import default`      | import add from './functions.js';       | 
 | `import multiple`     | import { add, subtract } from './functions.js'; | 
-| `import all`          | import * as myModule from "./functions.js"; | 
-| `import default`      | import { add } from './functions.js';  | 
-| JavaScript Promise:   | new Promise((resolve, reject) => {...     | 
+| `import all`          | import * as codeObj from "./functions.js"; | 
+| JavaScript Promise:   | new Promise((resolve, reject) => {...  | 
 | `// promise keywords:` | then, result, catch, error             | 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
