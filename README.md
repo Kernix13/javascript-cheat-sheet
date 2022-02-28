@@ -26,8 +26,8 @@ The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sh
    1. [Number Methods](#number-methods)
    1. [Date methods](#date-methods)
    1. [Functions and Escaping](#functions-and-escaping)
-   1. [ES6 Syntax](#es6-syntax)
    1. [Regex](#regex)
+   1. [ES6 Syntax](#es6-syntax)
    1. [Console Commands](#console-commands)
 
 
@@ -161,11 +161,13 @@ Comparisons for conditionals:
 | Greater than              | >      |
 | Less than or equal to     | <=     |
 | Less than or equal to     | >=     |
-| if `a` exists             | if (a) {...} |
-| if `a` doesn't exist      |if  (!a) {...} |
-| **all** things true      | &&     |
+| **all** things true       | &&     |
 | 2 **or** more things true | \|\|   |
-| Ternary operator          | a ? b : c |
+| if `a` exists             | if (a) {...}      |
+| if `a` doesn't exist      | if  (!a) {...}    |
+| Ternary operator          | a ? b : c         |
+| Nested Ternary            | a ? b : c ? d : e |
+| Ternary syntax:           | if cond ? do : else do |
 
 <br>
 
@@ -194,7 +196,7 @@ Types of Loops:
 
 <br>
 
-Loop specific arithmetic:
+Loop assigment:
 |    Purpose          | Symbol | 
 | :-----------        | :----: |
 | Loop addition       | +=     |
@@ -247,31 +249,31 @@ Strings and Arrays: Different Methods, Opposite Effect
 ### Object methods
 
 Common Object methods:
-| Method, Class term   | Returns: | Returns what?       |
-| :------------------- | :------- | :-------            |       
-| obj.keys()           | array    | obj property keys   |
-| obj.values()         | array    | obj property values |
-| obj.entries()        | array    | obj key-value pairs  |
-| Object.freeze(obj)   | NA       | prevents mutation for entire object |  
-| obj.getOwnPropertyNames() | array | all prop names except symbols |
-| obj.toString()       | string   | obj as a string     |
-| obj.hasOwnProperty() | boolean  | if obj has (prop)   |
-| obj.prop or obj[prop] | value   | return value for `prop` |
+| Method, Class term   | Returns:  | Returns what?       |
+| :------------------- | :-------  | :-------            |       
+| obj.keys()           | new array | obj property keys   |
+| obj.values()         | new array | obj property values |
+| obj.entries()        | new array | obj key-value pairs  |
+| obj.getOwnPropertyNames() | new array | all prop names except symbols |
+| Object.freeze(obj)   | NA        | prevents mutation for entire object |  
+| obj.toString()       | new string | obj as a string     |
+| obj.hasOwnProperty() | boolean   | if obj has (prop)   |
+| obj.prop or obj[prop] | value    | return value for `prop` |
 | obj.prop[i] or obj.[prop][i] | value |  at pos [i] for array in object |
-| obj.prop.length      | value    | length of array in object |
+| obj.prop.length      | value     | length of array in object |
 
 <br>
 
 Object class syntax and terms (Fx = 'function'):
-| Class term  | Purpose:                                        | Other?       |
-| :---------- | :-------                                        | :-------            |    
-| class       | template for creating objects                   | - |
-| constructor | for creating and initializing an object created with a class | - |
-| this        | the value of this is determined by how a function is called | - |
-| new         | create a new instance of the class              | - | 
-| get         | binds an obj prop to a Fx, called when that prop is looked up | - |
-| set         | binds an obj prop to a Fx, called when there is an attempt to set that prop | - |
-| extends     | used to create a class as a child of another class | - |
+| Class term  | Purpose:                                        |
+| :---------- | :-------                                        | 
+| class       | template for creating objects                   | 
+| constructor | for creating and initializing an object created with a class | 
+| this        | the value of this is determined by how a function is called | 
+| new         | create a new instance of the class              |  
+| get         | binds an obj prop to a Fx, called when that prop is looked up | 
+| set         | binds an obj prop to a Fx, called when there is an attempt to set that prop | 
+| extends     | used to create a class as a child of another class | 
 
 Look into [MDN Method definitions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions).
 
@@ -369,7 +371,7 @@ General:
 | :--- | :---- |
 | \	| Escapes a special character. | 
 | i	| This flag is used to ignore upper and lowercase. /ignorecase/i. | 
-| g	|  global flag, extract a pattern more than once. | 
+| g	| Global flag, extract a pattern more than once. | 
 | .	| The wildcard character . will match any character except new lines. | 
 | [ ]	| Allow you to define the characters to match. /b[au]g/ will match "bag", "bug" but not "bog". | 
 | [a-zA-Z]	| Match all the characters between a and z and A-Z. | 
@@ -876,3 +878,30 @@ ${ "vars or expressions/math or a function call or use conditionals / ternary op
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+Testing meta view of ALL syntax and keywords:
+
+Assign, declare, define, set, reassign, initialize:
+| Name / Desc        | Keyword, char:                               | Used with/for: | 
+| :-------           | :------                                      | :-------  |
+| Assignment         | =, +=, etc., set                             | variables |  
+| Default parameters | (parm1 = val1)                               | Functions |
+| Destructuring      | {key1: val1, key2: val2}                     | Obj       | 
+| Template literals  | \`<p>Text ${var}</p>\`                       | variables | 
+| Object literal     | (name, age, email) => ( {name, age, email} ) | Obj       |
+
+<br>
+
+Things:
+| What              | Why            | 
+| :-------          | :------        | 
+| data types        | storing values | 
+| Variables         | set to a datatype and assign value | 
+| Operators         | assign values to variables | 
+| data type methods | create, read, update, check, delete | 
+| conditionals      | check, test in code blocks |
+| comparisons       | same as abve |
+| Loops             | working with groups of variables or values |
+| functions         | combination of above |
+| escaping          | format, output | 
+| RegEx             | Check | 
+| shorthand syntax  | variable input, alternate, DRY, dynamic | 
