@@ -403,7 +403,7 @@ Regex Methods
 
 ### ES6 Syntax
 
-Table for ES6 syntax (Really slopp table!!!):
+Table for ES6 syntax (Really sloppy table!!!):
 | ES6 topic             | Code example                          | 
 | -------:              | :-----------                          |
 | Arrow functions:      | const varName = () => {code}          | 
@@ -422,17 +422,17 @@ Table for ES6 syntax (Really slopp table!!!):
 | Object literal:       | const person = (name, age, email) => ( {name, age, email} );|
 | Declarative functions: | no colon or `function` keyword, name(parm) (code) | 
 | Class syntax:         | class ConstrFunc { constructor(x) {this._x = x}} | 
-| `// getter:`          | get something() { return this.x; }      |
-| `// setter:`          | set something(updateX) this.x = updateX |
+| getter:          | get something() { return this.x; }      |
+| setter:          | set something(updateX) this.x = updateX |
 | `this._var`:          | private var, only accessible within the class | 
 | Module script:        | <script type="module" src="script.js"></script> | 
-| `// export1`          | export const add = (x, y) => {...}      | 
-| `// export2`          | export { add };                         | 
-| `// export default`   | export default function(x, y) => {...}  | 
-| `// import`           | import { add } from './functions';   | 
-| `import default`      | import add from './functions.js';       | 
-| `import multiple`     | import { add, subtract } from './functions.js'; | 
-| `import all`          | import * as codeObj from "./functions.js"; | 
+| export1          | export const add = (x, y) => {...}      | 
+| export2          | export { add };                         | 
+| export default   | export default function(x, y) => {...}  | 
+| import           | import { add } from './functions';   | 
+| import default      | import add from './functions.js';       | 
+| import multiple     | import { add, subtract } from './functions.js'; | 
+| import all          | import * as codeObj from "./functions.js"; | 
 | JavaScript Promise:   | new Promise((resolve, reject) => {...  | 
 | `// promise keywords:` | then, result, catch, error             | 
 
