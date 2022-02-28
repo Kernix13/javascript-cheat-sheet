@@ -406,24 +406,34 @@ Regex Methods
 Table for ES6 syntax:
 | ES6 topic | Code example | 
 | -------:   | :----------- |
-| Arrow functions: | const varName = () => {code} | 
-| Default parameters: | function fnName(parm1 = val1) {...} |
-| Rest parameter: | const product = (...n) => {code} | 
-|                 | product(2, 4, 6, 2) |
-| Spread operator: | let numbers = [-12, 160, 0, -3, 51, -50]; | 
-|                 | let minNum = Math.min(...numbers); |
+| Arrow functions:      | const varName = () => {code}          | 
+| Default parameters:   | function fnName(parm1 = val1) {...}   |
+| Rest parameter:       | const product = (...n) => {code}      | 
+|                       | product(2, 4, 6, 2)                   |
+| Spread operator:      | let numbers = [-12, 160, 0, -3, 51, -50]; | 
+|                       | let minNum = Math.min(...numbers);    |
 | Destructuring assigment.: | const user = { name: 'John Doe', age: 34 }; | 
-| `// instead of:` | const name = user.name; | 
-|                | const age = user.age; | 
-| `// use:`       | const { name, age } = user; | 
+| `// instead of:`      | const name = user.name;               | 
+|                       | const age = user.age;                 | 
+| `// use:`             | const { name, age } = user;           | 
 | `// assign to var names:` | const { name: userName, age: userAge } = user; | 
 | Destructuring  with Rest Parm: | const [a, b, ...arr] = [1, 2, 3, 4, 5, 7]; | 
-| Template literals ${var}: | \`Hello, my name is ${name}.\` | 
-| Object literal: | const person = (name, age, gender) => ( {name, age, gender} ); |
-| Declarative functions: | | 
-| Class syntax: | | 
-| Module script | | 
-| JavaScript Promise: | | 
+| Template literals ${var}: | \`Hello, my name is ${name}.\`      | 
+| Object literal:       | const person = (name, age, email) => ( {name, age, email} );|
+| Declarative functions: | no colon or `function` keyword, name(parm) (code) | 
+| Class syntax:         | class ConstrFunc { constructor(x) {this._x = x}} | 
+| `// getter:`          | get something() { return this.x; }      |
+| `// setter:`          | set something(updateX) this.x = updateX |
+| Module script:        | <script type="module" src="script.js"></script> | 
+| `// export1`          | export const add = (x, y) => {...}      | 
+| `// export2`          | export { add };                         | 
+| `// export default`   | export default (x, y) => {...}                         | 
+| `// import`           | import { add } from './functions.js';   | 
+| `import multiple`     | import { add, subtract } from './functions.js'; | 
+| `import all`          | import * as myModule from "./functions.js"; | 
+| `import default`      | import { add } from './functions.js';  | 
+| JavaScript Promise:   | new Promise((resolve, reject) => {...     | 
+| `// promise keywords:` | then, result, catch, error             | 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
