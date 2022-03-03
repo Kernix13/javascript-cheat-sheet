@@ -25,7 +25,7 @@ The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sh
    1. [Object methods](#object-methods)
    1. [Number Methods](#number-methods)
    1. [Date methods](#date-methods)
-   1. [Functions and Escaping](#functions-and-escaping)
+   1. [Functions and Rest Syntax](#functions-and-rest-syntax)
    1. [Regex](#regex)
    1. [ES6 Syntax](#es6-syntax)
    1. [Console Commands](#console-commands)
@@ -339,7 +339,7 @@ Set Part of a Date
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-### Functions and Escaping
+### Functions and Rest Syntax
 
 Basic function expressions:
 | Type     | Declare                        | Call | 
@@ -350,18 +350,20 @@ Basic function expressions:
 | Arrow3   | item => {item...}              | -   | 
 | Arrow4   | (arr1, arr2) => {arr1...arr2}  | -   | 
 | IIFE     | (function() {...})             | (); |
+| Spread/Rest op. | 
 
+<br>
 
-Escaping characters:
-| Code | Character output |
-| :--- | :----- |
-| `\'` | Single quote `'` | 
-| `\"` | Double quote `"` | 
-| `\\` | Backslash `\`| 
-| `\\|` | Pipe `\|` | 
-| `\n` | New line | 
-| `\r` | Carriage return | 
-| `\t` | <kbd>TAB</kbd> | 
+Spread and Rest operator:
+| Type         | Declare        | Used to/with | 
+| :---         | :-----         | :----- |
+| Spread oper. | (...arr)       | Unpack an array |
+| Spread oper. | (...obj)       | Unpack an object |
+| Rest oper.   | (...args)      | As Function parameters |
+| Variation:   | (a, ...args)    | 1st element then rest | 
+| Variation:   | (a, b, ...obj) | 1st two elements then rest | 
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### RegEx
 
@@ -394,12 +396,27 @@ General:
 | a{5}	| Specify the exact number of matches | 
 | (...)	| Specify a group that can be acceded with number (from 1) | 
 
+<br>
+
 Regex Methods
 | Method	| Description |
 | :-----  | :---- |
-| test()	| Returns true or false if the pattern match a string or not | 
-| match()	| Extract the actual matches found | 
-| replace()	| Search and replace text in a string | 
+| regEx.test(str)	| Returns true or false if the pattern match is found | 
+| str.match(regEx)	| Extract the actual matches found | 
+| str.replace(regEx, 'replacement')	| Search and replace text in a string | 
+
+<br>
+
+Escaping characters:
+| Code | Character output |
+| :--- | :----- |
+| `\'` | Single quote `'` | 
+| `\"` | Double quote `"` | 
+| `\\` | Backslash `\`| 
+| `\\|` | Pipe `\|` | 
+| `\n` | New line | 
+| `\r` | Carriage return | 
+| `\t` | <kbd>TAB</kbd> | 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -435,7 +452,9 @@ Table for ES6 syntax (Really sloppy table!!!):
 | import default      | import add from './functions.js';       | 
 | import multiple     | import { add, subtract } from './functions.js'; | 
 | import all          | import * as codeObj from "./functions.js"; | 
-| JavaScript Promise:   | new Promise((resolve, reject) => {...  | 
+| JavaScript Promise:   | new Promise((resolve, reject) => {...});  | 
+| then                | myPromise.then(result => {...}); | 
+| catch               | myPromise.catch(error => {...}); | 
 | `// promise keywords:` | then, result, catch, error             | 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -877,7 +896,7 @@ ${ "vars or expressions/math or a function call or use conditionals / ternary op
 - next...
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
+<!--  
 Testing meta view of ALL syntax and keywords:
 
 Assign, declare, define, set, reassign, initialize:
@@ -905,3 +924,4 @@ Things:
 | escaping          | format, output | 
 | RegEx             | Check | 
 | shorthand syntax  | variable input, alternate, DRY, dynamic | 
+-->
