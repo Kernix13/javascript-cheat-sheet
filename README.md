@@ -387,8 +387,8 @@ General:
 | ?	    | `/docx?/`   | Lazy matching, optional match 0 or 1 times of the previous char | 
 | ^	    | `/^The/`    | Search for patterns at the beginning of strings. | 
 | $	    | `/end.$/`   | Search for patterns at the end of a string. | 
-| {#}   | `a{5}`      | Match the exact number of matches | 
-| {#,}  | `a{2,}`     | Match at least the lower number but can match more | 
+| {#}   | `a{5}`      | Quantity specifier, specify the exact number of matches (5 a's) | 
+| {#,}  | `\s{2,}`    | Match at least the lower number or more, find more than 1 space | 
 | {#,#} | `a{2,5}`    | Match the letter `a` between 2 and 5 times | 
 
 <br>
@@ -401,8 +401,8 @@ Shorthand syntax:
 | \W	  | NA          | Equals [^a-za-z0-9_]. | 
 | \d	  | NA          | Equals [0-9] | 
 | \D	  | NA          | Equals [^0-9] | 
-| \s	  | NA          | Match a whitespace | 
-| \S	  | NA          | Match everything except whitespace | 
+| \s	  | NA          | Match a whitespace, equals [\r\t\f\n\v] | 
+| \S	  | NA          | Match everything except whitespace, equals [^\r\t\f\n\v] | 
 | ( )	  | `(anything)` | Capture group, use for different blocks to match | 
 |       | `$1`        | use `$1` to reference the 1st capture group, `$2` for 2nd, ... |
 
