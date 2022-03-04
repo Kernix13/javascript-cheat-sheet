@@ -388,7 +388,7 @@ General:
 | ^	    | `/^The/`    | Search for patterns at the beginning of strings. | 
 | $	    | `/end.$/`   | Search for patterns at the end of a string. | 
 | {#}   | `a{5}`      | Quantity specifier, specify the exact number of matches (5 a's) | 
-| {#,}  | `\s{2,}`    | Match at least the lower number or more, find more than 1 space | 
+| {#,}  | `\s{2,}`    | Match at least the lower number or more, find 2 or more spaces | 
 | {#,#} | `a{2,5}`    | Match the letter `a` between 2 and 5 times | 
 
 <br>
