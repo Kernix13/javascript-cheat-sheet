@@ -390,6 +390,10 @@ General:
 | {#}   | `a{5}`      | Quantity specifier, specify the exact number of matches (5 a's) | 
 | {#,}  | `\s{2,}`    | Match at least the lower number or more, find 2 or more spaces | 
 | {#,#} | `a{2,5}`    | Match the letter `a` between 2 and 5 times | 
+| (?<=) | NA          | Positive lookbehind, put inside a group, start with `?<=` | 
+| (?<!) | NA          | Negative lookbehind, put inside a group, start with `?<!` | 
+| (?=)  | NA          | Positive lookahead |
+| (?=!) | NA          | Negative lookahead |
 
 <br>
 
@@ -405,6 +409,7 @@ Shorthand syntax:
 | \S	  | NA          | Match everything except whitespace, equals [^\r\t\f\n\v] | 
 | ( )	  | `(anything)` | Capture group, use for different blocks to match | 
 |       | `$1`        | use `$1` to reference the 1st capture group, `$2` for 2nd, ... |
+| <?name> | (?\<name\>regex) | Name your capture groups instead of `$1`, `$2`, etc. |
 
 <br>
 
