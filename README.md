@@ -376,7 +376,7 @@ General:
 | i	    | `/The/ig `  | Flag to ignore case, find all occurences of `the`  | 
 | g	    | see above | Global flag, match all occurrences | 
 | .	    | `/.ing/`    | Wildcard character, match anything except new lines. | 
-| \	    | `\.^ `      | Escapes special characters (`.`, `+`, `^`, `*`, `?`, `$`, etc.) | 
+| \	    | `\. `      | Escapes special characters (`.`, `+`, `^`, `*`, `?`, `$`, etc.) | 
 | [ ]	  | `/[aeiou]/` | Character set/class, matches vowels in this case | 
 | [^]	  | `/[^aeiou]/` | Don't match what's inside, don't match lowercase vowels | 
 | -     | `[a-zA-Z]`  | Match all upper and lower case alphabet letters | 
