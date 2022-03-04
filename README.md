@@ -369,32 +369,35 @@ Spread and Rest operator:
 
 General: 
 
-| Char | Description | 
-| :--- | :---- |
-| \	| Escapes a special character. | 
-| i	| This flag is used to ignore upper and lowercase. /ignorecase/i. | 
-| g	| Global flag, extract a pattern more than once. | 
-| .	| The wildcard character . will match any character except new lines. | 
-| [ ]	| Allow you to define the characters to match. /b[au]g/ will match "bag", "bug" but not "bog". | 
-| [a-zA-Z]	| Match all the characters between a and z and A-Z. | 
-| [0-9]	| Match all the numbers between 1 and 9. | 
-| [a-z0-9] | Match all the character between a and z, and the numbers between 1 and 9. | 
-| [^]	| Match the characters not in the set. [^a-e] match all other characters except A, B, C, D, and E. | 
-| +	| Match 1 or more occurrences of the previous character in a row. | 
-| *	| Match 0 or more occurrences of the previous character. | 
-| ?	| Match 0 or 1 occurrence of the previous character. Useful for Lazy matching. | 
-| ^	| Search for patterns at the beginning of strings. | 
-| $	| Search for patterns at the end of a string. | 
-| \w	| Equal to [A-Za-z0-9_]. Matches upper, lowercase, numbers the and underscore character (-). | 
-| \W	| Matches any nonword character. Equivalent to [^a-za-z0-9_]. | 
-| \d	| Equal to [0-9]. Match one digit. | 
-| \D	| Equal to [^0-9]. Match one non digit. | 
-| \s	| Match a whitespace. | 
-| \S	| Match everything except whitespace. | 
-| a{2,5}	| Match the letter a between 3 and 5 times | 
-| a{2,}	| Specify only the lower number of matches | 
-| a{5}	| Specify the exact number of matches | 
-| (...)	| Specify a group that can be acceded with number (from 1) | 
+| Char  | Example   | Description | 
+| :---  | :----     | :---- |
+| string | `/Some word/` | Match a literal string |
+| \	    | `\.\+\^ `   | Escapes special characters | 
+| \|    | `/dog\|cat/`| Either or, match dog or cat |
+| i	    | `/The/ig `  | Flag to ignore case, find all occurences of `the`  | 
+| g	    | see above | Global flag, match all occurrences | 
+| .	    | `/.ing/`    | Wildcard character, match anything except new lines. | 
+| [ ]	  | `/[aeiou]/` | Character set/class, matches vowels in this case | 
+| [^]	  | `/[^aeiou]/` | Don't match what's inside, don't match lowercase vowels | 
+| -     | `[a-zA-Z]`  | Match all upper and lower case alphabet letters | 
+| [0-9]	| NA          | Match all the numbers between 1 and 9 | 
+| [a-z0-9] | NA       | Combineation of the 2 above | 
+| +	    | `/s+/gi `   | Match 1 or more occurrences of the previous character | 
+| *	    | `/boo*/`    | Match 0 or more occurrences: both, booth, booooom, bot, ...  | 
+| ?	    | `/docx?/`   | Lazy matching, optional match 0 or 1 times of the previous char | 
+| ^	    | `/^The/`    | Search for patterns at the beginning of strings. | 
+| $	    | `/end.$/`   | Search for patterns at the end of a string. | 
+| \w	  | NA          | Equals [A-Za-z0-9_] | 
+| \W	  | NA          | Equals [^a-za-z0-9_]. | 
+| \d	  | NA          | Equals [0-9] | 
+| \D	  | NA          | Equals [^0-9] | 
+| \s	  | NA          | Match a whitespace | 
+| \S	  | NA          | Match everything except whitespace | 
+| {#}   | `a{5}`      | Match the exact number of matches | 
+| {#,}  | `a{2,}`     | Match at least the lower number but can match more | 
+| {#,#} | `a{2,5}`    | Match the letter `a` between 2 and 5 times | 
+| ( )	  | `(anything)` | Capture group, use for different blocks to match | 
+|       | `$1`        | use `$1` as shorthand for the 1st capturegroup, `$2` for 2nd, ... |
 
 <br>
 
