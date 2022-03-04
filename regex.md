@@ -123,7 +123,7 @@ Format phone numbers into preferred format. Examples:
 1.987.654.3210
 ```
 
-Find and replace:
+Find and replace phone numbers:
 
 ```js
 const phonePattern = /1?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})/g;
@@ -132,6 +132,24 @@ let results = input.match(phonePattern); // input = source text with phone #'s
 if (!results) results = [];
 
 const resultsUniform = results.map(x => x.replace(phonePattern, '($1) $2-$3'));
+```
+
+Find and replace common HTML entities (<, >, ', ", &) with a function
+
+```js
+function replaceEntity(str) {
+const entityPattern = /[&<>"']/g;
+let  replacements = {
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    "\"":"&quot;",
+    "'":"&apos;"
+  }
+  return str.replace(entityPattern, match => replacements[match]);
+}
+
+replaceEntity(`<li>a quote: "Here & with 'single' quotes"</li>`)
 ```
 
 ### User name validation
@@ -151,4 +169,19 @@ const usernamePattern = /^[a-z][a-z0-9]{7,29}$/i
     showError()
   }
 }
+```
+
+User name 2:
+
+1. Usernames can only use alpha-numeric characters.
+1. The only numbers in the username have to be at the end. There can be zero or more of them at the end. Username cannot start with the number.
+1. Username letters can be lowercase and uppercase.
+1. Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
+
+```js
+let username = "SomeUserName12";
+let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i;
+let result = userCheck.test(username);
+// RegEx 2:
+let userCheck2 = /^[a-z]([0-9]{2,}|[a-z]+\d*)$/i;
 ```

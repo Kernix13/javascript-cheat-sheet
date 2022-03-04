@@ -390,10 +390,10 @@ General:
 | {#}   | `a{5}`      | Quantity specifier, specify the exact number of matches (5 a's) | 
 | {#,}  | `\s{2,}`    | Match at least the lower number or more, find 2 or more spaces | 
 | {#,#} | `a{2,5}`    | Match the letter `a` between 2 and 5 times | 
-| (?<=) | NA          | Positive lookbehind, put inside a group, start with `?<=` | 
-| (?<!) | NA          | Negative lookbehind, put inside a group, start with `?<!` | 
-| (?=)  | NA          | Positive lookahead |
-| (?=!) | NA          | Negative lookahead |
+| (?<=...) | NA       | Positive lookbehind, put inside a group, start with `?<=` | 
+| (?<!...) | NA       | Negative lookbehind, put inside a group, start with `?<!` | 
+| (?=...) | NA        | Positive lookahead |
+| (?!...) | NA        | Negative lookahead |
 
 <br>
 
@@ -680,9 +680,9 @@ There are methods in common to both arrays and strings so I am combining them fo
 
 - `arr.at()`: Accepts negative #’s, which counts from back
 - `str.substring()`: returns the part of the string between the start and end indexes, or to the end of the string
-  - Alernate: `substring(indexStart, indexEnd)`
+  - Alernate: `substring(indexStart, indexEnd)` where `indexEnd` is the index of the first character to exclude from the returned substring.
 - `arr.splice()`: changes the contents of an array by removing or replacing existing elements and/or adding new elements
-  - Alternate: `splice(start, deleteCount)`
+  - Alternate: `splice(start, deleteCount)`, `splice(start, deleteCount, item1, item2, ...)`, where itemN = equals the values to add to the array beginning from `start`.
 
 ### Different Methods and Opposite Effect
 
