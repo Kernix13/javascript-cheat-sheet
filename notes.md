@@ -160,12 +160,20 @@ Concepts, specific code syntax, ...
 ### Concepts
 
 <dl>
+  <dt>Abstraction</dt>
+  <dd>in OOP, refers to only showing essential details and keeping everything else hidden. Users of you classes should not worry about the inner details of those classes. Split up your code into small chunks. It’s best if the section you are working on is able to function without knowledge of the inner workings of a different section. Think in terms of interface and implementation. Interface refers to the way sections of code can communicate with one another (done thru methods that each class can access). The implementation of the methods (how they are coded) should be hidden.</dd>
+</dl>
+<dl>
   <dt>Arity</dt>
   <dd>Is the term used to refer to the number of arguments or operands in a function or operation; is the number of functions you can pass into an object; is the number of parameters the function contains; ...</dd>
 </dl>
 <dl>
   <dt>Currying</dt>
   <dd>currying is when a function — instead of taking all arguments at one time — takes the first one and returns a new function, which takes the second one and returns a new function, which takes the third one, etc. until all arguments are completed. It is a process in functional programming in which we can transform a function with multiple arguments into a sequence of nested functions. It returns a new function that expects the next argument inline</dd>
+</dl>
+<dl>
+  <dt>Encapsulation</dt>
+  <dd>in OOP, refers to bundling data with methods that can operate on that data within a class. It is the idea of hiding data within a class, preventing anything outside that class from directly interacting with it. Members of other classes can interact with the attributes of another object through its methods: `get` and `set` methods. Also, you may want some attributes to be read-only from outside the class, which means you only have a `getter` emthod, no `setter`. Don't allow external classes to directly edit an object's attributes. Each piece should not have access to or rely on the inner workings of other sections of code (Information hiding)!</dd>
 </dl>
 <dl>
   <dt>Event bubbling</dt>
@@ -181,7 +189,23 @@ Concepts, specific code syntax, ...
 </dl>
 <dl>
   <dt>Inheritance</dt>
-  <dd>Is an important concept in object oriented programming...</dd>
+  <dd>in OOP, is the principle that allows classes to erive from other classes – methods and attributes. A SuperClass with Subclasses. Subclasses inherit methods and attributes from their Superclass. </dd>
+</dl>
+<dl>
+  <dt>Access modifiers</dt>
+  <dd>A part of inheritance in OOP which change which classes have access to other classes, methods, or attributes. There are 3 main access modifiers: Public, Private, and Protected. Public modifiers can be accessed from anywhere in your program. Private modifier can only be accessed from within the same class that the member is defined. Protected modifiers can be access within the class it is defined, as well as subclasses of that class.</dd>
+</dl>
+<dl>
+  <dt>Polymorphism</dt>
+  <dd>in OOP, describes methods that are able to take on many forms. There are 2 types: Dynamic and Static. </dd>
+</dl>
+<dl>
+  <dt>Dynamic polymorphism</dt>
+  <dd>occurs during the runtime of the program. It describes when a method signature is in both a subclass and a superclass. They have the same name but different implementation, but the subclass overrides the superclass. This is because the form of the method is decided based on where in the class hierarchy it is called. This reduces the need for multiple if/else if statements</dd>
+</dl>
+<dl>
+  <dt>Static polymorphism</dt>
+  <dd>occurs during complie time and refers to when multiple methods with the same name but different arguments are defined in the same class: either a different # of parameters, or or different typss, or in a different order. That is known as method overloading. Despite the methods having the same name, their signatures are different due to their arguments.</dd>
 </dl>
 <dl>
   <dt>Recursion</dt>
