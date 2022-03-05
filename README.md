@@ -50,7 +50,7 @@ The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sh
 1. [Object Notes](#object-notes)
 1. [Number notes](#number-notes)
 1. [Date Notes](#date-notes)
-1. [Loop Notes](#loo-notes)
+1. [Loop Notes](#loop-notes)
 1. [Miscellaneous](#miscellaneous)
 
 ## Table Comparisons
@@ -118,7 +118,7 @@ JavaScript methods, conditionals, etc. that return `true` or `false`:
 | Type:              | Checks against:                      |
 | :----------        | :--------------                      |
 | <, >, <=, >=       | number, .length, typeof, ...         |
-| !=, !==            | Anything                             |
+| ==, ===, !=, !==   | Anything                             |
 | &&, \|\|           | Checking multiple and/or conditions  |
 | hasOwnProperty(prop) | If an object has a property          | 
 | obj.is(a, b)       | if 2 values are the same value       |
@@ -346,7 +346,7 @@ Set Part of a Date
 
 ### Functions and Rest Syntax
 
-Basic function expressions:
+Basic function declaration & expressions:
 | Type     | Declare                        | Call | 
 | :---     | :-----                         | :----- |
 | Standard | function name() {...}          | name(); | 
@@ -355,7 +355,7 @@ Basic function expressions:
 | Arrow3   | item => {item...}              | -   | 
 | Arrow4   | (arr1, arr2) => {arr1...arr2}  | -   | 
 | IIFE     | (function() {...})             | (); |
-| Spread/Rest op. | 
+| Spread/Rest op. | (...) | | 
 
 <br>
 
@@ -840,6 +840,11 @@ Set Date Methods:
 - `setTime(timeValue)`: Set the time (milliseconds since January 1, 1970), sets the Date object to the time represented by a number of milliseconds since January 1, 1970
 - `setUTCDate(dayValue)`: Sets the day of the month for a specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
 
+Date example:
+```js
+let dayOfWeek = new Date().getDay() // returns weekday as a number 0-6
+```
+
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Loop Notes
@@ -854,7 +859,7 @@ Set Date Methods:
 - *Nested for loops*: If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays
 - *Do...while loops*: it will first do one pass of the code inside the loop no matter what, and then continue to run the loop while the specified condition evaluates to true - a do...while loop ensures that the code inside the loop will run at least once
 - `forEach loops`: An array method that runs a function for each element in an array
-- `break`: use to break out of the loop like in switch functions.
+- `break`: use to break out of the loop like in switch statements.
 - `continue`: use to skip an iteration in a loop.
 - ***Recursion***: ???
 
@@ -915,6 +920,9 @@ Syntax:
 Functions:
 - The function passed to High Order Array Methods will run as many times as the # of items in the array it is called on 
 - FUNCTION EXPRESSIONS: it’s when a function is the value of a variable, usually they are anonymous: `let one = function() {...}`
+- Function expressions require an ending semicolon because they are the value of a variable, whereas normal functions do not require that.
+- There are times when there is no difference between a function declaration vs. expression, but there are times when expressions have benefits: hoisting closures, ...
+- Function closure: is a function that references variables in the outer scope from its inner scope.
 - inline functions - When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword `return` as well as the brackets surrounding the code: `const magic = () => new Date();`
 - WHENEVER YOU HAVE AN ANONYMOUS FUNCTION, YOU CAN CONVERT IT INTO AN ARROW FUNCTION
 - arrow function with arguments: `let myConcat = (arr1, arr2) => arr1.concat(arr2);`
@@ -925,6 +933,20 @@ Functions:
 - Only the last parameter in a function definition can be a rest parameter
 - **Spread operator**: allows you to expand arrays and other expressions in places where multiple parameters or elements are expected - confusing - it looks like a copy but isn't???
 - Destructuring assignment - a special syntax for taking values from an object to a variable - it's a quicker way of assigning values from an object into variables - it's seems like the assignment is reversed with the var name to the right of `=` and the destructuring of the object to the left - 
+- IIFE: is an anonymous function you declare and run at the same time. To do that you need it to be an expression, and you make it an expression by enclosing it in parentheses (). 
+- IIFE's can also take in parameters. 
+
+Conditionals:
+- Most times you want to check the value and type so use `===` ans not `==`
+- use `if(typeof varName !== 'undefined')` to check whether or not a variable exists or not. You will get an error if you just use `if (varName)` and it does NOT exist.
+- Only `===` and `!==` don't do type conversion, all other comparisons do.
+- **_NOTE_**: the curly brackets `{}` in an if statement are optional, though are recommended. Here is an example wiiihout them:
+```js
+if (id === 100)
+  console.log("Equal");
+// or 
+if (id === 100) console.log("Equal");
+```
 
 Other:
 - template literals / template strings: 
