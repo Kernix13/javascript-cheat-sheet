@@ -313,6 +313,7 @@ Common Date Methods: Pulling Date and Time Values
 
 | Method            | Description:                                      | 
 | :---              | :------                                           | 
+| new Date()        | Defaults to present day if you don’t pass it anything |
 | getDate()         | Returns the day of the month as a # (1-31)        | 
 | getDay()          | Weekday as a number (local time, 0-6, 0 = Sunday) | 
 | getFullYear()     | Year as a four-digit number (yyyy)                | 
@@ -727,9 +728,9 @@ There are methods in common to both arrays and strings so I am combining them fo
 - `reduce()`: Takes a _reducer_ function and executes it on each array element to output a single value while returning. It takes a `reducer` function with an `accumulator` variable and a `current` element variable as required parameters. The accumulator's value is remembered across all the iterations and is ultimately returned after the final iteration
 - `every()`: Checks if **every** element in an array pass a test, returns boolean. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every).
 - `some()`: Tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some).
-- `sort()`: One of the most common operations performed on an array, used to sort an array of numbers or even strings with just a single line of code, returns original array but modified
+- `sort()`: One of the most common operations performed on an array, used to sort an array of numbers or even strings with just a single line of code, returns original array but modified. Sorting a number based array may require a callback function.
 - `reverse()`: Reverses the order of the array items, does NOT do a reverse sort
-- `find()` and `findIndex()`: Returns the first element value (for `find`) or index (for `findIndex`) in the array that passes on the test provided by callback. If there is no match, it returns `undefined` (for find) or `-1` (for findIndex).
+- `find(FxName)` and `findIndex()`: Returns the first element value (for `find`) or index (for `findIndex`) in the array that passes on the test provided by the callback. If there is no match, it returns `undefined` (for find) or `-1` (for findIndex).
 - Link: [Mastering ES6 higher-order functions for Arrays](https://www.airpair.com/javascript/posts/mastering-es6-higher-order-functions-for-arrays).
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -793,6 +794,7 @@ Check out the [MDN Working with Objects](https://developer.mozilla.org/en-US/doc
 ## Date Notes
 
 Pulling Date and Time Values:
+- `new Date()`: Formats are `2015-03-25`, `03/25/2015`, `Mar 25 2015`, or `25 Mar 2015`. Can also be written without specifying the day (YYYY-MM): `2015-03` (Time zones will vary the result above between February 28 and March 01); or year only `2015`. Can also be written with added hours, minutes, and seconds (YYYY-MM-DDTHH:MM:SSZ): `2015-03-25T11:59:47Z`. Date and time is separated with a capital T. UTC time is defined with a capital letter Z. Or do `9-10-87 11:59-42`.
 - `getDate()`: Returns the day of the month for the specified date according to local time as a number (1-31)
 - `getDay()`: Returns the day of the week as a number (0-6) for the specified date according to local time, where 0 represents Sunday 
 - `getFullYear()`: Returns the year as a four-digit number (yyyy) of the specified date according to local time 
@@ -876,9 +878,9 @@ Objects:
 - Constructors define properties and behaviors instead of returning a value as other functions might 
 - OBJECT ORIENTED PROGRAMMING: Functions inside of objects as opposed to in the global scope - in this case they are called METHODS – a Fx in an object `todo` called `add` or `edit` and you call it by `todo.add()` - or `todo.edit(id)`
 - `for in` loop: often used for objects – create a user object > then for `(let x in user)` returns the names of the keys – user([x]) returns the values
-- OOP: constructors & the _this_ Keyword: the most important things in OOP is the Constructor and the `this` keyword: if you want to create multiple instances of a certain type of object then you want to create a constructor
-- the `this` keyword refers to the current instance of the object, the function scope
-- NOTE: constructors are really powerful when they have functions w\in them known as methods
+- OOP: constructors & the _this_ Keyword: the most important things in OOP are the `constructor` and the `this` keyword. If you want to create multiple instances of a certain type of object then you want to create a constructor
+- the `this` keyword refers to the **_current_** instance of the object, the function scope. To access a variable outside of the function nut in the same object, you have to use `this.varName`, where `this` is pertaining to the current object.
+- NOTE: constructors are really powerful when they have functions w\in them known as `methods`
 - each object in JS has a prototype – a prototype is an object itself – all objects inherit their properties and methods from their prototypes = Object.prototype vs Client.prototype 
 - Object.prototype – you can see its methods like hasOwnProperty, toString, valueOf
 - prevent object mutation: To ensure your data doesn't change, use the function `Object.freeze` to prevent data mutation. Once frozen, you can no longer add, update, or delete properties from that object
