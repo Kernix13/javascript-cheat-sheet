@@ -119,10 +119,10 @@ JavaScript methods, conditionals, etc. that return true or false:
 | <, >, <=, >=       | number, .length, typeof, ...         |
 | !=, !==            | Anything                             |
 | &&, \|\|           | Checking multiple and/or conditions  |
-| hasOwnProperty()   | If an object has a property          | 
+| hasOwnProperty(prop) | If an object has a property          | 
 | obj.is(a, b)       | if 2 values are the same value       |
-| obj instanceof objType | if object is of the specified object type | 
-| isArray()          | If item checked is an array          |
+| obj instanceof Class | if obj is an instance of a certain class | 
+| Array.isArray(arr) | If item checked is an array          |
 | isNaN()            | if a value is NaN or not             | 
 | every()            | if ALL elements pass a test          |
 | some()             | if at least ONE element passes a test |
