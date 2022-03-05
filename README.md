@@ -29,6 +29,7 @@ The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sh
    1. [Regex](#regex)
    1. [ES6 Syntax](#es6-syntax)
    1. [Console Commands](#console-commands)
+   1. [Local and session storage](#local-and-session-storage)
 
 
 [Important Notes](#important-notes)
@@ -58,7 +59,7 @@ The following tables are for visual memorization. It is easy to see similarites 
 
 ### Data types
 
-JavaScript Primitive Data Types:
+JavaScript Primitive (single, simple values) Data Types:
 
 |    Name   | Type              | 
 | :-------- | :----:            |
@@ -73,7 +74,7 @@ SKIPPED: `Bigint` (huge numbers) and `Symbol` (can be used as object keys).
 
 <br>
 
-Object Types (everything in JS is consdered an object):
+Object Types (multiple values):
 |  Name    | Type   | 
 | :-----   | :----: |
 | Objects  | a collection of properties with values of any type in key-value pairs | 
@@ -112,7 +113,7 @@ var, let, const:
 
 ### Boolean methods
 
-JavaScript methods, conditionals, etc. that return true or false: 
+JavaScript methods, conditionals, etc. that return `true` or `false`: 
 
 | Type:              | Checks against:                      |
 | :----------        | :--------------                      |
@@ -129,6 +130,7 @@ JavaScript methods, conditionals, etc. that return true or false:
 | incudes()          | if arr or str contains the search value |
 | endsWith()         | if str ends with the search value    |
 | Number.isInteger(num) | if value is an integer            |
+| isFinite()         | if a number is finite or infinite | 
 | test()             | RegEx test if the string contains the match expression |
 | in operator        | if prop is `in` the obj or prototype (prop in obj) | 
 | true, false        | equals `true` and `false`            | 
@@ -220,8 +222,8 @@ Strings and Arrays: Same Methods, Same Effect:
 | concat. op. | creates: | new str    | -              | str1 + str2    |
 | includes()  | checks:  | Boolean    | includes(searchVal) | includes(searchStr) | 
 | endsWith(() | checks:  | Boolean    | -                   | endsWith(searchStr) | 
-| indexOf()   | returns: | index #    | indexOf(searchVal)  | indexOf(searchStr) | 
-| lastIndexOf() | returns: | index #  | lastIndexOf(searchVal) | lastIndexOf(searchStr) |
+| indexOf()   | returns: | index # or -1 | indexOf(searchVal)  | indexOf(searchStr) | 
+| lastIndexOf() | returns: | index # or -1 | lastIndexOf(searchVal) | lastIndexOf(searchStr) |
 | [index]     | returns: | specific value | arr[index]     | str[index] | 
 | length      | returns: | arr/str len | arr.length         | str.length | 
 
@@ -285,8 +287,10 @@ Common Number Methods (single argument):
 | Method          | Result/Purpose: | 
 | :---            | :----            |
 | toExponential(n) | returns a string representing the Number object in exponential notation |
-| toFixed(n)       | Returns number with a specified # of decimal places | 
-| toPrecision(n)   | Returns a # to a specified # of significant digits |
+| toFixed(n)      | Returns number with a specified # of decimal places | 
+| toPrecision(n)  | Returns a # to a specified # of significant digits |
+| isFinite()      | Returns boolean for finite vs infinite number check | 
+| Number.isInteger() | Returns boolean for number as integer or not | 
 | pasreFloat()    | Parses an argument and returns a floating point number |
 | Math.abs(x)     | Returns the absolute value of x | 
 | Math.ceil(x)    | Always rounds a number up to the next largest integer |
@@ -322,7 +326,7 @@ Common Date Methods: Pulling Date and Time Values
 | getMinutes()      | Get the minute (0-59)                             | 
 | getMonth()        | Month as a number (0-11)                          | 
 | getSeconds()      | Get the second (0-59)                             | 
-| getTime()         | Get the ms since January 1, 1970                  | 
+| getTime()         | Get the milliseconds since January 1, 1970                  | 
 | getUTCDate()      | Date according to universal time                  | 
 
 Set Part of a Date
@@ -490,6 +494,19 @@ Useful console commands:
 | console.clear( )         | clears the console of all other results | 
 
 > `console.time`: requires `timeEnd` as well to work. Put `time` before the function and `timeEnd` after the function.
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Local and session storage
+
+| Command       | Example | 
+| :---          | :----     |
+| clear         | localStorage.clear(); | 
+| getItem       | const a = localStorage.getItem('myVar'); | 
+| setItem       | localStorage.setItem('myVar', 'Value'); | 
+| removeItem    | localStorage.removeItem('myVar'); | 
+| JSON.parse    | const user = JSON.parse(localStorage.getItem('Value')); | 
+| JSON.stringify | localStorage.setItem('Value', JSON.stringify(myVar)); | 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -837,6 +854,8 @@ Set Date Methods:
 - *Nested for loops*: If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays
 - *Do...while loops*: it will first do one pass of the code inside the loop no matter what, and then continue to run the loop while the specified condition evaluates to true - a do...while loop ensures that the code inside the loop will run at least once
 - `forEach loops`: An array method that runs a function for each element in an array
+- `break`: use to break out of the loop like in switch functions.
+- `continue`: use to skip an iteration in a loop.
 - ***Recursion***: ???
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -882,7 +901,8 @@ Objects:
 - the `this` keyword refers to the **_current_** instance of the object, the function scope. To access a variable outside of the function nut in the same object, you have to use `this.varName`, where `this` is pertaining to the current object.
 - NOTE: constructors are really powerful when they have functions w\in them known as `methods`
 - each object in JS has a prototype – a prototype is an object itself – all objects inherit their properties and methods from their prototypes = Object.prototype vs Client.prototype 
-- Object.prototype – you can see its methods like hasOwnProperty, toString, valueOf
+- `Object.prototype` – you can see its methods like hasOwnProperty, toString, valueOf
+- `Client.prototype` - when you are dealing with objects that were created thru a constructor
 - prevent object mutation: To ensure your data doesn't change, use the function `Object.freeze` to prevent data mutation. Once frozen, you can no longer add, update, or delete properties from that object
 
 Syntax:

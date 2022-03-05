@@ -209,6 +209,7 @@ Important things I need to memorize and incorporate:
 - Escaping single and double quotes (`\'\"`), new line and tab (`\n\t`)
 - Working with multi-dimensional arrays 
 - Great data structures article: https://www.educative.io/blog/javascript-data-structures
+  - my chord-intervals.json file is maybe a hash table or maybe a tre of some sort - 
 - Memorize and fully understand `JSON.stringify()` vs `JSON.parse()` - why would you use them with arrays?
 - Since ==, <, >, <=, >= do type coercion, you may need to include `&& typeof` == "type you want"
 - Remember not to use `=` in an if condition but use `==` or `===`
