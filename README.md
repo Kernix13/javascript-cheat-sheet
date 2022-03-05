@@ -601,6 +601,7 @@ More involved returns / read:
 | arr.reduce()  | single value after function | 
 | arr.shift()   | the item value removed from array | 
 | arr.pop()     | the item value removed from array | 
+| arr.slice     | new array with the imes sliced out (same for string?) |
 | str.match()   | str value(s) that matches RegEx |
 | Number methods | formatted number, e.g.: | 
 | num.toFixed(2) | returns number with 2 decimal places |
@@ -742,7 +743,7 @@ There are methods in common to both arrays and strings so I am combining them fo
 - Return New Array: `filter()`, `map()`, `concat()`
 - Return Value/Position: `find()`, `indexOf()`, `lastIndexOf()`, 
 - Add:  `push()`, `unshift()`,  
-- Remove: `pop()`, `shift()`, `slice(start, end)`, `splice()`
+- Remove: `pop()`, `shift()`, `slice(start, end)` (does not mutate), `splice()`
 - Index change: `reverse()`, `sort()`
 - Various: `forEach()`, `reduce()` (although mosty for simple arithmetic)
 
