@@ -94,3 +94,19 @@ for (variable of iterable) {
 }
 ```
 
+
+
+
+
+
+### Math code examples
+
+105 generate random  whole numbers w\in a range
+function randomRange(myMin, myMax) {
+  return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
+}
+
+
+
+
+

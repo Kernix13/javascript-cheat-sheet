@@ -100,7 +100,7 @@ Concepts, specific code syntax, ...
 
 <dl>
   <dt>Callback function</dt>
-  <dd>is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.</dd>
+  <dd>is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action. An example is the function in `addEventListener`.</dd>
 </dl>
 <dl>
   <dt>currentTarget</dt>
@@ -574,7 +574,8 @@ Capture Groups, Lookaheads
 
 <h2 id="data-structures" align="center">Data Structures</h2>
 
-- 
+Window object:
+- close, window.outerheight, window.outerwidth, innerHeight and innerWidth, window.scrollY, window.scrollX, window.location, window.location.search, window.location.href, window.location.reload(), window.history.go(-2), window.history.length, window.navigator, window.navigator.geolocation.getCurrentPosition, navigator.language
 
 <h2 id="basic-algorithms" align="center">Basic Algorithms</h2>
 

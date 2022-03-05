@@ -28,6 +28,26 @@ function someFx(...arr) {
 someFx(mainArray);
 ```
 
+returning boolean values from functions:
+```js
+function checkEqual(a, b) {
+  return a === b;
+}
+```
+
+set default parameters for your Fx’s:
+```js
+const greeting = (name = "Anonymous") => "Hello " + name;
+```
+
+use the rest parameter w\ Fx parms:
+```js
+function howMany(...args) {
+  return "You have passed " + args.length + " arguments.";
+}
+console.log(howMany(0, 1, 2, -1, -2));
+```
+
 ### IIFE
 
 ```js
@@ -79,3 +99,30 @@ toDo.delete =  function() {
 }
 toDo.delete();
 ```
+
+## Callback functions
+
+`addEventListener`:
+
+```js
+myvar.addEventListener("click", function(e) {
+  console.log("Hello);
+
+  e.preventDefault();
+});
+```
+
+1. The parameter `e` is the event object. You want to prevent the default behavior associated with things like forms and links. 
+
+To take a look at the event object:
+```js
+myVar.addEventListener("click", onClick);
+
+function onClick(e) {
+  let val;
+  val = e;
+  val = e.target;
+  console.log(val); // look for target
+}
+```
+The most important think you will se if the `target` which represents the element that the event happened on. 

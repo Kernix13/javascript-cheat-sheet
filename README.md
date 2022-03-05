@@ -104,7 +104,7 @@ Basic math operators:
 var, let, const:
 | Topic                | var       | let                  | const                |
 | :--------            | :----:    | :---:                | :----:               |
-| Scope                | Global or local | Block only     | Block only           |
+| Scope                | Global    | Block                | Block                |
 | Declared (no value)  | undefined | undefined            | Uncaught SyntaxError |
 | Redeclare?           | Yes       | Uncaught SyntaxError | Uncaught SyntaxError |
 | Reassign?            | Yes       | Yes                  | Uncaught TypeError   |
@@ -959,7 +959,8 @@ Other:
 ```js
 ${ "vars or expressions/math or a function call or use conditionals / ternary op"  }
 ```
-- next...
+- Event bubbling:
+- Event delegation: 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 <!--  
