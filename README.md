@@ -849,16 +849,21 @@ let dayOfWeek = new Date().getDay() // returns weekday as a number 0-6
 
 ## Loop Notes
 
-- *While loops*: runs while a specified condition is true and stops once that condition is no longer true. 
+- Loops run the same block of code but using different values each time. 
+- *While loops*: runs while a specified condition is true and stops once that condition is no longer true. Make sure to initialize your variable outside of the loop and do your increment INSIDE the loop.
   - Be careful! It is very easy to create an infinite loop and have your computer lock up.
 - *For loops*: The most common type of JavaScript loop, it runs **`for`** a specific number of times; are declared with three optional expressions separated by semicolons; it’s also common for a loop to iterate thru an array
   - `(a; b; c)`: stands for ( initialization; condition; final-expression ), or are declared with three optional expressions separated by semicolons
   - The initialization statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable
   - The condition statement is evaluated at the beginning of every loop iteration and will continue as long as it evaluates to true. When the condition is false at the start of the iteration, the loop will stop executing. This means if the condition starts as false, your loop will never execute
   - The final expression is executed at the end of each loop iteration, prior to the next condition check and is usually used to increment or decrement your loop counter
+  - Use a 'for` loop over a `while` loop when you know how many times the loop will run; otherwise, use a `while` loop.
 - *Nested for loops*: If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays
 - *Do...while loops*: it will first do one pass of the code inside the loop no matter what, and then continue to run the loop while the specified condition evaluates to true - a do...while loop ensures that the code inside the loop will run at least once
-- `forEach loops`: An array method that runs a function for each element in an array
+- `forEach loops`: An array method that runs a callback function for each element in an array, `var.forEach(a, b, c) {code}` where `a` is the iterator, `b` is the index, and `c` is the actual array 
+- `map()`: used to return something different in a new array.
+- `for in`: for objects
+- `for of` loop: also for objects - 
 - `break`: use to break out of the loop like in switch statements.
 - `continue`: use to skip an iteration in a loop.
 - ***Recursion***: ???
@@ -901,7 +906,7 @@ Objects:
 - Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears is irrelevant when referencing or accessing that key
 - Constructors define properties and behaviors instead of returning a value as other functions might 
 - OBJECT ORIENTED PROGRAMMING: Functions inside of objects as opposed to in the global scope - in this case they are called METHODS – a Fx in an object `todo` called `add` or `edit` and you call it by `todo.add()` - or `todo.edit(id)`
-- `for in` loop: often used for objects – create a user object > then for `(let x in user)` returns the names of the keys – user([x]) returns the values
+- `for in` loop: used for objects – create a user object > then for `(let x in user)` returns the names of the keys – user([x]) returns the values
 - OOP: constructors & the _this_ Keyword: the most important things in OOP are the `constructor` and the `this` keyword. If you want to create multiple instances of a certain type of object then you want to create a constructor
 - the `this` keyword refers to the **_current_** instance of the object, the function scope. To access a variable outside of the function nut in the same object, you have to use `this.varName`, where `this` is pertaining to the current object.
 - NOTE: constructors are really powerful when they have functions w\in them known as `methods`
@@ -934,7 +939,8 @@ Functions:
 - **Spread operator**: allows you to expand arrays and other expressions in places where multiple parameters or elements are expected - confusing - it looks like a copy but isn't???
 - Destructuring assignment - a special syntax for taking values from an object to a variable - it's a quicker way of assigning values from an object into variables - it's seems like the assignment is reversed with the var name to the right of `=` and the destructuring of the object to the left - 
 - IIFE: is an anonymous function you declare and run at the same time. To do that you need it to be an expression, and you make it an expression by enclosing it in parentheses (). 
-- IIFE's can also take in parameters. 
+- IIFE's can also take in parameters. IIFE's are very useful with certain design patterns like the module pattern. 
+- Methods: you can put functions inside objects as well. 
 
 Conditionals:
 - Most times you want to check the value and type so use `===` ans not `==`

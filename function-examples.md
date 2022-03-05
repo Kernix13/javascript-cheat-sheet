@@ -62,3 +62,20 @@ No parameters:
 Single parameter:
 
 Multiple parameters:
+
+## Methods
+
+```js
+const toDo = {
+  add: function() {
+    console.log("This is a method.");
+  }
+}
+toDo.add();
+
+// define a method outside of the object:
+toDo.delete =  function() {
+  console.log("Delete something");
+}
+toDo.delete();
+```
