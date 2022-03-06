@@ -73,6 +73,29 @@ const joe2 = new Park2("Joe", "Thomas", false, true);
 console.log(steve2.canSkip());
 console.log(joe2.canSkip());
 ```
+Example with my clients:
+```js
+// petNames as an array of objects
+const philMiller = new Client("Phil Miller", "2001 Hamilton # 305", "pmiller83@gmail.com", "215-834-8218", {"Dog": "Sadie"}, {"Dog": "Abby"}, {"Cat": "Luna"});
+// petNames as an array
+// const philMiller = new Client("Phil Miller", "2001 Hamilton # 305", "pmiller83@gmail.com", "215-834-8218", "Sadie", "Abby", "Bella");
+
+console.log(philMiller);
+
+class SecondClient {
+  constructor(secondName, secondEmail, secondPhone) {
+    this.secondName = secondName,
+    this.secondEmail = secondEmail,
+    this.secondPhone = secondPhone
+  }
+}
+
+const philSpouse = new SecondClient("Rachel Miller", "soandso@gmail.com", "555-555-5555")
+console.log(philSpouse);
+
+let totalClient = {...philMiller, ...philSpouse};
+console.log(totalClient);
+```
 
 ## Destructuring an object
 
@@ -318,7 +341,7 @@ const [a, b, ...arr3] = [1, 2, 3, 4, 5, 7];
 
 ## ES6 classes
 
-Create a class with a constructor, methods and properties.
+Create a class with a constructor, methods and properties. And you have a prototype for every class you create.
 
 ```js
 // syntax
@@ -330,22 +353,40 @@ class ClassName {
 }
 // Person class
 class Person {
-  constructor(firstName, lastName) {
+  constructor(firstName, lastName, dob) {
     this.firstName = firstName;
     this.lastName = lastName;
+    this.birthday = new Date(dob);
   }
-  // add a method:
+
   greeting() {
-    return `Hello there ${this.firstName}`;
+    return `Hello, ${this.firstName} ${this.lastName}.`;
   }
 }
 
-// create a new object based on t he Person class
+// create a new object based on the Person class
 const jim = new Person("Jim", "Kernix");
 jim.greeting();
 ```
 
-And you have a prototype for every class you create.
+sub classes with `extends` and `super` keywords:
+```js
+class Customer extends Person {
+  constructor(firstName, lastName, phone, membership) {
+    // super calls the paent class constructor
+    super(firstName, lastName);
+
+    this.phone = phone;
+    this.membership = membership;
+  }
+}
+
+const john = new Customer('John', 'Williams', '123-456-7890', 'Standard');
+const mary = new Person('Mary', 'Thompson');
+console.log(john.greeting());
+```
+
+
 
 ## Constructor function instead of using a class
 
@@ -389,3 +430,65 @@ student1.firstName = "Marilyn";
 student1.age = 28;
 ```
 
+### add, modify, and remove keys from objects
+
+
+```js
+let something = {
+  id: 23894201352,
+  location: "New York",
+  date: 'January 1, 2017',
+  data: {
+    totalUsers: 51,
+    online: 42
+  }
+};
+// Add:
+something.data.offline = 100;
+// Modify:
+something.data.online = 45;
+// Delete:
+delete something.location;
+```
+
+### Check if a property exists
+
+Using `hasOwnProperty`:
+```js
+// syntax:
+obj.hasOwnProperty('Prop1');
+'Prop1' in uobjsers;
+
+for (let user in users) {...}
+```
+
+Using `for in`:
+```js
+const users = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+}
+
+function countOnline(usersObj) {
+  // Only change code below this line
+  let result = 0;
+  for (let user in usersObj) {
+    if (usersObj[user].online === true) {
+      result++;
+    }
+  }
+  return result;
+  // Only change code above this line
+}
+
+console.log(countOnline(users));
+```
+
+WTF with [] working but not dot notation???? Something with if statements?

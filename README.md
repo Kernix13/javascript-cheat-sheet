@@ -253,7 +253,7 @@ Strings and Arrays: Different Methods, Opposite Effect
 Common Object methods:
 | Method, Class term   | Returns:  | Returns what?       |
 | :------------------- | :-------  | :-------            |       
-| obj.keys()           | new array | obj property keys   |
+| Object.keys(obj)     | new array | obj property keys   |
 | obj.values()         | new array | obj property values |
 | obj.entries()        | new array | obj key-value pairs  |
 | obj.getOwnPropertyNames() | new array | all prop names except symbols |
@@ -782,7 +782,7 @@ There are methods in common to both arrays and strings so I am combining them fo
 - `Object.prototype.toString()`:	Returns a string representation of the object.
 - `Object.prototype.valueOf()`:	Returns the primitive value of the specified object.
 - `Object.prototype.hasOwnProperty()`:	Returns a boolean indicating whether an object contains the specified property as a direct property of that object _and not inherited through the prototype chain_.
-- `Object.keys()`:	Returns an array containing the names of all of the given object's own enumerable string properties.
+- `Object.keys(obj)`:	Returns an array containing the names of all of the given object's own enumerable string properties.
 - `Object.values()`:	Returns an array containing the values that correspond to all of a given object's own enumerable string properties
 
 Defining getters and setters
@@ -790,7 +790,7 @@ Defining getters and setters
 
 There are three native ways to list/traverse object properties:
 - `for...in` loops: This method traverses all enumerable properties of an object _and its prototype chain_.
-- `Object.keys(o)`: This method returns an array with all the own (not in the prototype chain) enumerable properties names ("keys") of an object `o`.
+- `Object.keys(obj)`: This method returns an array with all the own (not in the prototype chain) enumerable properties names ("keys") of an object `o`.
 - `Object.getOwnPropertyNames(o)`: This method returns an array containing all own properties names (enumerable or not) of an object `o`. I don't see the difference with `obj.keys()`.
 
 Check out the [MDN Working with Objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects) page.
@@ -936,7 +936,8 @@ Functions:
 - **Rest parameter**: you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function: `(...args)`
 - The rest parameter eliminates the need to check the args array and allows us to apply `map()`, `filter()` and `reduce()` on the parameters array
 - Only the last parameter in a function definition can be a rest parameter
-- **Spread operator**: allows you to expand arrays and other expressions in places where multiple parameters or elements are expected - confusing - it looks like a copy but isn't???
+- **Spread operator**: allows you to expand arrays and other expressions in places where multiple parameters or elements are expected. It expands an already existing array - it spreads it out intto its individual parts. You can only use it in an argument to a function or in an array literal 
+- **Array Literal**: An array literal is a list of zero or more expressions, each of which represents an array element - aka, an array.
 - Destructuring assignment - a special syntax for taking values from an object to a variable - it's a quicker way of assigning values from an object into variables - it's seems like the assignment is reversed with the var name to the right of `=` and the destructuring of the object to the left - 
 - IIFE: is an anonymous function you declare and run at the same time. To do that you need it to be an expression, and you make it an expression by enclosing it in parentheses (). 
 - IIFE's can also take in parameters. IIFE's are very useful with certain design patterns like the module pattern. 
