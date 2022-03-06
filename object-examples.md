@@ -23,3 +23,34 @@ lesson 15 use destructuring assignment w\ the rest parameter to reassign array e
 const [a, b, ...arr3] = [1, 2, 3, 4, 5, 7];
 
 16. use destructuring assignment to pass an object as a Fx’s parameters
+
+## ES6 classes
+
+Create a class with a constructor, methods and properties.
+
+```js
+// syntax
+class ClassName {
+  constructor(properties to set) {
+    this.prop1 = prop1;
+    this.ptop2 = prop2;
+  }
+}
+// Person class
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  // add a method:
+  greeting() {
+    return `Hello there ${this.firstName}`;
+  }
+}
+
+// create a new object based on t he Person class
+const jim = new Person("Jim", "Kernix");
+jim.greeting();
+```
+
+And you have a prototype for every class you create.

@@ -959,8 +959,10 @@ Other:
 ```js
 ${ "vars or expressions/math or a function call or use conditionals / ternary op"  }
 ```
-- Event bubbling:
-- Event delegation: 
+- **Event bubbling**: when an event happens in the DOM it will bubble up through its parents. If you put an event listener for all the parents with a console.log of their class, they will all fire off even though you did not click them.
+- <ins>**Event delegation**</ins>: The oppsite of event bubbling - you put the listener on a parent element, then you use logic inside of the event handler to target the element you want. If you have a list of items all with the same class,  your event listener will only fire for the first one, unless you use event delegation. Another situation where you need it is if you dynamiclly insert something into the DOM using JS.
+- for for the multiple list items, put the event listener on the parent or higher then put a condition to find the target. 
+- `localStorage`: an API that is part of the `window` object. You can set key-value pairs, but what you set as a value has to be a string. You can save objects and arrays but you have to turn them into a string using `JSON.stringify()`, then to use it use `JSON.parse().` 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 <!--  

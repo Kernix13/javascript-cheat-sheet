@@ -4,7 +4,6 @@ Below is a list of specific function code snippets that are not simple function 
 
 ### General
 
-
 Declaration vs. expression
 ```js
 function myFunction() {
@@ -125,4 +124,76 @@ function onClick(e) {
   console.log(val); // look for target
 }
 ```
-The most important think you will se if the `target` which represents the element that the event happened on. 
+The most important thing you will see is the `target` which represents the element that the event happened on. 
+
+## Local storage
+
+This would be the code inside of a function:
+```js
+// set local storage item (syntax first)
+localStorage.setItem('key', 'value');
+localStorage.setItem('name', 'Jim'); // check on Application tab
+
+// get from storage:
+const name = localStorage.getItem('name');
+
+// remove from storage:
+localStorage.removeItem('name');
+
+// to clear everything from local storag:
+localStorage.clear();
+```
+
+to have a form add an item to local storage amd store multiple items in an array as a string:
+```js
+document.querySelector('form').addEventListener('submit', function(e) {
+  const task = document.getElementById('task').value;
+
+  let tasks;
+
+  // check local storage 
+  if (localStorage.getItem('tasks') === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+
+  tasks.push(task);
+
+  localStorage.setItem('tasks', JSON.stringify(tasks);
+  e.preventDefault();
+});
+```
+
+Then to get and use the local storage items, still inside the event listener:
+```js
+const tasks = JSON.parse(localStorage.getItem('tasks'));
+tasks.forEach(function(task){
+  console.log(tasks);
+});
+```
+
+## Event delegation
+
+```js
+// list items with delete link on the items but 
+// fa fa-remove icon inside:
+function deleteItem(e) {
+  if(e.target.patentElement.className === "delete-item secondary-content") {
+    console.log("delete item");
+  }
+
+  // or better...
+  if(e.target.patentElement.classList.contains("delete-item")) {
+    console.log("delete item");
+  }
+}
+```
+
+But the structure is ul > li > a > i and to delete the entire list item, which is the parent of the `<a>` tag, in the if statement:
+```js
+  if(e.target.patentElement.classList.contains("delete-item")) {
+    // target is the icon
+    e.target.parentElement.parentElement.remove();
+  }
+```
