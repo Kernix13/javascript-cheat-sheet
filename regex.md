@@ -149,7 +149,8 @@ let  replacements = {
   return str.replace(entityPattern, match => replacements[match]);
 }
 
-replaceEntity(`<li>a quote: "Here & with 'single' quotes"</li>`)
+replaceEntity(`<?php the_post_thumbnail() ?>`)
+console.log(replaceEntity(`<?php the_post_thumbnail() ?>`))
 ```
 
 ### User name validation

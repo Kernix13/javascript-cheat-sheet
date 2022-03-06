@@ -4,6 +4,14 @@ Below is a list of specific function code snippets that are not simple function 
 
 ### General
 
+typeof:
+```js
+let typeOfTest;
+typeOfTest = function() {
+  return "Hello";
+}                 // function
+```
+
 Declaration vs. expression
 ```js
 function myFunction() {
@@ -37,6 +45,14 @@ function checkEqual(a, b) {
 set default parameters for your Fx’s:
 ```js
 const greeting = (name = "Anonymous") => "Hello " + name;
+```
+
+Default parameters 2:
+```js
+function greet(first = "John", last = "Doe") {
+  console.log(`Hello ${first} ${last}`)
+}
+greet("Jim", "Kernix");
 ```
 
 use the rest parameter w\ Fx parms:
@@ -97,7 +113,18 @@ toDo.delete =  function() {
   console.log("Delete something");
 }
 toDo.delete();
+
+// another example:
+const doSomething = {
+  add: function() {
+    console.log("This is a method.");
+  }
+}
+
+doSomething.add();
 ```
+
+
 
 ## Callback functions
 

@@ -22,9 +22,11 @@ for (let i = 0; i > 10, i++) {
 ## While loop
 
 ```js
-let i = 0;
-while(i < 10) {
+let j = 0;
 
+while(j < 10) {
+  console.log("Number " + j);
+  j++;
 }
 ```
 
