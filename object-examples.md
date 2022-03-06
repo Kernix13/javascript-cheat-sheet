@@ -225,6 +225,20 @@ const {mallName: localName, anchorStores, address: {street: streetName, city, st
 // console.log(`Come vist ${localName}.\nWe are located at ${streetName}.`)
 ```
 
+#59 Object Destructuring Part 2, 2nd example, assignment without declaration:
+```js
+const jason = {
+  firstName: "Jason",
+  lastName: "Fitzgerald",
+  age: 35,
+  city: "Destin",
+  state: "FL",
+  job: "Web Developer"
+}
+let jasonAge = "unknown", jasonJob = "unknown";
+({age: jasonAge, job: jasonJob} = jason);
+console.log(jasonAge, jasonJob);
+```
 
 ## Spread operator
 
@@ -332,3 +346,46 @@ jim.greeting();
 ```
 
 And you have a prototype for every class you create.
+
+## Constructor function instead of using a class
+
+Example object:
+```js
+const student1 = {
+  firstName: "Mary",
+  lastName: "Williams",
+  gradeLevel: "Junior",
+  currentAverage: "A"
+};
+```
+
+Console.log empty function:
+```js
+function Student() {
+
+}
+console.log(Student()); // undefined
+console.log(new Student()); // Student {}
+```
+
+The `new` keyword changes the behavior of how the function operates. You then get access to the object via the `this` keyword.
+
+```js
+// All students will have these properties:
+function Student(first, last, lvl, avg) {
+  this.firstName = first;
+  this.lastName = last;
+  this.gradeLevel = lvl;
+  this.currentAverage = avg;
+  this.getFullName = function() {
+    return `${this.firstName} ${this.lastName}`
+  }
+}
+const student1 = new Student("Mary", "Williams", "Junior", "A");
+console.log(student1); // Student {firstName: 'Mary', lastName: 'Williams', gradeLevel: 'Junior', currentAverage: 'A'}
+
+// update:
+student1.firstName = "Marilyn";
+student1.age = 28;
+```
+
