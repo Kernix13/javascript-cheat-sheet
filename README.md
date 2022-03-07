@@ -855,6 +855,8 @@ Check out the [MDN Working with Objects](https://developer.mozilla.org/en-US/doc
 - `Math.floor(Math.random())`: "Trick" to get a random number within a certain interger range, e.g. `* 100` returns whole numbers between 0 and 99.
 - `toString()`: converts a number to a string
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## Date Notes
 
 Pulling Date and Time Values:
