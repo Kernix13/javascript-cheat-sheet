@@ -264,7 +264,7 @@ Other common string methods:
 | str.charCodeAt()  | Unicode #               | charCodeAt(index) |
 | str.fromCharCode() | Character              | fromCharCode(n1, n2, ...) |
 
-<br>
+<div align="left">&#8675; <a href="#arrays-and-strings" title="Arrays and Strings">To notes section</a></div>
 
 Other common array methods:
 
@@ -320,6 +320,7 @@ Object class syntax and terms (Fx = 'function'):
 
 Look into [MDN Method definitions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions).
 
+<div align="left">&#8675; <a href="#object-notes" title="Object Notes">To notes section</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Number methods
@@ -349,7 +350,7 @@ Common Number Methods (2 or more arguments):
 | Math.min(n1, n2, ...))  | Returns the smallest of zero or more numbers. |
 | Math.pow(x, y)          | Returns base x to the exponent power y (that is, x^y). |
 
-
+<div align="left">&#8675; <a href="#number-notes" title="Number notes">To notes section</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Date methods
@@ -383,6 +384,7 @@ Set Part of a Date
 | setTime()         | Set the time (ms since Jan 1, 1970) | setTime(timeValue)    | 
 | setUTCDate()      | Set day of the month for spec. UT   | setUTCDate(dayValue)  | 
 
+<div align="left">&#8675; <a href="#date-notes" title="Date Notes">To notes section</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Functions and Rest Syntax
