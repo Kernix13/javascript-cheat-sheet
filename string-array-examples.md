@@ -1,6 +1,150 @@
 # String and Array examples
 
 
+## Table of contents
+
+1. Arrays
+1. Strings
+   1. Spread operator for arrays and strings
+   1. Rest parameter and rest syntax
+
+## Arrays
+
+Basic syntax `push()`, `unshift()`, `pop()`, `shift()`:
+```js
+// push(val)
+let arr = ['a', 'b', 'c', 'd'];
+let addedItem = arr.push('e');
+console.log(addedItem); // 5
+console.log(arr); // ['a', 'b', 'c', 'd', 'e']
+
+// unshift(val)
+let arr = [1, 2, 3, 4];
+let addedItem = arr.unshift(0);
+console.log(addedItem); // 5
+console.log(arr); // [0, 1, 2, 3, 4]
+
+// pop()
+let arr = ['a', 'b', 'c', 'd'];
+let removedItem = arr.pop();
+console.log(removedItem); // "d"
+console.log(arr); // ["a","b","c"]
+
+// shift()
+let arr = [1, 2, 3, 4];
+let removedItem = arr.shift();
+console.log(removedItem); // 1
+console.log(arr); // [2,3,4]
+```
+
+Examples for high order array methods:
+
+`arr.join()`, commonly used with str.split():
+```js
+// Here is an example using toLowerCase() and split() for a URL page slug
+const blogTitle = "Common Array Methods You Should Know"
+let slugTitle = blogTitle.toLowerCase().split(' ').join('-')
+console.log(slugTitle) // "common-array-methods-you-should-know"
+```
+
+`arr.reverse()`:
+```js
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const countDown = arr.reverse();
+console.log(countDown); // [10,9,8,7,6,5,4,3,2,1]
+
+// also reverses original array:
+console.log(arr); // [10,9,8,7,6,5,4,3,2,1]
+
+// Reverse array using spread operator without mutating original:
+const countDown = [...arr].reverse();
+console.log(countDown); [10,9,8,7,6,5,4,3,2,1]
+console.log(arr); [1,2,3,4,5,6,7,8,9,10]
+```
+
+`arr.sort()`:
+```js
+// mutaes original array:
+const arr = [4, 2, 1, 5, 3];
+arr.sort(function(a, b) {
+  return a - b;
+});
+console.log(arr); // [1,2,3,4,5]
+
+// this does not mutate original:
+let sortedArr = [...arr].sort(function(a, b) {
+  return a - b;
+});
+console.log(sortedArr); // [1,2,3,4,5]
+console.log("original: " + arr); // "original: 4,2,1,5,3"
+
+// Sorting an array of strings:
+const arr = ["John", "Jim", "Mary", "Adam", "Zac", "Susan"];
+newArr = [...arr].sort();
+console.log(newArr); // ["Adam","Jim","John","Mary","Susan","Zac"]
+console.log("original: " + arr); // "original: John,Jim,Mary,Adam,Zac,Susan"
+```
+
+Basic `arr.every()`: use when you want derive a single boolean value from multiple elements in an array, syntax:
+```js
+// Arrow function
+every((element) => { /* ... */ } )
+
+// Inline callback function
+every(function(element) { /* ... */ })
+```
+
+`arr.every()` examples:
+```js
+let nums = [27, 2.5, 1, 3, 5];
+let checkNums = nums.every(function (num) {
+    return num > 0;
+});
+console.log(checkNums); // true
+
+// false example:
+let nums = [27, 2.5, 1, 3, 5, -1];
+let checkNums = nums.every(function (num) {
+    return num > 0;
+});
+console.log(checkNums); // false
+
+// Alternative to above:
+let checkNums = [27, 2.5, 1, 3, 5].every(function(num){
+    return num > 0;
+})
+
+// Arrow example:
+let nums = [27, 2.5, 1, 3, 5];
+let checkNums = nums.every(num  => num > 0);
+console.log(checkNums); // true
+```
+
+`arr.some()`:
+```js
+
+```
+
+`arr.map()`:
+```js
+
+```
+
+`arr.filter()`:
+```js
+
+```
+
+`arr.forEach()`:
+```js
+
+```
+
+`arr.reduce()`:
+```js
+
+```
+
 ## Strings
 
 typeof:
@@ -119,17 +263,4 @@ function getTodaysMenu(...items) {
   return myStr;
 }
 console.log(getTodaysMenu(["Pizza", "$8"], ["Chips", "$1"], ["Beer", "$3"]));
-```
-
-## Arrays
-
-Basic syntax:
-```js
-// push(val)
-let arr = ['a', 'b', 'c', 'd'];
-let newItems = arr.push('e');
-
-// unshift(val)
-let arr = [1, 2, 3, 4];
-let newItems = arr.unshift(0);
 ```
