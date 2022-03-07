@@ -36,6 +36,7 @@ let removedItem = arr.shift();
 console.log(removedItem); // 1
 console.log(arr); // [2,3,4]
 ```
+<br />
 
 Examples for high order array methods:
 
@@ -47,13 +48,15 @@ let slugTitle = blogTitle.toLowerCase().split(' ').join('-')
 console.log(slugTitle) // "common-array-methods-you-should-know"
 ```
 
+<br />
+
 `arr.reverse()`:
 ```js
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const countDown = arr.reverse();
 console.log(countDown); // [10,9,8,7,6,5,4,3,2,1]
 
-// also reverses original array:
+// But it also reverses the original array:
 console.log(arr); // [10,9,8,7,6,5,4,3,2,1]
 
 // Reverse array using spread operator without mutating original:
@@ -61,6 +64,8 @@ const countDown = [...arr].reverse();
 console.log(countDown); [10,9,8,7,6,5,4,3,2,1]
 console.log(arr); [1,2,3,4,5,6,7,8,9,10]
 ```
+
+<br />
 
 `arr.sort()`:
 ```js
@@ -78,67 +83,141 @@ let sortedArr = [...arr].sort(function(a, b) {
 console.log(sortedArr); // [1,2,3,4,5]
 console.log("original: " + arr); // "original: 4,2,1,5,3"
 
-// Sorting an array of strings:
+// Sorting an array of strings using spread operating to NOT mutate original:
 const arr = ["John", "Jim", "Mary", "Adam", "Zac", "Susan"];
 newArr = [...arr].sort();
 console.log(newArr); // ["Adam","Jim","John","Mary","Susan","Zac"]
 console.log("original: " + arr); // "original: John,Jim,Mary,Adam,Zac,Susan"
 ```
 
-Basic `arr.every()`: use when you want derive a single boolean value from multiple elements in an array, syntax:
+<br />
+
+Basic `arr.every()`: returns a boolean if EVERY element in an array passes a test, syntax:
 ```js
 // Arrow function
-every((element) => { /* ... */ } )
+every((element) => {...} )
 
 // Inline callback function
-every(function(element) { /* ... */ })
+every(function(element) {...}) 
+
+// Callback function
+every(callBackFx)
 ```
 
 `arr.every()` examples:
 ```js
+// My preferred syntax
 let nums = [27, 2.5, 1, 3, 5];
-let checkNums = nums.every(function (num) {
+let checkNums = nums.every(function(num) {
     return num > 0;
 });
 console.log(checkNums); // true
-
-// false example:
-let nums = [27, 2.5, 1, 3, 5, -1];
-let checkNums = nums.every(function (num) {
-    return num > 0;
-});
-console.log(checkNums); // false
 
 // Alternative to above:
 let checkNums = [27, 2.5, 1, 3, 5].every(function(num){
     return num > 0;
 })
 
-// Arrow example:
-let nums = [27, 2.5, 1, 3, 5];
+// Arrow example, my next preferred syntax:
+let nums = [-2, 2.5, 1, 3, 5];
 let checkNums = nums.every(num  => num > 0);
-console.log(checkNums); // true
+console.log(checkNums); // false
+
+
+// Callback function example (Why do it this way?):
+let nums = [-2, 2.5, 1, 3, 5];
+function findPositive(num) {
+  return num > 0;
+}
+let checkNums = nums.every(findPositive);
+console.log(checkNums) // false
 ```
 
-`arr.some()`:
+<br />
+
+`arr.some()`, returns a boolean if at least one element passes a test, syntax::
 ```js
+// Arrow function
+some((element) => {...} )
 
+// Inline callback function
+some(function(element) {...}) 
+
+// Callback function
+some(callBackFx)
 ```
+
+`arr.some() examples:
+```js
+// Arrow
+const array = [1, 2, 3, 5, 7];
+const even = (item) => item % 2 === 0;
+console.log(array.some(even)); // true
+
+// Arrow 2:
+const array = [3, 5, 7, 30, 6, 2];
+const even = item => item < 3;
+console.log(array.some(even)); // true
+
+// Arrow exampe with strings:
+const names = ['John', 'Peter', 'Mary'];
+const firstName = 'John'
+const hasMyName = names.some(name => name === firstName);
+console.log(hasMyName); // true
+
+// Callback function
+const arr = [2, 5, 8, 1, 4];
+const arr2 = [12, 5, 8, 1, 4];
+function isBiggerThan10(item) {
+  return item > 10;
+}
+console.log(arr.some(isBiggerThan10));  // false
+console.log(arr2.some(isBiggerThan10)); // true
+
+// Anonymous/inline function :
+const arr = [10, 20, 30, 40, 3];
+const lessThanTen = arr.some(function(item) {
+  return item < 10;
+})
+console.log(lessThanTen); // true
+
+// Check if an array of objects have a specific property name/key:
+const users = [
+  { firstName: 'Harry' },
+  { firstName: 'Peter', lastName: 'Parker' }, 
+  { firstName: 'Mary' }
+];
+
+let hasLastName = users.some(function(user) {
+  return user.lastName;
+})
+console.log(hasLastName); // true
+```
+
+**NOTE**: I've seen examples where `some()` is used to check for the existence of a value in an array - why not just use `includes()`? You can not use `hasOwnProperty` for the last example because the "object" in an array, not an object.
+
+<br />
 
 `arr.map()`:
 ```js
 
 ```
 
+<br />
+
 `arr.filter()`:
 ```js
 
 ```
 
+<br />
+
 `arr.forEach()`:
 ```js
 
 ```
+
+<br />
 
 `arr.reduce()`:
 ```js
