@@ -266,6 +266,8 @@ Other common string methods:
 
 <div align="left">&#8675; <a href="#arrays-and-strings" title="Arrays and Strings">To notes section</a></div>
 
+<br />
+
 Other common array methods:
 
 |    Method       | Returns:          |  Syntax:         | 
