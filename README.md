@@ -22,6 +22,7 @@ The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sh
    1. [Operators and conditionals](#operators-and-conditionals)
    1. [Loops](#loops)
    1. [String and array methods](#string-and-array-methods)
+   1. [Other String and array methods](#other-string-and-array-methods)
    1. [Object methods](#object-methods)
    1. [Number Methods](#number-methods)
    1. [Date methods](#date-methods)
@@ -230,7 +231,7 @@ Strings and Arrays: Same Methods, Same Effect:
 <br>
 
 Strings and Arrays: Different Methods, Same Effect: 
-|    Method       | Returns:               |  Code         | 
+|    Method       | Returns:               |  Syntax:          | 
 | :-------------  | :--------------------: | :-----------: |
 | str.charAt(i) | Returns the character at the specified index | str.charAt(index) | 
 | arr.at(i)     | Returns the array item at the given index    | arr.at(index)     | 
@@ -241,11 +242,51 @@ Strings and Arrays: Different Methods, Same Effect:
 
 Strings and Arrays: Different Methods, Opposite Effect
 
-|    Method       | Returns:               |  Code        | 
+|    Method       | Returns:               |  Syntax:     | 
 | :-------------  | :--------------------: | :----------: |
 | split() | divides str into substrings and into an array | str.split() | 
 | join()  | Joins all elements of an array into a string  | arr.join() | 
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Other String and array methods
+
+Other common string methods:
+
+|    Method         | Returns:                |  Syntax:     | 
+| :-------------    | :--------------------:  | :----------: |
+| str.toLowerCase() | mutated string          | same as under _Method_ |
+| str.toUpperCase() | mutated string          | same as under _Method_ |
+| str.trim()        | new string              | same as under _Method_ |
+| regex.test()      | boolean                 | regex.test(str) |
+| str.match()       | new array               | let newArr = str.match(regex) |
+| str.replace()     | new string              | let newStr = str.replace(regex, subStr) |
+| str.charCodeAt()  | Unicode #               | charCodeAt(index) |
+| str.fromCharCode() | Character              | fromCharCode(n1, n2, ...) |
+
+<br>
+
+Other common array methods:
+
+|    Method       | Returns:          |  Syntax:         | 
+| :-------------  | :--------------:  | :----------: |
+| arr.push()      | new array length  | let newArr = str.push(item, item2, ...) |
+| arr.unshift()   | new array length  | let newArr = str.unshift(item, item2, ...) |
+| arr.pop()       | item removed      | same as under _Method_ |
+| arr.shift()     | item removed      | same as under _Method_ |
+| arr.join()      | new string        | str.join('') |
+| arr.reverse()   | mutated array     | same as under _Method_ |
+| arr.sort()      | mutated array     | arr.sort((a, b) => a - b) |
+| arr.every()     | boolean           | arr.every((item) => {...}) |
+| arr.some()      | boolean           | arr.some((item) => {...}) |
+| arr.map()       | new array         | let newArr = arr.map((item) => {...}) |
+| arr.filter()    | new array         | let newArr = arr.filter((item) => {...}) |
+| arr.forEach()   | new array         | arr.forEach((item) => {...}) |
+| arr.reduce()    | new array         | arr.reduce(function(a, b) {...}, val) |
+
+
+
+<div align="left">&#8675; <a href="#other-methods-unique-to-arrays" title="Other methods unique to arrays">To notes section</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Object methods
@@ -254,9 +295,9 @@ Common Object methods:
 | Method, Class term   | Returns:  | Returns what?       |
 | :------------------- | :-------  | :-------            |       
 | Object.keys(obj)     | new array | obj property keys   |
-| obj.values()         | new array | obj property values |
-| obj.entries()        | new array | obj key-value pairs  |
-| obj.getOwnPropertyNames() | new array | all prop names except symbols |
+| Object.values()      | new array | obj property values |
+| Object.entries(obj)  | new array | obj key-value pairs  |
+| Object.getOwnPropertyNames() | new array | all prop names except symbols |
 | Object.freeze(obj)   | NA        | prevents mutation for entire object |  
 | obj.toString()       | new string | obj as a string     |
 | obj.hasOwnProperty() | boolean   | if obj has (prop)   |
@@ -565,6 +606,7 @@ Create new objects or variables:
 Create from existing objects:
 | Method            | Creates: |
 | :----             | :----  |
+| +=, *=, -=, /=    | new object from object |
 | str.trim()        | new str |
 | str.substring()   | new str | 
 | str.replace()     | new str | 
@@ -581,7 +623,7 @@ Create from existing objects:
 ### Read and return index and length
 
 Read / Return index # and length: 
-| Method          | Returns: |
+| Syntax          | Returns: |
 | :----           | :----  |
 | indexOf()       | index # |
 | lastIndexOf()   | index # |
@@ -593,7 +635,7 @@ Read / Return index # and length:
 ### Read and return values
 
 Simple returns / read:
-| Method        | Returns:            |
+| Syntax        | Returns:            |
 | :----         | :----               |
 | str[i]        | str value at index position |
 | str.charAt(i) | same as above       |
@@ -613,7 +655,7 @@ Simple returns / read:
 <br>
 
 More involved returns / read:
-| Method        | Returns: |
+| Syntax        | Returns: |
 | :----         | :----  |
 | arr.find()    | arr value for first occurrence that passes test |   
 | arr.reduce()  | single value after function | 
@@ -631,7 +673,7 @@ More involved returns / read:
 ### Update and Delete
 
 Update, Mutate, Delete:
-| Method          | Returns:                    |
+| Syntax          | Returns:                    |
 | :----           | :----                       |
 | str.toLowerCase() | returns str as lowercase  |  
 | str.toUpperCase() | returns str as uppercase  |
@@ -649,7 +691,7 @@ Update, Mutate, Delete:
 | arr.length = 0  | empties the array           |  
 
 <!--  
-CRUD operations for the DOM:
+Common CRUD operations for the DOM:
 | Method          | Returns: |
 | :----           | :----  |
 | innerHTML       | gets or sets the HTML contained within the element | 
@@ -722,8 +764,9 @@ There are methods in common to both arrays and strings so I am combining them fo
 
 ### String Methods Notes
 
-- `charCodeAt(index)` — Gives you the Unicode of a character at that position
-- `fromCharCode(num1, num2, ...)` — Returns a string created from the specified sequence of UTF-16 code units
+- `charCodeAt(index)` — Gives you the Unicode number for the character at that position
+- `fromCharCode(num1, num2, ...)` — Returns the character associated with a unicode number
+- `charCodeAt` takes an index and returns a number, whereas `fromCharCode` does the opposite: returns a character given a number.
 - `valueOf()` — Returns the primitive value (that has no properties or methods) of a string object
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>

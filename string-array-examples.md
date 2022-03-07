@@ -120,3 +120,16 @@ function getTodaysMenu(...items) {
 }
 console.log(getTodaysMenu(["Pizza", "$8"], ["Chips", "$1"], ["Beer", "$3"]));
 ```
+
+## Arrays
+
+Basic syntax:
+```js
+// push(val)
+let arr = ['a', 'b', 'c', 'd'];
+let newItems = arr.push('e');
+
+// unshift(val)
+let arr = [1, 2, 3, 4];
+let newItems = arr.unshift(0);
+```
