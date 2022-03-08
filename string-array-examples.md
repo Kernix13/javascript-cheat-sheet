@@ -14,20 +14,15 @@
    1. [Really basic sort](#really-basic-sort)
    1. [reverse](#reverse)
 1. [High order array methods](#high-order-array-methods)
-   1. [Arrow or simple examples](#arrow-or-simple-examples)
-      1. [Basic sort](#basic-sort)
-      1. [Basic includes](#basic-includes)
-      1. [Basic find](#basic-find)
-      1. [Basic every](#basic-every)
-      1. [Basic some](#basic-some)
-      1. [Basic map](#basic-map)
-   1. [Callback examples](#callback-examples)
-      1. [Sort](#sort)
-      1. [Some](#some)
-      1. [Map](#map)
-      1. [Filter](#filter)
-      1. [forEach](#forEach)
-      1. [reduce](#reduce)
+   1. [Some](#some)
+   1. [Includes](#includes)
+   1. [Find](#find)
+   1. [Every](#every)
+   1. [Some](#some)
+   1. [map](#map)
+   1. [Filter](#filter)
+   1. [forEach](#forEach)
+   1. [Reduce](#reduce)
 1. [Strings](#strings)
    1. [Common string methods](#common-string-methods)
 1. [Spread and Rest syntax](#spread-and-rest-syntax)
@@ -136,11 +131,7 @@ console.log(arr); [1,2,3,4,5,6,7,8,9,10]
 
 High Order Array Methods = methods that use a callback function. The most used ones are: sort, some, map, filter, forEach, and reduce.
 
-### Arrow or simple examples
-
-These are simple examples on how to use these methods. 
-
-#### Basic sort
+### Sort
 
 ```js
 // mutates original array:
@@ -160,7 +151,7 @@ console.log("original: " + arr); // "original: 4,2,1,5,3"
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-#### Basic includes
+### Includes
 
 ```js
 // syntax:
@@ -179,7 +170,7 @@ console.log(str.includes('Script', 5)); // false
 console.log(str.includes('Script', 4)); // true
 ```
 
-#### Basic find
+### Find
 
 `arr.find()` MDN Syntax:
 ```js
@@ -219,7 +210,7 @@ const foundItem = items.find(item => {
 console.log(foundItem) // {"name": "Book", "price": 5}
 ```
 
-#### Basic every
+### Every
 
 Returns a boolean if EVERY element in an array passes a test
 
@@ -268,7 +259,7 @@ console.log(checkNums) // false
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-#### Basic some
+### Some
 
 Returns a boolean if at least one element passes a test
 
@@ -305,87 +296,7 @@ const hasMyName = names.some(name => name === firstName);
 console.log(hasMyName); // true
 ```
 
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-#### Basic map
-
-`arr.map()` syntax:
-```js
-// Arrow function
-map((element) => { /* ... */ })
-map((element, index) => { /* ... */ })
-
-// Callback function
-map(callbackFn)
-map(callbackFn, thisArg)
-
-// Inline callback function
-map(function(element) { /* ... */ })
-map(function(element, index) { /* ... */ })
-```
-
 <br />
-
-`arr.map()` simple MDN examples:
-```js
-const arr = [1, 2, 3]
-const mapArr = arr.map(n => n * 3)
-console.log(mapArr)
-
-const array1 = [1, 4, 9, 16];
-const map1 = array1.map(x => x * 2);
-console.log(map1);
-
-const numbers = [1, 4, 9];
-const roots = numbers.map((num) => Math.sqrt(num)); // roots is now [1, 2, 3]
-```
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-#### Basic forEach
-
-`arr.forEach()` MDN syntax:
-```js
-// Arrow function
-forEach((element) => { /* ... */ })
-forEach((element, index) => { /* ... */ })
-
-// Callback function
-forEach(callbackFn)
-forEach(callbackFn, thisArg)
-
-// Inline callback function
-forEach(function(element) { /* ... */ })
-forEach(function(element, index) { /* ... */ })
-```
-
-<br />
-
-`arr.forEach()` MDN and other Examples
-```js
-const array1 = ['a', 'b', 'c'];
-array1.forEach(element => console.log(element)); // "a" "b" "c"
-
-const items = [
-  { name: 'Bike', price: 100 },
-  { name: 'TV', price: 200 },
-  { name: 'Album', price: 10 },
-  { name: 'Book', price: 5 },
-  { name: 'Phone', price: 500 },
-  { name: 'Computer', price: 1000 },
-  { name: 'Keyboard', price: 25 }
-]
-items.forEach(item => {
-  console.log(item.name)
-})
-// "Bike" "TV" "Album" "Book" "Phone" "Computer" "Keyboard"
-```
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-### Callback examples
-
-#### Some
 
 ```js
 // Callback function
@@ -421,7 +332,40 @@ console.log(hasLastName); // true
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-#### Map
+### Map
+
+`arr.map()` syntax:
+```js
+// Arrow function
+map((element) => { /* ... */ })
+map((element, index) => { /* ... */ })
+
+// Callback function
+map(callbackFn)
+map(callbackFn, thisArg)
+
+// Inline callback function
+map(function(element) { /* ... */ })
+map(function(element, index) { /* ... */ })
+```
+
+<br />
+
+`arr.map()` simple MDN examples:
+```js
+const arr = [1, 2, 3]
+const mapArr = arr.map(n => n * 3)
+console.log(mapArr)
+
+const array1 = [1, 4, 9, 16];
+const map1 = array1.map(x => x * 2);
+console.log(map1);
+
+const numbers = [1, 4, 9];
+const roots = numbers.map((num) => Math.sqrt(num)); // roots is now [1, 2, 3]
+```
+
+### Map
 
 `arr.map()` MDN Examples:
 ```js
@@ -499,7 +443,85 @@ console.log(itemNames) // [100,200,10,5,500,1000,25]
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-#### Filter
+### forEach
+
+`arr.forEach()` MDN syntax:
+```js
+// Arrow function
+forEach((element) => { /* ... */ })
+forEach((element, index) => { /* ... */ })
+
+// Callback function
+forEach(callbackFn)
+forEach(callbackFn, thisArg)
+
+// Inline callback function
+forEach(function(element) { /* ... */ })
+forEach(function(element, index) { /* ... */ })
+```
+
+<br />
+
+`arr.forEach()` MDN and other Examples
+```js
+const array1 = ['a', 'b', 'c'];
+array1.forEach(element => console.log(element)); // "a" "b" "c"
+
+const items = [
+  { name: 'Bike', price: 100 },
+  { name: 'TV', price: 200 },
+  { name: 'Album', price: 10 },
+  { name: 'Book', price: 5 },
+  { name: 'Phone', price: 500 },
+  { name: 'Computer', price: 1000 },
+  { name: 'Keyboard', price: 25 }
+]
+items.forEach(item => {
+  console.log(item.name)
+})
+// "Bike" "TV" "Album" "Book" "Phone" "Computer" "Keyboard"
+
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter(word => word.length > 6);
+console.log(result); // ["exuberant","destruction","present"]
+
+// Filtering out all small values
+function isBigEnough(value) {
+  return value >= 10
+}
+let filtered = [12, 5, 8, 130, 44].filter(isBigEnough)
+console.log(filtered); // [12,130,44]
+
+// Converting a for loop to forEach
+const items = ['item1', 'item2', 'item3'];
+const copyItems = [];
+
+// before
+for (let i = 0; i < items.length; i++) {
+  copyItems.push(items[i]);
+}
+
+// after
+items.forEach((item) => {
+  copyItems.push(item);
+});
+
+// Other examples are really confusing - look at Traversy
+```
+
+<br />
+
+`arr.forEach()` my examples:
+```js
+// Example from my guitar chord namer app
+let position = chromaticSharps.indexOf(uniqueNotes[i]);
+let noteAsRoot = chromaticSharps.slice(position, position + 12);
+uniqueNotes.forEach(note => noteSteps.push(noteAsRoot.indexOf(note)));
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Filter
 
 `arr.map()` examples:
 ```js
@@ -609,67 +631,7 @@ console.log(combined); // 798
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-#### forEach
-
-`arr.forEach()` syntax:
-```js
-// Arrow function
-filter((element) => { /* ... */ } )
-filter((element, index) => { /* ... */ } )
-
-// Callback function
-filter(callbackFn)
-filter(callbackFn, thisArg)
-
-// Inline callback function
-filter(function(element) { /* ... */ })
-filter(function(element, index) { /* ... */ })
-```
-
-`arr.forEach()` MDN Examples:
-```js
-const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-const result = words.filter(word => word.length > 6);
-console.log(result); // ["exuberant","destruction","present"]
-
-// Filtering out all small values
-function isBigEnough(value) {
-  return value >= 10
-}
-let filtered = [12, 5, 8, 130, 44].filter(isBigEnough)
-console.log(filtered); // [12,130,44]
-
-// Converting a for loop to forEach
-const items = ['item1', 'item2', 'item3'];
-const copyItems = [];
-
-// before
-for (let i = 0; i < items.length; i++) {
-  copyItems.push(items[i]);
-}
-
-// after
-items.forEach((item) => {
-  copyItems.push(item);
-});
-
-// Other examples are really confusing - look at Traversy
-// check https://codepen.io/jim-kernicky/pen/zYzzvZr and https://codepen.io/jim-kernicky/pen/xxrKdvY for all methods
-```
-
-<br />
-
-`arr.forEach()` other examples:
-```js
-// Example from my guitar chord namer app
-let position = chromaticSharps.indexOf(uniqueNotes[i]);
-let noteAsRoot = chromaticSharps.slice(position, position + 12);
-uniqueNotes.forEach(note => noteSteps.push(noteAsRoot.indexOf(note)));
-```
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-#### Reduce
+### Reduce
 
 `arr.reduce()` MDN syntax:
 ```js
