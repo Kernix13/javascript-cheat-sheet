@@ -3,46 +3,81 @@
 
 ## Table of contents
 
-1. Arrays
-   1. Common array methods
-   1. High order array methods
-1. Strings
-   1. Spread operator for arrays and strings
-   1. Rest parameter and rest syntax
+<div id="back-to-top"></div>
 
-## Arrays
+1. [Simple array methods](#simple-array-methods)
+  1. [push](#push)
+  1. [unshift](#unshift)
+  1. [pop](#pop)
+  1. [shift](#shift)
+  1. [join](#join)
+  1. [sort](#sort)
+  1. [reverse](#reverse)
+1. [High order array methods](#high-order-array-methods)
+  1. [Arrow or simple examples](#arrow-or-simple-examples)
+     1. [Basic sort](#basic-sort)
+     1. [Basic every](#basic-every)
+     1. [Basic some](#basic-some)
+     1. [Basic map](#basic-map)
+     1. [Basic filter](#basic-filter)
+  1. [Callback examples](#callback-examples)
+     1. [Sort](#sort)
+     1. [Some](#some)
+     1. [Map](#map)
+     1. [Filter](#filter)
+     1. [forEach](#forEach)
+     1. [reduce](#reduce)
+1. [Strings](#strings)
+   1. [Common string methods](#common-string-methods)
+1. [Spread and Rest syntax](#spread-and-rest-syntax)
+   1. [Spread operator for arrays and strings](#spread-operator-for-arrays-and-strings)
+   1. [Rest parameter and rest syntax](#rest-parameter-and-rest-syntax)
 
-### Common array methods
+## Simple array methods
 
-Basic syntax `push()`, `unshift()`, `pop()`, `shift()`:
+Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `sort()`, and `reverse()`.
+
+### push
+
 ```js
-// push(val)
+// arr.push(val)
 let arr = ['a', 'b', 'c', 'd'];
 let addedItem = arr.push('e');
 console.log(addedItem); // 5
 console.log(arr); // ['a', 'b', 'c', 'd', 'e']
+```
 
-// unshift(val)
+### unshift
+
+```js
+// arr.unshift(val)
 let arr = [1, 2, 3, 4];
 let addedItem = arr.unshift(0);
 console.log(addedItem); // 5
 console.log(arr); // [0, 1, 2, 3, 4]
+```
 
-// pop()
+### pop
+
+```js
+// arr.pop()
 let arr = ['a', 'b', 'c', 'd'];
 let removedItem = arr.pop();
 console.log(removedItem); // "d"
 console.log(arr); // ["a","b","c"]
+```
 
-// shift()
+### shift
+
+```js
+// arr.shift()
 let arr = [1, 2, 3, 4];
 let removedItem = arr.shift();
 console.log(removedItem); // 1
 console.log(arr); // [2,3,4]
 ```
-<br />
 
-### High order array methods
+### join
 
 `arr.join()`, commonly used with str.split():
 ```js
@@ -52,9 +87,22 @@ const pageSlug = blogTitle.toLowerCase().split(' ').join('-')
 console.log(pageSlug); // "common-array-methods-you-should-know"
 ```
 
-<br />
+### sort
 
-`arr.reverse()`:
+IF you use the spread operator to access the array, the original array is not mutated; otherwise it is. For example, if you do `let newArr = arr.sort()`, then `arr` is sorted. Same with `reverse()`.
+
+```js
+// Sorting an array of strings using spread operating to NOT mutate original:
+const arr = ["John", "Jim", "Mary", "Adam", "Zac", "Susan"];
+let newArr = [...arr].sort();
+console.log(newArr); // ["Adam","Jim","John","Mary","Susan","Zac"]
+console.log("original: " + arr); // "original: John,Jim,Mary,Adam,Zac,Susan"
+```
+
+### reverse
+
+You can use `reverse()` with the spread operator on the original array as a more consice way to check for palindromes.
+
 ```js
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const countDown = arr.reverse();
@@ -69,11 +117,20 @@ console.log(countDown); [10,9,8,7,6,5,4,3,2,1]
 console.log(arr); [1,2,3,4,5,6,7,8,9,10]
 ```
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-`arr.sort()`:
+## High order array methods
+
+High Order Array Methods = methods that use a callback function. The most used ones are: sort, some, map, filter, forEach, and reduce.
+
+### Arrow or simple examples
+
+These are simple examples on how to use these methods. 
+
+#### Basic sort
+
 ```js
-// mutaes original array:
+// mutates original array:
 const arr = [4, 2, 1, 5, 3];
 arr.sort(function(a, b) {
   return a - b;
@@ -86,17 +143,15 @@ let sortedArr = [...arr].sort(function(a, b) {
 });
 console.log(sortedArr); // [1,2,3,4,5]
 console.log("original: " + arr); // "original: 4,2,1,5,3"
-
-// Sorting an array of strings using spread operating to NOT mutate original:
-const arr = ["John", "Jim", "Mary", "Adam", "Zac", "Susan"];
-newArr = [...arr].sort();
-console.log(newArr); // ["Adam","Jim","John","Mary","Susan","Zac"]
-console.log("original: " + arr); // "original: John,Jim,Mary,Adam,Zac,Susan"
 ```
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-Basic `arr.every()`: returns a boolean if EVERY element in an array passes a test, syntax:
+#### Basic every
+
+Returns a boolean if EVERY element in an array passes a test
+
+`arr.every()` syntax:
 ```js
 // Arrow function
 every((element) => {...} )
@@ -107,6 +162,8 @@ every(function(element) {...})
 // Callback function
 every(callBackFx)
 ```
+
+<br />
 
 `arr.every()` examples:
 ```js
@@ -137,9 +194,13 @@ let checkNums = nums.every(findPositive);
 console.log(checkNums) // false
 ```
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-`arr.some()`, returns a boolean if at least one element passes a test, syntax::
+#### Basic some
+
+Returns a boolean if at least one element passes a test
+
+`arr.some()` syntax:
 ```js
 // Arrow function
 some((element) => {...} )
@@ -151,7 +212,9 @@ some(function(element) {...})
 some(callBackFx)
 ```
 
-`arr.some()` examples:
+<br />
+
+Examples:
 ```js
 // Arrow
 const array = [1, 2, 3, 5, 7];
@@ -168,7 +231,96 @@ const names = ['John', 'Peter', 'Mary'];
 const firstName = 'John'
 const hasMyName = names.some(name => name === firstName);
 console.log(hasMyName); // true
+```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+#### Basic map
+
+`arr.map()` syntax:
+```js
+// Arrow function
+map((element) => { /* ... */ })
+map((element, index) => { /* ... */ })
+
+// Callback function
+map(callbackFn)
+
+// Inline callback function
+map(function(element) { /* ... */ })
+map(function(element, index) { /* ... */ })
+```
+
+<br />
+
+`arr.map()` simple MDN examples:
+```js
+const arr = [1, 2, 3]
+const mapArr = arr.map(n => n * 3)
+console.log(mapArr)
+
+const array1 = [1, 4, 9, 16];
+const map1 = array1.map(x => x * 2);
+console.log(map1);
+
+const numbers = [1, 4, 9];
+const roots = numbers.map((num) => Math.sqrt(num)); // roots is now [1, 2, 3]
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+#### Basic filter
+
+syntax:
+```js
+// Arrow function
+filter((element) => { /* ... */ } )
+filter((element, index) => { /* ... */ } )
+
+// Callback function
+filter(callbackFn)
+
+// Inline callback function
+filter(function(element) { /* ... */ })
+filter(function(element, index) { /* ... */ })
+```
+
+MDN Examples:
+```js
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter(word => word.length > 6);
+console.log(result); // ["exuberant","destruction","present"]
+
+// Filtering out all small values
+function isBigEnough(value) {
+  return value >= 10
+}
+let filtered = [12, 5, 8, 130, 44].filter(isBigEnough)
+console.log(filtered); // [12,130,44]
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+#### Basic forEach
+
+```js
+
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+#### Basic reduce
+
+```js
+
+```
+
+
+### Callback examples
+
+#### Some
+
+```js
 // Callback function
 const arr = [2, 5, 8, 1, 4];
 const arr2 = [12, 5, 8, 1, 4];
@@ -178,7 +330,7 @@ function isBiggerThan10(item) {
 console.log(arr.some(isBiggerThan10));  // false
 console.log(arr2.some(isBiggerThan10)); // true
 
-// Anonymous/inline function :
+// Anonymous/inline function:
 const arr = [10, 20, 30, 40, 3];
 const lessThanTen = arr.some(function(item) {
   return item < 10;
@@ -200,35 +352,12 @@ console.log(hasLastName); // true
 
 **NOTE**: I've seen examples where `some()` is used to check for the existence of a value in an array - why not just use `includes()`? You can not use `hasOwnProperty` for the last example because the "object" in an array, not an object.
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-`arr.map()` syntax:
+#### Map
+
+MDN Examples:
 ```js
-// Arrow function
-map((element) => { /* ... */ })
-map((element, index) => { /* ... */ })
-
-// Callback function
-map(callbackFn)
-
-// Inline callback function
-map(function(element) { /* ... */ })
-map(function(element, index) { /* ... */ })
-```
-
-`arr.map()` MDN examples:
-```js
-const arr = [1, 2, 3]
-const mapArr = arr.map(n => n * 3)
-console.log(mapArr)
-
-const array1 = [1, 4, 9, 16];
-const map1 = array1.map(x => x * 2);
-console.log(map1);
-
-const numbers = [1, 4, 9];
-const roots = numbers.map((num) => Math.sqrt(num)); // roots is now [1, 2, 3]
-
 // reformat objects in an array
 const kvArray = [
   { key: 1, value: 10 },
@@ -246,6 +375,8 @@ const charCodes = map.call('Hello World', (x) => x.charCodeAt(0));
 const elems = document.querySelectorAll('select option:checked');
 const values = Array.prototype.map.call(elems, ({ value }) => value);
 ```
+
+<br />
 
 freeCodeCamp examples:
 ```js
@@ -278,35 +409,11 @@ function findLongestWordLength(str) {
 findLongestWordLength("The quick brown fox jumped over the lazy dog");
 ```
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-`arr.filter()` syntax:
+#### Filter
+
 ```js
-// Arrow function
-filter((element) => { /* ... */ } )
-filter((element, index) => { /* ... */ } )
-
-// Callback function
-filter(callbackFn)
-
-// Inline callback function
-filter(function(element) { /* ... */ })
-filter(function(element, index) { /* ... */ })
-```
-
-MDN Examples:
-```js
-const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-const result = words.filter(word => word.length > 6);
-console.log(result); // ["exuberant","destruction","present"]
-
-// Filtering out all small values
-function isBigEnough(value) {
-  return value >= 10
-}
-let filtered = [12, 5, 8, 130, 44].filter(isBigEnough)
-console.log(filtered); // [12,130,44]
-
 // Find all prime numbers in an array
 const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
@@ -333,7 +440,9 @@ console.log(filterItems(fruits, 'ap'))  // ['apple', 'grapes']
 console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
 ```
 
-`arr.filter()` examples:
+<br />
+
+freeCodeCamp examples:
 ```js
 // algo.js, Challenge 2
 function diffArray(arr1, arr2) {
@@ -392,19 +501,25 @@ function urlSlug(title) {
 console.log(urlSlug(webTitle));
 ```
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+#### forEach
 
 `arr.forEach()` syntax:
 ```js
 
 ```
 
+<br />
+
 MDN Examples
 ```js
 
 ```
 
-`arr.forEach()` examples:
+<br /> 
+
+examples:
 ```js
 // Example from my guitar chord namer app
 let position = chromaticSharps.indexOf(uniqueNotes[i]);
@@ -414,7 +529,9 @@ uniqueNotes.forEach(note => noteSteps.push(noteAsRoot.indexOf(note)));
 
 ```
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+#### Reduce
 
 `arr.reduce()` syntax:
 ```js
@@ -426,7 +543,9 @@ MDN Examples
 
 ```
 
-`arr.reduce()` examples:
+<br />
+
+freeCodeCamp examples:
 ```js
 // Example with strings:
 function findLongestWordLength(str) {
@@ -465,11 +584,12 @@ const myPets = [
 const sumOfAges = myPets.reduce((sum, pet) => sum + pet.age, 0);
 console.log(sumOfAges); // 37
 ```
-- - - 
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Strings
 
-`str.toLowerCase()`, `str.toUpperCase()`, and `str.trim()` are so basic that I am not providing examples.
+`str.toLowerCase()`, `str.toUpperCase()`, and `str.trim()` are so basic that I am not providing examples. Just attach one of these methods to the variable name for your string: e.g., let badString = "   oOPS, caps LOCK ON. nEED TO FIX."
 
 ### Common string methods
 
@@ -549,6 +669,12 @@ find the Nth-to-last character:
 let thirdToLastLetter = firstName[firstName.length - 3];
 ```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Spread and Rest syntax
+
+Exampes of how to use the spread operator and rest parameter.
+
 ### Spread operator for arrays and strings
 
 add other array items to an array:
@@ -580,6 +706,8 @@ lunasfood[0] = "Catnip";
 lunasfood[2] = "Milk";
 // console.log(lunasfood)
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Rest parameter and rest syntax
 
@@ -648,10 +776,4 @@ function getTodaysMenu(...items) {
 console.log(getTodaysMenu(["Pizza", "$8"], ["Chips", "$1"], ["Beer", "$3"]));
 ```
 
-
-
-
-
-
-
-
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
