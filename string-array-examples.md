@@ -4,11 +4,15 @@
 ## Table of contents
 
 1. Arrays
+   1. Common array methods
+   1. High order array methods
 1. Strings
    1. Spread operator for arrays and strings
    1. Rest parameter and rest syntax
 
 ## Arrays
+
+### Common array methods
 
 Basic syntax `push()`, `unshift()`, `pop()`, `shift()`:
 ```js
@@ -38,14 +42,14 @@ console.log(arr); // [2,3,4]
 ```
 <br />
 
-Examples for high order array methods:
+### High order array methods
 
 `arr.join()`, commonly used with str.split():
 ```js
 // Here is an example using toLowerCase() and split() for a URL page slug
 const blogTitle = "Common Array Methods You Should Know"
-let slugTitle = blogTitle.toLowerCase().split(' ').join('-')
-console.log(slugTitle) // "common-array-methods-you-should-know"
+const pageSlug = blogTitle.toLowerCase().split(' ').join('-')
+console.log(pageSlug); // "common-array-methods-you-should-know"
 ```
 
 <br />
@@ -147,7 +151,7 @@ some(function(element) {...})
 some(callBackFx)
 ```
 
-`arr.some() examples:
+`arr.some()` examples:
 ```js
 // Arrow
 const array = [1, 2, 3, 5, 7];
@@ -198,33 +202,275 @@ console.log(hasLastName); // true
 
 <br />
 
-`arr.map()`:
+`arr.map()` syntax:
 ```js
+// Arrow function
+map((element) => { /* ... */ })
+map((element, index) => { /* ... */ })
+
+// Callback function
+map(callbackFn)
+
+// Inline callback function
+map(function(element) { /* ... */ })
+map(function(element, index) { /* ... */ })
+```
+
+`arr.map()` MDN examples:
+```js
+const arr = [1, 2, 3]
+const mapArr = arr.map(n => n * 3)
+console.log(mapArr)
+
+const array1 = [1, 4, 9, 16];
+const map1 = array1.map(x => x * 2);
+console.log(map1);
+
+const numbers = [1, 4, 9];
+const roots = numbers.map((num) => Math.sqrt(num)); // roots is now [1, 2, 3]
+
+// reformat objects in an array
+const kvArray = [
+  { key: 1, value: 10 },
+  { key: 2, value: 20 },
+  { key: 3, value: 30 }
+  ];
+const reformattedArray = kvArray.map(({ key, value}) => ({ [key]: value }));
+
+// Using map generically
+const map = Array.prototype.map;
+const charCodes = map.call('Hello World', (x) => x.charCodeAt(0));
+// charCodes now equals [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
+
+// Using map generically querySelectorAll
+const elems = document.querySelectorAll('select option:checked');
+const values = Array.prototype.map.call(elems, ({ value }) => value);
+```
+
+freeCodeCamp examples:
+```js
+const users = [
+  { name: 'John', age: 34 },
+  { name: 'Amy', age: 20 },
+  { name: 'camperCat', age: 10 }
+];
+const names = users.map(user => user.name);
+console.log(names);
+
+// Challenge 11 CONVERT HTML ENTITIES
+function convertHTML(str) {
+  const convertSymbols = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&apos;"
+  };
+
+  return str.split("").map(symbol => convertSymbols[symbol] || symbol).join("");
+}
+convertHTML("Dolce & Gabbana");
+
+// lesson 4 3rd solution
+function findLongestWordLength(str) {
+  return Math.max(...str.split(" ").map(word => word.length));
+}
+findLongestWordLength("The quick brown fox jumped over the lazy dog");
+```
+
+<br />
+
+`arr.filter()` syntax:
+```js
+
+```
+
+`arr.filter()` examples:
+```js
+// algo.js, Challenge 2
+function diffArray(arr1, arr2) {
+  return arr2
+    .concat(arr1)
+    .filter(item => !arr2.includes(item) || !arr1.includes(item));
+}
+console.log(diffArray([1, 2, 3, 5, 7], [1, 2, 3, 4, 5]));
+
+// Challenge 3 SEEK DESTROY
+function destroyer(arr, ...otherArgs) {
+  // return the arr values that are not in otherArgs
+  return arr.filter(item => !otherArgs.includes(item));
+}
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
+
+// Challenge 4 WHEREFORE ARE THOU
+function whatIsInAName(collection, source) {
+  let getKeys = Object.keys(source);
+
+  return collection.filter(function (item) {
+    return getKeys.every(function (key) {
+      return item.hasOwnProperty(key) && item[key] === source[key];
+    });
+  });
+
+}
+whatIsInAName(
+  [
+    { first: "Romeo", last: "Montague" },
+    { first: "Mercutio", last: null },
+    { first: "Tybalt", last: "Capulet" }
+  ],
+  { last: "Capulet" }
+);
+
+// functional.js, lesson 16
+const squareList = (arr) => {
+  return arr
+    .filter(num => num > 0 && num % parseInt(num) === 0)
+    .map(num => Math.pow(num, 2));
+};
+
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+// console.log(squaredIntegers);
+
+// lesson 21
+let webTitle = "Dog breeds good with cats";
+function urlSlug(title) {
+  return title
+    .split(" ")
+    .filter(substr => substr !== "")
+    .join("-")
+    .toLowerCase();
+}
+console.log(urlSlug(webTitle));
+```
+
+<br />
+
+`arr.forEach()` syntax:
+```js
+
+```
+
+`arr.forEach()` examples:
+```js
+// Example from my guitar chord namer app
+let position = chromaticSharps.indexOf(uniqueNotes[i]);
+let noteAsRoot = chromaticSharps.slice(position, position + 12);
+uniqueNotes.forEach(note => noteSteps.push(noteAsRoot.indexOf(note)));
+
 
 ```
 
 <br />
 
-`arr.filter()`:
+`arr.reduce()` syntax:
 ```js
 
 ```
 
-<br />
-
-`arr.forEach()`:
+`arr.reduce()` examples:
 ```js
+// Example with strings:
+function findLongestWordLength(str) {
+  return str.split(' ')
+    .reduce(function(longest, word) {
+      return Math.max(longest, word.length)
+    }, 0);
+}
+findLongestWordLength("Find the longest word in this sentence"); // 8
 
+// algo.js, Challenge 13 SUM ALL PRIMES
+function sumPrimes(num) {
+  // Check all numbers for primality
+  let primes = [];
+  for (let i = 2; i <= num; i++) {
+    if (primes.every((prime) => i % prime !== 0))
+      primes.push(i);
+  }
+  return primes.reduce((sum, prime) => sum + prime, 0);
+}
+console.log(sumPrimes(10));
+
+// es6.js, use the rest parameter w\ Fx parms
+const sum = (...args) => {
+  return args.reduce((a, b) => a + b, 0);
+}
+
+// lesson 15, functional.js
+const myPets = [
+  { name: "Buddy", species: "dog", age: 10 },
+  { name: "Lttle Rascal", species: "cat", age: 8 },
+  { name: "Charlie", species: "cat", age: 10 },
+  { name: "Squeeks", species: "cat", age: 2 },
+  { name: "Luna", species: "cat", age: 7 }
+]
+const sumOfAges = myPets.reduce((sum, pet) => sum + pet.age, 0);
+console.log(sumOfAges); // 37
 ```
-
-<br />
-
-`arr.reduce()`:
-```js
-
-```
+- - - 
 
 ## Strings
+
+`str.toLowerCase()`, `str.toUpperCase()`, and `str.trim()` are so basic that I am not providing examples.
+
+### Common string methods
+
+`regex.test(str)`:
+```js
+const str = 'table football';
+const regex = /foo*/;
+console.log(regex.test(str));
+
+const str = 'hello world!';
+const result = /^hello/.test(str);
+console.log(result); // true
+```
+
+`str.match()`:
+```js
+// Example 1
+const paragraph = 'The quick brown FOX jumps over the lazy dog. It barked.';
+const regex = /[A-Z]/g;
+const found = paragraph.match(regex);
+console.log(found); // ["T","F","O","X","I"]
+
+// Example 2
+const paragraph = 'The quick brown fox jumps over the lazy dog. It barked.';
+const capturingRegex = /(?<animal>fox|cat) jumps over/;
+const found = paragraph.match(capturingRegex);
+console.log(found.groups); // {animal: "fox"}
+```
+
+`str.replace()` syntax:
+```js
+replace(regexp, newSubstr)
+replace(regexp, replacerFunction)
+
+replace(substr, newSubstr)
+replace(substr, replacerFunction)
+```
+
+`str.replace()`:
+```js
+// Example 1
+const p = 'The quick brown fox jumps over the lazy dog.';
+console.log(p.replace('dog', 'monkey')); // "The quick brown fox jumps over the lazy monkey."
+
+// Example 2
+const regex = /Dog/i;
+console.log(p.replace(regex, 'ferret')); // "The quick brown fox jumps over the lazy ferret."
+
+// Example 3
+let str = 'Twas the night before Xmas...';
+let newstr = str.replace(/xmas/i, 'Christmas');
+console.log(newstr); // "Twas the night before Christmas..."
+
+// Switching words in a string
+let re = /(\w+)\s(\w+)/;
+let str = 'John Smith';
+let newstr = str.replace(re, '$2, $1');
+console.log(newstr);  // Smith, John
+```
 
 typeof:
 ```js
@@ -343,3 +589,11 @@ function getTodaysMenu(...items) {
 }
 console.log(getTodaysMenu(["Pizza", "$8"], ["Chips", "$1"], ["Beer", "$3"]));
 ```
+
+
+
+
+
+
+
+
