@@ -49,6 +49,8 @@ console.log(addedItem); // 5
 console.log(arr); // ['a', 'b', 'c', 'd', 'e']
 ```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ### unshift
 
 ```js
@@ -58,6 +60,8 @@ let addedItem = arr.unshift(0);
 console.log(addedItem); // 5
 console.log(arr); // [0, 1, 2, 3, 4]
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### pop
 
@@ -69,6 +73,8 @@ console.log(removedItem); // "d"
 console.log(arr); // ["a","b","c"]
 ```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ### shift
 
 ```js
@@ -79,6 +85,8 @@ console.log(removedItem); // 1
 console.log(arr); // [2,3,4]
 ```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ### join
 
 `arr.join()`, commonly used with str.split():
@@ -88,6 +96,8 @@ const blogTitle = "Common Array Methods You Should Know"
 const pageSlug = blogTitle.toLowerCase().split(' ').join('-')
 console.log(pageSlug); // "common-array-methods-you-should-know"
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Really basic sort
 
@@ -100,6 +110,8 @@ let newArr = [...arr].sort();
 console.log(newArr); // ["Adam","Jim","John","Mary","Susan","Zac"]
 console.log("original: " + arr); // "original: John,Jim,Mary,Adam,Zac,Susan"
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### reverse
 
@@ -305,16 +317,31 @@ console.log(filtered); // [12,130,44]
 
 #### Basic forEach
 
+MDN syntax:
 ```js
-// why nothing here
+
+```
+
+<br />
+
+MDN Examples
+```js
+
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 #### Basic reduce
 
+MDN syntax:
 ```js
-// why nothing here
+
+```
+
+MDN Examples
+```js
+
+``` nothing here
 ```
 
 
@@ -507,19 +534,6 @@ console.log(urlSlug(webTitle));
 
 #### forEach
 
-`arr.forEach()` syntax:
-```js
-
-```
-
-<br />
-
-MDN Examples
-```js
-
-```
-
-<br /> 
 
 examples:
 ```js
@@ -534,18 +548,6 @@ uniqueNotes.forEach(note => noteSteps.push(noteAsRoot.indexOf(note)));
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 #### Reduce
-
-`arr.reduce()` syntax:
-```js
-
-```
-
-MDN Examples
-```js
-
-```
-
-<br />
 
 freeCodeCamp examples:
 ```js
