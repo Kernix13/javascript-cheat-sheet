@@ -19,7 +19,7 @@
    1. [Find](#find)
    1. [Every](#every)
    1. [Some](#some)
-   1. [map](#map)
+   1. [Map](#map)
    1. [Filter](#filter)
    1. [forEach](#forEach)
    1. [Reduce](#reduce)
@@ -170,6 +170,8 @@ console.log(str.includes('Script', 5)); // false
 console.log(str.includes('Script', 4)); // true
 ```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ### Find
 
 `arr.find()` MDN Syntax:
@@ -209,6 +211,8 @@ const foundItem = items.find(item => {
 })
 console.log(foundItem) // {"name": "Book", "price": 5}
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Every
 
@@ -443,84 +447,6 @@ console.log(itemNames) // [100,200,10,5,500,1000,25]
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-### forEach
-
-`arr.forEach()` MDN syntax:
-```js
-// Arrow function
-forEach((element) => { /* ... */ })
-forEach((element, index) => { /* ... */ })
-
-// Callback function
-forEach(callbackFn)
-forEach(callbackFn, thisArg)
-
-// Inline callback function
-forEach(function(element) { /* ... */ })
-forEach(function(element, index) { /* ... */ })
-```
-
-<br />
-
-`arr.forEach()` MDN and other Examples
-```js
-const array1 = ['a', 'b', 'c'];
-array1.forEach(element => console.log(element)); // "a" "b" "c"
-
-const items = [
-  { name: 'Bike', price: 100 },
-  { name: 'TV', price: 200 },
-  { name: 'Album', price: 10 },
-  { name: 'Book', price: 5 },
-  { name: 'Phone', price: 500 },
-  { name: 'Computer', price: 1000 },
-  { name: 'Keyboard', price: 25 }
-]
-items.forEach(item => {
-  console.log(item.name)
-})
-// "Bike" "TV" "Album" "Book" "Phone" "Computer" "Keyboard"
-
-const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-const result = words.filter(word => word.length > 6);
-console.log(result); // ["exuberant","destruction","present"]
-
-// Filtering out all small values
-function isBigEnough(value) {
-  return value >= 10
-}
-let filtered = [12, 5, 8, 130, 44].filter(isBigEnough)
-console.log(filtered); // [12,130,44]
-
-// Converting a for loop to forEach
-const items = ['item1', 'item2', 'item3'];
-const copyItems = [];
-
-// before
-for (let i = 0; i < items.length; i++) {
-  copyItems.push(items[i]);
-}
-
-// after
-items.forEach((item) => {
-  copyItems.push(item);
-});
-
-// Other examples are really confusing - look at Traversy
-```
-
-<br />
-
-`arr.forEach()` my examples:
-```js
-// Example from my guitar chord namer app
-let position = chromaticSharps.indexOf(uniqueNotes[i]);
-let noteAsRoot = chromaticSharps.slice(position, position + 12);
-uniqueNotes.forEach(note => noteSteps.push(noteAsRoot.indexOf(note)));
-```
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
 ### Filter
 
 `arr.filter()` examples:
@@ -627,6 +553,84 @@ const combined = ages
   .sort((a, b) => a - b)
   .reduce((a, b) => a + b, 0);
 console.log(combined); // 798
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### forEach
+
+`arr.forEach()` MDN syntax:
+```js
+// Arrow function
+forEach((element) => { /* ... */ })
+forEach((element, index) => { /* ... */ })
+
+// Callback function
+forEach(callbackFn)
+forEach(callbackFn, thisArg)
+
+// Inline callback function
+forEach(function(element) { /* ... */ })
+forEach(function(element, index) { /* ... */ })
+```
+
+<br />
+
+`arr.forEach()` MDN and other Examples
+```js
+const array1 = ['a', 'b', 'c'];
+array1.forEach(element => console.log(element)); // "a" "b" "c"
+
+const items = [
+  { name: 'Bike', price: 100 },
+  { name: 'TV', price: 200 },
+  { name: 'Album', price: 10 },
+  { name: 'Book', price: 5 },
+  { name: 'Phone', price: 500 },
+  { name: 'Computer', price: 1000 },
+  { name: 'Keyboard', price: 25 }
+]
+items.forEach(item => {
+  console.log(item.name)
+})
+// "Bike" "TV" "Album" "Book" "Phone" "Computer" "Keyboard"
+
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter(word => word.length > 6);
+console.log(result); // ["exuberant","destruction","present"]
+
+// Filtering out all small values
+function isBigEnough(value) {
+  return value >= 10
+}
+let filtered = [12, 5, 8, 130, 44].filter(isBigEnough)
+console.log(filtered); // [12,130,44]
+
+// Converting a for loop to forEach
+const items = ['item1', 'item2', 'item3'];
+const copyItems = [];
+
+// before
+for (let i = 0; i < items.length; i++) {
+  copyItems.push(items[i]);
+}
+
+// after
+items.forEach((item) => {
+  copyItems.push(item);
+});
+
+// Other examples are really confusing - look at Traversy
+```
+
+<br />
+
+`arr.forEach()` my examples:
+```js
+// Example from my guitar chord namer app
+let position = chromaticSharps.indexOf(uniqueNotes[i]);
+let noteAsRoot = chromaticSharps.slice(position, position + 12);
+uniqueNotes.forEach(note => noteSteps.push(noteAsRoot.indexOf(note)));
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
