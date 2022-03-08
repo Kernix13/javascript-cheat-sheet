@@ -20,8 +20,6 @@
       1. [Basic some](#basic-some)
       1. [Basic map](#basic-map)
       1. [Basic filter](#basic-filter)
-      1. [Basic forEach](#basic-foreach)
-      1. [Basic reduce](#basic-reduce)
    1. [Callback examples](#callback-examples)
       1. [Sort](#sort)
       1. [Some](#some)
@@ -259,6 +257,7 @@ map((element, index) => { /* ... */ })
 
 // Callback function
 map(callbackFn)
+map(callbackFn, thisArg)
 
 // Inline callback function
 map(function(element) { /* ... */ })
@@ -283,67 +282,32 @@ const roots = numbers.map((num) => Math.sqrt(num)); // roots is now [1, 2, 3]
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-#### Basic filter
-
-syntax:
-```js
-// Arrow function
-filter((element) => { /* ... */ } )
-filter((element, index) => { /* ... */ } )
-
-// Callback function
-filter(callbackFn)
-
-// Inline callback function
-filter(function(element) { /* ... */ })
-filter(function(element, index) { /* ... */ })
-```
-
-MDN Examples:
-```js
-const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-const result = words.filter(word => word.length > 6);
-console.log(result); // ["exuberant","destruction","present"]
-
-// Filtering out all small values
-function isBigEnough(value) {
-  return value >= 10
-}
-let filtered = [12, 5, 8, 130, 44].filter(isBigEnough)
-console.log(filtered); // [12,130,44]
-```
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
 #### Basic forEach
 
 MDN syntax:
 ```js
+// Arrow function
+forEach((element) => { /* ... */ })
+forEach((element, index) => { /* ... */ })
 
+// Callback function
+forEach(callbackFn)
+forEach(callbackFn, thisArg)
+
+// Inline callback function
+forEach(function(element) { /* ... */ })
+forEach(function(element, index) { /* ... */ })
 ```
 
 <br />
 
 MDN Examples
 ```js
-
+const array1 = ['a', 'b', 'c'];
+array1.forEach(element => console.log(element)); // "a" "b" "c"
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-#### Basic reduce
-
-MDN syntax:
-```js
-
-```
-
-MDN Examples
-```js
-
-``` nothing here
-```
-
 
 ### Callback examples
 
@@ -534,20 +498,148 @@ console.log(urlSlug(webTitle));
 
 #### forEach
 
+syntax:
+```js
+// Arrow function
+filter((element) => { /* ... */ } )
+filter((element, index) => { /* ... */ } )
 
-examples:
+// Callback function
+filter(callbackFn)
+filter(callbackFn, thisArg)
+
+// Inline callback function
+filter(function(element) { /* ... */ })
+filter(function(element, index) { /* ... */ })
+```
+
+MDN Examples:
+```js
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter(word => word.length > 6);
+console.log(result); // ["exuberant","destruction","present"]
+
+// Filtering out all small values
+function isBigEnough(value) {
+  return value >= 10
+}
+let filtered = [12, 5, 8, 130, 44].filter(isBigEnough)
+console.log(filtered); // [12,130,44]
+
+// Converting a for loop to forEach
+const items = ['item1', 'item2', 'item3'];
+const copyItems = [];
+
+// before
+for (let i = 0; i < items.length; i++) {
+  copyItems.push(items[i]);
+}
+
+// after
+items.forEach((item) => {
+  copyItems.push(item);
+});
+
+// Other examples are really confusing - look at Traversy
+// check https://codepen.io/jim-kernicky/pen/zYzzvZr and https://codepen.io/jim-kernicky/pen/xxrKdvY for all methods
+```
+
+<br />
+
+Other examples:
 ```js
 // Example from my guitar chord namer app
 let position = chromaticSharps.indexOf(uniqueNotes[i]);
 let noteAsRoot = chromaticSharps.slice(position, position + 12);
 uniqueNotes.forEach(note => noteSteps.push(noteAsRoot.indexOf(note)));
-
-
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 #### Reduce
+
+MDN syntax:
+```js
+// Arrow function
+reduce((previousValue, currentValue) => { /* ... */ } )
+reduce((previousValue, currentValue, currentIndex) => { /* ... */ } )
+
+// Callback function
+reduce(callbackFn)
+reduce(callbackFn, initialValue)
+
+// Inline callback function
+reduce(function(previousValue, currentValue) { /* ... */ })
+reduce(function(previousValue, currentValue, currentIndex) { /* ... */ })
+```
+
+MDN Examples
+```js
+const array1 = [1, 2, 3, 4];
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (previousValue, currentValue) => previousValue + currentValue,
+  initialValue
+);
+console.log(sumWithInitial); // 10
+
+// another example
+const getMax = (a, b) => Math.max(a, b);
+const arr = [1, 100, 5, 72];
+// callback is invoked for each element in the array starting at index 0
+console.log(arr.reduce(getMax, 50)); // 100
+
+// How reduce() works without an initial value
+const array = [15, 16, 17, 18, 19];
+
+function reducer(previous, current, index, array) {
+  const returns = previous + current;
+  console.log(`previous: ${previous}, current: ${current}, index: ${index}, returns: ${returns}`);
+  return returns;
+}
+array.reduce(reducer);
+
+// Sum all the values of an array
+let sum = [0, 1, 2, 3].reduce(function (previousValue, currentValue) {
+  return previousValue + currentValue
+}, 0)
+// sum is 6, or an arrow function:
+let total = [ 0, 1, 2, 3 ].reduce(
+  ( previousValue, currentValue ) => previousValue + currentValue,
+  0
+)
+
+// Sum of values in an object array
+let initialValue = 0
+let sum = [{x: 1}, {x: 2}, {x: 3}].reduce(function (previousValue, currentValue) {
+    return previousValue + currentValue.x
+}, initialValue)
+console.log(sum) // logs 6, or as an arrow function:
+
+let initialValue = 0
+let sum = [{x: 1}, {x: 2}, {x: 3}].reduce(
+    (previousValue, currentValue) => previousValue + currentValue.x
+    , initialValue
+)
+console.log(sum)
+
+// Counting instances of values in an object
+let names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
+
+let countedNames = names.reduce(function (allNames, name) {
+  if (name in allNames) {
+    allNames[name]++
+  }
+  else {
+    allNames[name] = 1
+  }
+  return allNames
+}, {})
+// countedNames is:
+// { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+
+// Also really complex - find other examples from my courses
+```
 
 freeCodeCamp examples:
 ```js
