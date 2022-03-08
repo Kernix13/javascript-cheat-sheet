@@ -11,7 +11,7 @@
    1. [pop](#pop)
    1. [shift](#shift)
    1. [join](#join)
-   1. [sort](#sort)
+   1. [Really basic sort](#really-basic-sort)
    1. [reverse](#reverse)
 1. [High order array methods](#high-order-array-methods)
    1. [Arrow or simple examples](#arrow-or-simple-examples)
@@ -20,6 +20,8 @@
       1. [Basic some](#basic-some)
       1. [Basic map](#basic-map)
       1. [Basic filter](#basic-filter)
+      1. [Basic forEach](#basic-foreach)
+      1. [Basic reduce](#basic-reduce)
    1. [Callback examples](#callback-examples)
       1. [Sort](#sort)
       1. [Some](#some)
@@ -87,7 +89,7 @@ const pageSlug = blogTitle.toLowerCase().split(' ').join('-')
 console.log(pageSlug); // "common-array-methods-you-should-know"
 ```
 
-### sort
+### Really basic sort
 
 IF you use the spread operator to access the array, the original array is not mutated; otherwise it is. For example, if you do `let newArr = arr.sort()`, then `arr` is sorted. Same with `reverse()`.
 
@@ -304,7 +306,7 @@ console.log(filtered); // [12,130,44]
 #### Basic forEach
 
 ```js
-
+// why nothing here
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -312,7 +314,7 @@ console.log(filtered); // [12,130,44]
 #### Basic reduce
 
 ```js
-
+// why nothing here
 ```
 
 
