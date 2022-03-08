@@ -365,7 +365,7 @@ const numbers = [1, 4, 9];
 const roots = numbers.map((num) => Math.sqrt(num)); // roots is now [1, 2, 3]
 ```
 
-### Map
+<br />
 
 `arr.map()` MDN Examples:
 ```js
@@ -422,7 +422,7 @@ findLongestWordLength("The quick brown fox jumped over the lazy dog");
 
 <br />
 
-Other examples:
+`arr.map()` other examples:
 ```js
 const items = [
   { name: 'Bike', price: 100 },
@@ -523,7 +523,7 @@ uniqueNotes.forEach(note => noteSteps.push(noteAsRoot.indexOf(note)));
 
 ### Filter
 
-`arr.map()` examples:
+`arr.filter()` examples:
 ```js
 // Find all prime numbers in an array
 const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
@@ -614,7 +614,7 @@ console.log(urlSlug(webTitle));
 
 <br />
 
-Other examples:
+`arr.filter()` other examples:
 ```js
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 const canDrink = ages.filter(age => age >= 21);
@@ -647,6 +647,8 @@ reduce(callbackFn, initialValue)
 reduce(function(previousValue, currentValue) { /* ... */ })
 reduce(function(previousValue, currentValue, currentIndex) { /* ... */ })
 ```
+
+<br /> 
 
 `arr.reduce()` MDN Examples
 ```js
@@ -716,6 +718,8 @@ let countedNames = names.reduce(function (allNames, name) {
 // Also really complex - find other examples from my courses
 ```
 
+<br />
+
 `arr.reduce()` freeCodeCamp examples:
 ```js
 // Example with strings:
@@ -758,7 +762,7 @@ console.log(sumOfAges); // 37
 
 <br />
 
-Other examples:
+`arr.reduce()` other examples:
 ```js
 // example 1
 const items = [
