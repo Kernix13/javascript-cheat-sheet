@@ -1,5 +1,6 @@
 # String and Array examples
 
+Examples for the more difficult to understand methods or the standard syntax for the most popular methods.
 
 ## Table of contents
 
@@ -31,7 +32,14 @@
 
 ## Simple array methods
 
-Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `sort()`, and `reverse()`.
+Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `sort()`, and `reverse()`:
+
+- [MDN push](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+- [MDN unshift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
+- MDN pop
+- MDN shift
+- MDN join
+- MDN reverse
 
 ### push
 
@@ -41,6 +49,12 @@ let arr = ['a', 'b', 'c', 'd'];
 let addedItem = arr.push('e');
 console.log(addedItem); // 5
 console.log(arr); // ['a', 'b', 'c', 'd', 'e']
+
+// Merge 2 arrays, alterntive to concat():
+let vegetables = ['parsnip', 'potato']
+let moreVegs = ['celery', 'beetroot']
+vegetables.push(...moreVegs);
+console.log(vegetables)  // ['parsnip', 'potato', 'celery', 'beetroot']
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -95,7 +109,7 @@ console.log(pageSlug); // "common-array-methods-you-should-know"
 
 ### Really basic sort
 
-If you use the spread operator to access the array, the original array is not mutated; otherwise it is. For example, if you do `let newArr = arr.sort()`, then `arr` is sorted. Same with `reverse()`.
+If you use the spread operator to access the array, the original array is not mutated; otherwise it is. For example, if you do `let newArr = arr.sort()`, then `arr` is sorted. Same with `reverse()`. Note, don't use a callback function for sorting text. Check out [MDN sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#description) for how to sort ny the key of an object.
 
 ```js
 // Sorting an array of strings using spread operating to NOT mutate original:
@@ -103,6 +117,11 @@ const arr = ["John", "Jim", "Mary", "Adam", "Zac", "Susan"];
 let newArr = [...arr].sort();
 console.log(newArr); // ["Adam","Jim","John","Mary","Susan","Zac"]
 console.log("original: " + arr); // "original: John,Jim,Mary,Adam,Zac,Susan"
+
+// Use this method to sort numbers as a string value:
+const nums = [5, 1, 27, 101, 55, 12, 44, 10001, 3];
+const numSort = [...nums].sort();
+console.log(numSort) // [1,10001,101,12,27,3,44,5,55]
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -123,6 +142,18 @@ console.log(arr); // [10,9,8,7,6,5,4,3,2,1]
 const countDown = [...arr].reverse();
 console.log(countDown); [10,9,8,7,6,5,4,3,2,1]
 console.log(arr); [1,2,3,4,5,6,7,8,9,10]
+
+// Alternate to the palindrome problem:
+let word = "racecar";
+let letters = word.toLowerCase().split(''); 
+// the spread operator is a must here for reverse() to work
+let revWord = [...letters].reverse().join('');
+
+if (word === revWord) {
+  console.log(word + " Is a palindrome");
+} else {
+  console.log(word + " is NOT a palindrome");
+}
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -148,6 +179,31 @@ let sortedArr = [...arr].sort(function(a, b) {
 });
 console.log(sortedArr); // [1,2,3,4,5]
 console.log("original: " + arr); // "original: 4,2,1,5,3"
+
+// Arrow function
+const nums = [1, 10, 72, 1000, 5, 55, 101, 17, 11, 19, 100, ]
+let numSort = [...nums].sort((a, b) => a - b);
+
+// Arrays of objects can be sorted by comparing the value of one of their properties
+const items = [
+  { name: 'Edward', value: 21 },
+  { name: 'Sharpe', value: 37 },
+  { name: 'And', value: 45 },
+  { name: 'The', value: -12 },
+  { name: 'Magnetic', value: 13 },
+  { name: 'Zeros', value: 37 }
+];
+let itemsSort = items.sort(function (a, b) {
+  return a.value - b.value;
+});
+// Sorting by 'name' is more involved: 
+
+// Sorting non-ASCII characters
+const items = ['réservé', 'premier', 'communiqué', 'café', 'adieu', 'éclair'];
+items.sort(function (a, b) {
+  return a.localeCompare(b);
+});
+// items is ['adieu', 'café', 'communiqué', 'éclair', 'premier', 'réservé']
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
