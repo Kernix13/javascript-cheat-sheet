@@ -95,7 +95,7 @@ console.log(pageSlug); // "common-array-methods-you-should-know"
 
 ### Really basic sort
 
-IF you use the spread operator to access the array, the original array is not mutated; otherwise it is. For example, if you do `let newArr = arr.sort()`, then `arr` is sorted. Same with `reverse()`.
+If you use the spread operator to access the array, the original array is not mutated; otherwise it is. For example, if you do `let newArr = arr.sort()`, then `arr` is sorted. Same with `reverse()`.
 
 ```js
 // Sorting an array of strings using spread operating to NOT mutate original:
@@ -109,7 +109,7 @@ console.log("original: " + arr); // "original: John,Jim,Mary,Adam,Zac,Susan"
 
 ### reverse
 
-You can use `reverse()` with the spread operator on the original array as a more consice way to check for palindromes.
+You can use `reverse()` with the spread operator on the original array as a more concise way to check for palindromes.
 
 ```js
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -129,10 +129,11 @@ console.log(arr); [1,2,3,4,5,6,7,8,9,10]
 
 ## High order array methods
 
-High Order Array Methods = methods that use a callback function. The most used ones are: sort, some, map, filter, forEach, and reduce.
+High Order Array Methods = methods that use a callback function. The most used ones are sort, some, map, filter, forEach, and reduce; but also includes, find, every, and some are useful.
 
 ### Sort
 
+`arr.sort()` callback examples:
 ```js
 // mutates original array:
 const arr = [4, 2, 1, 5, 3];
@@ -174,7 +175,7 @@ console.log(str.includes('Script', 4)); // true
 
 ### Find
 
-`arr.find()` MDN Syntax:
+`arr.find()` MDN syntax:
 ```js
 // Arrow function
 find((element) => { /* ... */ } )
@@ -189,9 +190,8 @@ find(function(element) { /* ... */ })
 find(function(element, index) { /* ... */ })
 ```
 
-`arr.find()` examples
+`arr.find()` MDN examples
 ```js
-// MDN example
 const array1 = [5, 12, 8, 130, 44];
 const found = array1.find(element => element > 10);
 console.log(found); // 12
@@ -218,7 +218,7 @@ console.log(foundItem) // {"name": "Book", "price": 5}
 
 Returns a boolean if EVERY element in an array passes a test
 
-`arr.every()` syntax:
+`arr.every()` MDN syntax:
 ```js
 // Arrow function
 every((element) => {...} )
@@ -267,7 +267,7 @@ console.log(checkNums) // false
 
 Returns a boolean if at least one element passes a test
 
-`arr.some()` syntax:
+`arr.some()` MDN syntax:
 ```js
 // Arrow function
 some((element) => {...} )
@@ -281,7 +281,7 @@ some(callBackFx)
 
 <br />
 
-`arr.some()`  examples:
+`arr.some()` arrow examples:
 ```js
 // Arrow
 const array = [1, 2, 3, 5, 7];
@@ -302,6 +302,7 @@ console.log(hasMyName); // true
 
 <br />
 
+`arr.some()` callback examples:
 ```js
 // Callback function
 const arr = [2, 5, 8, 1, 4];
@@ -338,7 +339,7 @@ console.log(hasLastName); // true
 
 ### Map
 
-`arr.map()` syntax:
+`arr.map()` MDN syntax:
 ```js
 // Arrow function
 map((element) => { /* ... */ })
@@ -371,7 +372,7 @@ const roots = numbers.map((num) => Math.sqrt(num)); // roots is now [1, 2, 3]
 
 <br />
 
-`arr.map()` MDN Examples:
+`arr.map()` more advanced MDN examples:
 ```js
 // reformat objects in an array
 const kvArray = [
@@ -449,6 +450,20 @@ console.log(itemNames) // [100,200,10,5,500,1000,25]
 
 ### Filter
 
+`arr.filter()` MDN syntax:
+```js
+// Arrow function
+filter((element) => { /* ... */ } )
+filter((element, index) => { /* ... */ } )
+
+// Callback function
+filter(callbackFn)
+filter(callbackFn, thisArg)
+
+// Inline callback function
+filter(function(element) { /* ... */ })
+filter(function(element, index) { /* ... */ })
+```
 `arr.filter()` examples:
 ```js
 // Find all prime numbers in an array
@@ -464,7 +479,7 @@ function isPrime(num) {
 }
 console.log(array.filter(isPrime)); // [2, 3, 5, 7, 11, 13]
 
-// Searching in array
+// Searching an array
 let fruits = ['apple', 'banana', 'grapes', 'mango', 'orange']
 
 function filterItems(arr, query) {
@@ -472,7 +487,6 @@ function filterItems(arr, query) {
     return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
   })
 }
-
 console.log(filterItems(fruits, 'ap'))  // ['apple', 'grapes']
 console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
 ```
@@ -540,19 +554,11 @@ console.log(urlSlug(webTitle));
 
 <br />
 
-`arr.filter()` other examples:
+`arr.filter()` simple examples:
 ```js
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 const canDrink = ages.filter(age => age >= 21);
 console.log(canDrink);
-
-// Combine Methods
-const combined = ages
-  .map(age => age * 2)
-  .filter(age => age >= 40)
-  .sort((a, b) => a - b)
-  .reduce((a, b) => a + b, 0);
-console.log(combined); // 798
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -576,7 +582,7 @@ forEach(function(element, index) { /* ... */ })
 
 <br />
 
-`arr.forEach()` MDN and other Examples
+`arr.forEach()` MDN and other examples
 ```js
 const array1 = ['a', 'b', 'c'];
 array1.forEach(element => console.log(element)); // "a" "b" "c"
@@ -787,13 +793,25 @@ console.log(total) // 1840
 const arr = [1, 2, 3, 4, 5, 6];
 const total = arr.reduce((accum, currVal) => (accum + currVal), 10);
 console.log(total); // 31
+
+// Combine Methods
+const combined = ages
+  .map(age => age * 2)
+  .filter(age => age >= 40)
+  .sort((a, b) => a - b)
+  .reduce((a, b) => a + b, 0);
+console.log(combined); // 798
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Strings
 
-`str.toLowerCase()`, `str.toUpperCase()`, and `str.trim()` are so basic that I am not providing examples. Just attach one of these methods to the variable name for your string: e.g., let badString = "   oOPS, caps LOCK ON. nEED TO FIX."
+`str.toLowerCase()`, `str.toUpperCase()`, and `str.trim()` are so basic that I am not providing examples. Just attach one of these methods to the variable name for your string: e.g., 
+```js
+let badString = "   oOPS, caps LOCK ON. nEED TO FIX.   "
+console.log(badString.toLowerCase().trim()); // "oops, caps lock on. need to fix."
+```
 
 ### Common string methods
 
