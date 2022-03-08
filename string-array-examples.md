@@ -14,7 +14,7 @@
    1. [Really basic sort](#really-basic-sort)
    1. [reverse](#reverse)
 1. [High order array methods](#high-order-array-methods)
-   1. [Some](#some)
+   1. [Sort](#sort)
    1. [Includes](#includes)
    1. [Find](#find)
    1. [Every](#every)
