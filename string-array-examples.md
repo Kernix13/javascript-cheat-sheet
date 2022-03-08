@@ -16,10 +16,11 @@
 1. [High order array methods](#high-order-array-methods)
    1. [Arrow or simple examples](#arrow-or-simple-examples)
       1. [Basic sort](#basic-sort)
+      1. [Basic includes](#basic-includes)
+      1. [Basic find](#basic-find)
       1. [Basic every](#basic-every)
       1. [Basic some](#basic-some)
       1. [Basic map](#basic-map)
-      1. [Basic filter](#basic-filter)
    1. [Callback examples](#callback-examples)
       1. [Sort](#sort)
       1. [Some](#some)
@@ -159,6 +160,65 @@ console.log("original: " + arr); // "original: 4,2,1,5,3"
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+#### Basic includes
+
+```js
+// syntax:
+includes(searchElement)
+includes(searchElement, fromIndex)
+
+const items = [1, 2, 3, 4, 5]
+const includes = items.includes(7)
+console.log(includes) // false
+
+let str = 'JavaScript String';
+console.log(str.includes('Script')); // true
+
+let str = 'JavaScript String';
+console.log(str.includes('Script', 5)); // false
+console.log(str.includes('Script', 4)); // true
+```
+
+#### Basic find
+
+`arr.find()` MDN Syntax:
+```js
+// Arrow function
+find((element) => { /* ... */ } )
+find((element, index) => { /* ... */ } )
+
+// Callback function
+find(callbackFn)
+find(callbackFn, thisArg)
+
+// Inline callback function
+find(function(element) { /* ... */ })
+find(function(element, index) { /* ... */ })
+```
+
+`arr.find()` examples
+```js
+// MDN example
+const array1 = [5, 12, 8, 130, 44];
+const found = array1.find(element => element > 10);
+console.log(found); // 12
+
+// using an array of objects
+const items = [
+  { name: 'Bike', price: 100 },
+  { name: 'TV', price: 200 },
+  { name: 'Album', price: 10 },
+  { name: 'Book', price: 5 },
+  { name: 'Phone', price: 500 },
+  { name: 'Computer', price: 1000 },
+  { name: 'Keyboard', price: 25 }
+]
+const foundItem = items.find(item => {
+  return item.name == 'Book'
+})
+console.log(foundItem) // {"name": "Book", "price": 5}
+```
+
 #### Basic every
 
 Returns a boolean if EVERY element in an array passes a test
@@ -226,7 +286,7 @@ some(callBackFx)
 
 <br />
 
-Examples:
+`arr.some()`  examples:
 ```js
 // Arrow
 const array = [1, 2, 3, 5, 7];
@@ -284,7 +344,7 @@ const roots = numbers.map((num) => Math.sqrt(num)); // roots is now [1, 2, 3]
 
 #### Basic forEach
 
-MDN syntax:
+`arr.forEach()` MDN syntax:
 ```js
 // Arrow function
 forEach((element) => { /* ... */ })
@@ -301,10 +361,24 @@ forEach(function(element, index) { /* ... */ })
 
 <br />
 
-MDN Examples
+`arr.forEach()` MDN and other Examples
 ```js
 const array1 = ['a', 'b', 'c'];
 array1.forEach(element => console.log(element)); // "a" "b" "c"
+
+const items = [
+  { name: 'Bike', price: 100 },
+  { name: 'TV', price: 200 },
+  { name: 'Album', price: 10 },
+  { name: 'Book', price: 5 },
+  { name: 'Phone', price: 500 },
+  { name: 'Computer', price: 1000 },
+  { name: 'Keyboard', price: 25 }
+]
+items.forEach(item => {
+  console.log(item.name)
+})
+// "Bike" "TV" "Album" "Book" "Phone" "Computer" "Keyboard"
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -349,7 +423,7 @@ console.log(hasLastName); // true
 
 #### Map
 
-MDN Examples:
+`arr.map()` MDN Examples:
 ```js
 // reformat objects in an array
 const kvArray = [
@@ -371,7 +445,7 @@ const values = Array.prototype.map.call(elems, ({ value }) => value);
 
 <br />
 
-freeCodeCamp examples:
+`arr.map()` freeCodeCamp examples:
 ```js
 const users = [
   { name: 'John', age: 34 },
@@ -402,10 +476,32 @@ function findLongestWordLength(str) {
 findLongestWordLength("The quick brown fox jumped over the lazy dog");
 ```
 
+<br />
+
+Other examples:
+```js
+const items = [
+  { name: 'Bike', price: 100 },
+  { name: 'TV', price: 200 },
+  { name: 'Album', price: 10 },
+  { name: 'Book', price: 5 },
+  { name: 'Phone', price: 500 },
+  { name: 'Computer', price: 1000 },
+  { name: 'Keyboard', price: 25 }
+]
+
+const itemNames = items.map(item => {
+  // return item.name
+  return item.price
+})
+console.log(itemNames) // [100,200,10,5,500,1000,25]
+```
+
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 #### Filter
 
+`arr.map()` examples:
 ```js
 // Find all prime numbers in an array
 const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
@@ -435,7 +531,7 @@ console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
 
 <br />
 
-freeCodeCamp examples:
+`arr.filter()` freeCodeCamp examples:
 ```js
 // algo.js, Challenge 2
 function diffArray(arr1, arr2) {
@@ -494,11 +590,28 @@ function urlSlug(title) {
 console.log(urlSlug(webTitle));
 ```
 
+<br />
+
+Other examples:
+```js
+const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+const canDrink = ages.filter(age => age >= 21);
+console.log(canDrink);
+
+// Combine Methods
+const combined = ages
+  .map(age => age * 2)
+  .filter(age => age >= 40)
+  .sort((a, b) => a - b)
+  .reduce((a, b) => a + b, 0);
+console.log(combined); // 798
+```
+
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 #### forEach
 
-syntax:
+`arr.forEach()` syntax:
 ```js
 // Arrow function
 filter((element) => { /* ... */ } )
@@ -513,7 +626,7 @@ filter(function(element) { /* ... */ })
 filter(function(element, index) { /* ... */ })
 ```
 
-MDN Examples:
+`arr.forEach()` MDN Examples:
 ```js
 const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 const result = words.filter(word => word.length > 6);
@@ -546,7 +659,7 @@ items.forEach((item) => {
 
 <br />
 
-Other examples:
+`arr.forEach()` other examples:
 ```js
 // Example from my guitar chord namer app
 let position = chromaticSharps.indexOf(uniqueNotes[i]);
@@ -558,7 +671,7 @@ uniqueNotes.forEach(note => noteSteps.push(noteAsRoot.indexOf(note)));
 
 #### Reduce
 
-MDN syntax:
+`arr.reduce()` MDN syntax:
 ```js
 // Arrow function
 reduce((previousValue, currentValue) => { /* ... */ } )
@@ -573,7 +686,7 @@ reduce(function(previousValue, currentValue) { /* ... */ })
 reduce(function(previousValue, currentValue, currentIndex) { /* ... */ })
 ```
 
-MDN Examples
+`arr.reduce()` MDN Examples
 ```js
 const array1 = [1, 2, 3, 4];
 const initialValue = 0;
@@ -641,7 +754,7 @@ let countedNames = names.reduce(function (allNames, name) {
 // Also really complex - find other examples from my courses
 ```
 
-freeCodeCamp examples:
+`arr.reduce()` freeCodeCamp examples:
 ```js
 // Example with strings:
 function findLongestWordLength(str) {
@@ -679,6 +792,31 @@ const myPets = [
 ]
 const sumOfAges = myPets.reduce((sum, pet) => sum + pet.age, 0);
 console.log(sumOfAges); // 37
+```
+
+<br />
+
+Other examples:
+```js
+// example 1
+const items = [
+  { name: 'Bike', price: 100 },
+  { name: 'TV', price: 200 },
+  { name: 'Album', price: 10 },
+  { name: 'Book', price: 5 },
+  { name: 'Phone', price: 500 },
+  { name: 'Computer', price: 1000 },
+  { name: 'Keyboard', price: 25 }
+]
+const total = items.reduce((currentTotal, item) => {
+  return item.price + currentTotal
+}, 0)
+console.log(total) // 1840
+
+// example 2
+const arr = [1, 2, 3, 4, 5, 6];
+const total = arr.reduce((accum, currVal) => (accum + currVal), 10);
+console.log(total); // 31
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
