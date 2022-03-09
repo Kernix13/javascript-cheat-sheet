@@ -15,6 +15,9 @@ Examples for standard syntax of the most coomon methods and the more difficult m
    1. [Basic sort](#basic-sort)
    1. [reverse](#reverse)
    1. [splice](#splice)
+   1. [indexOf](#indexOf)
+   1. [lastIndexOf](#lastIndexOf)
+   1. [concat](#concat)
 1. [High order array methods](#high-order-array-methods)
    1. [Sort](#sort)
    1. [Includes](#includes)
@@ -25,8 +28,13 @@ Examples for standard syntax of the most coomon methods and the more difficult m
    1. [Filter](#filter)
    1. [forEach](#forEach)
    1. [Reduce](#reduce)
-1. [Strings](#strings)
-   1. [Common string methods](#common-string-methods)
+1. [String methods](#string-methods)
+   1. [substring](#substring)
+   1. [endsWith](#endsWith)
+   1. [test](#test)
+   1. [match](#match)
+   1. [replace](#replace)
+   1. [Miscellaneous](#Miscellaneous)
 1. [Spread and Rest syntax](#spread-and-rest-syntax)
    1. [Spread operator for arrays and strings](#spread-operator-for-arrays-and-strings)
    1. [Rest parameter and rest syntax](#rest-parameter-and-rest-syntax)
@@ -42,6 +50,9 @@ Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `
 - [MDN join](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
 - [MDN reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
 - [MDN splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+- [MDN indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+- [MDN lastIndexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
+- [MDN concat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
 
 ### push
 
@@ -225,6 +236,121 @@ const alpha =  ['a', 'b', 'c', 'd', 'e']
 alpha.splice(-2, 1)
 console.log(alpha) // ["a","b","c","e"]
 
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### indexOf
+
+Examples:
+```js
+// syntax
+indexOf(searchElement)
+indexOf(searchElement, fromIndex)
+
+const datatypes = ['number', 'string', 'boolean', 'object', 'string', 'null'];
+console.log(datatypes.indexOf('number')); // 0
+console.log(datatypes.indexOf('string', 4)); // 4
+console.log(datatypes.indexOf('function')); // -1
+
+// This example is confusing. Finding all the occurrences of an element:
+const indices = [];
+const array = ['a', 'b', 'a', 'c', 'a', 'd'];
+const element = 'a';
+let idx = array.indexOf(element);
+while (idx != -1) {
+  indices.push(idx);
+  idx = array.indexOf(element, idx + 1);
+}
+console.log(indices); // [0, 2, 4]
+
+// Finding if an element exists in the array or not and updating the array
+function updateVegetablesCollection (veggies, veggie) {
+    if (veggies.indexOf(veggie) === -1) {
+        veggies.push(veggie);
+        console.log('New veggies collection is: ' + veggies);
+    } else {
+        console.log(veggie + ' already exists in the veggies collection.');
+    }
+}
+
+const veggies = ['potato', 'tomato', 'chillies', 'green-pepper'];
+
+updateVegetablesCollection(veggies, 'spinach');
+updateVegetablesCollection(veggies, 'spinach');
+```
+
+
+```js
+
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### lastIndexOf
+
+Examples: returns the last index at which a given element can be found in the array, or -1 if it is not present
+```js
+// syntax
+lastIndexOf(searchElement)
+lastIndexOf(searchElement, fromIndex)
+
+const instruments = ['Guitar', 'Bass', 'Drums', 'Guitar'];
+console.log(instruments.lastIndexOf('Guitar')); // 3
+console.log(instruments.lastIndexOf('Bass')); // 1
+
+// Finding all the occurrences of an element (confusing), using push to add them to another array as they are found:
+const indices = [];
+const array = ['a', 'b', 'a', 'c', 'a', 'd'];
+const element = 'a';
+let idx = array.lastIndexOf(element);
+while (idx !== -1) {
+  indices.push(idx);
+  idx = (idx > 0 ? array.lastIndexOf(element, idx - 1) : -1);
+}
+console.log(indices); // [4, 2, 0]
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### concat
+
+Examples:
+```js
+// syntax
+concat()
+concat(value0)
+concat(value0, value1)
+concat(value0, value1, ... , valueN)
+
+const array1 = ['a', 'b', 'c'];
+const array2 = ['d', 'e', 'f'];
+const array3 = array1.concat(array2);
+console.log(array3); // ["a", "b", "c", "d", "e", "f"]
+console.log(array1.concat(array2)); // ["a", "b", "c", "d", "e", "f"]
+
+// Concatenating three arrays
+const num1 = [1, 2, 3];
+const num2 = [4, 5, 6];
+const num3 = [7, 8, 9];
+const numbers = num1.concat(num2, num3);
+
+console.log(numbers); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// Concatenating values to an array
+const letters = ['a', 'b', 'c'];
+const alphaNumeric = letters.concat(1, [2, 3]);
+
+console.log(alphaNumeric); // ['a', 'b', 'c', 1, 2, 3]
+
+// Concatenating nested arrays
+const num1 = [[1]];
+const num2 = [2, [3]];
+const numbers = num1.concat(num2);
+
+console.log(numbers); // [[1], 2, [3]]
+num1[0].push(4);
+console.log(numbers); // [[1, 4], 2, [3]]
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -1016,26 +1142,91 @@ console.log(combined); // 798
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Strings
+## String methods
 
-`str.toLowerCase()`, `str.toUpperCase()`, and `str.trim()` are so basic that I am not providing examples. Just attach one of these methods to the variable name for your string: e.g., 
+`str.toLowerCase()`, `str.toUpperCase()`, and `str.trim()` are so basic that I am not providing examples. Just attach one of these methods to the variable name for your string: e.g.:
+
 ```js
 let badString = "   oOPS, caps LOCK ON. nEED TO FIX.   "
 console.log(badString.toLowerCase().trim()); // "oops, caps lock on. need to fix."
-// need a to capitalize first letter and a regex for the first char after the period.
+// need to capitalize first letter and add a regex for the first char after the period.
 ```
 
-### Common string methods
+- [MDN substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [MDN endsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
+- [MDN test](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test)
+- [MDN match](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match)
+- [MDN replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+
+### substring
 
 `str.substring()`:
 ```js
 // syntax:
+substring(indexStart)
 substring(indexStart, indexEnd)
 
+const str = 'Mozilla';
+console.log(str.substring(1, 3)); // "oz"
+console.log(str.substring(2)); // "zilla"
 
+// Using substring() with length property
+let anyString = 'Mozilla'
+let anyString4 = anyString.substring(anyString.length - 4)
+console.log(anyString4); // "illa"
+
+let anyString = 'Mozilla'
+let anyString5 = anyString.substring(anyString.length - 5)
+console.log(anyString5) // "zilla"
+
+// Differences between substring() and slice()
+let text = 'Mozilla'
+console.log(text.substring(5, 2)) // => "zil"
+console.log(text.slice(5, 2)) // => ""
+
+// Replacing a substring within a string
+function replaceString(oldS, newS, fullS) {
+  for (let i = 0; i < fullS.length; ++i) {
+    if (fullS.substring(i, i + oldS.length) == oldS) {
+      fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length)
+    }
+  }
+  return fullS
+}
+console.log(replaceString('World', 'Web', 'Brave New World')) // "Brave New Web"
+// Better method for replacing strings:
+function replaceString(oldS, newS, fullS) {
+  return fullS.split(oldS).join(newS)
+}
 ```
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### endsWith
+
+`str.endsWith()`:
+```js
+// syntax:
+endsWith(searchString)
+endsWith(searchString, length)
+
+const str1 = 'Cats are the best!';
+console.log(str1.length) // 18
+console.log(str1.endsWith('best', 17));
+
+const str2 = 'Is this a question'; // true
+console.log(str2.endsWith('?')); // false
+
+let str = 'To be, or not to be, that is the question.'
+
+console.log(str.endsWith('question.'))  // true
+console.log(str.endsWith('to be'))      // false
+console.log(str.endsWith('to be', 19))  // true
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### test
 
 `regex.test(str)`:
 ```js
@@ -1048,7 +1239,9 @@ const result = /^hello/.test(str);
 console.log(result); // true
 ```
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### match
 
 `str.match()`:
 ```js
@@ -1065,7 +1258,9 @@ const found = paragraph.match(capturingRegex);
 console.log(found.groups); // {animal: "fox"}
 ```
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### replace
 
 `str.replace()` syntax:
 ```js
@@ -1100,12 +1295,15 @@ let newstr = str.replace(re, '$2, $1');
 console.log(newstr);  // Smith, John
 ```
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Miscellaneous
 
 typeof:
 ```js
 let typeOfTest;
-typeOfTest = "";  // string
+typeOfTest = "";
+console.log(typeof typeOfTest) // string
 typeOfTest = true; // boolean
 typeOfTest = false; // boolean
 typeOfTest = undefined; // undefined

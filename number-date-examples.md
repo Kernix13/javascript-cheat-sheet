@@ -4,7 +4,8 @@
 typeof:
 ```js
 let typeOfTest;
-typeOfTest = 0; // number
+typeOfTest = 0; 
+console.log(typeof typeOfTest) // number
 typeOfTest = -0; // number
 typeOfTest = NaN; // number
 typeOfTest = "word" / 0; // number

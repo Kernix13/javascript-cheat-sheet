@@ -4,7 +4,8 @@
 typeof:
 ```js
 let typeOfTest;
-typeOfTest = [];  // object
+typeOfTest = [];  
+console.log(typeof typeOfTest) // object
 typeOfTest = {};  // object
 typeOfTest = null; // object
 ```

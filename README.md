@@ -60,18 +60,21 @@ The following tables are for visual memorization. It is easy to see similarites 
 
 ### Data types
 
-JavaScript Primitive (single, simple values) Data Types:
+JavaScript Primitive Data Types (data that is not an object and has no methods):
 
-|    Name   | Type              | 
-| :-------- | :----:            |
-| Boolean   | `true` or `false` | 
-| Null      | `null`            | 
-| Undefined | `undefined`       | 
-| Number    | self-explanatory  | 
-| String    | text              | 
-| Object*   | See below |
+|    Name   | Type              | Mutable? | Methods | 
+| :-------- | :----:            | :----:  | :----:  |
+| Boolean   | `true` or `false` | NO | 0 | 
+| Null      | `null`            | NO | 0 | 
+| Undefined | `undefined`       | NO | 0 | 
+| Number    | self-explanatory  | NO | 0 | 
+| String    | text              | NO | 0 | 
+| Bigint    | large numbers     | NO | 0 | 
+| Symbol    | No clue           | NO | 0 | 
 
-SKIPPED: `Bigint` (huge numbers) and `Symbol` (can be used as object keys).
+Characterististics of primitive types:
+- No methods
+- Immutable
 
 <br>
 
@@ -255,8 +258,8 @@ Other common string methods:
 
 |    Method         | Returns:                |  Syntax:     | 
 | :-------------    | :--------------------:  | :----------: |
-| str.toLowerCase() | mutated string          | same as under _Method_ |
-| str.toUpperCase() | mutated string          | same as under _Method_ |
+| str.toLowerCase() | lowercase string        | same as under _Method_ |
+| str.toUpperCase() | uppercase string        | same as under _Method_ |
 | str.trim()        | new string              | same as under _Method_ |
 | regex.test()      | boolean                 | regex.test(str) |
 | str.match()       | new array               | let newArr = str.match(regex) |
@@ -610,6 +613,8 @@ Create new objects or variables:
 Create from existing objects:
 | Method            | Creates: |
 | :----             | :----  |
+| str.toLowerCase() | returns str as lowercase  |  
+| str.toUpperCase() | returns str as uppercase  |
 | +=, *=, -=, /=    | new object from object |
 | str.trim()        | new str |
 | str.substring()   | new str | 
@@ -679,8 +684,6 @@ More involved returns / read:
 Update, Mutate, Delete:
 | Syntax          | Returns:                    |
 | :----           | :----                       |
-| str.toLowerCase() | returns str as lowercase  |  
-| str.toUpperCase() | returns str as uppercase  |
 | arr.splice(i)   | changes array contents      | 
 | arr.push()      | changes array contents      | 
 | arr.unshift()   | changes array contents      | 

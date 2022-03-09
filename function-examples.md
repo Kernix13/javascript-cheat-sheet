@@ -9,7 +9,8 @@ typeof:
 let typeOfTest;
 typeOfTest = function() {
   return "Hello";
-}                 // function
+}                 
+console.log(typeof typeOfTest) // function
 ```
 
 Declaration vs. expression
