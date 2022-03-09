@@ -126,6 +126,7 @@ JavaScript methods, conditionals, etc. that return `true` or `false`:
 | &&, \|\|           | Checking multiple and/or conditions  |
 | hasOwnProperty(prop) | If an object has a property          | 
 | obj.is(a, b)       | if 2 values are the same value       |
+| isPrototypeOf(obj) | checks if an obj exists in another obj's prototype chain | 
 | obj instanceof Class | if obj is an instance of a certain class | 
 | Array.isArray(arr) | If item checked is an array          |
 | isNaN()            | if a value is NaN or not             | 
@@ -229,6 +230,7 @@ Strings and Arrays: Same Methods, Same Effect:
 | indexOf()   | returns: | index # or -1 | indexOf(searchVal)  | indexOf(searchStr) | 
 | lastIndexOf() | returns: | index # or -1 | lastIndexOf(searchVal) | lastIndexOf(searchStr) |
 | [index]     | returns: | specific value | arr[index]     | str[index] | 
+| [i][j]      | returns: | sub array value | arr[i][j]     | str[i][j]  |
 | length      | returns: | arr/str len | arr.length         | str.length | 
 
 <br>
@@ -322,6 +324,7 @@ Object class syntax and terms (Fx = 'function'):
 | get         | binds an obj prop to a Fx, called when that prop is looked up | 
 | set         | binds an obj prop to a Fx, called when there is an attempt to set that prop | 
 | extends     | used to create a class as a child of another class | 
+| prototype   | |
 
 Look into [MDN Method definitions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions).
 
@@ -765,6 +768,7 @@ There are methods in common to both arrays and strings so I am combining them fo
 - `toLowerCase()`: Converts string to lowercase
 - `toUpperCase()`: Converts string to uppercase
 - `trim()`: Removes whitespace from both ends of a string and returns a new string, without modifying the original string
+- `repeat(count)`: constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together
 - `test()`:	Though, not a string method, it executes a search for a match between a regular expression and a specified string. Returns true or false: `test(str)`
 - `match()`: Used to match regular expression against a string; retrieves the result of matching a string against a regular expression: `match(RegEx)`
 - `replace()`: Returns a new string with some or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. If pattern is a string, only the first occurrence will be replaced: `replace(regexp, newSubstr)`, `replace(regexp, replacerFunction)`, `replace(substr, newSubstr)`, or `replace(substr, replacerFunction)`
@@ -784,6 +788,7 @@ There are methods in common to both arrays and strings so I am combining them fo
 - `unshift()`: Adds one or more elements to the beginning of an array and returns the new length of the array: `unshift(elem1, elem2, ...)`
 - `shift()`: Removes the first element from an array and returns that removed element. This method changes the length of the array (no arguments). To get the removed item make sure to set it to a var: `let removedItem = arr.shift();`
 - `pop()`: Removes the last element from an array and returns that element. This method changes the length of the array (no arguments)
+- `flat()`: creates a new array with all sub-array elements concatenated into it recursively up to the specified depth
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 

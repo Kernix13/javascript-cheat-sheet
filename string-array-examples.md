@@ -30,6 +30,8 @@ Examples for standard syntax of the most coomon methods and the more difficult m
    1. [forEach](#forEach)
    1. [Reduce](#reduce)
 1. [String methods](#string-methods)
+   1. [splice](#splice)
+   1. [repeat](#repeat)
    1. [substring](#substring)
    1. [endsWith](#endsWith)
    1. [test](#test)
@@ -43,7 +45,7 @@ Examples for standard syntax of the most coomon methods and the more difficult m
 
 ## Simple array methods
 
-Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `sort()`, `reverse()`, and `splice()`:
+Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `sort()`, `reverse()`, and `splice()`. I skipped `arr.flat(depth)` and `findIndex()` and `Array.isArray()`.
 
 - [MDN push](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
 - [MDN unshift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
@@ -1188,6 +1190,7 @@ console.log(badString.toLowerCase().trim()); // "oops, caps lock on. need to fix
 ```
 
 - [MDN split](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+- [MDN repeat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
 - [MDN substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
 - [MDN endsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
 - [MDN test](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test)
@@ -1231,6 +1234,25 @@ const splits = myString.split(' ', 3)
 
 console.log(splits) // ["Hello","World.","How"]
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### repeat
+
+Examples:
+```js
+// syntax
+repeat(count)
+
+const chorus = 'Because I\'m happy. ';
+console.log(`Chorus lyrics for "Happy": ${chorus.repeat(5)}`);
+
+'abc'.repeat(2) // 'abcabc'
+'abc'.repeat(3.5)   // 'abcabcabc' (count will be converted to integer)
+'abc'.repeat(-1)    // RangeError
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### substring
 
