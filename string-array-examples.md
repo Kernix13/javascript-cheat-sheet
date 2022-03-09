@@ -48,6 +48,7 @@ Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `
 - [MDN pop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
 - [MDN shift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
 - [MDN join](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+- [MDN sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 - [MDN reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
 - [MDN splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
 - [MDN indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
@@ -1447,3 +1448,166 @@ console.log(getTodaysMenu(["Pizza", "$8"], ["Chips", "$1"], ["Beer", "$3"]));
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Syntax tables
+
+Simplest methods:
+| method  | syntax1           | 
+| :----   | :----             | 
+| pop     | arr.pop()         |                            
+| shift   | arr.shift()       |                            
+| reverse | arr.reverse()     |                            
+| sort    | arr.sort()        |            
+| test    | regex.test(str)   |              
+| match   | str.match(regex)  |     
+
+<br />
+
+With optional arguments:
+| method  | syntax1           | syntax2                     | 
+| :----   | :----             | :----                       | 
+| join    | arr.join()        | arr.join(sep)               | 
+| concat  | arr.concat(arr2)  | concat(arr2, arr3, ...)     | 
+| concat  | arr.concat(item)  | concat(item1, item2, ...)   | 
+| push    | arr.push(item)    | push(item1, item2, ...)     | 
+| unshift | arr.unshift(item) | unshift(item1, item2, ...)  |
+| replace | str.replace(regex, newStr)  | replace(regex, Fx)  |
+| replace | str.replace(substr, newStr) | replace(substr, Fx) |
+
+<br />
+
+With many arguments:
+| method  | syntax1           | syntax2     | syntax3 | syntax4 | syntax5 |
+| :----   | :----             | :----       | :----   | :----   | :----   |
+| | | | | | | 
+
+<br />
+
+sort((firstEl, secondEl) => { /* ... */ } )
+sort(compareFn)
+sort(function compareFn(firstEl, secondEl) { /* ... */ })
+
+splice(start)
+splice(start, deleteCount)
+splice(start, deleteCount, item1)
+splice(start, deleteCount, item1, item2, itemN)
+
+indexOf(searchElement)
+indexOf(searchElement, fromIndex)
+lastIndexOf(searchElement)
+lastIndexOf(searchElement, fromIndex)
+
+includes(searchElement)
+includes(searchElement, fromIndex)
+
+substring(indexStart)
+substring(indexStart, indexEnd)
+
+endsWith(searchString)
+endsWith(searchString, length)
+
+// Arrow function
+find((element) => { /* ... */ } )
+find((element, index) => { /* ... */ } )
+find((element, index, array) => { /* ... */ } )
+
+// Callback function
+find(callbackFn)
+find(callbackFn, thisArg)
+
+// Inline callback function
+find(function(element) { /* ... */ })
+find(function(element, index) { /* ... */ })
+find(function(element, index, array){ /* ... */ })
+find(function(element, index, array) { /* ... */ }, thisArg)
+
+// Arrow function
+every((element) => { /* ... */ } )
+every((element, index) => { /* ... */ } )
+every((element, index, array) => { /* ... */ } )
+
+// Callback function
+every(callbackFn)
+every(callbackFn, thisArg)
+
+// Inline callback function
+every(function(element) { /* ... */ })
+every(function(element, index) { /* ... */ })
+every(function(element, index, array){ /* ... */ })
+every(function(element, index, array) { /* ... */ }, thisArg)
+
+// Arrow function
+some((element) => { /* ... */ } )
+some((element, index) => { /* ... */ } )
+some((element, index, array) => { /* ... */ } )
+
+// Callback function
+some(callbackFn)
+some(callbackFn, thisArg)
+
+// Inline callback function
+some(function(element) { /* ... */ })
+some(function(element, index) { /* ... */ })
+some(function(element, index, array){ /* ... */ })
+some(function(element, index, array) { /* ... */ }, thisArg)
+
+// Arrow function
+map((element) => { /* ... */ })
+map((element, index) => { /* ... */ })
+map((element, index, array) => { /* ... */ })
+
+// Callback function
+map(callbackFn)
+map(callbackFn, thisArg)
+
+// Inline callback function
+map(function(element) { /* ... */ })
+map(function(element, index) { /* ... */ })
+map(function(element, index, array){ /* ... */ })
+map(function(element, index, array) { /* ... */ }, thisArg)
+
+// Arrow function
+filter((element) => { /* ... */ } )
+filter((element, index) => { /* ... */ } )
+filter((element, index, array) => { /* ... */ } )
+
+// Callback function
+filter(callbackFn)
+filter(callbackFn, thisArg)
+
+// Inline callback function
+filter(function(element) { /* ... */ })
+filter(function(element, index) { /* ... */ })
+filter(function(element, index, array){ /* ... */ })
+filter(function(element, index, array) { /* ... */ }, thisArg)
+
+// Arrow function
+forEach((element) => { /* ... */ })
+forEach((element, index) => { /* ... */ })
+forEach((element, index, array) => { /* ... */ })
+
+// Callback function
+forEach(callbackFn)
+forEach(callbackFn, thisArg)
+
+// Inline callback function
+forEach(function(element) { /* ... */ })
+forEach(function(element, index) { /* ... */ })
+forEach(function(element, index, array){ /* ... */ })
+forEach(function(element, index, array) { /* ... */ }, thisArg)
+
+// Arrow function
+reduce((previousValue, currentValue) => { /* ... */ } )
+reduce((previousValue, currentValue, currentIndex) => { /* ... */ } )
+reduce((previousValue, currentValue, currentIndex, array) => { /* ... */ } )
+reduce((previousValue, currentValue, currentIndex, array) => { /* ... */ }, initialValue)
+
+// Callback function
+reduce(callbackFn)
+reduce(callbackFn, initialValue)
+
+// Inline callback function
+reduce(function(previousValue, currentValue) { /* ... */ })
+reduce(function(previousValue, currentValue, currentIndex) { /* ... */ })
+reduce(function(previousValue, currentValue, currentIndex, array) { /* ... */ })
+reduce(function(previousValue, currentValue, currentIndex, array) { /* ... */ }, initialValue)
