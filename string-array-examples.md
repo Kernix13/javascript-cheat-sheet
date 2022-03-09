@@ -1,6 +1,6 @@
 # String and Array examples
 
-Examples for the more difficult to understand methods or the standard syntax for the most popular methods.
+Examples for standard syntax of the most coomon methods and the more difficult methods to understand.
 
 ## Table of contents
 
@@ -12,7 +12,7 @@ Examples for the more difficult to understand methods or the standard syntax for
    1. [pop](#pop)
    1. [shift](#shift)
    1. [join](#join)
-   1. [Really basic sort](#really-basic-sort)
+   1. [Basic sort](#basic-sort)
    1. [reverse](#reverse)
    1. [splice](#splice)
 1. [High order array methods](#high-order-array-methods)
@@ -33,7 +33,7 @@ Examples for the more difficult to understand methods or the standard syntax for
 
 ## Simple array methods
 
-Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `sort()`, and `reverse()`:
+Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `sort()`, `reverse()`, and `splice()`:
 
 - [MDN push](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
 - [MDN unshift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
@@ -146,7 +146,7 @@ console.log(urlSlug); // "common-array-methods-you-should-know"
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-### Really basic sort
+### Basic sort
 
 If you use the spread operator to access the array, the original array is not mutated; otherwise it is. Same with `reverse()`. Note, don't use a callback function for sorting text. Check out [MDN sort description](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#description) for how to sort by the key of an object.
 
@@ -157,7 +157,7 @@ let newArr = [...arr].sort();
 console.log(newArr); // ["Buddy","Charlie","Jim","Little Rascal","Luna","Squeaks"]
 console.log("original: " + arr); // "original: Squeaks,Charlie,Little Rascal,Buddy,Luna,Jim"
 
-// Use this method to sort numbers as a string value:
+// Use this method to sort numbers as a string value (e.g. item/part numbers):
 const nums = [5, 1, 27, 101, 55, 12, 44, 10001, 3];
 const numSort = [...nums].sort();
 console.log(numSort) // [1,10001,101,12,27,3,44,5,55]
@@ -189,7 +189,7 @@ const letters = word.toLowerCase().split('');
 const revWord = [...letters].reverse().join('');
 
 if (word === revWord) {
-  console.log(word + " Is a palindrome");
+  console.log(word + " is a palindrome");
 } else {
   console.log(word + " is NOT a palindrome");
 }
@@ -672,6 +672,18 @@ filter(callbackFn, thisArg)
 filter(function(element) { /* ... */ })
 filter(function(element, index) { /* ... */ })
 ```
+
+<br />
+
+`arr.filter()` simple examples:
+```js
+const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+const canDrink = ages.filter(age => age >= 21);
+console.log(canDrink);
+```
+
+<br />
+
 `arr.filter()` examples:
 ```js
 // Find all prime numbers in an array
@@ -758,15 +770,6 @@ function urlSlug(title) {
     .toLowerCase();
 }
 console.log(urlSlug(webTitle));
-```
-
-<br />
-
-`arr.filter()` simple examples:
-```js
-const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
-const canDrink = ages.filter(age => age >= 21);
-console.log(canDrink);
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -1019,9 +1022,20 @@ console.log(combined); // 798
 ```js
 let badString = "   oOPS, caps LOCK ON. nEED TO FIX.   "
 console.log(badString.toLowerCase().trim()); // "oops, caps lock on. need to fix."
+// need a to capitalize first letter and a regex for the first char after the period.
 ```
 
 ### Common string methods
+
+`str.substring()`:
+```js
+// syntax:
+substring(indexStart, indexEnd)
+
+
+```
+
+<br />
 
 `regex.test(str)`:
 ```js
@@ -1033,6 +1047,8 @@ const str = 'hello world!';
 const result = /^hello/.test(str);
 console.log(result); // true
 ```
+
+<br />
 
 `str.match()`:
 ```js
@@ -1049,6 +1065,8 @@ const found = paragraph.match(capturingRegex);
 console.log(found.groups); // {animal: "fox"}
 ```
 
+<br />
+
 `str.replace()` syntax:
 ```js
 replace(regexp, newSubstr)
@@ -1057,6 +1075,8 @@ replace(regexp, replacerFunction)
 replace(substr, newSubstr)
 replace(substr, replacerFunction)
 ```
+
+<br />
 
 `str.replace()`:
 ```js
@@ -1080,6 +1100,8 @@ let newstr = str.replace(re, '$2, $1');
 console.log(newstr);  // Smith, John
 ```
 
+<br />
+
 typeof:
 ```js
 let typeOfTest;
@@ -1089,10 +1111,14 @@ typeOfTest = false; // boolean
 typeOfTest = undefined; // undefined
 ```
 
+<br />
+
 escape sequences in strings:
 ```js
 const myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
 ```
+
+<br />
 
 find the Nth-to-last character:
 ```js
@@ -1113,6 +1139,8 @@ const diffSubjects = ['spread operator', 'while loop', 'destructuring assignment
 let jsSubjects = ['variables', 'functions', 'data types', ...diffSubjects ];
 ```
 
+<br />
+
 concatenate arrays:
 ```js
 var arr3 = [0, 1, 2];
@@ -1121,12 +1149,16 @@ arr3 = [...arr3, "spread", ...arr4, "operator"];
 // same as arr1.concat(arr2);
 ```
 
+<br />
+
 another copy / concatenate example:
 ```js
 const arr5 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
 let arr6;
 arr6 = [...arr5, 'JUN', 'JUL']; 
 ```
+
+<br />
 
 concat and changing values:
 ```js
@@ -1152,6 +1184,8 @@ console.log(`Pie Contest:\nFirst Place: ${firstPlace[0]}, Score: ${firstPlace[1]
 console.log(losers);
 ```
 
+<br />
+
 with a high order array method:
 ```js
 const sum = (...args) => {
@@ -1159,6 +1193,8 @@ const sum = (...args) => {
 }
 console.log(sum(2, 3, 4)); // 9
 ```
+
+<br />
 
 High order array method 2: The rest param MUST be the LAST parameter:
 ```js
@@ -1172,6 +1208,8 @@ var arr7 = multiply(2, 4, 5, 6);
 console.log(arr7)
 ```
 
+<br />
+
 High order array method 3:
 ```js
 function multiply2(multiplier, ...nums) {
@@ -1181,6 +1219,8 @@ function multiply2(multiplier, ...nums) {
 }
 console.log("Multiply2: " + multiply2(15, 1, 3, 5, 1.5));
 ```
+
+<br />
 
 REST AND SPREAD: forEach instead of reduce
 ```js
@@ -1195,6 +1235,8 @@ const numbers = [1, 2, 3, 4, 5, 6];
 // below is the spread operator
 console.log(sumNumberRest(...numbers))
 ```
+
+<br />
 
 REST again but with great examples and with forEach:
 ```js
