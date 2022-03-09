@@ -38,6 +38,7 @@ Examples for standard syntax of the most coomon methods and the more difficult m
 1. [Spread and Rest syntax](#spread-and-rest-syntax)
    1. [Spread operator for arrays and strings](#spread-operator-for-arrays-and-strings)
    1. [Rest parameter and rest syntax](#rest-parameter-and-rest-syntax)
+1. [Syntax tables](#syntax-tables)
 
 ## Simple array methods
 
@@ -1452,7 +1453,7 @@ console.log(getTodaysMenu(["Pizza", "$8"], ["Chips", "$1"], ["Beer", "$3"]));
 ## Syntax tables
 
 Simplest methods:
-| method  | syntax1           | 
+| method  | syntax            | 
 | :----   | :----             | 
 | pop     | arr.pop()         |                            
 | shift   | arr.shift()       |                            
@@ -1463,151 +1464,112 @@ Simplest methods:
 
 <br />
 
-With optional arguments:
-| method  | syntax1           | syntax2                     | 
-| :----   | :----             | :----                       | 
-| join    | arr.join()        | arr.join(sep)               | 
-| concat  | arr.concat(arr2)  | concat(arr2, arr3, ...)     | 
-| concat  | arr.concat(item)  | concat(item1, item2, ...)   | 
-| push    | arr.push(item)    | push(item1, item2, ...)     | 
-| unshift | arr.unshift(item) | unshift(item1, item2, ...)  |
+Simple methods with optional arguments:
+| method  | syntax1                     | syntax2                     | 
+| :----   | :----                       | :----                       | 
+| join    | arr.join()                  | arr.join(sep)               | 
+| concat  | arr.concat(arr2)            | concat(arr2, arr3, ...)     | 
+| concat  | arr.concat(item)            | concat(item1, item2, ...)   | 
+| push    | arr.push(item)              | push(item1, item2, ...)     | 
+| unshift | arr.unshift(item)           | unshift(item1, item2, ...)  |
 | replace | str.replace(regex, newStr)  | replace(regex, Fx)  |
 | replace | str.replace(substr, newStr) | replace(substr, Fx) |
+| indexOf | arr.indexOf(searchVal)      | str.indexOf(searchVal, fromInd) |
+| lastIndexOf | str.lastIndexOf(searchVal) | arr.lastIndexOf(searchVal, fromInd) |
+| includes | arr.includes(searchVal)    | str.includes(searchVal, fromInd) |
+| substring | str.substring(indStart) | str.substring(indStart, indEnd) |
+| endsWith | str.endsWith(subStr) | str.endsWith(subStr, len) | 
+| splice  | arr.splice(start)           | splice(start, delCt) |
+|         | splice(start, delCt, item1) | splice(start, delCt, item1, item2, ...) |
 
 <br />
 
-With many arguments:
-| method  | syntax1           | syntax2     | syntax3 | syntax4 | syntax5 |
-| :----   | :----             | :----       | :----   | :----   | :----   |
-| | | | | | | 
+High order array methods with **callback** function:
+| method  | syntax1           | syntax2 |
+| :----   | :----             | :----   |
+| sort    | sort(callback)    | |
+| find    | find(callbackFn)  | find(callbackFn, thisArg) |
+| every   | every(callbackFn) | every(callbackFn, thisArg) |
+| some    | some(callbackFn)  | some(callbackFn, thisArg) |
+| map     | map(callbackFn)   | map(callbackFn, thisArg) |
+| filter  | filter(callbackFn) | filter(callbackFn, thisArg) |
+| forEach | forEach(callbackFn) | forEach(callbackFn, thisArg) |
+| reduce  | reduce(callbackFn) | reduce(callbackFn, initialValue) |
 
 <br />
 
-sort((firstEl, secondEl) => { /* ... */ } )
-sort(compareFn)
-sort(function compareFn(firstEl, secondEl) { /* ... */ })
+High order array methods with **arrow** and inline functions.
 
-splice(start)
-splice(start, deleteCount)
-splice(start, deleteCount, item1)
-splice(start, deleteCount, item1, item2, itemN)
+Single argument/parameter:
+| method  | syntax                          | 
+| :----   | :----                           | 
+| find    | arr.find((item) => { ... } )    |
+|         | arr.find(function(item) { ... } ) |
+| every   | arr.every((item) => { ... } )   |
+|         | arr.every(function(item) { ... } ) |
+| some    | arr.some((item) => { ... } )    |
+|         | arr.some(function(item) { ... } ) |
+| map     | arr.map((item) => { ... })      |
+|         | arr.map(function(item) { ... } ) |
+| filter  | arr.filter((item) => { ... } )  |
+|         | arr.filter(function(item) { ... } ) |
+| forEach | arr.forEach((item) => { ... } ) |
+|         | forEach(function(item) { ... } ) | 
 
-indexOf(searchElement)
-indexOf(searchElement, fromIndex)
-lastIndexOf(searchElement)
-lastIndexOf(searchElement, fromIndex)
+<br />
 
-includes(searchElement)
-includes(searchElement, fromIndex)
+Two arguments/parameters:
+| method  | syntax                                | 
+| :----   | :----                                 | 
+| sort    | arr.sort((a, b) => { ... } )          | 
+|         | arr.sort(function (a, a) { ... } )    |
+| find    | arr.find((item, index) => { ... } )   |
+|         | arr.find(function(item, index) { ... } ) |
+| every   | arr.every((item, index) => { ... } )  |
+|         | arr.every(function(item, index) { ... }) |
+| some    | arr.some((item, index) => { ... } )   |
+|         | arr.some(function(item, index) { ... }) |
+| map     | arr.map((item, index) => { ... })     |
+|         | arr.map(function(item, index) { ... } ) |
+| filter  | arr.filter((item, index) => { ... } ) |
+|         | arr.filter(function(item, index) { ... } ) |
+| forEach | arr.forEach((item, index) => { ... } ) |
+|         | arr.forEach(function(item, index) { ... } ) |
+| reduce  | arr.reduce((prevVal, currVal) => { ... } ) |
+|         | arr.reduce(function(prevVal, currVal) { ... } ) | 
 
-substring(indexStart)
-substring(indexStart, indexEnd)
+<br />
 
-endsWith(searchString)
-endsWith(searchString, length)
+Three arguments/parameters:
+| method  | syntax                                | 
+| :----   | :----                                 | 
+| find    | arr.find((item, index, array) => { ... } )  |
+|         | arr.find(function(item, index, array) { ... } ) |
+| every   | arr.every((item, index, array) => { ... } )  |
+|         | arr.every(function(item, index, array){ ... } ) |
+| some    | arr.some((item, index, array) => { ... } )  |
+|         | arr.some(function(item, index, array){ ... }) |
+| map     | arr.map((item, index, array) => { ... })     |
+|         | arr.map(function(item, index, array){ ... } ) |
+| filter  | arr.filter((item, index, array) => { ... } ) |
+|         | arr.filter(function(item, index, array){ ... } ) |
+| forEach | arr.forEach((item, index, array) => { ... } ) |
+|         | arr.forEach(function(item, index, array){ ... } ) |
+| reduce  | arr.reduce((prevVal, currVal, currInd) => { ... } ) |
+|         | arr.reduce(function(prevVal, currVal, currInd) { ... } ) |
 
-// Arrow function
-find((element) => { /* ... */ } )
-find((element, index) => { /* ... */ } )
-find((element, index, array) => { /* ... */ } )
+<br />
 
-// Callback function
-find(callbackFn)
-find(callbackFn, thisArg)
-
-// Inline callback function
-find(function(element) { /* ... */ })
-find(function(element, index) { /* ... */ })
-find(function(element, index, array){ /* ... */ })
-find(function(element, index, array) { /* ... */ }, thisArg)
-
-// Arrow function
-every((element) => { /* ... */ } )
-every((element, index) => { /* ... */ } )
-every((element, index, array) => { /* ... */ } )
-
-// Callback function
-every(callbackFn)
-every(callbackFn, thisArg)
-
-// Inline callback function
-every(function(element) { /* ... */ })
-every(function(element, index) { /* ... */ })
-every(function(element, index, array){ /* ... */ })
-every(function(element, index, array) { /* ... */ }, thisArg)
-
-// Arrow function
-some((element) => { /* ... */ } )
-some((element, index) => { /* ... */ } )
-some((element, index, array) => { /* ... */ } )
-
-// Callback function
-some(callbackFn)
-some(callbackFn, thisArg)
-
-// Inline callback function
-some(function(element) { /* ... */ })
-some(function(element, index) { /* ... */ })
-some(function(element, index, array){ /* ... */ })
-some(function(element, index, array) { /* ... */ }, thisArg)
-
-// Arrow function
-map((element) => { /* ... */ })
-map((element, index) => { /* ... */ })
-map((element, index, array) => { /* ... */ })
-
-// Callback function
-map(callbackFn)
-map(callbackFn, thisArg)
-
-// Inline callback function
-map(function(element) { /* ... */ })
-map(function(element, index) { /* ... */ })
-map(function(element, index, array){ /* ... */ })
-map(function(element, index, array) { /* ... */ }, thisArg)
-
-// Arrow function
-filter((element) => { /* ... */ } )
-filter((element, index) => { /* ... */ } )
-filter((element, index, array) => { /* ... */ } )
-
-// Callback function
-filter(callbackFn)
-filter(callbackFn, thisArg)
-
-// Inline callback function
-filter(function(element) { /* ... */ })
-filter(function(element, index) { /* ... */ })
-filter(function(element, index, array){ /* ... */ })
-filter(function(element, index, array) { /* ... */ }, thisArg)
-
-// Arrow function
-forEach((element) => { /* ... */ })
-forEach((element, index) => { /* ... */ })
-forEach((element, index, array) => { /* ... */ })
-
-// Callback function
-forEach(callbackFn)
-forEach(callbackFn, thisArg)
-
-// Inline callback function
-forEach(function(element) { /* ... */ })
-forEach(function(element, index) { /* ... */ })
-forEach(function(element, index, array){ /* ... */ })
-forEach(function(element, index, array) { /* ... */ }, thisArg)
-
-// Arrow function
-reduce((previousValue, currentValue) => { /* ... */ } )
-reduce((previousValue, currentValue, currentIndex) => { /* ... */ } )
-reduce((previousValue, currentValue, currentIndex, array) => { /* ... */ } )
-reduce((previousValue, currentValue, currentIndex, array) => { /* ... */ }, initialValue)
-
-// Callback function
-reduce(callbackFn)
-reduce(callbackFn, initialValue)
-
-// Inline callback function
-reduce(function(previousValue, currentValue) { /* ... */ })
-reduce(function(previousValue, currentValue, currentIndex) { /* ... */ })
-reduce(function(previousValue, currentValue, currentIndex, array) { /* ... */ })
-reduce(function(previousValue, currentValue, currentIndex, array) { /* ... */ }, initialValue)
+Four and five arguments/parameters:
+| method  | syntax                                | 
+| :----   | :----                                 | 
+| find    | arr.find(function(item, index, array) { ... }, thisArg) |
+| every   | arr.every(function(item, index, array) { ... }, thisArg) |
+| some    | arr.some(function(item, index, array) { ... }, thisArg) |
+| map     | arr.map(function(item, index, array) { ... }, thisArg) |
+| filter  | arr.filter(function(item, index, array) { ... }, thisArg) |
+| forEach | arr.forEach(function(item, index, array) { ... }, thisArg) | 
+| reduce  | arr.reduce((prevVal, currVal, currInd, array) => { ... } ) |
+|         | arr.reduce(function(prevVal, currVal, currInd, array) { ... } ) |
+|         | arr.reduce((prevVal, currVal, currInd, array) => { ... }, initVal) |
+|         | arr.reduce(function(prevVal, currVal, currInd, array) { ... }, initVal) |
