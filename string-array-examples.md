@@ -53,10 +53,10 @@ console.log(addedItem); // 5
 console.log(arr); // ['a', 'b', 'c', 'd', 'e']
 
 // Merge 2 arrays, alterntive to concat():
-let vegetables = ['parsnip', 'potato']
-let moreVegs = ['celery', 'beetroot']
-vegetables.push(...moreVegs);
-console.log(vegetables)  // ['parsnip', 'potato', 'celery', 'beetroot']
+let rhythm = ['bass', 'drums']
+let harmony = ['guitar', 'piano']
+rhythm.push(...harmony);
+console.log(rhythm)  // ['bass', 'drums', 'guitar', 'piano']
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -67,12 +67,11 @@ console.log(vegetables)  // ['parsnip', 'potato', 'celery', 'beetroot']
 // syntax
 arr.unshift(val1, ...)
 
-// arr.unshift(val)
 let arr = [1, 2, 3, 4];
 let addedItem = arr.unshift(0);
 console.log(addedItem); // 5
 console.log(arr); // [0, 1, 2, 3, 4]
-console.log(arr.unshift([-7, -6], [-5])) // [[-7, -6], [-5], 0, 1, 2, 3, 4]
+arr.unshift([-7, -6], [-5]) // result: [[-7, -6], [-5], 0, 1, 2, 3, 4]
 
 // reset array
 let arr = [1, 2, 3, 4, 5, 6]
@@ -105,18 +104,21 @@ console.log(removedItem); // 1
 console.log(arr); // [2,3,4]
 
 // Removing an element from an array
-const myFish = ['angel', 'clown', 'mandarin', 'surgeon'];
-console.log('myFish before:', JSON.stringify(myFish));
-const shifted = myFish.shift();
-console.log('myFish after:', myFish);
-console.log('Removed this element:', shifted);
+const myJobs = ['lifeguard', 'coach', 'analyst', 'developer'];
+console.log('myJobs before:', JSON.stringify(myJobs));
+// "myJobs before:" "['lifeguard','coach','analyst','developer']"
+const shifted = myJobs.shift();
+console.log('myJobs after:', myJobs);
+// "myJobs after:" "["coach","analyst","developer"]"
+console.log('Removed this element:', shifted); // "Removed this element:" "lifeguard"
 
-// Using shift() method in while loop
-const names = ["Andrew", "Edward", "Paul", "Chris" ,"John"];
+// Using shift() method in while loop with a great typeof condition
+const names = ["John", "Paul", "George", "Ringo" ,"Richard"];
 while( typeof (i = names.shift()) !== 'undefined' ) {
     console.log(i);
 }
-// Andrew, Edward, Paul, Chris, John
+// John, Paul, George, Ringo, Richard
+console.log(names) // []
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -130,30 +132,30 @@ join()
 join(separator)
 
 // MDN Example:
-const a = ['Wind', 'Water', 'Fire'];
-a.join();      // 'Wind,Water,Fire'
-a.join(', ');  // 'Wind, Water, Fire'
-a.join(' + '); // 'Wind + Water + Fire'
-a.join('');    // 'WindWaterFire'
+const a = ['Fire', 'Water', 'Air', 'Earth'];
+a.join();      // 'Fire,Water,Air,Earth'
+a.join(', ');  // 'Fire, Water, Air, Earth'
+a.join(' + '); // 'Fire + Water + Air + Earth'
+a.join('');    // 'FireWaterAirEarth'
 
 // Here is an example using toLowerCase() and split() for a URL page slug
 const blogTitle = "Common Array Methods You Should Know"
-const pageSlug = blogTitle.toLowerCase().split(' ').join('-')
-console.log(pageSlug); // "common-array-methods-you-should-know"
+const urlSlug = blogTitle.toLowerCase().split(' ').join('-')
+console.log(urlSlug); // "common-array-methods-you-should-know"
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Really basic sort
 
-If you use the spread operator to access the array, the original array is not mutated; otherwise it is. For example, if you do `let newArr = arr.sort()`, then `arr` is sorted. Same with `reverse()`. Note, don't use a callback function for sorting text. Check out [MDN sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#description) for how to sort ny the key of an object.
+If you use the spread operator to access the array, the original array is not mutated; otherwise it is. Same with `reverse()`. Note, don't use a callback function for sorting text. Check out [MDN sort description](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#description) for how to sort by the key of an object.
 
 ```js
 // Sorting an array of strings using spread operating to NOT mutate original:
-const arr = ["John", "Jim", "Mary", "Adam", "Zac", "Susan"];
+const arr = ["Squeaks", "Charlie", "Little Rascal", "Buddy", "Luna", "Jim"];
 let newArr = [...arr].sort();
-console.log(newArr); // ["Adam","Jim","John","Mary","Susan","Zac"]
-console.log("original: " + arr); // "original: John,Jim,Mary,Adam,Zac,Susan"
+console.log(newArr); // ["Buddy","Charlie","Jim","Little Rascal","Luna","Squeaks"]
+console.log("original: " + arr); // "original: Squeaks,Charlie,Little Rascal,Buddy,Luna,Jim"
 
 // Use this method to sort numbers as a string value:
 const nums = [5, 1, 27, 101, 55, 12, 44, 10001, 3];
@@ -180,7 +182,7 @@ const countDown = [...arr].reverse();
 console.log(countDown); [10,9,8,7,6,5,4,3,2,1]
 console.log(arr); [1,2,3,4,5,6,7,8,9,10]
 
-// Alternate to the palindrome problem:
+// Alternate solution to the palindrome problem:
 const word = "racecar";
 const letters = word.toLowerCase().split(''); 
 // the spread operator is a must here for reverse() to work
@@ -264,15 +266,15 @@ const numSort = [...nums].sort((a, b) => a - b); //[1,5,10,11,17,19,55,72,100,10
 
 // Arrays of objects can be sorted by comparing the value of one of their properties
 const items = [
-  { name: 'Edward', value: 21 },
-  { name: 'Sharpe', value: 37 },
-  { name: 'And', value: 45 },
-  { name: 'The', value: -12 },
-  { name: 'Magnetic', value: 13 },
-  { name: 'Zeros', value: 37 }
+  { name: 'Homer', barBill: 21 },
+  { name: 'Moe', barBill: 37 },
+  { name: 'Bud', barBill: 45 },
+  { name: 'Jim', barBill: -12 },
+  { name: 'Johnny', barBill: 13 },
+  { name: 'someGuy', barBill: 37 }
 ];
 let itemsSort = items.sort(function (a, b) {
-  return a.value - b.value;
+  return a.barBill - b.barBill;
 });
 // Sorting by 'name' is more involved: 
 
@@ -297,9 +299,9 @@ const items = [1, 2, 3, 4, 5]
 const inItems = items.includes(7)
 console.log(inItems) // false
 
-let str = 'JavaScript String';
-console.log(str.includes('Script')); // true
-console.log(str.includes('script')); // false
+let str = 'Lorem ipsum';
+console.log(str.includes('ipsum')); // true
+console.log(str.includes('Ipsum')); // false
 
 let str = 'JavaScript String';
 console.log(str.includes('Script', 5)); // false
@@ -586,6 +588,7 @@ const kvArray = [
   { key: 3, value: 30 }
   ];
 const reformattedArray = kvArray.map(({ key, value}) => ({ [key]: value }));
+console.log(reformattedArray) // {"1": 10}, {"2": 20}, {"3": 30}
 ```
 
 **NOTE**: Look into [**Array.from()**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from) and constrast with `.map()`. Check out [Stackoverflow: Array.from vs Array.prototype.map](https://stackoverflow.com/questions/26052699/array-from-vs-array-prototype-map).
@@ -594,13 +597,14 @@ const reformattedArray = kvArray.map(({ key, value}) => ({ [key]: value }));
 
 `arr.map()` freeCodeCamp examples:
 ```js
+// Get object key values, similar to what Object.values does on a single object
 const users = [
   { name: 'John', age: 34 },
   { name: 'Amy', age: 20 },
   { name: 'camperCat', age: 10 }
 ];
 const names = users.map(user => user.name);
-console.log(names);
+console.log(names); // ["John","Amy","camperCat"]
 
 // Challenge 11 CONVERT HTML ENTITIES
 function convertHTML(str) {
@@ -644,7 +648,7 @@ const items = [
 ]
 
 const itemNames = items.map(item => {
-  // return item.name
+  // return item.name // ["Bike","TV","Album","Book","Phone","Computer","Keyboard"]
   return item.price
 })
 console.log(itemNames) // [100,200,10,5,500,1000,25]
