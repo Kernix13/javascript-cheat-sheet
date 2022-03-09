@@ -36,15 +36,15 @@ Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `
 
 - [MDN push](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
 - [MDN unshift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
-- MDN pop
-- MDN shift
-- MDN join
-- MDN reverse
+- [MDN pop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+- [MDN shift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
+- [MDN join](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+- [MDN reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
 
 ### push
 
 ```js
-// arr.push(val)
+// arr.push(val1, ...)
 let arr = ['a', 'b', 'c', 'd'];
 let addedItem = arr.push('e');
 console.log(addedItem); // 5
@@ -62,11 +62,21 @@ console.log(vegetables)  // ['parsnip', 'potato', 'celery', 'beetroot']
 ### unshift
 
 ```js
+// syntax
+arr.unshift(val1, ...)
+
 // arr.unshift(val)
 let arr = [1, 2, 3, 4];
 let addedItem = arr.unshift(0);
 console.log(addedItem); // 5
 console.log(arr); // [0, 1, 2, 3, 4]
+console.log(arr.unshift([-7, -6], [-5])) // [[-7, -6], [-5], 0, 1, 2, 3, 4]
+
+// reset array
+let arr = [1, 2, 3, 4, 5, 6]
+arr.unshift(1)
+arr.unshift(2)
+arr.unshift(3) // [3, 2, 1, 4, 5, 6]
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -91,6 +101,20 @@ let arr = [1, 2, 3, 4];
 let removedItem = arr.shift();
 console.log(removedItem); // 1
 console.log(arr); // [2,3,4]
+
+// Removing an element from an array
+const myFish = ['angel', 'clown', 'mandarin', 'surgeon'];
+console.log('myFish before:', JSON.stringify(myFish));
+const shifted = myFish.shift();
+console.log('myFish after:', myFish);
+console.log('Removed this element:', shifted);
+
+// Using shift() method in while loop
+const names = ["Andrew", "Edward", "Paul", "Chris" ,"John"];
+while( typeof (i = names.shift()) !== 'undefined' ) {
+    console.log(i);
+}
+// Andrew, Edward, Paul, Chris, John
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -99,6 +123,17 @@ console.log(arr); // [2,3,4]
 
 `arr.join()`, commonly used with str.split():
 ```js
+// syntax:
+join()
+join(separator)
+
+// MDN Example:
+const a = ['Wind', 'Water', 'Fire'];
+a.join();      // 'Wind,Water,Fire'
+a.join(', ');  // 'Wind, Water, Fire'
+a.join(' + '); // 'Wind + Water + Fire'
+a.join('');    // 'WindWaterFire'
+
 // Here is an example using toLowerCase() and split() for a URL page slug
 const blogTitle = "Common Array Methods You Should Know"
 const pageSlug = blogTitle.toLowerCase().split(' ').join('-')
@@ -144,10 +179,10 @@ console.log(countDown); [10,9,8,7,6,5,4,3,2,1]
 console.log(arr); [1,2,3,4,5,6,7,8,9,10]
 
 // Alternate to the palindrome problem:
-let word = "racecar";
-let letters = word.toLowerCase().split(''); 
+const word = "racecar";
+const letters = word.toLowerCase().split(''); 
 // the spread operator is a must here for reverse() to work
-let revWord = [...letters].reverse().join('');
+const revWord = [...letters].reverse().join('');
 
 if (word === revWord) {
   console.log(word + " Is a palindrome");
@@ -160,7 +195,16 @@ if (word === revWord) {
 
 ## High order array methods
 
-High Order Array Methods = methods that use a callback function. The most used ones are sort, some, map, filter, forEach, and reduce; but also includes, find, every, and some are useful.
+High Order Array Methods = methods that use a callback function. The most used ones are `sort`, `map`, `filter`, `forEach`, and `reduce`; but also `includes`, `find`, `every`, and `some` are useful.
+
+- [MDN includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+- [MDN find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+- [MDN every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+- [MDN some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+- [MDN map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+- [MDN filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- [MDN forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+- [MDN reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
 
 ### Sort
 
@@ -182,7 +226,7 @@ console.log("original: " + arr); // "original: 4,2,1,5,3"
 
 // Arrow function
 const nums = [1, 10, 72, 1000, 5, 55, 101, 17, 11, 19, 100, ]
-let numSort = [...nums].sort((a, b) => a - b);
+const numSort = [...nums].sort((a, b) => a - b); //[1,5,10,11,17,19,55,72,100,101,1000]
 
 // Arrays of objects can be sorted by comparing the value of one of their properties
 const items = [
@@ -212,15 +256,16 @@ items.sort(function (a, b) {
 
 ```js
 // syntax:
-includes(searchElement)
-includes(searchElement, fromIndex)
+arr.includes(item)
+arr.includes(item, fromIndex)
 
 const items = [1, 2, 3, 4, 5]
-const includes = items.includes(7)
-console.log(includes) // false
+const inItems = items.includes(7)
+console.log(inItems) // false
 
 let str = 'JavaScript String';
 console.log(str.includes('Script')); // true
+console.log(str.includes('script')); // false
 
 let str = 'JavaScript String';
 console.log(str.includes('Script', 5)); // false
@@ -266,6 +311,41 @@ const foundItem = items.find(item => {
   return item.name == 'Book'
 })
 console.log(foundItem) // {"name": "Book", "price": 5}
+
+// Object with callback:
+const inventory = [
+  {name: 'apples', quantity: 2},
+  {name: 'bananas', quantity: 0},
+  {name: 'cherries', quantity: 5}
+];
+
+function isCherries(fruit) {
+  return fruit.name === 'cherries';
+}
+console.log(inventory.find(isCherries)); // {"name": "cherries", "quanity": 5}
+
+// Using arrow function and destructuring
+const inventory = [
+  {name: 'apples', quantity: 2},
+  {name: 'bananas', quantity: 0},
+  {name: 'cherries', quantity: 5}
+];
+
+const result = inventory.find( ({ name }) => name === 'cherries' );
+console.log(result) // { name: 'cherries', quantity: 5 }
+
+// Find a prime number in an array (example in filter section as well)
+function isPrime(element, index, array) {
+  let start = 2;
+  while (start <= Math.sqrt(element)) {
+    if (element % start++ < 1) {
+      return false;
+    }
+  }
+  return element > 1;
+}
+console.log([4, 6, 8, 12].find(isPrime)); // undefined
+console.log([4, 5, 8, 12].find(isPrime)); // 5
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -277,13 +357,19 @@ Returns a boolean if EVERY element in an array passes a test
 `arr.every()` MDN syntax:
 ```js
 // Arrow function
-every((element) => {...} )
-
-// Inline callback function
-every(function(element) {...}) 
+every((item) => { /* ... */ } )
+every((item, index) => { /* ... */ } )
+every((item, index, array) => { /* ... */ } )
 
 // Callback function
-every(callBackFx)
+every(callbackFn)
+every(callbackFn, thisArg)
+
+// Inline callback function
+every(function(item) { /* ... */ })
+every(function(item, index) { /* ... */ })
+every(function(item, index, array){ /* ... */ })
+every(function(item, index, array) { /* ... */ }, thisArg)
 ```
 
 <br />
@@ -307,14 +393,18 @@ let nums = [-2, 2.5, 1, 3, 5];
 let checkNums = nums.every(num  => num > 0);
 console.log(checkNums); // false
 
-
-// Callback function example (Why do it this way?):
+// Callback function example:
 let nums = [-2, 2.5, 1, 3, 5];
 function findPositive(num) {
   return num > 0;
 }
 let checkNums = nums.every(findPositive);
 console.log(checkNums) // false
+
+// Check if one array is a subset of another array
+const isSubset = (array1, array2) => array2.every(element => array1.includes(element));
+console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 7, 6])); // true
+console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 8, 7])); // false
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -326,13 +416,19 @@ Returns a boolean if at least one element passes a test
 `arr.some()` MDN syntax:
 ```js
 // Arrow function
-some((element) => {...} )
-
-// Inline callback function
-some(function(element) {...}) 
+some((element) => { /* ... */ } )
+some((element, index) => { /* ... */ } )
+some((element, index, array) => { /* ... */ } )
 
 // Callback function
-some(callBackFx)
+some(callbackFn)
+some(callbackFn, thisArg)
+
+// Inline callback function
+some(function(element) { /* ... */ })
+some(function(element, index) { /* ... */ })
+some(function(element, index, array){ /* ... */ })
+some(function(element, index, array) { /* ... */ }, thisArg)
 ```
 
 <br />
