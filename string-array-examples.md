@@ -14,6 +14,7 @@ Examples for the more difficult to understand methods or the standard syntax for
    1. [join](#join)
    1. [Really basic sort](#really-basic-sort)
    1. [reverse](#reverse)
+   1. [splice](#splice)
 1. [High order array methods](#high-order-array-methods)
    1. [Sort](#sort)
    1. [Includes](#includes)
@@ -40,6 +41,7 @@ Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `
 - [MDN shift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
 - [MDN join](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
 - [MDN reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+- [MDN splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
 
 ### push
 
@@ -193,6 +195,38 @@ if (word === revWord) {
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+### splice
+
+MDN syntax:
+```js
+splice(start)
+splice(start, deleteCount)
+splice(start, deleteCount, item1)
+splice(start, deleteCount, item1, item2, itemN)
+```
+
+Examples:
+```js
+// Add items, then remove and add 
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+months.splice(4, 1, 'May');
+console.log(months); // ["Jan","Feb","March","April","May"]
+
+// remove all items after specified index #
+const alpha =  ['a', 'b', 'c', 'd', 'e']
+alpha.splice(3)
+console.log(alpha) // ["a","b","c"]
+
+// remove nth from last item (-2 = 2nd from end):
+const alpha =  ['a', 'b', 'c', 'd', 'e']
+alpha.splice(-2, 1)
+console.log(alpha) // ["a","b","c","e"]
+
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## High order array methods
 
 High Order Array Methods = methods that use a callback function. The most used ones are `sort`, `map`, `filter`, `forEach`, and `reduce`; but also `includes`, `find`, `every`, and `some` are useful.
@@ -201,7 +235,7 @@ High Order Array Methods = methods that use a callback function. The most used o
 - [MDN find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
 - [MDN every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
 - [MDN some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
-- [MDN map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+- [MDN map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 - [MDN filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 - [MDN forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 - [MDN reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
@@ -483,9 +517,25 @@ let hasLastName = users.some(function(user) {
   return user.lastName;
 })
 console.log(hasLastName); // true
+
+// Checking whether a value exists in an array
+const fruits = ['apple', 'banana', 'mango', 'guava'];
+
+function checkAvailability(arr, val) {
+  return arr.some(function(arrVal) {
+    return val === arrVal;
+  });
+}
+checkAvailability(fruits, 'kela');   // false
+checkAvailability(fruits, 'banana'); // true
+
+// Arrow version
+function checkAvailability(arr, val) {
+  return arr.some(arrVal => val === arrVal);
+}
 ```
 
-**NOTE**: I've seen examples where `some()` is used to check for the existence of a value in an array - why not just use `includes()`? You can not use `hasOwnProperty` for the last example because the "object" in an array, not an object.
+**NOTE**: I've seen examples where `some()` is used to check for the existence of a value in an array - why not just use `includes()`? You can not use `hasOwnProperty` for the `hasLastName` object example because the variable is an array, not an object.
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -496,6 +546,7 @@ console.log(hasLastName); // true
 // Arrow function
 map((element) => { /* ... */ })
 map((element, index) => { /* ... */ })
+map((element, index, array) => { /* ... */ })
 
 // Callback function
 map(callbackFn)
@@ -504,6 +555,8 @@ map(callbackFn, thisArg)
 // Inline callback function
 map(function(element) { /* ... */ })
 map(function(element, index) { /* ... */ })
+map(function(element, index, array){ /* ... */ })
+map(function(element, index, array) { /* ... */ }, thisArg)
 ```
 
 <br />
@@ -526,23 +579,16 @@ const roots = numbers.map((num) => Math.sqrt(num)); // roots is now [1, 2, 3]
 
 `arr.map()` more advanced MDN examples:
 ```js
-// reformat objects in an array
+// reformat objects in an array (WHY?)
 const kvArray = [
   { key: 1, value: 10 },
   { key: 2, value: 20 },
   { key: 3, value: 30 }
   ];
 const reformattedArray = kvArray.map(({ key, value}) => ({ [key]: value }));
-
-// Using map generically
-const map = Array.prototype.map;
-const charCodes = map.call('Hello World', (x) => x.charCodeAt(0));
-// charCodes now equals [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
-
-// Using map generically querySelectorAll
-const elems = document.querySelectorAll('select option:checked');
-const values = Array.prototype.map.call(elems, ({ value }) => value);
 ```
+
+**NOTE**: Look into [**Array.from()**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from) and constrast with `.map()`. Check out [Stackoverflow: Array.from vs Array.prototype.map](https://stackoverflow.com/questions/26052699/array-from-vs-array-prototype-map).
 
 <br />
 
@@ -581,6 +627,12 @@ findLongestWordLength("The quick brown fox jumped over the lazy dog");
 
 `arr.map()` other examples:
 ```js
+// Capitalize all words in a string:
+const str = "why is title case important"
+let capitalize = str.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+console.log(capitalize) // "Why Is Title Case Important"
+
+// working with objects
 const items = [
   { name: 'Bike', price: 100 },
   { name: 'TV', price: 200 },
