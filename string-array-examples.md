@@ -30,7 +30,7 @@ Examples for standard syntax of the most coomon methods and the more difficult m
    1. [forEach](#forEach)
    1. [Reduce](#reduce)
 1. [String methods](#string-methods)
-   1. [splice](#splice)
+   1. [split](#split)
    1. [repeat](#repeat)
    1. [substring](#substring)
    1. [endsWith](#endsWith)
@@ -1555,6 +1555,7 @@ Common methods with NO arguments/parameters:
 | sort    | arr.sort()        |   
 | join    | arr.join()        |
 | slice   | arr.slice()       |      
+| split   | str.split()       |
 
 
 <br />
@@ -1562,8 +1563,10 @@ Common methods with NO arguments/parameters:
 Common methods with a single argument, or multiple repeated arguments:
 | method  | syntax1                     | syntax2                     | 
 | :----   | :----                       | :----                       | 
-| join    | arr.join(sep)               |                             | 
-| slice   | slice(start)                |                             |
+| join    | arr.join(separator)         |                             | 
+| slice   | arr.slice(start)            |                             |
+| split   | str.split(separator)        |                             |
+| repeat  | str.repeat(count)           |                             |
 | test    | regex.test(str)             |                             |          
 | match   | str.match(regex)            |                             |
 | push    | arr.push(item)              | push(item1, item2, ...)     | 
@@ -1581,10 +1584,11 @@ Common methods with a single argument, or multiple repeated arguments:
 
 <br />
 
-`slice` with 2 argsand `replace` method with an argument and a callback function:
+Common methods with two arguments:
 | method    | syntax1                 | syntax2                     | 
 | :----     | :----                   | :----                       | 
-| slice     | slice(start, end)       |                             |
+| slice     | arr.slice(start, end)   |                             |
+| split     | str.split(separator, limit) |                             |
 | replace   | str.replace(regex, Fx)  | str.replace(substr, Fx)     |
 
 ***NOTE**: Function for `replace()`: The function's result (return value) will be used as the replacement string. Note that the function will be invoked multiple times for each full match to be replaced if the regular expression in the first parameter is global. Check the [MDN replace docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#specifying_a_function_as_a_parameter) since there is a lot to the function.
