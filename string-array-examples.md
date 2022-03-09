@@ -1452,42 +1452,62 @@ console.log(getTodaysMenu(["Pizza", "$8"], ["Chips", "$1"], ["Beer", "$3"]));
 
 ## Syntax tables
 
-Simplest methods:
+Common methods with NO arguments/parameters:
 | method  | syntax            | 
 | :----   | :----             | 
 | pop     | arr.pop()         |                            
 | shift   | arr.shift()       |                            
 | reverse | arr.reverse()     |                            
-| sort    | arr.sort()        |            
-| test    | regex.test(str)   |              
-| match   | str.match(regex)  |     
+| sort    | arr.sort()        |   
+| join    | arr.join()        |         
+
 
 <br />
 
-Simple methods with optional arguments:
+Common methods with a single argument, or multiple repeated arguments:
 | method  | syntax1                     | syntax2                     | 
 | :----   | :----                       | :----                       | 
-| join    | arr.join()                  | arr.join(sep)               | 
-| concat  | arr.concat(arr2)            | concat(arr2, arr3, ...)     | 
-| concat  | arr.concat(item)            | concat(item1, item2, ...)   | 
+| join    | arr.join(sep)               |                             | 
+| test    | regex.test(str)             |                             |          
+| match   | str.match(regex)            |                             |
 | push    | arr.push(item)              | push(item1, item2, ...)     | 
 | unshift | arr.unshift(item)           | unshift(item1, item2, ...)  |
-| replace | str.replace(regex, newStr)  | replace(regex, Fx)  |
-| replace | str.replace(substr, newStr) | replace(substr, Fx) |
-| indexOf | arr.indexOf(searchVal)      | str.indexOf(searchVal, fromInd) |
-| lastIndexOf | str.lastIndexOf(searchVal) | arr.lastIndexOf(searchVal, fromInd) |
-| includes | arr.includes(searchVal)    | str.includes(searchVal, fromInd) |
-| substring | str.substring(indStart) | str.substring(indStart, indEnd) |
-| endsWith | str.endsWith(subStr) | str.endsWith(subStr, len) | 
-| splice  | arr.splice(start)           | splice(start, delCt) |
-|         | splice(start, delCt, item1) | splice(start, delCt, item1, item2, ...) |
+| replace | str.replace(regex, newStr)  | str.replace(substr, newStr) |
+| indexOf | arr.indexOf(searchVal)      | str.indexOf(searchVal, fromIndex) |
+| lastIndexOf | str.lastIndexOf(searchVal) | arr.lastIndexOf(searchVal, fromIndex) |
+| includes | arr.includes(searchVal)    | str.includes(searchVal, fromIndex) |
+| substring | str.substring(indStart)   | str.substring(indStart, indEndex) |
+| endsWith | str.endsWith(subStr)       | str.endsWith(subStr, length) | 
+| concat  | arr.concat(arr2)            | arr.concat(arr2, arr3, ...)     | 
+|         | arr.concat(item)            | arr.concat(item1, item2, ...)   | 
+| splice  | arr.splice(start)           | splice(start, deleteCt) |
+|         | splice(start, deleteCt, item1) | splice(start, deleteCt, item1, item2, ...) |
+
+<br />
+
+`replace` method with an argument and a callback function:
+| method    | syntax1                 | syntax2                     | 
+| :----     | :----                   | :----                       | 
+| replace() | str.replace(regex, Fx)  | str.replace(substr, Fx)     |
+
+***NOTE**: Function for `replace()`: The function's result (return value) will be used as the replacement string. Note that the function will be invoked multiple times for each full match to be replaced if the regular expression in the first parameter is global. Check the [MDN replace docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#specifying_a_function_as_a_parameter) since there is a lot to the function.
+
+Example:
+```js
+function replacer(match, p1, p2, p3, offset, string) {
+  // p1 is nondigits, p2 digits, and p3 non-alphanumerics
+  return [p1, p2, p3].join(' - ');
+}
+let newString = 'abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer);
+console.log(newString);  // abc - 12345 - #$*%
+```
 
 <br />
 
 High order array methods with **callback** function:
-| method  | syntax1           | syntax2 |
-| :----   | :----             | :----   |
-| sort    | sort(callback)    | |
+| method  | syntax1           | syntax2                   |
+| :----   | :----             | :----                     |
+| sort    | sort(callbackFn)  |                           |
 | find    | find(callbackFn)  | find(callbackFn, thisArg) |
 | every   | every(callbackFn) | every(callbackFn, thisArg) |
 | some    | some(callbackFn)  | some(callbackFn, thisArg) |
@@ -1495,6 +1515,10 @@ High order array methods with **callback** function:
 | filter  | filter(callbackFn) | filter(callbackFn, thisArg) |
 | forEach | forEach(callbackFn) | forEach(callbackFn, thisArg) |
 | reduce  | reduce(callbackFn) | reduce(callbackFn, initialValue) |
+
+`thisArg` for `find`: Object to use as `this` inside `callbackFn`
+
+`thisArg` for the other 5 methods: Value to use as `this` when executing `callbackFn` (same thing?)
 
 <br />
 
@@ -1509,7 +1533,7 @@ Single argument/parameter:
 |         | arr.every(function(item) { ... } ) |
 | some    | arr.some((item) => { ... } )    |
 |         | arr.some(function(item) { ... } ) |
-| map     | arr.map((item) => { ... })      |
+| map     | arr.map((item) => { ... } )      |
 |         | arr.map(function(item) { ... } ) |
 | filter  | arr.filter((item) => { ... } )  |
 |         | arr.filter(function(item) { ... } ) |
@@ -1518,7 +1542,7 @@ Single argument/parameter:
 
 <br />
 
-Two arguments/parameters:
+**arrow** and inline functions with two arguments/parameters:
 | method  | syntax                                | 
 | :----   | :----                                 | 
 | sort    | arr.sort((a, b) => { ... } )          | 
@@ -1540,7 +1564,7 @@ Two arguments/parameters:
 
 <br />
 
-Three arguments/parameters:
+**arrow** and inline functions with three arguments/parameters:
 | method  | syntax                                | 
 | :----   | :----                                 | 
 | find    | arr.find((item, index, array) => { ... } )  |
@@ -1556,11 +1580,11 @@ Three arguments/parameters:
 | forEach | arr.forEach((item, index, array) => { ... } ) |
 |         | arr.forEach(function(item, index, array){ ... } ) |
 | reduce  | arr.reduce((prevVal, currVal, currInd) => { ... } ) |
-|         | arr.reduce(function(prevVal, currVal, currInd) { ... } ) |
+|         | arr.reduce(function(prevVal, currVal, currIndex) { ... } ) |
 
 <br />
 
-Four and five arguments/parameters:
+**arrow** and inline functions with four and five arguments/parameters:
 | method  | syntax                                | 
 | :----   | :----                                 | 
 | find    | arr.find(function(item, index, array) { ... }, thisArg) |
@@ -1571,5 +1595,5 @@ Four and five arguments/parameters:
 | forEach | arr.forEach(function(item, index, array) { ... }, thisArg) | 
 | reduce  | arr.reduce((prevVal, currVal, currInd, array) => { ... } ) |
 |         | arr.reduce(function(prevVal, currVal, currInd, array) { ... } ) |
-|         | arr.reduce((prevVal, currVal, currInd, array) => { ... }, initVal) |
+|         | **arr.reduce((prevVal, currVal, currInd, array) => { ... }, initVal)** |
 |         | arr.reduce(function(prevVal, currVal, currInd, array) { ... }, initVal) |
