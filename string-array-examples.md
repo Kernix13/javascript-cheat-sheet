@@ -15,6 +15,7 @@ Examples for standard syntax of the most coomon methods and the more difficult m
    1. [Basic sort](#basic-sort)
    1. [reverse](#reverse)
    1. [splice](#splice)
+   1. [slice](#slice)
    1. [indexOf](#indexOf)
    1. [lastIndexOf](#lastIndexOf)
    1. [concat](#concat)
@@ -52,6 +53,7 @@ Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `
 - [MDN sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 - [MDN reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
 - [MDN splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+- [MDN slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 - [MDN indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
 - [MDN lastIndexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
 - [MDN concat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
@@ -238,6 +240,37 @@ const alpha =  ['a', 'b', 'c', 'd', 'e']
 alpha.splice(-2, 1)
 console.log(alpha) // ["a","b","c","e"]
 
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### slice
+
+MDN syntax:
+```js
+slice()
+slice(start)
+slice(start, end)
+
+```
+
+Examples:
+```js
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log(animals.slice()); // ["ant", "bison", "camel", "duck", "elephant"]
+console.log(animals.slice(2)); // ["camel", "duck", "elephant"]
+console.log(animals.slice(-2)); // ["duck", "elephant"]
+console.log(animals.slice(2, 4)); // ["camel", "duck"]
+console.log(animals.slice(1, 5)); // ["bison", "camel", "duck", "elephant"]
+console.log(animals.slice(2, -1)); // ["camel", "duck"]
+
+// Example 2:
+let myHonda = { color: 'red', wheels: 4, engine: { cylinders: 4, size: 2.2 } }
+let myCar = [myHonda, 2, 'cherry condition', 'purchased 1997']
+let newCar = myCar.slice(0, 3)
+console.log(newCar)
+// // [{ color: 'red', wheels: 4, engine: { cylinders: 4, size: 2.2 } }, 2, "cherry condition"]
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -1154,11 +1187,50 @@ console.log(badString.toLowerCase().trim()); // "oops, caps lock on. need to fix
 // need to capitalize first letter and add a regex for the first char after the period.
 ```
 
+- [MDN split](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
 - [MDN substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
 - [MDN endsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
 - [MDN test](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test)
 - [MDN match](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match)
 - [MDN replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+
+### split
+
+MDN syntax:
+```js
+split()
+split(separator)
+split(separator, limit)
+```
+
+Examples:
+```js
+let str = "this is a sentence";
+let letters = str.split('');
+console.log(letters); // ["t","h","i","s"," ","i","s"," ","a"," ","s","e","n","t","e","n","c","e"]
+let letters = str.split(' ');
+console.log(letters); // ["this","is","a","sentence"]
+
+// Example 2:
+const str = 'Using the split method on a string';
+const words = str.split(' ');
+console.log(words[3]); // "method"
+const chars = str.split('');
+console.log(chars[8]); // e
+
+// Removing spaces from a string
+const names = 'Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand ';
+const re = /\s*(?:;|$)\s*/
+const nameList = names.split(re)
+
+console.log(nameList) // ["Harry Trump","Fred Barney","Helen Rigby","Bill Abel","Chris Hand",""]
+
+// Returning a limited number of splits
+const myString = 'Hello World. How are you doing?'
+const splits = myString.split(' ', 3)
+
+console.log(splits) // ["Hello","World.","How"]
+```
 
 ### substring
 
@@ -1459,7 +1531,8 @@ Common methods with NO arguments/parameters:
 | shift   | arr.shift()       |                            
 | reverse | arr.reverse()     |                            
 | sort    | arr.sort()        |   
-| join    | arr.join()        |         
+| join    | arr.join()        |
+| slice   | arr.slice()       |      
 
 
 <br />
@@ -1468,6 +1541,7 @@ Common methods with a single argument, or multiple repeated arguments:
 | method  | syntax1                     | syntax2                     | 
 | :----   | :----                       | :----                       | 
 | join    | arr.join(sep)               |                             | 
+| slice   | slice(start)                |                             |
 | test    | regex.test(str)             |                             |          
 | match   | str.match(regex)            |                             |
 | push    | arr.push(item)              | push(item1, item2, ...)     | 
@@ -1485,10 +1559,11 @@ Common methods with a single argument, or multiple repeated arguments:
 
 <br />
 
-`replace` method with an argument and a callback function:
+`slice` with 2 argsand `replace` method with an argument and a callback function:
 | method    | syntax1                 | syntax2                     | 
 | :----     | :----                   | :----                       | 
-| replace() | str.replace(regex, Fx)  | str.replace(substr, Fx)     |
+| slice     | slice(start, end)       |                             |
+| replace   | str.replace(regex, Fx)  | str.replace(substr, Fx)     |
 
 ***NOTE**: Function for `replace()`: The function's result (return value) will be used as the replacement string. Note that the function will be invoked multiple times for each full match to be replaced if the regular expression in the first parameter is global. Check the [MDN replace docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#specifying_a_function_as_a_parameter) since there is a lot to the function.
 

@@ -723,7 +723,7 @@ There are methods in common to both arrays and strings so I am combining them fo
 
 ### Same Methods and Same Effect
 
-- `slice()`, str | Extracts a section of a string and returns a new string
+- `slice()`, str | Extracts a section of a string and returns a new string, does not mutate original
 - `slice()`, arr | Extracts a section of the calling array and returns a new array
 - `concat()`, str | Joins two or more strings and returns the new string
 - `concat()`, arr | Joins two or more arrays and returns a copy of the joined arrays
@@ -749,7 +749,7 @@ There are methods in common to both arrays and strings so I am combining them fo
 - `arr.at()`: Accepts negative #’s, which counts from back
 - `str.substring()`: returns the part of the string between the start and end indexes, or to the end of the string
   - Alernate: `substring(indexStart, indexEnd)` where `indexEnd` is the index of the first character to exclude from the returned substring.
-- `arr.splice()`: changes the contents of an array by removing or replacing existing elements and/or adding new elements
+- `arr.splice()`: changes the contents of an array (_mutates_) by removing or replacing existing elements and/or adding new elements
   - Alternate: `splice(start, deleteCount)`, `splice(start, deleteCount, item1, item2, ...)`, where itemN = equals the values to add to the array beginning from `start`.
 
 ### Different Methods and Opposite Effect
