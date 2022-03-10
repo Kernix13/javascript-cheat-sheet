@@ -2,9 +2,9 @@
 
 Syntax and code examples for the most coomon string and array methods.
 
-## Table of contents
-
 <div id="back-to-top"></div>
+
+## Table of contents
 
 1. [Simple array methods](#simple-array-methods)
    1. [push](#push)
@@ -37,6 +37,7 @@ Syntax and code examples for the most coomon string and array methods.
    1. [test](#test)
    1. [match](#match)
    1. [replace](#replace)
+   1. [toString](#tostring)
    1. [Miscellaneous](#Miscellaneous)
 1. [Spread and Rest syntax](#spread-and-rest-syntax)
    1. [Spread operator for arrays and strings](#spread-operator-for-arrays-and-strings)
@@ -943,6 +944,14 @@ function urlSlug(title) {
 console.log(urlSlug(webTitle));
 ```
 
+Other examples:
+```js
+// 3. In case of duplicate notes, get only unique notes
+  let uniqueNotes = [];
+
+  uniqueNotes = chordTones.filter(tone => !uniqueNotes.includes(tone) && tone !== undefined ? uniqueNotes.push(tone) : null);
+```
+
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -1205,7 +1214,7 @@ Here are MDN doc links:
 | | | | |
 | :---: | :---: | :---: | :---: |
 | [MDN split](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) | [MDN repeat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat) | [MDN substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring) | [MDN endsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith) |
-| [MDN test](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test) | [MDN match](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match) | [MDN replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) | |
+| [MDN test](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test) | [MDN match](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match) | [MDN replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) |  |
 
 ### split
 
@@ -1410,6 +1419,25 @@ console.log(newstr);  // Smith, John
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+### toString
+
+'toString()`: Every JavaScript object has a `toString()` method. You can convert a number, boolean or array to a string. However, you can not use this to convert an object to a string (See [MDN Object.toString](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)).
+
+
+```js
+// array to string
+function turnToString(val){
+  return val.toString();
+}
+// let testObj = 108 // "string" "108"
+// let testObj = false // "string" "false"
+let testObj = [1, 2, 3, ['hey', 6]]
+let strObj = turnToString(testObj)
+console.log(typeof strObj, strObj) // "string" "1,2,3,hey,6"
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ### Miscellaneous
 
 typeof:
@@ -1573,7 +1601,10 @@ Common methods with NO arguments/parameters:
 | join    | arr.join()        |
 | slice   | arr.slice()       |      
 | split   | str.split()       |
-
+| toString | num.toString()   |
+|         | arr.toString()    |
+|         | date.toString()   |
+|         | bool.toString()   |
 
 <br />
 

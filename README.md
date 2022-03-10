@@ -781,6 +781,7 @@ There are methods in common to both arrays and strings so I am combining them fo
 - `fromCharCode(num1, num2, ...)` — Returns the character associated with a unicode number
 - `charCodeAt` takes an index and returns a number, whereas `fromCharCode` does the opposite: returns a character given a number.
 - `valueOf()` — Returns the primitive value (that has no properties or methods) of a string object
+- 'toString()`: Every JavaScript object has a `toString()` method. You can convert a number, boolean or array to a string. However, you can not use this to convert an object to a string (See [MDN Object.toString](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)).
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
