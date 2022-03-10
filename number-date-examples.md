@@ -19,7 +19,7 @@ Simple number, Math, and Date examples.
 
 ## Number examples
 
-Number and Math methods.
+Number and Math methods. A lot of the date exmples suck!
 
 ### Number methods
 
@@ -481,26 +481,23 @@ console.log(rest); // [9, 10, 11, 12]
 
 ### Date get methods
 
-Here is a link for the [MDN Date docs](). Here are links to MDN docs for the most common Date `get` methods:
+Here is a link for the [MDN Date docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date). Here are links to MDN docs for the most common Date `get` methods:
 
 |       |       |       | 
 | :---: | :---: | :---: | 
-| [MDN getDate]() | [MDN getDay]() | [MDN getFullYear]() |
-| [MDN getHours]() | [MDN getMilliseconds]() | [MDN getMinutes]() |
-| [MDN getMonth]() | [MDN getSeconds]() | [MDN getTime]() |
-
-new Date()
-```js
-// syntax
-
-```
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+| [MDN getDate](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate) | [MDN getDay](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getDay) | [MDN getFullYear](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear) |
+| [MDN getHours](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours) | [MDN getMilliseconds](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMilliseconds) | [MDN getMinutes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMinutes) |
+| [MDN getMonth](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth) | [MDN getSeconds](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getSeconds) | [MDN getTime](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime) |
 
 getDate()
 ```js
 // syntax
+getDate()
 
+// examples
+const birthday = new Date('August 19, 1975 23:15:30');
+const date1 = birthday.getDate();
+console.log(date1); // 19
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -508,7 +505,12 @@ getDate()
 getDay()
 ```js
 // syntax
+getDay()
 
+// example
+const birthday = new Date('August 19, 1975 23:15:30');
+const day1 = birthday.getDay();
+console.log(day1); // 2
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -516,7 +518,15 @@ getDay()
 getFullYear()
 ```js
 // syntax
+getFullYear()
 
+// example
+const moonLanding = new Date('July 20, 69 00:20:18');
+console.log(moonLanding.getFullYear()); // 1969
+
+// assign the four-digit value of the current year to the variable
+var today = new Date();
+var year = today.getFullYear();
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -524,7 +534,15 @@ getFullYear()
 getHours()
 ```js
 // syntax
+getHours()
 
+// example
+const birthday = new Date('March 13, 08 04:20');
+console.log(birthday.getHours()); // 4
+
+let Xmas95 = new Date('December 25, 1995 23:15:30');
+let hours = Xmas95.getHours();
+console.log(hours); // 23
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -532,7 +550,16 @@ getHours()
 getMilliseconds()
 ```js
 // syntax
+getMilliseconds()
 
+// example
+const moonLanding = new Date('July 20, 69 00:20:18');
+moonLanding.setMilliseconds(123);
+console.log(moonLanding.getMilliseconds()); // 123
+
+// assign the milliseconds portion of the current time to the variable milliseconds
+var today = new Date();
+var milliseconds = today.getMilliseconds();
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -540,7 +567,16 @@ getMilliseconds()
 getMinutes()
 ```js
 // syntax
+getMinutes()
 
+// example
+const birthday = new Date('March 13, 08 04:20');
+console.log(birthday.getMinutes()); // 20
+
+// assign the value 15 to the variable minutes
+var Xmas95 = new Date('December 25, 1995 23:15:30');
+var minutes = Xmas95.getMinutes();
+console.log(minutes); // 15
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -548,7 +584,16 @@ getMinutes()
 getMonth()
 ```js
 // syntax
+getMonth()
 
+// example
+const moonLanding = new Date('July 20, 69 00:20:18');
+console.log(moonLanding.getMonth()); // 6
+
+// assign the value 11 to the variable month
+var Xmas95 = new Date('December 25, 1995 23:15:30');
+var month = Xmas95.getMonth();
+console.log(month); // 11
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -556,7 +601,16 @@ getMonth()
 getSeconds()
 ```js
 // syntax
+getSeconds()
 
+// example
+const moonLanding = new Date('July 20, 69 00:20:18');
+console.log(moonLanding.getSeconds()); // 18
+
+// assign the value 30 to the variable seconds
+var Xmas95 = new Date('December 25, 1995 23:15:30');
+var seconds = Xmas95.getSeconds();
+console.log(seconds); // 30
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -564,7 +618,17 @@ getSeconds()
 getTime()
 ```js
 // syntax
+getTime()
 
+// example
+const moonLanding = new Date('July 20, 69 20:17:40 GMT+00:00');
+console.log(moonLanding.getTime()); // -14182940000
+
+// Using getTime() for copying dates
+// Since month is zero based, birthday will be January 10, 1995
+var birthday = new Date(1994, 12, 10);
+var copy = new Date();
+copy.setTime(birthday.getTime());
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -575,14 +639,20 @@ Here are links to MDN docs for the most common Date `set` methods:
 
 |       |       |       | 
 | :---: | :---: | :---: | 
-| [MDN setDate]() | [MDN setFullYear]() | [MDN setHours]() | 
-| [MDN setMilliseconds]() | [MDN setMinutes]() | [MDN setMonth]() | 
-| [MDN setSeconds]() | [MDN setTime]() | [MDN setUTCDate]() | 
+| [MDN setDate](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setDate) | [MDN setFullYear](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setFullYear) | [MDN setHours](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours) | 
+| [MDN setMilliseconds](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setMilliseconds) | [MDN setMinutes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setMinutes) | [MDN setMonth](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setMonth) | 
+| [MDN setSeconds](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setSeconds) | [MDN setTime](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setTime) | [MDN setUTCDate](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCDate) | 
 
 setDate()
 ```js
 // syntax
+setDate(dayValue)
 
+// example
+const event = new Date('August 19, 1975 23:15:30');
+event.setDate(24);
+console.log(event.getDate()); // 24
+console.log(event.getDate()); // 1
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -590,7 +660,20 @@ setDate()
 setFullYear()
 ```js
 // syntax
+setFullYear(yearValue)
+setFullYear(yearValue, monthValue)
+setFullYear(yearValue, monthValue, dateValue)
 
+// example
+const event = new Date('August 19, 1975 23:15:30');
+event.setFullYear(1969);
+console.log(event.getFullYear()); // 1969
+event.setFullYear(0);
+console.log(event.getFullYear()); // 0
+
+// example 2
+var theBigDay = new Date();
+theBigDay.setFullYear(1997);
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -598,7 +681,20 @@ setFullYear()
 setHours()
 ```js
 // syntax
+setHours(hoursValue)
+setHours(hoursValue, minutesValue)
+setHours(hoursValue, minutesValue, secondsValue)
+setHours(hoursValue, minutesValue, secondsValue, msValue)
 
+// example
+const event = new Date('August 19, 1975 23:15:30');
+event.setHours(20);
+console.log(event); // "1975-08-20T00:15:30.000Z"
+event.setHours(20, 21, 22);
+console.log(event); // "1975-08-20T00:21:22.000Z"
+
+var theBigDay = new Date();
+theBigDay.setHours(7);
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -606,7 +702,16 @@ setHours()
 setMilliseconds()
 ```js
 // syntax
+setMilliseconds(millisecondsValue)
 
+// example
+const event = new Date('August 19, 1975 23:15:30');
+console.log(event.getMilliseconds()); // 0
+event.setMilliseconds(456);
+console.log(event.getMilliseconds()); // 456
+
+var theBigDay = new Date();
+theBigDay.setMilliseconds(100);
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -614,7 +719,18 @@ setMilliseconds()
 setMinutes()
 ```js
 // syntax
+setMinutes(minutesValue)
+setMinutes(minutesValue, secondsValue)
+setMinutes(minutesValue, secondsValue, msValue)
 
+// example
+const event = new Date('August 19, 1975 23:15:30');
+event.setMinutes(45);
+console.log(event.getMinutes()); // 45
+console.log(event); // "1975-08-20T03:45:30.000Z"
+
+var theBigDay = new Date();
+theBigDay.setMinutes(45);
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -622,7 +738,23 @@ setMinutes()
 setMonth()
 ```js
 // syntax
+setMonth(monthValue)
+setMonth(monthValue, dayValue)
 
+// example
+const event = new Date('August 19, 1975 23:15:30');
+event.setMonth(3);
+console.log(event.getMonth()); // 3
+// expected output: 3
+console.log(event); // "1975-4-20T03:15:30.000z"
+
+var theBigDay = new Date();
+theBigDay.setMonth(6);
+
+//Watch out for end of month transitions
+var endOfMonth = new Date(2016, 7, 31);
+endOfMonth.setMonth(1);
+console.log(endOfMonth); //Wed Mar 02 2016 00:00:00
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -630,7 +762,17 @@ setMonth()
 setSeconds()
 ```js
 // syntax
+setSeconds(secondsValue)
+setSeconds(secondsValue, msValue)
 
+// example
+const event = new Date('August 19, 1975 23:15:30');
+event.setSeconds(42);
+console.log(event.getSeconds()); // 42
+console.log(event); // "1975-08-20T03:15:42.000Z"
+
+var theBigDay = new Date();
+theBigDay.setSeconds(30);
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -638,7 +780,18 @@ setSeconds()
 setTime()
 ```js
 // syntax
+setTime(timeValue)
 
+// example
+const event1 = new Date('July 1, 1999');
+const event2 = new Date();
+event2.setTime(event1.getTime());
+console.log(event1); // "1999-7-01T04:00:00.000Z"
+console.log(event2); // "1999-7-01T04:00:00.000Z"
+
+var theBigDay = new Date('July 1, 1999');
+var sameAsBigDay = new Date();
+sameAsBigDay.setTime(theBigDay.getTime());
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -646,7 +799,16 @@ setTime()
 setUTCDate()
 ```js
 // syntax
+setUTCDate(dayValue)
 
+// example
+const event = new Date('August 19, 1975 23:15:30 GMT-3:00');
+console.log(event.getUTCDate()); // 20
+event.setUTCDate(19);
+console.log(event.getUTCDate()); // 19
+
+var theBigDay = new Date();
+theBigDay.setUTCDate(20);
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -768,25 +930,16 @@ toPrecision()
 toPrecision(precision)
 
 isFinite(testValue)
-
 Number.isInteger(value)
-
 Number.parseFloat(string)
 
 Math.abs(x)
-
 Math.ceil(x)
-
 Math.floor(x)
-
 Math.random()
-
 Math.round(x)
-
 Math.sign(x)
-
 Math.sqrt(x)
-
 Math.trunc(x)
 
 Math.max()
@@ -799,7 +952,41 @@ Math.min(value0)
 Math.min(value0, value1)
 Math.min(value0, value1, ... , valueN)
 
+getDate()
+getDay()
+getFullYear()
+getHours()
+getMilliseconds()
+getMinutes()
+getMonth()
+getSeconds()
+getTime()
 
+setDate(dayValue)
+
+setFullYear(yearValue)
+setFullYear(yearValue, monthValue)
+setFullYear(yearValue, monthValue, dateValue)
+
+setHours(hoursValue)
+setHours(hoursValue, minutesValue)
+setHours(hoursValue, minutesValue, secondsValue)
+setHours(hoursValue, minutesValue, secondsValue, msValue)
+
+setMilliseconds(millisecondsValue)
+
+setMinutes(minutesValue)
+setMinutes(minutesValue, secondsValue)
+setMinutes(minutesValue, secondsValue, msValue)
+
+setMonth(monthValue)
+setMonth(monthValue, dayValue)
+
+setSeconds(secondsValue)
+setSeconds(secondsValue, msValue)
+
+setTime(timeValue)
+setUTCDate(dayValue)
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
