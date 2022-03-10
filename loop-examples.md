@@ -66,7 +66,7 @@ const ids = users.map(function(user) {
 console.log(ids); // (3) [1, 2, 3]
 ```
 
-## `for `in` and `for of` loops
+## `for in` and `for of` loops
 
 `for in`, syntax:
 ```js

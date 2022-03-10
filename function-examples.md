@@ -9,17 +9,22 @@ Below is a list of specific function code snippets that are not simple function 
 - [MDN methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions)
 - [MDN callback functions](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
 
+<div id="back-to-top"></div>
+
 ## Table of contents
 
-1. General
-1. IIFE
-1. Async await
-1. Arrow functions
-1. Methods
-1. Callback functions
-1. Local storage
-1. Event delegation
-1. Dynamic functions
+1. [General](#general)
+1. [IIFE](#iife)
+1. [Async await](#async-await)
+1. [Arrow functions](#arrow-functions)
+1. [Methods](#methods)
+1. [ES6 export import](#es6-export-import)
+1. [Callback functions](#callback-functions)
+1. [Local storage](#local-storage)
+1. [Event delegation](#event-delegation)
+1. [Miscellaneous](#miscellaneous)
+   1. [ES6 Promises](#es6-promises)
+   1. [Dynamic functions](#dynamic-functions)
 
 ## General
 
@@ -31,6 +36,8 @@ typeOfTest = function() {
 }                 
 console.log(typeof typeOfTest) // function
 ```
+
+<br />
 
 Syntax:
 ```js
@@ -52,6 +59,8 @@ function lowerCase(str) {
 }
 ```
 
+<br />
+
 Declaration vs. expression
 ```js
 // function declaration:
@@ -64,6 +73,8 @@ let myFunction = function() {
   code here
 }
 ```
+
+<br />
 
 With rest parameter and spread operator in argument list:
 ```js
@@ -83,10 +94,14 @@ function checkEqual(a, b) {
 }
 ```
 
+<br />
+
 set default parameters for your Fx’s:
 ```js
 const greeting = (name = "Anonymous") => "Hello " + name;
 ```
+
+<br />
 
 Default parameters 2:
 ```js
@@ -96,6 +111,8 @@ function greet(first = "John", last = "Doe") {
 greet("Jim", "Kernix");
 ```
 
+<br />
+
 use the rest parameter w\ Fx parms:
 ```js
 function howMany(...args) {
@@ -103,6 +120,8 @@ function howMany(...args) {
 }
 console.log(howMany(0, 1, 2, -1, -2));
 ```
+
+<br />
 
 Recursive example (computes factorials):
 ```js
@@ -120,6 +139,8 @@ c = factorial(3); // c gets the value 6
 d = factorial(4); // d gets the value 24
 e = factorial(5); // e gets the value 120
 ```
+
+<br />
 
 Nested functions:
 ```js
@@ -147,7 +168,9 @@ result1 = outside(3)(5); // returns 8
 
 Other concepts from [MDN Functions doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions): Scope and the function stack, Recursion, Preservation of variables, Closures, Using the arguments object, Default parameters, Rest parameters, No separate this, Predefined functions
 
-Predefined functions: `eval()`, `uneval()`, `isFinite()`, `isNaN()`, `parseFloat()`, `parseInt()`, `decodeURI()`, `decodeURIComponent()`, `encodeURI()`, `encodeURIComponent()`, `escape()`, and `unescape()`.
+**Predefined functions**: `eval()`, `uneval()`, `isFinite()`, `isNaN()`, `parseFloat()`, `parseInt()`, `decodeURI()`, `decodeURIComponent()`, `encodeURI()`, `encodeURIComponent()`, `escape()`, and `unescape()`.
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### IIFE
 
@@ -173,6 +196,8 @@ Predefined functions: `eval()`, `uneval()`, `isFinite()`, `isNaN()`, `parseFloat
 })();
 ```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## Async await
 
 Syntax:
@@ -181,6 +206,8 @@ async function name([param[, param[, ...param]]]) {
    statements
 }
 ```
+
+<br />
 
 Example:
 ```js
@@ -216,6 +243,8 @@ async function foo() {
 }
 foo().catch(() => {}) // Attempt to swallow all errors...
 ```
+
+<br />
 
 Async functions and execution order:
 ```js
@@ -290,8 +319,10 @@ setTimeout(concurrentPromise, 7000) // same as concurrentStart
 setTimeout(parallel, 10000) // truly parallel: after 1 second, logs "fast", then after 1 more second, "slow"
 ```
 
+<br />
+
 Rewriting a Promise chain with an async function
-```js:
+```js
 function getProcessedData(url) {
   return downloadData(url) // returns a promise
     .catch(e => {
@@ -321,6 +352,8 @@ async function getProcessedData(url) {
   return processDataInWorker(v)
 }
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Arrow functions
 
@@ -374,6 +407,8 @@ obj.c(); // prints 10, Object {...}
 
 ```
 
+<br />
+
 More examples: Check [MDN Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions):
 
 ```js
@@ -420,6 +455,8 @@ setTimeout( () => {
 }, 1);
 ```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## Methods
 
 ```js
@@ -446,7 +483,68 @@ const doSomething = {
 doSomething.add();
 ```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+## ES6 export import
+
+```js
+// Strict mode: a restricted variant of JavaScript, intentionally has different semantics
+"use strict";
+
+// script tag if you intend to use import and export with defer attribute:
+<script type="module" src="filename.js" defer></script>
+```
+
+<br />
+
+Export:
+```js
+// export a code block
+export const add = (x, y) => {
+  return x + y;
+}
+
+// export a variable
+const add = (x, y) => {
+  return x + y;
+}
+export { add };
+
+// export multiple objects:
+export { add, subtract };
+
+// create an export fallback with export default
+export default function add(x, y) {
+  return x + y;
+}
+// or
+export default function(x, y) {
+  return x + y;
+}
+```
+
+<br />
+
+Import:
+```js
+// single object:
+import { add } from './math_functions.js'; 
+
+// import multiple
+import { add, subtract } from './math_functions.js';
+
+// import all
+import * as myMathModule from "./math_functions.js";
+
+// use the imported module:
+myMathModule.add(2,3);
+myMathModule.subtract(5,3);
+
+// import a default export
+import add from "./math_functions.js"; 
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Callback functions
 
@@ -475,6 +573,8 @@ function onClick(e) {
 ```
 The most important thing you will see is the `target` which represents the element that the event happened on. 
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## Local storage
 
 This would be the code inside of a function:
@@ -492,6 +592,8 @@ localStorage.removeItem('name');
 // to clear everything from local storag:
 localStorage.clear();
 ```
+
+<br />
 
 to have a form add an item to local storage amd store multiple items in an array as a string:
 ```js
@@ -514,6 +616,8 @@ document.querySelector('form').addEventListener('submit', function(e) {
 });
 ```
 
+<br />
+
 Then to get and use the local storage items, still inside the event listener:
 ```js
 const tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -521,6 +625,8 @@ tasks.forEach(function(task){
   console.log(tasks);
 });
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Event delegation
 
@@ -539,6 +645,8 @@ function deleteItem(e) {
 }
 ```
 
+<br />
+
 But the structure is ul > li > a > i and to delete the entire list item, which is the parent of the `<a>` tag, in the if statement:
 ```js
   if(e.target.patentElement.classList.contains("delete-item")) {
@@ -546,6 +654,57 @@ But the structure is ul > li > a > i and to delete the entire list item, which i
     e.target.parentElement.parentElement.remove();
   }
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Miscellaneous
+
+Promises, ...
+
+### ES6 Promises
+
+```js
+// lesson 29 freeCodeCamp
+const myPromise = new Promise((resolve, reject) => {
+  if (conditionhere) {
+    resolve("Promise was fulfilled");
+  } else {
+    reject("Promise was rejected");
+  }
+});
+// or this 
+const makeServerRequest = new Promise((resolve, reject) => {
+  let responseFromServer;
+
+  if (responseFromServer) {
+    resolve("We got the data");
+  } else {
+    reject("Data not received")
+  }
+});
+
+// lesson 30 & 31 freeCodeCamp (confusing)
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer is set to false to represent an unsuccessful response from a server
+  let responseFromServer = true;
+
+  if (responseFromServer) {
+    resolve("We got the data");
+  } else {
+    reject("Data not received");
+  }
+});
+
+makeServerRequest.then(result => {
+  console.log(result);
+});
+
+makeServerRequest.catch((error) => {
+  console.log(error);
+});
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Dynamic functions
 
@@ -564,3 +723,5 @@ function checkInventory(scannedItem) {
 }
 // console.log(checkInventory("apples"));
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
