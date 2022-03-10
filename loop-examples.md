@@ -109,14 +109,16 @@ car.model = Mustang
 
 ### for of
 
-`for of`, syntax:
+Syntax:
 ```js
 for (variable of iterable) {
   statement
 }
 ```
 
-example: the difference between a `for...of` loop and a `for...in` loop. While `for...in` iterates over property names, `for...of` iterates over property values
+The difference between a `for...of` loop and a `for...in` loop. While `for...in` iterates over property names, `for...of` iterates over property values.
+
+Example:
 ```js
 const arr = [3, 5, 7];
 arr.foo = 'hello';
@@ -153,6 +155,8 @@ cars.forEach(function(car) {
 
 ```
 
+<br />
+
 `map()`: array of objects
 
 ```js
@@ -184,6 +188,8 @@ for (let i = 0; i < a.length; i++) {
   }
 }
 ```
+
+<br />
 
 Continue syntax:
 ```js
