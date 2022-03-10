@@ -1,5 +1,167 @@
 # Object code examples
 
+Syntax and code examples for the most coomon object methods
+
+## Table of contents
+
+<div id="back-to-top"></div>
+
+1. [Object keys](#object-keys)
+1. [Object values](#object-values)
+1. [hasOwnProperty](#hasOwnProperty)
+1. [for in loop](#for-in-loop)
+1. [Modify values and remove keys](#)
+1. [Other](#other)
+1. [Classes](#classes)
+   1. [prototype version](#prototype-version)
+   1. [ES6 Class version](#es6-class-version)
+1. [Destructuring an object](#destructuring-an-object)
+1. [Spread operator](#spread-operator)
+1. [Miscellaneous](#miscellaneous)
+
+Common Object methods:
+
+
+## Object keys
+
+[MDN Object.keys docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys): Returns an array of the key names.
+
+```js
+// syntax
+Object.keys(obj)
+
+// Example
+const chordIntervals = {
+    "Chord": "maj",
+    "Intervals": ["1", "3", "5"],
+    "steps": [0, 4, 7],
+		"Equal Chords": [{"key": "", "name": ""}],
+    "Chord Substitutes": [{"key": "", "name": ""}],
+		"scales": {
+			"Major Scale": ["1st", " 4th", " 5th"],
+			"Minor Pentatonic": ["2nd"],
+			"Blues Scale": ["2nd"],
+			"Harmonic Minor": ["5th", "6th"],
+			"Melodic Minor": ["4th", "5th"],
+			"Whole Tone": [""],
+			"Augmented": ["1st", "3rd", "5th"],
+			"HW Diminished": ["1st", "3rd", "5th", "7th"],
+			"Major Bebop": ["1st", "4th", "5th"],
+			"Minor Bebop": ["3rd", "5th", "8th"]
+		}
+  }
+console.log(Object.keys(chordIntervals)) // ["Chord","Intervals","steps","Equal Chords","Chord Substitutes","scales"]
+console.log(Object.keys(chordIntervals.scales)) // ["Major Scale","Minor Pentatonic","Blues Scale","Harmonic Minor", ...]
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Object values
+
+[MDN Object.values docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Object/values): Returns an array of the vaalues for each key.
+
+```js
+// syntax
+Object.values(obj)
+
+// Examples:
+const chordIntervals = {
+    "Chord": "maj",
+    "Intervals": ["1", "3", "5"],
+    "steps": [0, 4, 7],
+  }
+console.log(Object.values(chordIntervals)) // ["maj", ["1","3","5"], [0,4,7]]
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## hasOwnProperty
+
+[MDN hasOwnProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty): Returns `true` if the object has the specified property as own property; `false` otherwise.
+
+```js
+// syntax
+obj.hasOwnProperty(prop)	
+// prop: The String name or Symbol of the property to test
+
+// Examples:
+
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## for in loop
+
+Using `for in`:
+```js
+// syntax:
+obj.hasOwnProperty('Prop1');
+'Prop1' in uobjsers;
+
+for (let user in users) {...}
+
+// Example
+const users = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+}
+
+function countOnline(usersObj) {
+  // Only change code below this line
+  let result = 0;
+  for (let user in usersObj) {
+    if (usersObj[user].online === true) {
+      result++;
+    }
+  }
+  return result;
+  // Only change code above this line
+}
+
+console.log(countOnline(users));
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Modify values and remove keys
+
+```js
+let something = {
+  id: 23894201352,
+  location: "New York",
+  date: 'January 1, 2017',
+  data: {
+    totalUsers: 51,
+    online: 42
+  }
+};
+// Add:
+something.data.offline = 100;
+// Modify:
+something.data.online = 45;
+// Delete:
+delete something.location;
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Other
+
+Object.entries(obj)	
+Object.getOwnPropertyNames()	
+Object.freeze(obj)	
+obj.toString()	
+obj.prop
+obj[prop]	
+obj.prop[i]
+obj.[prop][i]	
 
 typeof:
 ```js
@@ -9,6 +171,8 @@ console.log(typeof typeOfTest) // object
 typeOfTest = {};  // object
 typeOfTest = null; // object
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Classes
 
@@ -42,6 +206,8 @@ console.log(molly.canEat());
 console.log(steve.canEat());
 console.log(joe);
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### ES6 Class version
 
@@ -97,6 +263,93 @@ console.log(philSpouse);
 let totalClient = {...philMiller, ...philSpouse};
 console.log(totalClient);
 ```
+
+Example object:
+```js
+const student1 = {
+  firstName: "Mary",
+  lastName: "Williams",
+  gradeLevel: "Junior",
+  currentAverage: "A"
+};
+```
+
+Console.log empty function:
+```js
+function Student() {
+
+}
+console.log(Student()); // undefined
+console.log(new Student()); // Student {}
+```
+
+The `new` keyword changes the behavior of how the function operates. You then get access to the object via the `this` keyword.
+
+```js
+// All students will have these properties:
+function Student(first, last, lvl, avg) {
+  this.firstName = first;
+  this.lastName = last;
+  this.gradeLevel = lvl;
+  this.currentAverage = avg;
+  this.getFullName = function() {
+    return `${this.firstName} ${this.lastName}`
+  }
+}
+const student1 = new Student("Mary", "Williams", "Junior", "A");
+console.log(student1); // Student {firstName: 'Mary', lastName: 'Williams', gradeLevel: 'Junior', currentAverage: 'A'}
+
+// update:
+student1.firstName = "Marilyn";
+student1.age = 28;
+```
+
+Create a class with a constructor, methods and properties. And you have a prototype for every class you create.
+
+```js
+// syntax
+class ClassName {
+  constructor(properties to set) {
+    this.prop1 = prop1;
+    this.ptop2 = prop2;
+  }
+}
+// Person class
+class Person {
+  constructor(firstName, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.birthday = new Date(dob);
+  }
+
+  greeting() {
+    return `Hello, ${this.firstName} ${this.lastName}.`;
+  }
+}
+
+// create a new object based on the Person class
+const jim = new Person("Jim", "Kernix");
+jim.greeting();
+```
+
+sub classes with `extends` and `super` keywords:
+```js
+class Customer extends Person {
+  constructor(firstName, lastName, phone, membership) {
+    // super calls the paent class constructor
+    super(firstName, lastName);
+
+    this.phone = phone;
+    this.membership = membership;
+  }
+}
+
+const john = new Customer('John', 'Williams', '123-456-7890', 'Standard');
+const mary = new Person('Mary', 'Thompson');
+console.log(john.greeting());
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Destructuring an object
 
@@ -157,15 +410,15 @@ Video: #54 Destructuring Assignment Arrays
 ```js
 const colors = ["yellow", "blue", "red", "green"];
 const [c1, c2, c3, c4] = colors;
-console.log(colors);
-console.log(c1, c2, c3, c4);
+console.log(colors); // ["yellow","blue","red","green"]
+console.log(c1, c2, c3, c4); // "yellow" "blue" "red" "green"
 ```
 
 With a nested array - syntax is realy important
 ```js
 const numbers2 = [1, 2, 3, [4, 5], 6];
 const [n1, n2, n3, [n4, n5], n6] = numbers2;
-console.log(n1, n2, n3, n4, n5, n6);
+console.log(n1, n2, n3, n4, n5, n6); // 1 2 3 4 5 6
 ```
 
 you can use destructuring to switch the values that are held in variables:
@@ -173,7 +426,7 @@ you can use destructuring to switch the values that are held in variables:
 let myStr2 = "Cheese";
 let myStr3 = "Butter";
 [myStr2, myStr3] = [myStr3, myStr2]
-console.log(myStr2, myStr3);
+console.log(myStr2, myStr3); // "Butter" "Cheese"
 ```
 
 Another one:
@@ -261,8 +514,34 @@ const jason = {
 }
 let jasonAge = "unknown", jasonJob = "unknown";
 ({age: jasonAge, job: jasonJob} = jason);
-console.log(jasonAge, jasonJob);
+console.log(jasonAge, jasonJob); // 35 "Web Developer"  
 ```
+
+LESSON 11 use destructuring assignment to extract values from objects
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+const { today, tomorrow } = HIGH_TEMPERATURES;
+
+12. use destructuring assignment to assign variables from objects
+const { name: userName, age: userAge } = user;
+
+13. use destructuring assignment to assign variables from nested objects
+const { johnDoe: { age: userAge, email: userEmail }} = user;
+
+lesson 14 use destructuring assignment to assign variables from arrays
+const [a, b, , , c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c);
+
+lesson 15 use destructuring assignment w\ the rest parameter to reassign array elements
+const [a, b, ...arr3] = [1, 2, 3, 4, 5, 7];
+
+16. use destructuring assignment to pass an object as a Fx’s parameters
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Spread operator
 
@@ -314,182 +593,8 @@ const {firstName: applicantFirstName, lastName: applicantLastName, ...otherinfor
 console.log(otherinformation);
 ```
 
-## Unordered notes (fix later)
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-LESSON 11 use destructuring assignment to extract values from objects
-const HIGH_TEMPERATURES = {
-  yesterday: 75,
-  today: 77,
-  tomorrow: 80
-};
-
-const { today, tomorrow } = HIGH_TEMPERATURES;
-
-12. use destructuring assignment to assign variables from objects
-const { name: userName, age: userAge } = user;
-
-13. use destructuring assignment to assign variables from nested objects
-const { johnDoe: { age: userAge, email: userEmail }} = user;
-
-lesson 14 use destructuring assignment to assign variables from arrays
-const [a, b, , , c] = [1, 2, 3, 4, 5, 6];
-console.log(a, b, c);
-
-lesson 15 use destructuring assignment w\ the rest parameter to reassign array elements
-const [a, b, ...arr3] = [1, 2, 3, 4, 5, 7];
-
-16. use destructuring assignment to pass an object as a Fx’s parameters
-
-## ES6 classes
-
-Create a class with a constructor, methods and properties. And you have a prototype for every class you create.
-
-```js
-// syntax
-class ClassName {
-  constructor(properties to set) {
-    this.prop1 = prop1;
-    this.ptop2 = prop2;
-  }
-}
-// Person class
-class Person {
-  constructor(firstName, lastName, dob) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.birthday = new Date(dob);
-  }
-
-  greeting() {
-    return `Hello, ${this.firstName} ${this.lastName}.`;
-  }
-}
-
-// create a new object based on the Person class
-const jim = new Person("Jim", "Kernix");
-jim.greeting();
-```
-
-sub classes with `extends` and `super` keywords:
-```js
-class Customer extends Person {
-  constructor(firstName, lastName, phone, membership) {
-    // super calls the paent class constructor
-    super(firstName, lastName);
-
-    this.phone = phone;
-    this.membership = membership;
-  }
-}
-
-const john = new Customer('John', 'Williams', '123-456-7890', 'Standard');
-const mary = new Person('Mary', 'Thompson');
-console.log(john.greeting());
-```
-
-
-
-## Constructor function instead of using a class
-
-Example object:
-```js
-const student1 = {
-  firstName: "Mary",
-  lastName: "Williams",
-  gradeLevel: "Junior",
-  currentAverage: "A"
-};
-```
-
-Console.log empty function:
-```js
-function Student() {
-
-}
-console.log(Student()); // undefined
-console.log(new Student()); // Student {}
-```
-
-The `new` keyword changes the behavior of how the function operates. You then get access to the object via the `this` keyword.
-
-```js
-// All students will have these properties:
-function Student(first, last, lvl, avg) {
-  this.firstName = first;
-  this.lastName = last;
-  this.gradeLevel = lvl;
-  this.currentAverage = avg;
-  this.getFullName = function() {
-    return `${this.firstName} ${this.lastName}`
-  }
-}
-const student1 = new Student("Mary", "Williams", "Junior", "A");
-console.log(student1); // Student {firstName: 'Mary', lastName: 'Williams', gradeLevel: 'Junior', currentAverage: 'A'}
-
-// update:
-student1.firstName = "Marilyn";
-student1.age = 28;
-```
-
-### add, modify, and remove keys from objects
-
-
-```js
-let something = {
-  id: 23894201352,
-  location: "New York",
-  date: 'January 1, 2017',
-  data: {
-    totalUsers: 51,
-    online: 42
-  }
-};
-// Add:
-something.data.offline = 100;
-// Modify:
-something.data.online = 45;
-// Delete:
-delete something.location;
-```
-
-### Check if a property exists
-
-Using `hasOwnProperty`:
-```js
-// syntax:
-obj.hasOwnProperty('Prop1');
-'Prop1' in uobjsers;
-
-for (let user in users) {...}
-```
-
-Using `for in`:
-```js
-const users = {
-  Alan: {
-    online: false
-  },
-  Jeff: {
-    online: true
-  },
-  Sarah: {
-    online: false
-  }
-}
-
-function countOnline(usersObj) {
-  // Only change code below this line
-  let result = 0;
-  for (let user in usersObj) {
-    if (usersObj[user].online === true) {
-      result++;
-    }
-  }
-  return result;
-  // Only change code above this line
-}
-
-console.log(countOnline(users));
-```
+## Miscellaneous
 
 WTF with [] working but not dot notation???? Something with if statements?

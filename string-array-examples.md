@@ -1634,9 +1634,8 @@ High order array methods with **callback** function:
 | forEach | forEach(callbackFn) | forEach(callbackFn, thisArg) |
 | reduce  | reduce(callbackFn) | reduce(callbackFn, initialValue) |
 
-`thisArg` for `find`: Object to use as `this` inside `callbackFn`
-
-`thisArg` for the other 5 methods: Value to use as `this` when executing `callbackFn` (same thing?)
+- `thisArg` for `find`: Object to use as `this` inside `callbackFn`
+- `thisArg` for the other 5 methods: Value to use as `this` when executing `callbackFn` (same thing?)
 
 <br />
 
@@ -1715,5 +1714,9 @@ Single argument/parameter:
 |         | arr.reduce(function(prevVal, currVal, currInd, array) { ... } ) |
 |         | **arr.reduce((prevVal, currVal, currInd, array) => { ... }, initVal)** |
 |         | arr.reduce(function(prevVal, currVal, currInd, array) { ... }, initVal) |
+
+- `array`: The array on which the method was called
+- `initialValue`: A value to which `previousValue` is initialized the first time the callback is called. If `initialValue` is specified, that also causes `currentValue` to be initialized to the first value in the array. If `initialValue` is not specified, `previousValue` is initialized to the first value in the array, and `currentValue` is initialized to the second value in the array.
+- `TypeError`: The array contains no elements and `initialValue` is not provided
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>

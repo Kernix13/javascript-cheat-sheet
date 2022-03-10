@@ -1,5 +1,7 @@
 # VANILLA JAVASCRIPT CHEAT SHEET
 
+> This file is really good though the notes section is a little sloppy. The tables are the best part of it. Also, string-array-examples.md is also REALLY good! All the other files are work-in-progress (**as of 3/10/2022**).
+
 This is not an all-inclusive list of every possible JavaScript method, property, etc. This file has tables of comparisons for quick reference. Notes on elements in the tables are at the bottom of the file.
 
 The file [notes.md](https://github.com/Kernix13/javascript-cheat-sheet/blob/master/notes.md) has a large amount of notes for me for everything and anything about JavaScript that helps me. 
