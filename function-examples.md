@@ -1,6 +1,6 @@
 # Important Function Code Examples
 
-Below is a list of specific function code snippets that are not simple function code snippets.
+Here are docs from MDN:
 
 - [MDN functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
 - [MDN IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
@@ -8,6 +8,7 @@ Below is a list of specific function code snippets that are not simple function 
 - [MDN Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 - [MDN methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions)
 - [MDN callback functions](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
+- [MDN Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 <div id="back-to-top"></div>
 
@@ -113,7 +114,7 @@ greet("Jim", "Kernix");
 
 <br />
 
-use the rest parameter w\ Fx parms:
+use the rest parameter with function parameters:
 ```js
 function howMany(...args) {
   return "You have passed " + args.length + " arguments.";
@@ -223,7 +224,7 @@ async function name(parameters) {
 
 <br />
 
-Example 1:
+Examples:
 ```js
 function resolveAfter2Seconds() {
   return new Promise(resolve => {
@@ -578,6 +579,7 @@ Also look into:
 
 <br />
 
+Examples:
 ```js
 const toDo = {
   add: function() {
@@ -610,7 +612,7 @@ doSomething.add();
 // Strict mode: a restricted variant of JavaScript, intentionally has different semantics
 "use strict";
 
-// script tag if you intend to use import and export with defer attribute:
+// script tag if you intend to use import and export (defer attribute added):
 <script type="module" src="filename.js" defer></script>
 ```
 
@@ -618,12 +620,12 @@ doSomething.add();
 
 Export:
 ```js
-// export a code block
+// export a code block:
 export const add = (x, y) => {
   return x + y;
 }
 
-// export a variable
+// export a variable:
 const add = (x, y) => {
   return x + y;
 }
@@ -632,7 +634,7 @@ export { add };
 // export multiple objects:
 export { add, subtract };
 
-// create an export fallback with export default
+// create an export fallback with export default:
 export default function add(x, y) {
   return x + y;
 }
@@ -646,10 +648,10 @@ export default function(x, y) {
 
 Import:
 ```js
-// single object:
+// import a single object:
 import { add } from './math_functions.js'; 
 
-// import multiple
+// import multiple object:
 import { add, subtract } from './math_functions.js';
 
 // import all
@@ -691,6 +693,8 @@ myvar.addEventListener("click", function(e) {
 ```
 
 1. The parameter `e` is the event object. You want to prevent the default behavior associated with things like forms and links. 
+
+<br />
 
 To take a look at the event object:
 ```js
@@ -750,7 +754,7 @@ document.querySelector('form').addEventListener('submit', function(e) {
 
 <br />
 
-Then to get and use the local storage items, still inside the event listener:
+Then to get and use the local storage items (still inside the event listener):
 ```js
 const tasks = JSON.parse(localStorage.getItem('tasks'));
 tasks.forEach(function(task){

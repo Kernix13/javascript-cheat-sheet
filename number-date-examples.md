@@ -430,10 +430,12 @@ Math.pow(-7, 1/3); // NaN
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-Math.floor(Math.random())
-
-USe this as part of a way to ...
-
+Math.floor(Math.random()): 105 generate random  whole numbers w\in a range:
+```js
+function randomRange(myMin, myMax) {
+  return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
+}
+```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 

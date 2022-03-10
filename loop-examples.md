@@ -2,35 +2,137 @@
 
 Notes for not so common loop code snippets.
 
-## Continue and reak out of a loop
+<div id="back-to-top"></div>
 
-```js
-for (let i = 0; i > 10, i++) {
-  if (i === 2) {
-    console.log("The number 2 is great");
-    continue;
-  }
+## Table of contents
 
-  if (i === 5) {
-    break;
-  }
+1. [While loop](#while-loop)
+1. [Do while loop](#do-while-loop)
+1. [for loop](#for-loop)
+1. [for in and for of loops](#for-in-and-for-of-loops)
+1. [Array methods](#array-methods)
+1. [Continue and break](#continue-and-break)
 
-  console.log("Number " + i)
-}
-```
 
 ## While loop
 
+Syntax:
 ```js
-let j = 0;
+while (condition)
+  statement
 
-while(j < 10) {
-  console.log("Number " + j);
-  j++;
+// example
+let i = 0;
+do {
+  i += 1;
+  console.log(i);
+} while (i < 5);
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Do while loop
+
+Syntax:
+```js
+do
+  statement
+while (condition);
+
+// example
+let n = 0;
+let x = 0;
+while (n < 3) {
+  n++;
+  x += n;
 }
 ```
 
-## Loops for arrays
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## for loop
+
+Syntax:
+```js
+for ([initialExpression]; [conditionExpression]; [incrementExpression])
+  statement
+
+// example
+let arr = [1, 2, 3, 4, 5, 6, 7];
+function someFx() {
+  for (let i = 0; i < arr.length; i++) {
+    // code here
+  }
+}
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## for in and for of loops
+
+### for in
+
+`for in`, syntax:
+```js
+for (variable in object) {
+  statement
+}
+```
+
+Example:
+```js
+const user = {
+  first: "Jim",
+  last: "Kernix",
+  age: 56
+}
+
+for (let x in user) {
+  console.log(x); // returns the keys
+  console.log(user[x]); // returns the values
+}
+
+// example 2
+function dump_props(obj, obj_name) {
+  let result = '';
+  for (let i in obj) {
+    result += obj_name + '.' + i + ' = ' + obj[i] + '<br>';
+  }
+  result += '<hr>';
+  return result;
+}
+// For an object car with properties make and model, result would be:
+car.make = Ford
+car.model = Mustang
+```
+
+### for of
+
+`for of`, syntax:
+```js
+for (variable of iterable) {
+  statement
+}
+```
+
+example: the difference between a `for...of` loop and a `for...in` loop. While `for...in` iterates over property names, `for...of` iterates over property values
+```js
+const arr = [3, 5, 7];
+arr.foo = 'hello';
+
+for (let i in arr) {
+   console.log(i); // logs "0", "1", "2", "foo"
+}
+
+for (let i of arr) {
+   console.log(i); // logs 3, 5, 7
+}
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Array methods
 
 Use these over a `for` loop when working with arrays:
 
@@ -66,49 +168,85 @@ const ids = users.map(function(user) {
 console.log(ids); // (3) [1, 2, 3]
 ```
 
-## `for in` and `for of` loops
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-`for in`, syntax:
+## Continue and break
+
+Break syntax:
 ```js
-for (variable in object) {
-  statement
+break;
+break [label];
+
+// example
+for (let i = 0; i < a.length; i++) {
+  if (a[i] === theValue) {
+    break;
+  }
 }
 ```
 
-Example:
+Continue syntax:
 ```js
-const user = {
-  first: "Jim",
-  last: "Kernix",
-  age: 56
+continue [label];
+
+// example 1
+for (let i = 0; i > 10, i++) {
+  if (i === 2) {
+    console.log("The number 2 is great");
+    continue;
+  }
+
+  if (i === 5) {
+    break;
+  }
+
+  console.log("Number " + i)
 }
 
-for (let x in user) {
-  console.log(x); // returns the keys
-  console.log(user[x]); // returns the values
+// example 2
+let i = 0;
+let n = 0;
+while (i < 5) {
+  i++;
+  if (i === 3) {
+    continue;
+  }
+  n += i;
+  console.log(n);
 }
+//1,3,7,12
+
+let i = 0;
+let n = 0;
+while (i < 5) {
+  i++;
+  if (i === 3) {
+     // continue;
+  }
+  n += i;
+  console.log(n);
+}
+// 1,3,6,10,15
+
+// example 3
+let i = 0;
+let j = 10;
+checkiandj:
+  while (i < 4) {
+    console.log(i);
+    i += 1;
+    checkj:
+      while (j > 4) {
+        console.log(j);
+        j -= 1;
+        if ((j % 2) === 0) {
+          continue checkj;
+        }
+        console.log(j + ' is odd.');
+      }
+      console.log('i = ' + i);
+      console.log('j = ' + j);
+  }
 ```
 
-`for of`, syntax:
-```js
-for (variable of iterable) {
-  statement
-}
-```
-
-
-
-
-
-
-### Math code examples
-
-105 generate random  whole numbers w\in a range
-function randomRange(myMin, myMax) {
-  return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
-}
-
-
-
-
-
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
