@@ -1,5 +1,46 @@
 # Math and date methods
 
+- toExponential(n)
+- toFixed(n) 
+- toPrecision(n)
+- isFinite()
+- Number.isInteger()
+- Number.parseFloat()
+- Math.abs(x) 
+- Math.ceil(x)
+- Math.floor(x)
+- Math.random(x)
+- Math.round(x)
+- Math.sign(x)
+- Math.sqrt(x)
+- Math.trunc(x)
+- Math.max(n1, n2, ...) 
+- Math.min(n1, n2, ...))
+- Math.pow(x, y)
+- Math.floor(Math.random())
+
+- new Date() 
+- getDate()  
+- getDay()   
+- getFullYear()
+- getHours()
+- getMilliseconds()
+- getMinutes() 
+- getMonth()
+- getSeconds() 
+- getTime()  
+- getUTCDate() 
+
+- setDate() 
+- setFullYear()
+- setHours() 
+- setMilliseconds()
+- setMinutes()
+- setMonth()
+- setSeconds()
+- setTime()
+- setUTCDate()
+
 
 typeof:
 ```js
@@ -13,9 +54,10 @@ typeOfTest = 2.37 / 1.4562; // number
 typeOfTest = new Date(); // object
 ```
 
-
-
 ## Number examples
+
+....
+
 
 ### Spread operator
 

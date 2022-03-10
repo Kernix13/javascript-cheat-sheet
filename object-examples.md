@@ -2,16 +2,15 @@
 
 Syntax and code examples for the most coomon object methods
 
-## Table of contents
-
 <div id="back-to-top"></div>
+
+## Table of contents
 
 1. [Object keys](#object-keys)
 1. [Object values](#object-values)
 1. [hasOwnProperty](#hasOwnProperty)
 1. [for in loop](#for-in-loop)
-1. [Modify values and remove keys](#)
-1. [Other](#other)
+1. [Modify values and remove keys](#modify-values-and-remove-keys)
 1. [Classes](#classes)
    1. [prototype version](#prototype-version)
    1. [ES6 Class version](#es6-class-version)
@@ -150,27 +149,16 @@ something.data.online = 45;
 delete something.location;
 ```
 
+Access values by using `obj[prop]` or `obj.prop[i]` or `obj.[prop][i]`.
+```js
+// something here
+```
+
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Other
 
-Object.entries(obj)	
-Object.getOwnPropertyNames()	
-Object.freeze(obj)	
-obj.toString()	
-obj.prop
-obj[prop]	
-obj.prop[i]
-obj.[prop][i]	
 
-typeof:
-```js
-let typeOfTest;
-typeOfTest = [];  
-console.log(typeof typeOfTest) // object
-typeOfTest = {};  // object
-typeOfTest = null; // object
-```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -596,5 +584,16 @@ console.log(otherinformation);
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Miscellaneous
+
+Other methods: Object.entries(obj)| Object.getOwnPropertyNames()| Object.freeze(obj)| obj.toString() | obj.prop ???
+
+typeof:
+```js
+let typeOfTest;
+typeOfTest = [];  
+console.log(typeof typeOfTest) // object
+typeOfTest = {};  // object
+typeOfTest = null; // object
+```
 
 WTF with [] working but not dot notation???? Something with if statements?

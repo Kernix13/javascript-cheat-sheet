@@ -343,7 +343,7 @@ Common Number Methods (single argument):
 | toPrecision(n)  | Returns a # to a specified # of significant digits |
 | isFinite()      | Returns boolean for finite vs infinite number check | 
 | Number.isInteger() | Returns boolean for number as integer or not | 
-| pasreFloat()    | Parses an argument and returns a floating point number |
+| parseFloat()    | Parses an argument and returns a floating point number |
 | Math.abs(x)     | Returns the absolute value of x | 
 | Math.ceil(x)    | Always rounds a number up to the next largest integer |
 | Math.floor(x)   | Returns the largest integer less than or equal to x. |
