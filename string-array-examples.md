@@ -1,6 +1,6 @@
 # String and Array examples
 
-Examples for standard syntax of the most coomon methods and the more difficult methods to understand.
+Syntax and code examples for the most coomon string and array methods.
 
 ## Table of contents
 
@@ -45,8 +45,15 @@ Examples for standard syntax of the most coomon methods and the more difficult m
 
 ## Simple array methods
 
-Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `sort()`, `reverse()`, and `splice()`. I skipped `arr.flat(depth)` and `findIndex()` and `Array.isArray()`.
+Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `sort()`, `reverse()`, `slice()`, and `splice()`. I skipped `flat()`, `findIndex()` and `Array.isArray()`. Here are links to MDN docs:
 
+| | | | |
+| :---: | :---: | :---: | :---: |
+| [MDN push](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) | [MDN unshift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift) | [MDN pop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) | [MDN shift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift) |
+| [MDN join](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) | [MDN sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) | [MDN reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse) | [MDN splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) | 
+| [MDN slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) | [MDN indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) | [MDN lastIndexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf) | [MDN concat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat) | 
+
+<!--  
 - [MDN push](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
 - [MDN unshift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
 - [MDN pop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
@@ -59,6 +66,7 @@ Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `
 - [MDN indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
 - [MDN lastIndexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
 - [MDN concat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
+-->
 
 ### push
 
@@ -76,6 +84,7 @@ rhythm.push(...harmony);
 console.log(rhythm)  // ['bass', 'drums', 'guitar', 'piano']
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### unshift
@@ -97,6 +106,7 @@ arr.unshift(2)
 arr.unshift(3) // [3, 2, 1, 4, 5, 6]
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### pop
@@ -109,6 +119,7 @@ console.log(removedItem); // "d"
 console.log(arr); // ["a","b","c"]
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### shift
@@ -138,6 +149,7 @@ while( typeof (i = names.shift()) !== 'undefined' ) {
 console.log(names) // []
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### join
@@ -161,11 +173,12 @@ const urlSlug = blogTitle.toLowerCase().split(' ').join('-')
 console.log(urlSlug); // "common-array-methods-you-should-know"
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Basic sort
 
-If you use the spread operator to access the array, the original array is not mutated; otherwise it is. Same with `reverse()`. Note, don't use a callback function for sorting text. Check out [MDN sort description](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#description) for how to sort by the key of an object.
+If you use the spread operator to access the array, the original array is not mutated; otherwise it is. Same with `reverse()`. Note, don't use a callback function for sorting text. Also, check out [MDN sort description](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#description) for how to sort by the key of an object.
 
 ```js
 // Sorting an array of strings using spread operating to NOT mutate original:
@@ -180,6 +193,7 @@ const numSort = [...nums].sort();
 console.log(numSort) // [1,10001,101,12,27,3,44,5,55]
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### reverse
@@ -212,6 +226,7 @@ if (word === revWord) {
 }
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### splice
@@ -244,6 +259,7 @@ console.log(alpha) // ["a","b","c","e"]
 
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### slice
@@ -275,6 +291,7 @@ console.log(newCar)
 // // [{ color: 'red', wheels: 4, engine: { cylinders: 4, size: 2.2 } }, 2, "cherry condition"]
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### indexOf
@@ -322,6 +339,7 @@ updateVegetablesCollection(veggies, 'spinach');
 
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### lastIndexOf
@@ -348,6 +366,7 @@ while (idx !== -1) {
 console.log(indices); // [4, 2, 0]
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### concat
@@ -390,6 +409,7 @@ num1[0].push(4);
 console.log(numbers); // [[1, 4], 2, [3]]
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## High order array methods
@@ -449,6 +469,7 @@ items.sort(function (a, b) {
 // items is ['adieu', 'café', 'communiqué', 'éclair', 'premier', 'réservé']
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Includes
@@ -471,6 +492,7 @@ console.log(str.includes('Script', 5)); // false
 console.log(str.includes('Script', 4)); // true
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Find
@@ -547,6 +569,7 @@ console.log([4, 6, 8, 12].find(isPrime)); // undefined
 console.log([4, 5, 8, 12].find(isPrime)); // 5
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Every
@@ -606,6 +629,7 @@ console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 7, 6])); // true
 console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 8, 7])); // false
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Some
@@ -702,6 +726,7 @@ function checkAvailability(arr, val) {
 
 **NOTE**: I've seen examples where `some()` is used to check for the existence of a value in an array - why not just use `includes()`? You can not use `hasOwnProperty` for the `hasLastName` object example because the variable is an array, not an object.
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Map
@@ -817,6 +842,7 @@ const itemNames = items.map(item => {
 console.log(itemNames) // [100,200,10,5,500,1000,25]
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Filter
@@ -935,6 +961,7 @@ function urlSlug(title) {
 console.log(urlSlug(webTitle));
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### forEach
@@ -1013,6 +1040,7 @@ let noteAsRoot = chromaticSharps.slice(position, position + 12);
 uniqueNotes.forEach(note => noteSteps.push(noteAsRoot.indexOf(note)));
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Reduce
@@ -1177,6 +1205,7 @@ const combined = ages
 console.log(combined); // 798
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## String methods
@@ -1235,6 +1264,7 @@ const splits = myString.split(' ', 3)
 console.log(splits) // ["Hello","World.","How"]
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### repeat
@@ -1252,6 +1282,7 @@ console.log(`Chorus lyrics for "Happy": ${chorus.repeat(5)}`);
 'abc'.repeat(-1)    // RangeError
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### substring
@@ -1296,6 +1327,7 @@ function replaceString(oldS, newS, fullS) {
 }
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### endsWith
@@ -1320,6 +1352,7 @@ console.log(str.endsWith('to be'))      // false
 console.log(str.endsWith('to be', 19))  // true
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### test
@@ -1335,6 +1368,7 @@ const result = /^hello/.test(str);
 console.log(result); // true
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### match
@@ -1354,6 +1388,7 @@ const found = paragraph.match(capturingRegex);
 console.log(found.groups); // {animal: "fox"}
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### replace
@@ -1391,6 +1426,7 @@ let newstr = str.replace(re, '$2, $1');
 console.log(newstr);  // Smith, John
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Miscellaneous
