@@ -196,20 +196,34 @@ Other concepts from [MDN Functions doc](https://developer.mozilla.org/en-US/docs
 })();
 ```
 
+<br />
+
+Execute an async function:
+```js
+const getFileStream = async (url) => { /* implementation */ };
+
+(async () => {
+  const stream = await getFileStream('https://domain.name/path/file.ext');
+  for await (const chunk of stream) {
+    console.log({ chunk });
+  }
+})();
+```
+
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Async await
 
 Syntax:
 ```js
-async function name([param[, param[, ...param]]]) {
+async function name(parameters) {
    statements
 }
 ```
 
 <br />
 
-Example:
+Example 1:
 ```js
 function resolveAfter2Seconds() {
   return new Promise(resolve => {
@@ -373,15 +387,21 @@ param => {
    return a + param1 + paramN;
 }
 
-// Rest parrameters are supported:
+// To return an object literal expression requires parentheses around expression
+params => ({foo: "a"}) // returning the object {foo: "a"}
+// Rest parameters are supported:
 (a, b, ...r) => expression
 // Default parameters are supported:
 (a=400, b=20, c) => expression
 // Destructuring within params supported:
 ([a, b] = [10, 20]) => a + b;  // result is 30
 ({ a, b } = { a: 10, b: 20 }) => a + b; // result is 30
+```
 
-// Arrow functions used as methods
+<br />
+
+Arrow functions used as methods:
+```js
 'use strict';
 
 var obj = { // does not create a new scope
@@ -394,17 +414,70 @@ var obj = { // does not create a new scope
 
 obj.b(); // prints undefined, Window {...} (or the global object)
 obj.c(); // prints 10, Object {...}
+```
 
-// call, apply and bind:
+<br />
 
-// No binding of arguments:
+Another example involving `Object.defineProperty()`:
+```js
 
-// Use of the new operator
+'use strict';
 
-// Use of prototype property:
+var obj = {
+  a: 10
+};
 
-// Returning object literals:
+Object.defineProperty(obj, 'b', {
+  get: () => {
+    console.log(this.a, typeof this.a, this); // undefined 'undefined' Window {...} (or the global object)
+    return this.a + 10; // represents global object 'Window', therefore 'this.a' returns 'undefined'
+  }
+});
+```
 
+<br /> 
+
+More examples:
+```js
+// Traditional Anonymous Function
+function (a, b){
+  return a + b + 100;
+}
+
+// Arrow Function
+(a, b) => a + b + 100;
+
+// Traditional Anonymous Function (no arguments)
+let a = 4;
+let b = 2;
+function (){
+  return a + b + 100;
+}
+
+// Arrow Function (no arguments)
+let a = 4;
+let b = 2;
+() => a + b + 100;
+
+// Traditional Anonymous Function
+function (a, b){
+  let chuck = 42;
+  return a + b + chuck;
+}
+
+// Arrow Function
+(a, b) => {
+  let chuck = 42;
+  return a + b + chuck;
+}
+
+// Traditional Function
+function bob (a){
+  return a + 100;
+}
+
+// Arrow Function
+let bob = a => a + 100;
 ```
 
 <br />
@@ -458,6 +531,52 @@ setTimeout( () => {
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Methods
+
+Syntax:
+```js
+const obj = {
+  get property() {},
+  set property(value) {},
+  property( parameters… ) {},
+  *generator( parameters… ) {},
+  async property( parameters… ) {},
+  async* generator( parameters… ) {},
+
+  //  with computed keys
+  get [property]() {},
+  set [property](value) {},
+  [property]( parameters… ) {},
+  *[generator]( parameters… ) {},
+  async [property]( parameters… ) {},
+  async* [generator]( parameters… ) {},
+};
+
+// Given the following code:
+const obj = {
+  foo: function() {
+    // ...
+  },
+  bar: function() {
+    // ...
+  }
+}
+// You are now able to shorten this to:
+const obj = {
+  foo() {
+    // ...
+  },
+  bar() {
+    // ...
+  }
+}
+```
+
+Also look into:
+- Generator methods
+- Async methods
+- Async generator methods
+
+<br />
 
 ```js
 const toDo = {
@@ -547,6 +666,19 @@ import add from "./math_functions.js";
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Callback functions
+
+Example:
+```js
+function greeting(name) {
+  alert('Hello ' + name);
+}
+
+function processUserInput(callback) {
+  var name = prompt('Please enter your name.');
+  callback(name);
+}
+processUserInput(greeting);
+```
 
 `addEventListener`:
 
