@@ -83,8 +83,32 @@ console.log(Object.values(chordIntervals)) // ["maj", ["1","3","5"], [0,4,7]]
 obj.hasOwnProperty(prop)	
 // prop: The String name or Symbol of the property to test
 
-// Examples:
+// Example, RECORD COLLECTION 1:
+function updateRecords(records, id, prop, value) {
+  if (prop !== 'tracks' && value !== "") {
+    records[id][prop] = value;
+  } else if (prop === "tracks" && records[id].hasOwnProperty("tracks") === false) {
+    records[id][prop] = [value];
+  } else if (prop === "tracks" && value !== "") {
+    records[id][prop].push(value);
+  } else if (value === "") {
+    delete records[id][prop];
+  }
+  return records;
+}
 
+// Example, RECORD COLLECTION 2:
+function updateRecords(records, id, prop, value) {
+  if (value === '') {
+    delete records[id][prop];
+  } else if (prop === 'tracks') {
+    records[id][prop] = records[id][prop] || []; // this is called shortcircuit evaluation, see below for explanation
+    records[id][prop].push(value);
+  } else {
+    records[id][prop] = value;
+  }
+  return records;
+}
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -200,6 +224,15 @@ console.log(joe);
 ### ES6 Class version
 
 **NOTE**: Click on the lass name to show yellow lightbulb, click the lightuld, convert to ES6 class syntax:
+
+```JS
+// syntax
+const Name = function(arg) {
+
+class Name {
+  constructor(arg) {
+}
+```
 
 ```js
 // Amusement park fast pass example:

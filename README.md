@@ -4,14 +4,14 @@
 
 This is not an all-inclusive list of every possible JavaScript method, property, etc. This file has tables of comparisons for quick reference. Notes on elements in the tables are at the bottom of the file.
 
-The file [notes.md](https://github.com/Kernix13/javascript-cheat-sheet/blob/master/notes.md) has a large amount of notes for me for everything and anything about JavaScript that helps me. 
-
-The file [practical-examples.md](https://github.com/Kernix13/javascript-cheat-sheet/blob/master/practical-examples.md) has code blocks for everything in this file all with practical applications (coming soon). It does not have arrays or objects of animals or fruit, but as many real-life examples as I have used myself or can image, such as:
-
-1. Business client/cuustomer contact information and other pertinent data stored as objects
-1. Inventory and supply chain records in objects and arrays
-1. Examples for email subscriptions or user profile areas with personl greetings, messages, etc.
-1. Examples for personal hobbies and interests such as music CD/song collections, supplies needed for painting, steps for performing complex tasks, music theory tables, etc.
+- `function-examples.md`: still raw
+- `loop-examples.md`: still raw
+- `notes.md`: various important notes on anything and anything
+- `number-date-examples.md`: 
+- `object-examples.md`: 
+- `practical-examples.md`: not much here yet
+- `regex-examples.md`: this is pretty good but not finished
+- `string-array-examples.md`: The BEST file!
 
 <div id="back-to-top"></div>
 

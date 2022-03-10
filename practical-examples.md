@@ -1,5 +1,10 @@
 # Real life examples
 
+1. Business client/cuustomer contact information and other pertinent data stored as objects
+1. Inventory and supply chain records in objects and arrays
+1. Examples for email subscriptions or user profile areas with personl greetings, messages, etc.
+1. Examples for personal hobbies and interests such as music CD/song collections, supplies needed for painting, steps for performing complex tasks, music theory tables, etc.
+
 Think of 1) actual (small) business applications, 2) common hobbies people have, 2a) ARTISTIC: an artistic application (guitar chord namer app, writer grammar checker, etc), 2b) AMATUER SCIENTIFIC: an astronomy app, botany app, archeology app, geology app
 
 1. `push()` with `shift()`
@@ -50,57 +55,7 @@ Other ideas:
 
 ## Practical 2
 
-- indexOf(str): why do you want to find where a substr or arr item starts?
-```js
-let str = 'finding substring in string';
-let index = str.indexOf('str');
-
-console.log(index); // 11
-```
-
-- indexOf(str): find count (TIPS AND TRICKS)
-```js
-let str = 'You do not know what you do not know until you know.';
-let substr = 'know';
-let count = 0;
-let index = str.indexOf(substr);
-while(index !== -1) {
-    count++;
-    index = str.indexOf(substr, index + 1);
-}
-console.log(count); // 3
-```
-
-RECORD COLLECTION 1:
-```js
-function updateRecords(records, id, prop, value) {
-  if (prop !== 'tracks' && value !== "") {
-    records[id][prop] = value;
-  } else if (prop === "tracks" && records[id].hasOwnProperty("tracks") === false) {
-    records[id][prop] = [value];
-  } else if (prop === "tracks" && value !== "") {
-    records[id][prop].push(value);
-  } else if (value === "") {
-    delete records[id][prop];
-  }
-  return records;
-}
-```
-
-RECORD COLLECTION 2:
-```js
-function updateRecords(records, id, prop, value) {
-  if (value === '') {
-    delete records[id][prop];
-  } else if (prop === 'tracks') {
-    records[id][prop] = records[id][prop] || []; // this is called shortcircuit evaluation, see below for explanation
-    records[id][prop].push(value);
-  } else {
-    records[id][prop] = value;
-  }
-  return records;
-}
-```
+Consider having an ES6 of other exampes file for promises, async/await, fetch, local storage, etc.
 
 FCC 28. create a javascript promise, 29. complete a promise with resolve & reject, 30. handle a fulfilled promise with then, 31. handle a rejected promise w\ catch:
 
@@ -152,11 +107,3 @@ testPromise();
 testPromise();
 ```
 
-Class syntax:
-```js
-const Name = function(arg) {
-// becomes
-class Name {
-  constructor(arg) {
-}
-```
