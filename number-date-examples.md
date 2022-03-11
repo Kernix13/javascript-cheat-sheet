@@ -15,6 +15,9 @@ Simple number, Math, and Date examples.
 	 1. [Date set methods](#date-set-methods)
 1. [Miscellaneous](#miscellaneous)
 1. [Syntax tables](#syntax-tables)
+   1. [Numbers](#numbers)
+   1. [Get dates](#get-dates)
+   1. [Set dates](#set-dates)
 
 ## Number methods
 
@@ -32,14 +35,15 @@ toExponential(): Don't see the practical application of this one
 // syntax
 toExponential()
 toExponential(fractionDigits)
+// fractionDigits: Optional. An integer specifying the number of digits after the decimal point
 
 // MDN examples
 function expo(x, f) {
   return Number.parseFloat(x).toExponential(f);
 }
-console.log(expo(123456, 2));
-console.log(expo('123456'));
-console.log(expo('word'));
+console.log(expo(123456, 2)); // "1.23e+5"
+console.log(expo('123456')); // "1.23456e+5"
+console.log(expo('word')); // NaN
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -49,6 +53,7 @@ toFixed(n)
 // syntax
 toFixed()
 toFixed(digits)
+// digits: The number of digits (0-20) to appear after the decimal point
 
 // example
 function financial(x) {
@@ -79,6 +84,7 @@ toPrecision(n)
 // syntax
 toPrecision()
 toPrecision(precision)
+// precision: An integer specifying the number of significant digits
 
 // examples
 function precise(x) {
@@ -941,76 +947,126 @@ typeOfTest = new Date(); // object
 
 ## Syntax tables
 
-See if I can group these in tables like strings and arrays
+### Numbers
 
+No parameter
+| method        | syntax            | Notes           | 
+| :----         | :----             | :----           |
+| toExponential | num.toExponential() | Skip this one   |  
+| toFixed       | num.toFixed()     | Definitely use  |
+| toPrecision   | num.toPrecision() | Maybe           |
+| Math.random   | Math.random()     | Definitely use  |
+| Math.max      | Math.max()        | Returns `infinity`? |
+| Math.min      | Math.min()        | Returns `infinity`? |
+
+<br />
+
+One parameter
+| method  | syntax                  | Notes         | 
+| :----   | :----                   | :----         |
+| toExponential | toExponential(decimals) | Skip |
+| toFixed       | num.toFixed(digits) | Definitely use  |
+| toPrecision   | num.toPrecision(digits) | Maybe  |
+| isFinite      | isFinite(val)     | Test? |
+| isInteger     | Number.isInteger(val) | Test? | 
+| parseFloat    | Number.parseFloat(str) | No clue |
+| Math.abs      | Math.abs(x)     | Definitely use  |
+| Math.ceil     | Math.ceil(x)    | Definitely use  |
+| Math.floor    | Math.floor(x)   | Definitely use  |
+| Math.round    | Math.round(x)   | Definitely use  |
+| Math.sign     | Math.sign(x)    | Definitely use  |
+| Math.sqrt     | Math.sqrt(x)    | Definitely use  |
+| Math.trunc    | Math.trunc(x)   | Definitely use  |
+| Math.max      | Math.max(value0) | Why use 1 #? | 
+| Math.min      | Math.min(value0) | Why use 1 #? | 
+
+<br />
+
+2 or more parameters:
+| method  | syntax                  | Notes         | 
+| :----   | :----                   | :----         |
+| Math.max | Math.max(val1, val2)    | Definitely use |
+|         | Math.max(val1, val2, ...valN) | Definitely use |
+| Math.min | Math.min(val1, val2)   | 
+|         | Math.min(val1, val2, ...valN) | Definitely use |
+
+
+### Get dates
+
+
+No parameter (`d` is the var name for the date/time):
+
+| syntax              | Notes           | 
+| :----               | :----           |
+| let d = new Date()  | Current date and time   | 
+| d.getFullYear()     | year as yyyy            |
+| d.getMonth()        | the month (0-11)        | 
+| d.getDate()         | day of the month (1-31) |
+| d.getDay()          | day of the week (0-6)   |
+| d.getHours()        | the hour (0-23)         |
+| d.getMinutes()      | the minutes (0-59)      |
+| d.getSeconds()      | the seconds (0-59)      |
+| d.getMilliseconds() | millisecs (0-999, WHY?) |
+| d.getTime()         | ms since Jan 1st, 1970 (Why?) |
+
+### Set dates
+
+Single parameter (`d` is the var name for the date/time):
+| syntax              | Notes                         | 
+| :----               | :----                         |
+| setDate(dayVal)     | need corresponding get method? |
+| setFullYear(yearVal) | need corresponding get method? |
+| setHours(hoursVal)  | not sure                      |
+| setMilliseconds(msVal) | need corresponding get method? |
+| setMinutes(minsVal) | need corresponding get method? |
+| setMonth(moVal)     | need corresponding get method? |
+| setSeconds(secsVal) | need corresponding get method? |
+| setTime(timeVal)    | need corresponding get method? |
+| setUTCDate(dayVal)  | need corresponding get method? |
+| new Date(value)     | Codepen messsed up? |
+| new Date(dateString) | Codepen messsed up? |
+| new Date(dateObject) | Codepen messsed up? |
+
+<br />
+
+Two parameters:
+| syntax                      | Notes           | 
+| :----                       | :----           |
+| setFullYear(yearVal, moVal) | need corresponding get method? |
+| setHours(hrsVal, minsVal)   | not sure |
+| setMinutes(minsVal, secsVal) | need corresponding get method? |
+| setMonth(moVal, dayVal)     | need corresponding get method? |
+| setSeconds(secsVal, msValue) | need corresponding get method? |
+| new Date(yr, moIndex)       | Codepen messsed up? |
+
+<br />
+
+Three parameters:
+| syntax                              | Notes           | 
+| :----                               | :----           |
+| setFullYear(yearVal, moVal, dateVal) | need corresponding get method? |
+| setHours(hrsVal, minsVal, secsVal)  | not sure |
+| setMinutes(minsVal, secsVal, msVal) | need corresponding get method? |
+| new Date(yr, moIndex, day)          | Codepen messsed up? |
+
+<br />
+
+Four or more parameters:
+| syntax                                    | Notes           | 
+| setHours(hrsVal, minsVal, secsVal, msVal) | not sure 
+| new Date(yr, moIndex, day, hrs)           | Codepen messsed up? |
+| new Date(yr, moIndex, day, hrs, mins)     | Codepen messsed up? |
+| new Date(yr, moIndex, day, hrs, mins, secs) | Codepen messsed up? |
+| new Date(yr, moIndex, day, hrs, mins, secs, ms) | Codepen messsed up? |
+
+<br />
+
+Date object examples: 
 ```js
-toExponential()
-toExponential(fractionDigits)
-
-toFixed()
-toFixed(digits)
-
-toPrecision()
-toPrecision(precision)
-
-isFinite(testValue)
-Number.isInteger(value)
-Number.parseFloat(string)
-
-Math.abs(x)
-Math.ceil(x)
-Math.floor(x)
-Math.random()
-Math.round(x)
-Math.sign(x)
-Math.sqrt(x)
-Math.trunc(x)
-
-Math.max()
-Math.max(value0)
-Math.max(value0, value1)
-Math.max(value0, value1, /* ... ,*/ valueN)
-
-Math.min()
-Math.min(value0)
-Math.min(value0, value1)
-Math.min(value0, value1, ... , valueN)
-
-getDate()
-getDay()
-getFullYear()
-getHours()
-getMilliseconds()
-getMinutes()
-getMonth()
-getSeconds()
-getTime()
-
-setDate(dayValue)
-
-setFullYear(yearValue)
-setFullYear(yearValue, monthValue)
-setFullYear(yearValue, monthValue, dateValue)
-
-setHours(hoursValue)
-setHours(hoursValue, minutesValue)
-setHours(hoursValue, minutesValue, secondsValue)
-setHours(hoursValue, minutesValue, secondsValue, msValue)
-
-setMilliseconds(millisecondsValue)
-
-setMinutes(minutesValue)
-setMinutes(minutesValue, secondsValue)
-setMinutes(minutesValue, secondsValue, msValue)
-
-setMonth(monthValue)
-setMonth(monthValue, dayValue)
-
-setSeconds(secondsValue)
-setSeconds(secondsValue, msValue)
-
-setTime(timeValue)
-setUTCDate(dayValue)
+let today = new Date() // "202203-11T22:13:35.413Z" Codepen?
+let sameDay = new Date(today)
+let birthday = new Date(1995, 11, 17) // "1995-12-17T5:00:00.000Z"
+let birthday = new Date(1995, 11, 17, 13, 24, 0) // "1995-12-17T5:00:00.000Z"
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>

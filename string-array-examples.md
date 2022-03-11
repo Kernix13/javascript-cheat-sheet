@@ -337,11 +337,6 @@ while(index !== -1) {
 console.log(count); // 3
 ```
 
-
-```js
-
-```
-
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
