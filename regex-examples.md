@@ -67,7 +67,16 @@ Flags: `i` for case insensitive, and `g` for global matches or to maych all occu
 
 Period is the wildcard `.`. Quantifiers are: `+`, `?`, `*`, `*?`, `++`, `{#}`, `{#,}`, and `{#,#}` 
 
-> WHY DO CHARCTER CLASSES (`[]`) NOT WORK WITH `+`?
+> WHY DO CHARACTER CLASSES (`[]`) NOT WORK WITH `+`?
+
+- `*` = zero or more
+- `+` = one or more
+- `?` = zero or one
+- `{n}` = "n" times
+- `{n,}` = "n" or more times
+- `{n,m}` = at least "n" and at most "m" times
+- greedy matches = `*` and `+`
+- lazy matches = `*?`, `+?`, `??`, `{n}?`, `{n,}?`, and `{n,m}?`
 
 Match Anything with Wildcard Period `.`: matches when a character occurs one or more times. Match characters that occur one or more times:
 ```js
@@ -93,7 +102,7 @@ let result = difficultSpelling.match(myRegex);
 
 <br />
 
-Check for All or None with `?`
+Check for zero or one with `?`
 ```js
 // ? Matches a character or nothing.: ba b a
 /ba?/g
@@ -146,7 +155,7 @@ let result = chewieQuote.match(chewieRegex);
 
 <br />
 
-Lazy matching: use the *? character
+Lazy matching: use the `*?` character
 ```js
 /t[a-z]*?i/
 
