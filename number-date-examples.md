@@ -1056,7 +1056,8 @@ Three parameters:
 
 Four or more parameters:
 | syntax                                    | Notes           | 
-| d.setHours(hrsVal, minsVal, secsVal, msVal) | not sure 
+| :----                               | :----           |
+| d.setHours(hrsVal, minsVal, secsVal, msVal) | not sure  |
 | new Date(yr, moIndex, day, hrs)           | Codepen messsed up? |
 | new Date(yr, moIndex, day, hrs, mins)     | Codepen messsed up? |
 | new Date(yr, moIndex, day, hrs, mins, secs) | Codepen messsed up? |
