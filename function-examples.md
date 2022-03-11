@@ -716,6 +716,11 @@ The most important thing you will see is the `target` which represents the eleme
 
 ## Recursion
 
+- 1) What is the least amount of work that I can do? What are the sub-problems? How do you tke a large problem and break it into sub problems?
+- 2) What is my stopping condition? When would the process complete? What is the stopping condition?
+- **PROS**: bridges the gap between elegance and complexity. 
+- **CONS**: 
+
 Syntax:
 ```js
 function recurse() {
@@ -726,6 +731,18 @@ function recurse() {
     }
 }
 
+// syntax 2:
+function recursion() {
+  return recursion();
+}
+
+// syntax 3:
+function recursion(parm) {
+  if (parm cond) {   // base case, when hit stop recursion
+    return;
+  }
+  return recursion(parm + 1); // here is the recursion
+}
 ```
 
 <br />
@@ -767,6 +784,15 @@ function countDownFrom(number) {
     countDownFrom(number - 1);
 }
 countDownFrom(5); // 5 4 3 2 1
+
+// Essay to revise until accepted:
+function revise(essay) {
+  read(essay);
+  get_feedback_on(essay);
+  apply_changes_to(essay);
+  revise(essay) unless essay.complete;
+}
+// you do a little bit of work on eah invocation of your method call until you hit the stopping condition
 ```
 
 ### MDN examples
