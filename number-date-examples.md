@@ -990,6 +990,7 @@ One parameter
 | Math.min | Math.min(val1, val2)   | 
 |         | Math.min(val1, val2, ...valN) | Definitely use |
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Get dates
 
@@ -1008,6 +1009,8 @@ No parameter (`d` is the var name for the date/time):
 | d.getSeconds()      | the seconds (0-59)      |
 | d.getMilliseconds() | millisecs (0-999, WHY?) |
 | d.getTime()         | ms since Jan 1st, 1970 (Why?) |
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Set dates
 
