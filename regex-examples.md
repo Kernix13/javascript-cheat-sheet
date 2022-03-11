@@ -65,7 +65,7 @@ Flags: `i` for case insensitive, and `g` for global matches or to maych all occu
 
 ## Wildcard and quantifiers
 
-Period is the wildcard `.`. Quantifiers are: `+`, `?`, `*`, `*?`, `**`, `{#}`, `{#,}`, and `{#,#}` 
+Period is the wildcard `.`. Quantifiers are: `+`, `?`, `*`, `*?`, `++`, `{#}`, `{#,}`, and `{#,#}` 
 
 > WHY DO CHARCTER CLASSES (`[]`) NOT WORK WITH `+`?
 
@@ -159,7 +159,9 @@ let result = text.match(myRegex);
 <br />
 
 ```js
-// possessive quantifer with `**`
+// possessive quantifer with ++ (WHY?)
+/\d++./
+123
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -346,12 +348,12 @@ Character classes/sets with hyphens (`-`) for ranges
 
 Any digit and any non-digit with `\d` and `\D`:
 ```js
-\d // match all numbers
+/\d/g // match all numbers
 let movieName = "2001: A Space Odyssey";
 let numRegex = /\d/g;
 let result = movieName.match(numRegex).length;
 
-\D // match anything but a number
+/\D/ig // match anything but a number
 let movieName = "2001: A Space Odyssey";
 let noNumRegex = /\D/g;
 let result = movieName.match(noNumRegex).length;
@@ -360,7 +362,7 @@ let result = movieName.match(noNumRegex).length;
 
 Match word characters or non-word characters ith `\w` and `\W`:
 ```js
-\w // shorthand for [A-Za-z0-9_]
+/\w/ig // shorthand for [A-Za-z0-9_]
 
 let longHand = /[A-Za-z0-9_]+/;
 let shortHand = /\w+/;
@@ -375,7 +377,7 @@ let quoteSample = "The five boxing wizards jump quickly.";
 let alphabetRegexV2 = /\w/g; 
 let result = quoteSample.match(alphabetRegexV2).length;
 
-\W // shorthand for [^A-Za-z0-9_]
+/\W/g // shorthand for [^A-Za-z0-9_]
 let shortHand = /\W/;
 let numbers = "42%";
 let sentence = "Coding!";
@@ -472,7 +474,16 @@ let result = str.replace(fixRegex, replaceText);
 ### Named groups
 
 ```js
-// 
+// syntax
+/(?<name>...)/
+
+// alternate notation
+(?'name'...) // or 
+(?P<name>...)
+
+// example
+/(?<name>Sally)/
+Call me Sally.
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -484,6 +495,16 @@ A positive lookahead is used as `(?=...)` where the ... is the required part tha
 A negative lookahead is used as `(?!...)` where the ... is the pattern that you do not want to be there.
 
 ```js
+// positive lookahead syntax:
+(?=...)
+/foo(?=bar)/
+let string = "foobar foobaz" // matches both
+
+// negative lookahead syntax:
+(?!...)
+/foo(?!bar)/
+let string = "foobar foobaz" // matches 2nd 'foo'
+
 let quit = "qu";
 let noquit = "qt";
 let quRegex= /q(?=u)/;
@@ -507,7 +528,18 @@ let result = pwRegex.test(sampleWord);
 ### Lookbehinds
 
 ```js
-// 
+// syntax
+(?(?<=...)yes|no)
+
+// positive lookbehind syntax:
+(?<=...)
+/(?<=foo)bar/ 
+let string = "foobar fuubar"; // matches 'bar'
+
+// NEGATIVE lookbehind syntax:
+(?<!...)
+/(?<!not )foo/
+let string = "not foo but foo" // matches 2nd 'foo'
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
