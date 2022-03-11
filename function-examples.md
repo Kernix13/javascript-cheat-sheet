@@ -9,6 +9,7 @@ Here are docs from MDN:
 - [MDN methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions)
 - [MDN callback functions](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
 - [MDN Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [MDN recursion](https://developer.mozilla.org/en-US/docs/Glossary/Recursion)
 
 <div id="back-to-top"></div>
 
@@ -21,6 +22,8 @@ Here are docs from MDN:
 1. [Methods](#methods)
 1. [ES6 export import](#es6-export-import)
 1. [Callback functions](#callback-functions)
+1. [Recursion](#recursion)
+   1. [MDN examples](#mdn-examples)
 1. [Local storage](#local-storage)
 1. [Event delegation](#event-delegation)
 1. [Miscellaneous](#miscellaneous)
@@ -711,6 +714,104 @@ The most important thing you will see is the `target` which represents the eleme
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+## Recursion
+
+Syntax:
+```js
+function recurse() {
+    if(condition) {
+        // stop calling itself
+    } else {
+        recurse();
+    }
+}
+
+```
+
+<br />
+
+Example:
+```js
+function countDown(fromNumber) {
+    console.log(fromNumber);       // 3 2 1
+    let nextNumber = fromNumber - 1;
+    if (nextNumber > 0) {
+        countDown(nextNumber);
+    }
+}
+countDown(3);
+// If you add the condition to stop calling itself, you will get this error:
+Uncaught RangeError: Maximum call stack size exceeded.
+```
+
+<br />
+
+freeCodeCamp examples:
+```js
+// factorial example
+function factorial(num){
+    if(num === 1){
+        return num;
+    }
+    return num * factorial(num - 1) 
+}
+console.log(factorial(4)); // 24 = 4 * 3 * 2 * 1
+console.log(factorial(5)); // 120
+
+// count down example
+function countDownFrom(number) {
+	if (number === 0) {
+		return;
+	}
+    console.log(number);    
+    countDownFrom(number - 1);
+}
+countDownFrom(5); // 5 4 3 2 1
+```
+
+### MDN examples
+
+Recursion is limited by stack size:
+```js
+// The following code defines a function that returns the maximum size of the call stack available in the JavaScript runtime in which the code is run.
+const getMaxCallStackSize = (i) => {
+  try {
+    return getMaxCallStackSize(++i);
+  } catch {
+    return i;
+  }
+};
+
+console.log(getMaxCallStackSize(0));
+```
+
+<br />
+
+Common usage examples:
+```js
+// factorial
+const factorial = (n) => {
+  if (n === 0) return 1;
+  else return n * factorial(n - 1);
+};
+console.log(factorial(10)); // 3628800
+
+// fibonacci
+const fibonacci = (n) => (n <= 2 ? 1 : fibonacci(n - 1) + fibonacci(n - 2));
+console.log(fibonacci(10)); // 55
+console.log(fibonacci(6)); // 8
+
+// not sure
+const reduce = (fn, acc, [cur, ...rest]) => (
+  cur === undefined ? acc : reduce(fn, fn(acc, cur), rest)
+);
+console.log(reduce((a, b) => a + b, 0, [1, 2, 3, 4, 5, 6, 7, 8, 9])); // 45
+```
+
+Look into the _call stack_ mentioned in [A Quick Intro to Recursion in Javascript](https://www.freecodecamp.org/news/quick-intro-to-recursion/) by freeCodeCamp.
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## Local storage
 
 This would be the code inside of a function:
@@ -795,7 +896,10 @@ But the structure is ul > li > a > i and to delete the entire list item, which i
 
 ## Miscellaneous
 
-Promises, ...
+- arguments vs parameters
+- scope
+- `return`: 
+- `undefined`: 
 
 ### ES6 Promises
 
@@ -838,7 +942,12 @@ makeServerRequest.then(result => {
 makeServerRequest.catch((error) => {
   console.log(error);
 });
-```
+``
+
+- Promise, new, resolve, reject
+- pending, fulfilled, rejected
+- then, result, catch, try, error 
+- refactor
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 

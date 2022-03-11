@@ -12,6 +12,7 @@ Notes for not so common loop code snippets.
 1. [for in and for of loops](#for-in-and-for-of-loops)
 1. [Array methods](#array-methods)
 1. [Continue and break](#continue-and-break)
+1. [Miscellaneous](miscellaneous)
 
 
 ## While loop
@@ -57,6 +58,8 @@ Syntax:
 ```js
 for ([initialExpression]; [conditionExpression]; [incrementExpression])
   statement
+// or 
+for  (initialization; condition; final-expression)
 
 // example
 let arr = [1, 2, 3, 4, 5, 6, 7];
@@ -254,5 +257,12 @@ checkiandj:
       console.log('j = ' + j);
   }
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Miscellaneous
+
+- accumulators
+- recursion
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>

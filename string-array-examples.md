@@ -1480,6 +1480,8 @@ find the Nth-to-last character:
 let thirdToLastLetter = firstName[firstName.length - 3];
 ```
 
+- arr[3][0][1]: access sub arrays
+
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Spread and Rest syntax

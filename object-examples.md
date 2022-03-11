@@ -629,4 +629,13 @@ typeOfTest = {};  // object
 typeOfTest = null; // object
 ```
 
+- delete
+- this
+- prototype
+- new
+- instanceof
+- constructor
+- super
+- ChildObject.prototype: ChildObject.prototype.methodName = function() {...};
+
 WTF with [] working but not dot notation???? Something with if statements?

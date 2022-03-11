@@ -922,6 +922,11 @@ typeOfTest = 2.37 / 1.4562; // number
 typeOfTest = new Date(); // object
 ```
 
+- `NaN`: 
+- remainder operator `%`: 
+- compound operators: `+=`, `-=`, `*=`, `/=`
+- Radix
+
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Syntax tables
