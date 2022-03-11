@@ -7,18 +7,20 @@ Basic syntax followed by more advanced examples
 ## Table of contents
 
 1. [Basics](#basics)
-1. Wildcard and quantifiers
-1. Anchors 
-   1. Escaping symbols
-1. Character classes
-   1. Shorthand
-1. Capture groups
-   1. Named groups
-   1. Lookaheads
-   1. Lookbehinds
-1. Practical examples
-	 1. Match and replace
-	 1. User name validation
+1. [Wildcard and quantifiers](#wildcard-and-quantifiers)
+   1. [Matches with asterisk](#matches-with-asterisk)
+   1. [Specific match count](#specific-match-count)
+1. [Anchors](#anchors)
+1. [Escaping symbols](#escaping-symbols)
+1. [Character classes](#character-classes)
+   1. [Shorthand](#shorthand)
+1. [Capture groups](#capture-groups)
+   1. [Named groups](#named-groups)
+   1. [Lookaheads](#lookaheads)
+   1. [Lookbehinds](#lookbehinds)
+1. [Practical examples](#practical-examples)
+	 1. [Match and replace](#match-and-replace)
+	 1. [User name validation](#user-name-validation)
 
 
 ## Basics
@@ -107,9 +109,11 @@ let favRegex = /favou?rite/;
 let result = favRegex.test(favWord);
 ```
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-Match Characters that Occur Zero or More Times: 
+### Matches with asterisk
+
+Match Characters that Occur Zero or More Times with `*`: 
 ```js
 
 // * Matches zero or more consecutive characters: a ba baa aaa ba b
@@ -141,6 +145,26 @@ let result = chewieQuote.match(chewieRegex);
 ```
 
 <br />
+
+Lazy matching: use the *? character
+```js
+/t[a-z]*?i/
+
+// lazy quantifier with `*?`
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<.*?>/; // it's the answer!
+let result = text.match(myRegex);
+```
+
+<br />
+
+```js
+// possessive quantifer with `**`
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Specific match count
 
 Match a spcific number of times with `{#}`:
 ```js
@@ -194,27 +218,9 @@ myRegex.test(fourAs); // true
 myRegex.test(sevenAs); // true
 ```
 
-<br />
-
-Lazy matching: use the *? character
-```js
-/t[a-z]*?i/
-
-// lazy quantifier with `*?`
-let text = "<h1>Winter is coming</h1>";
-let myRegex = /<.*?>/; // it's the answer!
-let result = text.match(myRegex);
-```
-
-<br />
-
-```js
-// possessive quantifer with `**`
-```
-
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-### Anchors
+## Anchors
 
 Anchors: the caret symbol (`^` or `\A`) both inside and outside of character classes, and the dollar sign (`$` or `\Z`).
 
@@ -246,7 +252,7 @@ let result = calRegex.test(rickyAndCal);
 
 <br />
 
-use $ to match the end of a string - this one if messed up???
+use `$` to match the end of a string - this one if messed up???
 ```js
 /end.$/
 // match end of string with $ or \Z
@@ -264,12 +270,44 @@ let lastRegex = /caboose$/;
 let result = lastRegex.test(caboose);
 ```
 
-### Escaping symbols
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Escaping symbols
 
 Use the backslash `\` to escape special characters that are in your string
 ```js
-/\.\+\*\$\^\?\\/
+// escape thw wildcard as part of your regex
+/\./
+
+// escape one or more character +
+/\+/
+
+// escape zero or more character *
+/\*/
+
+// escape end of string character $
+/\$/
+
+// escape star of string or negation character ^
+/\^/
+
+// escape zero or one character ?
+/\?/
+
+// escape backslash
+/\\/
+
+// escape parentheses
+/\(\)/
+
+// escape square brackets or character classes
+/\[\]/
+
+// escape curly brackets
+/\{\}/
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Character classes
 
@@ -301,6 +339,8 @@ Character classes/sets with hyphens (`-`) for ranges
 /[a-e]/gi
 /[a-z0-9]/ig
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Shorthand
 
@@ -373,6 +413,8 @@ let wsRegex = /^\s+|\s+$/g;
 let result = hello.replace(wsRegex, "");
 ```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## Capture groups
 
 Sometimes we want to check for groups of characters using a Regular Expression and to achieve that we use parentheses `()`.
@@ -425,7 +467,15 @@ let replaceText = "$3 $2 $1"; //
 let result = str.replace(fixRegex, replaceText);
 ```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ### Named groups
+
+```js
+// 
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Lookaheads
 
@@ -451,6 +501,8 @@ let sampleWord = "astronaut";
 let pwRegex = /(?=\w{6})(?=\w*\d{2})/;
 let result = pwRegex.test(sampleWord);
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Lookbehinds
 
@@ -533,6 +585,8 @@ replaceEntity(`<?php the_post_thumbnail() ?>`)
 console.log(replaceEntity(`<?php the_post_thumbnail() ?>`))
 ```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ### User name validation
 
 Create a regular expression here that does the following:
@@ -566,3 +620,5 @@ let result = userCheck.test(username);
 // RegEx 2:
 let userCheck2 = /^[a-z]([0-9]{2,}|[a-z]+\d*)$/i;
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
