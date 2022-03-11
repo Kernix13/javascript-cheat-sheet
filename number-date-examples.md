@@ -1017,15 +1017,15 @@ No parameter (`d` is the var name for the date/time):
 Single parameter (`d` is the var name for the date/time):
 | syntax              | Notes                         | 
 | :----               | :----                         |
-| setDate(dayVal)     | need corresponding get method? |
-| setFullYear(yearVal) | need corresponding get method? |
-| setHours(hoursVal)  | not sure                      |
-| setMilliseconds(msVal) | need corresponding get method? |
-| setMinutes(minsVal) | need corresponding get method? |
-| setMonth(moVal)     | need corresponding get method? |
-| setSeconds(secsVal) | need corresponding get method? |
-| setTime(timeVal)    | need corresponding get method? |
-| setUTCDate(dayVal)  | need corresponding get method? |
+| d.setDate(dayVal)     | need corresponding get method? |
+| d.setFullYear(yearVal) | need corresponding get method? |
+| d.setHours(hoursVal)  | not sure                      |
+| d.setMilliseconds(msVal) | need corresponding get method? |
+| d.setMinutes(minsVal) | need corresponding get method? |
+| d.setMonth(moVal)     | need corresponding get method? |
+| d.setSeconds(secsVal) | need corresponding get method? |
+| d.setTime(timeVal)    | need corresponding get method? |
+| d.setUTCDate(dayVal)  | need corresponding get method? |
 | new Date(value)     | Codepen messsed up? |
 | new Date(dateString) | Codepen messsed up? |
 | new Date(dateObject) | Codepen messsed up? |
@@ -1035,11 +1035,11 @@ Single parameter (`d` is the var name for the date/time):
 Two parameters:
 | syntax                      | Notes           | 
 | :----                       | :----           |
-| setFullYear(yearVal, moVal) | need corresponding get method? |
-| setHours(hrsVal, minsVal)   | not sure |
-| setMinutes(minsVal, secsVal) | need corresponding get method? |
-| setMonth(moVal, dayVal)     | need corresponding get method? |
-| setSeconds(secsVal, msValue) | need corresponding get method? |
+| d.setFullYear(yearVal, moVal) | need corresponding get method? |
+| d.setHours(hrsVal, minsVal)   | not sure |
+| d.setMinutes(minsVal, secsVal) | need corresponding get method? |
+| d.setMonth(moVal, dayVal)     | need corresponding get method? |
+| d.setSeconds(secsVal, msValue) | need corresponding get method? |
 | new Date(yr, moIndex)       | Codepen messsed up? |
 
 <br />
@@ -1047,16 +1047,16 @@ Two parameters:
 Three parameters:
 | syntax                              | Notes           | 
 | :----                               | :----           |
-| setFullYear(yearVal, moVal, dateVal) | need corresponding get method? |
-| setHours(hrsVal, minsVal, secsVal)  | not sure |
-| setMinutes(minsVal, secsVal, msVal) | need corresponding get method? |
+| d.setFullYear(yearVal, moVal, dateVal) | need corresponding get method? |
+| d.setHours(hrsVal, minsVal, secsVal)  | not sure |
+| d.setMinutes(minsVal, secsVal, msVal) | need corresponding get method? |
 | new Date(yr, moIndex, day)          | Codepen messsed up? |
 
 <br />
 
 Four or more parameters:
 | syntax                                    | Notes           | 
-| setHours(hrsVal, minsVal, secsVal, msVal) | not sure 
+| d.setHours(hrsVal, minsVal, secsVal, msVal) | not sure 
 | new Date(yr, moIndex, day, hrs)           | Codepen messsed up? |
 | new Date(yr, moIndex, day, hrs, mins)     | Codepen messsed up? |
 | new Date(yr, moIndex, day, hrs, mins, secs) | Codepen messsed up? |
