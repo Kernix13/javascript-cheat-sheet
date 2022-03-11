@@ -23,6 +23,7 @@ Here are docs from MDN:
 1. [ES6 export import](#es6-export-import)
 1. [Callback functions](#callback-functions)
 1. [Recursion](#recursion)
+   1. [freeCodeCamp examples](#freecodecamp-examples)
    1. [MDN examples](#mdn-examples)
 1. [Local storage](#local-storage)
 1. [Event delegation](#event-delegation)
@@ -90,6 +91,8 @@ function someFx(...arr) {
 }
 someFx(mainArray);
 ```
+
+<br />
 
 returning boolean values from functions:
 ```js
@@ -172,7 +175,9 @@ result1 = outside(3)(5); // returns 8
 
 Other concepts from [MDN Functions doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions): Scope and the function stack, Recursion, Preservation of variables, Closures, Using the arguments object, Default parameters, Rest parameters, No separate this, Predefined functions
 
-**Predefined functions**: `eval()`, `uneval()`, `isFinite()`, `isNaN()`, `parseFloat()`, `parseInt()`, `decodeURI()`, `decodeURIComponent()`, `encodeURI()`, `encodeURIComponent()`, `escape()`, and `unescape()`.
+**Predefined functions**: 
+- DO NOT USE: `eval()`, `uneval()`, `escape()`, and `unescape()`.
+- OK TO USE: `isFinite()`, `isNaN()`, `parseFloat()`, `parseInt()` with `radix`, `decodeURI()`, `decodeURIComponent()`, `encodeURI()`, and `encodeURIComponent()`
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -761,9 +766,8 @@ countDown(3);
 Uncaught RangeError: Maximum call stack size exceeded.
 ```
 
-<br />
+### freeCodeCamp examples
 
-freeCodeCamp examples:
 ```js
 // factorial example
 function factorial(num){

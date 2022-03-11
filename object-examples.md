@@ -173,16 +173,12 @@ something.data.online = 45;
 delete something.location;
 ```
 
+<br />
+
 Access values by using `obj[prop]` or `obj.prop[i]` or `obj.[prop][i]`.
 ```js
 // something here
 ```
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-## Other
-
-
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -234,6 +230,8 @@ class Name {
 }
 ```
 
+Access values by using
+
 ```js
 // Amusement park fast pass example:
 class Park2 {
@@ -261,6 +259,9 @@ const joe2 = new Park2("Joe", "Thomas", false, true);
 console.log(steve2.canSkip());
 console.log(joe2.canSkip());
 ```
+
+<br />
+
 Example with my clients:
 ```js
 // petNames as an array of objects
@@ -285,6 +286,8 @@ let totalClient = {...philMiller, ...philSpouse};
 console.log(totalClient);
 ```
 
+<br />
+
 Example object:
 ```js
 const student1 = {
@@ -295,6 +298,8 @@ const student1 = {
 };
 ```
 
+<br />
+
 Console.log empty function:
 ```js
 function Student() {
@@ -303,6 +308,8 @@ function Student() {
 console.log(Student()); // undefined
 console.log(new Student()); // Student {}
 ```
+
+<br />
 
 The `new` keyword changes the behavior of how the function operates. You then get access to the object via the `this` keyword.
 
@@ -324,6 +331,8 @@ console.log(student1); // Student {firstName: 'Mary', lastName: 'Williams', gra
 student1.firstName = "Marilyn";
 student1.age = 28;
 ```
+
+<br />
 
 Create a class with a constructor, methods and properties. And you have a prototype for every class you create.
 
@@ -352,6 +361,8 @@ class Person {
 const jim = new Person("Jim", "Kernix");
 jim.greeting();
 ```
+
+<br />
 
 sub classes with `extends` and `super` keywords:
 ```js
@@ -384,6 +395,8 @@ let z = voxel.z;
 console.log(x);
 ```
 
+<br />
+
 HOW TO DO ABOVE WITH DESCTRUCTURING:
 ```js
 var voxel = {x: 3.61, y: 7.4, z: 6.54};
@@ -391,12 +404,16 @@ const {x, y, z} = voxel;
 console.log(x);
 ```
 
+<br />
+
 Copy into new variable names:
 ```js
 var voxel = {x: 3.61, y: 7.4, z: 6.59};
 const {x: a, y: b, z: c} = voxel; 
 console.log(c);
 ```
+
+<br />
 
 Assign variables FROM nested objects:
 ```js
@@ -408,11 +425,15 @@ const { start: { x: startX, y: startY }} = nest;
 console.log("startX: " + startX);
 ```
 
+<br />
+
 Destructure arrays:
 ```js
 const [q, , , , r] = [1, 2, 3, 4, 5];
 console.log(q, r);
 ```
+
+<br />
 
 Rest operator to reassign array elements - the Rest gets the "rest":
 ```js
@@ -427,6 +448,8 @@ const profileUpdates = ({name, age, nationality, location}) => {
 }
 ```
 
+<br />
+
 Video: #54 Destructuring Assignment Arrays
 ```js
 const colors = ["yellow", "blue", "red", "green"];
@@ -435,12 +458,16 @@ console.log(colors); // ["yellow","blue","red","green"]
 console.log(c1, c2, c3, c4); // "yellow" "blue" "red" "green"
 ```
 
+<br />
+
 With a nested array - syntax is realy important
 ```js
 const numbers2 = [1, 2, 3, [4, 5], 6];
 const [n1, n2, n3, [n4, n5], n6] = numbers2;
 console.log(n1, n2, n3, n4, n5, n6); // 1 2 3 4 5 6
 ```
+
+<br />
 
 you can use destructuring to switch the values that are held in variables:
 ```js
@@ -449,6 +476,8 @@ let myStr3 = "Butter";
 [myStr2, myStr3] = [myStr3, myStr2]
 console.log(myStr2, myStr3); // "Butter" "Cheese"
 ```
+
+<br />
 
 Another one:
 ```js
@@ -463,6 +492,8 @@ const myOrder = myStore.purchaseItems(6, 1);
 const [[item1, price1], [item2, price2]] = myOrder;
 console.log(`Your item of ${item1} from grocery costs $${price1}.\nYour item of ${item2} from general costs $${price2}.`);
 ```
+
+<br />
 
 Huge example, #58 Object Destructuring Part 1:
 ```js
@@ -523,6 +554,8 @@ const {mallName: localName, anchorStores, address: {street: streetName, city, st
 // console.log(`Come vist ${localName}.\nWe are located at ${streetName}.`)
 ```
 
+<br />
+
 #59 Object Destructuring Part 2, 2nd example, assignment without declaration:
 ```js
 const jason = {
@@ -538,6 +571,8 @@ let jasonAge = "unknown", jasonJob = "unknown";
 console.log(jasonAge, jasonJob); // 35 "Web Developer"  
 ```
 
+<br />
+
 LESSON 11 use destructuring assignment to extract values from objects
 const HIGH_TEMPERATURES = {
   yesterday: 75,
@@ -547,17 +582,14 @@ const HIGH_TEMPERATURES = {
 
 const { today, tomorrow } = HIGH_TEMPERATURES;
 
-12. use destructuring assignment to assign variables from objects
+- 12. use destructuring assignment to assign variables from objects
 const { name: userName, age: userAge } = user;
-
-13. use destructuring assignment to assign variables from nested objects
+- 13. use destructuring assignment to assign variables from nested objects
 const { johnDoe: { age: userAge, email: userEmail }} = user;
-
-lesson 14 use destructuring assignment to assign variables from arrays
-const [a, b, , , c] = [1, 2, 3, 4, 5, 6];
-console.log(a, b, c);
-
-lesson 15 use destructuring assignment w\ the rest parameter to reassign array elements
+- lesson 14 use destructuring assignment to assign variables from arrays
+- const [a, b, , , c] = [1, 2, 3, 4, 5, 6];
+- console.log(a, b, c);
+- lesson 15 use destructuring assignment w\ the rest parameter to reassign array elements
 const [a, b, ...arr3] = [1, 2, 3, 4, 5, 7];
 
 16. use destructuring assignment to pass an object as a Fx’s parameters
@@ -583,6 +615,8 @@ let myAddress = {
 console.log(myAddress);
 ```
 
+<br />
+
 copy and change values:
 ```js
 const myCar = {
@@ -597,6 +631,9 @@ const lunasCar = {...myCar, doors: 3, "Spare tires": 0};
 lunasCar.color = "White";
 // console.log(lunasCar);
 ```
+
+<br />
+
 with an example of renaming keys:
 ```js
 const applicant = {
@@ -636,6 +673,6 @@ typeOfTest = null; // object
 - instanceof
 - constructor
 - super
-- ChildObject.prototype: ChildObject.prototype.methodName = function() {...};
+- ChildObject.prototype: ChildObject.prototype.methodName = function() {...}; 
 
-WTF with [] working but not dot notation???? Something with if statements?
+WTF with `[ ]` working but not dot notation???? Something with if statements?

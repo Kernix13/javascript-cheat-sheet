@@ -6,9 +6,8 @@ Simple number, Math, and Date examples.
 
 ## Table of contents
 
-1. [Number examples](#number-examples)
-   1. [Number methods](#number-methods)
-   1. [Math methods](#math-methods)
+1. [Number methods](#number-methods)
+1. [Math methods](#math-methods)
 1. [Spread operator](#spread-operator)
 1. [Rest parameter](#rest-parameter)
 1. [Date examples](#date-examples)
@@ -17,11 +16,7 @@ Simple number, Math, and Date examples.
 1. [Miscellaneous](#miscellaneous)
 1. [Syntax tables](#syntax-tables)
 
-## Number examples
-
-Number and Math methods. A lot of the date exmples suck!
-
-### Number methods
+## Number methods
 
 Here are links to MDN docs for the methods below:
 
@@ -29,6 +24,8 @@ Here are links to MDN docs for the methods below:
 | :---: | :---: | :---: | 
 | [MDN toExponential](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toExponential) | [MDN toFixed](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed) | [MDN toPrecision](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision) | 
 | [MDN isFinite](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isFinite) | [MDN isInteger](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger)  | [MDN parseFloat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseFloat) | 
+
+<br />
 
 toExponential(): Don't see the practical application of this one
 ```js
@@ -184,7 +181,7 @@ Number.parseFloat(string)
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 
-### Math methods
+## Math methods
 
 Here are links to MDN docs for the most common Math methods:
 
@@ -195,6 +192,7 @@ Here are links to MDN docs for the most common Math methods:
 | [MDN Math.sqrt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt) | [MDN Math.trunc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc) | [MDN Math.max](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max) |
 | [MDN Math.min](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min) | [MDN Math.pow](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow) |  | 
 
+<br />
 Math.abs(x)
 ```js
 // syntax
@@ -491,6 +489,8 @@ Here is a link for the [MDN Date docs](https://developer.mozilla.org/en-US/docs/
 | [MDN getHours](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours) | [MDN getMilliseconds](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMilliseconds) | [MDN getMinutes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMinutes) |
 | [MDN getMonth](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth) | [MDN getSeconds](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getSeconds) | [MDN getTime](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime) |
 
+<br />
+
 getDate()
 ```js
 // syntax
@@ -649,6 +649,8 @@ Formatting the date and time values is quite involved. Check out the following l
 - freeCodeCamp: [How to Format Dates in JavaScript](https://www.freecodecamp.org/news/how-to-format-dates-in-javascript/)
 - Stackoverflow: [How to format a JavaScript date](https://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date)
 - CSS Tricks: [Everything You Need to Know About Date in JavaScript](https://css-tricks.com/everything-you-need-to-know-about-date-in-javascript/)
+
+<br />
 
 setDate()
 ```js
@@ -848,6 +850,8 @@ console.log("Minutes: " + date.getMinutes()); // 28
 console.log("Seconds: " + date.getSeconds()); // 31
 ```
 
+<br />
+
 Example 2: 
 ```js
 // Date for the current date and time
@@ -863,12 +867,16 @@ console.log(typeof d1.toString()); // string
 console.log(typeof d1); // object
 ```
 
+<br />
+
 Pass in year month and day:
 ```js
 // syntax: (year, month, day, hour, minutes, seconds, milliseconds)
 let d2 = new Date(2022, 2, 6, 12, 19, 23, 23);
 console.log(d2); // Sun Mar 06 2022 12:19:23 GMT-0500 (Eastern Standard Time)
 ```
+
+<br />
 
 Dates with a date time string:
 ```js
@@ -889,6 +897,8 @@ console.log(d5); // Sun Mar 06 2022 00:00:00 GMT-0500 (Eastern Standard Time)
 let d6 = new Date("Mar 6 2022"); // or March
 console.log(d6); // Sun Mar 06 2022 00:00:00 GMT-0500 (Eastern Standard Time)
 ```
+
+<br />
 
 Figure out elapsed time:
 ```js
@@ -930,6 +940,8 @@ typeOfTest = new Date(); // object
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Syntax tables
+
+See if I can group these in tables like strings and arrays
 
 ```js
 toExponential()

@@ -14,6 +14,7 @@
    1. [Conditional chains](#conditional-chains)
 1. [Switch](#switch)
 1. [Miscellaneous](#miscellaneous)
+   1. [Notes](#notes)
 
 ## if else statements
 
@@ -26,11 +27,14 @@ if (condition) {
 }
 
 // example
-if (str !== undefined) {
+function strEntry(str) {
+  if (str !== "") {
    return str.split('');
-} else {
-   return "Field is empty";
+  } else {
+     return "Field is empty";
+  }
 }
+console.log(strEntry("string")); // ["s","t","r","i","n","g"]
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -98,7 +102,6 @@ function example(…) {
 }
 
 // Equivalent to:
-
 function example(…) {
     if (condition1) { return value1; }
     else if (condition2) { return value2; }
@@ -110,15 +113,6 @@ function example(…) {
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Switch
-
-A switch statement first evaluates its expression. It then looks for the first `case` clause whose expression evaluates to the same value as the result of the input expression (using the strict comparison, `===`) and transfers control to that clause, executing the associated statements. (If multiple cases match the provided value, the first `case` that matches is selected, even if the cases are not equal to each other.)
-
-If no matching `case` clause is found, the program looks for the optional `default` clause, and if found, transfers control to that clause, executing the associated statements. If no `default` clause is found, the program continues execution at the statement following the end of `switch`. By convention, the `default` clause is the last clause, 
-
-- expression: An expression whose result is matched against each `case` clause
-- `case valueN`: A `case` clause used to match against expression. If the expression matches the specified `valueN`, the statements inside the `case` clause are executed until either the end of the `switch` statement or a `break`
-- break: The optional statement associated with each case label ensures that the program breaks out of switch once the matched statement is executed and continues execution at the statement following `switch`. If `break` is omitted, the program continues execution at the next statement in the switch statement. The `break` statement is not required if a `return` statement precedes it.
-- default: A default clause; if provided, this clause is executed if the value of expression doesn't match any of the `case` clauses
 
 Syntax:
 ```js
@@ -226,6 +220,16 @@ Also: [Block-scope variables within switch statements](https://developer.mozilla
 
 - type conversion
 - `==` vs `===`
-- 
+
+### Notes
+
+A **switch** statement first evaluates its expression. It then looks for the first `case` clause whose expression evaluates to the same value as the result of the input expression (using the strict comparison, `===`) and transfers control to that clause, executing the associated statements. (If multiple cases match the provided value, the first `case` that matches is selected, even if the cases are not equal to each other.)
+
+If no matching `case` clause is found, the program looks for the optional `default` clause, and if found, transfers control to that clause, executing the associated statements. If no `default` clause is found, the program continues execution at the statement following the end of `switch`. By convention, the `default` clause is the last clause, 
+
+- expression: An expression whose result is matched against each `case` clause
+- `case valueN`: A `case` clause used to match against expression. If the expression matches the specified `valueN`, the statements inside the `case` clause are executed until either the end of the `switch` statement or a `break`
+- break: The optional statement associated with each case label ensures that the program breaks out of switch once the matched statement is executed and continues execution at the statement following `switch`. If `break` is omitted, the program continues execution at the next statement in the switch statement. The `break` statement is not required if a `return` statement precedes it.
+- default: A default clause; if provided, this clause is executed if the value of expression doesn't match any of the `case` clauses
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>

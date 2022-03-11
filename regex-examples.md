@@ -31,6 +31,8 @@ USe forward slashes (`/`) to enclose your Regular Expression (RegEx):
 /regex/
 ```
 
+<br />
+
 Match literal strings:
 ```js
 let myString = "Hello, World!";
@@ -46,12 +48,16 @@ let codingRegex = /coding/;
 let result = extractStr.match(codingRegex);
 ```
 
+<br />
+
 Use the pipe character (`|`) as an "or" conditional:
 ```js
 let petString = "James has a pet cat.";
 let petRegex = /dog|cat|bird|fish/;
 let result = petRegex.test(petString);
 ```
+
+<br />
 
 Flags: `i` for case insensitive, and `g` for global matches or to maych all occurences. Here are the best ones:
 ```js
@@ -248,8 +254,8 @@ let result = quoteSample.match(myRegex);
 
 <br />
 
+match start of string qith ^ or \A OUTSIDE of a character set:
 ```js
-// match start of string qith ^ or \A OUTSIDE of a character set
 let firstString = "Ricky is first and can be found.";
 let firstRegex = /^Ricky/;
 firstRegex.test(firstString);
@@ -316,6 +322,21 @@ Use the backslash `\` to escape special characters that are in your string
 
 // escape curly brackets
 /\{\}/
+
+// escape single quote
+/\'/
+
+// escape double quotes
+/\"/
+
+// escape pipe
+/\|/
+
+// escape new line
+/\n/
+
+// escape TAB
+/\t/
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -343,6 +364,8 @@ let quoteSample = "The quick brown fox jumps over the lazy dog.";
 let alphabetRegex = /[a-z]/gi; 
 let result = quoteSample.match(alphabetRegex);
 ```
+
+<br />
 
 Character classes/sets with hyphens (`-`) for ranges
 
@@ -521,12 +544,14 @@ let qRegex = /q(?!u)/;
 quit.match(quRegex); // ['q']
 noquit.match(qRegex); // ['q']
 
-// check two or more patterns in one string: a simple password checker that looks for between 3 and 6 characters and at least one number
+// check two or more patterns in one string: a simple password 
+// checker that looks for between 3 and 6 characters and at least one number
 let password = "abc123";
 let checkPass = /(?=\w{3,6})(?=\D*\d)/;
 checkPass.test(password);
 
-// Use lookaheads in the pwRegex to match passwords that are greater than 5 characters long, and have two consecutive digits:
+// Use lookaheads in the pwRegex to match passwords that are greater than 5 characters long, 
+// and have two consecutive digits:
 let sampleWord = "astronaut";
 let pwRegex = /(?=\w{6})(?=\w*\d{2})/;
 let result = pwRegex.test(sampleWord);
@@ -583,8 +608,9 @@ Uses: character sets, `\s`, `+`, `.replace()` method with capture groups `$3`, `
 
 - - - 
 
-Format phone numbers into preferred format. Examples:
+<br />
 
+Format phone numbers into preferred format. Examples:
 ```
 12345678920
 123-456-7890
@@ -595,6 +621,8 @@ Format phone numbers into preferred format. Examples:
 555 555-5555
 1.987.654.3210
 ```
+
+<br />
 
 Find and replace phone numbers:
 
