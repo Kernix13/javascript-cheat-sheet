@@ -1657,8 +1657,6 @@ console.log(getTodaysMenu(["Pizza", "$8"], ["Chips", "$1"], ["Beer", "$3"]));
 
 Tables by the number of arguments and whether or not the method mutates the original source.
 
-<br />
-
 ### Syntax for common methods
 
 Common methods with NO arguments/parameters:

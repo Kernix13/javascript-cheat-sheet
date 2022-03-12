@@ -196,6 +196,10 @@ Concepts, specific code syntax, ...
   <dd>A part of inheritance in OOP which change which classes have access to other classes, methods, or attributes. There are 3 main access modifiers: Public, Private, and Protected. Public modifiers can be accessed from anywhere in your program. Private modifier can only be accessed from within the same class that the member is defined. Protected modifiers can be access within the class it is defined, as well as subclasses of that class.</dd>
 </dl>
 <dl>
+  <dt>"**_In place_**"</dt>
+  <dd>In-place means that you should update the original string rather than creating a new one. You should change the content of the original string to the reverse without using a temporary storage variable to hold the string.</dd>
+</dl>
+<dl>
   <dt>Polymorphism</dt>
   <dd>in OOP, describes methods that are able to take on many forms. There are 2 types: Dynamic and Static. </dd>
 </dl>

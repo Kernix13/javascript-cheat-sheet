@@ -929,7 +929,7 @@ Uncaught RangeError: Maximum call stack size exceeded.
 
 From the video 
 ```js
-// factorial example
+// factorial example with recursion
 function factorial(num){
     if(num === 1){
         return num;
@@ -999,7 +999,7 @@ console.log(getMaxCallStackSize(0));
 
 Common usage examples:
 ```js
-// factorial
+// factorial with recursion
 const factorial = (n) => {
   if (n === 0) return 1;
   else return n * factorial(n - 1);
