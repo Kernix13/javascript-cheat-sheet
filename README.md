@@ -226,14 +226,14 @@ Strings and Arrays: Same Methods, Same Effect:
 | :---------- | -------: | :------:   | :------------: | :-----------:  |
 | slice()     | creates: | new arr/str | arr.slice(start, end) | str.slice(start, end) | 
 | concat()    | creates: | new arr/str | arr1.concat(arr2) | str1.concat(' ', str2)  | 
-| concat. op. | creates: | new str    | -              | str1 + str2    |
+| _concat. op._ | creates: | new str    | -              | str1 + str2    |
 | includes()  | checks:  | Boolean    | includes(searchVal) | includes(searchStr) | 
-| endsWith(() | checks:  | Boolean    | -                   | endsWith(searchStr) | 
 | indexOf()   | returns: | index # or -1 | indexOf(searchVal)  | indexOf(searchStr) | 
 | lastIndexOf() | returns: | index # or -1 | lastIndexOf(searchVal) | lastIndexOf(searchStr) |
-| [index]     | returns: | specific value | arr[index]     | str[index] | 
-| [i][j]      | returns: | sub array value | arr[i][j]     | str[i][j]  |
+| _endsWith(()_ | checks:  | Boolean    | -                   | endsWith(searchStr) | 
 | length      | returns: | arr/str len | arr.length         | str.length | 
+| [index]     | returns: | specific value | arr[index]     | str[index] | 
+| [i][j]      | returns: | sub arr val | arr[i][j]     | str[i][j]  |
 
 <br>
 
