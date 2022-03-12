@@ -225,15 +225,15 @@ Strings and Arrays: Same Methods, Same Effect:
 |    Method   | Purpose: | Returns:   | Arr basic code | Str basic code | 
 | :---------- | -------: | :------:   | :------------: | :-----------:  |
 | slice()     | creates: | new arr/str | arr.slice(start, end) | str.slice(start, end) | 
-| concat()    | creates: | new arr/str | arr1.concat(arr2) | str1.concat(' ', str2)  | 
 | _concat. op._ | creates: | new str    | -              | str1 + str2    |
-| includes()  | checks:  | Boolean    | includes(searchVal) | includes(searchStr) | 
+| concat()    | creates: | new arr/str | arr1.concat(arr2) | str1.concat(' ', str2)  | 
 | indexOf()   | returns: | index # or -1 | indexOf(searchVal)  | indexOf(searchStr) | 
 | lastIndexOf() | returns: | index # or -1 | lastIndexOf(searchVal) | lastIndexOf(searchStr) |
 | _endsWith(()_ | checks:  | Boolean    | -                   | endsWith(searchStr) | 
+| includes()  | checks:  | Boolean    | includes(searchVal) | includes(searchStr) | 
 | length      | returns: | arr/str len | arr.length         | str.length | 
 | [index]     | returns: | specific value | arr[index]     | str[index] | 
-| [x][y]      | returns: | sub arr val | arr[i][j]     | str[i][j]  |
+| [x][y]      | returns: | sub arr val | arr[x][y]     | str[x][y]   |
 
 <br>
 
