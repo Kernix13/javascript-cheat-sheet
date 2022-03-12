@@ -19,9 +19,9 @@ Syntax and code examples for the most coomon string and array methods.
    1. [indexOf](#indexOf)
    1. [lastIndexOf](#lastIndexOf)
    1. [concat](#concat)
+   1. [Includes](#includes)
 1. [High order array methods](#high-order-array-methods)
    1. [Sort](#sort)
-   1. [Includes](#includes)
    1. [Find](#find)
    1. [Every](#every)
    1. [Some](#some)
@@ -43,6 +43,8 @@ Syntax and code examples for the most coomon string and array methods.
    1. [Spread operator for arrays and strings](#spread-operator-for-arrays-and-strings)
    1. [Rest parameter and rest syntax](#rest-parameter-and-rest-syntax)
 1. [Syntax tables](#syntax-tables)
+   1. [Syntax for common methods](#syntax-for-common-methods)
+   1. [Syntax for high order array methods](#syntax-for-high-order-array-methods)
 
 ## Simple array methods
 
@@ -53,6 +55,7 @@ Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `
 | [MDN push](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) | [MDN unshift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift) | [MDN pop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) | [MDN shift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift) |
 | [MDN join](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) | [MDN sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) | [MDN reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse) | [MDN splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) | 
 | [MDN slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) | [MDN indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) | [MDN lastIndexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf) | [MDN concat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat) | 
+| [MDN includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes) | | | |
 
 
 ### push
@@ -218,12 +221,29 @@ if (word === revWord) {
 
 ### splice
 
-MDN syntax:
+MDN syntax (MUTATES!):
 ```js
-splice(start)
-splice(start, deleteCount)
-splice(start, deleteCount, item1)
-splice(start, deleteCount, item1, item2, itemN)
+splice(startIndex)
+splice(startIndex, deleteCount)
+splice(startIndex, deleteCount, item1)
+
+
+// splice(startIndex):
+let arr = [1, 2, 3, 4, 5, 6]
+console.log(arr.splice(2)) // [1,2]
+// splice(startIndex, deleteCount):
+console.log(arr.splice(2,2)) // [1,2,5,6]
+// splice(startIndex, deleteCount, item1, item2, itemN):
+console.log(arr.splice(2,2,100,101)) // [1,2,100,1015,6]
+
+// Assign to a new array
+let arr = [1, 2, 3, 4, 5, 6]
+let arr2 = arr.splice(2)
+console.log(arr2, arr) // [3,4,5,6] [1,2]
+let arr2 = arr.splice(2,2)
+console.log(arr2, arr) // [3,4] [1,2,5,6]
+let arr2 = arr.splice(2,2)
+console.log(arr2, arr) // [3,4] [1,2,100,101,5,6]
 ```
 
 Examples:
@@ -254,9 +274,28 @@ console.log(alpha) // ["a","b","c","e"]
 MDN syntax:
 ```js
 slice()
-slice(start)
-slice(start, end)
+slice(startIndex)
+slice(startIndex, endIndex)
 
+// slice()
+let arr = [1, 2, 3, 4, 5, 6]
+console.log(arr.slice()) // [1,2,3,4,5,6]
+// slice(startIndex)
+arr.slice(2) // [1,2,3,4,5,6]
+let arr2 = arr.slice(2)
+console.log(arr2, arr) // [3,4,5,6] [1,2,3,4,5,6]
+// slice(startIndex, endIndex) endIndex must be greater than start
+let arr2 = arr.slice(2,4)
+console.log(arr2, arr) // [3,4] [1,2,3,4,5,6]
+
+let str = "The slice method"
+console.log(str.slice()) // "The slice method"
+// slice(startIndex)
+let str2 = str.slice(4)
+console.log(str2, str) // "slice method" "The slice method"
+// slice(startIndex, endIndex)
+let str2 = str.slice(4, 7)
+console.log(str2, str) // "sli" "The slice method"
 ```
 
 Examples:
@@ -410,14 +449,37 @@ console.log(numbers); // [[1, 4], 2, [3]]
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+### Includes
+
+```js
+// syntax:
+arr.includes(item)
+arr.includes(item, fromIndex)
+
+const items = [1, 2, 3, 4, 5]
+const inItems = items.includes(7)
+console.log(inItems) // false
+
+let str = 'Lorem ipsum';
+console.log(str.includes('ipsum')); // true
+console.log(str.includes('Ipsum')); // false
+
+let str = 'JavaScript String';
+console.log(str.includes('Script', 5)); // false
+console.log(str.includes('Script', 4)); // true
+```
+
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## High order array methods
 
-High Order Array Methods = methods that use a callback function. The most used ones are `sort`, `map`, `filter`, `forEach`, and `reduce`; but also `includes`, `find`, `every`, and `some` are useful. Here are MDN doc links:
+High Order Array Methods = methods that use a callback function. The most used ones are `sort`, `map`, `filter`, `forEach`, and `reduce`; but also `find`, `every`, and `some` are useful. Here are MDN doc links:
 
 | | | | |
 | :---: | :---: | :---: | :---: |
-| [MDN includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes) | [MDN find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) | [MDN every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every) | [MDN some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) |
-| [MDN map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) | [MDN filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) | [MDN forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) | [MDN reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) |
+| [MDN find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) | [MDN every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every) | [MDN some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) | [MDN map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) |
+| [MDN filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) | [MDN forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) | [MDN reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) |  |
 
 ### Sort
 
@@ -461,29 +523,6 @@ items.sort(function (a, b) {
   return a.localeCompare(b);
 });
 // items is ['adieu', 'café', 'communiqué', 'éclair', 'premier', 'réservé']
-```
-
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-### Includes
-
-```js
-// syntax:
-arr.includes(item)
-arr.includes(item, fromIndex)
-
-const items = [1, 2, 3, 4, 5]
-const inItems = items.includes(7)
-console.log(inItems) // false
-
-let str = 'Lorem ipsum';
-console.log(str.includes('ipsum')); // true
-console.log(str.includes('Ipsum')); // false
-
-let str = 'JavaScript String';
-console.log(str.includes('Script', 5)); // false
-console.log(str.includes('Script', 4)); // true
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
@@ -1234,6 +1273,19 @@ MDN syntax:
 split()
 split(separator)
 split(separator, limit)
+
+// split()
+let str = "The split method"
+console.log(str.split()) // "The split method"
+// split(separator)
+console.log(str.split('')) // ["T","h","e"," ","s","p","l","i","t"," ","m","e","t","h","o","d"]
+let str2 = str.split(' ')
+console.log(str2, str) // ["The","split","method"] "The split method"
+// split(separator, limit)
+let str2 = str.split('', 2)
+console.log(str2, str) // ["T","h"] "The split method"
+let str2 = str.split(' ', 2)
+console.log(str2, str) // ["The","split"] "The split method"
 ```
 
 Examples:
@@ -1604,53 +1656,59 @@ console.log(getTodaysMenu(["Pizza", "$8"], ["Chips", "$1"], ["Beer", "$3"]));
 
 ## Syntax tables
 
+Tables by the number of arguments and whether or not the method mutates the original source.
+
+### Syntax for common methods
+
 Common methods with NO arguments/parameters:
-| method  | syntax            | 
-| :----   | :----             | 
-| pop     | arr.pop()         |                            
-| shift   | arr.shift()       |                            
-| reverse | arr.reverse()     |                            
-| sort    | arr.sort()        |   
-| join    | arr.join()        |
-| slice   | arr.slice()       |      
-| split   | str.split()       |
-| toString | num.toString()   |
-|         | arr.toString()    |
-|         | date.toString()   |
-|         | bool.toString()   |
+| method  | syntax            | Mutates? |
+| :----   | :----             | :----:   |
+| pop     | arr.pop()         | YES |                 
+| shift   | arr.shift()       | YES |                     
+| reverse | arr.reverse()     | YES* |
+| sort    | arr.sort()        | YES* |
+| join    | arr.join()        | YES |
+| split   | str.split()       | YES |
+| slice   | arr.slice()       | NO  |     
+| toString | num.toString()   | NO  | 
+|         | arr.toString()    | NO  | 
+|         | date.toString()   | NO  | 
+|         | bool.toString()   | NO  | 
+
+**NOTE**: Use the rest paramter to not mutate the original source for `sort()` and `reverse()`.
 
 <br />
 
 Common methods with a single argument, or multiple repeated arguments:
-| method  | syntax1                     | syntax2                     | 
-| :----   | :----                       | :----                       | 
-| join    | arr.join(separator)         |                             | 
-| slice   | arr.slice(start)            |                             |
-| split   | str.split(separator)        |                             |
-| repeat  | str.repeat(count)           |                             |
-| test    | regex.test(str)             |                             |          
-| match   | str.match(regex)            |                             |
-| push    | arr.push(item)              | push(item1, item2, ...)     | 
-| unshift | arr.unshift(item)           | unshift(item1, item2, ...)  |
-| replace | str.replace(regex, newStr)  | str.replace(substr, newStr) |
-| indexOf | arr.indexOf(searchVal)      | str.indexOf(searchVal, fromIndex) |
-| lastIndexOf | str.lastIndexOf(searchVal) | arr.lastIndexOf(searchVal, fromIndex) |
-| includes | arr.includes(searchVal)    | str.includes(searchVal, fromIndex) |
-| substring | str.substring(indStart)   | str.substring(indStart, indEndex) |
-| endsWith | str.endsWith(subStr)       | str.endsWith(subStr, length) | 
-| concat  | arr.concat(arr2)            | arr.concat(arr2, arr3, ...)     | 
-|         | arr.concat(item)            | arr.concat(item1, item2, ...)   | 
-| splice  | arr.splice(start)           | splice(start, deleteCt) |
-|         | splice(start, deleteCt, item1) | splice(start, deleteCt, item1, item2, ...) |
+| method  | syntax1                     | syntax2                     | Mutates? |
+| :----   | :----                       | :----                       | :----:   |
+| join    | arr.join(separator)         |                             | NO |
+| slice   | arr.slice(start)            |                             | NO |
+| split   | str.split(separator)        |                             | NO |
+| repeat  | str.repeat(count)           |                             | NO | 
+| substring | str.substring(indStart)   | str.substring(indStart, indEndex) | NO |
+| replace | str.replace(regex, newStr)  | str.replace(substr, newStr) | NO |
+| concat  | arr.concat(arr2)            | arr.concat(arr2, arr3, ...)     | NO |
+|         | arr.concat(item)            | arr.concat(item1, item2, ...)   | NO |
+| test    | regex.test(str)             |                             | N/A |         
+| match   | str.match(regex)            |                             | N/A |
+| indexOf | arr.indexOf(searchVal)      | str.indexOf(searchVal, fromIndex) | N/A |
+| lastIndexOf | str.lastIndexOf(searchVal) | arr.lastIndexOf(searchVal, fromIndex) | N/A |
+| endsWith | str.endsWith(subStr)       | str.endsWith(subStr, length) | N/A |
+| includes | arr.includes(searchVal)    | str.includes(searchVal, fromIndex) | N/A |
+| push    | arr.push(item)              | push(item1, item2, ...)     | YES |
+| unshift | arr.unshift(item)           | unshift(item1, item2, ...)  | YES |
+| splice  | arr.splice(start)           | splice(start, deleteCt) | YES | 
+|         | splice(start, deleteCt, item1) | splice(start, deleteCt, item1, item2, ...) | YES |
 
 <br />
 
 Common methods with two arguments:
-| method    | syntax1                 | syntax2                     | 
-| :----     | :----                   | :----                       | 
-| slice     | arr.slice(start, end)   |                             |
-| split     | str.split(separator, limit) |                             |
-| replace   | str.replace(regex, Fx)  | str.replace(substr, Fx)     |
+| method    | syntax1                 | syntax2                 | Mutates? |
+| :----     | :----                   | :----                   | :----:   |
+| slice     | arr.slice(start, end)   |                         | NO |
+| split     | str.split(separator, limit) |                     | NO |
+| replace   | str.replace(regex, Fx)  | str.replace(substr, Fx) | NO |
 
 ***NOTE**: Function for `replace()`: The function's result (return value) will be used as the replacement string. Note that the function will be invoked multiple times for each full match to be replaced if the regular expression in the first parameter is global. Check the [MDN replace docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#specifying_a_function_as_a_parameter) since there is a lot to the function.
 
@@ -1664,19 +1722,19 @@ let newString = 'abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer);
 console.log(newString);  // abc - 12345 - #$*%
 ```
 
-<br />
+### Syntax for high order array methods
 
 High order array methods with **callback** function:
-| method  | syntax1           | syntax2                   |
-| :----   | :----             | :----                     |
-| sort    | sort(callbackFn)  |                           |
-| find    | find(callbackFn)  | find(callbackFn, thisArg) |
-| every   | every(callbackFn) | every(callbackFn, thisArg) |
-| some    | some(callbackFn)  | some(callbackFn, thisArg) |
-| map     | map(callbackFn)   | map(callbackFn, thisArg) |
-| filter  | filter(callbackFn) | filter(callbackFn, thisArg) |
-| forEach | forEach(callbackFn) | forEach(callbackFn, thisArg) |
-| reduce  | reduce(callbackFn) | reduce(callbackFn, initialValue) |
+| method  | syntax1           | syntax2                   | Mutates? |
+| :----   | :----             | :----                     | :------: |
+| sort    | sort(callbackFn)  |                           | YES |
+| every   | every(callbackFn) | every(callbackFn, thisArg) | N/A |
+| some    | some(callbackFn)  | some(callbackFn, thisArg) | N/A |
+| find    | find(callbackFn)  | find(callbackFn, thisArg) | NO |
+| map     | map(callbackFn)   | map(callbackFn, thisArg) | NO |
+| filter  | filter(callbackFn) | filter(callbackFn, thisArg) | NO |
+| forEach | forEach(callbackFn) | forEach(callbackFn, thisArg) | NO |
+| reduce  | reduce(callbackFn) | reduce(callbackFn, initialValue) | NO |
 
 - `thisArg` for `find`: Object to use as `this` inside `callbackFn`
 - `thisArg` for the other 5 methods: Value to use as `this` when executing `callbackFn` (same thing?)
@@ -1686,78 +1744,78 @@ High order array methods with **callback** function:
 High order array methods with **arrow** and inline functions.
 
 Single argument/parameter:
-| method  | syntax                          | 
-| :----   | :----                           | 
-| find    | arr.find((item) => { ... } )    |
-|         | arr.find(function(item) { ... } ) |
-| every   | arr.every((item) => { ... } )   |
-|         | arr.every(function(item) { ... } ) |
-| some    | arr.some((item) => { ... } )    |
-|         | arr.some(function(item) { ... } ) |
-| map     | arr.map((item) => { ... } )      |
-|         | arr.map(function(item) { ... } ) |
-| filter  | arr.filter((item) => { ... } )  |
-|         | arr.filter(function(item) { ... } ) |
-| forEach | arr.forEach((item) => { ... } ) |
-|         | forEach(function(item) { ... } ) | 
+| method  | syntax                            | Mutates? |
+| :----   | :----                             | :------: |
+| every   | arr.every((item) => { ... } )     | N/A |
+|         | arr.every(function(item) { ... } ) | - |
+| some    | arr.some((item) => { ... } )      | N/A |
+|         | arr.some(function(item) { ... } ) | - |
+| find    | arr.find((item) => { ... } )      | NO |
+|         | arr.find(function(item) { ... } ) | - |
+| map     | arr.map((item) => { ... } )       | NO |
+|         | arr.map(function(item) { ... } )  | - |
+| filter  | arr.filter((item) => { ... } )    | NO |
+|         | arr.filter(function(item) { ... } ) | - |
+| forEach | arr.forEach((item) => { ... } )   | NO |
+|         | forEach(function(item) { ... } )  | - |
 
 <br />
 
 **arrow** and inline functions with two arguments/parameters:
-| method  | syntax                                | 
-| :----   | :----                                 | 
-| sort    | arr.sort((a, b) => { ... } )          | 
-|         | arr.sort(function (a, a) { ... } )    |
-| find    | arr.find((item, index) => { ... } )   |
-|         | arr.find(function(item, index) { ... } ) |
-| every   | arr.every((item, index) => { ... } )  |
-|         | arr.every(function(item, index) { ... }) |
-| some    | arr.some((item, index) => { ... } )   |
-|         | arr.some(function(item, index) { ... }) |
-| map     | arr.map((item, index) => { ... })     |
-|         | arr.map(function(item, index) { ... } ) |
-| filter  | arr.filter((item, index) => { ... } ) |
-|         | arr.filter(function(item, index) { ... } ) |
-| forEach | arr.forEach((item, index) => { ... } ) |
-|         | arr.forEach(function(item, index) { ... } ) |
-| reduce  | arr.reduce((prevVal, currVal) => { ... } ) |
-|         | arr.reduce(function(prevVal, currVal) { ... } ) | 
+| method  | syntax                                | Mutates? |
+| :----   | :----                                 | :------: |
+| sort    | arr.sort((a, b) => { ... } )          | YES* |
+|         | arr.sort(function (a, a) { ... } )    | - |
+| every   | arr.every((item, index) => { ... } )  | N/A |
+|         | arr.every(function(item, index) { ... }) | - |
+| some    | arr.some((item, index) => { ... } )   | N/A |
+|         | arr.some(function(item, index) { ... }) | - |
+| find    | arr.find((item, index) => { ... } )   | NO |
+|         | arr.find(function(item, index) { ... } ) | - |
+| map     | arr.map((item, index) => { ... })     | NO |
+|         | arr.map(function(item, index) { ... } ) | - |
+| filter  | arr.filter((item, index) => { ... } ) | NO |
+|         | arr.filter(function(item, index) { ... } ) | - |
+| forEach | arr.forEach((item, index) => { ... } ) | NO |
+|         | arr.forEach(function(item, index) { ... } ) | - |
+| reduce  | arr.reduce((prevVal, currVal) => { ... } ) | NO |
+|         | arr.reduce(function(prevVal, currVal) { ... } ) | - |
 
 <br />
 
 **arrow** and inline functions with three arguments/parameters:
-| method  | syntax                                | 
-| :----   | :----                                 | 
-| find    | arr.find((item, index, array) => { ... } )  |
-|         | arr.find(function(item, index, array) { ... } ) |
-| every   | arr.every((item, index, array) => { ... } )  |
-|         | arr.every(function(item, index, array){ ... } ) |
-| some    | arr.some((item, index, array) => { ... } )  |
-|         | arr.some(function(item, index, array){ ... }) |
-| map     | arr.map((item, index, array) => { ... })     |
-|         | arr.map(function(item, index, array){ ... } ) |
-| filter  | arr.filter((item, index, array) => { ... } ) |
-|         | arr.filter(function(item, index, array){ ... } ) |
-| forEach | arr.forEach((item, index, array) => { ... } ) |
-|         | arr.forEach(function(item, index, array){ ... } ) |
-| reduce  | arr.reduce((prevVal, currVal, currInd) => { ... } ) |
-|         | arr.reduce(function(prevVal, currVal, currIndex) { ... } ) |
+| method  | syntax                                          | Mutates? |
+| :----   | :----                                           | :------: |
+| every   | arr.every((item, index, array) => { ... } )     | N/A |
+|         | arr.every(function(item, index, array){ ... } ) | - |
+| some    | arr.some((item, index, array) => { ... } )      | N/A |
+|         | arr.some(function(item, index, array){ ... })   | - |
+| find    | arr.find((item, index, array) => { ... } )      | NO |
+|         | arr.find(function(item, index, array) { ... } ) | - |
+| map     | arr.map((item, index, array) => { ... })        | NO |
+|         | arr.map(function(item, index, array){ ... } )   | - |
+| filter  | arr.filter((item, index, array) => { ... } )    | NO |
+|         | arr.filter(function(item, index, array){ ... } ) | - |
+| forEach | arr.forEach((item, index, array) => { ... } )   | NO |
+|         | arr.forEach(function(item, index, array){ ... } ) | - |
+| reduce  | arr.reduce((prevVal, currVal, currInd) => { ... } ) | NO |
+|         | arr.reduce(function(prevVal, currVal, currIndex) { ... } ) | - |
 
 <br />
 
 **arrow** and inline functions with four and five arguments/parameters:
-| method  | syntax                                | 
-| :----   | :----                                 | 
-| find    | arr.find(function(item, index, array) { ... }, thisArg) |
-| every   | arr.every(function(item, index, array) { ... }, thisArg) |
-| some    | arr.some(function(item, index, array) { ... }, thisArg) |
-| map     | arr.map(function(item, index, array) { ... }, thisArg) |
-| filter  | arr.filter(function(item, index, array) { ... }, thisArg) |
-| forEach | arr.forEach(function(item, index, array) { ... }, thisArg) | 
-| reduce  | arr.reduce((prevVal, currVal, currInd, array) => { ... } ) |
-|         | arr.reduce(function(prevVal, currVal, currInd, array) { ... } ) |
-|         | **arr.reduce((prevVal, currVal, currInd, array) => { ... }, initVal)** |
-|         | arr.reduce(function(prevVal, currVal, currInd, array) { ... }, initVal) |
+| method  | syntax                                                  | Mutates? |
+| :----   | :----                                                   | :----:   |
+| every   | arr.every(function(item, index, array) { ... }, thisArg) | N/A |
+| some    | arr.some(function(item, index, array) { ... }, thisArg) | N/A |
+| find    | arr.find(function(item, index, array) { ... }, thisArg) | NO |
+| map     | arr.map(function(item, index, array) { ... }, thisArg) | NO |
+| filter  | arr.filter(function(item, index, array) { ... }, thisArg) | NO |
+| forEach | arr.forEach(function(item, index, array) { ... }, thisArg) | NO |
+| reduce  | arr.reduce((prevVal, currVal, currInd, array) => { ... } ) | NO |
+|         | arr.reduce(function(prevVal, currVal, currInd, array) { ... } ) | - |
+|         | **arr.reduce((prevVal, currVal, currInd, array) => { ... }, initVal)** | - |
+|         | arr.reduce(function(prevVal, currVal, currInd, array) { ... }, initVal) | - |
 
 - `array`: The array on which the method was called
 - `initialValue`: A value to which `previousValue` is initialized the first time the callback is called. If `initialValue` is specified, that also causes `currentValue` to be initialized to the first value in the array. If `initialValue` is not specified, `previousValue` is initialized to the first value in the array, and `currentValue` is initialized to the second value in the array.
