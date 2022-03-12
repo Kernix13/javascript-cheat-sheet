@@ -377,8 +377,8 @@ Math.max(-10, -20); // -10
 Math.max(-10, 20);  //  20
 
 // with reduce
-var arr = [1,2,3];
-var max = arr.reduce(function(a, b) {
+let arr = [1,2,3];
+let max = arr.reduce(function(a, b) {
     return Math.max(a, b);
 }, -Infinity);
 ```
@@ -399,8 +399,8 @@ console.log(Math.min(-2, -3, -1)); // -3
 const array1 = [2, 3, 1];
 console.log(Math.min(...array1));  1
 
-var x = 10, y = -20;
-var z = Math.min(x, y);
+let x = 10, y = -20;
+let z = Math.min(x, y);
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -450,14 +450,14 @@ ignores nums afer the 3rd
 function addThreeNumbers(x, y, z) { 
 	return (x + y + z);
 }
-var args = [1, 10, 22, 3];
+let args = [1, 10, 22, 3];
 console.log(addThreeNumbers(...args));
 ```
 
 copy array then push onto it:
 ```js
-var arr = [1, 2, 3];
-var arr2 = [...arr]; // like arr.slice()
+let arr = [1, 2, 3];
+let arr2 = [...arr]; // like arr.slice()
 arr2.push(4); 
 ```
 
@@ -533,8 +533,8 @@ const moonLanding = new Date('July 20, 69 00:20:18');
 console.log(moonLanding.getFullYear()); // 1969
 
 // assign the four-digit value of the current year to the variable
-var today = new Date();
-var year = today.getFullYear();
+let today = new Date();
+let year = today.getFullYear();
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -566,8 +566,8 @@ moonLanding.setMilliseconds(123);
 console.log(moonLanding.getMilliseconds()); // 123
 
 // assign the milliseconds portion of the current time to the variable milliseconds
-var today = new Date();
-var milliseconds = today.getMilliseconds();
+let today = new Date();
+let milliseconds = today.getMilliseconds();
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -582,8 +582,8 @@ const birthday = new Date('March 13, 08 04:20');
 console.log(birthday.getMinutes()); // 20
 
 // assign the value 15 to the variable minutes
-var Xmas95 = new Date('December 25, 1995 23:15:30');
-var minutes = Xmas95.getMinutes();
+let Xmas95 = new Date('December 25, 1995 23:15:30');
+let minutes = Xmas95.getMinutes();
 console.log(minutes); // 15
 ```
 
@@ -599,8 +599,8 @@ const moonLanding = new Date('July 20, 69 00:20:18');
 console.log(moonLanding.getMonth()); // 6
 
 // assign the value 11 to the variable month
-var Xmas95 = new Date('December 25, 1995 23:15:30');
-var month = Xmas95.getMonth();
+let Xmas95 = new Date('December 25, 1995 23:15:30');
+let month = Xmas95.getMonth();
 console.log(month); // 11
 ```
 
@@ -616,8 +616,8 @@ const moonLanding = new Date('July 20, 69 00:20:18');
 console.log(moonLanding.getSeconds()); // 18
 
 // assign the value 30 to the variable seconds
-var Xmas95 = new Date('December 25, 1995 23:15:30');
-var seconds = Xmas95.getSeconds();
+let Xmas95 = new Date('December 25, 1995 23:15:30');
+let seconds = Xmas95.getSeconds();
 console.log(seconds); // 30
 ```
 
@@ -634,8 +634,8 @@ console.log(moonLanding.getTime()); // -14182940000
 
 // Using getTime() for copying dates
 // Since month is zero based, birthday will be January 10, 1995
-var birthday = new Date(1994, 12, 10);
-var copy = new Date();
+let birthday = new Date(1994, 12, 10);
+let copy = new Date();
 copy.setTime(birthday.getTime());
 ```
 
@@ -664,10 +664,10 @@ setDate()
 setDate(dayValue)
 
 // example
-const event = new Date('August 19, 1975 23:15:30');
-event.setDate(24);
-console.log(event.getDate()); // 24
-console.log(event.getDate()); // 1
+const eventDate = new Date('August 19, 1975 23:15:30');
+eventDate.setDate(24);
+console.log(eventDate.getDate()); // 24
+console.log(eventDate.getDate()); // 1
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -680,15 +680,15 @@ setFullYear(yearValue, monthValue)
 setFullYear(yearValue, monthValue, dateValue)
 
 // example
-const event = new Date('August 19, 1975 23:15:30');
-event.setFullYear(1969);
-console.log(event.getFullYear()); // 1969
-event.setFullYear(0);
-console.log(event.getFullYear()); // 0
+const eventDate = new Date('August 19, 1975 23:15:30');
+eventDate.setFullYear(1969);
+console.log(eventDate.getFullYear()); // 1969
+eventDate.setFullYear(0);
+console.log(eventDate.getFullYear()); // 0
 
 // example 2
-var theBigDay = new Date();
-theBigDay.setFullYear(1997);
+let theBigDay = new Date();
+theBigDay.setFullYear(1997); // 858196084256
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -702,14 +702,14 @@ setHours(hoursValue, minutesValue, secondsValue)
 setHours(hoursValue, minutesValue, secondsValue, msValue)
 
 // example
-const event = new Date('August 19, 1975 23:15:30');
-event.setHours(20);
-console.log(event); // "1975-08-20T00:15:30.000Z"
-event.setHours(20, 21, 22);
-console.log(event); // "1975-08-20T00:21:22.000Z"
+const eventDate = new Date('August 19, 1975 23:15:30');
+eventDate.setHours(20);
+console.log(eventDate); // Tue Aug 19 1975 20:15:30 GMT-0400 (Eastern Daylight Time)
+eventDate.setHours(20, 21, 22);
+console.log(eventDate); // Tue Aug 19 1975 20:21:22 GMT-0400 (Eastern Daylight Time)
 
-var theBigDay = new Date();
-theBigDay.setHours(7);
+let theBigDay = new Date();
+theBigDay.setHours(7); // 1647089217263
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -720,13 +720,13 @@ setMilliseconds()
 setMilliseconds(millisecondsValue)
 
 // example
-const event = new Date('August 19, 1975 23:15:30');
-console.log(event.getMilliseconds()); // 0
-event.setMilliseconds(456);
-console.log(event.getMilliseconds()); // 456
+const eventDate = new Date('August 19, 1975 23:15:30');
+console.log(eventDate.getMilliseconds()); // 0
+eventDate.setMilliseconds(456);
+console.log(eventDate.getMilliseconds()); // 456
 
-var theBigDay = new Date();
-theBigDay.setMilliseconds(100);
+let theBigDay = new Date();
+theBigDay.setMilliseconds(100); // 1647114589100
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -739,13 +739,13 @@ setMinutes(minutesValue, secondsValue)
 setMinutes(minutesValue, secondsValue, msValue)
 
 // example
-const event = new Date('August 19, 1975 23:15:30');
-event.setMinutes(45);
-console.log(event.getMinutes()); // 45
-console.log(event); // "1975-08-20T03:45:30.000Z"
+const eventDate = new Date('August 19, 1975 23:15:30');
+eventDate.setMinutes(45);
+console.log(eventDate.getMinutes()); // 45
+console.log(eventDate); // Tue Aug 19 1975 23:45:30 GMT-0400 (Eastern Daylight Time)
 
-var theBigDay = new Date();
-theBigDay.setMinutes(45);
+let theBigDay = new Date();
+theBigDay.setMinutes(45); // 1647114346721
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -757,19 +757,18 @@ setMonth(monthValue)
 setMonth(monthValue, dayValue)
 
 // example
-const event = new Date('August 19, 1975 23:15:30');
-event.setMonth(3);
-console.log(event.getMonth()); // 3
-// expected output: 3
-console.log(event); // "1975-4-20T03:15:30.000z"
+const eventDate = new Date('August 19, 1975 23:15:30');
+eventDate.setMonth(3);
+console.log(eventDate.getMonth()); // 3
+console.log(eventDate); // Sat Apr 19 1975 23:15:30 GMT-0400 (Eastern Daylight Time)
 
-var theBigDay = new Date();
-theBigDay.setMonth(6);
+let theBigDay = new Date();
+theBigDay.setMonth(6); // 1657651927798
 
-//Watch out for end of month transitions
-var endOfMonth = new Date(2016, 7, 31);
+// Watch out for end of month transitions
+let endOfMonth = new Date(2016, 7, 31);
 endOfMonth.setMonth(1);
-console.log(endOfMonth); //Wed Mar 02 2016 00:00:00
+console.log(endOfMonth); // Wed Mar 02 2016 00:00:00 GMT-0500 (Eastern Standard Time)
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -781,13 +780,13 @@ setSeconds(secondsValue)
 setSeconds(secondsValue, msValue)
 
 // example
-const event = new Date('August 19, 1975 23:15:30');
-event.setSeconds(42);
-console.log(event.getSeconds()); // 42
-console.log(event); // "1975-08-20T03:15:42.000Z"
+const eventDate = new Date('August 19, 1975 23:15:30');
+eventDate.setSeconds(42);
+console.log(eventDate.getSeconds()); // 42
+console.log(eventDate); // Tue Aug 19 1975 23:15:42 GMT-0400 (Eastern Daylight Time)
 
-var theBigDay = new Date();
-theBigDay.setSeconds(30);
+let theBigDay = new Date();
+theBigDay.setSeconds(30); // 1647114870198
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -798,15 +797,15 @@ setTime()
 setTime(timeValue)
 
 // example
-const event1 = new Date('July 1, 1999');
-const event2 = new Date();
-event2.setTime(event1.getTime());
-console.log(event1); // "1999-7-01T04:00:00.000Z"
-console.log(event2); // "1999-7-01T04:00:00.000Z"
+const eventDate1 = new Date('July 1, 1999');
+const eventDate2 = new Date();
+eventDate2.setTime(eventDate1.getTime());
+console.log(eventDate1); // Thu Jul 01 1999 00:00:00 GMT-0400 (Eastern Daylight Time)
+console.log(eventDate2); // Thu Jul 01 1999 00:00:00 GMT-0400 (Eastern Daylight Time)
 
-var theBigDay = new Date('July 1, 1999');
-var sameAsBigDay = new Date();
-sameAsBigDay.setTime(theBigDay.getTime());
+let theBigDay = new Date('July 1, 1999');
+let sameAsBigDay = new Date();
+sameAsBigDay.setTime(theBigDay.getTime()); // 930801600000
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -817,13 +816,13 @@ setUTCDate()
 setUTCDate(dayValue)
 
 // example
-const event = new Date('August 19, 1975 23:15:30 GMT-3:00');
-console.log(event.getUTCDate()); // 20
-event.setUTCDate(19);
-console.log(event.getUTCDate()); // 19
+const eventDate = new Date('August 19, 1975 23:15:30 GMT-3:00');
+console.log(eventDate.getUTCDate()); // 20
+eventDate.setUTCDate(19);
+console.log(eventDate.getUTCDate()); // 19
 
-var theBigDay = new Date();
-theBigDay.setUTCDate(20);
+let theBigDay = new Date();
+theBigDay.setUTCDate(20); // 1647806212312
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -834,7 +833,7 @@ current date is Sunday March 6th 2022:
 ```js
 const date = new Date();
 console.log("date: " + date);
-// returns Sun Mar 06 2022 12:28:31 GMT-0500 (Eastern Standard Time)
+// date: Sat Mar 12 2022 14:57:16 GMT-0500 (Eastern Standard Time)
 
 // Day of the month from 1 -31
 console.log("Date: " + date.getDate()); // 6
@@ -849,7 +848,7 @@ console.log("Hours: " + date.getHours()); // 12
 console.log("Month: " + date.getMonth()); // 2
 
 // Number of ms since Jan 1st 1970, used to compare dates
-console.log("Time: " + date.getTime()); // 1646587711307
+console.log("Time: " + date.getTime()); // Time: 1647115085769
 
 console.log("Full year: " + date.getFullYear()); // 2022
 console.log("Minutes: " + date.getMinutes()); // 28
