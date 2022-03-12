@@ -235,12 +235,13 @@ String and Array methods/properties (Same Methods, Same Effect):
 <br>
 
 Strings and Arrays (Different Method Name, Same Effect): 
-|    Method       | Returns:               |  Syntax:          | 
-| :-------------  | :--------------------: | :-----------: |
-| str.charAt(i) | Returns the character at the specified index | str.charAt(index) | 
-| arr.at(i)     | Returns the array item at the given index    | arr.at(index)     | 
-| str.substring(i) | Returns part of a string                  | str.substring(indexStart)|
-| arr.slice(i) | Returns part of an array                       | arr.splice(indexStart) |
+|    Method        | Returns:               |  Syntax:          | 
+| :-------------   | :--------------------: | :-----------: |
+| str.charAt(i)    | Returns the character at the index  | str.charAt(index) | 
+| arr.at(i)        | Returns the array item at the index | arr.at(index)     | 
+| str.substring(i) | Returns part of a string            | str.substring(indexStart)|
+| arr.slice(i)     | Returns part of an array            | arr.sllice(indexStart) |
+| _arr.splice(i)_  | *_Returns part of an array (mutates)_ | arr.splice(indexStart) |
 
 <br>
 
@@ -258,16 +259,16 @@ Strings and Arrays (Different Name, Opposite Effect):
 Other common string methods:
 |    Method         | Returns:                |  Syntax:     | 
 | :-------------    | :--------------------:  | :----------: |
-| str.toLowerCase() | lowercase string        | str.toLowerCase() |
-| str.toUpperCase() | uppercase string        | str.toUpperCase() |
+| str.toLowerCase() | new string              | str.toLowerCase() |
+| str.toUpperCase() | new string              | str.toUpperCase() |
+| concat. op.       | new string              | str1 + str2    |
 | str.trim()        | new string              | str.trim() |
-| regex.test()      | boolean                 | regex.test(str) |
-| str.match()       | new array               | let newArr = str.match(regex) |
 | str.replace()     | new string              | let newStr = str.replace(regex, subStr) |
+| str.match()       | new array               | let newArr = str.match(regex) |
+| endsWith()        | Boolean                 | endsWith(searchStr) | 
+| regex.test()      | Boolean                 | regex.test(str) |
 | str.charCodeAt()  | Unicode #               | charCodeAt(index) |
 | str.fromCharCode() | Character              | fromCharCode(n1, n2, ...) |
-| endsWith()        | Boolean                 | endsWith(searchStr) | 
-| concat. op.       | new string              | str1 + str2    |
 
 <div align="left">&#8675; <a href="#arrays-and-strings" title="Arrays and Strings">To notes section</a></div>
 
