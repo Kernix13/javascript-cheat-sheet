@@ -221,7 +221,7 @@ Loop assigment:
 
 ### String and array methods
 
-Strings and Arrays: Same Methods, Same Effect:
+String and Array methods/properties (Same Methods, Same Effect):
 |    Method   | Purpose: | Returns:     | Arr basic code        | Str basic code | 
 | :---------- | -------: | :------:     | :------------:        | :-----------:  |
 | slice()     | creates: | new arr/str  | arr.slice(start, end) | str.slice(start, end) | 
@@ -234,7 +234,7 @@ Strings and Arrays: Same Methods, Same Effect:
 
 <br>
 
-Strings and Arrays: Different Methods, Same Effect: 
+Strings and Arrays (Different Method Name, Same Effect): 
 |    Method       | Returns:               |  Syntax:          | 
 | :-------------  | :--------------------: | :-----------: |
 | str.charAt(i) | Returns the character at the specified index | str.charAt(index) | 
@@ -244,7 +244,7 @@ Strings and Arrays: Different Methods, Same Effect:
 
 <br>
 
-Strings and Arrays: Different Methods, Opposite Effect
+Strings and Arrays (Different Name, Opposite Effect):
 
 |    Method       | Returns:               |  Syntax:     | 
 | :-------------  | :--------------------: | :----------: |
@@ -256,12 +256,11 @@ Strings and Arrays: Different Methods, Opposite Effect
 ### Other String and array methods
 
 Other common string methods:
-
 |    Method         | Returns:                |  Syntax:     | 
 | :-------------    | :--------------------:  | :----------: |
-| str.toLowerCase() | lowercase string        | same as under _Method_ |
-| str.toUpperCase() | uppercase string        | same as under _Method_ |
-| str.trim()        | new string              | same as under _Method_ |
+| str.toLowerCase() | lowercase string        | str.toLowerCase() |
+| str.toUpperCase() | uppercase string        | str.toUpperCase() |
+| str.trim()        | new string              | str.trim() |
 | regex.test()      | boolean                 | regex.test(str) |
 | str.match()       | new array               | let newArr = str.match(regex) |
 | str.replace()     | new string              | let newStr = str.replace(regex, subStr) |
@@ -275,13 +274,13 @@ Other common string methods:
 <br />
 
 Other common array methods:
-|    Method       | Returns:          |  Syntax:         | 
-| :-------------  | :--------------:  | :----------: |
-| [x][y]          | sub arr values    | arr[x][y] |
-| arr.pop()       | item removed      | arr.pop()   |
-| arr.shift()     | item removed      | arr.shift()|
-| arr.reverse()   | mutated array     | arr.reverse() |
-| arr.join()      | new string        | arr.join(separator) |
+|    Method       | Returns:          |  Syntax:                | 
+| :-------------  | :--------------:  | :----------:            |
+| [x][y]          | sub-array values  | arr[x][y]               |
+| arr.pop()       | item removed      | arr.pop()               |
+| arr.shift()     | item removed      | arr.shift()             |
+| arr.reverse()   | mutated array     | arr.reverse()           |
+| arr.join()      | new string        | arr.join(separator)     |
 | arr.push()      | new array length  | arr.push(item, item2, ...) |
 | arr.unshift()   | new array length  | arr.unshift(item, item2, ...) |
 | arr.splice()    | mutated array     | arr.splice(start, deleteCt, ...items)
@@ -291,7 +290,7 @@ Other common array methods:
 | arr.map()       | new array         | arr.map((item) => {...}) |
 | arr.filter()    | new array         | arr.filter((item) => {...}) |
 | arr.forEach()   | new array         | arr.forEach((item) => {...}) |
-| arr.reduce()    | new array         | arr.reduce(function(a, b) {...}, val) |
+| arr.reduce()    | new array         | arr.reduce((a, b) => {...}, val) |
 
 
 
