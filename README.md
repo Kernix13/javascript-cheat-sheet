@@ -233,7 +233,7 @@ Strings and Arrays: Same Methods, Same Effect:
 | _endsWith(()_ | checks:  | Boolean    | -                   | endsWith(searchStr) | 
 | length      | returns: | arr/str len | arr.length         | str.length | 
 | [index]     | returns: | specific value | arr[index]     | str[index] | 
-| [i][j]      | returns: | sub arr val | arr[i][j]     | str[i][j]  |
+| [x][y]      | returns: | sub arr val | arr[i][j]     | str[i][j]  |
 
 <br>
 
