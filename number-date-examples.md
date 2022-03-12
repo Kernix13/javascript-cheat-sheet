@@ -434,16 +434,16 @@ Math.pow(-7, 0.5); // NaN (negative numbers don't have a real square root)
 Math.pow(-7, 1/3); // NaN
 ```
 
-NOTE: to find the `nth` root of a number use `Math.pow(num, 1/n)`. 
+**NOTE**: to find the `nth` root of a number use `Math.pow(num, 1/n)`. 
 
-NOTE2: The value of Phi &Phi; can be calculated with `(sqrt. of 5 + 1) / 2` or 
+**NOTE 2**: The value of Phi &Phi; can be calculated with `(sqrt. of 5 + 1) / 2` or 
 
 ```js
 const phi = ((Math.pow(5, 0.5) + 1) / 2)
 console.log(phi) // 1.618033988749895
 ```
 
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+<br />
 
 Math.floor(Math.random()): 105 generate random  whole numbers w\in a range:
 ```js

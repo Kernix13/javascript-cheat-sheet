@@ -810,6 +810,7 @@ const numArray = [1, 2, 3, 4, 5, 6];
 const cubedNum = numArray.map(item => Math.pow(item, 3));
 console.log(cubedNum); // [1, 8, 27, 64, 125, 216]
 
+// cubed root
 const numArray = [8, 27, 1.61803];
 const cubedRoot = numArray.map(item => Math.pow(item, 1 / 3));
 console.log(cubedRoot); // [2, 3, 1.1739840320085808]
@@ -827,6 +828,7 @@ const kvArray = [
   ];
 const reformattedArray = kvArray.map(({ key, value}) => ({ [key]: value }));
 console.log(reformattedArray) // {"1": 10}, {"2": 20}, {"3": 30}
+// what is { key, value}? Destructuring?
 ```
 
 **NOTE**: Look into [**Array.from()**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from) and constrast with `.map()`. Check out [Stackoverflow: Array.from vs Array.prototype.map](https://stackoverflow.com/questions/26052699/array-from-vs-array-prototype-map).
@@ -835,7 +837,7 @@ console.log(reformattedArray) // {"1": 10}, {"2": 20}, {"3": 30}
 
 `arr.map()` freeCodeCamp examples:
 ```js
-// Get object key values, similar to what Object.values does on a single object
+// Get object key values, similar to what Object.values does on a single object, but you an not use that because 'users' is an array of objects, not a single object with multiple key-value pairs
 const users = [
   { name: 'John', age: 34 },
   { name: 'Amy', age: 20 },
@@ -844,7 +846,7 @@ const users = [
 const names = users.map(user => user.name);
 console.log(names); // ["John","Amy","camperCat"]
 
-// Challenge 11 CONVERT HTML ENTITIES
+// CONVERT HTML ENTITIES
 function convertHTML(str) {
   const convertSymbols = {
     "&": "&amp;",
@@ -856,13 +858,14 @@ function convertHTML(str) {
 
   return str.split("").map(symbol => convertSymbols[symbol] || symbol).join("");
 }
-convertHTML("Dolce & Gabbana");
+console.log(convertHTML("<li>List item one</li>")); // "&lt;li&gt;List item one&lt;/li&gt;"
+// I would never thought of using an or operaator ||
 
-// lesson 4 3rd solution
+// Great example of te spread operator for a string using Math and map methods!
 function findLongestWordLength(str) {
   return Math.max(...str.split(" ").map(word => word.length));
 }
-findLongestWordLength("The quick brown fox jumped over the lazy dog");
+findLongestWordLength("Find the longest word in this sentence"); // 8
 ```
 
 <br />
@@ -890,6 +893,9 @@ const itemNames = items.map(item => {
   return item.price
 })
 console.log(itemNames) // [100,200,10,5,500,1000,25]
+
+// A shorter version is to lose the 'return1 keyword and curly brackets:
+const itemNames = items.map(item => item.price)
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
@@ -919,11 +925,17 @@ filter(function(element, index) { /* ... */ })
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 const canDrink = ages.filter(age => age >= 21);
 console.log(canDrink);
+// or better, sort the numbers as well:
+const canDrink = ages.filter(age => age >= 21).sort((a, b) => { return a - b });
+
+const ages = [5, 7, 9, 11, 13, 15, 16, 17, 19, 21, 23, 55]
+const teen = ages.filter(age => age >= 13 && age <= 19)
+console.log(teen) // [13, 15, 16, 17, 19]
 ```
 
 <br />
 
-`arr.filter()` examples:
+`arr.filter()` MDN examples:
 ```js
 // Find all prime numbers in an array
 const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
@@ -948,6 +960,8 @@ function filterItems(arr, query) {
 }
 console.log(filterItems(fruits, 'ap'))  // ['apple', 'grapes']
 console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
+// how does the partial string 'ap' return apple and grape? 
+// The return line can be shortened to: return el.indexOf(query) !== -1
 ```
 
 <br />
