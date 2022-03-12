@@ -263,6 +263,6 @@ checkiandj:
 ## Miscellaneous
 
 - accumulators
-- recursion
+- recursion: examples in [function-examples.md](https://github.com/Kernix13/javascript-cheat-sheet/blob/master/function-examples.md)
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>

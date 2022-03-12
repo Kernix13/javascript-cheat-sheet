@@ -22,14 +22,15 @@ Here are docs from MDN:
 1. [Methods](#methods)
 1. [ES6 export import](#es6-export-import)
 1. [Callback functions](#callback-functions)
-1. [Recursion](#recursion)
-   1. [freeCodeCamp examples](#freecodecamp-examples)
-   1. [MDN examples](#mdn-examples)
 1. [Local storage](#local-storage)
 1. [Event delegation](#event-delegation)
 1. [Miscellaneous](#miscellaneous)
    1. [ES6 Promises](#es6-promises)
    1. [Dynamic functions](#dynamic-functions)
+1. [Recursion](#recursion)
+   1. [freeCodeCamp examples](#freecodecamp-examples)
+   1. [MDN examples](#mdn-examples)
+   1. [Recursion notes](#recursion-notes)
 
 ## General
 
@@ -719,129 +720,6 @@ The most important thing you will see is the `target` which represents the eleme
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Recursion
-
-- 1) What is the least amount of work that I can do? What are the sub-problems? How do you tke a large problem and break it into sub problems?
-- 2) What is my stopping condition? When would the process complete? What is the stopping condition?
-- **PROS**: bridges the gap between elegance and complexity. 
-- **CONS**: 
-
-Syntax:
-```js
-function recurse() {
-    if(condition) {
-        // stop calling itself
-    } else {
-        recurse();
-    }
-}
-
-// syntax 2:
-function recursion() {
-  return recursion();
-}
-
-// syntax 3:
-function recursion(parm) {
-  if (parm cond) {   // base case, when hit stop recursion
-    return;
-  }
-  return recursion(parm + 1); // here is the recursion
-}
-```
-
-<br />
-
-Example:
-```js
-function countDown(fromNumber) {
-    console.log(fromNumber);       // 3 2 1
-    let nextNumber = fromNumber - 1;
-    if (nextNumber > 0) {
-        countDown(nextNumber);
-    }
-}
-countDown(3);
-// If you add the condition to stop calling itself, you will get this error:
-Uncaught RangeError: Maximum call stack size exceeded.
-```
-
-### freeCodeCamp examples
-
-```js
-// factorial example
-function factorial(num){
-    if(num === 1){
-        return num;
-    }
-    return num * factorial(num - 1) 
-}
-console.log(factorial(4)); // 24 = 4 * 3 * 2 * 1
-console.log(factorial(5)); // 120
-
-// count down example
-function countDownFrom(number) {
-	if (number === 0) {
-		return;
-	}
-    console.log(number);    
-    countDownFrom(number - 1);
-}
-countDownFrom(5); // 5 4 3 2 1
-
-// Essay to revise until accepted:
-function revise(essay) {
-  read(essay);
-  get_feedback_on(essay);
-  apply_changes_to(essay);
-  revise(essay) unless essay.complete;
-}
-// you do a little bit of work on eah invocation of your method call until you hit the stopping condition
-```
-
-### MDN examples
-
-Recursion is limited by stack size:
-```js
-// The following code defines a function that returns the maximum size of the call stack available in the JavaScript runtime in which the code is run.
-const getMaxCallStackSize = (i) => {
-  try {
-    return getMaxCallStackSize(++i);
-  } catch {
-    return i;
-  }
-};
-
-console.log(getMaxCallStackSize(0));
-```
-
-<br />
-
-Common usage examples:
-```js
-// factorial
-const factorial = (n) => {
-  if (n === 0) return 1;
-  else return n * factorial(n - 1);
-};
-console.log(factorial(10)); // 3628800
-
-// fibonacci
-const fibonacci = (n) => (n <= 2 ? 1 : fibonacci(n - 1) + fibonacci(n - 2));
-console.log(fibonacci(10)); // 55
-console.log(fibonacci(6)); // 8
-
-// not sure
-const reduce = (fn, acc, [cur, ...rest]) => (
-  cur === undefined ? acc : reduce(fn, fn(acc, cur), rest)
-);
-console.log(reduce((a, b) => a + b, 0, [1, 2, 3, 4, 5, 6, 7, 8, 9])); // 45
-```
-
-Look into the _call stack_ mentioned in [A Quick Intro to Recursion in Javascript](https://www.freecodecamp.org/news/quick-intro-to-recursion/) by freeCodeCamp.
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
 ## Local storage
 
 This would be the code inside of a function:
@@ -1000,3 +878,172 @@ function checkInventory(scannedItem) {
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Recursion
+
+Syntax:
+```js
+function recurse() {
+    if(condition) {
+        // stop calling itself
+    } else {
+        recurse();
+    }
+}
+
+// syntax 2:
+function fxName() {
+  return fxName();
+  // executes forever resulting in a "stack overflow" - ran out of memory
+  // so you need a base case
+}
+
+// syntax 3:
+function recursion(parm) {
+  if (parm cond) {   // base case, when hit stop recursion
+    return;
+  }
+  return recursion(parm + 1); // here is the recursion
+}
+
+// 
+```
+
+<br />
+
+Example:
+```js
+function countDown(fromNumber) {
+    console.log(fromNumber);       // 3 2 1
+    let nextNumber = fromNumber - 1;
+    if (nextNumber > 0) {
+        countDown(nextNumber);
+    }
+}
+countDown(3);
+// If you add the condition to stop calling itself, you will get this error:
+Uncaught RangeError: Maximum call stack size exceeded.
+```
+
+### freeCodeCamp examples
+
+From the video 
+```js
+// factorial example
+function factorial(num){
+    if(num === 1){
+        return num;
+    }
+    return num * factorial(num - 1) 
+}
+console.log(factorial(4)); // 24 = 4 * 3 * 2 * 1
+console.log(factorial(5)); // 120
+
+// count down example
+function countDownFrom(number) {
+	if (number === 0) {
+		return;
+	}
+    console.log(number);    
+    countDownFrom(number - 1);
+}
+countDownFrom(5); // 5 4 3 2 1
+
+// Essay to revise until accepted:
+function revise(essay) {
+  read(essay);
+  get_feedback_on(essay);
+  apply_changes_to(essay);
+  revise(essay) unless essay.complete;
+}
+// you do a little bit of work on ecah invocation of your method call until you hit the stopping condition
+```
+
+<br />
+
+Recursion with strings:
+```js
+// STRING REVERSAL
+// input str: "the simple engineer"
+// output str: "reenigne elpmis eht" - string in reverse
+
+function revString(str) {
+// what are the steps? last char becomes 1st
+  let len = str.length;
+  return str[len - 1];
+}
+console.log(revString("the simple engineer")); // "reenigne elpmis eht"
+// Uncaught RangeError: Maximum call stack size exceeded
+// Uncaught RangeError: Maximum call stack size exceeded at String.substring 
+
+// 
+```
+
+### MDN examples
+
+Recursion is limited by stack size:
+```js
+// The following code defines a function that returns the maximum size of the call stack available in the JavaScript runtime in which the code is run.
+const getMaxCallStackSize = (i) => {
+  try {
+    return getMaxCallStackSize(++i);
+  } catch {
+    return i;
+  }
+};
+
+console.log(getMaxCallStackSize(0));
+```
+
+<br />
+
+Common usage examples:
+```js
+// factorial
+const factorial = (n) => {
+  if (n === 0) return 1;
+  else return n * factorial(n - 1);
+};
+console.log(factorial(10)); // 3628800
+
+// fibonacci
+const fibonacci = (n) => (n <= 2 ? 1 : fibonacci(n - 1) + fibonacci(n - 2));
+console.log(fibonacci(10)); // 55
+console.log(fibonacci(6)); // 8
+
+// not sure
+const reduce = (fn, acc, [cur, ...rest]) => (
+  cur === undefined ? acc : reduce(fn, fn(acc, cur), rest)
+);
+console.log(reduce((a, b) => a + b, 0, [1, 2, 3, 4, 5, 6, 7, 8, 9])); // 45
+```
+
+Look into the _call stack_ mentioned in [A Quick Intro to Recursion in Javascript](https://www.freecodecamp.org/news/quick-intro-to-recursion/) by freeCodeCamp.
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Recursion notes
+
+Notes on Video [Recursion in Programming - Full Course](https://youtu.be/IJDJ0kBx2LM) from freeCodeCamp:
+
+- 1) What is the least amount of work that I can do? What are the sub-problems? How do you tke a large problem and break it into sub problems?
+- 2) What is my stopping condition? When would the process complete? What is the stopping condition?
+- **Call Stack**: stack frame -> A depends on B, B depends on C, then C 
+
+**PROS**:
+- bridges the gap between elegance and complexity. His examples will be complex traversals of data structures of trees and graphs. 
+- Also, reduces the need for complex loops and auxiliary data structures. Simplies your code.
+- can reduce time complexity (memoization)
+- works really well with data structures like **_JSON Objects_**, **_trees_** and **_graphs_** - things that allow you to focus on one tiny unit of the data structure at a time
+
+**CONS**: 
+- slowness because of CPU overhead. Can get messy with recursive data structures. 
+- can lead to out of memory errors / stack overflow exceptions
+- can be complex if poorly constructed. Always ask, "_Is this a good use case for recursion?_"
+
+> _Uncaught RangeError: Maximum call stack size exceeded_
+
+NOTE: For string recursion, very often you can make it easier by evaluating the input length - so try a str of length 0 and of 1 - 
+
+NUMBER RECURSION
+- 1st problem - base 10 to binary conversion - 
