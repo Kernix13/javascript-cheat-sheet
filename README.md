@@ -222,18 +222,15 @@ Loop assigment:
 ### String and array methods
 
 Strings and Arrays: Same Methods, Same Effect:
-|    Method   | Purpose: | Returns:   | Arr basic code | Str basic code | 
-| :---------- | -------: | :------:   | :------------: | :-----------:  |
-| slice()     | creates: | new arr/str | arr.slice(start, end) | str.slice(start, end) | 
-| _concat. op._ | creates: | new str    | -              | str1 + str2    |
-| concat()    | creates: | new arr/str | arr1.concat(arr2) | str1.concat(' ', str2)  | 
-| indexOf()   | returns: | index # or -1 | indexOf(searchVal)  | indexOf(searchStr) | 
+|    Method   | Purpose: | Returns:     | Arr basic code        | Str basic code | 
+| :---------- | -------: | :------:     | :------------:        | :-----------:  |
+| slice()     | creates: | new arr/str  | arr.slice(start, end) | str.slice(start, end) | 
+| concat()    | creates: | new arr/str  | arr1.concat(arr2)     | str1.concat(' ', str2)  | 
+| indexOf()   | returns: | index # or -1 | indexOf(searchVal)   | indexOf(searchStr) | 
 | lastIndexOf() | returns: | index # or -1 | lastIndexOf(searchVal) | lastIndexOf(searchStr) |
-| _endsWith(()_ | checks:  | Boolean    | -                   | endsWith(searchStr) | 
-| includes()  | checks:  | Boolean    | includes(searchVal) | includes(searchStr) | 
-| length      | returns: | arr/str len | arr.length         | str.length | 
-| [index]     | returns: | specific value | arr[index]     | str[index] | 
-| [x][y]      | returns: | sub arr val | arr[x][y]     | str[x][y]   |
+| includes()  | checks:  | Boolean      | includes(searchVal)   | includes(searchStr) | 
+| length      | returns: | arr/str len  | arr.length            | str.length | 
+| [index]     | returns: | specific value | arr[index]          | str[index] | 
 
 <br>
 
@@ -243,7 +240,7 @@ Strings and Arrays: Different Methods, Same Effect:
 | str.charAt(i) | Returns the character at the specified index | str.charAt(index) | 
 | arr.at(i)     | Returns the array item at the given index    | arr.at(index)     | 
 | str.substring(i) | Returns part of a string                  | str.substring(indexStart)|
-| arr.splice(i) | Adds/Removes elements from an array          | arr.splice(start) |
+| arr.slice(i) | Returns part of an array                       | arr.splice(indexStart) |
 
 <br>
 
@@ -270,26 +267,29 @@ Other common string methods:
 | str.replace()     | new string              | let newStr = str.replace(regex, subStr) |
 | str.charCodeAt()  | Unicode #               | charCodeAt(index) |
 | str.fromCharCode() | Character              | fromCharCode(n1, n2, ...) |
+| endsWith()        | Boolean                 | endsWith(searchStr) | 
+| concat. op.       | new string              | str1 + str2    |
 
 <div align="left">&#8675; <a href="#arrays-and-strings" title="Arrays and Strings">To notes section</a></div>
 
 <br />
 
 Other common array methods:
-
 |    Method       | Returns:          |  Syntax:         | 
 | :-------------  | :--------------:  | :----------: |
-| arr.push()      | new array length  | let newArr = str.push(item, item2, ...) |
-| arr.unshift()   | new array length  | let newArr = str.unshift(item, item2, ...) |
-| arr.pop()       | item removed      | same as under _Method_ |
-| arr.shift()     | item removed      | same as under _Method_ |
-| arr.join()      | new string        | str.join('') |
-| arr.reverse()   | mutated array     | same as under _Method_ |
+| [x][y]          | sub arr values    | arr[x][y] |
+| arr.pop()       | item removed      | arr.pop()   |
+| arr.shift()     | item removed      | arr.shift()|
+| arr.reverse()   | mutated array     | arr.reverse() |
+| arr.join()      | new string        | arr.join(separator) |
+| arr.push()      | new array length  | arr.push(item, item2, ...) |
+| arr.unshift()   | new array length  | arr.unshift(item, item2, ...) |
+| arr.splice()    | mutated array     | arr.splice(start, deleteCt, ...items)
 | arr.sort()      | mutated array     | arr.sort((a, b) => a - b) |
 | arr.every()     | boolean           | arr.every((item) => {...}) |
 | arr.some()      | boolean           | arr.some((item) => {...}) |
-| arr.map()       | new array         | let newArr = arr.map((item) => {...}) |
-| arr.filter()    | new array         | let newArr = arr.filter((item) => {...}) |
+| arr.map()       | new array         | arr.map((item) => {...}) |
+| arr.filter()    | new array         | arr.filter((item) => {...}) |
 | arr.forEach()   | new array         | arr.forEach((item) => {...}) |
 | arr.reduce()    | new array         | arr.reduce(function(a, b) {...}, val) |
 
