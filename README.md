@@ -248,8 +248,8 @@ Strings and Arrays (Different Name, Opposite Effect):
 
 |    Method       | Returns:               |  Syntax:     | 
 | :-------------  | :--------------------: | :----------: |
-| split() | divides str into substrings and into an array | str.split() | 
-| join()  | Joins all elements of an array into a string  | arr.join() | 
+| split() | Turns a string into an array of substrings | str.split() | 
+| join()  | Turns all elements of an array into a string  | arr.join() | 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
