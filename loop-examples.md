@@ -7,7 +7,7 @@ Notes for not so common loop code snippets.
 ## Table of contents
 
 1. [While loop](#while-loop)
-1. [Do while loop](#do-while-loop)
+1. [do while loop](#do-while-loop)
 1. [for loop](#for-loop)
 1. [for in and for of loops](#for-in-and-for-of-loops)
 1. [Array methods](#array-methods)
@@ -32,7 +32,7 @@ do {
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Do while loop
+## do while loop
 
 Syntax:
 ```js

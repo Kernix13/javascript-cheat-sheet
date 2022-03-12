@@ -161,8 +161,39 @@ switch (expr) {
   default:
     console.log('Sorry, we are out of ' + expr + '.');
 }
-
 console.log("Is there anything else you'd like?");
+
+// Example 2:
+
+// Get day of week for November 1st for the current year
+const d = new Date();
+const year = d.getFullYear();
+let currentNovFirst = '11/01/' + year;
+let novFirstDay = new Date(currentNovFirst).getDay();
+
+// For the current year, find the day of the week for the 1st of Nov then return the date for the first Monday in November 
+switch (novFirstDay) {
+  case 0:
+    weekOne = new Date(`11/1/${year}`)
+    break;
+  case 1:
+    weekOne = new Date(`11/1/${year}`)
+    break;
+  case 2:
+    weekOne = new Date(`11/1/${year}`)
+    break;
+  case 3:
+    weekOne = new Date(`11/1/${year}`)
+    break;
+  case 4:
+    weekOne = new Date(`11/1/${year}`)
+    break;
+  case 5:
+    weekOne = new Date(`11/1/${year}`)
+    break;
+  case 6:
+    weekOne = new Date(`11/1/${year}`)
+}
 ```
 
 <br />

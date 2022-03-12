@@ -24,13 +24,13 @@ Here are docs from MDN:
 1. [Callback functions](#callback-functions)
 1. [Local storage](#local-storage)
 1. [Event delegation](#event-delegation)
-1. [Miscellaneous](#miscellaneous)
-   1. [ES6 Promises](#es6-promises)
-   1. [Dynamic functions](#dynamic-functions)
 1. [Recursion](#recursion)
    1. [freeCodeCamp examples](#freecodecamp-examples)
    1. [MDN examples](#mdn-examples)
    1. [Recursion notes](#recursion-notes)
+1. [Miscellaneous](#miscellaneous)
+   1. [ES6 Promises](#es6-promises)
+   1. [Dynamic functions](#dynamic-functions)
 
 ## General
 
@@ -802,83 +802,6 @@ But the structure is ul > li > a > i and to delete the entire list item, which i
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Miscellaneous
-
-- arguments vs parameters
-- scope
-- `return`: 
-- `undefined`: 
-
-### ES6 Promises
-
-```js
-// lesson 29 freeCodeCamp
-const myPromise = new Promise((resolve, reject) => {
-  if (conditionhere) {
-    resolve("Promise was fulfilled");
-  } else {
-    reject("Promise was rejected");
-  }
-});
-// or this 
-const makeServerRequest = new Promise((resolve, reject) => {
-  let responseFromServer;
-
-  if (responseFromServer) {
-    resolve("We got the data");
-  } else {
-    reject("Data not received")
-  }
-});
-
-// lesson 30 & 31 freeCodeCamp (confusing)
-const makeServerRequest = new Promise((resolve, reject) => {
-  // responseFromServer is set to false to represent an unsuccessful response from a server
-  let responseFromServer = true;
-
-  if (responseFromServer) {
-    resolve("We got the data");
-  } else {
-    reject("Data not received");
-  }
-});
-
-makeServerRequest.then(result => {
-  console.log(result);
-});
-
-makeServerRequest.catch((error) => {
-  console.log(error);
-});
-``
-
-- Promise, new, resolve, reject
-- pending, fulfilled, rejected
-- then, result, catch, try, error 
-- refactor
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-### Dynamic functions
-
-```js
-let foods = {
-  apples: 25,
-  oranges: 32,
-  plums: 28,
-  bananas: 13,
-  grapes: 35,
-  strawberries: 27
-};
-
-function checkInventory(scannedItem) {
-  return foods[scannedItem];
-}
-// console.log(checkInventory("apples"));
-```
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
 ## Recursion
 
 Syntax:
@@ -1047,3 +970,83 @@ NOTE: For string recursion, very often you can make it easier by evaluating the 
 
 NUMBER RECURSION
 - 1st problem - base 10 to binary conversion - 
+- 
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Miscellaneous
+
+- arguments vs parameters
+- scope
+- `return`: 
+- `undefined`: 
+
+### ES6 Promises
+
+```js
+// lesson 29 freeCodeCamp
+const myPromise = new Promise((resolve, reject) => {
+  if (conditionhere) {
+    resolve("Promise was fulfilled");
+  } else {
+    reject("Promise was rejected");
+  }
+});
+// or this 
+const makeServerRequest = new Promise((resolve, reject) => {
+  let responseFromServer;
+
+  if (responseFromServer) {
+    resolve("We got the data");
+  } else {
+    reject("Data not received")
+  }
+});
+
+// lesson 30 & 31 freeCodeCamp (confusing)
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer is set to false to represent an unsuccessful response from a server
+  let responseFromServer = true;
+
+  if (responseFromServer) {
+    resolve("We got the data");
+  } else {
+    reject("Data not received");
+  }
+});
+
+makeServerRequest.then(result => {
+  console.log(result);
+});
+
+makeServerRequest.catch((error) => {
+  console.log(error);
+});
+``
+
+- Promise, new, resolve, reject
+- pending, fulfilled, rejected
+- then, result, catch, try, error 
+- refactor
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Dynamic functions
+
+```js
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+function checkInventory(scannedItem) {
+  return foods[scannedItem];
+}
+// console.log(checkInventory("apples"));
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>

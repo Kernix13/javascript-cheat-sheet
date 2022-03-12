@@ -4,14 +4,15 @@
 
 This is not an all-inclusive list of every possible JavaScript method, property, etc. This file has tables of comparisons for quick reference. Notes on elements in the tables are at the bottom of the file.
 
-- `function-examples.md`: still raw
-- `loop-examples.md`: still raw
-- `notes.md`: various important notes on anything and anything
-- `number-date-examples.md`: 
-- `object-examples.md`: 
-- `practical-examples.md`: not much here yet
+- `conditionals-examples.md`: Mostly done
+- `function-examples.md`: Good but need more notes and examples or Local storage, Event delegation,  Promises, and Recursion.
+- `loop-examples.md`: still raw - need more examples
+- `notes.md`: various important notes on anything and everything (REALLY MESSY!)
+- `number-date-examples.md`: Good but need to learn how to format dates, unless my tests in CodePen are the problem. Try local file...
+- `object-examples.md`: Mostly complete
+- `practical-examples.md`: Work in process - not much here yet
 - `regex-examples.md`: this is pretty good but not finished
-- `string-array-examples.md`: The BEST file!
+- `string-array-examples.md`: The **_BEST_** file by far!
 
 <div id="back-to-top"></div>
 

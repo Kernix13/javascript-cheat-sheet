@@ -956,8 +956,8 @@ No parameter
 | toFixed       | num.toFixed()     | Definitely use  |
 | toPrecision   | num.toPrecision() | Maybe           |
 | Math.random   | Math.random()     | Definitely use  |
-| Math.max      | Math.max()        | Returns `infinity`? |
-| Math.min      | Math.min()        | Returns `infinity`? |
+| Math.max      | Math.max()        | Returns `-infinity`? |
+| Math.min      | Math.min()        | Returns `-infinity`? |
 
 <br />
 
@@ -977,8 +977,8 @@ One parameter
 | Math.sign     | Math.sign(x)    | Definitely use  |
 | Math.sqrt     | Math.sqrt(x)    | Definitely use  |
 | Math.trunc    | Math.trunc(x)   | Definitely use  |
-| Math.max      | Math.max(value0) | Why use 1 #? | 
-| Math.min      | Math.min(value0) | Why use 1 #? | 
+| Math.max      | Math.max(value0) | Why use 1 value? | 
+| Math.min      | Math.min(value0) | Why use 1 value? | 
 
 <br />
 

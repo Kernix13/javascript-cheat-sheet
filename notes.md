@@ -2,7 +2,7 @@
 
 Notes on specifics in README and other important notes, definitions, concepts, tips, tricks, etc. Currently, this file is a mess...
 
-The code block below is a quick note for myself for a project I am stuck on (ignore):
+> The code block below is a quick note for myself for a project I am stuck on (ignore):
 
 **use `every()` to compare one array to other arrays and to return a match:**
 
@@ -12,6 +12,8 @@ const hasSameElements = (a, b) => {
 }
 // But do the elements need to be in the same order?
 ```
+
+<div id="back-to-top"></div>
 
 ## Table of Contents
 
@@ -196,7 +198,7 @@ Concepts, specific code syntax, ...
   <dd>A part of inheritance in OOP which change which classes have access to other classes, methods, or attributes. There are 3 main access modifiers: Public, Private, and Protected. Public modifiers can be accessed from anywhere in your program. Private modifier can only be accessed from within the same class that the member is defined. Protected modifiers can be access within the class it is defined, as well as subclasses of that class.</dd>
 </dl>
 <dl>
-  <dt>"**_In place_**"</dt>
+  <dt>In place</dt>
   <dd>In-place means that you should update the original string rather than creating a new one. You should change the content of the original string to the reverse without using a temporary storage variable to hold the string.</dd>
 </dl>
 <dl>
@@ -223,6 +225,8 @@ Concepts, specific code syntax, ...
   <dt>Type coercion</dt>
   <dd>is the automatic or implicit conversion of values from one data type to another (such as strings to numbers).</dd>
 </dl>
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 # Sloppy notes
 
@@ -355,54 +359,6 @@ The best of my notes from Traversy 20 web projects with vanilla javascript cours
 - fetch runs asynchronously which means in the background and it returns a promise – when it’s done fetching it will return a promise – you catch that promise with .then() - .then() takes a function; res.json(); 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-
-Strings and Arrays: Same Methods, Same Effect in detail, Code examples:
-
-```js
-// slice string
-const str = 'The quick brown fox jumps over the lazy dog.';
-console.log(str.slice(4, 19)); // output: "quick brown fox"
-
-// slice array
-const clothes = ["shoes", "hat", "shirt", "pants", "socks", "belt"]
-console.log(animals.slice(2, 4)); // output: Array ["shirt", "pants"]
-
-// concat string
-str1 = "Hey";
-str2 = "there.";
-str1.concat(' ', str2) // output "Hey there."
-
-// concat array
-
-
-// includes string
-
-
-// includes array
-
-
-// endsWith string
-
-
-// indexOf string
-
-
-// indexOf array
-
-
-// lastIndexOf string
-
-
-// lastIndexOf array
-
-```
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-
-
-
 
 ## Dates
 
