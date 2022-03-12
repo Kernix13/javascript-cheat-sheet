@@ -783,8 +783,9 @@ map(function(element, index, array) { /* ... */ }, thisArg)
 
 <br />
 
-`arr.map()` simple MDN examples:
+`arr.map()` simple examples:
 ```js
+// MDN
 const arr = [1, 2, 3]
 const mapArr = arr.map(n => n * 3)
 console.log(mapArr)
@@ -795,6 +796,23 @@ console.log(map1);
 
 const numbers = [1, 4, 9];
 const roots = numbers.map((num) => Math.sqrt(num)); // roots is now [1, 2, 3]
+
+// My examples:
+const numArray = [1, 2, 3, 4, 5, 6];
+const divideNums = numArray.map(item => item / 2.5);
+console.log(divideNums); // [0.4, 0.8, 1.2, 1.6, 2, 2.4]
+
+const numArray = [1, 2, 3, 4, 0.5, -3];
+const numRemainder = numArray.map(item => item % 2);
+console.log(numRemainder); // [1, 0, 1, 0, 0.5, -1]
+
+const numArray = [1, 2, 3, 4, 5, 6];
+const cubedNum = numArray.map(item => Math.pow(item, 3));
+console.log(cubedNum); // [1, 8, 27, 64, 125, 216]
+
+const numArray = [8, 27, 1.61803];
+const cubedRoot = numArray.map(item => Math.pow(item, 1 / 3));
+console.log(cubedRoot); // [2, 3, 1.1739840320085808]
 ```
 
 <br />

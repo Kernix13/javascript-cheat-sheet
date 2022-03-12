@@ -408,6 +408,8 @@ let z = Math.min(x, y);
 Math.pow(x, y)
 ```js
 // syntax
+Math.pow(base, exponent)
+
 console.log(Math.pow(7, 3)); // 343
 console.log(Math.pow(4, 0.5)); // 2
 console.log(Math.pow(7, -2)); // 0.02040816326530612
@@ -430,6 +432,15 @@ Math.pow(-7, 2);   // 49 (squares are positive)
 Math.pow(-7, 3);   // -343 (cubes can be negative)
 Math.pow(-7, 0.5); // NaN (negative numbers don't have a real square root)
 Math.pow(-7, 1/3); // NaN
+```
+
+NOTE: to find the `nth` root of a number use `Math.pow(num, 1/n)`. 
+
+NOTE2: The value of Phi &Phi; can be calculated with `(sqrt. of 5 + 1) / 2` or 
+
+```js
+const phi = ((Math.pow(5, 0.5) + 1) / 2)
+console.log(phi) // 1.618033988749895
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
