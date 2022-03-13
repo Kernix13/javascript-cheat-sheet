@@ -936,7 +936,7 @@ console.log(teen) // [13, 15, 16, 17, 19]
 
 <br />
 
-`arr.filter()` MDN examples:
+`arr.filter()` MDN and other examples:
 ```js
 // Find all prime numbers in an array (REALLY CONFUSING)
 //          DIFFICULTY: HIGH
@@ -965,6 +965,48 @@ console.log(filterItems(fruits, 'ap'))  // ['apple', 'grapes']
 console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
 // how does the partial string 'ap' return apple and grape? 
 // The return line can be shortened to: return el.indexOf(query) !== -1
+
+
+const companies= [
+  {name: "Company One", category: "Finance", start: 1981, end: 2004},
+  {name: "Company Two", category: "Retail", start: 1992, end: 2008},
+  {name: "Company Three", category: "Auto", start: 1999, end: 2007},
+  {name: "Company Four", category: "Retail", start: 1989, end: 2010},
+  {name: "Company Five", category: "Technology", start: 2009, end: 2014},
+  {name: "Company Six", category: "Finance", start: 1987, end: 2010},
+  {name: "Company Seven", category: "Auto", start: 1986, end: 1996},
+  {name: "Company Eight", category: "Technology", start: 2011, end: 2016},
+  {name: "Company Nine", category: "Retail", start: 1981, end: 1989}
+];
+const retailCompanies = companies.filter(function(company) {
+  if(company.category === 'Retail') {
+    return companies;
+  }
+});
+console.log(retailCompanies) // 3 objects, or try:
+const retailCompanies = companies.filter(company => company.category === 'Retail');
+const eightiesCompanies = companies.filter(company => (company.start >= 1980 && company.start < 1990));
+console.log(eightiesCompanies) // 5 companies
+
+
+// TRaversy expense tracker
+function updateValues() {
+  const amounts = transactions.map(transaction => transaction.amount);
+
+  const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
+
+  const income = amounts
+    .filter(item => item > 0)
+    .reduce((acc, item) => (acc += item), 0)
+    .toFixed(2);
+
+  const expense = (
+    amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) * -1).toFixed(2);
+
+  balance.innerText = `$${total}`;
+  money_plus.innerText = `$${income}`;
+  money_minus.innerText = `$${expense}`;
+}
 ```
 
 <br />
@@ -1063,8 +1105,9 @@ Other examples:
 7) .filter(item => parseInt(item)... .map(item => Math.pow))
 8) .split.filter(item => .join().toLowerCase())
 9) .filter(item => !arr.includes(item) && item ... .push(item))
+Traversy) .filter .reduce .toFixed
 
-COUNT TOTALS: !includes (3), multiple returns (3), rest op, map, concat, indexOf, sort, hasOwnProperty
+COUNT TOTALS: "if's" (4), includes (3), multiple returns (3), reduce(2), rest op, map, concat, indexOf, sort, hasOwnProperty => the multiple returns really throws me off!
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
