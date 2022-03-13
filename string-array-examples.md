@@ -9,12 +9,12 @@ Syntax and code examples for the most coomon string and array methods.
 | Topic               | Sub-topic | Sub-topic | Sub-topic | Sub-topic |  
 | ----:               | :-------    | :------     | :------     | :------     |
 | 1. [Simple array methods](#simple-array-methods): | i. [push](#push) | ii. [unshift](#unshift) | iii. [pop](#pop) | iv. [shift](#shift) |
-|                     | v. [Basic sort](#basic-sort) | vi. [reverse](#reverse) | vii. [splice](#splice) | vii. [arr slice](#arr-slice) |
+|                     | v. [Basic sort](#basic-sort) | vi. [reverse](#reverse) | vii. [splice](#splice) | vii. [array slice](#array-slice) |
 |                     | ix. [concat](#concat) | x. [join](#join) | - | - | 
 |                     | xi. [indexOf](#indexOf) | xii. [lastIndexOf](#lastIndexOf) | xiii. [Includes](#includes) | - |
 | 2. [High order methods](#high-order-methods): | i. [Sort](#sort) | ii. [Find](#find) | iii. [Every](#every) | iv. [Some](#some) | 
 |                     | v. [Map](#map) | vi. [Filter](#filter) | vii. [forEach](#forEach) | viii. [Reduce](#reduce) |
-| 3. [String methods](#string-methods):  | i. [str slice](#str-slice) | ii. [split](#split) | iii. [substring](#substring) | iv. [repeat](#repeat) |
+| 3. [String methods](#string-methods):  | i. [string slice](#string-slice) | ii. [split](#split) | iii. [substring](#substring) | iv. [repeat](#repeat) |
 |                     | v. [endsWith](#endsWith) | vi. [test](#test) | - | - |
 |                     | vii. [match](#match) | viii. [replace](#replace) | ix. [toString](#tostring) | x. [Miscellaneous](#Miscellaneous) |
 | 4. [Spread operator](#spread-operator)  | | | | |
@@ -190,6 +190,8 @@ let arr2 = arr.splice(2,2)
 console.log(arr2, arr) // [3,4] [1,2,100,101,5,6]
 ```
 
+<br />
+
 Examples:
 ```js
 // Add items, then remove and add 
@@ -213,7 +215,7 @@ console.log(alpha) // ["a","b","c","e"]
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">MDN Splice</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-### arr slice
+### array slice
 
 MDN syntax:
 ```js
@@ -231,16 +233,9 @@ console.log(arr2, arr) // [3,4,5,6] [1,2,3,4,5,6]
 // slice(startIndex, endIndex) endIndex must be greater than start
 let arr2 = arr.slice(2,4)
 console.log(arr2, arr) // [3,4] [1,2,3,4,5,6]
-
-let str = "The slice method"
-console.log(str.slice()) // "The slice method"
-// slice(startIndex)
-let str2 = str.slice(4)
-console.log(str2, str) // "slice method" "The slice method"
-// slice(startIndex, endIndex)
-let str2 = str.slice(4, 7)
-console.log(str2, str) // "sli" "The slice method"
 ```
+
+<br />
 
 Examples:
 ```js
@@ -261,7 +256,7 @@ console.log(newCar)
 // // [{ color: 'red', wheels: 4, engine: { cylinders: 4, size: 2.2 } }, 2, "cherry condition"]
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">MDN Slice</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">MDN Array Slice</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### concat
@@ -508,6 +503,8 @@ find(callbackFn, thisArg)
 find(function(element) { /* ... */ })
 find(function(element, index) { /* ... */ })
 ```
+
+<br />
 
 `arr.find()` MDN examples
 ```js
@@ -802,7 +799,9 @@ console.log(reformattedArray) // {"1": 10}, {"2": 20}, {"3": 30}
 
 `arr.map()` freeCodeCamp examples:
 ```js
-// Get object key values, similar to what Object.values does on a single object, but you an not use that because 'users' is an array of objects, not a single object with multiple key-value pairs
+// Get object key values, similar to what Object.values does on a single object, 
+// but you can not use that because 'users' is an array of objects, not a single 
+// object with multiple key-value pairs
 const users = [
   { name: 'John', age: 34 },
   { name: 'Amy', age: 20 },
@@ -1332,11 +1331,37 @@ console.log(badString.toLowerCase().trim()); // "oops, caps lock on. need to fix
 // need to capitalize first letter and add a regex for the first char after the period.
 ```
 
-### str slice
+### string slice
 
-See the [array slice](#arr-slice) method above.
+MDN syntax:
+```js
+slice(beginIndex)
+slice(beginIndex, endIndex)
 
-<br />
+// MDN slice()
+const str = 'The quick brown fox jumps over the lazy dog.';
+console.log(str.slice(31)); // "the lazy dog."
+console.log(str.slice(4, 19)); // "quick brown fox"
+console.log(str.slice(-4)); // "dog."
+console.log(str.slice(-9, -5)); // "lazy"
+
+let str = "The slice method"
+console.log(str.slice()) // "The slice method"
+// slice(startIndex)
+let str2 = str.slice(4)
+console.log(str2, str) // "slice method" "The slice method"
+// slice(startIndex, endIndex)
+let str2 = str.slice(4, 7)
+console.log(str2, str) // "sli" "The slice method"
+```
+
+Examples:
+```js
+
+```
+
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice">MDN String Slice</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### split
 
@@ -1359,6 +1384,8 @@ console.log(str2, str) // ["T","h"] "The split method"
 let str2 = str.split(' ', 2)
 console.log(str2, str) // ["The","split"] "The split method"
 ```
+
+<br /> 
 
 Examples:
 ```js
