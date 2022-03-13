@@ -73,7 +73,7 @@ rhythm.push(...harmony);
 console.log(rhythm)  // ['bass', 'drums', 'guitar', 'piano']
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push">MDN Push</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### unshift
@@ -95,7 +95,7 @@ arr.unshift(2)
 arr.unshift(3) // [3, 2, 1, 4, 5, 6]
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift">MDN Unshift</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### pop
@@ -108,7 +108,7 @@ console.log(removedItem); // "d"
 console.log(arr); // ["a","b","c"]
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop">MDN Pop</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### shift
@@ -138,7 +138,7 @@ while( typeof (i = names.shift()) !== 'undefined' ) {
 console.log(names) // []
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift">MDN Shift</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### join
@@ -156,13 +156,14 @@ a.join(', ');  // 'Fire, Water, Air, Earth'
 a.join(' + '); // 'Fire + Water + Air + Earth'
 a.join('');    // 'FireWaterAirEarth'
 
-// Here is an example using toLowerCase() and split() for a URL page slug
+// Here is an example using toLowerCase() and split() for a URL page slug 
 const blogTitle = "Common Array Methods You Should Know"
 const urlSlug = blogTitle.toLowerCase().split(' ').join('-')
+// add this on: filter(word => word !== "")
 console.log(urlSlug); // "common-array-methods-you-should-know"
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join">MDN Join</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Basic sort
@@ -182,7 +183,7 @@ const numSort = [...nums].sort();
 console.log(numSort) // [1,10001,101,12,27,3,44,5,55]
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">MDN Sort</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### reverse
@@ -215,7 +216,7 @@ if (word === revWord) {
 }
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse">MDN Reverse</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### splice
@@ -265,7 +266,7 @@ console.log(alpha) // ["a","b","c","e"]
 
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">MDN Splice</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### slice
@@ -316,7 +317,7 @@ console.log(newCar)
 // // [{ color: 'red', wheels: 4, engine: { cylinders: 4, size: 2.2 } }, 2, "cherry condition"]
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">MDN Slice</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### indexOf
@@ -375,7 +376,7 @@ while(index !== -1) {
 console.log(count); // 3
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf">MDN indexOf</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### lastIndexOf
@@ -402,7 +403,7 @@ while (idx !== -1) {
 console.log(indices); // [4, 2, 0]
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf">MDN lastIndexOf</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### concat
@@ -445,7 +446,7 @@ num1[0].push(4);
 console.log(numbers); // [[1, 4], 2, [3]]
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat">MDN concat</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Includes
@@ -468,7 +469,7 @@ console.log(str.includes('Script', 5)); // false
 console.log(str.includes('Script', 4)); // true
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes">MDN includes</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## High order array methods
@@ -989,7 +990,7 @@ const eightiesCompanies = companies.filter(company => (company.start >= 1980 && 
 console.log(eightiesCompanies) // 5 companies
 
 
-// TRaversy expense tracker
+// Traversy expense tracker
 function updateValues() {
   const amounts = transactions.map(transaction => transaction.amount);
 
