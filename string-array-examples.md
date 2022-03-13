@@ -937,7 +937,8 @@ console.log(teen) // [13, 15, 16, 17, 19]
 
 `arr.filter()` MDN examples:
 ```js
-// Find all prime numbers in an array
+// Find all prime numbers in an array (REALLY CONFUSING)
+//          DIFFICULTY: HIGH
 const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
 function isPrime(num) {
@@ -951,6 +952,7 @@ function isPrime(num) {
 console.log(array.filter(isPrime)); // [2, 3, 5, 7, 11, 13]
 
 // Searching an array
+//          DIFFICULTY: MEDIUM-HIGH
 let fruits = ['apple', 'banana', 'grapes', 'mango', 'orange']
 
 function filterItems(arr, query) {
@@ -968,7 +970,9 @@ console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
 
 `arr.filter()` freeCodeCamp examples:
 ```js
-// algo.js, Challenge 2
+// Intermeidate Algorithms, 
+// 2: Compare two arrays and return a new array with any items only found in one of the two given arrays - This is nice!
+//          DIFFICULTY: LOW-MODERATE
 function diffArray(arr1, arr2) {
   return arr2
     .concat(arr1)
@@ -976,17 +980,22 @@ function diffArray(arr1, arr2) {
 }
 console.log(diffArray([1, 2, 3, 5, 7], [1, 2, 3, 4, 5]));
 
-// Challenge 3 SEEK DESTROY
+// 3: Remove all elements from the initial array that are of the same value as the orther args
+//          DIFFICULTY: LOW-MODERATE
 function destroyer(arr, ...otherArgs) {
-  // return the arr values that are not in otherArgs
   return arr.filter(item => !otherArgs.includes(item));
 }
-console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3)); // [1,1]
+// this is easier to read:
+const inputArr = [1, 2, 3, 1, 2, 3];
+destroyer(inputArr, 2, 3); // [1,1]
 
-// Challenge 4 WHEREFORE ARE THOU
+// 4: Make a function that looks through an array of objects (1st arg) and returns an array of all objects that have matching name and value pairs (2nd arg).
+//          DIFFICULTY: EXTREMELY HIGH!!!
 function whatIsInAName(collection, source) {
-  let getKeys = Object.keys(source);
+  let getKeys = Object.keys(source); // array of key(s) ["last"]
 
+  // What is confusing here is the triple return - I would never have gotten this
   return collection.filter(function (item) {
     return getKeys.every(function (key) {
       return item.hasOwnProperty(key) && item[key] === source[key];
@@ -1001,19 +1010,18 @@ whatIsInAName(
     { first: "Tybalt", last: "Capulet" }
   ],
   { last: "Capulet" }
-);
+); // [ { "first": "Tybalt", "last": "Capulet" } ]
 
-// functional.js, lesson 16
+// functional.js, lesson 16: return a new array containing the squares of only the positive integers
 const squareList = (arr) => {
   return arr
     .filter(num => num > 0 && num % parseInt(num) === 0)
     .map(num => Math.pow(num, 2));
 };
-
-const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]); // [25,9]
 // console.log(squaredIntegers);
 
-// lesson 21 - NOT AS GOOD AS MY JOIN EXAMPLE IN STRING SECTION
+// functional 21: convert str to url slug (not as good as my ex. in string section)
 let webTitle = "Dog breeds good with cats";
 function urlSlug(title) {
   return title
@@ -1025,6 +1033,8 @@ function urlSlug(title) {
 console.log(urlSlug(webTitle));
 ```
 
+<br />
+
 Other examples:
 ```js
 // 3. In case of duplicate notes, get only unique notes
@@ -1032,6 +1042,20 @@ Other examples:
 
   uniqueNotes = chordTones.filter(tone => !uniqueNotes.includes(tone) && tone !== undefined ? uniqueNotes.push(tone) : null);
 ```
+
+`filter()` solution "skeletons":
+```js
+1) .filter(item => ...).sort((a, b) => ...)
+2) .filter(function(item) => for loop)
+3) return arr.filter(function( {return (item) return item.indexOf(str))})
+4) return arr2.concat(arr1).filter(item => !arr2.includes(item) ...)
+5) .filter(item => !args.includes(item))
+6) Object.keys, return arr.filter(function(item) return .every(function(key) return item.hasOwnProperty ...))
+7) .split.filter(item => .join().toLowerCase())
+8. .filter(item => !arr.includes(item) && item ... .push(item))
+```
+
+<br />
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
