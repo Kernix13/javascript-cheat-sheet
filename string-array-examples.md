@@ -6,45 +6,21 @@ Syntax and code examples for the most coomon string and array methods.
 
 ## Table of contents
 
-1. [Simple array methods](#simple-array-methods)
-   1. [push](#push)
-   1. [unshift](#unshift)
-   1. [pop](#pop)
-   1. [shift](#shift)
-   1. [join](#join)
-   1. [Basic sort](#basic-sort)
-   1. [reverse](#reverse)
-   1. [splice](#splice)
-   1. [slice](#slice)
-   1. [indexOf](#indexOf)
-   1. [lastIndexOf](#lastIndexOf)
-   1. [concat](#concat)
-   1. [Includes](#includes)
-1. [High order array methods](#high-order-array-methods)
-   1. [Sort](#sort)
-   1. [Find](#find)
-   1. [Every](#every)
-   1. [Some](#some)
-   1. [Map](#map)
-   1. [Filter](#filter)
-   1. [forEach](#forEach)
-   1. [Reduce](#reduce)
-1. [String methods](#string-methods)
-   1. [split](#split)
-   1. [repeat](#repeat)
-   1. [substring](#substring)
-   1. [endsWith](#endsWith)
-   1. [test](#test)
-   1. [match](#match)
-   1. [replace](#replace)
-   1. [toString](#tostring)
-   1. [Miscellaneous](#Miscellaneous)
-1. [Spread and Rest syntax](#spread-and-rest-syntax)
-   1. [Spread operator for arrays and strings](#spread-operator-for-arrays-and-strings)
-   1. [Rest parameter and rest syntax](#rest-parameter-and-rest-syntax)
-1. [Syntax tables](#syntax-tables)
-   1. [Syntax for common methods](#syntax-for-common-methods)
-   1. [Syntax for high order array methods](#syntax-for-high-order-array-methods)
+| Topic               | Sub-topic | Sub-topic | Sub-topic | Sub-topic |  
+| ----:               | :-------    | :------     | :------     | :------     |
+| 1. [Simple array methods](#simple-array-methods): | i. [push](#push) | ii. [unshift](#unshift) | iii. [pop](#pop) | iv. [shift](#shift) |
+|                     | v. [Basic sort](#basic-sort) | vi. [reverse](#reverse) | vii. [splice](#splice) | vii. [arr slice](#arr-slice) |
+|                     | ix. [concat](#concat) | x. [join](#join) | - | - | 
+|                     | xi. [indexOf](#indexOf) | xii. [lastIndexOf](#lastIndexOf) | xiii. [Includes](#includes) | - |
+| 2. [High order methods](#high-order-methods): | i. [Sort](#sort) | ii. [Find](#find) | iii. [Every](#every) | iv. [Some](#some) | 
+|                     | v. [Map](#map) | vi. [Filter](#filter) | vii. [forEach](#forEach) | viii. [Reduce](#reduce) |
+| 3. [String methods](#string-methods):  | i. [str slice](#str-slice) | ii. [split](#split) | iii. [substring](#substring) | iv. [repeat](#repeat) |
+|                     | v. [endsWith](#endsWith) | vi. [test](#test) | - | - |
+|                     | vii. [match](#match) | viii. [replace](#replace) | ix. [toString](#tostring) | x. [Miscellaneous](#Miscellaneous) |
+| 4. [Spread operator](#spread-operator)  | | | | |
+| 5. [Rest syntax](#rest-syntax)      | | | | | 
+| 6. [Syntax tables](#syntax-tables): | i. [Common methods](#common-methods) | ii. [High order array](#high-order-array) | - | - | 
+
 
 ## Simple array methods
 
@@ -132,31 +108,6 @@ console.log(names) // []
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift">MDN Shift</a></div>
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-### join
-
-`arr.join()`, commonly used with str.split():
-```js
-// syntax:
-join()
-join(separator)
-
-// MDN Example:
-const a = ['Fire', 'Water', 'Air', 'Earth'];
-a.join();      // 'Fire,Water,Air,Earth'
-a.join(', ');  // 'Fire, Water, Air, Earth'
-a.join(' + '); // 'Fire + Water + Air + Earth'
-a.join('');    // 'FireWaterAirEarth'
-
-// Here is an example using toLowerCase() and split() for a URL page slug 
-const blogTitle = "Common Array Methods You Should Know"
-const urlSlug = blogTitle.toLowerCase().split(' ').join('-')
-// add this on: filter(word => word !== "")
-console.log(urlSlug); // "common-array-methods-you-should-know"
-```
-
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join">MDN Join</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Basic sort
@@ -262,7 +213,7 @@ console.log(alpha) // ["a","b","c","e"]
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">MDN Splice</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-### slice
+### arr slice
 
 MDN syntax:
 ```js
@@ -311,6 +262,74 @@ console.log(newCar)
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">MDN Slice</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### concat
+
+Examples:
+```js
+// syntax
+concat()
+concat(value0)
+concat(value0, value1)
+concat(value0, value1, ... , valueN)
+
+const array1 = ['a', 'b', 'c'];
+const array2 = ['d', 'e', 'f'];
+const array3 = array1.concat(array2);
+console.log(array3); // ["a", "b", "c", "d", "e", "f"]
+console.log(array1.concat(array2)); // ["a", "b", "c", "d", "e", "f"]
+
+// Concatenating three arrays
+const num1 = [1, 2, 3];
+const num2 = [4, 5, 6];
+const num3 = [7, 8, 9];
+const numbers = num1.concat(num2, num3);
+
+console.log(numbers); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// Concatenating values to an array
+const letters = ['a', 'b', 'c'];
+const alphaNumeric = letters.concat(1, [2, 3]);
+
+console.log(alphaNumeric); // ['a', 'b', 'c', 1, 2, 3]
+
+// Concatenating nested arrays
+const num1 = [[1]];
+const num2 = [2, [3]];
+const numbers = num1.concat(num2);
+
+console.log(numbers); // [[1], 2, [3]]
+num1[0].push(4);
+console.log(numbers); // [[1, 4], 2, [3]]
+```
+
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat">MDN concat</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### join
+
+`arr.join()`, commonly used with str.split():
+```js
+// syntax:
+join()
+join(separator)
+
+// MDN Example:
+const a = ['Fire', 'Water', 'Air', 'Earth'];
+a.join();      // 'Fire,Water,Air,Earth'
+a.join(', ');  // 'Fire, Water, Air, Earth'
+a.join(' + '); // 'Fire + Water + Air + Earth'
+a.join('');    // 'FireWaterAirEarth'
+
+// Here is an example using toLowerCase() and split() for a URL page slug 
+const blogTitle = "Common Array Methods You Should Know"
+const urlSlug = blogTitle.toLowerCase().split(' ').join('-')
+// add this on: filter(word => word !== "")
+console.log(urlSlug); // "common-array-methods-you-should-know"
+```
+
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join">MDN Join</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### indexOf
@@ -399,49 +418,6 @@ console.log(indices); // [4, 2, 0]
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf">MDN lastIndexOf</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-### concat
-
-Examples:
-```js
-// syntax
-concat()
-concat(value0)
-concat(value0, value1)
-concat(value0, value1, ... , valueN)
-
-const array1 = ['a', 'b', 'c'];
-const array2 = ['d', 'e', 'f'];
-const array3 = array1.concat(array2);
-console.log(array3); // ["a", "b", "c", "d", "e", "f"]
-console.log(array1.concat(array2)); // ["a", "b", "c", "d", "e", "f"]
-
-// Concatenating three arrays
-const num1 = [1, 2, 3];
-const num2 = [4, 5, 6];
-const num3 = [7, 8, 9];
-const numbers = num1.concat(num2, num3);
-
-console.log(numbers); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-// Concatenating values to an array
-const letters = ['a', 'b', 'c'];
-const alphaNumeric = letters.concat(1, [2, 3]);
-
-console.log(alphaNumeric); // ['a', 'b', 'c', 1, 2, 3]
-
-// Concatenating nested arrays
-const num1 = [[1]];
-const num2 = [2, [3]];
-const numbers = num1.concat(num2);
-
-console.log(numbers); // [[1], 2, [3]]
-num1[0].push(4);
-console.log(numbers); // [[1, 4], 2, [3]]
-```
-
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat">MDN concat</a></div>
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
 ### Includes
 
 ```js
@@ -465,14 +441,9 @@ console.log(str.includes('Script', 4)); // true
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes">MDN includes</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## High order array methods
+## High order methods
 
-High Order Array Methods = methods that use a callback function. The most used ones are `sort`, `map`, `filter`, `forEach`, and `reduce`; but also `find`, `every`, and `some` are useful. Here are MDN doc links:
-
-| | | | |
-| :---: | :---: | :---: | :---: |
-| [MDN find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) | [MDN every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every) | [MDN some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) | [MDN map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) |
-| [MDN filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) | [MDN forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) | [MDN reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) |  |
+High Order Array Methods = methods that use a callback function. The most used ones are `sort`, `map`, `filter`, `forEach`, and `reduce`; but also `find`, `every`, and `some` are useful.
 
 ### Sort
 
@@ -518,7 +489,7 @@ items.sort(function (a, b) {
 // items is ['adieu', 'café', 'communiqué', 'éclair', 'premier', 'réservé']
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">MDN Sort</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Find
@@ -595,7 +566,7 @@ console.log([4, 6, 8, 12].find(isPrime)); // undefined
 console.log([4, 5, 8, 12].find(isPrime)); // 5
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find">MDN Find</a></div></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Every
@@ -655,7 +626,7 @@ console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 7, 6])); // true
 console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 8, 7])); // false
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every">MDN Every</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Some
@@ -752,7 +723,7 @@ function checkAvailability(arr, val) {
 
 **NOTE**: I've seen examples where `some()` is used to check for the existence of a value in an array - why not just use `includes()`? You can not use `hasOwnProperty` for the `hasLastName` object example because the variable is an array, not an object.
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some">MDN Some</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Map
@@ -892,7 +863,7 @@ console.log(itemNames) // [100,200,10,5,500,1000,25]
 const itemNames = items.map(item => item.price)
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">MDN Map</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Filter
@@ -1104,7 +1075,7 @@ Traversy) .filter .reduce .toFixed
 COUNT TOTALS: "if's" (4), includes (3), multiple returns (3), reduce(2), rest op, map, concat, indexOf, sort, hasOwnProperty => the multiple returns really throws me off!
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">MDN Filter</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### forEach
@@ -1183,7 +1154,7 @@ let noteAsRoot = chromaticSharps.slice(position, position + 12);
 uniqueNotes.forEach(note => noteSteps.push(noteAsRoot.indexOf(note)));
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">MDN forEach</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Reduce
@@ -1348,7 +1319,7 @@ const combined = ages
 console.log(combined); // 798
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">MDN Reduce</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## String methods
@@ -1361,12 +1332,11 @@ console.log(badString.toLowerCase().trim()); // "oops, caps lock on. need to fix
 // need to capitalize first letter and add a regex for the first char after the period.
 ```
 
-Here are MDN doc links:
+### str slice
 
-| | | | |
-| :---: | :---: | :---: | :---: |
-| [MDN split](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) | [MDN repeat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat) | [MDN substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring) | [MDN endsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith) |
-| [MDN test](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test) | [MDN match](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match) | [MDN replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) |  |
+See the [array slice](#arr-slice) method above.
+
+<br />
 
 ### split
 
@@ -1419,25 +1389,7 @@ const splits = myString.split(' ', 3)
 console.log(splits) // ["Hello","World.","How"]
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-### repeat
-
-Examples:
-```js
-// syntax
-repeat(count)
-
-const chorus = 'Because I\'m happy. ';
-console.log(`Chorus lyrics for "Happy": ${chorus.repeat(5)}`);
-
-'abc'.repeat(2) // 'abcabc'
-'abc'.repeat(3.5)   // 'abcabcabc' (count will be converted to integer)
-'abc'.repeat(-1)    // RangeError
-```
-
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split">MDN Split</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### substring
@@ -1482,7 +1434,25 @@ function replaceString(oldS, newS, fullS) {
 }
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring">MDN substring</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### repeat
+
+Examples:
+```js
+// syntax
+repeat(count)
+
+const chorus = 'Because I\'m happy. ';
+console.log(`Chorus lyrics for "Happy": ${chorus.repeat(5)}`);
+
+'abc'.repeat(2) // 'abcabc'
+'abc'.repeat(3.5)   // 'abcabcabc' (count will be converted to integer)
+'abc'.repeat(-1)    // RangeError
+```
+
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat">MDN Repeat</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### endsWith
@@ -1507,7 +1477,7 @@ console.log(str.endsWith('to be'))      // false
 console.log(str.endsWith('to be', 19))  // true
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith">MDN endsWith</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### test
@@ -1523,7 +1493,7 @@ const result = /^hello/.test(str);
 console.log(result); // true
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test">MDN Test</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### match
@@ -1543,7 +1513,7 @@ const found = paragraph.match(capturingRegex);
 console.log(found.groups); // {animal: "fox"}
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match">MDN Match</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### replace
@@ -1581,7 +1551,7 @@ let newstr = str.replace(re, '$2, $1');
 console.log(newstr);  // Smith, John
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace">MDN Replace</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### toString
@@ -1601,6 +1571,7 @@ let strObj = turnToString(testObj)
 console.log(typeof strObj, strObj) // "string" "1,2,3,hey,6"
 ```
 
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString">MDN toString</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Miscellaneous
@@ -1633,11 +1604,8 @@ let thirdToLastLetter = firstName[firstName.length - 3];
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Spread and Rest syntax
 
-Exampes of how to use the spread operator and rest parameter.
-
-### Spread operator for arrays and strings
+## Spread operator
 
 add other array items to an array:
 ```js
@@ -1677,7 +1645,7 @@ lunasfood[2] = "Milk";
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-### Rest parameter and rest syntax
+## Rest syntax
 
 Rest syntax, pie eating contest scores:
 ```js
@@ -1760,7 +1728,7 @@ console.log(getTodaysMenu(["Pizza", "$8"], ["Chips", "$1"], ["Beer", "$3"]));
 
 Tables by the number of arguments and whether or not the method mutates the original source.
 
-### Syntax for common methods
+### Common methods
 
 Common methods with NO arguments/parameters:
 | method  | syntax            | Mutates? |
@@ -1826,7 +1794,7 @@ console.log(newString);  // abc - 12345 - #$*%
 
 <br />
 
-### Syntax for high order array methods
+### High order array
 
 High order array methods with **callback** function:
 | method  | syntax1           | syntax2                   | Mutates? |

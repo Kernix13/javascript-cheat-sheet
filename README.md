@@ -110,7 +110,7 @@ Basic math operators:
 
 var, let, const:
 | Topic                | var       | let                  | const                |
-| :--------            | :----:    | :---:                | :----:               |
+| :--------            | :----     | :---                 | :----                |
 | Scope                | Global    | Block                | Block                |
 | Declared (no value)  | undefined | undefined            | Uncaught SyntaxError |
 | Redeclare?           | Yes       | Uncaught SyntaxError | Uncaught SyntaxError |
@@ -183,7 +183,7 @@ Comparisons for conditionals:
 
 Conditional Statements 
 | Type    | Syntax 1        | Syntax 2             | Syntax 3     | Syntax 4 | Syntax 5  |
-| :-----  | :-------:       | :------:             | :--------:   | :------: | :-------: |
+| :-----  | :-------       | :------             | :--------   | :------ | :------- |
 | if      | if (a) {run} |                      |              |          |           |   
 | else    | if (a) {run} | else {run}           |              |          |           |
 | else if | if (a) {run} | else if (a) {run} | *else {run}* |          |           |
@@ -197,7 +197,7 @@ Conditional Statements
 Types of Loops:
 
 |    Type        | Syntax | Syntax 2          | Syntax 2 |
-| :-----------   | :----: | :----:            | :----: | 
+| :-----------   | :---- | :----            | :---- | 
 | while    | let i = num  | while (i cond)    | {code with i; i++} | 
 | for      | for (a; b; c) | {code with i}    |                  |
 | for in   | let i `in` obj | {code with i}   |                 |
@@ -224,7 +224,7 @@ Loop assigment:
 
 String and Array methods/properties (Same Methods, Same Effect):
 |    Method   | Purpose: | Returns:     | Arr basic code        | Str basic code | 
-| :---------- | -------: | :------:     | :------------:        | :-----------:  |
+| :---------- | -------: | :------      | :------------         | :-----------   |
 | slice()     | creates: | new arr/str  | arr.slice(start, end) | str.slice(start, end) | 
 | concat()    | creates: | new arr/str  | arr1.concat(arr2)     | str1.concat(' ', str2)  | 
 | indexOf()   | returns: | index # or -1 | indexOf(searchVal)   | indexOf(searchStr) | 
@@ -237,7 +237,7 @@ String and Array methods/properties (Same Methods, Same Effect):
 
 Strings and Arrays (Different Method Name, Same Effect): 
 |    Method        | Returns:               |  Syntax:          | 
-| :-------------   | :--------------------: | :-----------: |
+| :-------------   | :--------------------  | :-----------  |
 | str.charAt(i)    | Returns the character at the index  | str.charAt(index) | 
 | arr.at(i)        | Returns the array item at the index | arr.at(index)     | 
 | str.substring(i) | Returns part of a string            | str.substring(indexStart)|
@@ -249,7 +249,7 @@ Strings and Arrays (Different Method Name, Same Effect):
 Strings and Arrays (Different Name, Opposite Effect):
 
 |    Method       | Returns:               |  Syntax:     | 
-| :-------------  | :--------------------: | :----------: |
+| :-------------  | :-------------------- | :---------- |
 | split() | Turns a string into an array of substrings | str.split() | 
 | join()  | Turns all elements of an array into a string  | arr.join() | 
 
@@ -259,7 +259,7 @@ Strings and Arrays (Different Name, Opposite Effect):
 
 Other common string methods:
 |    Method         | Returns:                |  Syntax:     | 
-| :-------------    | :--------------------:  | :----------: |
+| :-------------    | :--------------------  | :---------- |
 | str.toLowerCase() | new string              | str.toLowerCase() |
 | str.toUpperCase() | new string              | str.toUpperCase() |
 | concat. op.       | new string              | str1 + str2    |
@@ -277,7 +277,7 @@ Other common string methods:
 
 Other common array methods:
 |    Method       | Returns:          |  Syntax:                | 
-| :-------------  | :--------------:  | :----------:            |
+| :-------------  | :--------------  | :----------            |
 | [x][y]          | sub-array values  | arr[x][y]               |
 | arr.pop()       | item removed      | arr.pop()               |
 | arr.shift()     | item removed      | arr.shift()             |
@@ -286,6 +286,7 @@ Other common array methods:
 | arr.push()      | new array length  | arr.push(item, item2, ...) |
 | arr.unshift()   | new array length  | arr.unshift(item, item2, ...) |
 | arr.splice()    | mutated array     | arr.splice(start, deleteCt, ...items)
+| aff.find()      | 1st element found | arr.find(item, index, array) |
 | arr.sort()      | mutated array     | arr.sort((a, b) => a - b) |
 | arr.every()     | boolean           | arr.every((item) => {...}) |
 | arr.some()      | boolean           | arr.some((item) => {...}) |
