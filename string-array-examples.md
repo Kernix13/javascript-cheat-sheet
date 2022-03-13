@@ -928,6 +928,7 @@ console.log(canDrink);
 // or better, sort the numbers as well:
 const canDrink = ages.filter(age => age >= 21).sort((a, b) => { return a - b });
 
+
 const ages = [5, 7, 9, 11, 13, 15, 16, 17, 19, 21, 23, 55]
 const teen = ages.filter(age => age >= 13 && age <= 19)
 console.log(teen) // [13, 15, 16, 17, 19]
@@ -940,7 +941,6 @@ console.log(teen) // [13, 15, 16, 17, 19]
 // Find all prime numbers in an array (REALLY CONFUSING)
 //          DIFFICULTY: HIGH
 const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-
 function isPrime(num) {
   for (let i = 2; num > i; i++) {
     if (num % i == 0) {
@@ -950,6 +950,7 @@ function isPrime(num) {
   return num > 1;
 }
 console.log(array.filter(isPrime)); // [2, 3, 5, 7, 11, 13]
+
 
 // Searching an array
 //          DIFFICULTY: MEDIUM-HIGH
@@ -980,6 +981,7 @@ function diffArray(arr1, arr2) {
 }
 console.log(diffArray([1, 2, 3, 5, 7], [1, 2, 3, 4, 5]));
 
+
 // 3: Remove all elements from the initial array that are of the same value as the orther args
 //          DIFFICULTY: LOW-MODERATE
 function destroyer(arr, ...otherArgs) {
@@ -989,6 +991,7 @@ console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3)); // [1,1]
 // this is easier to read:
 const inputArr = [1, 2, 3, 1, 2, 3];
 destroyer(inputArr, 2, 3); // [1,1]
+
 
 // 4: Make a function that looks through an array of objects (1st arg) and returns an array of all objects that have matching name and value pairs (2nd arg).
 //          DIFFICULTY: EXTREMELY HIGH!!!
@@ -1012,7 +1015,9 @@ whatIsInAName(
   { last: "Capulet" }
 ); // [ { "first": "Tybalt", "last": "Capulet" } ]
 
+
 // functional.js, lesson 16: return a new array containing the squares of only the positive integers
+//          DIFFICULTY: LOW-MODERATE
 const squareList = (arr) => {
   return arr
     .filter(num => num > 0 && num % parseInt(num) === 0)
@@ -1021,7 +1026,9 @@ const squareList = (arr) => {
 const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]); // [25,9]
 // console.log(squaredIntegers);
 
+
 // functional 21: convert str to url slug (not as good as my ex. in string section)
+//          DIFFICULTY: EASY
 let webTitle = "Dog breeds good with cats";
 function urlSlug(title) {
   return title
@@ -1038,10 +1045,12 @@ console.log(urlSlug(webTitle));
 Other examples:
 ```js
 // 3. In case of duplicate notes, get only unique notes
+//          DIFFICULTY: EASY
   let uniqueNotes = [];
-
   uniqueNotes = chordTones.filter(tone => !uniqueNotes.includes(tone) && tone !== undefined ? uniqueNotes.push(tone) : null);
 ```
+
+<br />
 
 `filter()` solution "skeletons":
 ```js
@@ -1051,11 +1060,12 @@ Other examples:
 4) return arr2.concat(arr1).filter(item => !arr2.includes(item) ...)
 5) .filter(item => !args.includes(item))
 6) Object.keys, return arr.filter(function(item) return .every(function(key) return item.hasOwnProperty ...))
-7) .split.filter(item => .join().toLowerCase())
-8. .filter(item => !arr.includes(item) && item ... .push(item))
-```
+7) .filter(item => parseInt(item)... .map(item => Math.pow))
+8) .split.filter(item => .join().toLowerCase())
+9) .filter(item => !arr.includes(item) && item ... .push(item))
 
-<br />
+COUNT TOTALS: !includes (3), multiple returns (3), rest op, map, concat, indexOf, sort, hasOwnProperty
+```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
