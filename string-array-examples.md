@@ -837,6 +837,14 @@ console.log(itemNames) // [100,200,10,5,500,1000,25]
 const itemNames = items.map(item => item.price)
 
 
+// Examples from Traversy courses: Double eveyones money
+function doubleMoney() {
+  data = data.map(user => {
+    return { ...user, money: user.money * 2 };
+  });
+}
+
+
 //      feeCodeCamp examples
 // Great example of te spread operator for a string using Math and map methods!
 function findLongestWordLength(str) {
@@ -874,6 +882,19 @@ function convertHTML(str) {
 }
 console.log(convertHTML("<li>List item one</li>")); // "&lt;li&gt;List item one&lt;/li&gt;"
 // I would never thought of using an or operaator ||
+
+
+// Examples from Traversy: creates the select element with options
+function createBreedList(breedList) {
+  document.getElementById("breed").innerHTML = `
+    <select onchange="loadByBreed(this.value)">
+      <option>Choose a dog breed</option>
+      ${Object.keys(breedList).map(function (breed) {
+    return `<option>${breed}</option>`
+  }).join('')}
+    </select>
+  `
+}
 ```
 
 <br />
@@ -1236,6 +1257,132 @@ const obj2 = copy(obj1); // obj2 looks like obj1 now (WHY?)
 
 ```
 
+Examples from Traversy courses:
+```js
+const customers = JSON.parse(this.responseText);
+  let output = '';
+
+  customers.forEach(function(customer) {
+    output += `
+    <ul>
+      <li>ID: ${customer.id}</li>
+      <li>Name: ${customer.name}</li>
+      <li>Company: ${customer.company}</li>
+      <li>Phone: ${customer.phone}</li>
+    </ul>
+  `;
+});
+
+
+// Get Tasks from Local Storage
+function getTasks() {
+  let tasks;
+  if (localStorage.getItem('tasks') === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+
+  tasks.forEach(function (task) {
+    const li = document.createElement('li');
+    li.className = 'collection-item';
+    li.appendChild(document.createTextNode(task));
+    const link = document.createElement('a');
+    link.className = 'delete-item secondary-content';
+    link.innerHTML = '<i class="fa fa-remove"></i>';
+    li.appendChild(link);
+    taskList.appendChild(li);
+  });
+}
+
+// Remove from Local Storage
+function removeTaskFromLocalStorage(taskItem) {
+  let tasks;
+  if (localStorage.getItem('tasks') === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+
+  tasks.forEach(function (task, index) {
+    if (taskItem.textContent === task) {
+      tasks.splice(index, 1);
+    }
+  });
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+
+// posts object
+function getPosts() {
+  setTimeout(function() {
+    let output = '';
+    posts.forEach(function(post){
+      output += `<li>${post.title}</li>`;
+    });
+    document.body.innerHTML = output;
+  }, 1000);
+}
+createPost({title: 'Post Three', body: 'This is post three'}, getPosts);
+
+
+// get local json file
+function getJson() {
+  fetch('posts.json')
+    .then(res => res.json())
+    .then(data =>  {
+      console.log(data);
+      let output = '';
+      data.forEach(function(post) {
+        output += `<li>${post.title}</li>`;
+      });
+      document.getElementById('output').innerHTML = output;
+    })
+    .catch(err => console.log(err));
+}
+
+
+// get external API data from api.github/users
+function getExternal() {
+  fetch('https://api.github.com/users')
+    .then(res => res.json())
+    .then(data =>  {
+      console.log(data);
+      let output = '';
+      data.forEach(function(user) {
+        output += `<li>${user.login}</li>`;
+      });
+      document.getElementById('output').innerHTML = output;
+    })
+    .catch(err => console.log(err));
+}
+
+
+// Check required fields
+function checkRequired(inputArr) {
+  inputArr.forEach(function (input) {
+    if (input.value.trim() === '') {
+      showError(input, `${getFieldName(input)} is required`);
+    } else {
+      showSuccess(input);
+    }
+  });
+}
+
+
+// get data from localstorage and populate UI
+function populateUI() {
+  const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+
+  if (selectedSeats !== null && selectedSeats.length > 0) {
+    seats.forEach((seat, index) => {
+      if (selectedSeats.indexOf(index) > -1) {
+        seat.classList.add('selected');
+      }
+    });
+  }
+```
+
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">MDN forEach</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -1486,6 +1633,30 @@ function sumPrimes(num) {
 console.log(sumPrimes(10));
 ```
 
+Examples from Traversy courses:
+```js
+// update, balance, income, expense
+function updateValues() {
+  const amounts = transactions.map(transaction => transaction.amount);
+
+  const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
+
+  const income = amounts
+    .filter(item => item > 0)
+    .reduce((acc, item) => (acc += item), 0)
+  // .toFixed(2);
+
+  const expense = (amounts
+    .filter(item => item < 0)
+    .reduce((acc, item) => (acc += item), 0)
+    .toFixed(2)) * -1;
+
+  balance.innerText = `$${total}`;
+  money_plus.innerText = `$${income}`;
+  money_minus.innerText = `$${expense}`;
+}
+```
+
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">MDN Reduce</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -1503,6 +1674,7 @@ console.log(badString.toLowerCase().trim()); // "oops, caps lock on. need to fix
 
 MDN syntax and examples:
 ```js
+slice()
 slice(beginIndex)
 slice(beginIndex, endIndex)
 
@@ -1515,13 +1687,18 @@ console.log(str.slice(-9, -5)); // "lazy"
 
 
 let str = "The slice method"
+// slice()
 console.log(str.slice()) // "The slice method"
 // slice(startIndex)
-let str2 = str.slice(4)
-console.log(str2, str) // "slice method" "The slice method"
+let str2 = str.slice(0) // "The slice method"
+let str2 = str.slice(1) // "he slice method"
+let str2 = str.slice(2) // "e slice method"
+let str2 = str.slice(3) // " slice method"
+let str2 = str.slice(4) // "slice method"
 // slice(startIndex, endIndex)
-let str2 = str.slice(4, 7)
-console.log(str2, str) // "sli" "The slice method"
+let str2 = str.slice(4, 9)
+console.log(str2) // "slice"
+let str2 = str.slice(4, 11) // "slice m"
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice">MDN String Slice</a></div>
@@ -1568,7 +1745,7 @@ const chars = str.split('');
 console.log(chars[8]); // e
 
 
-// Removing spaces from a string
+// Removing spaces from a string - EXCELLENT!
 const names = 'Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand ';
 const re = /\s*(?:;|$)\s*/
 const nameList = names.split(re)
