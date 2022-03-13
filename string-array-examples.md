@@ -24,7 +24,7 @@ Syntax and code examples for the most coomon string and array methods.
 
 ## Simple array methods
 
-Basic syntax for simple versions of `push()`, `unshift()`, `pop()`, `shift()`, `sort()`, `reverse()`, `slice()`, and `splice()`. I skipped `flat()`, `findIndex()` and `Array.isArray()`.
+Basic syntax for the most common methods. I skipped `flat()`, `findIndex()` and `Array.isArray()`.
 
 ### push
 
@@ -953,8 +953,6 @@ console.log(urlSlug(webTitle));
 
 Intermediate examples:
 ```js
-//      MDN:
-
 //      Other examples:
 // Traversy expense tracker
 function updateValues() {
@@ -1030,6 +1028,7 @@ const squareList = (arr) => {
 };
 const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]); // [25,9]
 // console.log(squaredIntegers);
+// What is parseInt doing? Aren't they all numbers?
 ```
 
 <br />
@@ -1068,7 +1067,8 @@ console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
 
 //      freeCodeCamp:
 //      DIFFICULTY: EXTREMELY HIGH!!!
-// 4: Make a function that looks through an array of objects (1st arg) and returns an array of all objects that have matching name and value pairs (2nd arg).
+// 4: Make a function that looks through an array of objects (1st arg) and returns an array of all 
+// objects that have matching name and value pairs (2nd arg).
 
 function whatIsInAName(collection, source) {
   let getKeys = Object.keys(source); // array of key(s) ["last"]
@@ -1129,6 +1129,9 @@ forEach(function(element) { /* ... */ })
 forEach(function(element, index) { /* ... */ })
 ```
 
+**NOTE**: `forEach` expects a synchronous function. `forEach` does not wait for promises. Make sure you are aware of the implications while using promises (or async functions) as `forEach` callback.
+
+<br />
 
 Basic / simple examples:
 ```js
@@ -1190,6 +1193,19 @@ items.forEach((item) => {
 });
 
 
+// Modifying the array during iteration
+// any number if the condition removes "one"
+// why was "three" removed?
+const words = ['one', 'two', 'three', 'four'];
+words.forEach((word) => {
+  console.log(word);
+  if (word === 'two') {
+    words.shift(); //'one' will delete from array
+  }
+}); // "one" "two" "four"
+console.log(words); // ['two', 'three', 'four']
+
+
 //      Other examples:
 
 //      freeCodeCamp:
@@ -1201,6 +1217,18 @@ items.forEach((item) => {
 Difficult / advanced examples:
 ```js
 //      MDN:
+// An object copy function: This is one way to create a copy of an object:
+const copy = (obj) => {
+  const copy = Object.create(Object.getPrototypeOf(obj));
+  const propNames = Object.getOwnPropertyNames(obj);
+  propNames.forEach((name) => {
+    const desc = Object.getOwnPropertyDescriptor(obj, name);
+    Object.defineProperty(copy, name, desc);
+  });
+  return copy;
+};
+const obj1 = { a: 1, b: 2 };
+const obj2 = copy(obj1); // obj2 looks like obj1 now (WHY?)
 
 //      Other examples:
 
@@ -1251,12 +1279,36 @@ console.log(arr.reduce(getMax, 50)); // 100
 // Sum all the values of an array
 let sum = [0, 1, 2, 3].reduce(function (previousValue, currentValue) {
   return previousValue + currentValue
-}, 0)
+}, 0) 
 // sum is 6, or an arrow function:
 let total = [ 0, 1, 2, 3 ].reduce(
   ( previousValue, currentValue ) => previousValue + currentValue,
   0
 )
+
+
+// Bonding arrays contained in an array of objects using the 
+// spread operator and initialValue
+let friends = [{
+  name: 'Anna',
+  books: ['Bible', 'Harry Potter'],
+  age: 21
+}, {
+  name: 'Bob',
+  books: ['War and peace', 'Romeo and Juliet'],
+  age: 26
+}, {
+  name: 'Alice',
+  books: ['The Lord of the Rings', 'The Shining'],
+  age: 18
+}]
+
+let allbooks = friends.reduce(function(previousValue, currentValue) {
+  return [...previousValue, ...currentValue.books]
+}, ['Alphabet'])
+
+// allbooks = [ 'Alphabet', 'Bible', 'Harry Potter', 'War and peace',
+//              'Romeo and Juliet', 'The Lord of the Rings', 'The Shining' ]
 
 
 //      Other examples:
@@ -1320,6 +1372,29 @@ let sum = [{x: 1}, {x: 2}, {x: 3}].reduce(
 console.log(sum)
 
 
+// Remove duplicate items in an array
+let dupsArr = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd']
+let noDups = dupsArr.reduce(function (prevVal, currVal) {
+  if (prevVal.indexOf(currVal) === -1) {
+    prevVal.push(currVal)
+  }
+  return prevVal
+}, [])
+console.log(noDups) // ["a","b","c","e","d"]
+
+
+// Replace .filter().map() with .reduce()
+const numbers = [-5, 6, 2, 0,];
+const doubledPositiveNumbers = numbers.reduce((previousValue, currentValue) => {
+  if (currentValue > 0) {
+    const doubled = currentValue * 2;
+    previousValue.push(doubled);
+  }
+  return previousValue;
+}, []);
+console.log(doubledPositiveNumbers); // [12, 4]
+
+
 //      Other examples:
 // Combine Methods
 const combined = ages
@@ -1369,10 +1444,33 @@ let countedNames = names.reduce(function (allNames, name) {
     allNames[name] = 1
   }
   return allNames
-}, {})
-// countedNames is: { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+}, {}) // countedNames is: { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
 
-//      Other examples:
+
+// Grouping objects by a property
+let people = [
+  { name: 'Alice', age: 21 },
+  { name: 'Max', age: 20 },
+  { name: 'Jane', age: 20 }
+];
+
+function groupBy(objectArray, property) {
+  return objectArray.reduce(function (acc, obj) {
+    let key = obj[property]
+    if (!acc[key]) {
+      acc[key] = []
+    }
+    acc[key].push(obj)
+    return acc
+  }, {})
+}
+
+let groupedPeople = groupBy(people, 'age')
+// groupedPeople is:
+// { 20: [ { name: 'Max', age: 20 },
+//         { name: 'Jane', age: 20 } ],
+//   21: [ { name: 'Alice', age: 21 } ] }
+
 
 //      freeCodeCamp:
 // algo.js, Challenge 13 SUM ALL PRIMES
@@ -1414,6 +1512,7 @@ console.log(str.slice(31)); // "the lazy dog."
 console.log(str.slice(4, 19)); // "quick brown fox"
 console.log(str.slice(-4)); // "dog."
 console.log(str.slice(-9, -5)); // "lazy"
+
 
 let str = "The slice method"
 console.log(str.slice()) // "The slice method"
@@ -1604,7 +1703,6 @@ MDN syntax and examples:
 ```js
 match(regexp)
 
-
 // Example 1
 const paragraph = 'The quick brown FOX jumps over the lazy dog. It barked.';
 const regex = /[A-Z]/g;
@@ -1671,9 +1769,8 @@ console.log(newstr);  // Smith, John
 MDN syntax and examples:
 ```js
 // num.toString:
-toString()
-toString(radix)
-// 
+num.toString()
+num.toString(radix)
 // all other
 date.toString() 
 obj.toString() 
@@ -1935,7 +2032,7 @@ High order array methods with **callback** function:
 - `thisArg` for `find`: Object to use as `this` inside `callbackFn`
 - `thisArg` for the other 5 methods: Value to use as `this` when executing `callbackFn` (same thing?)
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 High order array methods with **arrow** and inline functions.
 
