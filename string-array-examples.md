@@ -17,9 +17,10 @@ Syntax and code examples for the most coomon string and array methods.
 | 3. [String methods](#string-methods):  | i. [String slice](#string-slice) | ii. [split](#split) | iii. [substring](#substring) | iv. [repeat](#repeat) |
 |                     | v. [endsWith](#endsWith) | vi. [test](#test) | - | - |
 |                     | vii. [match](#match) | viii. [replace](#replace) | ix. [toString](#tostring) | x. [Miscellaneous](#Miscellaneous) |
-| 4. [Spread operator](#spread-operator)  | | | | |
-| 5. [Rest syntax](#rest-syntax)      | | | | | 
-| 6. [Syntax tables](#syntax-tables): | i. [Common methods](#common-methods) | ii. [High order array](#high-order-array) | - | - | 
+| 4. [Combinations of methods](#combinations-of-methods) | | | | |
+| 5. [Spread operator](#spread-operator)  | | | | |
+| 6. [Rest syntax](#rest-syntax)      | | | | | 
+| 7. [Syntax tables](#syntax-tables): | i. [Common methods](#common-methods) | ii. [High order array](#high-order-array) | - | - | 
 
 
 ## Simple array methods
@@ -1006,6 +1007,18 @@ function urlSlug(title) {
     .toLowerCase();
 }
 console.log(urlSlug(webTitle));
+
+//      CodeWars:
+// Given a list of integers, return the digits that are not present 
+// in any of them: [12, 34, 56, 78]  =>  "09"
+const unusedDigits = (...arr) => {
+  var digits = arr.join();
+
+  return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    .filter(num => !digits.includes(num))
+    .join('');
+};
+console.log(unusedDigits([2015, 8, 26])) // "3479"
 ```
 
 <br />
@@ -2061,6 +2074,72 @@ let thirdToLastLetter = firstName[firstName.length - 3];
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+## Combinations of methods
+
+```js
+// some(), filter(), find(), some()
+// Create a function that looks through an array arr and returns the 
+// first element in it that passes a 'test'.
+function findElement(arr, func) {
+  if (arr.some(func)) {
+    return arr.filter(item => func(item)).find(function (item) {
+      if (arr.some(func) === true) {
+        return item;
+      }
+    });
+  }
+  return undefined;
+}
+console.log(findElement([1, 2, 3, 4], num => num % 2 === 0)); // 2
+console.log(findElement([1, 5, 3, 4], num => num % 2 === 0)); // 4
+
+
+// CONVERT HTML ENTITIES: split(), map(), join()
+function convertHTML(str) {
+  const convertSymbols = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&apos;"
+  };
+
+  return str.split("").map(symbol => convertSymbols[symbol] || symbol).join("");
+}
+
+
+// filter(), includes(), push()
+let uniqueNotes = [];
+uniqueNotes = chordTones.filter(tone => !uniqueNotes.includes(tone) && tone !== undefined ? uniqueNotes.push(tone) : null);
+
+
+// toLowerCase(), split(), filter(), join()
+const blogTitle = "Common Array Methods You Should Know"
+const urlSlug = blogTitle.toLowerCase().split(' ').filter(word => word !== "").join('-')
+
+
+// filter(), includes(), join()
+const unusedDigits = (...arr) => {
+  var digits = arr.join();
+  return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    .filter(num => !digits.includes(num))
+    .join('');
+};
+
+
+// concat(), filter(), includes()
+function diffArray(arr1, arr2) {
+  return arr2.concat(arr1).filter(item => !arr2.includes(item) || !arr1.includes(item));
+}
+
+
+// toLowerCase(), split() | reverse(), join()
+const word = "racecar";
+const letters = word.toLowerCase().split(''); 
+const revWord = [...letters].reverse().join('');
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Spread operator
 
