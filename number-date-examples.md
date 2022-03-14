@@ -30,6 +30,8 @@ Here are links to MDN docs for the methods below:
 
 <br />
 
+The `toExponential()` method returns a string representing the Number object in exponential notation. 
+
 toExponential(): Don't see the practical application of this one
 ```js
 // syntax
@@ -47,6 +49,8 @@ console.log(expo('word')); // NaN
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+The `toFixed()` method formats a number using fixed-point notation. 
 
 toFixed(n)
 ```js
@@ -79,6 +83,8 @@ numObj.toFixed(6)      // '12345.678900': note added zeros
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+The `toPrecision() `method returns a string representing the Number object to the specified precision. 
+
 toPrecision(n)
 ```js
 // syntax
@@ -110,6 +116,8 @@ console.log(numObj.toPrecision(1))   // logs '0.0001'
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+The global `isFinite()` function determines whether the passed value is a finite number. If needed, the parameter is first converted to a number.
+
 isFinite(): Return value = `false` if the argument is (or will be coerced to) positive or negative Infinity or `NaN` or `undefined`; otherwise, `true`.
 ```js
 // syntax
@@ -136,6 +144,8 @@ isFinite('0');       // true, would've been false with the more robust Number.is
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+The `Number.isInteger()` method determines whether the passed value is an integer.
 
 Number.isInteger()
 ```js
@@ -175,6 +185,8 @@ Number.isInteger(5.0000000000000001); // true
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+The `Number.parseFloat()` method parses an argument and returns a floating point number. If a number cannot be parsed from the argument, it returns `NaN`.
+
 Number.parseFloat()
 ```js
 // synta  x
@@ -199,7 +211,9 @@ Here are links to MDN docs for the most common Math methods:
 | [MDN Math.min](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min) | [MDN Math.pow](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow) |  | 
 
 <br />
+
 Math.abs(x)
+
 ```js
 // syntax
 Math.abs(x)
@@ -226,7 +240,7 @@ Math.abs();         // NaN
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-Math.ceil(x)
+Math.ceil(x): always rounds a number up to the next largest integer.
 ```js
 // syntax
 Math.ceil(x)
@@ -239,7 +253,7 @@ console.log(Math.ceil(-7.004)); // -7
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-Math.floor(x)
+Math.floor(x): returns the largest integer less than or equal to a given number
 ```js
 // syntax
 Math.floor(x)
@@ -254,7 +268,8 @@ Math.floor(-45.95); // -46
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-Math.random(x)
+Math.random(x): returns a floating-point, pseudo-random number in the range 0 to less than 1 (inclusive of 0, but not 1) with approximately uniform distribution over that range — which you can then scale to your desired range
+
 ```js
 // syntax
 Math.random()
@@ -270,7 +285,7 @@ console.log(Math.random()); // 0.random numbers
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-Math.round(x)
+Math.round(x): returns the value of a number rounded to the nearest integer
 ```js
 // syntax
 Math.round(x)
@@ -289,7 +304,8 @@ Math.round(-20.51); // -21
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-Math.sign(x)
+Math.sign(x): returns either a positive or negative +/- 1, indicating the sign of a number passed into the argument. If the number passed into `Math.sign()` is 0, it will return a +/- 0. Note that if the number is positive, an explicit (+) will not be returned.
+
 ```js
 // syntax
 Math.sign(x)
@@ -312,7 +328,7 @@ Math.sign();      // NaN
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-Math.sqrt(x)
+Math.sqrt(x): returns the square root of a number
 ```js
 // syntax
 Math.sqrt(x)
@@ -335,7 +351,7 @@ Math.sqrt(-0); // -0
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-Math.trunc(x)
+Math.trunc(x): returns the integer part of a number by removing any fractional digits
 ```js
 // syntax
 Math.trunc(x)
@@ -358,7 +374,8 @@ Math.trunc();         // NaN
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-Math.max(n1, n2, ...)
+Math.max(): returns the largest of the zero or more numbers given as input parameters, or `NaN` if any parameter isn't a number and can't be converted into one. 
+
 ```js
 // syntax
 Math.max()
@@ -385,7 +402,8 @@ let max = arr.reduce(function(a, b) {
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-Math.min(n1, n2, ...))
+Math.min(): returns the lowest-valued number passed into it, or `NaN` if any parameter isn't a number and can't be converted into one.
+
 ```js
 // syntax
 Math.min()
@@ -405,7 +423,8 @@ let z = Math.min(x, y);
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-Math.pow(x, y)
+Math.pow(x, y): static method, given two arguments, _base_ and _exponent_, returns `base` <sup>`exp`</sup>.
+
 ```js
 // syntax
 Math.pow(base, exponent)

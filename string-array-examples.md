@@ -187,7 +187,7 @@ if (word === revWord) {
 
 ### splice
 
-Changes the contents of an array by removing or replacing existing elements and/or adding new elements. Mutates the original array, **<ins>returns removed items</ins>**.
+Changes the contents of an array by removing or replacing existing elements and/or adding new elements. Mutates the original array, **<ins>returns the removed items</ins>**.
 
 MDN syntax (MUTATES!):
 ```js
@@ -364,7 +364,7 @@ console.log(urlSlug); // "common-array-methods-you-should-know"
 
 ### indexOf
 
-**<ins>Returns the first index</ins>** at which a given element can be found in the array, or -1 if it is not present. Can be used on strings.
+**<ins>Returns the first index</ins>** at which a given element can be found in the array, or `-1` if it is not present. Can be used on strings.
 
 Examples:
 ```js
@@ -427,7 +427,7 @@ console.log(count); // 3
 
 ### lastIndexOf
 
-**<ins>Returns the last index</ins>** at which a given element can be found in the array, or -1 if it is not present. Can be used on strings.
+**<ins>Returns the last index</ins>** at which a given element can be found in the array, or `-1` if it is not present. Can be used on strings.
 
 Examples:
 ```js
@@ -1752,7 +1752,7 @@ let str2 = str.slice(4, 11) // "slice m"
 
 ### split
 
-Divides a String into substrings, puts these substrings into an array, and **<ins>returns the array</ins>**. Does not mutate the string.
+Divides a string into substrings, puts these substrings into an array, and **<ins>returns that array</ins>**. Does not mutate the string.
 
 MDN syntax:
 ```js
@@ -2037,6 +2037,7 @@ typeof:
 let typeOfTest;
 typeOfTest = "";
 console.log(typeof typeOfTest) // string
+typeOfTest = []; // object
 typeOfTest = true; // boolean
 typeOfTest = false; // boolean
 typeOfTest = undefined; // undefined
@@ -2105,6 +2106,16 @@ lunasfood[2] = "Milk";
 
 Rest syntax, pie eating contest scores:
 ```js
+// example from MDN
+function multiply(multiplier, ...theArgs) {
+  return theArgs.map(x => multiplier * x);
+}
+let arr = multiply(2, 1, 2, 3);
+console.log(arr); // [2, 4, 6]
+let arr = multiply(3, 1, 2, 3);
+console.log(arr); // [3, 6, 9]
+
+
 const pieContest = [
   ["Jenny", 95], ["Betty", 90], ["Jacob", 85], ["Mary", 82], ["Owen", 80], ["Becky", 75], ["Nancy", 70], ["Edward", 65], ["Clyde", 61], ["Beth", 59]
 ];

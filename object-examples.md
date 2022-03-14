@@ -23,7 +23,7 @@ Common Object methods:
 
 ## Object keys
 
-[MDN Object.keys docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys): Returns an array of the key names.
+[MDN Object.keys docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys): Returns an array of the key names iterated in the same order that a normal loop would.
 
 ```js
 // syntax
@@ -57,7 +57,7 @@ console.log(Object.keys(chordIntervals.scales)) // ["Major Scale","Minor Pentato
 
 ## Object values
 
-[MDN Object.values docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Object/values): Returns an array of the vaalues for each key.
+[MDN Object.values docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Object/values): Returns an array of the values for each key/property in the same order as that provided by a `for...in` loop.
 
 ```js
 // syntax
@@ -76,7 +76,7 @@ console.log(Object.values(chordIntervals)) // ["maj", ["1","3","5"], [0,4,7]]
 
 ## hasOwnProperty
 
-[MDN hasOwnProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty): Returns `true` if the object has the specified property as own property; `false` otherwise.
+[MDN hasOwnProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty): Returns `true` if the object has the specified property as its own property (as opposed to inheriting it); `false` otherwise.
 
 ```js
 // syntax
@@ -169,7 +169,7 @@ let something = {
 something.data.offline = 100;
 // Modify:
 something.data.online = 45;
-// Delete:
+// Delete/remove a key/property:
 delete something.location;
 ```
 
@@ -666,13 +666,13 @@ typeOfTest = {};  // object
 typeOfTest = null; // object
 ```
 
-- delete
-- this
-- prototype
-- new
-- instanceof
-- constructor
-- super
-- ChildObject.prototype: ChildObject.prototype.methodName = function() {...}; 
+- `delete`:
+- `this`:
+- `prototype`: 
+- `new`: 
+- `instanceof`: 
+- `constructor`: 
+- `super`: 
+- `ChildObject.prototype`: ChildObject.prototype.methodName = function() {...}; 
 
 WTF with `[ ]` working but not dot notation???? Something with if statements?

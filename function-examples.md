@@ -16,6 +16,9 @@ Here are docs from MDN:
 ## Table of contents
 
 1. [General](#general)
+1. [Nested functions](#nested-functions)
+   1. [Multiply nested functions](#multiply-nested-functions)
+   1. [Closures](#closures)
 1. [IIFE](#iife)
 1. [Async await](#async-await)
 1. [Arrow functions](#arrow-functions)
@@ -148,9 +151,10 @@ d = factorial(4); // d gets the value 24
 e = factorial(5); // e gets the value 120
 ```
 
-<br />
+## Nested functions
 
-Nested functions:
+**Nested functions**: The nested (inner) function is private to its containing (outer) function. The inner function forms a closure: the inner function can use the arguments and variables of the outer function, while the outer function cannot use the arguments and variables of the inner function.
+
 ```js
 function addSquares(a, b) {
   function square(x) {
@@ -172,13 +176,101 @@ function outside(x) {
 fn_inside = outside(3); // Think of it like: give me a function that adds 3 to whatever you give it
 result = fn_inside(5); // returns 8
 result1 = outside(3)(5); // returns 8
+
+// Since the inner function forms a closure, you can call the outer function and specify arguments for both the outer and inner function:
+function outside(x) {
+  function inside(y) {
+    return x + y;
+  }
+  return inside;
+}
+fn_inside = outside(3);
+result = fn_inside(5); // returns 8
+result1 = outside(3)(5); // returns 8
 ```
 
-Other concepts from [MDN Functions doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions): Scope and the function stack, Recursion, Preservation of variables, Closures, Using the arguments object, Default parameters, Rest parameters, No separate this, Predefined functions
+### Multiply nested functions
 
-**Predefined functions**: 
-- DO NOT USE: `eval()`, `uneval()`, `escape()`, and `unescape()`.
-- OK TO USE: `isFinite()`, `isNaN()`, `parseFloat()`, `parseInt()` with `radix`, `decodeURI()`, `decodeURIComponent()`, `encodeURI()`, and `encodeURIComponent()`
+Functions can be multiply-nested:
+- A function (`A`) contains a function (`B`), which itself contains a function (`C`).
+- Both functions `B` and `C` form closures here. So, `B` can access `A`, and `C` can access `B`.
+- In addition, since `C` can access `B` which can access `A`, `C` can also access `A`.
+
+Thus, the closures can contain multiple scopes; they recursively contain the scope of the functions containing it. This is called _scope chaining_. 
+
+```js
+// In this example, C accesses B's y and A's x
+function A(x) {
+  function B(y) {
+    function C(z) {
+      console.log(x + y + z);
+    }
+    C(3);
+  }
+  B(2);
+}
+A(1); // logs 6 (1 + 2 + 3)
+```
+
+1. `B` forms a closure including `A`
+1. `C` forms a closure including `B`
+1. Because `B`'s closure includes `A`, `C`'s closure includes `A`, `C` can access both `B` and `A`'s arguments and variables. In other words, `C` chains the scopes of `B` and `A`, in that order
+1. The reverse, however, is not true. `A` cannot access `C`
+
+### Closures
+
+JavaScript allows for the nesting of functions and grants the inner function full access to all the variables and functions defined inside the outer function (and all other variables and functions that the outer function has access to).
+
+However, the outer function does not have access to the variables and functions defined inside the inner function. This provides a sort of encapsulation for the variables of the inner function.
+
+Also, since the inner function has access to the scope of the outer function, the variables and functions defined in the outer function will live longer than the duration of the outer function execution, if the inner function manages to survive beyond the life of the outer function. A closure is created when the inner function is somehow made available to any scope outside the outer function.
+
+```js
+let createPet = function(name) {
+  let sex;
+
+  return {
+    setName: function(newName) {
+      name = newName;
+    },
+
+    getName: function() {
+      return name;
+    },
+
+    getSex: function() {
+      return sex;
+    },
+
+    setSex: function(newSex) {
+      if(typeof newSex === 'string' && (newSex.toLowerCase() === 'male' ||
+        newSex.toLowerCase() === 'female')) {
+        sex = newSex;
+      }
+    }
+  }
+}
+
+let pet = createPet('Vivie');
+pet.getName();                  // Vivie
+
+pet.setName('Oliver');
+pet.setSex('male');
+pet.getSex();                   // male
+pet.getName();                  // Oliver
+
+
+// The functions do not even have to be assigned to a variable, or have a name:
+let getCode = (function() {
+  let apiCode = '0]Eal(eh&2';    // A code we do not want outsiders to be able to modify...
+
+  return function() {
+    return apiCode;
+  };
+})();
+
+getCode();    // Returns the apiCode
+```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -807,6 +899,11 @@ But the structure is ul > li > a > i and to delete the entire list item, which i
 
 ## Recursion
 
+The act of a function calling itself, recursion is used to solve problems that contain smaller sub-problems. A recursive function can receive two inputs: a base case (ends recursion) or a recursive case (resumes recursion)
+
+- Recursive function calls itself until condition met
+- Recursion is limited by stack size
+
 Syntax:
 ```js
 function recurse() {
@@ -949,7 +1046,7 @@ const fibonacci = (n) => (n <= 2 ? 1 : fibonacci(n - 1) + fibonacci(n - 2));
 console.log(fibonacci(10)); // 55
 console.log(fibonacci(6)); // 8
 
-// not sure
+// reduce method example
 const reduce = (fn, acc, [cur, ...rest]) => (
   cur === undefined ? acc : reduce(fn, fn(acc, cur), rest)
 );
@@ -996,7 +1093,29 @@ NUMBER RECURSION
 - `return`: 
 - `undefined`: 
 
+Other concepts from [MDN Functions doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions): Scope and the function stack, Recursion, Preservation of variables, No separate `this`, and Predefined functions.
+
+**Predefined functions**: 
+- DO NOT USE: `eval()`, `uneval()`, `escape()`, and `unescape()`.
+- OK TO USE: `isFinite()`, `isNaN()`, `parseFloat()`, `parseInt()` with `radix`, `decodeURI()`, `decodeURIComponent()`, `encodeURI()`, and `encodeURIComponent()`
+
 ### ES6 Promises
+
+The `Promise` object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+A `Promise` is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.
+
+A Promise is in one of these states:
+
+- _pending_: initial state, neither fulfilled nor rejected.
+- _fulfilled_: meaning that the operation was completed successfully.
+- _rejected_: meaning that the operation failed.
+
+A pending promise can either be fulfilled with a value or rejected with a reason (error). When either of these options happens, the associated handlers queued up by a promise's `then` method are called. If the promise has already been fulfilled or rejected when a corresponding handler is attached, the handler will be called, so there is no race condition between an asynchronous operation completing and its handlers being attached.
+
+As the `Promise.prototype.then()` and `Promise.prototype.catch()` methods return promises, they can be chained.
+
+See also: [MDN Chained Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#chained_promises), [MDN Incumbent settings object tracking](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#incumbent_settings_object_tracking), [MDN Constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#constructor), [MDN Static methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#static_methods), and [MDN Instance methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#instance_methods)
 
 ```js
 // lesson 29 freeCodeCamp

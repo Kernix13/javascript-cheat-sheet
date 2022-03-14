@@ -171,7 +171,7 @@ const year = d.getFullYear();
 let currentNovFirst = '11/01/' + year;
 let novFirstDay = new Date(currentNovFirst).getDay();
 
-// For the current year, find the day of the week for the 1st of Nov then return the date for the first Monday in November 
+// For the current year, find the day of the week for the 1st of November 
 switch (novFirstDay) {
   case 0:
     weekOne = new Date(`11/1/${year}`)

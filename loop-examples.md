@@ -6,7 +6,7 @@ Notes for not so common loop code snippets.
 
 ## Table of contents
 
-1. [While loop](#while-loop)
+1. [while loop](#while-loop)
 1. [do while loop](#do-while-loop)
 1. [for loop](#for-loop)
 1. [for in and for of loops](#for-in-and-for-of-loops)
@@ -15,7 +15,11 @@ Notes for not so common loop code snippets.
 1. [Miscellaneous](miscellaneous)
 
 
-## While loop
+## while loop
+
+The `while` statement creates a loop that executes a specified statement as long as the test `condition` evaluates to true. The condition is evaluated before executing the statement.
+
+- `condition`: An expression evaluated before each pass through the loop. If this condition evaluates to `true`, statement is executed. When condition evaluates to `false`, execution continues with the statement after the while loop
 
 Syntax:
 ```js
@@ -33,6 +37,10 @@ do {
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## do while loop
+
+The do...while statement creates a loop that executes a specified statement until the test condition evaluates to false. The condition is evaluated after executing the statement, resulting in the specified statement executing at least once. 
+
+- `condition`: An expression evaluated after each pass through the loop. If condition evaluates to `true`, the statement is re-executed. When condition evaluates to `false`, control passes to the statement following the `do...while`
 
 Syntax:
 ```js
@@ -53,6 +61,8 @@ while (n < 3) {
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## for loop
+
+A `for` loop repeats until a specified condition evaluates to `false`.
 
 Syntax:
 ```js
@@ -75,6 +85,8 @@ function someFx() {
 ## for in and for of loops
 
 ### for in
+
+The `for...in` statement iterates a specified variable over all the enumerable properties of an object. For each distinct property, JavaScript executes the specified statements.
 
 `for in`, syntax:
 ```js
@@ -112,6 +124,8 @@ car.model = Mustang
 
 ### for of
 
+The `for...of` statement creates a loop Iterating over iterable objects (including `Array`, `Map`, `Set`, `arguments` object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property (?)
+
 Syntax:
 ```js
 for (variable of iterable) {
@@ -139,7 +153,7 @@ for (let i of arr) {
 
 ## Array methods
 
-Use these over a `for` loop when working with arrays:
+Use high order array methods like `map` and `forEach` instead of a `for` loop when working with arrays:
 
 `forEach()` 
 
@@ -178,6 +192,10 @@ console.log(ids); // (3) [1, 2, 3]
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Continue and break
+
+Use the `break` statement to terminate a loop, `switch`, or in conjunction with a labeled statement. See [MDN break statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#break_statement).
+
+The `continue` statement can be used to restart a `while`, `do-while`, `for`, or `label` statement. See [MDN continue statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#continue_statement).
 
 Break syntax:
 ```js
