@@ -286,7 +286,7 @@ Other common array methods:
 | arr.push()      | new array length  | arr.push(item, item2, ...) |
 | arr.unshift()   | new array length  | arr.unshift(item, item2, ...) |
 | arr.splice()    | mutated array     | arr.splice(start, deleteCt, ...items)
-| aff.find()      | 1st element found | arr.find(item, index, array) |
+| arr.find()      | 1st element found | arr.find(item, index, array) |
 | arr.sort()      | mutated array     | arr.sort((a, b) => a - b) |
 | arr.every()     | boolean           | arr.every((item) => {...}) |
 | arr.some()      | boolean           | arr.some((item) => {...}) |

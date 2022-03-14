@@ -21,6 +21,8 @@ const hasSameElements = (a, b) => {
 1. [Terms](#terms)
    1. [Code Specific](#code-specific)
    1. [Concepts](#concepts)
+1. [Data structures](#data-structures)
+1. [OOP](#oop)
 1. [Dates](#dates)
 1. [Functions and Return](#functions-and-return)
 1. [Conditional Logic](#conditional-logic)
@@ -357,6 +359,72 @@ The best of my notes from Traversy 20 web projects with vanilla javascript cours
 - the spread operator converts the nodes list into an array - then to map thru that use the high order array method called map() 
 - Fetch is built into the browser so you don’t need to use a CDN or install it
 - fetch runs asynchronously which means in the background and it returns a promise – when it’s done fetching it will return a promise – you catch that promise with .then() - .then() takes a function; res.json(); 
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Data structures
+
+Video: Data Structures and Algorithms in JavaScript 1:52:54 | 
+
+### Stacks
+
+- 0:20 Stacked data structure → EXAMPLES: book stack, LIFO, browser back button (push sites on top),
+- functions for “the stack”: push(), pop(), length, and peek (peek is just .length - 1) -
+- use an array stack to find palindromes (RADAR) –
+- use an array as a stack or implement your own stack-
+
+### Sets
+
+- the Set data structure is like an array except there is no duplicate items and the values are in no particular order – the typical use for a set is to check for the existence of a particular item
+
+### Queue
+- 19:24  – the queue data structure is a way to hold data – it’s similar to a stack, a stack is FILO (I think he means LIFO), a queue is FIFO – in JS you can implement a queue with an array, - think of store or bank line or print queue – 1. so have an array, 2. add to it (enqueue) with list.push(), 3. remove (dequeue) with return list.shift(), 4. see what is at the front of the queue with return list[0], 5. get the size of the array with return list.length, 6. check if the queue is empty with return (list.length === 0)
+
+### Binary Search Tree
+
+- 26:03  – a way to hold data that when visualized looks like a tree (think corporate hierarchy) – all data points are called nodes – the top of the tree is called the root node (html tag) and then branches out into left and right, parent and child and sibling nodes, leaf nodes are nodes at the end of the tree that have no children – a binary search tree is a specific type of tree, …
+- 1) create 2 clsses with class Node w\ a constructor getting data, left, and right for the 1st and just constructor for the 2nd 2) for the 2nd have a method add(data) which is a huge function to add something to the tree, you see set the root node if the first with new Node(data), or use a recursive Fx to figure where to put the new Node – do not understand the left vs right thing – other methods are findMin(), findMax(), find(data), isPresent(), remove(data), 
+
+### Hash Table
+
+- 53:20  – is used to implement associative arrays or mappings of key-value pairs – they are a common way to implement the map data structure or objects – they are widely used b\c of their effieciency – lookup time is fast, not a Fx of the # of elements – the way they work: 1. it takes a key input and runs it thru a hash fx – hash Fx → matches strings to #’s and usually the #’s correspond to indices in an array – a key is sent thru a hash Fx and it return the hash/index – a hash Fx needs to be consistent so that when you run a key thru it, it always gives the same # (no “collisions”) - 
+- hash tables are already built into JS and other languages – in JS they are used to implement objects, 56:27 as a manual example – this.add(), this.remove, this.lookup, 
+1:03:05 Linked List – elements are stored in a node – the node has 2 pcs of key info: 1) the element, 2) a reference (link) to the nex node – like arrays, linked lists can be used to implement many other data structures – they have advantages and disadvantages when compared to arrays – every linked list has a head/ head pointer that points to the 1st node – the last node points to null - 
+- this.element, this.next, info1 → link → info2 → link, ... 1) create a node, 2) then this.size return, this.head return, this.add element, this.remove element,  
+
+### Trie
+
+- 1:15:00  – sometimes called a prefix tree, is a special type of tree used to store associative data structures – they store data in steps, each step is a node in the trie, is often used to store words – ex, to validate that a word is in a dictionary – each step/node would represent 1 letter of a word 
+- 1) this.keys = new Map(), too confusing
+
+### Heap
+
+- 1:27:29  – a binary heap is a partially ordered binary tree which satisfies the heap property – each node has at most 2 child nodes – indicates a specific property b\tw the parent and the child nodes – look into max heap and min heap for child node numbers < or > parent node numbers – left and node properties again – they are more often implemented as arrays – left child = i * 2, right child =  i * 2 + 1, parent = i / 2 – btw, no index 0 in a heap – it’s null - 
+
+### Graphs
+
+- 1:42:08  – the graph data structure is a collection of things and the relationships/connections b\tw them – the data or braphs are called nodes or vertices – the connections b\tw the nodes ar called edges – a social netwrk is an example where the nodes are you and other people and the edges are whether you are friends – there are 2 typ: directed and undireted graphs – 3 ways to represent a graph: 1) adjacency list, 2)  adjacency matrix, 3) incidence matri
+Map – they store key-value pairs – in JS Object are maps – they provide rapid lookup of stored items - 
+
+## OOP
+
+Video: Intro to Object Oriented Programming - Crash Course | 
+
+- grouping related variables together is important -
+- Definition: Objects = instances of a class | Class = templates for objects -
+  - Example: Chess pices, the Knight, white or black, captured or not, with current position, a Fx or method would be move() and would return the possible squares a knight can move to – so move(), position var, color var but do not initialize those vars – best to define them when you create the class rather than in the class itself – create the move fx in the class rather than in each obj you create - 
+- when creating a knight object, you initialize its vars / attributes and its methods to contain info specific to that knight -
+  - the class Knight represents any given knight, a knight object represents a specific knight 
+  - OOP is the best tool to create complex programs by grouping together related data and functions
+  - the 4 main princioles of OOP: 1) Encapsulation, 2) Abstraction, 3) Inheritance, 4) Polymorphism
+- Encapsulation: in OOP, refers to bundling data with methods that can operate on that data within a class. It is the idea of hiding data within a class, preventing anything outside that class from directly interacting with it. Members of other classes can interact with the attributes of another object through its methods: `get` and `set` methods. Also, you may want some attributes to be read-only from outside the class, which means you only have a getter emthod, no setter. Don't allow external classes to directly edit an object's attributes. Each piece should not have access to or rely on the inner workings of other sections of code (Information hiding)!!!
+- Abstraction: in OOP, refers to only showing essential details and keeping everything else hidden. Users of you classes should not worry about the inner details of those classes. Split up your code into small chunks. It’s best if the section you are working on is able to function without knowledge of the inner workings of a different section. Think in terms of interface and implementation. Interface refers to the way sections of code can communicate with one another (done thru methods that each class can access). The implementation of the methods (how they are coded) should be hidden.
+- Inheritance: in OOP, is the principle that allows classes to erive from other classes – methods and attributes. A SuperClass with Subclasses. Subclasses inherit methods and attributes from their Superclass. Access modifiers change which classes have access to other classes, methods, or attributes. There are 3 main access modifiers: Public, Private, and Protected.
+- Public modifiers can be accessed from anywhere in your program.
+- Private modifier can only be accessed from within the same class that the member is defined.
+- Protected modifiers can be access within the class it is defined, as well as subclasses of that class.
+- Polymorphism: in OOP, describes methods that are able to take on many forms. There are 2 types: Dynamic and Static. Dynamic polymorphism occurs during the runtime of the program. It describes when a method signature is in both a subclass and a superclass. They have the same name but different implementation, but the subclass overrides the superclass. This is because the form of the method is decided based on where in the class hierarchy it is called. This reduces the need for multiple if/else if statements. Static polymorphism occurs during complie time and refers to when multiple methods with the same name but different arguments are defined in the same class: either a different # of parameters, or or different typss, or in a different order. That is known as method overloading. Despite the methods having the same name, their signatures are different due to their arguments.
+- If you call methods with too many parameters, or parameters of the incorrect type, then you will get an error. 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 

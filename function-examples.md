@@ -865,6 +865,18 @@ function factorial(num){
 console.log(factorial(4)); // 24 = 4 * 3 * 2 * 1
 console.log(factorial(5)); // 120
 
+// for loop solution for factorials
+function factorialize(num) {
+  let product = 1;
+  // let i = 1 also works
+  for (let i = 2; i <= num; i++) {
+    product *= i;
+  }
+  return product;
+}
+console.log(factorialize(5)); // 120
+
+
 // count down example
 function countDownFrom(number) {
 	if (number === 0) {

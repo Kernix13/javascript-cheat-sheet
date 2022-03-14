@@ -28,6 +28,8 @@ Basic syntax for the most common methods. I skipped `flat()`, `findIndex()` and 
 
 ### push
 
+Adds one or more elements to the end of an array and returns the new length of the array. Requires at least 1 argument, mutates the array.
+
 ```js
 // arr.push(val1, ...)
 let arr = ['a', 'b', 'c', 'd'];
@@ -47,6 +49,8 @@ console.log(rhythm)  // ['bass', 'drums', 'guitar', 'piano']
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### unshift
+
+Adds one or more elements to the beginning of an array and returns the new length of the array. Requires at least 1 argument, mutates the array.
 
 ```js
 // syntax
@@ -71,6 +75,8 @@ arr.unshift(3) // [3, 2, 1, 4, 5, 6]
 
 ### pop
 
+Removes the last element from an array and returns that element. No arguments required, mutates the array.
+
 ```js
 // arr.pop()
 let arr = ['a', 'b', 'c', 'd'];
@@ -83,6 +89,8 @@ console.log(arr); // ["a","b","c"]
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### shift
+
+Removes the first element from an array and returns that element. No arguments required, mutates the array.
 
 ```js
 // arr.shift()
@@ -116,9 +124,14 @@ console.log(names) // []
 
 ### Basic sort
 
+Sorts an array in ascending order. When no arguments are passed, numbers are sorted as strings. Mutates the array. Can be used on strings.
+
 If you use the spread operator to access the array, the original array is not mutated; otherwise it is. Same with `reverse()`. Note, don't use a callback function for sorting text. Also, check out [MDN sort description](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#description) for how to sort by the key of an object.
 
 ```js
+// Syntax:
+sort()
+
 // Sorting an array of strings using spread operating to NOT mutate original:
 const arr = ["Squeaks", "Charlie", "Little Rascal", "Buddy", "Luna", "Jim"];
 let newArr = [...arr].sort();
@@ -137,9 +150,12 @@ console.log(numSort) // [1,10001,101,12,27,3,44,5,55]
 
 ### reverse
 
-You can use `reverse()` with the spread operator on the original array as a more concise way to check for palindromes.
+Reverses the order of an array, mutates the array.
 
 ```js
+// Syntax
+reverse()
+
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const countDown = arr.reverse();
 console.log(countDown); // [10,9,8,7,6,5,4,3,2,1]
@@ -170,6 +186,8 @@ if (word === revWord) {
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### splice
+
+Changes the contents of an array by removing or replacing existing elements and/or adding new elements. Mutates the array.
 
 MDN syntax (MUTATES!):
 ```js
@@ -226,6 +244,8 @@ console.log(alpha) // ["a","b","c","e"]
 
 ### Array slice
 
+Extracts a section of the calling array and returns a new array, does not mutate the array. Can be used on strings.
+
 MDN syntax:
 ```js
 slice()
@@ -269,6 +289,8 @@ console.log(newCar)
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### concat
+
+Joins two or more arrays and returns a copy of the joined arrays. Does not mutate the array. Can be used on strings.
 
 Examples:
 ```js
@@ -314,6 +336,8 @@ console.log(numbers); // [[1, 4], 2, [3]]
 
 ### join
 
+Returns a new string by concatenating all of the elements in an array. Does not mutate the array.
+
 `arr.join()`, commonly used with str.split():
 ```js
 // syntax:
@@ -339,6 +363,8 @@ console.log(urlSlug); // "common-array-methods-you-should-know"
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### indexOf
+
+Returns the first index at which a given element can be found in the array, or -1 if it is not present. Can be used on strings.
 
 Examples:
 ```js
@@ -401,7 +427,9 @@ console.log(count); // 3
 
 ### lastIndexOf
 
-Examples: returns the last index at which a given element can be found in the array, or -1 if it is not present
+Returns the last index at which a given element can be found in the array, or -1 if it is not present. Can be used on strings.
+
+Examples:
 ```js
 // syntax
 lastIndexOf(searchElement)
@@ -428,6 +456,8 @@ console.log(indices); // [4, 2, 0]
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Includes
+
+Determines whether an array includes a certain value among its entries, returning `true` or `false` accordingly.
 
 ```js
 // syntax:
@@ -457,6 +487,8 @@ console.log(str.includes('Script', 4)); // true
 High Order Array Methods = methods that use a callback function. The most used ones are `sort`, `map`, `filter`, `forEach`, and `reduce`; but also `find`, `every`, and `some` are useful.
 
 ### Sort
+
+Sorts an array in ascending order. Mutates the array. Can be used on strings.
 
 Callback examples:
 ```js
@@ -506,6 +538,8 @@ items.sort(function (a, b) {
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Find
+
+Returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, `undefined` is returned.
 
 MDN syntax:
 ```js
@@ -590,7 +624,7 @@ console.log([4, 5, 8, 12].find(isPrime)); // 5
 
 ### Every
 
-Returns a boolean if EVERY element in an array passes a test
+Returns a boolean if EVERY element in an array passes a test.
 
 MDN syntax:
 ```js
@@ -652,7 +686,7 @@ console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 8, 7])); // false
 
 ### Some
 
-Returns a boolean if at least one element passes a test
+Returns a boolean if at least one element passes a test.
 
 MDN syntax:
 ```js
@@ -753,6 +787,8 @@ function checkAvailability(arr, val) {
 
 ### Map
 
+Performs a function on every element in an array and places the result in a new array.
+
 MDN syntax:
 ```js
 // Arrow function
@@ -847,10 +883,10 @@ function doubleMoney() {
 
 //      feeCodeCamp examples
 // Great example of te spread operator for a string using Math and map methods!
-function findLongestWordLength(str) {
+function longestWord(str) {
   return Math.max(...str.split(" ").map(word => word.length));
 }
-findLongestWordLength("Find the longest word in this sentence"); // 8
+longestWord("Find the longest word in this sentence"); // 8
 
 
 // Get object key values, similar to what Object.values does on a single object, 
@@ -920,6 +956,8 @@ console.log(reformattedArray) // {"1": 10}, {"2": 20}, {"3": 30}
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Filter
+
+Takes a function containing a test and returns a new array with all the elements that pass that test. The filtration is done using a function that returns a boolean value. If no elements pass the test, an empty array will be returned.
 
 MDN syntax:
 ```js
@@ -1134,6 +1172,8 @@ COUNT TOTALS: "if's" (4), includes (3), multiple returns (3), reduce(2), rest op
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### forEach
+
+Executes a provided function once for each array element; calls a provided `callbackFn` function once for each element in an array in ascending index order. It is not invoked for index properties that have been deleted or are uninitialized.
 
 MDN syntax:
 ```js
@@ -1387,6 +1427,10 @@ function populateUI() {
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Reduce
+
+Executes a user-supplied "_reducer_" callback function on each element of the array, passing in the return value from the calculation on the preceding element. The final result of running the _reducer_ across all elements of the array is **a single value**.
+
+The first time that the callback is run there is no "return value of the previous calculation". If supplied, an initial value may be used in its place. Otherwise the array element at index 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0).
 
 MDN syntax:
 ```js
@@ -1672,6 +1716,8 @@ console.log(badString.toLowerCase().trim()); // "oops, caps lock on. need to fix
 
 ### String slice
 
+Extracts a section of a string and returns it as a new string, **_without_** modifying the original string.
+
 MDN syntax and examples:
 ```js
 slice()
@@ -1705,6 +1751,8 @@ let str2 = str.slice(4, 11) // "slice m"
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### split
+
+Divides a String into substrings, puts these substrings into an array, and returns the array. Does not mutate the string.
 
 MDN syntax:
 ```js
@@ -1763,6 +1811,8 @@ console.log(splits) // ["Hello","World.","How"]
 
 ### substring
 
+Returns the part of the string between the start and end indexes, or to the end of the string. Does not mutate the string.
+
 MDN syntax and examples:
 ```js
 // syntax:
@@ -1812,6 +1862,8 @@ function replaceString(oldS, newS, fullS) {
 
 ### repeat
 
+Constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together.
+
 MDN syntax and examples::
 ```js
 // syntax
@@ -1828,6 +1880,8 @@ console.log(`Chorus lyrics for "Happy": ${chorus.repeat(5)}`);
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### endsWith
+
+Determines whether a string ends with the characters of a specified string. Returns `true` or `false`.
 
 MDN syntax and eamples:
 ```js
@@ -1856,6 +1910,8 @@ console.log(str.endsWith('to be', 19))  // true
 
 ### test
 
+Executes a search for a match between a regular expression and a specified string. Returns `true` or `false`.
+
 MDN syntax and examples:
 ```js
 test(str)
@@ -1875,6 +1931,8 @@ console.log(result); // true
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### match
+
+Used to match regular expression against a string. Returns an array of the match(es) or `null` if no matches are found.
 
 MDN syntax and examples:
 ```js
@@ -1898,6 +1956,8 @@ console.log(found.groups); // {animal: "fox"}
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### replace
+
+Returns a new string with some or all matches of a `pattern` replaced by a `replacement`. The `pattern` can be a string or a `RegExp`, and the `replacement` can be a string or a function to be called for each match. If `pattern` is a string, only the first occurrence will be replaced.
 
 MDN syntax:
 ```js
