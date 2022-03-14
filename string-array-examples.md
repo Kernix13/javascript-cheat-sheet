@@ -28,7 +28,7 @@ Basic syntax for the most common methods. I skipped `flat()`, `findIndex()` and 
 
 ### push
 
-Adds one or more elements to the end of an array and **returns the new length** of the array. Requires at least 1 argument, mutates the array.
+Adds one or more elements to the end of an array and **<ins>returns the new length</ins>** of the array. Requires at least 1 argument, mutates the array.
 
 ```js
 // arr.push(val1, ...)
