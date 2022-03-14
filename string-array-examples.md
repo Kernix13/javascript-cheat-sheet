@@ -50,7 +50,7 @@ console.log(rhythm)  // ['bass', 'drums', 'guitar', 'piano']
 
 ### unshift
 
-Adds one or more elements to the beginning of an array and **returns the new length** of the array. Requires at least 1 argument, mutates the array.
+Adds one or more elements to the beginning of an array and **<ins>returns the new length</ins>** of the array. Requires at least 1 argument, mutates the array.
 
 ```js
 // syntax
@@ -75,7 +75,7 @@ arr.unshift(3) // [3, 2, 1, 4, 5, 6]
 
 ### pop
 
-Removes the last element from an array and **returns that element**. No arguments required, mutates the array.
+Removes the last element from an array and **<ins>returns that element</ins>**. No arguments required, mutates the array.
 
 ```js
 // arr.pop()
@@ -90,7 +90,7 @@ console.log(arr); // ["a","b","c"]
 
 ### shift
 
-Removes the first element from an array and **returns that element**. No arguments required, mutates the array.
+Removes the first element from an array and **<ins>returns that element</ins>**. No arguments required, mutates the array.
 
 ```js
 // arr.shift()
@@ -124,7 +124,7 @@ console.log(names) // []
 
 ### Basic sort
 
-Sorts an array in ascending order and **returns the sorted array**. When no arguments are passed, numbers are sorted as strings. Mutates the array. Can be used on strings.
+Sorts an array in ascending order and **<ins>returns the sorted array</ins>**. When no arguments are passed, numbers are sorted as strings. Mutates the array. Can be used on strings.
 
 If you use the spread operator to access the array, the original array is not mutated; otherwise it is. Same with `reverse()`. Note, don't use a callback function for sorting text. Also, check out [MDN sort description](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#description) for how to sort by the key of an object.
 
@@ -150,7 +150,7 @@ console.log(numSort) // [1,10001,101,12,27,3,44,5,55]
 
 ### reverse
 
-Reverses the order of an array and **returns the reversed array**, mutates the array.
+Reverses the order of an array and **<ins>returns the reversed array</ins>**, mutates the array.
 
 ```js
 // Syntax
@@ -187,7 +187,7 @@ if (word === revWord) {
 
 ### splice
 
-Changes the contents of an array by removing or replacing existing elements and/or adding new elements. Mutates the original array, **returns removed items**.
+Changes the contents of an array by removing or replacing existing elements and/or adding new elements. Mutates the original array, **<ins>returns removed items</ins>**.
 
 MDN syntax (MUTATES!):
 ```js
@@ -244,7 +244,7 @@ console.log(alpha) // ["a","b","c","e"]
 
 ### Array slice
 
-Extracts a section of the calling array and **returns a new array**, does not mutate the array. Can be used on strings.
+Extracts a section of the calling array and **<ins>returns a new array</ins>**, does not mutate the array. Can be used on strings.
 
 MDN syntax:
 ```js
@@ -290,7 +290,7 @@ console.log(newCar)
 
 ### concat
 
-Joins two or more arrays and **returns a copy of the joined arrays**. Does not mutate the array. Can be used on strings.
+Joins two or more arrays and **<ins>returns a copy of the joined arrays</ins>**. Does not mutate the array. Can be used on strings.
 
 Examples:
 ```js
@@ -336,7 +336,7 @@ console.log(numbers); // [[1, 4], 2, [3]]
 
 ### join
 
-**Returns a new string** by concatenating all of the elements in an array. Does not mutate the array.
+**<ins>Returns a new string</ins>** by concatenating all of the elements in an array. Does not mutate the array.
 
 `arr.join()`, commonly used with str.split():
 ```js
@@ -364,7 +364,7 @@ console.log(urlSlug); // "common-array-methods-you-should-know"
 
 ### indexOf
 
-**Returns the first index** at which a given element can be found in the array, or -1 if it is not present. Can be used on strings.
+**<ins>Returns the first index</ins>** at which a given element can be found in the array, or -1 if it is not present. Can be used on strings.
 
 Examples:
 ```js
@@ -427,7 +427,7 @@ console.log(count); // 3
 
 ### lastIndexOf
 
-**Returns the last index** at which a given element can be found in the array, or -1 if it is not present. Can be used on strings.
+**<ins>Returns the last index</ins>** at which a given element can be found in the array, or -1 if it is not present. Can be used on strings.
 
 Examples:
 ```js
@@ -457,7 +457,7 @@ console.log(indices); // [4, 2, 0]
 
 ### Includes
 
-Determines whether an array includes a certain value among its entries, **returns `true` or `false`**.
+Determines whether an array includes a certain value among its entries, **<ins>returns `true` or `false`</ins>**.
 
 ```js
 // syntax:
@@ -488,7 +488,7 @@ High Order Array Methods = methods that use a callback function. The most used o
 
 ### Sort
 
-Sorts an array in ascending order and **returns the sorted array**. Mutates the array. Can be used on strings.
+Sorts an array in ascending order and **<ins>returns the sorted array</ins>**. Mutates the array. Can be used on strings.
 
 Callback examples:
 ```js
@@ -539,7 +539,7 @@ items.sort(function (a, b) {
 
 ### Find
 
-**Returns the first element** in the provided array that satisfies the provided testing function. If no values satisfy the testing function, `undefined` is returned.
+**<ins>Returns the first element</ins>** in the provided array that satisfies the provided testing function. If no values satisfy the testing function, `undefined` is returned.
 
 MDN syntax:
 ```js
@@ -624,7 +624,7 @@ console.log([4, 5, 8, 12].find(isPrime)); // 5
 
 ### Every
 
-**Returns a boolean** if EVERY element in an array passes a test.
+**<ins>Returns a boolean</ins>** if EVERY element in an array passes a test.
 
 MDN syntax:
 ```js
@@ -686,7 +686,7 @@ console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 8, 7])); // false
 
 ### Some
 
-**Returns a boolean** if at least one element passes a test.
+**<ins>Returns a boolean</ins>** if at least one element passes a test.
 
 MDN syntax:
 ```js
@@ -787,7 +787,7 @@ function checkAvailability(arr, val) {
 
 ### Map
 
-Performs a function on every element in an array and **returns the result in a new array**.
+Performs a function on every element in an array and **<ins>returns the result in a new array</ins>**.
 
 MDN syntax:
 ```js
@@ -957,7 +957,7 @@ console.log(reformattedArray) // {"1": 10}, {"2": 20}, {"3": 30}
 
 ### Filter
 
-Takes a function containing a test and **returns a new array** with all the elements **that pass the test**. The filtration is done using a function that returns a boolean value. If no elements pass the test, an empty array will be returned.
+Takes a function containing a test and **<ins>returns a new array</ins>** with all the elements **<ins>that pass the test</ins>**. The filtration is done using a function that returns a boolean value. If no elements pass the test, an empty array will be returned.
 
 MDN syntax:
 ```js
@@ -1428,7 +1428,7 @@ function populateUI() {
 
 ### Reduce
 
-Executes a user-supplied "_reducer_" callback function on each element of the array, passing in the return value from the calculation on the preceding element. The final result of running the _reducer_ across all elements of the array is **a single value**.
+Executes a user-supplied "_reducer_" callback function on each element of the array, passing in the return value from the calculation on the preceding element. The final result of running the _reducer_ across all elements of the array is **<ins>a single value</ins>**.
 
 The first time that the callback is run there is no "return value of the previous calculation". If supplied, an initial value may be used in its place. Otherwise the array element at index 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0).
 
@@ -1716,7 +1716,7 @@ console.log(badString.toLowerCase().trim()); // "oops, caps lock on. need to fix
 
 ### String slice
 
-Extracts a section of a string and **returns it as a new string**, _without_ modifying the original string.
+Extracts a section of a string and **<ins>returns it as a new string</ins>**, _without_ modifying the original string.
 
 MDN syntax and examples:
 ```js
@@ -1752,7 +1752,7 @@ let str2 = str.slice(4, 11) // "slice m"
 
 ### split
 
-Divides a String into substrings, puts these substrings into an array, and **returns the array**. Does not mutate the string.
+Divides a String into substrings, puts these substrings into an array, and **<ins>returns the array</ins>**. Does not mutate the string.
 
 MDN syntax:
 ```js
@@ -1811,7 +1811,7 @@ console.log(splits) // ["Hello","World.","How"]
 
 ### substring
 
-**Returns the part of the string** between the start and end indexes, or to the end of the string. Does not mutate the string.
+**<ins>Returns the part of the string</ins>** between the start and end indexes, or to the end of the string. Does not mutate the string.
 
 MDN syntax and examples:
 ```js
@@ -1862,7 +1862,7 @@ function replaceString(oldS, newS, fullS) {
 
 ### repeat
 
-Constructs and **returns a new string** which contains the specified number of copies of the string on which it was called, concatenated together.
+Constructs and **<ins>returns a new string</ins>** which contains the specified number of copies of the string on which it was called, concatenated together.
 
 MDN syntax and examples::
 ```js
@@ -1881,7 +1881,7 @@ console.log(`Chorus lyrics for "Happy": ${chorus.repeat(5)}`);
 
 ### endsWith
 
-Determines whether a string ends with the characters of a specified string. **Returns `true` or `false`**.
+Determines whether a string ends with the characters of a specified string. **<ins>Returns `true` or `false`</ins>**.
 
 MDN syntax and eamples:
 ```js
@@ -1910,7 +1910,7 @@ console.log(str.endsWith('to be', 19))  // true
 
 ### test
 
-Executes a search for a match between a regular expression and a specified string. **Returns `true` or `false`**.
+Executes a search for a match between a regular expression and a specified string. **<ins>Returns `true` or `false`</ins>**.
 
 MDN syntax and examples:
 ```js
@@ -1932,7 +1932,7 @@ console.log(result); // true
 
 ### match
 
-Used to match regular expression against a string. **Returns an array of the match(es)** or **`null`** if no matches are found.
+Used to match regular expression against a string. **<ins>Returns an array of the match(es)</ins>** or **`null`** if no matches are found.
 
 MDN syntax and examples:
 ```js
@@ -1957,7 +1957,7 @@ console.log(found.groups); // {animal: "fox"}
 
 ### replace
 
-**Returns a new string** with some or all matches of a `pattern` replaced by a `replacement`. The `pattern` can be a string or a `RegExp`, and the `replacement` can be a string or a function to be called for each match. If `pattern` is a string, only the first occurrence will be replaced.
+**<ins>Returns a new string</ins>** with some or all matches of a `pattern` replaced by a `replacement`. The `pattern` can be a string or a `RegExp`, and the `replacement` can be a string or a function to be called for each match. If `pattern` is a string, only the first occurrence will be replaced.
 
 MDN syntax:
 ```js
