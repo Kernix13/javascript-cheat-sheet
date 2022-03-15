@@ -103,6 +103,16 @@ returning boolean values from functions:
 function checkEqual(a, b) {
   return a === b;
 }
+
+// or 
+
+function boolReturn(test) {
+  // return typeof test === "number";
+  // return typeof test === "string";
+  return typeof test === "object";
+  // return typeof test === "boolean";
+}
+console.log(boolReturn([1,2,3]));
 ```
 
 <br />

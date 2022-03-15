@@ -257,7 +257,7 @@ slice(startIndex, endIndex)
 let arr = [1, 2, 3, 4, 5, 6]
 console.log(arr.slice()) // [1,2,3,4,5,6]
 // slice(startIndex)
-arr.slice(2) // [1,2,3,4,5,6]
+arr.slice(2) // [3,4,5,6]
 let arr2 = arr.slice(2)
 console.log(arr2, arr) // [3,4,5,6] [1,2,3,4,5,6]
 // slice(startIndex, endIndex) endIndex must be greater than start
@@ -284,6 +284,15 @@ let myCar = [myHonda, 2, 'cherry condition', 'purchased 1997']
 let newCar = myCar.slice(0, 3)
 console.log(newCar)
 // // [{ color: 'red', wheels: 4, engine: { cylinders: 4, size: 2.2 } }, 2, "cherry condition"]
+
+
+// Slice ans Splice:
+function frankenSplice(arr1, arr2, n) {
+  let newArr = arr2.slice(0);
+  newArr.splice(n, 0, ...arr1);
+  return newArr;
+}
+frankenSplice([1, 2, 3], [4, 5, 6], 1); // [4,1,2,3,5,6]
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">MDN Array Slice</a></div>
@@ -851,7 +860,7 @@ console.log(cubedRoot); // [2, 3, 1.1739840320085808]
 
 // Capitalize all words in a string:
 const str = "why is title case important"
-let capitalize = str.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+let capitalize = str.toLowerCase().split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
 console.log(capitalize) // "Why Is Title Case Important"
 
 
