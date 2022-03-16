@@ -1226,22 +1226,6 @@ function removeTaskFromLocalStorage(taskItem) {
 }
 
 
-// get local json file
-function getJson() {
-  fetch('posts.json')
-    .then(res => res.json())
-    .then(data =>  {
-      console.log(data);
-      let output = '';
-      data.forEach(function(post) {
-        output += `<li>${post.title}</li>`;
-      });
-      document.getElementById('output').innerHTML = output;
-    })
-    .catch(err => console.log(err));
-}
-
-
 // get external API data from api.github/users
 function getExternal() {
   fetch('https://api.github.com/users')
