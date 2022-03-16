@@ -9,6 +9,7 @@ Syntax and code examples for the most coomon object methods
 1. [Object keys](#object-keys)
 1. [Object values](#object-values)
 1. [hasOwnProperty](#hasOwnProperty)
+1. [instanceof](#instanceof)
 1. [for in loop](#for-in-loop)
 1. [Modify values and remove keys](#modify-values-and-remove-keys)
 1. [Classes](#classes)
@@ -113,6 +114,67 @@ function updateRecords(records, id, prop, value) {
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+
+## instanceof
+
+[MDN instanceof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof): tests to see if the prototype property of a constructor appears anywhere in the prototype chain of an object. The return value is a boolean value. Returns true if an object is an instance of an object type. 
+
+```js
+// syntax: 
+object instanceof constructor
+
+// MDN examples:
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+const auto = new Car('Honda', 'Accord', 1998);
+console.log(auto instanceof Car); // true 
+console.log(auto instanceof Object); // true
+
+
+// with dates:
+let myDate = new Date();
+myDate instanceof Date;      // true
+myDate instanceof Object;    // true
+myDate instanceof String;    // false
+
+
+// Objects created using Object.create()
+function Shape() {
+}
+function Rectangle() {
+  Shape.call(this); // call super constructor.
+}
+Rectangle.prototype = Object.create(Shape.prototype);
+Rectangle.prototype.constructor = Rectangle;
+let rect = new Rectangle();
+rect instanceof Object;    // true
+rect instanceof Shape;     // true
+rect instanceof Rectangle; // true
+rect instanceof String;    // false
+
+let literalObject     = {};
+let nullObject  = Object.create(null);
+nullObject.name = "My object";
+
+literalObject instanceof Object; // true, every object literal has Object.prototype as prototype
+({}) instanceof Object; // true, same case as above
+nullObject instanceof Object;   // false, prototype is end of prototype chain (null)
+
+
+// example 3
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+let mycar = new Car('Honda', 'Accord', 1998)
+let a = mycar instanceof Car     // returns true
+let b = mycar instanceof Object  // returns true
+```
+
 ## for in loop
 
 Using `for in`:
@@ -123,7 +185,42 @@ obj.hasOwnProperty('Prop1');
 
 for (let user in users) {...}
 
-// Example
+// example 1:
+function Bird(name) {
+  this.name = name;
+  this.numLegs = 2;
+}
+
+let duck = new Bird("Donald");
+let canary = new Bird("Tweety");
+let ownProps = [];
+for (let property in duck) {
+  if (duck.hasOwnProperty(property)) {
+    ownProps.push(property);
+    console.log(duck[property])
+  }
+}
+console.log(ownProps); // ['name', 'numLegs']
+
+
+// example 2:
+const chordIntervals = {
+  "Chord": "maj",
+  "Intervals": ["1", "3", "5"],
+  "steps": [0, 4, 7]
+}
+
+let chordProps = [];
+for (let prop in chordIntervals) {
+  if (chordIntervals.hasOwnProperty(prop)) {
+    chordProps.push(prop);
+    console.log(chordIntervals[prop]) // maj ['1', '3', '5'] [0, 4, 7]
+  }
+}
+console.log(chordProps); // ['Chord', 'Intervals', 'steps']
+
+
+// Example 3
 const users = {
   Alan: {
     online: false
