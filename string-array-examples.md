@@ -32,14 +32,17 @@ Basic syntax for the most common methods. I skipped `flat()`, `findIndex()` and 
 Adds one or more elements to the end of an array and **<ins>returns the new length</ins>** of the array. Requires at least 1 argument, mutates the array.
 
 ```js
-// arr.push(val1, ...)
+// syntax:
+arr.push(val1, val2, ...)
+
+// basic example
 let arr = ['a', 'b', 'c', 'd'];
 let addedItem = arr.push('e');
 console.log(addedItem); // 5
 console.log(arr); // ['a', 'b', 'c', 'd', 'e']
 
 
-// Merge 2 arrays, alterntive to concat():
+// Merge 2 arrays with spread op., alt. to concat():
 let rhythm = ['bass', 'drums']
 let harmony = ['guitar', 'piano']
 rhythm.push(...harmony);
@@ -55,20 +58,23 @@ Adds one or more elements to the beginning of an array and **<ins>returns the ne
 
 ```js
 // syntax
-arr.unshift(val1, ...)
+arr.unshift(val1, val2, ...)
 
 let arr = [1, 2, 3, 4];
 let addedItem = arr.unshift(0);
 console.log(addedItem); // 5
 console.log(arr); // [0, 1, 2, 3, 4]
-arr.unshift([-7, -6], [-5]) // result: [[-7, -6], [-5], 0, 1, 2, 3, 4]
 
 
-// reset array
-let arr = [1, 2, 3, 4, 5, 6]
-arr.unshift(1)
-arr.unshift(2)
-arr.unshift(3) // [3, 2, 1, 4, 5, 6]
+// Add multiple items
+let arr = [4, 5, 6]
+arr.unshift(1, 2, 3)
+console.log(arr); // [1,2,3,4,5,6]
+
+
+// ADD ARRAYS!!!
+arr.unshift([-7, -6], [-5]) 
+console.log(arr); // [[-7, -6], [-5], 0, 1, 2, 3, 4]
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift">MDN Unshift</a></div>
@@ -115,8 +121,7 @@ console.log('Removed this element:', shifted); // "Removed this element:" "lifeg
 const names = ["John", "Paul", "George", "Ringo" ,"Richard"];
 while( typeof (i = names.shift()) !== 'undefined' ) {
     console.log(i);
-}
-// John, Paul, George, Ringo, Richard
+} // John, Paul, George, Ringo, Richard
 console.log(names) // []
 ```
 
@@ -133,7 +138,7 @@ If you use the spread operator to access the array, the original array is not mu
 // Syntax:
 sort()
 
-// Sorting an array of strings using spread operating to NOT mutate original:
+// Sorting an array of strings using spread operator to NOT mutate original:
 const arr = ["Squeaks", "Charlie", "Little Rascal", "Buddy", "Luna", "Jim"];
 let newArr = [...arr].sort();
 console.log(newArr); // ["Buddy","Charlie","Jim","Little Rascal","Luna","Squeaks"]
@@ -141,9 +146,9 @@ console.log("original: " + arr); // "original: Squeaks,Charlie,Little Rascal,Bud
 
 
 // Use this method to sort numbers as a string value (e.g. item/part numbers):
-const nums = [5, 1, 27, 101, 55, 12, 44, 10001, 3];
+const nums = [5, 1, 27, 101, 55, 12, 44, 1001, 3];
 const numSort = [...nums].sort();
-console.log(numSort) // [1,10001,101,12,27,3,44,5,55]
+console.log(numSort) // [1,1001,101,12,27,3,44,5,55]
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">MDN Sort</a></div>
@@ -188,10 +193,11 @@ if (word === revWord) {
 
 ### splice
 
-Changes the contents of an array by removing or replacing existing elements and/or adding new elements. Mutates the original array, **<ins>returns the removed items</ins>**.
+Changes the contents of an array by removing or replacing existing elements and/or adding new elements. Mutates the original array, **<ins>returns the removed items</ins>**. To access part of an array without modifying it, see `slice()`.
 
 MDN syntax (MUTATES!):
 ```js
+// syntax:
 splice(startIndex)
 splice(startIndex, deleteCount)
 splice(startIndex, deleteCount, item1)
@@ -200,10 +206,13 @@ splice(startIndex, deleteCount, item1)
 // splice(startIndex):
 let arr = [1, 2, 3, 4, 5, 6]
 console.log(arr.splice(2)) // [1,2]
+
 // splice(startIndex, deleteCount):
 console.log(arr.splice(2,2)) // [1,2,5,6]
+
 // splice(startIndex, deleteCount, item1, item2, itemN):
-console.log(arr.splice(2,2,100,101)) // [1,2,100,1015,6]
+console.log(arr.splice(2, 2, 108, 27.27)) // [3,4]
+console.log(arr) // [1,2,108,27.27,5,6]
 
 
 // Assign to a new array
@@ -237,7 +246,6 @@ console.log(alpha) // ["a","b","c"]
 const alpha =  ['a', 'b', 'c', 'd', 'e']
 alpha.splice(-2, 1)
 console.log(alpha) // ["a","b","c","e"]
-
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">MDN Splice</a></div>
@@ -245,7 +253,7 @@ console.log(alpha) // ["a","b","c","e"]
 
 ### Array slice
 
-Extracts a section of the calling array and **<ins>returns a new array</ins>**, does not mutate the array. Can be used on strings.
+Extracts a section of the calling array from `start` to `end` (`end` not included) and **<ins>returns a new array</ins>**, does not mutate the array. Can be used on strings.
 
 MDN syntax:
 ```js
@@ -533,7 +541,11 @@ const items = [
 let itemsSort = items.sort(function (a, b) {
   return a.barBill - b.barBill;
 });
-// Sorting by 'name' is more involved: 
+// Sorting by strings is more involved: 
+const byName = characters.sort((a, b) => {
+  if (a.name < b.name) return -1;
+  return 1;
+}); // "Anakin" "Darth" "Leia" "Luke"
 
 
 // Sorting non-ASCII characters
@@ -737,6 +749,9 @@ const names = ['John', 'Peter', 'Mary'];
 const firstName = 'John'
 const hasMyName = names.some(name => name === firstName);
 console.log(hasMyName); // true
+
+const blueEyes = characters.some((item) => item.eye_color === 'black');
+console.log(blueEyes); // false
 ```
 
 <br />
@@ -883,6 +898,14 @@ console.log(itemNames) // [100,200,10,5,500,1000,25]
 const itemNames = items.map(item => item.price)
 
 
+// James Quick, example key: name: 'Anakin Skywalker',
+const firstName = characters.map(item => item.name.split(' ')[0])
+console.log(firstName) // "Luke" "Darth" "Leia" "Anakin"
+
+const minFile = characters.map(item => ({ name: item.name, height: item.height }))
+console.log(minFile) // e.g.: {name: 'Darth Vader', height: 202}
+
+
 // Examples from Traversy courses: Double eveyones money
 function doubleMoney() {
   data = data.map(user => {
@@ -899,9 +922,8 @@ function longestWord(str) {
 longestWord("Find the longest word in this sentence"); // 8
 
 
-// Get object key values, similar to what Object.values does on a single object, 
-// but you can not use that because 'users' is an array of objects, not a single 
-// object with multiple key-value pairs
+// Get object key values, similar to what Object.values does on a single object, but you can not use that because 'users' is an array of objects, 
+// not a single object with multiple key-value pairs
 const users = [
   { name: 'John', age: 34 },
   { name: 'Amy', age: 20 },
@@ -1038,7 +1060,6 @@ Intermediate examples:
 // Traversy expense tracker
 function updateValues() {
   const amounts = transactions.map(transaction => transaction.amount);
-
   const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
 
   const income = amounts
@@ -1062,8 +1083,6 @@ const companies= [
   {name: "Company Four", category: "Retail", start: 1989, end: 2010},
   {name: "Company Five", category: "Technology", start: 2009, end: 2014},
   {name: "Company Six", category: "Finance", start: 1987, end: 2010},
-  {name: "Company Seven", category: "Auto", start: 1986, end: 1996},
-  {name: "Company Eight", category: "Technology", start: 2011, end: 2016},
   {name: "Company Nine", category: "Retail", start: 1981, end: 1989}
 ];
 const retailCompanies = companies.filter(function(company) {
@@ -1148,8 +1167,7 @@ console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
 
 //      freeCodeCamp:
 //      DIFFICULTY: EXTREMELY HIGH!!!
-// 4: Make a function that looks through an array of objects (1st arg) and returns an array of all 
-// objects that have matching name and value pairs (2nd arg).
+// 4: Make a function that looks through an array of objects (1st arg) &  returns an array of all objects that have matching name & value pairs (2nd arg).
 
 function whatIsInAName(collection, source) {
   let getKeys = Object.keys(source); // array of key(s) ["last"]
@@ -1226,15 +1244,14 @@ array1.forEach(element => console.log(element)); // "a" "b" "c"
 //      Other examples:
 const items = [
   { name: 'Bike', price: 100 },
-  { name: 'TV', price: 200 },
   { name: 'Album', price: 10 },
   { name: 'Book', price: 5 },
   { name: 'Phone', price: 500 },
-  { name: 'Computer', price: 1000 },
+  { name: 'Laptop', price: 1000 },
   { name: 'Keyboard', price: 25 }
 ]
 items.forEach(item => {
-  console.log(item.name) // "Bike" "TV" "Album" "Book" "Phone" "Computer" "Keyboard"
+  console.log(item.name) // "Bike" "Album" "Book" "Phone" "Laptop" "Keyboard"
 })
 
 
@@ -1276,9 +1293,8 @@ items.forEach((item) => {
 });
 
 
-// Modifying the array during iteration
-// any number if the condition removes "one"
-// why was "three" removed?
+// Modifying the array during iteration, any number if the
+// condition removes "one", why was "three" removed?
 const words = ['one', 'two', 'three', 'four'];
 words.forEach((word) => {
   console.log(word);
@@ -1287,12 +1303,6 @@ words.forEach((word) => {
   }
 }); // "one" "two" "four"
 console.log(words); // ['two', 'three', 'four']
-
-
-//      Other examples:
-
-//      freeCodeCamp:
-
 ```
 
 <br />
@@ -1312,11 +1322,6 @@ const copy = (obj) => {
 };
 const obj1 = { a: 1, b: 2 };
 const obj2 = copy(obj1); // obj2 looks like obj1 now (WHY?)
-
-//      Other examples:
-
-//      freeCodeCamp:
-
 ```
 
 Examples from Traversy courses:
@@ -1336,28 +1341,7 @@ const customers = JSON.parse(this.responseText);
 });
 
 
-// Get Tasks from Local Storage
-function getTasks() {
-  let tasks;
-  if (localStorage.getItem('tasks') === null) {
-    tasks = [];
-  } else {
-    tasks = JSON.parse(localStorage.getItem('tasks'));
-  }
-
-  tasks.forEach(function (task) {
-    const li = document.createElement('li');
-    li.className = 'collection-item';
-    li.appendChild(document.createTextNode(task));
-    const link = document.createElement('a');
-    link.className = 'delete-item secondary-content';
-    link.innerHTML = '<i class="fa fa-remove"></i>';
-    li.appendChild(link);
-    taskList.appendChild(li);
-  });
-}
-
-// Remove from Local Storage
+// Remove items from Local Storage
 function removeTaskFromLocalStorage(taskItem) {
   let tasks;
   if (localStorage.getItem('tasks') === null) {
@@ -1373,19 +1357,6 @@ function removeTaskFromLocalStorage(taskItem) {
   });
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
-
-
-// posts object
-function getPosts() {
-  setTimeout(function() {
-    let output = '';
-    posts.forEach(function(post){
-      output += `<li>${post.title}</li>`;
-    });
-    document.body.innerHTML = output;
-  }, 1000);
-}
-createPost({title: 'Post Three', body: 'This is post three'}, getPosts);
 
 
 // get local json file
@@ -1502,19 +1473,10 @@ let total = [ 0, 1, 2, 3 ].reduce(
 
 // Bonding arrays contained in an array of objects using the 
 // spread operator and initialValue
-let friends = [{
-  name: 'Anna',
-  books: ['Bible', 'Harry Potter'],
-  age: 21
-}, {
-  name: 'Bob',
-  books: ['War and peace', 'Romeo and Juliet'],
-  age: 26
-}, {
-  name: 'Alice',
-  books: ['The Lord of the Rings', 'The Shining'],
-  age: 18
-}]
+let friends = [
+  {name: 'Anna', books: ['Bible', 'Harry Potter'], age: 21}, 
+  {name: 'Bob', books: ['War and peace', 'Romeo and Juliet'], age: 26}, 
+  {name: 'Alice', books: ['The Lord of the Rings', 'The Shining'], age: 18}]
 
 let allbooks = friends.reduce(function(previousValue, currentValue) {
   return [...previousValue, ...currentValue.books]
@@ -1528,7 +1490,6 @@ let allbooks = friends.reduce(function(previousValue, currentValue) {
 // example 1
 const items = [
   { name: 'Bike', price: 100 },
-  { name: 'TV', price: 200 },
   { name: 'Album', price: 10 },
   { name: 'Book', price: 5 },
   { name: 'Phone', price: 500 },
@@ -1538,12 +1499,19 @@ const items = [
 const total = items.reduce((currentTotal, item) => {
   return item.price + currentTotal
 }, 0)
-console.log(total) // 1840
+console.log(total) // 1640
 
 // example 2
 const arr = [1, 2, 3, 4, 5, 6];
 const total = arr.reduce((accum, currVal) => (accum + currVal), 10);
 console.log(total); // 31
+
+
+// star ars characters example
+const totalMass = characters.reduce((acc, curr) => {
+  return acc + curr.mass;
+}, 0); // or 
+const totalMass = characters.reduce((acc, curr) => acc + curr.mass, 0);
 
 
 //      freeCodeCamp:
@@ -1606,16 +1574,6 @@ const doubledPositiveNumbers = numbers.reduce((previousValue, currentValue) => {
   return previousValue;
 }, []);
 console.log(doubledPositiveNumbers); // [12, 4]
-
-
-//      Other examples:
-// Combine Methods
-const combined = ages
-  .map(age => age * 2)
-  .filter(age => age >= 40)
-  .sort((a, b) => a - b)
-  .reduce((a, b) => a + b, 0);
-console.log(combined); // 798
 
 
 //      freeCodeCamp:
@@ -1685,6 +1643,19 @@ let groupedPeople = groupBy(people, 'age')
 //   21: [ { name: 'Alice', age: 21 } ] }
 
 
+// James Quick example: EXCELLENT!
+// { name: 'Leia Organa', height: 150, mass: 49, eye_color: 'brown', gender: 'female' }
+const byEyeColor = characters.reduce((acc, curr) => {
+  const color = curr.eye_color;
+  if (acc[color]) {
+    acc[color]++;
+  } else {
+    acc[color] = 1;
+  }
+  return acc;
+}, {}); // {blue: 2, yellow: 1, brown: 1}
+
+
 //      freeCodeCamp:
 // algo.js, Challenge 13 SUM ALL PRIMES
 function sumPrimes(num) {
@@ -1704,14 +1675,10 @@ Examples from Traversy courses:
 // update, balance, income, expense
 function updateValues() {
   const amounts = transactions.map(transaction => transaction.amount);
-
   const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
-
   const income = amounts
     .filter(item => item > 0)
     .reduce((acc, item) => (acc += item), 0)
-  // .toFixed(2);
-
   const expense = (amounts
     .filter(item => item < 0)
     .reduce((acc, item) => (acc += item), 0)
@@ -2124,7 +2091,13 @@ uniqueNotes = chordTones.filter(tone => !uniqueNotes.includes(tone) && tone !== 
 
 // toLowerCase(), split(), filter(), join()
 const blogTitle = "Common Array Methods You Should Know"
-const urlSlug = blogTitle.toLowerCase().split(' ').filter(word => word !== "").join('-')
+const urlSlug = blogTitle.toLowerCase().split(' ').filter(word => word !== "").join('-');
+// or with that many chained methods do:
+const urlSlug = blogTitle
+  .toLowerCase()
+  .split(' ')
+  .filter(word => word !== "")
+  .join('-');
 
 
 // filter(), includes(), join()
@@ -2447,7 +2420,9 @@ Single argument/parameter:
 |         | arr.reduce(function(prevVal, currVal, currInd, array) { ... }, initVal) | - |
 
 - `array`: The array on which the method was called
-- `initialValue`: A value to which `previousValue` is initialized the first time the callback is called. If `initialValue` is specified, that also causes `currentValue` to be initialized to the first value in the array. If `initialValue` is not specified, `previousValue` is initialized to the first value in the array, and `currentValue` is initialized to the second value in the array.
+- `prevVal` is also referred to as the **`accumulator`**, starts with the value of `initVal`
+- `currVal` refers to the current item, same as `item` for the other methods.
+- `initialValue`: A value to which `previousValue` is initialized the first time the callback is called. If `initialValue` is specified, that also causes `currentValue` to be initialized to the first value in the array. If `initialValue` is not specified, `previousValue` is initialized to the first value in the array, and `currentValue` is initialized to the second value in the array. Sometimes called the **_initial accumulator_** because you will be accumulating on the values, `0` is common.
 - `TypeError`: The array contains no elements and `initialValue` is not provided
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
