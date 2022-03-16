@@ -20,7 +20,7 @@ Syntax and code examples for the most coomon string and array methods.
 | 4. [Spread operator](#spread-operator)  | | | | |
 | 5. [Rest syntax](#rest-syntax)      | | | | | 
 | 6. [Syntax tables](#syntax-tables): | i. [Common methods](#common-methods) | ii. [High order array](#high-order-array) | - | - | 
-| 7. [Combinations of methods](#combinations-of-methods) | | | | |
+| 7. [Combinations of methods](#combinations-of-methods) | i. [Simple methods](#simple-methods) | ii. [All methods](#all-methods) | | |
 
 
 ## Simple array methods
@@ -513,7 +513,14 @@ items.sort(function (a, b) {
   return a.localeCompare(b);
 });
 // items is ['adieu', 'café', 'communiqué', 'éclair', 'premier', 'réservé']
+
+// localeCompare syntax
+localeCompare(compareString)
+localeCompare(compareString, locales)
+localeCompare(compareString, locales, options)
 ```
+
+The `localeCompare()` method returns a number indicating whether a reference string comes before, or after, or is the same as the given string in sort order: [MDN localeCompare](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare).
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">MDN Sort</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -654,12 +661,6 @@ function findPositive(num) {
 }
 let checkNums = nums.every(findPositive);
 console.log(checkNums) // false
-
-
-// Check if one array is a subset of another array
-const isSubset = (array1, array2) => array2.every(element => array1.includes(element));
-console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 7, 6])); // true
-console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 8, 7])); // false
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every">MDN Every</a></div>
@@ -756,6 +757,7 @@ function checkAvailability(arr, val) {
     return val === arrVal;
   });
 }
+
 checkAvailability(fruits, 'kela');   // false
 checkAvailability(fruits, 'banana'); // true
 // Arrow version
@@ -832,12 +834,6 @@ const cubedRoot = numArray.map(item => Math.pow(item, 1 / 3));
 console.log(cubedRoot); // [2, 3, 1.1739840320085808]
 
 
-// Capitalize all words in a string:
-const str = "why is title case important"
-let capitalize = str.toLowerCase().split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
-console.log(capitalize) // "Why Is Title Case Important"
-
-
 // working with objects
 const items = [
   { name: 'Bike', price: 100 },
@@ -874,13 +870,6 @@ function doubleMoney() {
 
 
 //      feeCodeCamp examples
-// Great example of te spread operator for a string using Math and map methods!
-function longestWord(str) {
-  return Math.max(...str.split(" ").map(word => word.length));
-}
-longestWord("Find the longest word in this sentence"); // 8
-
-
 // Get object key values, similar to what Object.values does on a single object, but you can not use that because 'users' is an array of objects, 
 // not a single object with multiple key-value pairs
 const users = [
@@ -890,38 +879,6 @@ const users = [
 ];
 const names = users.map(user => user.name);
 console.log(names); // ["John","Amy","camperCat"]
-```
-
-Intermediate examples:
-```js
-//      freeCodeCamp:
-// CONVERT HTML ENTITIES
-function convertHTML(str) {
-  const convertSymbols = {
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&apos;"
-  };
-
-  return str.split("").map(symbol => convertSymbols[symbol] || symbol).join("");
-}
-console.log(convertHTML("<li>List item one</li>")); // "&lt;li&gt;List item one&lt;/li&gt;"
-// I would never thought of using an or operaator ||
-
-
-// Examples from Traversy: creates the select element with options
-function createBreedList(breedList) {
-  document.getElementById("breed").innerHTML = `
-    <select onchange="loadByBreed(this.value)">
-      <option>Choose a dog breed</option>
-      ${Object.keys(breedList).map(function (breed) {
-    return `<option>${breed}</option>`
-  }).join('')}
-    </select>
-  `
-}
 ```
 
 <br />
@@ -950,6 +907,8 @@ console.log(reformattedArray) // {"1": 10}, {"2": 20}, {"3": 30}
 
 Takes a function containing a test and **<ins>returns a new array</ins>** with all the elements **<ins>that pass the test</ins>**. The filtration is done using a function that returns a boolean value. If no elements pass the test, an empty array will be returned.
 
+STOPPED UTTING OUT COMBINATIONS HERE BECAUSE THE NEXT 3 METHODS HAVE MOSTLY COMBINATIONS!
+
 MDN syntax:
 ```js
 // Arrow function
@@ -972,69 +931,18 @@ Basic / simple examples:
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 const canDrink = ages.filter(age => age >= 21);
 console.log(canDrink);
-// or better, sort the numbers as well:
-const canDrink = ages.filter(age => age >= 21).sort((a, b) => { return a - b });
 
 
 const ages = [5, 7, 9, 11, 13, 15, 16, 17, 19, 21, 23, 55]
 const teen = ages.filter(age => age >= 13 && age <= 19)
 console.log(teen) // [13, 15, 16, 17, 19]
-
-
-//      MINE: In case of duplicate guitar notes, get only unique notes
-let uniqueNotes = [];
-uniqueNotes = chordTones.filter(tone => !uniqueNotes.includes(tone) && tone !== undefined ? uniqueNotes.push(tone) : null);
-
-
-//      freeCodeCamp:
-// functional 21: convert str to url slug (not as good as my ex. in string section)
-let webTitle = "Dog breeds good with cats";
-function urlSlug(title) {
-  return title
-    .split(" ")
-    .filter(substr => substr !== "")
-    .join("-")
-    .toLowerCase();
-}
-console.log(urlSlug(webTitle));
-
-//      CodeWars:
-// Given a list of integers, return the digits that are not present 
-// in any of them: [12, 34, 56, 78]  =>  "09"
-const unusedDigits = (...arr) => {
-  var digits = arr.join();
-
-  return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    .filter(num => !digits.includes(num))
-    .join('');
-};
-console.log(unusedDigits([2015, 8, 26])) // "3479"
 ```
 
 <br />
 
 Intermediate examples:
 ```js
-//      Other examples:
-// Traversy expense tracker
-function updateValues() {
-  const amounts = transactions.map(transaction => transaction.amount);
-  const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
-
-  const income = amounts
-    .filter(item => item > 0)
-    .reduce((acc, item) => (acc += item), 0)
-    .toFixed(2);
-
-  const expense = (
-    amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) * -1).toFixed(2);
-
-  balance.innerText = `$${total}`;
-  money_plus.innerText = `$${income}`;
-  money_minus.innerText = `$${expense}`;
-}
-
-
+//        other examples
 const companies= [
   {name: "Company One", category: "Finance", start: 1981, end: 2004},
   {name: "Company Two", category: "Retail", start: 1992, end: 2008},
@@ -2315,6 +2223,12 @@ Single argument/parameter:
 
 ## Combinations of methods
 
+Examples of chaining string and array methods together.
+
+### Simple methods
+
+Array or string simple methods (no high order array methods)
+
 ```js
 // slice() and splice():
 function frankenSplice(arr1, arr2, n) {
@@ -2371,6 +2285,37 @@ const urlSlug = blogTitle.toLowerCase().split(' ').join('-')
 console.log(urlSlug); // "common-array-methods-you-should-know"
 
 
+// toLowerCase(), split() | reverse(), join()
+const word = "racecar";
+const letters = word.toLowerCase().split(''); 
+const revWord = [...letters].reverse().join('');
+```
+
+### All methods
+
+Simple methods with one or more high or array method.
+
+
+```js
+// filter(), sort()
+const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+const canDrink = ages.filter(age => age >= 21).sort((a, b) => { return a - b });
+
+
+// every(), includes()
+// Check if one array is a subset of another array
+const isSubset = (array1, array2) => array2.every(element => array1.includes(element));
+console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 7, 6])); // true
+console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 8, 7])); // false
+
+
+// toLowerCase(), map(), toUpperCase(), slice(), join()
+// Capitalize all words in a string:
+const str = "why is title case important"
+let capitalize = str.toLowerCase().split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+console.log(capitalize) // "Why Is Title Case Important"
+
+
 // some(), filter(), find(), some()
 // Create a function that looks through an array arr and returns the 
 // first element in it that passes a 'test'.
@@ -2388,6 +2333,7 @@ console.log(findElement([1, 2, 3, 4], num => num % 2 === 0)); // 2
 console.log(findElement([1, 5, 3, 4], num => num % 2 === 0)); // 4
 
 
+// split(), map(), join()
 // CONVERT HTML ENTITIES: split(), map(), join()
 function convertHTML(str) {
   const convertSymbols = {
@@ -2433,10 +2379,65 @@ function diffArray(arr1, arr2) {
 }
 
 
-// toLowerCase(), split() | reverse(), join()
-const word = "racecar";
-const letters = word.toLowerCase().split(''); 
-const revWord = [...letters].reverse().join('');
+// split(), map()
+// Great example of te spread operator for a string using Math and map methods!
+function longestWord(str) {
+  return Math.max(...str.split(" ").map(word => word.length));
+}
+longestWord("Find the longest word in this sentence"); // 8
+
+
+// map(), join()
+// Examples from Traversy: creates the select element with options
+function createBreedList(breedList) {
+  document.getElementById("breed").innerHTML = `
+    <select onchange="loadByBreed(this.value)">
+      <option>Choose a dog breed</option>
+      ${Object.keys(breedList).map(function (breed) {
+    return `<option>${breed}</option>`
+  }).join('')}
+    </select>
+  `
+}
+
+
+// filter(), includes(), push()
+//      MINE: In case of duplicate guitar notes, get only unique notes
+let uniqueNotes = [];
+uniqueNotes = chordTones.filter(tone => !uniqueNotes.includes(tone) && tone !== undefined ? uniqueNotes.push(tone) : null);
+
+
+// filter(), includes(), join()
+// CodeWars: Given a list of integers, return the digits that are not present 
+// in any of them: [12, 34, 56, 78]  =>  "09"
+const unusedDigits = (...arr) => {
+  var digits = arr.join();
+
+  return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    .filter(num => !digits.includes(num))
+    .join('');
+};
+console.log(unusedDigits([2015, 8, 26])) // "3479"
+
+
+// reduce(), toFixed() | filter(), reduce(), toFixed()
+// Traversy expense tracker
+function updateValues() {
+  const amounts = transactions.map(transaction => transaction.amount);
+  const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
+
+  const income = amounts
+    .filter(item => item > 0)
+    .reduce((acc, item) => (acc += item), 0)
+    .toFixed(2);
+
+  const expense = (
+    amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) * -1).toFixed(2);
+
+  balance.innerText = `$${total}`;
+  money_plus.innerText = `$${income}`;
+  money_minus.innerText = `$${expense}`;
+}
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
