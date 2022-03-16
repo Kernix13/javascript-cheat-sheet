@@ -17,10 +17,10 @@ Syntax and code examples for the most coomon string and array methods.
 | 3. [String methods](#string-methods):  | i. [String slice](#string-slice) | ii. [split](#split) | iii. [substring](#substring) | iv. [repeat](#repeat) |
 |                     | v. [endsWith](#endsWith) | vi. [test](#test) | - | - |
 |                     | vii. [match](#match) | viii. [replace](#replace) | ix. [toString](#tostring) | x. [Miscellaneous](#Miscellaneous) |
-| 4. [Combinations of methods](#combinations-of-methods) | | | | |
-| 5. [Spread operator](#spread-operator)  | | | | |
-| 6. [Rest syntax](#rest-syntax)      | | | | | 
-| 7. [Syntax tables](#syntax-tables): | i. [Common methods](#common-methods) | ii. [High order array](#high-order-array) | - | - | 
+| 4. [Spread operator](#spread-operator)  | | | | |
+| 5. [Rest syntax](#rest-syntax)      | | | | | 
+| 6. [Syntax tables](#syntax-tables): | i. [Common methods](#common-methods) | ii. [High order array](#high-order-array) | - | - | 
+| 7. [Combinations of methods](#combinations-of-methods) | | | | |
 
 
 ## Simple array methods
@@ -258,17 +258,17 @@ Extracts a section of the calling array from `start` to `end` (`end` not include
 MDN syntax:
 ```js
 slice()
-slice(startIndex)
-slice(startIndex, endIndex)
+slice(start)
+slice(start, end)
 
 
 let arr = [1, 2, 3, 4, 5, 6]
 console.log(arr.slice()) // [1,2,3,4,5,6]
-// slice(startIndex)
+// slice(start)
 arr.slice(2) // [3,4,5,6]
 let arr2 = arr.slice(2)
 console.log(arr2, arr) // [3,4,5,6] [1,2,3,4,5,6]
-// slice(startIndex, endIndex) endIndex must be greater than start
+// slice(start, end) end must be greater than start
 let arr2 = arr.slice(2,4)
 console.log(arr2, arr) // [3,4] [1,2,3,4,5,6]
 ```
@@ -286,21 +286,12 @@ console.log(animals.slice(1, 5)); // ["bison", "camel", "duck", "elephant"]
 console.log(animals.slice(2, -1)); // ["camel", "duck"]
 
 
-// Example 2:
+// Example with objects:
 let myHonda = { color: 'red', wheels: 4, engine: { cylinders: 4, size: 2.2 } }
 let myCar = [myHonda, 2, 'cherry condition', 'purchased 1997']
 let newCar = myCar.slice(0, 3)
 console.log(newCar)
-// // [{ color: 'red', wheels: 4, engine: { cylinders: 4, size: 2.2 } }, 2, "cherry condition"]
-
-
-// Slice ans Splice:
-function frankenSplice(arr1, arr2, n) {
-  let newArr = arr2.slice(0);
-  newArr.splice(n, 0, ...arr1);
-  return newArr;
-}
-frankenSplice([1, 2, 3], [4, 5, 6], 1); // [4,1,2,3,5,6]
+// [{ color: 'red', wheels: 4, engine: { cylinders: 4, size: 2.2 } }, 2, "cherry condition"]
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">MDN Array Slice</a></div>
@@ -356,25 +347,23 @@ console.log(numbers); // [[1, 4], 2, [3]]
 
 **<ins>Returns a new string</ins>** by concatenating all of the elements in an array. Does not mutate the array.
 
-`arr.join()`, commonly used with str.split():
+`arr.join()`, commonly used with `str.split()`:
 ```js
 // syntax:
 join()
 join(separator)
 
-// MDN Example:
-const a = ['Fire', 'Water', 'Air', 'Earth'];
-a.join();      // 'Fire,Water,Air,Earth'
-a.join(', ');  // 'Fire, Water, Air, Earth'
-a.join(' + '); // 'Fire + Water + Air + Earth'
-a.join('');    // 'FireWaterAirEarth'
+// Example 1:
+const elements = ['Fire', 'Water', 'Air', 'Earth'];
+elements.join();      // 'Fire,Water,Air,Earth'
+elements.join(', ');  // 'Fire, Water, Air, Earth'
+elements.join(' + '); // 'Fire + Water + Air + Earth'
+elements.join('');    // 'FireWaterAirEarth'
 
 
-// Here is an example using toLowerCase() and split() for a URL page slug 
-const blogTitle = "Common Array Methods You Should Know"
-const urlSlug = blogTitle.toLowerCase().split(' ').join('-')
-// add this on: filter(word => word !== "")
-console.log(urlSlug); // "common-array-methods-you-should-know"
+// Example with numbers
+const phone = [123, 456, 7890];
+console.log(phone.join('-')); // "123-456-7890"
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join">MDN Join</a></div>
@@ -392,37 +381,11 @@ indexOf(searchElement, fromIndex)
 
 const datatypes = ['number', 'string', 'boolean', 'object', 'string', 'null'];
 console.log(datatypes.indexOf('number')); // 0
-console.log(datatypes.indexOf('string', 4)); // 4
+console.log(datatypes.indexOf('string', 3)); // 4, from index 4 would work as well
+console.log(datatypes.indexOf('string', 5)); // -1
 console.log(datatypes.indexOf('function')); // -1
 
-
-// This example is confusing. Finding all the occurrences of an element:
-const indices = [];
-const array = ['a', 'b', 'a', 'c', 'a', 'd'];
-const element = 'a';
-let idx = array.indexOf(element);
-while (idx != -1) {
-  indices.push(idx);
-  idx = array.indexOf(element, idx + 1);
-}
-console.log(indices); // [0, 2, 4]
-
-
-// Finding if an element exists in the array or not and updating the array
-function updateVegetablesCollection (veggies, veggie) {
-    if (veggies.indexOf(veggie) === -1) {
-        veggies.push(veggie);
-        console.log('New veggies collection is: ' + veggies);
-    } else {
-        console.log(veggie + ' already exists in the veggies collection.');
-    }
-}
-const veggies = ['potato', 'tomato', 'chillies', 'green-pepper'];
-updateVegetablesCollection(veggies, 'spinach');
-updateVegetablesCollection(veggies, 'spinach');
-
-
-// another example
+// example 2
 let str = 'finding substring in string';
 let index = str.indexOf('str');
 console.log(index); // 11
@@ -455,19 +418,15 @@ lastIndexOf(searchElement, fromIndex)
 
 const instruments = ['Guitar', 'Bass', 'Drums', 'Guitar'];
 console.log(instruments.lastIndexOf('Guitar')); // 3
-console.log(instruments.lastIndexOf('Bass')); // 1
 
 
-// Finding all the occurrences of an element (confusing), using push to add them to another array as they are found:
-const indices = [];
-const array = ['a', 'b', 'a', 'c', 'a', 'd'];
-const element = 'a';
-let idx = array.lastIndexOf(element);
-while (idx !== -1) {
-  indices.push(idx);
-  idx = (idx > 0 ? array.lastIndexOf(element, idx - 1) : -1);
-}
-console.log(indices); // [4, 2, 0]
+const numbers = [2, 5, 9, 2];
+console.log(numbers.lastIndexOf(2)) // 3
+console.log(numbers.lastIndexOf(7)) // -1 
+console.log(numbers.lastIndexOf(2, 3)) // 3
+console.log(numbers.lastIndexOf(2, 2)) // 0
+console.log(numbers.lastIndexOf(2, -2)) // 0
+console.log(numbers.lastIndexOf(2, -1)) // 3
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf">MDN lastIndexOf</a></div>
@@ -502,7 +461,7 @@ console.log(str.includes('Script', 4)); // true
 
 ## High order methods
 
-High Order Array Methods = methods that use a callback function. The most used ones are `sort`, `map`, `filter`, `forEach`, and `reduce`; but also `find`, `every`, and `some` are useful.
+High Order Array Methods = methods that use a callback function. The most used ones are `sort`, `map`, `filter`, `forEach`, and `reduce`; but `find`, `every`, and `some` are very common as well.
 
 ### Sort
 
@@ -2050,79 +2009,6 @@ let thirdToLastLetter = firstName[firstName.length - 3];
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Combinations of methods
-
-```js
-// some(), filter(), find(), some()
-// Create a function that looks through an array arr and returns the 
-// first element in it that passes a 'test'.
-function findElement(arr, func) {
-  if (arr.some(func)) {
-    return arr.filter(item => func(item)).find(function (item) {
-      if (arr.some(func) === true) {
-        return item;
-      }
-    });
-  }
-  return undefined;
-}
-console.log(findElement([1, 2, 3, 4], num => num % 2 === 0)); // 2
-console.log(findElement([1, 5, 3, 4], num => num % 2 === 0)); // 4
-
-
-// CONVERT HTML ENTITIES: split(), map(), join()
-function convertHTML(str) {
-  const convertSymbols = {
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&apos;"
-  };
-
-  return str.split("").map(symbol => convertSymbols[symbol] || symbol).join("");
-}
-
-
-// filter(), includes(), push()
-let uniqueNotes = [];
-uniqueNotes = chordTones.filter(tone => !uniqueNotes.includes(tone) && tone !== undefined ? uniqueNotes.push(tone) : null);
-
-
-// toLowerCase(), split(), filter(), join()
-const blogTitle = "Common Array Methods You Should Know"
-const urlSlug = blogTitle.toLowerCase().split(' ').filter(word => word !== "").join('-');
-// or with that many chained methods do:
-const urlSlug = blogTitle
-  .toLowerCase()
-  .split(' ')
-  .filter(word => word !== "")
-  .join('-');
-
-
-// filter(), includes(), join()
-const unusedDigits = (...arr) => {
-  var digits = arr.join();
-  return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    .filter(num => !digits.includes(num))
-    .join('');
-};
-
-
-// concat(), filter(), includes()
-function diffArray(arr1, arr2) {
-  return arr2.concat(arr1).filter(item => !arr2.includes(item) || !arr1.includes(item));
-}
-
-
-// toLowerCase(), split() | reverse(), join()
-const word = "racecar";
-const letters = word.toLowerCase().split(''); 
-const revWord = [...letters].reverse().join('');
-```
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
 ## Spread operator
 
 add other array items to an array:
@@ -2424,5 +2310,133 @@ Single argument/parameter:
 - `currVal` refers to the current item, same as `item` for the other methods.
 - `initialValue`: A value to which `previousValue` is initialized the first time the callback is called. If `initialValue` is specified, that also causes `currentValue` to be initialized to the first value in the array. If `initialValue` is not specified, `previousValue` is initialized to the first value in the array, and `currentValue` is initialized to the second value in the array. Sometimes called the **_initial accumulator_** because you will be accumulating on the values, `0` is common.
 - `TypeError`: The array contains no elements and `initialValue` is not provided
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Combinations of methods
+
+```js
+// slice() and splice():
+function frankenSplice(arr1, arr2, n) {
+  let newArr = arr2.slice(0);
+  newArr.splice(n, 0, ...arr1);
+  return newArr;
+}
+frankenSplice([1, 2, 3], [4, 5, 6], 1); // [4,1,2,3,5,6]
+
+
+// indexOf(), push()
+// Finding ALL the occurrences of an element: 
+const indices = [];
+const array = ['a', 'b', 'a', 'c', 'a', 'd'];
+const element = 'a';
+let idx = array.indexOf(element);
+while (idx != -1) {
+  indices.push(idx);
+  idx = array.indexOf(element, idx + 1);
+}
+console.log(indices); // [0, 2, 4]
+
+// Finding if an element exists in the array or not and updating the array
+function updateVegetablesCollection (veggies, veggie) {
+    if (veggies.indexOf(veggie) === -1) {
+        veggies.push(veggie);
+        console.log('New veggies collection is: ' + veggies);
+    } else {
+        console.log(veggie + ' already exists in the veggies collection.');
+    }
+}
+const veggies = ['potato', 'tomato', 'chillies', 'green-pepper'];
+updateVegetablesCollection(veggies, 'spinach');
+updateVegetablesCollection(veggies, 'spinach');
+
+
+// lastIndexOf(), push()
+// Finding all the occurrences of an element, using push to add them to another array as they are found:
+const indices = [];
+const array = ['a', 'b', 'a', 'c', 'a', 'd'];
+const element = 'a';
+let idx = array.lastIndexOf(element);
+while (idx !== -1) {
+  indices.push(idx);
+  idx = (idx > 0 ? array.lastIndexOf(element, idx - 1) : -1);
+}
+console.log(indices); // [4, 2, 0]
+
+
+// toLowerCase(), split(), join()
+const blogTitle = "Common Array Methods You Should Know"
+const urlSlug = blogTitle.toLowerCase().split(' ').join('-')
+// add this on: filter(word => word !== "")
+console.log(urlSlug); // "common-array-methods-you-should-know"
+
+
+// some(), filter(), find(), some()
+// Create a function that looks through an array arr and returns the 
+// first element in it that passes a 'test'.
+function findElement(arr, func) {
+  if (arr.some(func)) {
+    return arr.filter(item => func(item)).find(function (item) {
+      if (arr.some(func) === true) {
+        return item;
+      }
+    });
+  }
+  return undefined;
+}
+console.log(findElement([1, 2, 3, 4], num => num % 2 === 0)); // 2
+console.log(findElement([1, 5, 3, 4], num => num % 2 === 0)); // 4
+
+
+// CONVERT HTML ENTITIES: split(), map(), join()
+function convertHTML(str) {
+  const convertSymbols = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&apos;"
+  };
+
+  return str.split("").map(symbol => convertSymbols[symbol] || symbol).join("");
+}
+
+
+// filter(), includes(), push()
+let uniqueNotes = [];
+uniqueNotes = chordTones.filter(tone => !uniqueNotes.includes(tone) && tone !== undefined ? uniqueNotes.push(tone) : null);
+
+
+// toLowerCase(), split(), filter(), join()
+const blogTitle = "Common Array Methods You Should Know"
+const urlSlug = blogTitle.toLowerCase().split(' ').filter(word => word !== "").join('-');
+// or with that many chained methods do:
+const urlSlug = blogTitle
+  .toLowerCase()
+  .split(' ')
+  .filter(word => word !== "")
+  .join('-');
+
+
+// filter(), includes(), join()
+const unusedDigits = (...arr) => {
+  var digits = arr.join();
+  return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    .filter(num => !digits.includes(num))
+    .join('');
+};
+
+
+// concat(), filter(), includes()
+function diffArray(arr1, arr2) {
+  return arr2.concat(arr1).filter(item => !arr2.includes(item) || !arr1.includes(item));
+}
+
+
+// toLowerCase(), split() | reverse(), join()
+const word = "racecar";
+const letters = word.toLowerCase().split(''); 
+const revWord = [...letters].reverse().join('');
+```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
