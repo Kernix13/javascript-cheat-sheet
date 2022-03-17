@@ -680,9 +680,11 @@ console.log(john.greeting());
 
 ### Related topics 
 
-Thses are from freeCodeCamp but I think they are NOT ES6:
+These topics are from freeCodeCamp but I think they are NOT ES6.
 
-#### Object mixins
+<br />
+
+#### <ins>Object mixins</ins>
 
 A mixin allows other objects to use a collection of functions.
 
@@ -710,7 +712,9 @@ bird.fly();
 plane.fly();
 ```
 
-#### Closure
+<br />
+
+#### <ins>Closure</ins>
 
 The simplest way to make this public property private is by creating a variable within the constructor function. In JavaScript, a function always has access to the context in which it was created. This is called  closure. 
 
@@ -728,7 +732,9 @@ ducky.getHatchedEggCount();
 
 ```
 
-#### IIFE and object modules
+<br />
+
+#### <ins>IIFE and object modules</ins>
 
 An immediately invoked function expression (IIFE) is often used to group related functionality into a single object or module. You can group these mixins into a module. The returned object contains all of the mixin behaviors as properties of the object. The advantage of the module pattern is that all of the motion behaviors can be packaged into a single object that can then be used by other parts of your code. 
 
@@ -764,6 +770,8 @@ let motionModule = (function () {
 motionModule.glideMixin(duck);
 duck.glide();
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Destructuring an object
 
