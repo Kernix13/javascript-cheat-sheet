@@ -87,7 +87,7 @@ function lowerCase(str) {
 }
 ```
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Declaration vs expression
 
@@ -102,6 +102,8 @@ let myFunction = function() {
   code here
 }
 ```
+
+<br />
 
 ### Rest and spread syntax
 
@@ -126,6 +128,8 @@ function howMany(...args) {
 console.log(howMany(0, 1, 2, -1, -2));
 ```
 
+<br />
+
 ### Default parameters
 
 set default parameters for your Fx’s:
@@ -143,9 +147,11 @@ function greet(first = "John", last = "Doe") {
 greet("Jim", "Kernix");
 ```
 
+<br />
+
 ### Miscellaneous
 
-returning boolean values from functions:
+returning boolean values from functions and `typeof`:
 ```js
 function checkEqual(a, b) {
   return a === b;
