@@ -175,6 +175,8 @@ All objects in JavaScript (with a few exceptions) have a prototype - Because a p
 
 ```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## instanceof
 
 [MDN instanceof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof): tests to see if the prototype property of a constructor appears anywhere in the prototype chain of an object. The return value is a boolean value. Returns true if an object is an instance of an object type. 
@@ -235,6 +237,8 @@ let a = mycar instanceof Car     // returns true
 let b = mycar instanceof Object  // returns true
 ```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## isPrototypeOf
 
 [MDN isPrototypeOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf): checks if an object exists in another object's prototype chain
@@ -264,6 +268,8 @@ Bird.prototype.isPrototypeOf(duck);
 console.log(Object.prototype.isPrototypeOf(Bird.prototype)); // true
 ```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## Object create
 
 [MDN Object.create](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create): creates a new object, using an existing object as the prototype of the newly created object - an alternate approach for inheritance rather than `new ClssName()`.
@@ -289,6 +295,8 @@ me.name = 'Matthew'; // "name" is a property set on "me", but not on "person"
 me.isHuman = true; // inherited properties can be overwritten
 me.printIntroduction();
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## inheritance
 
@@ -339,6 +347,8 @@ let beagle = new Dog();
 beagle.eat(); 
 beagle.bark(); 
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## for in loop
 
