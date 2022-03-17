@@ -16,6 +16,12 @@ Here are docs from MDN:
 ## Table of contents
 
 1. [General](#general)
+   1. [Definitions](#definitions)
+   1. [Syntax](#syntax)
+   1. [Declaration vs expression](#declaration-vs-expression)
+   1. [Rest and spread syntax](#rest-and-spread-syntax)
+   1. [Default parameters](#default-parameters)
+   1. [Miscellaneous](#miscellaneous)
 1. [Nested functions](#nested-functions)
    1. [Multiply nested functions](#multiply-nested-functions)
    1. [Closures](#closures)
@@ -37,19 +43,32 @@ Here are docs from MDN:
 
 ## General
 
-typeof:
+### Definitions
+
+<dl>
+  <dt>Callback function</dt>
+  <dd>is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action. An example is the function in `addEventListener()`.</dd>
+</dl>
+<dl>
+  <dt>Higher order functions</dt>
+  <dd>Functions that take a function as an argument, or return a function as a return value</dd>
+</dl>
+<dl>
+  <dt>Lambda functions</dt>
+  <dd>When functions are passed in to or returned from another function, then those functions which were passed in or returned can be called a lambda. Lambda expression is an anonymous function that provides a very concise and functional syntax which is further used for writing anonymous methods...a simple, short, throwaway function which is designed to be created inline in code. They're also known as lambda expressions, anonymous functions, lambda abstractions, lambda form, or function literals</dd>
+</dl>
+
+### Syntax
+
 ```js
+// typeof:
 let typeOfTest;
 typeOfTest = function() {
   return "Hello";
 }                 
 console.log(typeof typeOfTest) // function
-```
 
-<br />
 
-Syntax:
-```js
 // no parameter
 function lowerCase() {
   if() {
@@ -70,7 +89,8 @@ function lowerCase(str) {
 
 <br />
 
-Declaration vs. expression
+### Declaration vs expression
+
 ```js
 // function declaration:
 function myFunction() {
@@ -83,7 +103,7 @@ let myFunction = function() {
 }
 ```
 
-<br />
+### Rest and spread syntax
 
 With rest parameter and spread operator in argument list:
 ```js
@@ -98,24 +118,15 @@ someFx(mainArray);
 
 <br />
 
-returning boolean values from functions:
+use the rest parameter with function parameters:
 ```js
-function checkEqual(a, b) {
-  return a === b;
+function howMany(...args) {
+  return "You have passed " + args.length + " arguments.";
 }
-
-// or 
-
-function boolReturn(test) {
-  // return typeof test === "number";
-  // return typeof test === "string";
-  return typeof test === "object";
-  // return typeof test === "boolean";
-}
-console.log(boolReturn([1,2,3]));
+console.log(howMany(0, 1, 2, -1, -2));
 ```
 
-<br />
+### Default parameters
 
 set default parameters for your Fx’s:
 ```js
@@ -132,33 +143,23 @@ function greet(first = "John", last = "Doe") {
 greet("Jim", "Kernix");
 ```
 
-<br />
+### Miscellaneous
 
-use the rest parameter with function parameters:
+returning boolean values from functions:
 ```js
-function howMany(...args) {
-  return "You have passed " + args.length + " arguments.";
-}
-console.log(howMany(0, 1, 2, -1, -2));
-```
-
-<br />
-
-Recursive example (computes factorials):
-```js
-function factorial(n) {
-  if ((n === 0) || (n === 1))
-    return 1;
-  else
-    return (n * factorial(n - 1));
+function checkEqual(a, b) {
+  return a === b;
 }
 
-var a, b, c, d, e;
-a = factorial(1); // a gets the value 1
-b = factorial(2); // b gets the value 2
-c = factorial(3); // c gets the value 6
-d = factorial(4); // d gets the value 24
-e = factorial(5); // e gets the value 120
+// or 
+
+function boolReturn(test) {
+  // return typeof test === "number";
+  // return typeof test === "string";
+  return typeof test === "object";
+  // return typeof test === "boolean";
+}
+console.log(boolReturn([1,2,3]));
 ```
 
 ## Nested functions
@@ -956,6 +957,23 @@ function countDown(fromNumber) {
 countDown(3);
 // If you add the condition to stop calling itself, you will get this error:
 Uncaught RangeError: Maximum call stack size exceeded.
+```
+
+Recursive example (computes factorials):
+```js
+function factorial(n) {
+  if ((n === 0) || (n === 1))
+    return 1;
+  else
+    return (n * factorial(n - 1));
+}
+
+var a, b, c, d, e;
+a = factorial(1); // a gets the value 1
+b = factorial(2); // b gets the value 2
+c = factorial(3); // c gets the value 6
+d = factorial(4); // d gets the value 24
+e = factorial(5); // e gets the value 120
 ```
 
 ### freeCodeCamp examples
