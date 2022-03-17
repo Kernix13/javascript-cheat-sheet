@@ -9,7 +9,10 @@ Syntax and code examples for the most coomon object methods
 1. [Object keys](#object-keys)
 1. [Object values](#object-values)
 1. [hasOwnProperty](#hasOwnProperty)
+1. [prototype](#prototype)
 1. [instanceof](#instanceof)
+1. [isPrototypeOf](#isprototypeof)
+1. [Object create](#object-create)
 1. [for in loop](#for-in-loop)
 1. [Modify values and remove keys](#modify-values-and-remove-keys)
 1. [Classes](#classes)
@@ -84,6 +87,7 @@ console.log(Object.values(chordIntervals)) // ["maj", ["1","3","5"], [0,4,7]]
 obj.hasOwnProperty(prop)	
 // prop: The String name or Symbol of the property to test
 
+
 // Example, RECORD COLLECTION 1:
 function updateRecords(records, id, prop, value) {
   if (prop !== 'tracks' && value !== "") {
@@ -112,8 +116,64 @@ function updateRecords(records, id, prop, value) {
 }
 ```
 
+Own properties vs prototype properties:
+```js
+// own prop vs prototype prop
+function YourClass(name) {
+  this.name = name;           // own property
+}
+YourClass.prototype.prop = 2; // prototype property
+
+
+let ownProps = [];
+let prototypeProps = [];
+
+for (let property in duck) {
+  if(duck.hasOwnProperty(property)) {
+    ownProps.push(property);
+  } else {
+    prototypeProps.push(property);
+  }
+}
+```
+
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+## prototype
+
+[MDN prototype](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes): the mechanism by which JavaScript objects inherit features from one another.
+
+```js
+__defineGetter__
+__defineSetter__
+__lookupGetter__
+__lookupSetter__
+__proto__
+city
+constructor
+greet
+hasOwnProperty
+isPrototypeOf
+propertyIsEnumerable
+toLocaleString
+toString
+toValueOf
+```
+
+constructor: the constructor property is a reference to the constructor function that created the instance. There is one crucial side effect of manually setting the prototype to a new object. It erases the constructor property. 
+*** To fix this, whenever a prototype is manually set to a new object, remember to define the constructor property
+
+```js
+Bird.prototype = {
+  constructor: Bird,
+  numLegs: 2, ...
+```
+
+All objects in JavaScript (with a few exceptions) have a prototype - Because a prototype is an object, a prototype can have its own prototype: the prototype of Bird.prototype is Object.prototype: Object.prototype.isPrototypeOf(Bird.prototype)
+
+```js
+
+```
 
 ## instanceof
 
@@ -173,6 +233,111 @@ function Car(make, model, year) {
 let mycar = new Car('Honda', 'Accord', 1998)
 let a = mycar instanceof Car     // returns true
 let b = mycar instanceof Object  // returns true
+```
+
+## isPrototypeOf
+
+[MDN isPrototypeOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf): checks if an object exists in another object's prototype chain
+
+```js
+// syntax
+isPrototypeOf(object)
+
+// example
+function Foo() {}
+function Bar() {}
+
+Bar.prototype = Object.create(Foo.prototype);
+const bar = new Bar();
+console.log(Foo.prototype.isPrototypeOf(bar)); // true
+console.log(Bar.prototype.isPrototypeOf(bar)); // true
+
+
+// example 2
+function Bird(name) {
+  this.name = name;
+}
+let duck = new Bird("Donald");
+Bird.prototype.isPrototypeOf(duck);
+
+// prototype of prototype
+console.log(Object.prototype.isPrototypeOf(Bird.prototype)); // true
+```
+
+## Object create
+
+[MDN Object.create](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create): creates a new object, using an existing object as the prototype of the newly created object - an alternate approach for inheritance rather than `new ClssName()`.
+
+`freeCodeCamp`: The first step for inheriting behavior from the supertype (or parent) Animal: making a new instance of Animal. the next step: set the prototype of the subtype (or child)—in this case, Bird—to be an instance of Animal: `Bird.prototype = Object.create(Animal.prototype);`.
+
+```js
+// syntax:
+Object.create(proto)
+Object.create(proto, propertiesObject)
+Object.create(Class.prototype)
+
+
+// example
+const person = {
+  isHuman: false,
+  printIntroduction: function() {
+    console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
+  }
+};
+const me = Object.create(person);
+me.name = 'Matthew'; // "name" is a property set on "me", but not on "person"
+me.isHuman = true; // inherited properties can be overwritten
+me.printIntroduction();
+```
+
+## inheritance
+
+[MDN inheritance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain#inheritance_with_the_prototype_chain): something about constructor and supertype.
+
+`freeCodeCamp`: But duck and all instances of Bird should show that they were constructed by Bird and not Animal. To do so, you can manually set the constructor property of Bird to the Bird object
+
+```js
+// syntax:
+ChildObject.prototype = Object.create(ParentObject.prototype);
+// Then the ChildObject received its own methods by chaining them onto its prototype:
+ChildObject.prototype.methodName = function() {...};
+
+
+// A constructor function that inherits its prototype object from a supertype constructor function can still have its own methods in addition to inherited methods
+function Animal() { }
+Animal.prototype.eat = function() {
+  console.log("nom nom nom");
+};
+function Bird() { }
+Bird.prototype = Object.create(Animal.prototype);
+Bird.prototype.constructor = Bird;
+
+Bird.prototype.fly = function() {
+  console.log("I'm flying!");
+};
+
+let duck = new Bird();
+duck.eat();
+duck.fly();
+
+// another one
+function Animal() {}
+Animal.prototype.eat = function() {
+  console.log("nom nom nom");
+};
+
+function Dog() {}
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+Dog.prototype.bark = function() {
+  console.log("Woof!");
+};
+
+let beagle = new Dog();
+
+beagle.eat(); 
+beagle.bark(); 
 ```
 
 ## for in loop
@@ -325,6 +490,28 @@ const Name = function(arg) {
 class Name {
   constructor(arg) {
 }
+
+// check this property to find out what kind of object it is, it’s generally better to use the instanceof method to check the type of an object
+(candidate.constructor === Bird) // true or false
+
+function joinBirdFraternity(candidate) {
+  if (candidate.constructor === Bird) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// prototype as objet:
+Bird.prototype = {
+  numLegs: 2, 
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
 ```
 
 Access values by using
