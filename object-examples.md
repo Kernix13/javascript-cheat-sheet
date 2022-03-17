@@ -18,6 +18,7 @@ Syntax and code examples for the most coomon object methods
 1. [Classes](#classes)
    1. [prototype version](#prototype-version)
    1. [ES6 Class version](#es6-class-version)
+   1. [Related topics](#related-topics)
 1. [Destructuring an object](#destructuring-an-object)
 1. [Spread operator](#spread-operator)
 1. [Miscellaneous](#miscellaneous)
@@ -676,6 +677,93 @@ console.log(john.greeting());
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Related topics 
+
+Thses are from freeCodeCamp but I think they are NOT ES6:
+
+#### Object mixins
+
+A mixin allows other objects to use a collection of functions.
+
+```js
+let flyMixin = function(obj) {
+  obj.fly = function() {
+    console.log("Flying, wooosh!");
+  }
+};
+
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let plane = {
+  model: "777",
+  numPassengers: 524
+};
+
+flyMixin(bird);
+flyMixin(plane);
+
+bird.fly();
+plane.fly();
+```
+
+#### Closure
+
+The simplest way to make this public property private is by creating a variable within the constructor function. In JavaScript, a function always has access to the context in which it was created. This is called  closure. 
+
+```js
+function Bird() {
+  // previously would have been bird.hatchedEgg = 10;
+  let hatchedEgg = 10;
+
+  this.getHatchedEggCount = function() { 
+    return hatchedEgg;
+  };
+}
+let ducky = new Bird();
+ducky.getHatchedEggCount();
+
+```
+
+#### IIFE and object modules
+
+An immediately invoked function expression (IIFE) is often used to group related functionality into a single object or module. You can group these mixins into a module. The returned object contains all of the mixin behaviors as properties of the object. The advantage of the module pattern is that all of the motion behaviors can be packaged into a single object that can then be used by other parts of your code. 
+
+```js
+// previously
+function glideMixin(obj) {
+  obj.glide = function() {
+    console.log("Gliding on the water");
+  };
+}
+function flyMixin(obj) {
+  obj.fly = function() {
+    console.log("Flying, wooosh!");
+  };
+}
+
+// now mixins grouped into a module:
+let motionModule = (function () {
+  return {
+    glideMixin: function(obj) {
+      obj.glide = function() {
+        console.log("Gliding on the water");
+      };
+    },
+    flyMixin: function(obj) {
+      obj.fly = function() {
+        console.log("Flying, wooosh!");
+      };
+    }
+  }
+})();
+
+motionModule.glideMixin(duck);
+duck.glide();
+```
 
 ## Destructuring an object
 
