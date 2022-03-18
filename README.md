@@ -63,17 +63,17 @@ The following tables are for visual memorization. It is easy to see similarites 
 
 ### Data types
 
-JavaScript Primitive Data Types (data that is not an object and has no methods):
+JavaScript Primitive Data Types (data that is immutable, is not an object, and has no methods). Though most f them have object equivalents: 
 
-|    Name   | Type              | Mutable? | Methods | 
-| :-------- | :----:            | :----:  | :----:  |
-| Boolean   | `true` or `false` | NO | 0 | 
-| Null      | `null`            | NO | 0 | 
-| Undefined | `undefined`       | NO | 0 | 
-| Number    | self-explanatory  | NO | 0 | 
-| String    | text              | NO | 0 | 
-| Bigint    | large numbers     | NO | 0 | 
-| Symbol    | No clue           | NO | 0 | 
+|    Name   | Type              | Obj Equiv? |
+| :-------- | :----:            | :----:  | 
+| `null`      | nonexistent value | NO | 
+| `undefined` | default variable value | NO | 
+| Boolean   | `true` or `false` | YES | 
+| Number    | numeric values    | YES | 
+| String    | characters/text   | YES | 
+| Bigint    | large numbers     | YES | 
+| Symbol    | unique identifier | YES | 
 
 Characterististics of primitive types:
 - No methods
@@ -199,10 +199,10 @@ Types of Loops:
 |    Type        | Syntax | Syntax 2          | Syntax 2 |
 | :-----------   | :---- | :----            | :---- | 
 | while    | let i = num  | while (i cond)    | {code with i; i++} | 
+| do while | let i = num  | do {code with i; i++} | while (i cond) |
 | for      | for (a; b; c) | {code with i}    |                  |
 | for in   | let i `in` obj | {code with i}   |                 |
 | for of   | let i `of` obj  | {code with i}  |                |
-| do while | let i = num  | do {code with i; i++} | while (i cond) |
 
 <br>
 
@@ -227,11 +227,11 @@ String and Array methods/properties (Same Methods, Same Effect):
 | :---------- | -------: | :------      | :------------         | :-----------   |
 | slice()     | creates: | new arr/str  | arr.slice(start, end) | str.slice(start, end) | 
 | concat()    | creates: | new arr/str  | arr1.concat(arr2)     | str1.concat(' ', str2)  | 
-| indexOf()   | returns: | index # or -1 | indexOf(searchVal)   | indexOf(searchStr) | 
-| lastIndexOf() | returns: | index # or -1 | lastIndexOf(searchVal) | lastIndexOf(searchStr) |
+| indexOf()   | finds:   | index # or -1 | indexOf(searchVal)   | indexOf(searchStr) | 
+| lastIndexOf() | finds: | index # or -1 | lastIndexOf(searchVal) | lastIndexOf(searchStr) |
 | includes()  | checks:  | Boolean      | includes(searchVal)   | includes(searchStr) | 
-| length      | returns: | arr/str len  | arr.length            | str.length | 
-| [index]     | returns: | specific value | arr[index]          | str[index] | 
+| length      | counts:  | arr/str len  | arr.length            | str.length | 
+| [index]     | value:   | specific value | arr[index]          | str[index] | 
 
 <br>
 
@@ -262,7 +262,7 @@ Other common string methods:
 | :-------------    | :--------------------  | :---------- |
 | str.toLowerCase() | new string              | str.toLowerCase() |
 | str.toUpperCase() | new string              | str.toUpperCase() |
-| concat. op.       | new string              | str1 + str2    |
+| concat. operator       | new string              | str1 + str2    |
 | str.trim()        | new string              | str.trim() |
 | str.replace()     | new string              | let newStr = str.replace(regex, subStr) |
 | str.match()       | new array               | let newArr = str.match(regex) |
@@ -314,7 +314,7 @@ Common Object methods:
 | obj.hasOwnProperty() | boolean   | if obj has (prop)   |
 | obj.prop or obj[prop] | value    | return value for `prop` |
 | obj.prop[i] or obj.[prop][i] | value |  at pos [i] for array in object |
-| obj.prop.length      | value     | length of array in object |
+| obj.prop.length      | value     | length of array in an object |
 
 <br>
 
@@ -328,7 +328,7 @@ Object class syntax and terms (Fx = 'function'):
 | get         | binds an obj prop to a Fx, called when that prop is looked up | 
 | set         | binds an obj prop to a Fx, called when there is an attempt to set that prop | 
 | extends     | used to create a class as a child of another class | 
-| prototype   | |
+| prototype   | the mechanism of how objects inherit features from one another |
 
 Look into [MDN Method definitions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions).
 
@@ -337,7 +337,7 @@ Look into [MDN Method definitions](https://developer.mozilla.org/en-US/docs/Web/
 
 ### Number methods
 
-Common Number Methods (single argument):
+Common Number and Math methods (single argument):
 | Method          | Result/Purpose: | 
 | :---            | :----            |
 | toExponential(n) | returns a string representing the Number object in exponential notation |
@@ -351,11 +351,13 @@ Common Number Methods (single argument):
 | Math.floor(x)   | Returns the largest integer less than or equal to x. |
 | Math.random(x)  | Returns a pseudo-random number between 0 and 1. |
 | Math.round(x)   | Returns the value of the number x rounded to the nearest integer. |
-| Math.sign(x)    | Returns the sign of the x, indicating whether x is positive, negative, or zero. |
+| Math.sign(x)    | Returns the sign of the x: positive, negativ or zero |
 | Math.sqrt(x)    | Returns the positive square root of x. |
 | Math.trunc(x)   | Returns the integer portion of `x`, removing any fractional digits. |
 
-Common Number Methods (2 or more arguments):
+<br /> 
+
+Common Math Methods (2 or more arguments):
 | Method | Result/Purpose: | 
 | :---   | :----           |
 | Math.max(n1, n2, ...)   | Returns the largest of zero or more numbers |
@@ -366,6 +368,8 @@ Common Number Methods (2 or more arguments):
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Date methods
+
+<br />
 
 Common Date Methods: Pulling Date and Time Values
 
@@ -382,6 +386,8 @@ Common Date Methods: Pulling Date and Time Values
 | getSeconds()      | Get the second (0-59)                             | 
 | getTime()         | Get the milliseconds since January 1, 1970                  | 
 | getUTCDate()      | Date according to universal time                  | 
+
+<br />
 
 Set Part of a Date
 | Method            | Description:                        | Syntax:               | 
@@ -404,13 +410,14 @@ Set Part of a Date
 Basic function declaration & expressions:
 | Type     | Declare                        | Call | 
 | :---     | :-----                         | :----- |
-| Standard | function name() {...}          | name(); | 
+| Declaration | function name() {...}       | name(); | 
+| Expresson | const varName = function() {...} | varName(); | 
 | Arrow    | () => {...}                    | -   
 | Arrow2   | () => "value"                  | -   | 
 | Arrow3   | item => {item...}              | -   | 
 | Arrow4   | (arr1, arr2) => {arr1...arr2}  | -   | 
 | IIFE     | (function() {...})             | (); |
-| Spread/Rest op. | (...) | | 
+| _Spread/Rest op._ | (...) | | 
 
 <br>
 
@@ -482,7 +489,7 @@ Regex Methods
 
 <br>
 
-Escaping characters:
+Escaping characters (common):
 | Code | Character output |
 | :--- | :----- |
 | `\'` | Single quote `'` | 
@@ -497,7 +504,7 @@ Escaping characters:
 
 ### ES6 Syntax
 
-Table for ES6 syntax (Really sloppy table!!!):
+Table of syntax for various ES6 topics:
 | ES6 topic             | Code example                          | 
 | -------:              | :-----------                          |
 | Arrow functions:      | const varName = () => {code}          | 
@@ -530,7 +537,7 @@ Table for ES6 syntax (Really sloppy table!!!):
 | JavaScript Promise:   | new Promise((resolve, reject) => {...});  | 
 | then                | myPromise.then(result => {...}); | 
 | catch               | myPromise.catch(error => {...}); | 
-| `// promise keywords:` | then, result, catch, error             | 
+| promise keywords: | then, result, catch, error             | 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -572,7 +579,7 @@ Notes on various tables for specific methods and syntax for everything listed ab
 Miscellaneous:
 
 - `typeof`: Returns the type of a variable
-- `instanceof`: Returns true if an object is an instance of an object type
+- `instanceof`: Returns true if the prototype property of a constructor appears anywhere in the prototype chain of an object
 
 ## JavaScript version of CRUD
 
@@ -582,10 +589,10 @@ There are 4 ways to work with data that are known collectively as CRUD:
   - U = _Update_: Changing a value for an existing record like client/customer contact information, user password, mutating an array, ...
   - D = _Delete_: Removing a record or item from an object or array, ...
 
-Most often CRUD involves when ineracting with databases. However, you can apply that acronym to front-end JavaScript as well. This is just another way of visualizing and understanding JS. 
+Typically, CRUD involves ineracting with databases. However, you can apply that acronym to front-end JavaScript as well. This is just another way of visualizing and understanding JS. 
 
 But before you can **Read**, **Update**, or **Delete**, you need to check if a piece of data exists. This is done with some kind of conditional statement:
-  - Go back and view the [Boolean methods](#boolean-methods) and/or [Operators and conditionals](#operators-and-conditionals) and/or [Loops](#loops) and/or [Regex](#regex) sections.
+  - Go back and view the [Boolean methods](#boolean-methods), [Operators and conditionals](#operators-and-conditionals), [Loops](#loops) and/or [Regex](#regex) sections.
 
 If an element does not, then you can **Create** it. If `the thing` exists, then you can read, update and/or delete. In JavaScript you can **read** for the purpose of 1) returning the value, or 2) returning the length or the index # (arr, str) of an item. 
 
@@ -629,7 +636,6 @@ Create from existing objects:
 | arr.join()        | new string from array | 
 | arr or str.concat() | new array or string | 
 | arr.slice()       | new array | 
-| arr.splice()      | new array | 
 | str.split()       | new array | 
 | arr.filter()      | new array |
 | arr.map()         | new array |
@@ -655,7 +661,8 @@ Simple returns / read:
 | :----         | :----               |
 | str[i]        | str value at index position |
 | str.charAt(i) | same as above       |
-| arr[i]        | arr value at index position |
+| arr[i]        | array value at index position |
+| arr[x][y]     | sub-aaray value at index position |
 | arr.at(i)     | same as above, try `arr.at(-1)` for last item |
 | obj.prop      | obj value for prop  |
 | obj[prop]     | variation of above  |
@@ -703,20 +710,10 @@ Update, Mutate, Delete:
 | `delete` obj.prop | removes prop from an object, returns `true` |
 | obj.prop = " "  | update obj.prop to empty value, also try `null`|
 | arr.length = 0  | empties the array           |  
+| delete obj[prop] | delete a property from an object |
 
-<!--  
-Common CRUD operations for the DOM:
-| Method          | Returns: |
-| :----           | :----  |
-| innerHTML       | gets or sets the HTML contained within the element | 
-| insertAdjacentHTML | to append nodes at a specified position | 
-| appendChild     | adds a node to the end of the list of children | 
-| innerText       | the text inside an element | 
-| textContent     | outputting plain text without HTML tags | 
-| createElement   | ? | 
--->
+> Look into `arr.entries()` in conjuction with `.next().value`. Also, `obj.entries()` is confusing as well.
 
-> Look into `arr.entries()` in conjuction with `.next().value`. Also, obj.entries() is confusing as well.
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -726,7 +723,7 @@ Miscellaneous notes:
 - Unlike strings, the entries of arrays are mutable and can be changed
 - Access multi-dimensional arrays  with indexes: `var arr = [ [1, 2], [2, 3], [ [3, 4], 5] ] arr[2][0][1] = 4`
 
-There are methods in common to both arrays and strings so I am combining them for more easily visualize them. Check out the following MDN links: [MDN String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [MDN Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
+There are methods in common to both arrays and strings so I am combining them to more easily visualize them. Check out the following MDN links: [MDN String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [MDN Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
 
 ### Same Methods and Same Effect
 
@@ -886,6 +883,8 @@ Pulling Date and Time Values:
 - `getUTCDate()`: The day (date) of the month in the specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
 - `parse`: Parses a string representation of a date and returns the number of milliseconds since January 1, 1970
 
+<br />
+
 Set Date Methods:
 - `setDate(dayValue)`: Set the day as a number (1-31), changes the day of the month of a given Date instance, based on local time
 - `setFullYear(yearValue)`: Sets the year (optionally month and day), sets the full year for a specified date according to local time. Returns new timestamp
@@ -901,11 +900,6 @@ Set Date Methods:
   - **Additional syntax**: `setSeconds(secondsValue, msValue)`
 - `setTime(timeValue)`: Set the time (milliseconds since January 1, 1970), sets the Date object to the time represented by a number of milliseconds since January 1, 1970
 - `setUTCDate(dayValue)`: Sets the day of the month for a specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
-
-Date example:
-```js
-let dayOfWeek = new Date().getDay() // returns weekday as a number 0-6
-```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -954,7 +948,8 @@ General:
 - Create an export fallback with `export default` - omit the curly brackets when you import a default export
 - Almost every value on its own in JavaScript evaluates to true, except what are known as the "falsy" values: `false`, `0`, `""`, `NaN`, `undefined`, and `null`
 - THIS IS HUGE: The **_comma operator_** (`, `) allows multiple expressions to be evaluated in a single statement and returns the result of the last expression: `function isLess(a, b) { return a <= b; }` AND `function isEqual(a, b) { return a === b; }`
-- 
+
+<br />
 
 Variables and values: 
 - When JS variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN`
@@ -963,6 +958,8 @@ Variables and values:
 - `let` is block scoped - A block is a chunk of code bounded by `{ }` - So a variable declared in a block with let is only available for use within that block
 - you do not want to declare a variable 2 times in the same scope - 
 - variables assigned using `const` should be uppercase: const WEATHER = "It's cold!";
+
+<br />
 
 Objects:
 - Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears is irrelevant when referencing or accessing that key
@@ -977,12 +974,16 @@ Objects:
 - `Client.prototype` - when you are dealing with objects that were created thru a constructor
 - prevent object mutation: To ensure your data doesn't change, use the function `Object.freeze` to prevent data mutation. Once frozen, you can no longer add, update, or delete properties from that object
 
+<br />
+
 Syntax:
 - Bracket notation to find the Nth-to-last character: `string.length - n`, where `n` is a # from end
 - Another use of bracket notation on objects is to access a property which is stored as the value of a variable (?)
 - Use the spread operator to evaluate arrays, `Math.max(...arr);`
 - Use destructuring assignment to extract values from objects (?)
 - Use destructuring assignment w\ the rest parameter to reassign array elements
+
+<br />
 
 Functions:
 - The function passed to High Order Array Methods will run as many times as the # of items in the array it is called on 
@@ -1000,10 +1001,12 @@ Functions:
 - Only the last parameter in a function definition can be a rest parameter
 - **Spread operator**: allows you to expand arrays and other expressions in places where multiple parameters or elements are expected. It expands an already existing array - it spreads it out intto its individual parts. You can only use it in an argument to a function or in an array literal 
 - **Array Literal**: An array literal is a list of zero or more expressions, each of which represents an array element - aka, an array.
-- Destructuring assignment - a special syntax for taking values from an object to a variable - it's a quicker way of assigning values from an object into variables - it's seems like the assignment is reversed with the var name to the right of `=` and the destructuring of the object to the left - 
+- Destructuring assignment - a special syntax for taking values from an object to a variable - it's a quicker way of assigning values from an object into variables - it's seems like the assignment is reversed with the var name to the right of `=` and the destructuring of the object to the left
 - IIFE: is an anonymous function you declare and run at the same time. To do that you need it to be an expression, and you make it an expression by enclosing it in parentheses (). 
 - IIFE's can also take in parameters. IIFE's are very useful with certain design patterns like the module pattern. 
 - Methods: you can put functions inside objects as well. 
+
+<br />
 
 Conditionals:
 - Most times you want to check the value and type so use `===` ans not `==`
@@ -1016,6 +1019,8 @@ if (id === 100)
 // or 
 if (id === 100) console.log("Equal");
 ```
+
+<br />
 
 Other:
 - template literals / template strings: 

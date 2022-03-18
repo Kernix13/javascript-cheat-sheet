@@ -253,7 +253,7 @@ console.log(alpha) // ["a","b","c","e"]
 
 ### Array slice
 
-Extracts a section of the calling array from `start` to `end` (`end` not included) and **<ins>returns a new array</ins>**, does not mutate the array. Can be used on strings.
+**<ins>Returns a shallow copy of a portion of an array</ins>** into a new array object selected from `start` to `end` (`end` not included) where `start` and `end` represent the index of items in that array, does not mutate the array. Can be used on strings.
 
 MDN syntax:
 ```js

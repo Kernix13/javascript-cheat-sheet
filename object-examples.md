@@ -145,20 +145,19 @@ for (let property in duck) {
 [MDN prototype](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes): the mechanism by which JavaScript objects inherit features from one another.
 
 ```js
+// prototype chain properties:
 __defineGetter__
 __defineSetter__
 __lookupGetter__
 __lookupSetter__
 __proto__
-city
 constructor
-greet
-hasOwnProperty
-isPrototypeOf
-propertyIsEnumerable
-toLocaleString
-toString
-toValueOf
+obj.hasOwnProperty
+obj.isPrototypeOf
+obj.propertyIsEnumerable
+obj.toLocaleString
+obj.toString
+obj.toValueOf
 ```
 
 constructor: the constructor property is a reference to the constructor function that created the instance. There is one crucial side effect of manually setting the prototype to a new object. It erases the constructor property. 

@@ -549,6 +549,10 @@ getDay()
 const birthday = new Date('August 19, 1975 23:15:30');
 const day1 = birthday.getDay();
 console.log(day1); // 2
+
+
+// example 2:
+let dayOfWeek = new Date().getDay() // returns weekday as a number 0-6
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
