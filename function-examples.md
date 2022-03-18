@@ -1,5 +1,17 @@
 # Important Function Code Examples
 
+**Functional programming**: One of the core principles of functional programming is to not change things. Functional programming is all about creating and using non-mutating functions.
+
+- Another principle of functional programming is to always declare your dependencies explicitly. 
+- This means if a function depends on a variable or object being present, then pass that variable or object directly into the function as an argument. 
+- The function is easier to test, you know exactly what input it takes, and it won't depend on anything else in your program.
+- The function would always produce the same output for the same set of inputs
+
+Distinct principles for functional programming:
+
+- Don't alter a variable or object - create new variables and objects and return them if need be from a function. It's easier to prevent bugs knowing that your functions don't change anything, including the function arguments or any global variable
+- Declare function parameters - any computation inside a function depends only on the arguments passed to the function, and not on any global object or variable
+
 Here are docs from MDN:
 
 - [MDN functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
@@ -40,6 +52,7 @@ Here are docs from MDN:
 1. [Miscellaneous](#miscellaneous)
    1. [ES6 Promises](#es6-promises)
    1. [Dynamic functions](#dynamic-functions)
+   1. [Randon stuff](#randon-stuff)
 
 ## General
 
@@ -50,13 +63,27 @@ Here are docs from MDN:
   <dd>is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action. An example is the function in `addEventListener()`.</dd>
 </dl>
 <dl>
+  <dt>First class functions</dt>
+  <dd>Functions that can be assigned to a variable, passed into another function, or returned from another function just like any other normal value, are called first class functions. In JavaScript, all functions are first class functions.</dd>
+</dl>
+<dl>
   <dt>Higher order functions</dt>
-  <dd>Functions that take a function as an argument, or return a function as a return value</dd>
+  <dd>Functions that take a function as an argument, or return a function as a return value.</dd>
 </dl>
 <dl>
   <dt>Lambda functions</dt>
   <dd>When functions are passed in to or returned from another function, then those functions which were passed in or returned can be called a lambda. Lambda expression is an anonymous function that provides a very concise and functional syntax which is further used for writing anonymous methods...a simple, short, throwaway function which is designed to be created inline in code. They're also known as lambda expressions, anonymous functions, lambda abstractions, lambda form, or function literals</dd>
 </dl>
+<dl>
+  <dt>Arity</dt>
+  <dd>The arity of a function is the number of arguments it requires.</dd>
+</dl>
+<dl>
+  <dt>Currying</dt>
+  <dd>Currying a function means to convert a function of N arity into N functions of arity 1. In other words, it restructures a function so it takes one argument, then returns another function that takes the next argument, and so on.</dd>
+</dl>
+
+<br />
 
 ### Syntax
 
@@ -103,7 +130,7 @@ let myFunction = function() {
 }
 ```
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Rest and spread syntax
 
@@ -128,7 +155,7 @@ function howMany(...args) {
 console.log(howMany(0, 1, 2, -1, -2));
 ```
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Default parameters
 
@@ -147,7 +174,7 @@ function greet(first = "John", last = "Doe") {
 greet("Jim", "Kernix");
 ```
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Miscellaneous
 
@@ -167,6 +194,8 @@ function boolReturn(test) {
 }
 console.log(boolReturn([1,2,3]));
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div> 
 
 ## Nested functions
 
@@ -1218,3 +1247,41 @@ function checkInventory(scannedItem) {
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Randon stuff
+
+Web Dev Simplied: Once You Realize This You Will Never Struggle With Callbacks Again
+- Functions are variables just like everything else:
+
+```js
+function test() {
+  console.log("Hello")
+}
+
+const test2 = test;
+console.log(test2 === test); // true
+test.prop = "Hi";
+console.dir(test) // prop: "Hi" prototype, name, length,...
+```
+
+Function.prototype.bind(): 
+
+[MDN bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind): creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called (???)
+
+```js
+// syntax
+bind(thisArg)
+bind(thisArg, arg1)
+bind(thisArg, arg1, arg2)
+bind(thisArg, arg1, ... , argN)
+```
+Other terms:
+
+- imperative approach
+- declarative programming
+- mutation, side effect, pure function
+- first class objects
+- 10. Implement the filter Method on a Prototype
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+

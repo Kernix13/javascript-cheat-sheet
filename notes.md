@@ -169,11 +169,11 @@ Concepts, specific code syntax, ...
 </dl>
 <dl>
   <dt>Arity</dt>
-  <dd>Is the term used to refer to the number of arguments or operands in a function or operation; is the number of functions you can pass into an object; is the number of parameters the function contains; ...</dd>
+  <dd>Is the term used to refer to the number of arguments or operands in a function or operation; is the number of functions you can pass into an object; is the number of parameters the function contains; The arity of a function is the number of arguments it requires. Currying a function means to convert a function of N arity into N functions of arity 1.</dd>
 </dl>
 <dl>
   <dt>Currying</dt>
-  <dd>currying is when a function — instead of taking all arguments at one time — takes the first one and returns a new function, which takes the second one and returns a new function, which takes the third one, etc. until all arguments are completed. It is a process in functional programming in which we can transform a function with multiple arguments into a sequence of nested functions. It returns a new function that expects the next argument inline</dd>
+  <dd>currying is when a function — instead of taking all arguments at one time — takes the first one and returns a new function, which takes the second one and returns a new function, which takes the third one, etc. until all arguments are completed. It is a process in functional programming in which we can transform a function with multiple arguments into a sequence of nested functions. It returns a new function that expects the next argument inline. Currying a function means to convert a function of N arity into N functions of arity 1.</dd>
 </dl>
 <dl>
   <dt>Encapsulation</dt>

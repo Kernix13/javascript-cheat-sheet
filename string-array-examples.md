@@ -637,6 +637,12 @@ every(function(item, index, array) { /* ... */ }, thisArg)
 Examples:
 ```js
 // My preferred syntax
+const numbers = [1, 5, 8, 0, 10, 11];
+numbers.every(function(currentValue) {
+  return currentValue < 10;
+}); // false
+
+
 let nums = [27, 2.5, 1, 3, 5];
 let checkNums = nums.every(function(num) {
     return num > 0;
@@ -719,6 +725,12 @@ console.log(blueEyes); // false
 Callback examples:
 ```js
 // Callback function
+const numbers = [10, 50, 8, 220, 110, 11];
+numbers.some(function(currentValue) {
+  return currentValue < 10;
+}); // true
+
+
 const arr = [2, 5, 8, 1, 4];
 const arr2 = [12, 5, 8, 1, 4];
 function isBiggerThan10(item) {
@@ -1275,6 +1287,8 @@ function populateUI() {
 Executes a user-supplied "_reducer_" callback function on each element of the array, passing in the return value from the calculation on the preceding element. The final result of running the _reducer_ across all elements of the array is **<ins>a single value</ins>**.
 
 The first time that the callback is run there is no "return value of the previous calculation". If supplied, an initial value may be used in its place. Otherwise the array element at index 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0).
+
+You can solve almost any array processing problem using the reduce method. It's possible to show that both filter and map can be derived as special applications of reduce. 
 
 MDN syntax:
 ```js

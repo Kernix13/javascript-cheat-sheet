@@ -1066,3 +1066,12 @@ typeOfTest = null; // object
 - `ChildObject.prototype`: ChildObject.prototype.methodName = function() {...}; 
 
 WTF with `[ ]` working but not dot notation???? Something with if statements?
+
+<br />
+
+LearnWebCode: 
+
+- Stop thinking in terms of individual variables and functions, and start thinking in terms of objects with key-value pairs and methods.
+- creating multiple objects that are similar to each other
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
