@@ -428,7 +428,7 @@ Video: Intro to Object Oriented Programming - Crash Course |
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Dates
+<h2 id="dates" align="center">Dates</h2>
 
 **DATE CHEAT SHEET TO GET REAL DATES AND TIMES**:
 - code examples from leafpickup.js:
@@ -820,3 +820,5 @@ test2 = 20; // Reassigned value: 20 (Ok)
 let test2 = 2; // Uncaught SyntaxError
 let test2 = 20; // Uncaught SyntaxError
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>

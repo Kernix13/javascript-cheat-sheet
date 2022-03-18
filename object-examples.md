@@ -117,6 +117,8 @@ function updateRecords(records, id, prop, value) {
 }
 ```
 
+<br />
+
 Own properties vs prototype properties:
 ```js
 // own prop vs prototype prop
@@ -160,7 +162,7 @@ obj.toString
 obj.toValueOf
 ```
 
-constructor: the constructor property is a reference to the constructor function that created the instance. There is one crucial side effect of manually setting the prototype to a new object. It erases the constructor property. 
+**constructor**: the constructor property is a reference to the constructor function that created the instance. There is one crucial side effect of manually setting the prototype to a new object. It erases the constructor property. 
 *** To fix this, whenever a prototype is manually set to a new object, remember to define the constructor property
 
 ```js
@@ -523,6 +525,8 @@ Bird.prototype = {
   }
 };
 ```
+
+<br />
 
 Access values by using
 

@@ -35,7 +35,7 @@ Here are docs from MDN:
    1. [Default parameters](#default-parameters)
    1. [Miscellaneous](#miscellaneous)
 1. [Nested functions](#nested-functions)
-   1. [Multiply nested functions](#multiply-nested-functions)
+   1. [Multiple nested functions](#multiple-nested-functions)
    1. [Closures](#closures)
 1. [IIFE](#iife)
 1. [Async await](#async-await)
@@ -83,7 +83,7 @@ Here are docs from MDN:
   <dd>Currying a function means to convert a function of N arity into N functions of arity 1. In other words, it restructures a function so it takes one argument, then returns another function that takes the next argument, and so on.</dd>
 </dl>
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div> 
 
 ### Syntax
 
@@ -235,9 +235,11 @@ result = fn_inside(5); // returns 8
 result1 = outside(3)(5); // returns 8
 ```
 
-### Multiply nested functions
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div> 
 
-Functions can be multiply-nested:
+### Multiple nested functions
+
+Functions can be multiple-nested:
 - A function (`A`) contains a function (`B`), which itself contains a function (`C`).
 - Both functions `B` and `C` form closures here. So, `B` can access `A`, and `C` can access `B`.
 - In addition, since `C` can access `B` which can access `A`, `C` can also access `A`.
@@ -262,6 +264,8 @@ A(1); // logs 6 (1 + 2 + 3)
 1. `C` forms a closure including `B`
 1. Because `B`'s closure includes `A`, `C`'s closure includes `A`, `C` can access both `B` and `A`'s arguments and variables. In other words, `C` chains the scopes of `B` and `A`, in that order
 1. The reverse, however, is not true. `A` cannot access `C`
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div> 
 
 ### Closures
 
@@ -633,7 +637,7 @@ let bob = a => a + 100;
 
 <br />
 
-More examples: Check [MDN Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions):
+And more examples: Check [MDN Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions):
 
 ```js
 // An empty arrow function returns undefined
@@ -1011,6 +1015,8 @@ d = factorial(4); // d gets the value 24
 e = factorial(5); // e gets the value 120
 ```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ### freeCodeCamp examples
 
 From the video 
@@ -1077,6 +1083,8 @@ console.log(revString("the simple engineer")); // "reenigne elpmis eht"
 // 
 ```
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ### MDN examples
 
 Recursion is limited by stack size:
@@ -1120,7 +1128,7 @@ Look into the _call stack_ mentioned in [A Quick Intro to Recursion in Javascrip
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Recursion notes
+### Recursion notes
 
 Notes on Video [Recursion in Programming - Full Course](https://youtu.be/IJDJ0kBx2LM) from freeCodeCamp:
 
@@ -1161,6 +1169,8 @@ Other concepts from [MDN Functions doc](https://developer.mozilla.org/en-US/docs
 **Predefined functions**: 
 - DO NOT USE: `eval()`, `uneval()`, `escape()`, and `unescape()`.
 - OK TO USE: `isFinite()`, `isNaN()`, `parseFloat()`, `parseInt()` with `radix`, `decodeURI()`, `decodeURIComponent()`, `encodeURI()`, and `encodeURIComponent()`
+
+<br />
 
 ### ES6 Promises
 

@@ -50,6 +50,8 @@ console.log(expo('word')); // NaN
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+<br />
+
 The `toFixed()` method formats a number using fixed-point notation. 
 
 toFixed(n)
@@ -82,6 +84,8 @@ numObj.toFixed(6)      // '12345.678900': note added zeros
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 The `toPrecision() `method returns a string representing the Number object to the specified precision. 
 
@@ -116,6 +120,8 @@ console.log(numObj.toPrecision(1))   // logs '0.0001'
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+<br />
+
 The global `isFinite()` function determines whether the passed value is a finite number. If needed, the parameter is first converted to a number.
 
 isFinite(): Return value = `false` if the argument is (or will be coerced to) positive or negative Infinity or `NaN` or `undefined`; otherwise, `true`.
@@ -144,6 +150,8 @@ isFinite('0');       // true, would've been false with the more robust Number.is
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 The `Number.isInteger()` method determines whether the passed value is an integer.
 
@@ -184,6 +192,8 @@ Number.isInteger(5.0000000000000001); // true
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 The `Number.parseFloat()` method parses an argument and returns a floating point number. If a number cannot be parsed from the argument, it returns `NaN`.
 
@@ -240,6 +250,8 @@ Math.abs();         // NaN
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+<br />
+
 Math.ceil(x): always rounds a number up to the next largest integer.
 ```js
 // syntax
@@ -252,6 +264,8 @@ console.log(Math.ceil(-7.004)); // -7
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 Math.floor(x): returns the largest integer less than or equal to a given number
 ```js
@@ -267,6 +281,8 @@ Math.floor(-45.95); // -46
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 Math.random(x): returns a floating-point, pseudo-random number in the range 0 to less than 1 (inclusive of 0, but not 1) with approximately uniform distribution over that range — which you can then scale to your desired range
 
@@ -284,6 +300,8 @@ console.log(Math.random()); // 0.random numbers
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 Math.round(x): returns the value of a number rounded to the nearest integer
 ```js
@@ -303,6 +321,8 @@ Math.round(-20.51); // -21
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 Math.sign(x): returns either a positive or negative +/- 1, indicating the sign of a number passed into the argument. If the number passed into `Math.sign()` is 0, it will return a +/- 0. Note that if the number is positive, an explicit (+) will not be returned.
 
@@ -328,6 +348,8 @@ Math.sign();      // NaN
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+<br />
+
 Math.sqrt(x): returns the square root of a number
 ```js
 // syntax
@@ -351,6 +373,8 @@ Math.sqrt(-0); // -0
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+<br />
+
 Math.trunc(x): returns the integer part of a number by removing any fractional digits
 ```js
 // syntax
@@ -373,6 +397,8 @@ Math.trunc();         // NaN
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 Math.max(): returns the largest of the zero or more numbers given as input parameters, or `NaN` if any parameter isn't a number and can't be converted into one. 
 
@@ -402,6 +428,8 @@ let max = arr.reduce(function(a, b) {
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+<br />
+
 Math.min(): returns the lowest-valued number passed into it, or `NaN` if any parameter isn't a number and can't be converted into one.
 
 ```js
@@ -422,6 +450,8 @@ let z = Math.min(x, y);
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 Math.pow(x, y): static method, given two arguments, _base_ and _exponent_, returns `base` <sup>`exp`</sup>.
 
@@ -540,6 +570,8 @@ console.log(date1); // 19
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+<br />
+
 getDay()
 ```js
 // syntax
@@ -557,6 +589,8 @@ let dayOfWeek = new Date().getDay() // returns weekday as a number 0-6
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+<br />
+
 getFullYear()
 ```js
 // syntax
@@ -573,6 +607,8 @@ let year = today.getFullYear();
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+<br />
+
 getHours()
 ```js
 // syntax
@@ -588,6 +624,8 @@ console.log(hours); // 23
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 getMilliseconds()
 ```js
@@ -606,6 +644,8 @@ let milliseconds = today.getMilliseconds();
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+<br />
+
 getMinutes()
 ```js
 // syntax
@@ -622,6 +662,8 @@ console.log(minutes); // 15
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 getMonth()
 ```js
@@ -640,6 +682,8 @@ console.log(month); // 11
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+<br />
+
 getSeconds()
 ```js
 // syntax
@@ -656,6 +700,8 @@ console.log(seconds); // 30
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 getTime()
 ```js
@@ -706,6 +752,8 @@ console.log(eventDate.getDate()); // 1
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+<br />
+
 setFullYear()
 ```js
 // syntax
@@ -726,6 +774,8 @@ theBigDay.setFullYear(1997); // 858196084256
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 setHours()
 ```js
@@ -748,6 +798,8 @@ theBigDay.setHours(7); // 1647089217263
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+<br />
+
 setMilliseconds()
 ```js
 // syntax
@@ -764,6 +816,8 @@ theBigDay.setMilliseconds(100); // 1647114589100
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 setMinutes()
 ```js
@@ -783,6 +837,8 @@ theBigDay.setMinutes(45); // 1647114346721
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 setMonth()
 ```js
@@ -807,6 +863,8 @@ console.log(endOfMonth); // Wed Mar 02 2016 00:00:00 GMT-0500 (Eastern Standard 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+<br />
+
 setSeconds()
 ```js
 // syntax
@@ -824,6 +882,8 @@ theBigDay.setSeconds(30); // 1647114870198
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 setTime()
 ```js
@@ -843,6 +903,8 @@ sameAsBigDay.setTime(theBigDay.getTime()); // 930801600000
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+<br />
 
 setUTCDate()
 ```js

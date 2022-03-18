@@ -1,5 +1,7 @@
 # Real life examples
 
+WORK IN PROGRESS - THIS WILL BE THE LAT FILE i UPDATE!
+
 1. Business client/cuustomer contact information and other pertinent data stored as objects
 1. Inventory and supply chain records in objects and arrays
 1. Examples for email subscriptions or user profile areas with personl greetings, messages, etc.

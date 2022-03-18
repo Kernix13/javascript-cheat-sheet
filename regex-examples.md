@@ -675,6 +675,8 @@ const usernamePattern = /^[a-z][a-z0-9]{7,29}$/i
 }
 ```
 
+<br /> 
+
 User name 2:
 
 1. Usernames can only use alpha-numeric characters.
