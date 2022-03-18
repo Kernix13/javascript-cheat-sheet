@@ -1260,6 +1260,8 @@ function checkInventory(scannedItem) {
 
 ### Randon stuff
 
+- **freeCodeCamp**: Functions are considered first class objects in JavaScript, which means they can be used like any other object. They can be saved in variables, stored in an object, or passed as function arguments.
+
 Web Dev Simplied: Once You Realize This You Will Never Struggle With Callbacks Again
 - Functions are variables just like everything else:
 

@@ -893,6 +893,14 @@ const names = users.map(user => user.name);
 console.log(names); // ["John","Amy","camperCat"]
 ```
 
+This example by James Quick is so good for objects that I'm pulling it out of the code block above:
+
+```js
+// map thru an obejct and assign key names
+const minFile = characters.map(item => ({ name: item.name, height: item.height }))
+console.log(minFile) // e.g.: {name: 'Darth Vader', height: 202}
+```
+
 <br />
 
 Difficult / advanced examples:
