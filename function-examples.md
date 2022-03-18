@@ -986,6 +986,17 @@ function recursion(parm) {
 
 Example:
 ```js
+// recursive function, sum(arr, n), that returns the sum of the first n elements of an array arr
+function sum(arr, n) {
+  if(n <= 0) {
+    return 0;
+  } else {
+    return sum(arr, n - 1) + arr[n - 1];
+  }
+}
+
+
+// countdown
 function countDown(fromNumber) {
     console.log(fromNumber);       // 3 2 1
     let nextNumber = fromNumber - 1;
@@ -996,6 +1007,81 @@ function countDown(fromNumber) {
 countDown(3);
 // If you add the condition to stop calling itself, you will get this error:
 Uncaught RangeError: Maximum call stack size exceeded.
+
+// countdown2
+function countdown(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const arr = countdown(n - 1);
+    arr.unshift(n);
+    return arr;
+  }
+}
+// or 
+
+camperbot
+Great contributor
+
+6
+Dec '19
+Use Recursion to Create a Countdown 1.4k
+Solutions
+Solution 1 (Click to Show/Hide)
+function countdown(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const arr = countdown(n - 1);
+    arr.unshift(n);
+    return arr;
+  }
+}
+Solution 2 (Click to Show/Hide)
+function countdown(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const arr = countdown(n - 1);
+    arr.splice(0, 0, n);
+    return arr;
+  }
+}
+
+// countdown 3
+function countdown(n){
+   return n < 1 ? [] : [n].concat(countdown(n - 1));
+}
+// or 
+function countdown(n){
+   return n < 1 ? [] : [n, ...countdown(n - 1)];
+}
+
+
+// Recursion to Create a Range of Numbers
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum - startNum === 0) {
+    return [startNum];
+  } else {
+    var numbers = rangeOfNumbers(startNum, endNum - 1);
+    numbers.push(endNum);
+    return numbers;
+  }
+}
+
+// solution 2
+function rangeOfNumbers(startNum, endNum) {
+  return startNum === endNum
+    ? [startNum]
+    : rangeOfNumbers(startNum, endNum - 1).concat(endNum);
+}
+// or 
+function rangeOfNumbers(startNum, endNum) {
+  return startNum === endNum
+    ? [startNum]
+    : [...rangeOfNumbers(startNum, endNum - 1), endNum ];
+}
+
 ```
 
 Recursive example (computes factorials):

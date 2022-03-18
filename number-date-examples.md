@@ -27,6 +27,7 @@ Here are links to MDN docs for the methods below:
 | :---: | :---: | :---: | 
 | [MDN toExponential](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toExponential) | [MDN toFixed](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed) | [MDN toPrecision](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision) | 
 | [MDN isFinite](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isFinite) | [MDN isInteger](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger)  | [MDN parseFloat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseFloat) | 
+| [MDN parseInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) | | |
 
 <br />
 
@@ -204,6 +205,32 @@ Number.parseFloat(string)
 
 // examples:
 // confusing
+```
+
+<br />
+
+The `parseInt()` function parses a string argument and returns an integer of the specified radix. `radix`: An integer between `2` and `36` that represents the radix (the base in mathematical numeral systems) of the string. Be careful—this does not default to `10`! If the radix value is not of the `Number` type it will be coerced to a `Number`??? The `radix` specifies the base of the number in the string.
+
+parseInt():
+```js
+// syntax
+parseInt(string)
+parseInt(string, radix)
+
+// Examples:
+const a = parseInt("007"); // 7
+
+const year = parseInt("2022");
+console.log(parseInt(year)) // 2022
+console.log(parseInt('-421')) // -421
+console.log(parseInt('+421')) // 421
+
+// with radix
+const a = parseInt("17", 10); // 17
+const a = parseInt("17", 8); // 17 in base 8 = 15
+const a = parseInt("11", 2); // 11 in base 2 = 3
+const a = parseInt("111", 2); // 111 in base 2 = 7
+// You are only going to do calculations in other bases for science based websites
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -1045,12 +1072,15 @@ typeOfTest = new Date(); // object
 ### Numbers
 
 No parameter
-| method        | syntax            | Notes           | 
-| :----         | :----             | :----           |
+| "method"      | syntax            | Notes             | 
+| :----         | :----             | :----             |
+| assign/augment | +=, -=, *=, /=   | modify a variable | 
+| increment     | i++, varName++    | increment a # ny 1 |
+| decrement     | i--, varName--    | decrement a # ny 1 |
 | toExponential | num.toExponential() | Skip this one   |  
-| toFixed       | num.toFixed()     | Definitely use  |
-| toPrecision   | num.toPrecision() | Maybe           |
-| Math.random   | Math.random()     | Definitely use  |
+| toFixed       | num.toFixed()     | Definitely use    |
+| toPrecision   | num.toPrecision() | Maybe             |
+| Math.random   | Math.random()     | Definitely use    |
 | Math.max      | Math.max()        | Returns `-infinity`? |
 | Math.min      | Math.min()        | Returns `-infinity`? |
 
