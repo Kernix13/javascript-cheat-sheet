@@ -22,6 +22,7 @@ Syntax and code examples for the most coomon object methods
 1. [Destructuring an object](#destructuring-an-object)
 1. [Spread operator](#spread-operator)
 1. [Miscellaneous](#miscellaneous)
+1. [Syntax tables](#syntax-tables)
 
 Common Object methods:
 
@@ -1076,5 +1077,47 @@ LearnWebCode:
 
 - Stop thinking in terms of individual variables and functions, and start thinking in terms of objects with key-value pairs and methods.
 - creating multiple objects that are similar to each other
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Syntax tables
+
+Object methods and related code:
+| method          | syntax                      |    
+| :----           | :----                       | 
+| Object.keys     | Object.keys(obj)            | 
+| Object.values   | Object.values(obj)          | 
+| hasOwnProperty  | obj.hasOwnProperty(prop)    | 
+| instanceof      | obj instanceof constructor  |
+| isPrototypeOf   | isPrototypeOf(obj)          |
+| Object.create   | Object.create(proto)        |
+|                 | Object.create(proto, propertiesObject) |
+|                 | Object.create(Class.prototype) |
+| for in          | for (let user in users)     |
+| Class           | class Name { constructor(arg) |
+|                 | { this.arg = arg; }         | 
+| method          | method name() {...}         |
+
+<br />
+
+Destructuring examples:
+| example         | syntax                      |    
+| :----           | :----                       | 
+| let a, b, rest; | [a, b] = [10, 20];          |
+|                 | [a, b, ...rest] = [10, 20, 30, 40, 50]; |
+|                 | ({ a, b } = { a: 10, b: 20 }); |
+|                 | ({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}); |
+
+<br />
+
+freeCodeCamp examples:
+```js
+const {one, one} = obj // extract
+const { one: onething, two: twothing } = obj // assign vars
+const { johnDoe: { age: userAge, email: userEmail }} = user // nested assignment
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6]; // assign from arrays
+const [a, b, ...arr] = [1, 2, 3, 4, 5, 7]; // with rest
+const half = ({ max, min }) => (max + min) / 2.0; // obj as Fx parm
+```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
