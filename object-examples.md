@@ -1101,22 +1101,19 @@ Object methods and related code:
 <br />
 
 Destructuring examples:
-| example         | syntax                      |    
-| ----:           | :----                       | 
-| let a, b, rest; |                             |
-| Arrays:         | [a, b] = [10, 20];          |
+| example         | syntax                                  |    
+| ----:           | :----                                   | 
+|                 | let a, b, rest;                         |
+| **Arrays**:     | [a, b] = [10, 20];                      |
 |                 | [a, b, ...rest] = [10, 20, 30, 40, 50]; |
-| default values: | [a=5, b=7] = [1];           |
-| swapping vars:  | [a, b] = [b, a]; | 
-|                 | const foo = ['one', 'two', 'three']; |
-|                 | const [red, yellow, green] = foo; |
-| Objects:        | ({ a, b } = { a: 10, b: 20 }); |
+|                 | const foo = ['one', 'two', 'three'];    |
+|                 | const [red, yellow, green] = foo;       |
+| default values: | [a=5, b=7] = [1];                       |
+| swapping vars:  | [a, b] = [b, a];                        | 
+|                 |                                         |
+| **Objects**:    | ({ a, b } = { a: 10, b: 20 });          |
 |                 | ({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}); |
-|                 |
-
-
-
-
+|                 |                                         |
 
 <br />
 

@@ -689,6 +689,7 @@ setTimeout( () => {
 
 Syntax:
 ```js
+// syntax (HUH?)
 const obj = {
   get property() {},
   set property(value) {},

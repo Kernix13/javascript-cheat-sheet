@@ -19,7 +19,7 @@ Syntax and code examples for the most coomon string and array methods.
 |                     | vii. [match](#match) | viii. [replace](#replace) | ix. [toString](#tostring) | x. [Miscellaneous](#Miscellaneous) |
 | 4. [Spread operator](#spread-operator)  | | | | |
 | 5. [Rest syntax](#rest-syntax)      | | | | | 
-| 6. [Syntax tables](#syntax-tables): | i. [Common methods](#common-methods) | ii. [High order array](#high-order-array) | - | - | 
+| 6. [Syntax tables](#syntax-tables): | i. [Common methods](#common-methods) | ii. [High order array](#high-order-array) | [Destructuring](#destructuring) | - | 
 | 7. [Combinations of methods](#combinations-of-methods) | i. [Simple methods](#simple-methods) | ii. [All methods](#all-methods) | | |
 
 
@@ -2224,6 +2224,25 @@ Single argument/parameter:
 - `currVal` refers to the current item, same as `item` for the other methods.
 - `initialValue`: A value to which `previousValue` is initialized the first time the callback is called. If `initialValue` is specified, that also causes `currentValue` to be initialized to the first value in the array. If `initialValue` is not specified, `previousValue` is initialized to the first value in the array, and `currentValue` is initialized to the second value in the array. Sometimes called the **_initial accumulator_** because you will be accumulating on the values, `0` is common.
 - `TypeError`: The array contains no elements and `initialValue` is not provided
+
+<br />
+
+### Destructuring
+
+Destructuring examples:
+| example         | syntax                                  |    
+| ----:           | :----                                   | 
+|                 | let a, b, rest;                         |
+| **Arrays**:     | [a, b] = [10, 20];                      |
+|                 | [a, b, ...rest] = [10, 20, 30, 40, 50]; |
+|                 | const foo = ['one', 'two', 'three'];    |
+|                 | const [red, yellow, green] = foo;       |
+| default values: | [a=5, b=7] = [1];                       |
+| swapping vars:  | [a, b] = [b, a];                        | 
+|                 |                                         |
+| **Objects**:    | ({ a, b } = { a: 10, b: 20 });          |
+|                 | ({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}); |
+|                 |                                         |
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
