@@ -2,6 +2,8 @@
 
 299 Total lessons
 
+<div id="back-to-top"></div>
+
 ## Table of contents
 
 1. [Basic javascript](#basic-javascript)
@@ -14,8 +16,6 @@
 1. [Functional programming](#functional-programming)
 1. [Intermediate algorithm scripting](#intermediate-algorithm-scripting)
 1. [Algorithms and Data Structures Projects](#algorithms-and-data-structures-projects)
-
-<div id="back-to-top"></div>
 
 ## Basic javascript
 
@@ -185,7 +185,9 @@ Important / difficult lessons:
 - 29 handle a rejected promise with `catch` - no clue
 
 REDO REDO: ES6 | 3
-19. use getters and setters to Control Access to an Object: | 28. handle a fulfilled promise with then: | 29. handle a rejected promise w\ catch: | 
+- 19 use getters and setters to Control Access to an Object: | 
+- 28 handle a fulfilled promise with then: | 
+- 29 handle a rejected promise w\ catch: | 
 
 ```js
 // lesson 3 Object.freeze
@@ -251,12 +253,12 @@ test, or option, match, flags, wildcard, cjaracter sets, negation ^, +, *, ?, sh
 <br />
 
 Important / difficult lessons:
-- 14. Find Characters with Lazy Matching: | 
-- 29. Positive and Negative Lookahead: | 
-- 30. check for mixed grouping of characters: | 
-- 31. reuse patterns using capture groups: | 
-- 32. use capture groups to search and replace: | 
-- 33. remove whitespace from start and end: 
+- 14 Find Characters with Lazy Matching: | 
+- 29 Positive and Negative Lookahead: | 
+- 30 check for mixed grouping of characters: | 
+- 31 reuse patterns using capture groups: | 
+- 32 use capture groups to search and replace: | 
+- 33 remove whitespace from start and end: 
 
 > Note: Parsing HTML with regular expressions should be avoided, but pattern matching an HTML string with regular expressions is completely fine
 
@@ -296,9 +298,9 @@ arrays, bracket notation, array mutation, slice, spread operator, indexOf, for l
 Overview: Arrays => [], push, unshift, pop, shift, splice, slice, spread op, indexOf, for loop, multi-dimensional | Objects =>  key-value, nested objects, [], delete KW, hasOwnProperty, for in loop, Object.keys(), arrays in objects | 
 
 Important / difficult lessons:
-- 8. copy an array w\ the spread operator: | 
-- 17. check if an object has a property:  don’t put it in a for loop | 
-- 18. iterate thru the keys of an object with a for…in statement: | 
+- 8 copy an array w\ the spread operator: | 
+- 17 check if an object has a property:  don’t put it in a for loop | 
+- 18 iterate thru the keys of an object with a for…in statement: | 
 
 ```js
 // lesson 8
@@ -331,14 +333,14 @@ Recursion, string method chain, ...:
 <br />
 
 Important / difficult lessons:
-- 3. factorize a number:  | without recursion, for loop with *=
-- 4. longest word – Math.max after split(" ") | length and Math.max with spread
-- 6. confirm the ending: | endsWith, substring or slice
-- 9. finders keepers:  | find()
-- 13. falsy bouncer: | really important: "Boolean" not "boolean"
-- 14. where do I belong: | REDO FOR SURE
-- 15. Mutations | REDO FOR SURE
-- 16. Chunky Monkey | for loop, push(), slice()
+- 3 factorize a number:  | without recursion, for loop with *=
+- 4 longest word – Math.max after split(" ") | length and Math.max with spread
+- 6 confirm the ending: | endsWith, substring or slice
+- 9 finders keepers:  | find()
+- 13 falsy bouncer: | really important: "Boolean" not "boolean"
+- 14 where do I belong: | REDO FOR SURE
+- 15 Mutations | REDO FOR SURE
+- 16 Chunky Monkey | for loop, push(), slice()
 
 ```js
 // lesson 14
@@ -353,38 +355,38 @@ Important / difficult lessons:
 
 26 lessons
 
-objects, dot notation, methods, constructors, instanceof, `own` properties, for in, prototype, inheritance, supertype, mixin, closure, IIFE:
+objects, dot notation, methods, constructors, instanceof, `own` & hasOwnProperty, for in, prototype, inheritance, supertype, Object.create, mixin, closure, IIFE:
 | lesson              | lesson                | lesson          | 
 | :----               | :-----                | :-----          |
 | 1. create obj       | 2. dot notation       | 3. create method |
 | 4. `this` keyword   | 5. create constructor | 6. create with constr. |
-| 7. constructor args | 8. instanceof         | 9. |
-| 10. | 11. | 12. |
-| 13. | 14. | 15. |
-| 16. | 17. | 18. |
-| 19. | 20. | 21. |
-| 22. | 23. | 24. |
-| 25. | 26. |     |
+| 7. constructor args | 8. instanceof         | 9. for in, hasOwnProp., push |
+| 10. prototype       | 11. same as 9         | 12. constr. prop vs Fx |
+| 13. prototype obj   | 14. set constructor   | 15. isPrototypeOf |
+| 16. Prototype Chain | 17. Inheritance       | 18. supertype, Object.create |
+| 19. Child prototype | 20. reset prototype   | 21. Methods & inheritance |
+| 22. Override methods | 23. Mixin?           | 24. Closure |
+| 25. IIFE            | 26. IIFE, create module |     |
 
 <br />
 
 Important / difficult lessons:
-- 9. understand Own properties:  | 
-- 11. to end except for 25. | 
-- 12. understand the constructor property 
-- 13. change the prototype to a new object: 
-- 14. remember to set the constructor property when changing the prototype : 
-- 15. understand where an object’s prototype comes from  : 
-- 16. understand the prototype chain  : 
-- 17. use inheritance so you don’t repeat yourself  : 
-- 18. inherit behaviors from a supertype  : 
-- 19. set the child’s prototype to an instance of the parent  : 
-- 20. reset an inherited constructor property : 
-- 21. add methods after inheritance : 
-- 22. override inherited methods  : 
-- 23. use a mixin to add custom behavior b\tw unrelated objects  : 
-- 24. use Closure to protect properties w\in an object from being modified externally : 
-- 26. use an IIFE to create a module : 
+- 9 understand Own properties:  | 
+- (11-24): 11 to end except for 25. | 
+- 12 understand the constructor property 
+- 13 change the prototype to a new object: 
+- 14 remember to set the constructor property when changing the prototype : 
+- 15 understand where an object’s prototype comes from  : 
+- 16 understand the prototype chain  : 
+- 17 use inheritance so you don’t repeat yourself  : 
+- 18 inherit behaviors from a supertype  : 
+- 19 set the child’s prototype to an instance of the parent  : 
+- 20 reset an inherited constructor property : 
+- 21 add methods after inheritance : 
+- 22 override inherited methods  : 
+- 23 use a mixin to add custom behavior b\tw unrelated objects  : 
+- 24 use Closure to protect properties w\in an object from being modified externally : 
+- 26 use an IIFE to create a module : 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div> 
 
@@ -392,32 +394,37 @@ Important / difficult lessons:
 
 24 lessons
 
-...:
+> **HUGE**: Another principle of functional programming is to always declare your dependencies explicitly. This means if a function depends on a variable or object being present, then pass that variable or object directly into the function as an argument.
+
+Mutation, arguments, map, filter, slice, concat, reduce, sort, split, join, every, some, arity:
 | lesson              | lesson                | lesson          | 
 | :----               | :-----                | :-----          |
-| 1. | 2. | 3. |
-| 4. | 5. | 6. |
-| 7. | 8. | 9. |
-| 10. | 11. | 12. |
-| 13. | 14. | 15. |
-| 16. | 17. | 18. |
-| 19. | 20. | 21. |
-| 22. | 23. | 24. |
+| 1. Functional def.  | 2. Terminology        | 3. imperative vs declarative |
+| 4. prevent mutation | 5. purpose of args    | 6. global vs args |
+| 7. map callback     | 8. build your own map() | 9. filter & map |
+| 10. build a filter() | 11. slice()          | 12. slice() vs splice() |
+| 13. concat()        | 14. concat vs push()  | 15. reduce() |
+| 16. combine methods | 17. sort()            | 18. sort() mutates |
+| 19. split()         | 20. join()            | 21. CHALLENGE |
+| 22. every()         | 23. some()            | 24. arity, currying |
 
 <br />
 
-Important / difficult lessons:
-- 3. Understand the Hazards of Using Imperative Code |
-- 6. Refactor Global Variables Out of Functions
-- 7. Use the map Method to Extract Data from an Array
-- 8. Implement map on a Prototype (STOPPED)
-- 9. use the filter method to extract data from an array 
-- 10. implement  the filter method on a prototype 
-- 15. use the reduce method to analyze data
-- 16. use higher-order Functions map, filer, or reduce to solve a complex problem
-- 22. use the every method to check that every element in an array meets a criteria
-- 23. use the some method to check that any elements in an array meet a criteria
-- 24. introduction to currying and partial application 
+Important lessons:
+- 7 Use the map Method to Extract Data from an Array
+- 9 use the filter method to extract data from an array
+- 16 use higher-order Functions map, filer, or reduce to solve a complex problem
+
+Difficult lessons:
+- 3 Understand the Hazards of Using Imperative Code |
+- 6 Refactor Global Variables Out of Functions
+- 8 Implement map on a Prototype (DON'T UNDERSTAND)
+- 10 implement the filter method on a prototype (DON'T UNDERSTAND)
+- 17 Sort an Array Alphabetically using the sort Method
+- 15 use the reduce method to analyze data | the obj example is confusing, got halfway - DIFFICULT
+- 22 use the every method to check that every element in an array meets a criteria
+- 23 use the some method to check that any elements in an array meet a criteria
+- 24 introduction to currying and partial application 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div> 
 
@@ -428,18 +435,18 @@ Important / difficult lessons:
 ...:
 | lesson              | lesson                | lesson          | 
 | :----               | :-----                | :-----          |
-| 1. | 2. | 3. |
-| 4. | 5. | 6. |
-| 7. | 8. | 9. |
-| 10. | 11. | 12. |
-| 13. | 14. | 15. |
-| 16. | 17. | 18. |
-| 19. | 20. | 21. |
+| 1. arrray: numbers  | 2. array: comparison  | 3. mutate array |
+| 4. obj: find        | 5. url slug exercise  | 6. Regex, capture groups |
+| 7. replace substring | 8. switch            | 9. charCodeAt() |
+| 10. concat, indexOf | 11. HTML entity       | 12. Fibonacci, forEach? |
+| 13. Recursion?      | 14. Common Multiple?  | 15. callback arg |
+| 16. flatten array   | 17. HUH?              | 18. No clue |
+| 19. HUH?            | 20. getters & setters | 21. science equation |
 
 <br />
 
 Important / difficult lessons:
-- 
+- ALL OF THEM!
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div> 
 
@@ -451,6 +458,6 @@ Important / difficult lessons:
 1. Roman Numeral Converter
 1. Caesar's Cipher
 1. Telephone Number Validator
-1. Cash REgister
+1. Cash Register
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div> 

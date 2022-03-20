@@ -176,6 +176,10 @@ Concepts, specific code syntax, ...
   <dd>currying is when a function — instead of taking all arguments at one time — takes the first one and returns a new function, which takes the second one and returns a new function, which takes the third one, etc. until all arguments are completed. It is a process in functional programming in which we can transform a function with multiple arguments into a sequence of nested functions. It returns a new function that expects the next argument inline. Currying a function means to convert a function of N arity into N functions of arity 1.</dd>
 </dl>
 <dl>
+  <dt>Partial application</dt>
+  <dd>Is described as applying a few arguments to a function at a time and returning another function that is applied to more arguments.</dd>
+</dl>
+<dl>
   <dt>Encapsulation</dt>
   <dd>in OOP, refers to bundling data with methods that can operate on that data within a class. It is the idea of hiding data within a class, preventing anything outside that class from directly interacting with it. Members of other classes can interact with the attributes of another object through its methods: `get` and `set` methods. Also, you may want some attributes to be read-only from outside the class, which means you only have a `getter` emthod, no `setter`. Don't allow external classes to directly edit an object's attributes. Each piece should not have access to or rely on the inner workings of other sections of code (Information hiding)!</dd>
 </dl>
