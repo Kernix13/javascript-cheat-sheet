@@ -130,17 +130,25 @@ All basic exercises with a dozen+ difficult &/or important ones:
 
 Syntax, methods etc. from all the lessons:
 ```js
-undefined, null, boolean, string, number, object, NaN, 
-\" \' \\ \n \t, =
-+ - * /,  ++ --, += -= *= /=, %
+undefined, null, boolean, string, number, object, NaN
+
+=, + - * /,  ++ --, += -= *= /=, %
+
 .length, [i], [x][y], push(), pop(), shift(), unshift()
+
 function name(param) { return }, 
+
 true, false, ==, ===, !=, !==, < > <= >=
+
 && || if, else, if else, switch(), case, break, default
-{}, obj.prop, obj[prop], obj["prop-name"], delete, 
-hasOwnProperty, JSON
+
+{}, obj.prop, obj[prop], obj["prop-name"], delete, hasOwnProperty, JSON
+
 while, for (let i=0; i < arr.length; i++>), do while
+
 Math.random(), Math.floor(), parseInt(), a ? b : c
+
+\" \' \\ \n \t, 
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div> 
