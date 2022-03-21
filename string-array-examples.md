@@ -10,7 +10,7 @@ Syntax and code examples for the most coomon string and array methods.
 | ----:               | :-------    | :------     | :------     | :------     |
 | 1. [Simple array methods](#simple-array-methods): | i. [push](#push) | ii. [unshift](#unshift) | iii. [pop](#pop) | iv. [shift](#shift) |
 |                     | v. [Basic sort](#basic-sort) | vi. [reverse](#reverse) | vii. [splice](#splice) | vii. [Array slice](#array-slice) |
-|                     | ix. [concat](#concat) | x. [join](#join) | - | - | 
+|                     | ix. [concat](#concat) | x. [join](#join) | [flat](#flat) | - | 
 |                     | xi. [indexOf](#indexOf) | xii. [lastIndexOf](#lastIndexOf) | xiii. [Includes](#includes) | - |
 | 2. [High order methods](#high-order-methods): | i. [Sort](#sort) | ii. [Find](#find) | iii. [Every](#every) | iv. [Some](#some) | 
 |                     | v. [Map](#map) | vi. [Filter](#filter) | vii. [forEach](#forEach) | viii. [Reduce](#reduce) |
@@ -367,6 +367,25 @@ console.log(phone.join('-')); // "123-456-7890"
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join">MDN Join</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### flat
+
+The flat() method **<ins>creates a new array</ins>** with all sub-array elements concatenated into it recursively up to the specified depth
+
+```js
+flat() // defaults to a depth of 1
+flat(depth)
+
+const arr1 = [0, 1, 2, [3, 4]];
+console.log(arr1.flat()); // [0, 1, 2, 3, 4]
+
+const arr2 = [0, 1, 2, [[[3, 4]]]];
+console.log(arr2.flat(2)); // [0, 1, 2, [3, 4]]
+console.log(arr2.flat(3)); // [0, 1, 2, 3, 4]
+```
+
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat">MDN flat</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### indexOf
@@ -2065,8 +2084,9 @@ Common methods with NO arguments/parameters:
 | shift   | arr.shift()       | YES |                     
 | reverse | arr.reverse()     | YES* |
 | sort    | arr.sort()        | YES* |
-| join    | arr.join()        | YES |
 | split   | str.split()       | YES |
+| join    | arr.join()        | NO  |
+| flat    | arr.flat()        | NO  | 
 | slice   | arr.slice()       | NO  |     
 | toString | num.toString(radix) | NO  | 
 |         | arr.toString()    | NO  | 
@@ -2083,6 +2103,7 @@ Common methods with a single argument, or multiple repeated arguments:
 | method  | syntax1                     | syntax2                     | Mutates? |
 | :----   | :----                       | :----                       | :----:   |
 | join    | arr.join(separator)         |                             | NO |
+| flat    | flat(depth)                 |                             | NO |
 | slice   | arr.slice(start)            |                             | NO |
 | split   | str.split(separator)        |                             | NO |
 | repeat  | str.repeat(count)           |                             | NO | 

@@ -443,8 +443,40 @@ Difficult lessons:
 
 <br />
 
-Important / difficult lessons:
-- ALL OF THEM!
+Important / difficult lessons: ALL OF THEM!
+- DONE: 1, 2, 3, 
+
+SKIPPED DUE TO DIFFICULTY: 
+- 4, 
+- #5 has a positive lookahead and total RegEx that I would not have gotten
+- 6 Regex
+- 7 replace()
+- 8 switch() or map()
+- 9 
+
+Solutions:
+1. sum all numbers in a range: `for loop` with `Math.min`, `Math.max`, and `+=`
+1. diff two arrays: `concat()`, `filter()`, `!includes()`
+1. seek and destroy: <ins>rest parameter</ins>, <ins>spread operator</ins>, `filter()`, `includes()`
+1. wherefore art thou: SKIPPED
+1. spinal tap case: RegEx
+1. pig latin: RegEx
+1. 
+1.  
+1.  
+1.  
+1.  
+1.  
+1.  
+1.  
+1.  
+1.  
+1.  
+1.  
+1.  
+1.  
+1.  
+
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div> 
 

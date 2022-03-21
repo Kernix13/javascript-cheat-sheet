@@ -37,23 +37,23 @@ Object.keys(obj)
 
 // Example
 const chordIntervals = {
-    "Chord": "maj",
-    "Intervals": ["1", "3", "5"],
-    "steps": [0, 4, 7],
-		"Equal Chords": [{"key": "", "name": ""}],
-    "Chord Substitutes": [{"key": "", "name": ""}],
-		"scales": {
-			"Major Scale": ["1st", " 4th", " 5th"],
-			"Minor Pentatonic": ["2nd"],
-			"Blues Scale": ["2nd"],
-			"Harmonic Minor": ["5th", "6th"],
-			"Melodic Minor": ["4th", "5th"],
-			"Whole Tone": [""],
-			"Augmented": ["1st", "3rd", "5th"],
-			"HW Diminished": ["1st", "3rd", "5th", "7th"],
-			"Major Bebop": ["1st", "4th", "5th"],
-			"Minor Bebop": ["3rd", "5th", "8th"]
-		}
+  "Chord": "maj",
+  "Intervals": ["1", "3", "5"],
+  "steps": [0, 4, 7],
+  "Equal Chords": [{"key": "", "name": ""}],
+  "Chord Substitutes": [{"key": "", "name": ""}],
+  "scales": {
+    "Major Scale": ["1st", " 4th", " 5th"],
+    "Minor Pentatonic": ["2nd"],
+    "Blues Scale": ["2nd"],
+    "Harmonic Minor": ["5th", "6th"],
+    "Melodic Minor": ["4th", "5th"],
+    "Whole Tone": [""],
+    "Augmented": ["1st", "3rd", "5th"],
+    "HW Diminished": ["1st", "3rd", "5th", "7th"],
+    "Major Bebop": ["1st", "4th", "5th"],
+    "Minor Bebop": ["3rd", "5th", "8th"]
+  }
   }
 console.log(Object.keys(chordIntervals)) // ["Chord","Intervals","steps","Equal Chords","Chord Substitutes","scales"]
 console.log(Object.keys(chordIntervals.scales)) // ["Major Scale","Minor Pentatonic","Blues Scale","Harmonic Minor", ...]
