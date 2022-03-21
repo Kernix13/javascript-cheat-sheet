@@ -1020,15 +1020,7 @@ function countdown(n) {
   }
 }
 // or 
-
-camperbot
-Great contributor
-
-6
-Dec '19
-Use Recursion to Create a Countdown 1.4k
-Solutions
-Solution 1 (Click to Show/Hide)
+// Solution 1 
 function countdown(n) {
   if (n < 1) {
     return [];
@@ -1038,7 +1030,7 @@ function countdown(n) {
     return arr;
   }
 }
-Solution 2 (Click to Show/Hide)
+// Solution 2 (Click to Show/Hide)
 function countdown(n) {
   if (n < 1) {
     return [];
@@ -1058,6 +1050,14 @@ function countdown(n){
    return n < 1 ? [] : [n, ...countdown(n - 1)];
 }
 
+// reverse a string: (use for palindrome?)
+function string_reversal(string) {
+  if (string == "") {
+    return ""
+  }
+
+  return string_reversal(string.slice(1)) + string[0]
+}
 
 // Recursion to Create a Range of Numbers
 function rangeOfNumbers(startNum, endNum) {

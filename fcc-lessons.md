@@ -422,8 +422,6 @@ Difficult lessons:
 - 10 implement the filter method on a prototype (DON'T UNDERSTAND)
 - 17 Sort an Array Alphabetically using the sort Method
 - 15 use the reduce method to analyze data | the obj example is confusing, got halfway - DIFFICULT
-- 22 use the every method to check that every element in an array meets a criteria
-- 23 use the some method to check that any elements in an array meet a criteria
 - 24 introduction to currying and partial application 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div> 
@@ -454,7 +452,7 @@ Important / difficult lessons:
 
 5 projects
 
-1. Palindrome Checker (**_DONE_**)
+1. Palindrome Checker (**_ALMOST DONE_**)
 1. Roman Numeral Converter
 1. Caesar's Cipher
 1. Telephone Number Validator
