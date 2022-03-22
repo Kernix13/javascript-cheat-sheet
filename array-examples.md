@@ -456,23 +456,6 @@ console.log(datatypes.indexOf('number')); // 0
 console.log(datatypes.indexOf('string', 3)); // 4, from index 4 would work as well
 console.log(datatypes.indexOf('string', 5)); // -1
 console.log(datatypes.indexOf('function')); // -1
-
-// example 2
-let str = 'finding substring in string';
-let index = str.indexOf('str');
-console.log(index); // 11
-
-
-// find count (TIPS AND TRICKS)
-let str = 'You do not know what you do not know until you know.';
-let substr = 'know';
-let count = 0;
-let index = str.indexOf(substr);
-while(index !== -1) {
-    count++;
-    index = str.indexOf(substr, index + 1);
-}
-console.log(count); // 3
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf">MDN indexOf</a></div>
