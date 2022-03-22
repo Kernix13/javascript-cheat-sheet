@@ -6,11 +6,25 @@ Syntax and code examples for the most coomon string methods.
 
 ## Table of contents
 
-| Topic               | Sub-topic | Sub-topic | Sub-topic | Sub-topic |  
-| ----:               | :-------    | :------     | :------     | :------     |
-| 3. [String methods](#string-methods):  | i. [String slice](#string-slice) | ii. [split](#split) | iii. [substring](#substring) | iv. [repeat](#repeat) |
-|                     | v. [endsWith](#endsWith) | vi. [test](#test) | [charAt](#charat) | - |
-|                     | vii. [match](#match) | viii. [replace](#replace) | ix. [toString](#tostring) | x. [Miscellaneous](#Miscellaneous) |
+1. [String methods](#string-methods)
+   1. [Skipped methods](#skipped-methods)
+   1. [split](#split)
+   1. [substring](#substring)
+   1. [repeat](#repeat)
+   1. [endsWith](#endsWith)
+   1. [test](#test)
+   1. [charAt](#charat)
+   1. [match](#match)
+   1. [replace](#replace)
+   1. [toString](#tostring)
+   1. [Miscellaneous](#Miscellaneous)
+1. [Methods in common with arrays](#methods-in-common-with-arrays)
+   1. [String slice](#string-slice)
+   1. [concat](#concat)
+   1. [indexOf](#indexof)
+   1. [lastIndexOf](#lastindexof)
+   1. [includes](#includes)
+1. [Syntax tables](#syntax-tables)
 
 ## String methods
 
@@ -22,7 +36,9 @@ console.log(badString.toLowerCase().trim()); // "oops, caps lock on. need to fix
 // need to capitalize first letter and add a regex for the first char after the period.
 ```
 
-I skipped the methods: 
+### Skipped methods
+
+I skipped these methods: 
 
 - [at()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/at): takes an integer value and returns a new String consisting of the single UTF-16 code unit located at the specified offset. This method allows for positive and negative integers. Negative integers count back from the last string character.
 - [charCodeAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt): returns an integer between 0 and 65535 representing the UTF-16 code unit at the given index.
@@ -43,40 +59,6 @@ I skipped the methods:
 - [trimStart()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart): removes whitespace from the beginning of a string. trimLeft() is an alias of this method.
 - [valueOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/valueOf): returns the primitive value of a String object.
 
-### String slice
-
-Extracts a section of a string and **<ins>returns it as a new string</ins>**, _without_ modifying the original string.
-
-MDN syntax and examples:
-```js
-slice()
-slice(beginIndex)
-slice(beginIndex, endIndex)
-
-// MDN slice()
-const str = 'The quick brown fox jumps over the lazy dog.';
-console.log(str.slice(31)); // "the lazy dog."
-console.log(str.slice(4, 19)); // "quick brown fox"
-console.log(str.slice(-4)); // "dog."
-console.log(str.slice(-9, -5)); // "lazy"
-
-
-let str = "The slice method"
-// slice()
-console.log(str.slice()) // "The slice method"
-// slice(startIndex)
-let str2 = str.slice(0) // "The slice method"
-let str2 = str.slice(1) // "he slice method"
-let str2 = str.slice(2) // "e slice method"
-let str2 = str.slice(3) // " slice method"
-let str2 = str.slice(4) // "slice method"
-// slice(startIndex, endIndex)
-let str2 = str.slice(4, 9)
-console.log(str2) // "slice"
-let str2 = str.slice(4, 11) // "slice m"
-```
-
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice">MDN String Slice</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### split
@@ -409,6 +391,178 @@ let thirdToLastLetter = firstName[firstName.length - 3];
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+## Methods in common with arrays
+
+Use these on arrays and strings.
+
+### String slice
+
+Extracts a section of a string and **<ins>returns it as a new string</ins>**, _without_ modifying the original string.
+
+MDN syntax and examples:
+```js
+slice()
+slice(beginIndex)
+slice(beginIndex, endIndex)
+
+// MDN slice()
+const str = 'The quick brown fox jumps over the lazy dog.';
+console.log(str.slice(31)); // "the lazy dog."
+console.log(str.slice(4, 19)); // "quick brown fox"
+console.log(str.slice(-4)); // "dog."
+console.log(str.slice(-9, -5)); // "lazy"
+
+
+let str = "The slice method"
+// slice()
+console.log(str.slice()) // "The slice method"
+// slice(startIndex)
+let str2 = str.slice(0) // "The slice method"
+let str2 = str.slice(1) // "he slice method"
+let str2 = str.slice(2) // "e slice method"
+let str2 = str.slice(3) // " slice method"
+let str2 = str.slice(4) // "slice method"
+// slice(startIndex, endIndex)
+let str2 = str.slice(4, 9)
+console.log(str2) // "slice"
+let str2 = str.slice(4, 11) // "slice m"
+```
+
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice">MDN String Slice</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### concat
+
+Joins two or more arrays and **<ins>returns a copy of the joined arrays</ins>**. Does not mutate the array. Can be used on strings.
+
+Examples:
+```js
+// syntax
+concat(str1)
+concat(str1, str2)
+concat(str1, str2, ... , strN)
+
+
+const str1 = 'Hello';
+const str2 = 'World';
+console.log(str1.concat(' ', str2)); // "Hello World"
+console.log(str2.concat(', ', str1)); // "World, Hello"
+
+let hello = 'Hello, '
+console.log(hello.concat('Kevin', '. Have a nice day.')) // Hello, Kevin. Have a nice day.
+```
+
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat">MDN concat</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### indexOf
+
+Given one argument: a substring to search for, searches the entire calling string, and returns the index of the first occurrence of the specified substring. Given a second argument: a number, the method returns the first occurrence of the specified substring at an index greater than or equal to the specified number.
+
+```js
+// syntax:
+indexOf(searchString)
+indexOf(searchString, position)
+
+const paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
+
+const searchTerm = 'dog';
+const indexOfFirst = paragraph.indexOf(searchTerm);
+console.log(`The index of the first "${searchTerm}" from the beginning is ${indexOfFirst}`);
+// expected output: "The index of the first "dog" from the beginning is 40"
+console.log(`The index of the 2nd "${searchTerm}" is ${paragraph.indexOf(searchTerm, (indexOfFirst + 1))}`);
+// expected output: "The index of the 2nd "dog" is 52"
+
+
+const str = 'Brave new world'
+console.log('Index of first w from start is ' + str.indexOf('w'))   // logs 8
+console.log('Index of "new" from start is ' + str.indexOf('new'))   // logs 6
+
+
+// example 2
+let str = 'finding substring in string';
+let index = str.indexOf('str');
+console.log(index); // 11
+
+
+// find count (TIPS AND TRICKS)
+let str = 'You do not know what you do not know until you know.';
+let substr = 'know';
+let count = 0;
+let index = str.indexOf(substr);
+while(index !== -1) {
+    count++;
+    index = str.indexOf(substr, index + 1);
+}
+console.log(count); // 3
+```
+
+&#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf">MDN indexOf</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### lastIndexOf
+
+**<ins>Returns the last index</ins>** at which a given element can be found in the array, or `-1` if it is not present. Can be used on strings.
+
+Examples:
+```js
+// syntax
+lastIndexOf(searchString)
+lastIndexOf(searchString, position)
+
+
+const paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
+const searchTerm = 'dog';
+console.log(`The index of the first "${searchTerm}" from the end is ${paragraph.lastIndexOf(searchTerm)}`); 
+// expected output: "The index of the first "dog" from the end is 52"
+
+
+let anyString = 'Brave, Brave New World';
+console.log('The index of the first "Brave" is ' + anyString.indexOf('Brave')); // 0
+console.log('The index of the last "Brave" is ' + anyString.lastIndexOf('Brave')); // 7
+```
+
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf">MDN lastIndexOf</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### includes
+
+Performs a case-sensitive search to determine whether one string may be found within another string, returning true or false as appropriate
+
+```js
+// syntax:
+includes(searchString)
+includes(searchString, position)
+
+
+const sentence = 'The quick brown fox jumps over the lazy dog.';
+const word = 'fox';
+console.log(`The word "${word}" ${sentence.includes(word) ? 'is' : 'is not'} in the sentence`);
+// expected output: "The word "fox" is in the sentence"
+
+
+const str = 'To be, or not to be, that is the question.'
+console.log(str.includes('To be'))        // true
+console.log(str.includes('question'))     // true
+console.log(str.includes('nonexistent'))  // false
+console.log(str.includes('To be', 1))     // false
+console.log(str.includes('TO BE'))        // false
+console.log(str.includes(''))             // true
+
+
+let str = 'Lorem ipsum';
+console.log(str.includes('ipsum')); // true
+console.log(str.includes('Ipsum')); // false
+
+
+let str = 'JavaScript String';
+console.log(str.includes('Script', 5)); // false
+console.log(str.includes('Script', 4)); // true
+```
+
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes">MDN includes</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## Syntax tables
 
 Tables by the number of arguments and whether or not the method mutates the original source.
@@ -428,16 +582,17 @@ Common methods with NO arguments/parameters:
 Common methods with a single argument, or multiple repeated arguments:
 | method  | syntax1                     | syntax2                     | Mutates? |
 | :----   | :----                       | :----                       | :----:   |
+| concat  | str.concat(str2)            | concat(str1, str2, ... , strN) | NO |
 | split   | str.split(separator)        |                             | NO |
 | repeat  | str.repeat(count)           |                             | NO | 
 | substring | str.substring(indStart)   | str.substring(indStart, indEndex) | NO |
 | replace | str.replace(regex, newStr)  | str.replace(substr, newStr) | NO |
 | test    | regex.test(str)             |                             | N/A |         
 | match   | str.match(regex)            |                             | N/A |
-| indexOf | str.indexOf(searchVal)      | str.indexOf(searchVal, fromIndex) | N/A |
-| lastIndexOf | str.lastIndexOf(searchVal) | str.lastIndexOf(searchVal, fromIndex) | N/A |
+| indexOf | str.indexOf(searchStr)      | str.indexOf(searchStr, position) | N/A |
+| lastIndexOf | str.lastIndexOf(searchStr) | str.lastIndexOf(searchStr, position) | N/A |
 | endsWith | str.endsWith(subStr)       | str.endsWith(subStr, length) | N/A |
-| includes | str.includes(searchVal)    | str.includes(searchVal, fromIndex) | N/A |
+| includes | str.includes(searchStr)    | str.includes(searchStr, position) | N/A |
 |         | splice(start, deleteCt, item1) | splice(start, deleteCt, item1, item2, ...) | YES |
 
 <br />
