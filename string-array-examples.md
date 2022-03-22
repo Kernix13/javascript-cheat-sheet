@@ -10,10 +10,11 @@ Syntax and code examples for the most coomon string and array methods.
 | ----:               | :-------    | :------     | :------     | :------     |
 | 1. [Simple array methods](#simple-array-methods): | i. [push](#push) | ii. [unshift](#unshift) | iii. [pop](#pop) | iv. [shift](#shift) |
 |                     | v. [Basic sort](#basic-sort) | vi. [reverse](#reverse) | vii. [splice](#splice) | vii. [Array slice](#array-slice) |
-|                     | ix. [concat](#concat) | x. [join](#join) | [flat](#flat) | - | 
-|                     | xi. [indexOf](#indexOf) | xii. [lastIndexOf](#lastIndexOf) | xiii. [Includes](#includes) | - |
+|                     | ix. [concat](#concat) | x. [join](#join) | xi. [flat](#flat) | xii. [isArray](#isarray) | 
+|                     | xiii. [indexOf](#indexOf) | xiv. [lastIndexOf](#lastIndexOf) | xv. [Includes](#includes) | - |
 | 2. [High order methods](#high-order-methods): | i. [Sort](#sort) | ii. [Find](#find) | iii. [Every](#every) | iv. [Some](#some) | 
 |                     | v. [Map](#map) | vi. [Filter](#filter) | vii. [forEach](#forEach) | viii. [Reduce](#reduce) |
+|                     | ix. [findIndex](#findIndex) | - | - | - |
 | 3. [String methods](#string-methods):  | i. [String slice](#string-slice) | ii. [split](#split) | iii. [substring](#substring) | iv. [repeat](#repeat) |
 |                     | v. [endsWith](#endsWith) | vi. [test](#test) | - | - |
 |                     | vii. [match](#match) | viii. [replace](#replace) | ix. [toString](#tostring) | x. [Miscellaneous](#Miscellaneous) |
@@ -25,7 +26,7 @@ Syntax and code examples for the most coomon string and array methods.
 
 ## Simple array methods
 
-Basic syntax for the most common methods. I skipped `flat()`, `findIndex()` and `Array.isArray()`.
+Basic syntax for the most common methods.
 
 ### push
 
@@ -374,18 +375,65 @@ console.log(phone.join('-')); // "123-456-7890"
 The flat() method **<ins>creates a new array</ins>** with all sub-array elements concatenated into it recursively up to the specified depth
 
 ```js
+// synatx
 flat() // defaults to a depth of 1
 flat(depth)
 
+
+// simple examples
 const arr1 = [0, 1, 2, [3, 4]];
 console.log(arr1.flat()); // [0, 1, 2, 3, 4]
 
 const arr2 = [0, 1, 2, [[[3, 4]]]];
 console.log(arr2.flat(2)); // [0, 1, 2, [3, 4]]
 console.log(arr2.flat(3)); // [0, 1, 2, 3, 4]
+
+const arr4 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
+arr4.flat(Infinity); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+// Alternatives: reduce and concat
+const arr = [1, 2, [3, 4]];
+arr.reduce((acc, val) => acc.concat(val), []); // [1, 2, 3, 4]
+// or with decomposition syntax
+const flattened = arr => [].concat(...arr);
+
+
+// Alternatives: reduce + concat + isArray + recursivity
+// Alternatives: Use a stack
+// Alternatives: Use Generator function
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat">MDN flat</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### isArray
+
+The Array.isArray() method determines whether the passed value is an Array. **Returns** `true` if the value is an Array; otherwise, `false`.
+
+```js
+// syntax
+Array.isArray(value)
+
+console.log(Array.isArray() // false
+console.log(Array.isArray({}) // false
+console.log(Array.isArray([]) // true
+
+Array.isArray([1, 2, 3]);  // true
+Array.isArray({foo: 123}); // false
+Array.isArray('foobar');   // false
+Array.isArray(undefined);  // false
+
+let arr = [1, 2, 3, [4, 5]]
+
+console.log(Array.isArray(arr)) // true
+console.log(Array.isArray(arr[2])) // false
+console.log(Array.isArray(arr[3])) // true
+```
+
+When checking for Array instance, Array.isArray is preferred over instanceof because it works through iframes.
+
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray">MDN Array.isArray</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### indexOf
@@ -1585,6 +1633,58 @@ function updateValues() {
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">MDN Reduce</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+### findIndex
+
+**<ins>Returns the index</ins>** of the first element in the array that satisfies the provided testing function. Otherwise, it returns `-1`, indicating that no element passed the test.
+
+Syntax:
+```js
+// Arrow function
+findIndex((element) => { /* ... */ } )
+findIndex((element, index) => { /* ... */ } )
+findIndex((element, index, array) => { /* ... */ } )
+
+// Callback function
+findIndex(callbackFn)
+findIndex(callbackFn, thisArg)
+
+// Inline callback function
+findIndex(function(element) { /* ... */ })
+findIndex(function(element, index) { /* ... */ })
+findIndex(function(element, index, array){ /* ... */ })
+findIndex(function(element, index, array) { /* ... */ }, thisArg)
+```
+
+MDN xamples:
+```js
+const array1 = [5, 12, 8, 130, 44];
+const isLargeNumber = (element) => element > 13;
+console.log(array1.findIndex(isLargeNumber)); // 3
+
+
+// Find the index of a prime number in an array
+function isPrime(num) {
+  for (let i = 2; num > i; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  return num > 1;
+}
+console.log([4, 6, 8, 9, 12].findIndex(isPrime)); // -1, not found
+console.log([4, 6, 7, 9, 12].findIndex(isPrime)); // 2 (array[2] is 7)
+
+
+// Find index using arrow function
+const fruits = ["apple", "banana", "cantaloupe", "blueberries", "grapefruit"];
+const index = fruits.findIndex(fruit => fruit === "blueberries");
+console.log(index); // 3
+console.log(fruits[index]); // blueberries
+```
+
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex">MDN findIndex</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## String methods
 
 `str.toLowerCase()`, `str.toUpperCase()`, and `str.trim()` are so basic that I am not providing examples. Just attach one of these methods to the variable name for your string: e.g.:
@@ -2104,6 +2204,7 @@ Common methods with a single argument, or multiple repeated arguments:
 | :----   | :----                       | :----                       | :----:   |
 | join    | arr.join(separator)         |                             | NO |
 | flat    | flat(depth)                 |                             | NO |
+| isArray | Array.isArray(value)        |                             | NO |
 | slice   | arr.slice(start)            |                             | NO |
 | split   | str.split(separator)        |                             | NO |
 | repeat  | str.repeat(count)           |                             | NO | 
@@ -2155,11 +2256,12 @@ High order array methods with **callback** function:
 | some    | some(callbackFn)  | some(callbackFn, thisArg) | N/A |
 | find    | find(callbackFn)  | find(callbackFn, thisArg) | NO |
 | map     | map(callbackFn)   | map(callbackFn, thisArg) | NO |
+| findIndex | findIndex(callbackFn) | findIndex(callbackFn, thisArg) | NO |
 | filter  | filter(callbackFn) | filter(callbackFn, thisArg) | NO |
 | forEach | forEach(callbackFn) | forEach(callbackFn, thisArg) | NO |
 | reduce  | reduce(callbackFn) | reduce(callbackFn, initialValue) | NO |
 
-- `thisArg` for `find`: Object to use as `this` inside `callbackFn`
+- `thisArg` for `find` and `findIndex`: Object to use as `this` inside `callbackFn`
 - `thisArg` for the other 5 methods: Value to use as `this` when executing `callbackFn` (same thing?)
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -2175,6 +2277,8 @@ Single argument/parameter:
 |         | arr.some(function(item) { ... } ) | - |
 | find    | arr.find((item) => { ... } )      | NO |
 |         | arr.find(function(item) { ... } ) | - |
+| findIndex | arr.findIndex((item) => { ... } ) | NO |
+|         | arr.findIndex(function(item) { ... } ) | - |
 | map     | arr.map((item) => { ... } )       | NO |
 |         | arr.map(function(item) { ... } )  | - |
 | filter  | arr.filter((item) => { ... } )    | NO |
@@ -2195,6 +2299,8 @@ Single argument/parameter:
 |         | arr.some(function(item, index) { ... }) | - |
 | find    | arr.find((item, index) => { ... } )   | NO |
 |         | arr.find(function(item, index) { ... } ) | - |
+| findIndex | arr.findIndex((item, index) => { ... } )   | NO |
+|         | arr.findIndex(function(item, index) { ... } ) | - |
 | map     | arr.map((item, index) => { ... })     | NO |
 |         | arr.map(function(item, index) { ... } ) | - |
 | filter  | arr.filter((item, index) => { ... } ) | NO |
@@ -2215,6 +2321,8 @@ Single argument/parameter:
 |         | arr.some(function(item, index, array){ ... })   | - |
 | find    | arr.find((item, index, array) => { ... } )      | NO |
 |         | arr.find(function(item, index, array) { ... } ) | - |
+| findIndex | arr.findIndex((item, index, array) => { ... } )      | NO |
+|         | arr.findIndex(function(item, index, array) { ... } ) | - |
 | map     | arr.map((item, index, array) => { ... })        | NO |
 |         | arr.map(function(item, index, array){ ... } )   | - |
 | filter  | arr.filter((item, index, array) => { ... } )    | NO |
@@ -2232,6 +2340,7 @@ Single argument/parameter:
 | every   | arr.every(function(item, index, array) { ... }, thisArg) | N/A |
 | some    | arr.some(function(item, index, array) { ... }, thisArg) | N/A |
 | find    | arr.find(function(item, index, array) { ... }, thisArg) | NO |
+| findIndex | arr.findIndex(function(item, index, array) { ... }, thisArg) | NO |
 | map     | arr.map(function(item, index, array) { ... }, thisArg) | NO |
 | filter  | arr.filter(function(item, index, array) { ... }, thisArg) | NO |
 | forEach | arr.forEach(function(item, index, array) { ... }, thisArg) | NO |

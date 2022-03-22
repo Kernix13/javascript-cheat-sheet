@@ -456,26 +456,26 @@ SKIPPED DUE TO DIFFICULTY:
 
 Solutions:
 1. sum all numbers in a range: `for loop` with `Math.min`, `Math.max`, and `+=`
-1. diff two arrays: `concat()`, `filter()`, `!includes()`
-1. seek and destroy: <ins>rest parameter</ins>, <ins>spread operator</ins>, `filter()`, `includes()`
-1. wherefore art thou: SKIPPED
-1. spinal tap case: RegEx
-1. pig latin: RegEx
-1. 
-1.  
-1.  
-1.  
-1.  
-1.  
-1.  
-1.  
-1.  
-1.  
-1.  
-1.  
-1.  
-1.  
-1.  
+2. diff two arrays: `concat()`, `filter()`, `!includes()`
+3. seek and destroy: <ins>rest parameter</ins>, <ins>spread operator</ins>, `filter()`, `includes()`
+4. wherefore art thou: SKIPPED
+5. spinal tap case: RegEx
+6. pig latin: RegEx
+7. search and replace: 
+8. dna pairing: 
+9. missing letters: 
+10. sorted union: 
+11. convert html entities: 
+12. sum all odd Fibonacci #’s: 
+13. sum all primes: 
+14. smallest common multiple: 
+15. drop it: 
+16. steamroller: RECURSION
+17. binary agents: 
+18. everything be true: 
+19. arguments optional: 
+20. make a person: 
+21. map the debris: 
 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div> 
