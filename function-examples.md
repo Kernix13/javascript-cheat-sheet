@@ -34,6 +34,11 @@ Here are docs from MDN:
    1. [Rest and spread syntax](#rest-and-spread-syntax)
    1. [Default parameters](#default-parameters)
    1. [Miscellaneous](#miscellaneous)
+1. [Function methods](#function-methods)
+   1. [apply](#apply)
+   1. [bind](#bind)
+   1. [call](#call)
+   1. [toString](#tostring)
 1. [Nested functions](#nested-functions)
    1. [Multiple nested functions](#multiple-nested-functions)
    1. [Closures](#closures)
@@ -55,6 +60,8 @@ Here are docs from MDN:
    1. [Randon stuff](#randon-stuff)
 
 ## General
+
+Look into the function properties: `.length`, and maybe `.name`. Also check out the function methods: `apply()`, `bind()`, `call()`, and `toString()`.
 
 ### Definitions
 
@@ -193,6 +200,67 @@ function boolReturn(test) {
   // return typeof test === "boolean";
 }
 console.log(boolReturn([1,2,3]));
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div> 
+
+## Function methods
+
+Also look into 
+
+- [get and getter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get): The `get` syntax binds an object property to a function that will be called when that property is looked up.
+- [set and setter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set): The `set` syntax binds an object property to a function to be called when there is an attempt to set that property. 
+
+### apply
+
+The [apply()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply) method **<ins>calls a function</ins>** with a given `this` value, and `arguments` provided as an array (or an array-like object).
+
+```js
+// syntax:
+apply(thisArg)
+apply(thisArg, argsArray)
+```
+
+<br />
+
+### bind
+
+The [bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) method creates a new function that, when called, has its `this` keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
+
+I've seen Brad Traversy use this one in some of his lessons. 
+
+```js
+// syntax:
+bind(thisArg)
+bind(thisArg, arg1)
+bind(thisArg, arg1, arg2)
+bind(thisArg, arg1, ... , argN)
+```
+
+<br />
+
+### call
+
+The [call()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call) method calls a function with a given `this` value and arguments provided individually.
+
+```js
+// syntax:
+call()
+call(thisArg)
+call(thisArg, arg1)
+call(thisArg, arg1, arg2)
+call(thisArg, arg1, ... , argN)
+```
+
+<br />
+
+### toString
+
+The [toString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/toString) method returns a string representing the source code of the function. 
+
+```js
+// syntax:
+toString()
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div> 
