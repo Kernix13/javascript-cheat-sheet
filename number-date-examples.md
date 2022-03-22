@@ -29,6 +29,9 @@ Here are links to MDN docs for the methods below:
 | [MDN isFinite](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isFinite) | [MDN isInteger](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger)  | [MDN parseFloat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseFloat) | 
 | [MDN parseInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) | | |
 
+
+Skipped: Number.isSafeInteger(), Number.prototype.toLocaleString(), Number.prototype.toString(), and Number.prototype.valueOf(). 
+
 <br />
 
 The `toExponential()` method returns a string representing the Number object in exponential notation. 

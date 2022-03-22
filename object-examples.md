@@ -6,13 +6,15 @@ Syntax and code examples for the most coomon object methods
 
 ## Table of contents
 
-1. [Object keys](#object-keys)
-1. [Object values](#object-values)
-1. [hasOwnProperty](#hasOwnProperty)
-1. [prototype](#prototype)
-1. [instanceof](#instanceof)
-1. [isPrototypeOf](#isprototypeof)
-1. [Object create](#object-create)
+1. [Common object methods](#common-object-methods)
+   1. [Object keys](#object-keys)
+   1. [Object values](#object-values)
+   1. [hasOwnProperty](#hasOwnProperty)
+   1. [prototype](#prototype)
+   1. [instanceof](#instanceof)
+   1. [isPrototypeOf](#isprototypeof)
+   1. [Object create](#object-create)
+1. [inheritance](#inheritance)
 1. [for in loop](#for-in-loop)
 1. [Modify values and remove keys](#modify-values-and-remove-keys)
 1. [Classes](#classes)
@@ -24,10 +26,22 @@ Syntax and code examples for the most coomon object methods
 1. [Miscellaneous](#miscellaneous)
 1. [Syntax tables](#syntax-tables)
 
-Common Object methods:
+## Common Object methods
 
+Here are the most common object methods and properties. I skipped:
 
-## Object keys
+- [Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign): copies all enumerable own properties from one or more source objects to a target object. It returns the modified target object
+- [Object.defineProperties()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties): defines new or modifies existing properties directly on an object, returning the object
+- [Object.defineProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty): defines a new property directly on an object, or modifies an existing property on an object, and returns the object
+- [Object.entries()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries): returns an array of a given object's own enumerable string-keyed property `[key, value]` pairs. This is the same as iterating with a `for...in` loop, except that a `for...in` loop enumerates properties in the prototype chain as well.
+- [Object.freeze()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze): freezes an object. A frozen object can no longer be changed; freezing an object prevents new properties from being added to it, existing properties from being removed, prevents changing the enumerability, configurability, or writability of existing properties, and prevents the values of existing properties from being changed. In addition, freezing an object also prevents its prototype from being changed. `freeze()` returns the same object that was passed in.
+- And these: Object.fromEntries(), Object.getOwnPropertyDescriptor(), Object.getOwnPropertyDescriptors(), Object.getOwnPropertyNames(), Object.getOwnPropertySymbols(), Object.getPrototypeOf(), Object.is(),  Object.isExtensible(), Object.isFrozen(), Object.prototype.isPrototypeOf(), Object.isSealed(), Object.preventExtensions(), Object.prototype.propertyIsEnumerable(), Object.seal(), Object.setPrototypeOf(), Object.prototype.toLocaleString(), Object.prototype.toString(), and Object.prototype.valueOf(). 
+
+See the [MDN Object docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) for more on those methods.
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Object keys
 
 [MDN Object.keys docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys): Returns an array of the key names iterated in the same order that a normal loop would.
 
@@ -61,7 +75,7 @@ console.log(Object.keys(chordIntervals.scales)) // ["Major Scale","Minor Pentato
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Object values
+### Object values
 
 [MDN Object.values docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Object/values): Returns an array of the values for each key/property in the same order as that provided by a `for...in` loop.
 
@@ -80,7 +94,7 @@ console.log(Object.values(chordIntervals)) // ["maj", ["1","3","5"], [0,4,7]]
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## hasOwnProperty
+### hasOwnProperty
 
 [MDN hasOwnProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty): Returns `true` if the object has the specified property as its own property (as opposed to inheriting it); `false` otherwise.
 
@@ -143,7 +157,7 @@ for (let property in duck) {
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## prototype
+### prototype
 
 [MDN prototype](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes): the mechanism by which JavaScript objects inherit features from one another.
 
@@ -180,7 +194,7 @@ All objects in JavaScript (with a few exceptions) have a prototype - Because a p
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## instanceof
+### instanceof
 
 [MDN instanceof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof): tests to see if the prototype property of a constructor appears anywhere in the prototype chain of an object. The return value is a boolean value. Returns true if an object is an instance of an object type. 
 
@@ -242,7 +256,7 @@ let b = mycar instanceof Object  // returns true
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## isPrototypeOf
+### isPrototypeOf
 
 [MDN isPrototypeOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf): checks if an object exists in another object's prototype chain
 
@@ -273,7 +287,7 @@ console.log(Object.prototype.isPrototypeOf(Bird.prototype)); // true
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Object create
+### Object create
 
 [MDN Object.create](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create): creates a new object, using an existing object as the prototype of the newly created object - an alternate approach for inheritance rather than `new ClssName()`.
 
