@@ -30,7 +30,7 @@ Here are links to MDN docs for the methods below:
 | [MDN parseInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) | | |
 
 
-Skipped: Number.isSafeInteger(), Number.prototype.toLocaleString(), Number.prototype.toString(), and Number.prototype.valueOf(). 
+Skipped: `Number.isSafeInteger()`, `toLocaleString()`, `toString()`, and `valueOf()`. 
 
 <br />
 
@@ -252,7 +252,7 @@ Here are links to MDN docs for the most common Math methods:
 
 <br />
 
-Math.abs(x)
+`Math.abs()`
 
 ```js
 // syntax
@@ -282,7 +282,7 @@ Math.abs();         // NaN
 
 <br />
 
-Math.ceil(x): always rounds a number up to the next largest integer.
+`Math.ceil()`: always rounds a number up to the next largest integer.
 ```js
 // syntax
 Math.ceil(x)
@@ -297,7 +297,7 @@ console.log(Math.ceil(-7.004)); // -7
 
 <br />
 
-Math.floor(x): returns the largest integer less than or equal to a given number
+`Math.floor()`: returns the largest integer less than or equal to a given number
 ```js
 // syntax
 Math.floor(x)
@@ -314,7 +314,7 @@ Math.floor(-45.95); // -46
 
 <br />
 
-Math.random(x): returns a floating-point, pseudo-random number in the range 0 to less than 1 (inclusive of 0, but not 1) with approximately uniform distribution over that range — which you can then scale to your desired range
+`Math.random()`: returns a floating-point, pseudo-random number in the range 0 to less than 1 (inclusive of 0, but not 1) with approximately uniform distribution over that range — which you can then scale to your desired range
 
 ```js
 // syntax
@@ -333,7 +333,7 @@ console.log(Math.random()); // 0.random numbers
 
 <br />
 
-Math.round(x): returns the value of a number rounded to the nearest integer
+`Math.round()`: returns the value of a number rounded to the nearest integer
 ```js
 // syntax
 Math.round(x)
@@ -354,7 +354,7 @@ Math.round(-20.51); // -21
 
 <br />
 
-Math.sign(x): returns either a positive or negative +/- 1, indicating the sign of a number passed into the argument. If the number passed into `Math.sign()` is 0, it will return a +/- 0. Note that if the number is positive, an explicit (+) will not be returned.
+`Math.sign()`: returns either a positive or negative +/- 1, indicating the sign of a number passed into the argument. If the number passed into `Math.sign()` is 0, it will return a +/- 0. Note that if the number is positive, an explicit (+) will not be returned.
 
 ```js
 // syntax
@@ -380,7 +380,7 @@ Math.sign();      // NaN
 
 <br />
 
-Math.sqrt(x): returns the square root of a number
+`Math.sqrt()`: returns the square root of a number
 ```js
 // syntax
 Math.sqrt(x)
@@ -405,7 +405,7 @@ Math.sqrt(-0); // -0
 
 <br />
 
-Math.trunc(x): returns the integer part of a number by removing any fractional digits
+`Math.trunc()`: returns the integer part of a number by removing any fractional digits
 ```js
 // syntax
 Math.trunc(x)
@@ -430,7 +430,7 @@ Math.trunc();         // NaN
 
 <br />
 
-Math.max(): returns the largest of the zero or more numbers given as input parameters, or `NaN` if any parameter isn't a number and can't be converted into one. 
+`Math.max()`: returns the largest of the zero or more numbers given as input parameters, or `NaN` if any parameter isn't a number and can't be converted into one. 
 
 ```js
 // syntax
@@ -460,7 +460,7 @@ let max = arr.reduce(function(a, b) {
 
 <br />
 
-Math.min(): returns the lowest-valued number passed into it, or `NaN` if any parameter isn't a number and can't be converted into one.
+`Math.min()`: returns the lowest-valued number passed into it, or `NaN` if any parameter isn't a number and can't be converted into one.
 
 ```js
 // syntax
@@ -483,7 +483,7 @@ let z = Math.min(x, y);
 
 <br />
 
-Math.pow(x, y): static method, given two arguments, _base_ and _exponent_, returns `base` <sup>`exp`</sup>.
+`Math.pow(x, y)`: static method, given two arguments, _base_ and _exponent_, returns `base` <sup>`exp`</sup>.
 
 ```js
 // syntax
@@ -524,7 +524,7 @@ console.log(phi) // 1.618033988749895
 
 <br />
 
-Math.floor(Math.random()): 105 generate random  whole numbers w\in a range:
+`Math.floor(Math.random())`: 105 generate random  whole numbers w\in a range:
 ```js
 function randomRange(myMin, myMax) {
   return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
