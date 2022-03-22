@@ -2243,7 +2243,7 @@ let newString = 'abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer);
 console.log(newString);  // abc - 12345 - #$*%
 ```
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### High order array
 
@@ -2285,7 +2285,7 @@ Single argument/parameter:
 | forEach | arr.forEach((item) => { ... } )   | NO |
 |         | forEach(function(item) { ... } )  | - |
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 **arrow** and inline functions with two arguments/parameters:
 | method  | syntax                                | Mutates? |
@@ -2309,7 +2309,7 @@ Single argument/parameter:
 | reduce  | arr.reduce((prevVal, currVal) => { ... } ) | NO |
 |         | arr.reduce(function(prevVal, currVal) { ... } ) | - |
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 **arrow** and inline functions with three arguments/parameters:
 | method  | syntax                                          | Mutates? |
@@ -2331,7 +2331,7 @@ Single argument/parameter:
 | reduce  | arr.reduce((prevVal, currVal, currInd) => { ... } ) | NO |
 |         | arr.reduce(function(prevVal, currVal, currIndex) { ... } ) | - |
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 **arrow** and inline functions with four and five arguments/parameters:
 | method  | syntax                                                  | Mutates? |
@@ -2354,7 +2354,7 @@ Single argument/parameter:
 - `initialValue`: A value to which `previousValue` is initialized the first time the callback is called. If `initialValue` is specified, that also causes `currentValue` to be initialized to the first value in the array. If `initialValue` is not specified, `previousValue` is initialized to the first value in the array, and `currentValue` is initialized to the second value in the array. Sometimes called the **_initial accumulator_** because you will be accumulating on the values, `0` is common.
 - `TypeError`: The array contains no elements and `initialValue` is not provided
 
-<br />
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Destructuring
 
