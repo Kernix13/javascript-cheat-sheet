@@ -9,9 +9,9 @@ Syntax and code examples for the most coomon array methods.
 | Topic               | Sub-topic | Sub-topic | Sub-topic | Sub-topic |  
 | ----:               | :-------    | :------     | :------     | :------     |
 | 1. [Simple array methods](#simple-array-methods): | i. [push](#push) | ii. [unshift](#unshift) | iii. [pop](#pop) | iv. [shift](#shift) |
-|                     | v. [Basic sort](#basic-sort) | vi. [reverse](#reverse) | vii. [splice](#splice) | vii. [Array slice](#array-slice) |
+|                     | v. [Basic sort](#basic-sort) | vi. [reverse](#reverse) | vii. [splice](#splice) | viii. [Array slice](#array-slice) |
 |                     | ix. [concat](#concat) | x. [join](#join) | xi. [flat](#flat) | xii. [isArray](#isarray) | 
-|                     | xiii. [indexOf](#indexOf) | xiv. [lastIndexOf](#lastIndexOf) | xv. [Includes](#includes) | [toString](#tostring) |
+|                     | xiii. [indexOf](#indexOf) | xiv. [lastIndexOf](#lastIndexOf) | xv. [Includes](#includes) | xvi. [toString](#tostring) |
 | 2. [High order methods](#high-order-methods): | i. [Sort](#sort) | ii. [Find](#find) | iii. [Every](#every) | iv. [Some](#some) | 
 |                     | v. [Map](#map) | vi. [Filter](#filter) | vii. [forEach](#forEach) | viii. [Reduce](#reduce) |
 |                     | ix. [findIndex](#findIndex) | - | - | - |
@@ -1858,20 +1858,25 @@ Common methods with a single argument, or multiple repeated arguments:
 | slice   | arr.slice(start)            |                             | NO |
 | concat  | arr.concat(arr2)            | arr.concat(arr2, arr3, ...)     | NO |
 |         | arr.concat(item)            | arr.concat(item1, item2, ...)   | NO |
-| indexOf | arr.indexOf(searchVal)      | arr.indexOf(searchVal, fromIndex) | N/A |
-| lastIndexOf | str.lastIndexOf(searchVal) | arr.lastIndexOf(searchVal, fromIndex) | N/A |
-| includes | arr.includes(searchVal)    | arr.includes(searchVal, fromIndex) | N/A |
+| indexOf | arr.indexOf(searchVal)      |                              | N/A |
+| lastIndexOf | str.lastIndexOf(searchVal) |                           | N/A |
+| includes | arr.includes(searchVal)    |                              | N/A |
 | push    | arr.push(item)              | push(item1, item2, ...)     | YES |
 | unshift | arr.unshift(item)           | unshift(item1, item2, ...)  | YES |
-| splice  | arr.splice(start)           | splice(start, deleteCt) | YES | 
-|         | splice(start, deleteCt, item1) | splice(start, deleteCt, item1, item2, ...) | YES |
+| splice  | arr.splice(start)           |                              | YES | 
+
 
 <br />
 
-Common method with two arguments:
+Common method with two or more arguments:
 | method    | syntax1                 | syntax2                 | Mutates? |
 | :----     | :----                   | :----                   | :----:   |
 | slice     | arr.slice(start, end)   |                         | NO |
+| indexOf | arr.indexOf(searchVal, fromIndex) |                 | N/A |
+| lastIndexOf | arr.lastIndexOf(searchVal, fromIndex) |         | N/A |
+| includes | arr.includes(searchVal, fromIndex) |               | N/A |
+| splice  | splice(start, deleteCt)   | splice(start, deleteCt, item1) | YES | 
+|         | splice(start, deleteCt, item1, item2, ...) |        | YES |
 
 Example:
 ```js
