@@ -372,13 +372,12 @@ console.log(phone.join('-')); // "123-456-7890"
 
 ### flat
 
-The flat() method **<ins>creates a new array</ins>** with all sub-array elements concatenated into it recursively up to the specified depth
+**<ins>Creates a new array</ins>** with all sub-array elements concatenated into it recursively up to the specified depth.
 
 ```js
 // synatx
 flat() // defaults to a depth of 1
 flat(depth)
-
 
 // simple examples
 const arr1 = [0, 1, 2, [3, 4]];
@@ -409,7 +408,7 @@ const flattened = arr => [].concat(...arr);
 
 ### isArray
 
-The Array.isArray() method determines whether the passed value is an Array. **Returns** `true` if the value is an Array; otherwise, `false`.
+Determines whether the passed value is an Array. **<ins>Returns `true`</ins>** if the value is an Array; otherwise, **<ins>`false`</ins>**.
 
 ```js
 // syntax
@@ -424,8 +423,8 @@ Array.isArray({foo: 123}); // false
 Array.isArray('foobar');   // false
 Array.isArray(undefined);  // false
 
-let arr = [1, 2, 3, [4, 5]]
 
+let arr = [1, 2, 3, [4, 5]]
 console.log(Array.isArray(arr)) // true
 console.log(Array.isArray(arr[2])) // false
 console.log(Array.isArray(arr[3])) // true
@@ -589,7 +588,7 @@ localeCompare(compareString, locales, options)
 
 The `localeCompare()` method returns a number indicating whether a reference string comes before, or after, or is the same as the given string in sort order: [MDN localeCompare](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare).
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">MDN Sort</a></div>
+<div align="left">&#8675; <a href="#high-order-array" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">MDN Sort</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Find
@@ -674,7 +673,7 @@ console.log([4, 6, 8, 12].find(isPrime)); // undefined
 console.log([4, 5, 8, 12].find(isPrime)); // 5
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find">MDN Find</a></div></div>
+<div align="left">&#8675; <a href="#high-order-array" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find">MDN Find</a></div></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Every
@@ -736,7 +735,7 @@ let checkNums = nums.every(findPositive);
 console.log(checkNums) // false
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every">MDN Every</a></div>
+<div align="left">&#8675; <a href="#high-order-array" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every">MDN Every</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Some
@@ -847,7 +846,7 @@ function checkAvailability(arr, val) {
 
 **NOTE**: I've seen examples where `some()` is used to check for the existence of a value in an array - why not just use `includes()`? You can not use `hasOwnProperty` for the `hasLastName` object example because the variable is an array, not an object.
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some">MDN Some</a></div>
+<div align="left">&#8675; <a href="#high-order-array" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some">MDN Some</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Map
@@ -987,7 +986,7 @@ console.log(reformattedArray) // {"1": 10}, {"2": 20}, {"3": 30}
 **NOTE**: Look into [**Array.from()**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from) and constrast with `.map()`. Check out [Stackoverflow: Array.from vs Array.prototype.map](https://stackoverflow.com/questions/26052699/array-from-vs-array-prototype-map).
 
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">MDN Map</a></div>
+<div align="left">&#8675; <a href="#high-order-array" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">MDN Map</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Filter
@@ -1146,7 +1145,7 @@ whatIsInAName(
 
 <br />
 
-`filter()` solution "skeletons" (looking for patterns):
+`filter()` solution "skeletons" (looking for patterns because I find this one difficult):
 ```js
 1) .filter(item => ...).sort((a, b) => ...)
 2) .filter(function(item) => for loop)
@@ -1162,7 +1161,7 @@ Traversy) .filter .reduce .toFixed
 COUNT TOTALS: "if's" (4), includes (3), multiple returns (3), reduce(2), rest op, map, concat, indexOf, sort, hasOwnProperty => the multiple returns really throws me off!
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">MDN Filter</a></div>
+<div align="left">&#8675; <a href="#high-order-array" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">MDN Filter</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### forEach
@@ -1354,7 +1353,7 @@ function populateUI() {
   }
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">MDN forEach</a></div>
+<div align="left">&#8675; <a href="#high-order-array" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">MDN forEach</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Reduce
@@ -1630,7 +1629,7 @@ function updateValues() {
 }
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">MDN Reduce</a></div>
+<div align="left">&#8675; <a href="#high-order-array" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">MDN Reduce</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### findIndex
@@ -1682,7 +1681,7 @@ console.log(index); // 3
 console.log(fruits[index]); // blueberries
 ```
 
-<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex">MDN findIndex</a></div>
+<div align="left">&#8675; <a href="#high-order-array" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex">MDN findIndex</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## String methods
