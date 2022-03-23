@@ -640,6 +640,7 @@ console.log(day1); // 2
 let dayOfWeek = new Date().getDay() // returns weekday as a number 0-6
 ```
 
+<div align="left">&#8675; <a href="#get-dates" title="get-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getDay">MDN getDay</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <br />
@@ -658,6 +659,7 @@ let today = new Date();
 let year = today.getFullYear();
 ```
 
+<div align="left">&#8675; <a href="#get-dates" title="get-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear">MDN getFullYear</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <br />
@@ -676,6 +678,7 @@ let hours = Xmas95.getHours();
 console.log(hours); // 23
 ```
 
+<div align="left">&#8675; <a href="#get-dates" title="get-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours">MDN getHours</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <br />
@@ -695,6 +698,7 @@ let today = new Date();
 let milliseconds = today.getMilliseconds();
 ```
 
+<div align="left">&#8675; <a href="#get-dates" title="get-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMilliseconds">MDN getMilliseconds</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <br />
@@ -714,6 +718,7 @@ let minutes = Xmas95.getMinutes();
 console.log(minutes); // 15
 ```
 
+<div align="left">&#8675; <a href="#get-dates" title="get-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMinutes">MDN getMinutes</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <br />
@@ -733,6 +738,7 @@ let month = Xmas95.getMonth();
 console.log(month); // 11
 ```
 
+<div align="left">&#8675; <a href="#get-dates" title="get-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth">MDN getMonth</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <br />
@@ -752,6 +758,7 @@ let seconds = Xmas95.getSeconds();
 console.log(seconds); // 30
 ```
 
+<div align="left">&#8675; <a href="#get-dates" title="get-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getSeconds">MDN getSeconds</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <br />
@@ -772,6 +779,7 @@ let copy = new Date();
 copy.setTime(birthday.getTime());
 ```
 
+<div align="left">&#8675; <a href="#get-dates" title="get-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime">MDN getTime</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Date set methods
@@ -803,6 +811,7 @@ console.log(eventDate.getDate()); // 24
 console.log(eventDate.getDate()); // 1
 ```
 
+<div align="left">&#8675; <a href="#set-dates" title="set-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setDate">MDN setDate</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <br />
@@ -826,6 +835,7 @@ let theBigDay = new Date();
 theBigDay.setFullYear(1997); // 858196084256
 ```
 
+<div align="left">&#8675; <a href="#set-dates" title="set-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setFullYear">MDN setFullYear</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <br />
@@ -849,6 +859,7 @@ let theBigDay = new Date();
 theBigDay.setHours(7); // 1647089217263
 ```
 
+<div align="left">&#8675; <a href="#set-dates" title="set-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours">MDN setHours</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <br />
@@ -868,6 +879,7 @@ let theBigDay = new Date();
 theBigDay.setMilliseconds(100); // 1647114589100
 ```
 
+<div align="left">&#8675; <a href="#set-dates" title="set-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setMilliseconds">MDN setMilliseconds</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <br />
@@ -889,6 +901,7 @@ let theBigDay = new Date();
 theBigDay.setMinutes(45); // 1647114346721
 ```
 
+<div align="left">&#8675; <a href="#set-dates" title="set-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setMinutes">MDN setMinutes</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <br />
@@ -914,6 +927,7 @@ endOfMonth.setMonth(1);
 console.log(endOfMonth); // Wed Mar 02 2016 00:00:00 GMT-0500 (Eastern Standard Time)
 ```
 
+<div align="left">&#8675; <a href="#set-dates" title="set-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setMonth">MDN setMonth</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <br />
@@ -934,6 +948,7 @@ let theBigDay = new Date();
 theBigDay.setSeconds(30); // 1647114870198
 ```
 
+<div align="left">&#8675; <a href="#set-dates" title="set-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setSeconds">MDN setSeconds</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <br />
@@ -955,6 +970,7 @@ let sameAsBigDay = new Date();
 sameAsBigDay.setTime(theBigDay.getTime()); // 930801600000
 ```
 
+<div align="left">&#8675; <a href="#set-dates" title="set-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setTime">MDN setTime</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <br />
@@ -974,6 +990,7 @@ let theBigDay = new Date();
 theBigDay.setUTCDate(20); // 1647806212312
 ```
 
+<div align="left">&#8675; <a href="#set-dates" title="set-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCDate">MDN setUTCDate</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 Why use `toString()`?
