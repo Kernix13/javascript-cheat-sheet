@@ -261,6 +261,8 @@ Here are links to MDN docs for the most common Math methods:
 | [MDN Math.sqrt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt) | [MDN Math.trunc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc) | [MDN Math.max](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max) |
 | [MDN Math.min](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min) | [MDN Math.pow](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow) |  | 
 
+<br />
+
 ### absolute
 
 `Math.abs()`
@@ -404,7 +406,7 @@ Math.sign();      // NaN
 <div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign">MDN Math.sign</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-### sign
+### square root
 
 `Math.sqrt()`: returns the square root of a number
 ```js
@@ -430,7 +432,7 @@ Math.sqrt(-0); // -0
 <div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt">MDN Math.sqrt</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-### square root
+### truncate
 
 `Math.trunc()`: returns the integer part of a number by removing any fractional digits
 ```js
@@ -1118,8 +1120,8 @@ No parameter
 | "method"      | syntax            | Notes             | 
 | :----         | :----             | :----             |
 | assign/augment | +=, -=, *=, /=   | modify a variable | 
-| increment     | i++, varName++    | increment a # ny 1 |
-| decrement     | i--, varName--    | decrement a # ny 1 |
+| increment     | i++, varName++    | increment a # by 1 |
+| decrement     | i--, varName--    | decrement a # by 1 |
 | toExponential | num.toExponential() | Skip this one   |  
 | toFixed       | num.toFixed()     | Definitely use    |
 | toPrecision   | num.toPrecision() | Maybe             |
