@@ -6,18 +6,20 @@ Simple number, Math, and Date examples.
 
 ## Table of contents
 
-1. [Number methods](#number-methods)
-1. [Math methods](#math-methods)
-1. [Spread operator](#spread-operator)
-1. [Rest parameter](#rest-parameter)
-1. [Date examples](#date-examples)
-   1. [Date get methods](#date-get-methods)
-	 1. [Date set methods](#date-set-methods)
-1. [Miscellaneous](#miscellaneous)
-1. [Syntax tables](#syntax-tables)
-   1. [Numbers](#numbers)
-   1. [Get dates](#get-dates)
-   1. [Set dates](#set-dates)
+| Topic                               | Sub-topic | Sub-topic | Sub-topic | 
+| ----:                               | :-------    | :------     | :------     | 
+| [Number methods](#number-methods):  | [toExponential](#toexponential) | [toFixed](#tofixed) | [toPrecision](#toprecision) | 
+|                                     | [isFinite](#isfinite) | [isInteger](#isinteger) | [parseFloat](#parsefloat) | 
+|                                     | [parseInt](#parseint) |  |  | 
+| [Math methods](#math-methods):      | [absolute](#absolute) | [ceiling](#ceiling) | [floor](#floor) | 
+|                                     | [random](#random) | [round](#round) | [sign](#sign) | 
+|                                     | [square root](#square-root) | [truncate](#truncate) | [max](#max) | 
+|                                     | [min](#) | [power](#) | | 
+| [Spread operator](#spread-operator) | | | | 
+| [Rest parameter](#rest-parameter)   | | | | 
+| [Date examples](#date-examples)     | [Date get methods](#date-get-methods) | [Date set methods](#date-set-methods) | | 
+| [Miscellaneous](#miscellaneous) | | | | 
+| [Syntax tables](#syntax-tables) | [Numbers](#numbers) | [Get dates](#get-dates) | [Set dates](#set-dates) | 
 
 ## Number methods
 
@@ -32,7 +34,7 @@ Here are links to MDN docs for the methods below:
 
 Skipped: `Number.isSafeInteger()`, `toLocaleString()`, `toString()`, and `valueOf()`. 
 
-<br />
+### toExponential
 
 The `toExponential()` method returns a string representing the Number object in exponential notation. 
 
@@ -52,9 +54,10 @@ console.log(expo('123456')); // "1.23456e+5"
 console.log(expo('word')); // NaN
 ```
 
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toExponential">MDN toExponential</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-<br />
+### toFixed
 
 The `toFixed()` method formats a number using fixed-point notation. 
 
@@ -87,9 +90,10 @@ numObj.toFixed(6)      // '12345.678900': note added zeros
 (-2.34).toFixed(1)     // '-2.3'
 ```
 
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed">MDN toFixed</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-<br />
+### toPrecision
 
 The `toPrecision() `method returns a string representing the Number object to the specified precision. 
 
@@ -122,9 +126,10 @@ console.log(numObj.toPrecision(2))   // logs '0.00012'
 console.log(numObj.toPrecision(1))   // logs '0.0001'
 ```
 
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision">MDN toPrecision</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-<br />
+### isFinite
 
 The global `isFinite()` function determines whether the passed value is a finite number. If needed, the parameter is first converted to a number.
 
@@ -153,9 +158,10 @@ isFinite(null);      // true, would've been false with the more robust Number.is
 isFinite('0');       // true, would've been false with the more robust Number.isFinite("0")
 ```
 
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isFinite">MDN isFinite</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-<br />
+### isInteger
 
 The `Number.isInteger()` method determines whether the passed value is an integer.
 
@@ -195,9 +201,10 @@ Number.isInteger(5.000000000000001); // false
 Number.isInteger(5.0000000000000001); // true
 ```
 
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger">MDN isInteger</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-<br />
+### parseFloat
 
 The `Number.parseFloat()` method parses an argument and returns a floating point number. If a number cannot be parsed from the argument, it returns `NaN`.
 
@@ -210,7 +217,10 @@ Number.parseFloat(string)
 // confusing
 ```
 
-<br />
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseFloat">MDN parseFloat</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### parseInt
 
 The `parseInt()` function parses a string argument and returns an integer of the specified radix. `radix`: An integer between `2` and `36` that represents the radix (the base in mathematical numeral systems) of the string. Be careful—this does not default to `10`! If the radix value is not of the `Number` type it will be coerced to a `Number`??? The `radix` specifies the base of the number in the string.
 
@@ -229,13 +239,14 @@ console.log(parseInt('-421')) // -421
 console.log(parseInt('+421')) // 421
 
 // with radix
-const a = parseInt("17", 10); // 17
+const a = parseInt("17", 10); // "17" equals 17 in base 10
 const a = parseInt("17", 8); // 17 in base 8 = 15
 const a = parseInt("11", 2); // 11 in base 2 = 3
 const a = parseInt("111", 2); // 111 in base 2 = 7
 // You are only going to do calculations in other bases for science based websites
 ```
 
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt">MDN parseInt</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 
@@ -250,7 +261,7 @@ Here are links to MDN docs for the most common Math methods:
 | [MDN Math.sqrt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt) | [MDN Math.trunc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc) | [MDN Math.max](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max) |
 | [MDN Math.min](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min) | [MDN Math.pow](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow) |  | 
 
-<br />
+### absolute
 
 `Math.abs()`
 
@@ -278,9 +289,10 @@ Math.abs('string'); // NaN
 Math.abs();         // NaN
 ```
 
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs">MDN Math.abs</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-<br />
+### ceiling
 
 `Math.ceil()`: always rounds a number up to the next largest integer.
 ```js
@@ -295,7 +307,7 @@ console.log(Math.ceil(-7.004)); // -7
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-<br />
+### floor
 
 `Math.floor()`: returns the largest integer less than or equal to a given number
 ```js
@@ -312,7 +324,7 @@ Math.floor(-45.95); // -46
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-<br />
+### random
 
 `Math.random()`: returns a floating-point, pseudo-random number in the range 0 to less than 1 (inclusive of 0, but not 1) with approximately uniform distribution over that range — which you can then scale to your desired range
 
@@ -331,7 +343,7 @@ console.log(Math.random()); // 0.random numbers
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-<br />
+### round
 
 `Math.round()`: returns the value of a number rounded to the nearest integer
 ```js
@@ -352,7 +364,7 @@ Math.round(-20.51); // -21
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-<br />
+### sign
 
 `Math.sign()`: returns either a positive or negative +/- 1, indicating the sign of a number passed into the argument. If the number passed into `Math.sign()` is 0, it will return a +/- 0. Note that if the number is positive, an explicit (+) will not be returned.
 
@@ -378,7 +390,7 @@ Math.sign();      // NaN
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-<br />
+### sign
 
 `Math.sqrt()`: returns the square root of a number
 ```js
@@ -403,7 +415,8 @@ Math.sqrt(-0); // -0
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-<br />
+
+### square root
 
 `Math.trunc()`: returns the integer part of a number by removing any fractional digits
 ```js
@@ -428,7 +441,7 @@ Math.trunc();         // NaN
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-<br />
+### max
 
 `Math.max()`: returns the largest of the zero or more numbers given as input parameters, or `NaN` if any parameter isn't a number and can't be converted into one. 
 
@@ -458,7 +471,7 @@ let max = arr.reduce(function(a, b) {
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-<br />
+### min
 
 `Math.min()`: returns the lowest-valued number passed into it, or `NaN` if any parameter isn't a number and can't be converted into one.
 
@@ -481,7 +494,7 @@ let z = Math.min(x, y);
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-<br />
+### power
 
 `Math.pow(x, y)`: static method, given two arguments, _base_ and _exponent_, returns `base` <sup>`exp`</sup>.
 
