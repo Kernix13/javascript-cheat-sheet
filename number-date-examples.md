@@ -305,6 +305,7 @@ console.log(Math.ceil(7.004)); // 8
 console.log(Math.ceil(-7.004)); // -7
 ```
 
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil">MDN Math.ceil</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### floor
@@ -322,6 +323,7 @@ Math.floor(-45.05); // -46
 Math.floor(-45.95); // -46
 ```
 
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor">MDN Math.floor</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### random
@@ -341,6 +343,16 @@ console.log(getRandomInt(1)); // 0
 console.log(Math.random()); // 0.random numbers
 ```
 
+<br />
+
+`Math.floor(Math.random())`: 105 generate random  whole numbers w\in a range:
+```js
+function randomRange(myMin, myMax) {
+  return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
+}
+```
+
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random">MDN Math.random</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### round
@@ -362,6 +374,7 @@ Math.round(-20.5 ); // -20
 Math.round(-20.51); // -21
 ```
 
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round">MDN Math.round</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### sign
@@ -388,6 +401,7 @@ Math.sign('foo'); // NaN
 Math.sign();      // NaN
 ```
 
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign">MDN Math.sign</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### sign
@@ -413,8 +427,8 @@ Math.sqrt(-1); // NaN
 Math.sqrt(-0); // -0
 ```
 
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt">MDN Math.sqrt</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
 
 ### square root
 
@@ -439,6 +453,7 @@ Math.trunc('foo');    // NaN
 Math.trunc();         // NaN
 ```
 
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc">MDN Math.trunc</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### max
@@ -469,6 +484,7 @@ let max = arr.reduce(function(a, b) {
 }, -Infinity);
 ```
 
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max">MDN Math.max</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### min
@@ -492,6 +508,7 @@ let x = 10, y = -20;
 let z = Math.min(x, y);
 ```
 
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min">MDN Math.min</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### power
@@ -535,15 +552,7 @@ const phi = ((Math.pow(5, 0.5) + 1) / 2)
 console.log(phi) // 1.618033988749895
 ```
 
-<br />
-
-`Math.floor(Math.random())`: 105 generate random  whole numbers w\in a range:
-```js
-function randomRange(myMin, myMax) {
-  return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
-}
-```
-
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow">MDN Math.pow</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Spread operator
@@ -611,6 +620,7 @@ const date1 = birthday.getDate();
 console.log(date1); // 19
 ```
 
+<div align="left">&#8675; <a href="#get-dates" title="get-dates">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate">MDN getDate</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <br />
