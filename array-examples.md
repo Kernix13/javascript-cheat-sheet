@@ -1561,11 +1561,11 @@ function updateValues() {
 **<ins>Returns the index</ins>** of the first element in the array that satisfies the provided testing function. Otherwise, it returns `-1`, indicating that no element passed the test.
 
 > - If you need the index of the found element in the array, use `findIndex()`
-> - If you need the index of the first element that satisfis a condition, use `find()`
-> - if you need to find if a value exists in an array, use `includes()`
+> - If you need the index of the first element that satisfies a condition, use `find()`
 > - If you need to find the index of a value, use `indexOf()`
+> - if you need to find if a value exists in an array, use `includes()`
 
-**NOTE**: `find()` for some reason returns the index of the next element???
+**NOTE**: `find()` for some reason returns the index of the next element, i + 1???
 
 Syntax:
 ```js
