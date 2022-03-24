@@ -84,6 +84,8 @@ function someFx() {
 
 ## for in and for of loops
 
+> The difference between a `for...of` loop and a `for...in` loop: while `for...in` iterates over property **<ins>names/keys</ins>**, `for...of` iterates over property **<ins>values</ins>**.
+
 ### for in
 
 The `for...in` statement iterates a specified variable over all the enumerable properties of an object. For each distinct property, JavaScript executes the specified statements.
@@ -134,8 +136,6 @@ for (variable of iterable) {
   statement
 }
 ```
-
-The difference between a `for...of` loop and a `for...in` loop. While `for...in` iterates over property names, `for...of` iterates over property **<ins>values</ins>**.
 
 Example:
 ```js

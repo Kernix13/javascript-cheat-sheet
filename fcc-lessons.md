@@ -484,7 +484,7 @@ Solutions:
 
 5 projects
 
-1. Palindrome Checker (**_ALMOST DONE_**)
+1. Palindrome Checker (**_ALMOST DONE_**) - for RegEx, check inter algo's lessons 5. Spinal Tap Case, 6. Pig Latin, 
 1. Roman Numeral Converter
 1. Caesar's Cipher
 1. Telephone Number Validator
