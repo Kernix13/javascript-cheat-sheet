@@ -12,9 +12,9 @@ Syntax and code examples for the most coomon array methods.
 |                     | v. [Basic sort](#basic-sort) | vi. [reverse](#reverse) | vii. [splice](#splice) | viii. [Array slice](#array-slice) |
 |                     | ix. [concat](#concat) | x. [join](#join) | xi. [flat](#flat) | xii. [isArray](#isarray) | 
 |                     | xiii. [indexOf](#indexOf) | xiv. [lastIndexOf](#lastIndexOf) | xv. [Includes](#includes) | xvi. [toString](#tostring) |
-| 2. [High order methods](#high-order-methods): | i. [Sort](#sort) | ii. [Find](#find) | iii. [Every](#every) | iv. [Some](#some) | 
-|                     | v. [Map](#map) | vi. [Filter](#filter) | vii. [forEach](#forEach) | viii. [Reduce](#reduce) |
-|                     | ix. [findIndex](#findIndex) | - | - | - |
+| 2. [High order methods](#high-order-methods): | i. [Sort](#sort) | ii. [Every](#every) | ii. [Some](#some) | -  | 
+|                     | iv. [Map](#map) | v. [Filter](#filter) | vi. [forEach](#forEach) | vii. [Reduce](#reduce) |
+|                     | iii. [findIndex](#findIndex) | ix. [Find](#find) | - | - |
 | 3. [Spread operator](#spread-operator)  | | | | |
 | 4. [Rest syntax](#rest-syntax)      | | | | | 
 | 5. [Syntax tables](#syntax-tables): | i. [Common methods](#common-methods) | ii. [High order array](#high-order-array) | [Destructuring](#destructuring) | - | 
@@ -598,91 +598,6 @@ localeCompare(compareString, locales, options)
 The `localeCompare()` method returns a number indicating whether a reference string comes before, or after, or is the same as the given string in sort order: [MDN localeCompare](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare).
 
 <div align="left">&#8675; <a href="#high-order-array" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">MDN Sort</a></div>
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-### Find
-
-**<ins>Returns the first element</ins>** in the provided array that satisfies the provided testing function. If no values satisfy the testing function, `undefined` is returned.
-
-MDN syntax:
-```js
-// Arrow function
-find((element) => { /* ... */ } )
-find((element, index) => { /* ... */ } )
-
-// Callback function
-find(callbackFn)
-find(callbackFn, thisArg)
-
-// Inline callback function
-find(function(element) { /* ... */ })
-find(function(element, index) { /* ... */ })
-```
-
-<br />
-
-MDN examples
-```js
-const array1 = [5, 12, 8, 130, 44];
-const found = array1.find(element => element > 10);
-console.log(found); // 12
-
-
-// using an array of objects
-const items = [
-  { name: 'Bike', price: 100 },
-  { name: 'TV', price: 200 },
-  { name: 'Album', price: 10 },
-  { name: 'Book', price: 5 },
-  { name: 'Phone', price: 500 },
-  { name: 'Computer', price: 1000 },
-  { name: 'Keyboard', price: 25 }
-]
-const foundItem = items.find(item => {
-  return item.name == 'Book'
-})
-console.log(foundItem) // {"name": "Book", "price": 5}
-
-
-// Object with callback:
-const inventory = [
-  {name: 'apples', quantity: 2},
-  {name: 'bananas', quantity: 0},
-  {name: 'cherries', quantity: 5}
-];
-
-function isCherries(fruit) {
-  return fruit.name === 'cherries';
-}
-console.log(inventory.find(isCherries)); // {"name": "cherries", "quanity": 5}
-
-
-// Using arrow function and destructuring
-const inventory = [
-  {name: 'apples', quantity: 2},
-  {name: 'bananas', quantity: 0},
-  {name: 'cherries', quantity: 5}
-];
-
-const result = inventory.find( ({ name }) => name === 'cherries' );
-console.log(result) // { name: 'cherries', quantity: 5 }
-
-
-// Find a prime number in an array (example in filter section as well)
-function isPrime(element, index, array) {
-  let start = 2;
-  while (start <= Math.sqrt(element)) {
-    if (element % start++ < 1) {
-      return false;
-    }
-  }
-  return element > 1;
-}
-console.log([4, 6, 8, 12].find(isPrime)); // undefined
-console.log([4, 5, 8, 12].find(isPrime)); // 5
-```
-
-<div align="left">&#8675; <a href="#high-order-array" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find">MDN Find</a></div></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Every
@@ -1645,6 +1560,13 @@ function updateValues() {
 
 **<ins>Returns the index</ins>** of the first element in the array that satisfies the provided testing function. Otherwise, it returns `-1`, indicating that no element passed the test.
 
+> - If you need the index of the found element in the array, use `findIndex()`
+> - If you need the index of the first element that satisfis a condition, use `find()`
+> - if you need to find if a value exists in an array, use `includes()`
+> - If you need to find the index of a value, use `indexOf()`
+
+**NOTE**: `find()` for some reason returns the index of the next element???
+
 Syntax:
 ```js
 // Arrow function
@@ -1691,6 +1613,91 @@ console.log(fruits[index]); // blueberries
 ```
 
 <div align="left">&#8675; <a href="#high-order-array" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex">MDN findIndex</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Find
+
+**<ins>Returns the first element</ins>** in the provided array that satisfies the provided testing function. If no values satisfy the testing function, `undefined` is returned.
+
+MDN syntax:
+```js
+// Arrow function
+find((element) => { /* ... */ } )
+find((element, index) => { /* ... */ } )
+
+// Callback function
+find(callbackFn)
+find(callbackFn, thisArg)
+
+// Inline callback function
+find(function(element) { /* ... */ })
+find(function(element, index) { /* ... */ })
+```
+
+<br />
+
+MDN examples
+```js
+const array1 = [5, 12, 8, 130, 44];
+const found = array1.find(element => element > 10);
+console.log(found); // 12
+
+
+// using an array of objects
+const items = [
+  { name: 'Bike', price: 100 },
+  { name: 'TV', price: 200 },
+  { name: 'Album', price: 10 },
+  { name: 'Book', price: 5 },
+  { name: 'Phone', price: 500 },
+  { name: 'Computer', price: 1000 },
+  { name: 'Keyboard', price: 25 }
+]
+const foundItem = items.find(item => {
+  return item.name == 'Book'
+})
+console.log(foundItem) // {"name": "Book", "price": 5}
+
+
+// Object with callback:
+const inventory = [
+  {name: 'apples', quantity: 2},
+  {name: 'bananas', quantity: 0},
+  {name: 'cherries', quantity: 5}
+];
+
+function isCherries(fruit) {
+  return fruit.name === 'cherries';
+}
+console.log(inventory.find(isCherries)); // {"name": "cherries", "quanity": 5}
+
+
+// Using arrow function and destructuring
+const inventory = [
+  {name: 'apples', quantity: 2},
+  {name: 'bananas', quantity: 0},
+  {name: 'cherries', quantity: 5}
+];
+
+const result = inventory.find( ({ name }) => name === 'cherries' );
+console.log(result) // { name: 'cherries', quantity: 5 }
+
+
+// Find a prime number in an array (example in filter section as well)
+function isPrime(element, index, array) {
+  let start = 2;
+  while (start <= Math.sqrt(element)) {
+    if (element % start++ < 1) {
+      return false;
+    }
+  }
+  return element > 1;
+}
+console.log([4, 6, 8, 12].find(isPrime)); // undefined
+console.log([4, 5, 8, 12].find(isPrime)); // 5
+```
+
+<div align="left">&#8675; <a href="#high-order-array" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find">MDN Find</a></div></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Spread operator

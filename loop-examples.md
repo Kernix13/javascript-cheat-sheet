@@ -135,7 +135,7 @@ for (variable of iterable) {
 }
 ```
 
-The difference between a `for...of` loop and a `for...in` loop. While `for...in` iterates over property names, `for...of` iterates over property values.
+The difference between a `for...of` loop and a `for...in` loop. While `for...in` iterates over property names, `for...of` iterates over property **<ins>values</ins>**.
 
 Example:
 ```js
@@ -149,6 +149,23 @@ for (let i in arr) {
 for (let i of arr) {
    console.log(i); // logs 3, 5, 7
 }
+
+// my example: Sum All Odd Fibonacci Numbers
+function sumFibs(num) {
+  if (num <= 0) return 0;
+
+  const startNums = [1, 1];
+  let nextNum = 0;
+  // can you use a for loop here?
+  for (let i of startNums) {
+    let nextNum = startNums[i - 1] + startNums[i];
+    if (nextNum <= num) {
+      startNums.unshift(nextNum);
+    }
+  }
+  return startNums.filter(x => x % 2 != 0).reduce((a, b) => a + b);
+}
+sumFibs(4);
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
