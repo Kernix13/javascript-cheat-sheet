@@ -491,3 +491,14 @@ Solutions:
 1. Cash Register
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div> 
+
+update node:
+
+```js
+npm cache clean -f
+npm install -g npm
+// or only use:
+npm install -g n
+// then: 
+n stable 
+```

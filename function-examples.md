@@ -33,6 +33,7 @@ Here are docs from MDN:
    1. [Declaration vs expression](#declaration-vs-expression)
    1. [Rest and spread syntax](#rest-and-spread-syntax)
    1. [Default parameters](#default-parameters)
+   1. [Arguments object](#arguments-object)
    1. [Miscellaneous](#miscellaneous)
 1. [Function methods](#function-methods)
    1. [apply](#apply)
@@ -180,6 +181,94 @@ function greet(first = "John", last = "Doe") {
 }
 greet("Jim", "Kernix");
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Arguments object
+
+MDN: `arguments` is an Array-like object accessible inside functions that contains the values of the arguments passed to that function. 
+
+freeCodeCamp: The arguments object is an object that stores all of the values passed to the function. The arguments object takes on the structure of a JSON Object. 
+
+
+```js
+console.log(typeof arguments); // 'object' 
+console.log(typeof arguments[0]); // returns the type of the first argument
+
+// if a function is passed 3 arguments, you can access them as follows
+arguments[0] // first argument
+arguments[1] // second argument
+arguments[2] // third argument
+
+
+function func1(a, b, c) {
+  console.log(arguments[0]); // expected output: 1
+  console.log(arguments[1]); // expected output: 2
+  console.log(arguments[2]); // expected output: 3
+}
+func1(1, 2, 3);
+
+// Each argument can also be set or reassigned:
+arguments[1] = 'new value';
+
+// freeCodeCamp:
+ function viewArgs() {
+    return arguments;
+}
+console.log(viewArgs([3, 5, 1, 2, 2], 2, 3, 5));
+// { '0': [ 3, 5, 1, 2, 2 ], '1': 2, '2': 3, '3': 5 }
+console.log(viewArgs([2, 3, 2, 3, 2, 3]));
+// { '0': [ 2, 3, 2, 3, 2, 3 ] }
+console.log(viewArgs(3,2,1,"life the universe and all"));
+// { '0': 3, '1': 2, '2': 1, '3': 'life the universe and all' }
+console.log(viewArgs("Douglas","Adams"));
+// { '0': 'Douglas', '1': 'Adams' }
+```
+
+The arguments object is not an Array. It is similar, but lacks all Array properties except length. As you can do with any Array-like object, you can use ES2015's `Array.from()` method or `spread syntax` to convert arguments to a real Array:
+
+```js
+let args = Array.from(arguments);
+// or
+let args = [...arguments];
+```
+
+The arguments object is useful for functions called with more arguments than they are formally declared to accept. This technique is useful for functions that can be passed a variable number of arguments, such as `Math.min()`.
+
+If you were to pass 3 arguments to a function, say `storeNames()`, those 3 arguments would be stored inside an object called **arguments** and it would look like this when we pass the arguments storeNames("Springfield", "Clayton", "Smithville") to our function. When you execute that function with n arguments, 3 in this case, it will return the object to us and it will look like an array:
+
+```js
+function storeNames() { return arguments; } 
+// ["Springfield", "Clayton", "Smithville"]
+arguments.length // 3
+```
+
+The arguments object can be used in conjunction with _rest_, _default_, and _destructured parameters_. 
+
+#### Treat it as an array
+
+You should not slice on arguments because it prevents optimizations in JavaScript engines. Instead, try constructing a new array by iterating through the arguments object - try a `for loop`: 
+
+```js
+let args = []; // Empty array, at first.
+for (let i = 0; i < arguments.length; i++) {
+    args.push(arguments[i])
+} // Now 'args' is an array that holds your arguments.
+
+// also try the rest parameter or Array.from() method:
+function func(...args) {
+    console.log(args); // or 
+    console.log(Array.from(arguments));
+}
+function func() {
+    console.log(Array.from(arguments)); // or 
+    return Array.from(arguments).sort((a, b) => a - b);
+}
+func(1,2,3); // [ 1, 2, 3 ]
+```
+
+
+
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 

@@ -18,6 +18,7 @@ const hasSameElements = (a, b) => {
 ## Table of Contents
 
 1. [Tips and Tricks](#tips-and-tricks)
+   1. [Unique things](#unique-things)
 1. [Terms](#terms)
    1. [Code Specific](#code-specific)
    1. [Concepts](#concepts)
@@ -93,6 +94,24 @@ const hasSameElements = (a, b) => {
 - Good: https://pratapsharma.in/javascript-tips-and-tricks
 - Good: https://github.com/wilfredinni/javascript-cheatsheet
 - Maybe: https://github.com/alhassy/JavaScriptCheatSheet 
+
+### Unique things
+
+Things you don't see often:
+
+- underscore as a variable name `_,`
+
+```js
+const range = Array(max - min + 1)
+    .fill(0)
+    .map((_, i) => i + min);
+```
+
+- Multiple function calls ()()()...:
+
+```js
+addTogether(5)(7)
+```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
