@@ -14,6 +14,8 @@ Syntax and code examples for the most coomon string methods.
    1. [endsWith](#endsWith)
    1. [test](#test)
    1. [charAt](#charat)
+   1. [charCodeAt](#charcodeat)
+   1. [fromCharCode](#fromcharcode)
    1. [match](#match)
    1. [replace](#replace)
    1. [toString](#tostring)
@@ -41,9 +43,7 @@ console.log(badString.toLowerCase().trim()); // "oops, caps lock on. need to fix
 I skipped these methods: 
 
 - [at()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/at): takes an integer value and returns a new String consisting of the single UTF-16 code unit located at the specified offset. This method allows for positive and negative integers. Negative integers count back from the last string character.
-- [charCodeAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt): returns an integer between 0 and 65535 representing the UTF-16 code unit at the given index.
 - [codePointAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt): returns a non-negative integer that is the Unicode code point value at the given position.
-- [fromCharCode()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode): returns a string created from the specified sequence of UTF-16 code units.
 - [fromCodePoint()](): returns a string created by using the specified sequence of code points.
 - [localeCompare()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare): returns a number indicating whether a reference string comes before, or after, or is the same as the given string in sort order.
 - [matchAll()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll): returns an iterator of all results matching a string against a regular expression, including capturing groups.
@@ -258,6 +258,47 @@ console.log("The character at index 1   is '" + anyString.charAt(1)   + "'"); //
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt">MDN charAt</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### charCodeAt
+
+**<ins>Returns an integer</ins>** between `0` and `65535` representing the UTF-16 code unit at the given index.
+
+```js
+// syntax
+charCodeAt(index)
+
+// MDN examples
+const sentence = 'The quick brown fox jumps over the lazy dog.';
+const index = 4;
+console.log(`The character code ${sentence.charCodeAt(index)} is equal to ${sentence.charAt(index)}`);
+// expected output: "The character code 113 is equal to q"
+console.log('ABC'.charCodeAt(0)); // 65
+console.log('ABC'.charCodeAt(1)); // 66
+console.log('ABC'.charCodeAt(2)); // 67
+console.log('abc'.charCodeAt(0)); // 97, see below
+```
+
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt">MDN charCodeAt</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### fromCharCode
+
+**<ins>Returns a string</ins>** created from the specified sequence of UTF-16 code units.
+
+```js
+// syntax
+String.fromCharCode(num1)
+String.fromCharCode(num1, num2)
+String.fromCharCode(num1, num2, ..., numN)
+
+// Examples
+console.log(String.fromCharCode(189, 43, 190, 61)); // "½+¾="
+console.log(String.fromCharCode(65, 66, 67, 68)); // "ABCD"
+console.log(String.fromCharCode(97, 98, 99, 100)); // "abcd"
+```
+
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode">MDN fromCharCode</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### match
@@ -582,6 +623,8 @@ Common methods with NO arguments/parameters:
 Common methods with a single argument, or multiple repeated arguments:
 | method  | syntax1                     | syntax2                     | Mutates? |
 | :----   | :----                       | :----                       | :----:   |
+| charCodeAt | str.charCodeAt(index)    |                             | NO |
+| fromCharCode | String.fromCharCode(num1) | String.fromCharCode(num1, num2, ..., numN) | NO |
 | concat  | str.concat(str2)            | concat(str1, str2, ... , strN) | NO |
 | split   | str.split(separator)        |                             | NO |
 | repeat  | str.repeat(count)           |                             | NO | 
