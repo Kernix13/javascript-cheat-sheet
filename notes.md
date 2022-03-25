@@ -107,7 +107,7 @@ const range = Array(max - min + 1)
     .map((_, i) => i + min);
 ```
 
-- Multiple function calls ()()()...:
+- Multiple function calls (a)(b)(c)...:
 
 ```js
 addTogether(5)(7)

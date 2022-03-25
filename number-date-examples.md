@@ -244,6 +244,13 @@ const a = parseInt("17", 8); // 17 in base 8 = 15
 const a = parseInt("11", 2); // 11 in base 2 = 3
 const a = parseInt("111", 2); // 111 in base 2 = 7
 // You are only going to do calculations in other bases for science based websites
+
+
+// How to Convert a Binary String Into a Decimal Number
+const binary = '01001001';
+const decimal = Number.parseInt(binary, 2); // 73
+// then convert that to a character:
+console.log(String.fromCharCode(decimal)) // "I"
 ```
 
 <div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt">MDN parseInt</a></div>
