@@ -14,7 +14,8 @@ Simple number, Math, and Date examples.
 | [Math methods](#math-methods):      | [absolute](#absolute) | [ceiling](#ceiling) | [floor](#floor) | 
 |                                     | [random](#random) | [round](#round) | [sign](#sign) | 
 |                                     | [square root](#square-root) | [truncate](#truncate) | [max](#max) | 
-|                                     | [min](#) | [power](#) | | 
+|                                     | [min](#min) | [power](#power) | [PI](#pi) | 
+|                                     | [sqrt](#sqrt) |  |  | 
 | [Spread operator](#spread-operator) | | | | 
 | [Rest parameter](#rest-parameter)   | | | | 
 | [Date examples](#date-examples)     | [Date get methods](#date-get-methods) | [Date set methods](#date-set-methods) | | 
@@ -562,6 +563,56 @@ console.log(phi) // 1.618033988749895
 ```
 
 <div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow">MDN Math.pow</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### PI
+
+The `Math.PI` property represents the ratio of the circumference of a circle to its diameter, approximately 3.14159. Because `PI` is a static property of `Math`, you always use it as `Math.PI`, rather than as a property of a `Math` object you created.
+
+```js
+console.log(Math.PI); // 3.141592653589793
+
+function circleCircumferece(r) {
+  return 2 * Math.PI * r;
+}
+console.log(circleCircumferece(10)); // 62.83185307179586
+
+
+function circleArea(r) {
+   return  Math.PI * Math.pow(r, 2); // 314.1592653589793
+}
+console.log(circleArea(10)); 
+
+
+function circleVolume(r) {
+  return 4 / 3 * Math.PI * Math.pow(r, 3);
+}
+console.log(circleVolume(10)); // 4188.790204786391
+```
+
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/PI">MDN Math.PI</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### sqrt
+
+The `Math.sqrt()` function returns the square root of a number. If the number is negative, `NaN` is returned. You can also use `Math.pow()` as explained in that section.
+
+```js
+Math.sqrt(x)
+Math.sqrt(9); // 3
+Math.sqrt(-1); // NaN
+Math.sqrt(-0); // -0
+
+
+function calcHypotenuse(a, b) {
+  return (Math.sqrt((a * a) + (b * b)));
+}
+console.log(calcHypotenuse(3, 4)); // 5
+console.log(calcHypotenuse(5, 12)); // 13
+console.log(calcHypotenuse(0, 0)); // 0
+```
+
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt">MDN Math.sqrt</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Spread operator
