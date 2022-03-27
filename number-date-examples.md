@@ -1186,6 +1186,7 @@ No parameter
 | Math.random   | Math.random()     | Definitely use    |
 | Math.max      | Math.max()        | Returns `-infinity`? |
 | Math.min      | Math.min()        | Returns `-infinity`? |
+| Math.PI       | Math.PI           | REturns the value of Pi |
 
 <br />
 
@@ -1207,6 +1208,7 @@ One parameter
 | Math.trunc    | Math.trunc(x)   | Definitely use  |
 | Math.max      | Math.max(value0) | Why use 1 value? | 
 | Math.min      | Math.min(value0) | Why use 1 value? | 
+| Math.sqrt     | Math.sqrt(x)    | - |  
 
 <br />
 
