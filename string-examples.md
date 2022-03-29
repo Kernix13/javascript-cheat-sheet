@@ -6,27 +6,16 @@ Syntax and code examples for the most coomon string methods.
 
 ## Table of contents
 
-1. [String methods](#string-methods)
-   1. [Skipped methods](#skipped-methods)
-   1. [split](#split)
-   1. [substring](#substring)
-   1. [repeat](#repeat)
-   1. [endsWith](#endsWith)
-   1. [test](#test)
-   1. [charAt](#charat)
-   1. [charCodeAt](#charcodeat)
-   1. [fromCharCode](#fromcharcode)
-   1. [match](#match)
-   1. [replace](#replace)
-   1. [toString](#tostring)
-   1. [Miscellaneous](#Miscellaneous)
-1. [Methods in common with arrays](#methods-in-common-with-arrays)
-   1. [String slice](#string-slice)
-   1. [concat](#concat)
-   1. [indexOf](#indexof)
-   1. [lastIndexOf](#lastindexof)
-   1. [includes](#includes)
-1. [Syntax tables](#syntax-tables)
+| Topic               | Sub-topic | Sub-topic | Sub-topic | Sub-topic |  
+| ----:               | :-------    | :------     | :------     | :------     |
+| 1. [String methods](#string-methods): | i. [Skipped methods](#skipped-methods) | ii. [split](#split) | iii. [substring](#substring) | iv. [repeat](#repeat) |
+|           | v. [endsWith](#endsWith) | vi. [test](#test) | vii. [charAt](#charat) | viii. [charCodeAt](#charcodeat) |
+|           | ix. [fromCharCode](#fromcharcode) | x. [match](#match) | xi. [replace](#replace) | xii. [toString](#tostring) |
+|           | xiii. [Miscellaneous](#Miscellaneous) |  | |  |
+| 2. [Array string methods](#array-string-methods): | i. [String slice](#string-slice) | ii. [concat](#concat) | iii. [indexOf](#indexof) | iv. [lastIndexOf](#lastindexof) |
+|           | i. [includes](#includes) |  | |  |
+| 3. [Syntax tables](#syntax-tables) |  |  |  |  |
+
 
 ## String methods
 
@@ -432,9 +421,9 @@ let thirdToLastLetter = firstName[firstName.length - 3];
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Methods in common with arrays
+## Array string methods
 
-Use these on arrays and strings.
+These are methods that can be used on both strings and arrays.
 
 ### String slice
 

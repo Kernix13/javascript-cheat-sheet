@@ -1,6 +1,6 @@
 # Regular Expressions Examples
 
-Basic syntax followed by more advanced examples
+Basic syntax followed by more advanced examples. Check out [MDN Regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) for use cases with `exec(str)`, `test(str)`, `match(regexp)`, `matchAll(regexp)`, `replace()`, `replaceAll()`, `search(regexp)`, `split()`, and the `String` object.
 
 <div id="back-to-top"></div>
 
