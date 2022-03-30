@@ -19,6 +19,7 @@ Syntax and code examples for the most coomon array methods.
 | 4. [Rest syntax](#rest-syntax)      | | | | | 
 | 5. [Syntax tables](#syntax-tables): | i. [Common methods](#common-methods) | ii. [High order array](#high-order-array) | [Destructuring](#destructuring) | - | 
 | 6. [Combinations of methods](#combinations-of-methods) | i. [Simple methods](#simple-methods) | ii. [All methods](#all-methods) | | |
+| 6. [Notes](#notes)  |  |  | | |
 
 
 ## Simple array methods
@@ -2247,3 +2248,60 @@ function updateValues() {
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Notes
+
+Turn an array into an object. You can also use `Object.fromEntries()`:
+
+```js
+const arr = [7, 3, 144, 72, 108]
+
+// 1. use Object.assign()
+let obj = {}
+console.log(Object.assign(obj, arr)) // {"0": 7, "1": 3, "2": 144, "3": 72, "4": 108}, or 
+let obj = Object.assign({}, arr);
+
+// 2. Use the spread operator
+let obj = {...arr}
+console.log(obj) // {"0": 7, "1": 3, "2": 144, "3": 72, "4": 108}
+
+// 3. Use a for loop
+let obj = {}
+for (let i = 0; i < arr.length; i++) {
+  obj[i] = arr[i]
+} // {"0": 7, "1": 3, "2": 144, "3": 72, "4": 108}
+
+// 4. use reduce()
+let newObj = arr.reduce((target, key, index) => {
+  target[index] = key;
+  return target;
+}, {})
+console.log(newObj) // {"0": 7, "1": 3, "2": 144, "3": 72, "4": 108}
+
+// 5. use forEach()
+let newObj = {}
+arr.forEach((item, i) => {
+  newObj['id_' + i] = item;
+})
+console.log(newObj) // {"id_0": 7, "id_1": 3, "id_2": 144, "id_3": 72, "id_4": 108}
+```
+
+Turn 2 arrays into an object:
+
+```js
+// use forEach()
+const arr1 = ['name', 'age', 'country'];
+const arr2 = ['Jim', 54, 'USA'];
+const obj = {};
+
+arr1.forEach((key, i) => {
+  obj[key] = arr2[i];
+});
+console.log(obj); // {name: 'Jim', age: 54, country: 'USA'}
+
+// use reduce()
+const obj = arr1.reduce((accum, key, i) => {
+  return { ...accum, [key]: arr2[i] };
+}, {});
+console.log(obj); // {name: 'Jim', age: 54, country: 'USA'}
+```

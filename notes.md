@@ -227,6 +227,10 @@ Concepts, specific code syntax, ...
   <dd>In-place means that you should update the original string rather than creating a new one. You should change the content of the original string to the reverse without using a temporary storage variable to hold the string.</dd>
 </dl>
 <dl>
+  <dt>Momoize (Memoization)</dt>
+  <dd>a way to optimize functions and make them execute much faster: caching. It iss an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again - storing in memory. A technique of storing previously executed computations. Memoization is an optimization technique where expensive function calls are cached such that the result can be immediately returned the next time the function is called with the same arguments.</dd>
+</dl>
+<dl>
   <dt>Polymorphism</dt>
   <dd>in OOP, describes methods that are able to take on many forms. There are 2 types: Dynamic and Static. </dd>
 </dl>
