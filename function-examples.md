@@ -27,41 +27,24 @@ Here are docs from MDN:
 
 ## Table of contents
 
-1. [General](#general)
-   1. [Definitions](#definitions)
-   1. [Syntax](#syntax)
-   1. [Declaration vs expression](#declaration-vs-expression)
-   1. [Rest and spread syntax](#rest-and-spread-syntax)
-   1. [Default parameters](#default-parameters)
-   1. [Arguments object](#arguments-object)
-   1. [Miscellaneous](#miscellaneous)
-1. [Function methods](#function-methods)
-   1. [apply](#apply)
-   1. [bind](#bind)
-   1. [call](#call)
-   1. [toString](#tostring)
-1. [Nested functions](#nested-functions)
-   1. [Multiple nested functions](#multiple-nested-functions)
-   1. [Closures](#closures)
-1. [IIFE](#iife)
-1. [Async await](#async-await)
-1. [Arrow functions](#arrow-functions)
-1. [Methods](#methods)
-1. [ES6 export import](#es6-export-import)
-1. [Callback functions](#callback-functions)
-1. [Local storage](#local-storage)
-1. [Event delegation](#event-delegation)
-1. [Performance](#performance)
-   1. [Caching](#caching)
-   1. [Memoization](#memoization)
-1. [Recursion](#recursion)
-   1. [freeCodeCamp examples](#freecodecamp-examples)
-   1. [MDN examples](#mdn-examples)
-   1. [Recursion notes](#recursion-notes)
-1. [Miscellaneous](#miscellaneous)
-   1. [ES6 Promises](#es6-promises)
-   1. [Dynamic functions](#dynamic-functions)
-   1. [Randon stuff](#randon-stuff)
+| Topic                               | Sub-topic | Sub-topic | Sub-topic | 
+| ----:                               | :-------    | :------     | :------     | 
+| [General](#general):  | [Definitions](#definitions) | [Syntax](#syntax) | [Declaration vs expression](#declaration-vs-expression) | 
+|               | [Rest and spread syntax](#rest-and-spread-syntax) | [Default parameters](#default-parameters) | [Arguments object](#arguments-object) | 
+|               | [Miscellaneous](#miscellaneous) |  |  | 
+| [Function methods](#function-methods):  | [apply](#apply) | [bind](#bind) | [call](#call) | 
+|   | [toString](#tostring) | [](#) | [](#) | 
+| [Nested functions](#nested-functions):  | [Multiple nested functions](#multiple-nested-functions) | [Closures](#closures) | | 
+| [IIFE](#iife)  |  |  |  | 
+| [ES6](#es6) | [Export import](#export-import)  | [Async await](#async-await) | [Arrow functions](#arrow-functions)  |
+| [Methods](#methods)  |  |  |  | 
+| [Callback functions](#callback-functions)  |  |  |  | 
+| [Local storage](#local-storage)  |  |  |  | 
+| [Event delegation](#event-delegation)  |  |  |  | 
+| [Performance](#performance)  | [Caching](#caching) | [Memoization](#memoization) |  | 
+| [Recursion](#recursion)  | [freeCodeCamp examples](#freecodecamp-examples) | [MDN examples](#mdn-examples) | [Recursion notes](#recursion-notes) | 
+| [Miscellaneous2](#miscellaneous2)  | [Predefined functions](#predefined-functions) | [ES6 Promises](#es6-promises)  | [Dynamic functions](#dynamic-functions) | 
+| | [Random](#random) | | | 
 
 ## General
 
@@ -524,6 +507,71 @@ const getFileStream = async (url) => { /* implementation */ };
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+## ES6
+
+Here are specific function-related topics inrtroduced with ES6
+
+### Export import
+
+```js
+// Strict mode: a restricted variant of JavaScript, intentionally has different semantics
+"use strict";
+
+// script tag if you intend to use import and export (defer attribute added):
+<script type="module" src="filename.js" defer></script>
+```
+
+<br />
+
+Export:
+```js
+// export a code block:
+export const add = (x, y) => {
+  return x + y;
+}
+
+// export a variable:
+const add = (x, y) => {
+  return x + y;
+}
+export { add };
+
+// export multiple objects:
+export { add, subtract };
+
+// create an export fallback with export default:
+export default function add(x, y) {
+  return x + y;
+}
+// or
+export default function(x, y) {
+  return x + y;
+}
+```
+
+<br />
+
+Import:
+```js
+// import a single object:
+import { add } from './math_functions.js'; 
+
+// import multiple object:
+import { add, subtract } from './math_functions.js';
+
+// import all
+import * as myMathModule from "./math_functions.js";
+
+// use the imported module:
+myMathModule.add(2,3);
+myMathModule.subtract(5,3);
+
+// import a default export
+import add from "./math_functions.js"; 
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## Async await
 
 Syntax:
@@ -917,67 +965,6 @@ const doSomething = {
 }
 
 doSomething.add();
-```
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-## ES6 export import
-
-```js
-// Strict mode: a restricted variant of JavaScript, intentionally has different semantics
-"use strict";
-
-// script tag if you intend to use import and export (defer attribute added):
-<script type="module" src="filename.js" defer></script>
-```
-
-<br />
-
-Export:
-```js
-// export a code block:
-export const add = (x, y) => {
-  return x + y;
-}
-
-// export a variable:
-const add = (x, y) => {
-  return x + y;
-}
-export { add };
-
-// export multiple objects:
-export { add, subtract };
-
-// create an export fallback with export default:
-export default function add(x, y) {
-  return x + y;
-}
-// or
-export default function(x, y) {
-  return x + y;
-}
-```
-
-<br />
-
-Import:
-```js
-// import a single object:
-import { add } from './math_functions.js'; 
-
-// import multiple object:
-import { add, subtract } from './math_functions.js';
-
-// import all
-import * as myMathModule from "./math_functions.js";
-
-// use the imported module:
-myMathModule.add(2,3);
-myMathModule.subtract(5,3);
-
-// import a default export
-import add from "./math_functions.js"; 
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -1478,7 +1465,7 @@ NUMBER RECURSION
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Miscellaneous
+## Miscellaneous2
 
 - arguments vs parameters
 - scope
@@ -1487,9 +1474,22 @@ NUMBER RECURSION
 
 Other concepts from [MDN Functions doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions): Scope and the function stack, Recursion, Preservation of variables, No separate `this`, and Predefined functions.
 
-**Predefined functions**: 
+#### Predefined functions
+
 - DO NOT USE: `eval()`, `uneval()`, `escape()`, and `unescape()`.
 - OK TO USE: `isFinite()`, `isNaN()`, `parseFloat()`, `parseInt()` with `radix`, `decodeURI()`, `decodeURIComponent()`, `encodeURI()`, and `encodeURIComponent()`
+
+`isNaN()`: determines whether a value is NaN or not; you may alternatively want to use Number.isNaN(). 
+
+`decodeURI()`: decodes a Uniform Resource Identifier (URI) previously created by encodeURI or by a similar routine. 
+
+`decodeURIComponent()`: decodes a Uniform Resource Identifier (URI) component previously created by encodeURIComponent or by a similar routine. 
+
+`encodeURI()`: encodes a Uniform Resource Identifier (URI) by replacing each instance of certain characters by one, two, three, or four escape sequences representing the UTF-8 encoding of the character (will only be four escape sequences for characters composed of two "surrogate" characters).
+
+`encodeURIComponent()`: encodes a Uniform Resource Identifier (URI) component by replacing each instance of certain characters by one, two, three, or four escape sequences representing the UTF-8 encoding of the character (will only be four escape sequences for characters composed of two "surrogate" characters).
+
+
 
 <br />
 
@@ -1550,7 +1550,7 @@ makeServerRequest.then(result => {
 makeServerRequest.catch((error) => {
   console.log(error);
 });
-``
+```
 
 - Promise, new, resolve, reject
 - pending, fulfilled, rejected
@@ -1559,7 +1559,9 @@ makeServerRequest.catch((error) => {
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+
 ### Dynamic functions
+
 
 ```js
 let foods = {
@@ -1579,7 +1581,7 @@ function checkInventory(scannedItem) {
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-### Randon stuff
+### Random
 
 - **freeCodeCamp**: Functions are considered first class objects in JavaScript, which means they can be used like any other object. They can be saved in variables, stored in an object, or passed as function arguments.
 
