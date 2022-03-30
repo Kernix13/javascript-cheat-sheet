@@ -51,6 +51,9 @@ Here are docs from MDN:
 1. [Callback functions](#callback-functions)
 1. [Local storage](#local-storage)
 1. [Event delegation](#event-delegation)
+1. [Performance](#performance)
+   1. [Caching](#caching)
+   1. [Memoization](#memoization)
 1. [Recursion](#recursion)
    1. [freeCodeCamp examples](#freecodecamp-examples)
    1. [MDN examples](#mdn-examples)
@@ -1101,6 +1104,80 @@ But the structure is ul > li > a > i and to delete the entire list item, which i
     // target is the icon
     e.target.parentElement.parentElement.remove();
   }
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Performance
+
+### Caching
+
+In Order to boost performance, cache your selections to some variable (if using the same selection multiple times).
+
+```js
+// example
+
+```
+
+### Memoization
+
+<dl>
+  <dt>Momoize (Memoization)</dt>
+  <dd>a way to optimize functions and make them execute much faster: caching. It iss an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again - storing in memory. A technique of storing previously executed computations. Memoization is an optimization technique where expensive function calls are cached such that the result can be immediately returned the next time the function is called with the same arguments.</dd>
+</dl>
+
+```js
+// syntax / generic examples
+const memoizedAdd = () => {
+  let cache = {};
+  return (n) => {
+    if (n in cache) {
+      console.log('Fetching from cache');
+      return cache[n];
+    }
+    else {
+      console.log('Calculating result');
+      let result = // calculation here;
+      cache[n] = result;
+      return result;
+    }
+  }
+}
+
+// second one
+const memoize = (fn) => {
+  let cache = {};
+  return (...args) => {
+    let n = args[0];  // just taking one argument here
+    if (n in cache) {
+      console.log('Fetching from cache');
+      return cache[n];
+    }
+    else {
+      console.log('Calculating result');
+      let result = fn(n);
+      cache[n] = result;
+      return result;
+    }
+  }
+}
+
+// third
+function memo(func){
+  var cache = {};
+    return function(){
+      var key = JSON.stringify(arguments);
+      if (cache[key]){
+        console.log(cache)
+        return cache[key];
+      }
+      else{
+        val = func.apply(null, arguments);
+        cache[key] = val;
+        return val; 
+      }
+  }
+}
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>

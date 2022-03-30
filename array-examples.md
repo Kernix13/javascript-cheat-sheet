@@ -2246,7 +2246,6 @@ function updateValues() {
   money_minus.innerText = `$${expense}`;
 }
 ```
-
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Notes
@@ -2305,3 +2304,5 @@ const obj = arr1.reduce((accum, key, i) => {
 }, {});
 console.log(obj); // {name: 'Jim', age: 54, country: 'USA'}
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>

@@ -25,6 +25,7 @@ Syntax and code examples for the most coomon object methods
 1. [Spread operator](#spread-operator)
 1. [Miscellaneous](#miscellaneous)
 1. [Syntax tables](#syntax-tables)
+1. [Notes](#notes)
 
 ## Common Object methods
 
@@ -71,6 +72,9 @@ const chordIntervals = {
   }
 console.log(Object.keys(chordIntervals)) // ["Chord","Intervals","steps","Equal Chords","Chord Substitutes","scales"]
 console.log(Object.keys(chordIntervals.scales)) // ["Major Scale","Minor Pentatonic","Blues Scale","Harmonic Minor", ...]
+
+// To check whether an object is empty or not
+Object.keys(obj).length 
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -1140,5 +1144,11 @@ const [a, b,,, c] = [1, 2, 3, 4, 5, 6]; // assign from arrays
 const [a, b, ...arr] = [1, 2, 3, 4, 5, 7]; // with rest
 const half = ({ max, min }) => (max + min) / 2.0; // obj as Fx parm
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Notes
+
+Something here...
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>

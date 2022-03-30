@@ -313,6 +313,8 @@ Math.ceil(x)
 console.log(Math.ceil(.95)); // 1
 console.log(Math.ceil(7.004)); // 8
 console.log(Math.ceil(-7.004)); // -7
+
+// You can also use double tildes (~~) with Math.ceil
 ```
 
 <div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil">MDN Math.ceil</a></div>
@@ -331,6 +333,19 @@ Math.floor( 45.05); //  45
 Math.floor(  4   ); //   4
 Math.floor(-45.05); // -46
 Math.floor(-45.95); // -46
+
+// You can also use double tildes (~~)
+console.log(~~(45.95)) // 45
+console.log(~~45.95) // 45
+console.log(~~(-45.95)) // -45
+console.log(~~-45.95) // -45
+
+// Single tilde (~) reverses the sign and ...
+console.log(~45.95) // -46 like Math.floor
+console.log(~(45.95)) // -46 like Math.floor
+console.log(~-45.95) // -44, no clue
+console.log(~(-45.95)) // -44, no clue
+
 ```
 
 <div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor">MDN Math.floor</a></div>
@@ -382,6 +397,8 @@ Math.round( 20.5 ); //  21
 Math.round( 42   ); //  42
 Math.round(-20.5 ); // -20
 Math.round(-20.51); // -21
+
+// You can also use double tildes (~~) with Math.round
 ```
 
 <div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round">MDN Math.round</a></div>
