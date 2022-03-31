@@ -99,7 +99,7 @@ const hasSameElements = (a, b) => {
 
 Things you don't see often:
 
-- underscore as a variable name `_,`
+- underscore as a variable name `_,`: It's used when a function expects 2 arguments, but you will not reference the first, e.g. `Array.filter` expects an array item and (optionally) an index. But since only the index will be handled in the function scope, and since it MUST come second, you put an underscore in lieu of the first argument
 
 ```js
 const range = Array(max - min + 1)

@@ -156,7 +156,7 @@ function sumFibs(num) {
 
   const startNums = [1, 1];
   let nextNum = 0;
-  // can you use a for loop here?
+
   for (let i of startNums) {
     let nextNum = startNums[i - 1] + startNums[i];
     if (nextNum <= num) {
