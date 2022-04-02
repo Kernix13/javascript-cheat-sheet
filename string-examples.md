@@ -37,8 +37,6 @@ I skipped these methods:
 - [localeCompare()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare): returns a number indicating whether a reference string comes before, or after, or is the same as the given string in sort order.
 - [matchAll()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll): returns an iterator of all results matching a string against a regular expression, including capturing groups.
 - [normalize()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize): returns the Unicode Normalization Form of the string.
-- [padEnd()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd): pads the current string with a given string (repeated, if needed) so that the resulting string reaches a given length. The padding is applied from the end of the current string.
-- [padStart()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart): pads the current string with another string (multiple times, if needed) until the resulting string reaches the given length. The padding is applied from the start of the current string.
 - [replaceAll()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll): returns a new string with all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match.
 - [search()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search): executes a search for a match between a regular expression and this String object.
 - [startsWith()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith): determines whether a string begins with the characters of a specified string, returning true or false as appropriate.
@@ -47,6 +45,11 @@ I skipped these methods:
 - [trimEnd()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd): removes whitespace from the end of a string. trimRight() is an alias of this method.
 - [trimStart()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart): removes whitespace from the beginning of a string. trimLeft() is an alias of this method.
 - [valueOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/valueOf): returns the primitive value of a String object.
+
+**These two are worth looking into**:
+
+- [padEnd()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd): pads the current string with a given string (repeated, if needed) so that the resulting string reaches a given length. The padding is applied from the end of the current string. 
+- [padStart()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart): pads the current string with another string (multiple times, if needed) until the resulting string reaches the given length. The padding is applied from the start of the current string. 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -317,7 +320,7 @@ console.log(found.groups); // {animal: "fox"}
 
 ### replace
 
-**<ins>Returns a new string</ins>** with some or all matches of a `pattern` replaced by a `replacement`. The `pattern` can be a string or a `RegExp`, and the `replacement` can be a string or a function to be called for each match. If `pattern` is a string, only the first occurrence will be replaced.
+**<ins>Returns a new string</ins>** with some or all matches of a `pattern` replaced by a `replacement`. The `pattern` can be a string or a `RegExp`, and the `replacement` can be a string or a function to be called for each match. If `pattern` is a string, only the first occurrence will be replaced, in which case use `replaceAll()`.
 
 MDN syntax:
 ```js
@@ -360,7 +363,7 @@ console.log(newstr);  // Smith, John
 
 ### toString
 
-'toString()`: Every JavaScript object has a `toString()` method. You can convert a number, boolean or array to a string. However, you can not use this to convert an object to a string (See [MDN Object.toString](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)).
+`toString()`: Every JavaScript object has a `toString()` method. You can convert a number, boolean or array to a string. However, you can not use this to convert an object to a string (See [MDN Object.toString](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)).
 
 
 MDN syntax and examples:

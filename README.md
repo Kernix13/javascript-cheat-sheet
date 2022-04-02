@@ -4,16 +4,6 @@
 
 This is not an all-inclusive list of every possible JavaScript method, property, etc. This file has tables of comparisons for quick reference. Notes on elements in the tables are at the bottom of the file.
 
-- `conditionals-examples.md`: Mostly done
-- `function-examples.md`: Good but need more notes and examples or Local storage, Event delegation,  Promises, and Recursion.
-- `loop-examples.md`: still raw - need more examples
-- `notes.md`: various important notes on anything and everything (REALLY MESSY!)
-- `number-date-examples.md`: Good but need to learn how to format dates, unless my tests in CodePen are the problem. Try local file...
-- `object-examples.md`: Mostly complete
-- `practical-examples.md`: Work in process - not much here yet
-- `regex-examples.md`: this is pretty good but not finished
-- `string-array-examples.md`: The **_BEST_** file by far!
-
 <div id="back-to-top"></div>
 
 ## Table of Contents
@@ -43,18 +33,9 @@ This is not an all-inclusive list of every possible JavaScript method, property,
    1. [Read and return values](#read-and-return-values)
    1. [Update and mutate](#update-and-mutate)
 1. [Arrays and Strings](#arrays-and-strings)
-   1. [Same Methods and Same Effect](#same-methods-and-same-effect)
-   1. [Different Methods and Same Effect](#different-methods-and-same-effect)
-   1. [Different Methods and Opposite Effect](#different-methods-and-opposite-effect)
-   1. [Common Methods unique to Strings](#common-methods-unique-to-strings)
    1. [String Methods Notes](#string-methods-notes)
-   1. [Other Methods unique to Arrays](#other-methods-unique-to-arrays)
-   1. [High Order Array Methods](#high-order-array-methods)
    1. [Array Methods Notes](#array-methods-notes)
 1. [Object Notes](#object-notes)
-1. [Number notes](#number-notes)
-1. [Date Notes](#date-notes)
-1. [Loop Notes](#loop-notes)
 1. [Miscellaneous](#miscellaneous)
 
 ## Table Comparisons
@@ -513,7 +494,7 @@ Table of syntax for various ES6 topics:
 |                       | product(2, 4, 6, 2)                   |
 | Spread operator:      | let numbers = [-12, 160, 0, -3, 51, -50]; | 
 |                       | let minNum = Math.min(...numbers);    |
-| Destructuring assigment.: | const user = { name: 'John Doe', age: 34 }; | 
+| Destructuring assigment.: | const {x, y, z} = obj; | 
 | `// instead of:`      | const name = user.name;               | 
 |                       | const age = user.age;                 | 
 | `// use:`             | const { name, age } = user;           | 
@@ -725,94 +706,19 @@ Miscellaneous notes:
 
 There are methods in common to both arrays and strings so I am combining them to more easily visualize them. Check out the following MDN links: [MDN String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [MDN Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
 
-### Same Methods and Same Effect
-
-- `slice()`, str | Extracts a section of a string and returns a new string, does not mutate original
-- `slice()`, arr | Extracts a section of the calling array and returns a new array
-- `concat()`, str | Joins two or more strings and returns the new string
-- `concat()`, arr | Joins two or more arrays and returns a copy of the joined arrays
-- `includes()`, str | Check if a string contains the specified string 
-  - Alternate: `includes(searchVal, beginIndex)`
-- `includes()`, arr | Check if an array contains the specified element
-  - Alternate: `includes(searchVal, beginIndex)` 
-- `endsWith()`, str | Checks whether a string ends with the characters of a given string 
-  - Alternate: `endsWith(searchString, length)`
-- `indexOf()`, str | returns the index of the first occurrence of the specified substring
-  - Alternate: indexOf(searchString, pos)
-- `indexOf()`, arr | returns the first index at which a given element can be found, similar to `includes()`; uses strict equality
-  - Alternate: `indexOf(searchVal, pos)`
-- `lastIndexOf()`, str | returns the index of the last occurrence of the specified substring: 
-  - Alternate: lastIndexOf(searchStr, fromIndex)
-- `lastIndexOf()`, arr | returns the index of the last occurrence of the specified value
-  - Alternate: `lastIndexOf(searchVal, fromIndex)`
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-### Different Methods and Same Effect
-
-- `arr.at()`: Accepts negative #’s, which counts from back
-- `str.substring()`: returns the part of the string between the start and end indexes, or to the end of the string
-  - Alernate: `substring(indexStart, indexEnd)` where `indexEnd` is the index of the first character to exclude from the returned substring.
-- `arr.splice()`: changes the contents of an array (_mutates_) by removing or replacing existing elements and/or adding new elements
-  - Alternate: `splice(start, deleteCount)`, `splice(start, deleteCount, item1, item2, ...)`, where itemN = equals the values to add to the array beginning from `start`.
-
-### Different Methods and Opposite Effect
-
-- `str.split()`: alternate code: `split(separator)`, `split(separator, limit)`
-- `arr.join()`: alternate code: `join(separator)`
-- These two are used in unison, first to split a string, then to join. 
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-### Common Methods unique to Strings
-
-- `toLowerCase()`: Converts string to lowercase
-- `toUpperCase()`: Converts string to uppercase
-- `trim()`: Removes whitespace from both ends of a string and returns a new string, without modifying the original string
-- `repeat(count)`: constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together
-- `test()`:	Though, not a string method, it executes a search for a match between a regular expression and a specified string. Returns true or false: `test(str)`
-- `match()`: Used to match regular expression against a string; retrieves the result of matching a string against a regular expression: `match(RegEx)`
-- `replace()`: Returns a new string with some or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. If pattern is a string, only the first occurrence will be replaced: `replace(regexp, newSubstr)`, `replace(regexp, replacerFunction)`, `replace(substr, newSubstr)`, or `replace(substr, replacerFunction)`
 
 ### String Methods Notes
 
-- `charCodeAt(index)` — Gives you the Unicode number for the character at that position
-- `fromCharCode(num1, num2, ...)` — Returns the character associated with a unicode number
-- `charCodeAt` takes an index and returns a number, whereas `fromCharCode` does the opposite: returns a character given a number.
+- `str.length`: used often in `for` loops to loop for each element. Same for arrays.
+- `str[index]`: to return a value at a specific index, e.g. `str[3]` to return value at the 4th position. Same for arrays.
 - `valueOf()` — Returns the primitive value (that has no properties or methods) of a string object
-- 'toString()`: Every JavaScript object has a `toString()` method. You can convert a number, boolean or array to a string. However, you can not use this to convert an object to a string (See [MDN Object.toString](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)).
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-### Other Methods unique to Arrays
-
-- `push()`: Adds one or more elements to the end of an array and returns the new length of the array: 'push(elem1, elem2, ...)`
-- `unshift()`: Adds one or more elements to the beginning of an array and returns the new length of the array: `unshift(elem1, elem2, ...)`
-- `shift()`: Removes the first element from an array and returns that removed element. This method changes the length of the array (no arguments). To get the removed item make sure to set it to a var: `let removedItem = arr.shift();`
-- `pop()`: Removes the last element from an array and returns that element. This method changes the length of the array (no arguments)
-- `flat()`: creates a new array with all sub-array elements concatenated into it recursively up to the specified depth
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-### High Order Array Methods
-
-- `forEach()`: Function to run on each item of an array, common in `for` loops, performs a function on each item in your array, similar to using a "for" loop to apply a function to an array but with much less work to code. Unlike map(), forEach() does not create a new array automatically, you would have to code a specific function to do so
-- `filter()`: Takes a function containing a test and returns a new array with all the elements that pass that test. The filtration is done using a function that returns a boolean value
-- `map()`: Performs a function on every element in your array and places the result in a new array
-- `reduce()`: Takes a _reducer_ function and executes it on each array element to output a single value while returning. It takes a `reducer` function with an `accumulator` variable and a `current` element variable as required parameters. The accumulator's value is remembered across all the iterations and is ultimately returned after the final iteration
-- `every()`: Checks if **every** element in an array pass a test, returns boolean. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every). The every method executes the provided callbackFn function once for each element present in the array until it finds the one where callbackFn returns a falsy value.
-- `some()`: Tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array. This have a number of variations for the syntax. Check the MDN doc [Array.prototype.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some). The some() method executes the callbackFn function once for each element present in the array until it finds the one where callbackFn returns a truthy value.
-- `sort()`: One of the most common operations performed on an array, used to sort an array of numbers or even strings with just a single line of code, returns original array but modified. Sorting a number based array may require a callback function.
-- `reverse()`: Reverses the order of the array items, does NOT do a reverse sort
-- `find(FxName)` and `findIndex()`: Returns the first element value (for `find`) or index (for `findIndex`) in the array that passes on the test provided by the callback. If there is no match, it returns `undefined` (for find) or `-1` (for findIndex).
-- Link: [Mastering ES6 higher-order functions for Arrays](https://www.airpair.com/javascript/posts/mastering-es6-higher-order-functions-for-arrays).
+- `toString()`: Every JavaScript object has a `toString()` method. You can convert a number, boolean or array to a string. However, you can not use this to convert an object to a string (See [MDN Object.toString](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)).
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Array Methods Notes
 
-- `.length`: used often in `for` loops to loop for each element
-- `arr.[index]`: to return a value at a specific index, e.g. `arr[3]` to return value at the 4th position
+- `flat()`: creates a new array with all sub-array elements concatenated into it recursively up to the specified depth
 - Returns boolean: `every()`, `includes()`, `some()`
 - Returns string: `join()`, `toString()`
 - Return New Array: `filter()`, `map()`, `concat()`
@@ -829,18 +735,11 @@ There are methods in common to both arrays and strings so I am combining them to
 - Instead of using indexes to access and modify their data, you access the data in objects through what are called `properties`
 - Properties are often `strings` - you can omit the quotes for single-word string properties and for numbers
 - Objects can be thought of as a `key`/`value` storage, like a dictionary `{word: definition}`
-- There are two ways to access the properties of an object: dot notation (`.`) and bracket notation (`[]`), similar to an array. 
+- There are two ways to access the properties of an object: dot notation (`.`) and bracket notation (`[]`). 
 - Dot notation is what you use when you know the name of the property you're trying to access
 - If the property of the object you are trying to access has a space in its name, you will need to use bracket notation
 - It's also best to use bracket notation when a variable name is substituted for a key name, especially if the name may contain multiple words
 - Use dot or bracket notation to update a property
-- Testing objects for properties: use the `.hasOwnProperty(propName)` method of objects to determine if that object has the given property
-- Sub-properties of objects can be accessed by chaining together the dot or bracket notation
-- `Object.prototype.toString()`:	Returns a string representation of the object.
-- `Object.prototype.valueOf()`:	Returns the primitive value of the specified object.
-- `Object.prototype.hasOwnProperty()`:	Returns a boolean indicating whether an object contains the specified property as a direct property of that object _and not inherited through the prototype chain_.
-- `Object.keys(obj)`:	Returns an array containing the names of all of the given object's own enumerable string properties.
-- `Object.values()`:	Returns an array containing the values that correspond to all of a given object's own enumerable string properties
 
 Defining getters and setters
 - A **getter** is a method that gets the value of a specific property. A **setter** is a method that sets the value of a specific property. You can define getters and setters on any predefined core object or user-defined object _that supports the addition of new properties_.
@@ -854,157 +753,39 @@ Check out the [MDN Working with Objects](https://developer.mozilla.org/en-US/doc
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## Number notes
-
-- `Math.max()`: returns the largest of the zero or more numbers given as input parameters, or NaN if any parameter isn't a number and can't be converted into one: `Math.max(value0, value1)`, `Math.max(value0, value1, /* ... ,*/ valueN)`
-- `Math.min()`: returns the lowest-valued number passed into it, or NaN if any parameter isn't a number and can't be converted into one: `Math.min(value0, value1)`, `Math.min(value0, value1, ... , valueN)`
-- `Math.pow()`: static method, given two arguments, base and exponent, returns baseexponent: `Math.pow(base, exponent)`
-- `Math.random()`: returns a floating-point, pseudo-random number in the range 0 to less than 1 (inclusive of 0, but not 1) with approximately uniform distribution over that range — which you can then scale to your desired range
-- `Math.sign()`: returns either a positive or negative +/- 1, indicating the sign of a number passed into the argument
-- `Number.parseFloat()`: parses an argument and returns a floating point number. If a number cannot be parsed from the argument, it returns NaN: `Number.parseFloat(string)` where `string` is value to parse
-- `Math.floor(Math.random())`: "Trick" to get a random number within a certain interger range, e.g. `* 100` returns whole numbers between 0 and 99.
-- `toString()`: converts a number to a string
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-## Date Notes
-
-Pulling Date and Time Values:
-- `new Date()`: Formats are `2015-03-25`, `03/25/2015`, `Mar 25 2015`, or `25 Mar 2015`. Can also be written without specifying the day (YYYY-MM): `2015-03` (Time zones will vary the result above between February 28 and March 01); or year only `2015`. Can also be written with added hours, minutes, and seconds (YYYY-MM-DDTHH:MM:SSZ): `2015-03-25T11:59:47Z`. Date and time is separated with a capital T. UTC time is defined with a capital letter Z. Or do `9-10-87 11:59-42`.
-- `getDate()`: Returns the day of the month for the specified date according to local time as a number (1-31)
-- `getDay()`: Returns the day of the week as a number (0-6) for the specified date according to local time, where 0 represents Sunday 
-- `getFullYear()`: Returns the year as a four-digit number (yyyy) of the specified date according to local time 
-- `getHours()`: Get the hour (0-23), returns the hour for the specified date, according to local time
-- `getMilliseconds()`: The millisecond (0-999), returns the milliseconds in the specified date according to local time
-- `getMinutes()`: Get the minute (0-59), returns the minutes in the specified date according to local time
-- `getMonth()`: Month as a number (0-11)m returns the month in the specified date according to local time, as a zero-based value (where zero indicates the first month of the year)
-- `getSeconds()`: Get the second (0-59), returns the seconds in the specified date according to local time
-- `getTime()`: Get the milliseconds since January 1, 1970, returns the number of milliseconds since the ECMAScript epoch
-- `getUTCDate()`: The day (date) of the month in the specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
-- `parse`: Parses a string representation of a date and returns the number of milliseconds since January 1, 1970
-
-<br />
-
-Set Date Methods:
-- `setDate(dayValue)`: Set the day as a number (1-31), changes the day of the month of a given Date instance, based on local time
-- `setFullYear(yearValue)`: Sets the year (optionally month and day), sets the full year for a specified date according to local time. Returns new timestamp
-  - **Additional syntax**: `setFullYear(yearValue, monthValue)`, `setFullYear(yearValue, monthValue, dateValue)`
-- `setHours(hoursValue)`: Set the hour (0-23), sets the hours for a specified date according to local time, and returns the number of milliseconds since January 1, 1970
-  - **Additional syntax**: `setHours(hoursValue, minutesValue)`, `setHours(hoursValue, minutesValue, secondsValue)`, `setHours(hoursValue, minutesValue, secondsValue, msValue)`
-- `setMilliseconds(millisecondsValue)`: Set milliseconds (0-999), sets the milliseconds for a specified date according to local time
-- `setMinutes(minutesValue)`: Sets the minutes (0-59), sets the minutes for a specified date according to local time
-  - **Additional syntax**: `setMinutes(minutesValue, secondsValue)`, `setMinutes(minutesValue, secondsValue, msValue)`
-- `setMonth(monthValue)`: Set the month (0-11), sets the month for a specified date according to the currently set year
-  - **Additional syntax**: `setMonth(monthValue, dayValue)`
-- `setSeconds(secondsValue)`: Sets the seconds (0-59), sets the seconds for a specified date according to local time
-  - **Additional syntax**: `setSeconds(secondsValue, msValue)`
-- `setTime(timeValue)`: Set the time (milliseconds since January 1, 1970), sets the Date object to the time represented by a number of milliseconds since January 1, 1970
-- `setUTCDate(dayValue)`: Sets the day of the month for a specified date according to universal time (also available for day, month, full year, hours, minutes etc.)
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-## Loop Notes
-
-- Loops run the same block of code but using different values each time. 
-- *While loops*: runs while a specified condition is true and stops once that condition is no longer true. Make sure to initialize your variable outside of the loop and do your increment INSIDE the loop.
-  - Be careful! It is very easy to create an infinite loop and have your computer lock up.
-- *For loops*: The most common type of JavaScript loop, it runs **`for`** a specific number of times; are declared with three optional expressions separated by semicolons; it’s also common for a loop to iterate thru an array
-  - `(a; b; c)`: stands for ( initialization; condition; final-expression ), or are declared with three optional expressions separated by semicolons
-  - The initialization statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable
-  - The condition statement is evaluated at the beginning of every loop iteration and will continue as long as it evaluates to true. When the condition is false at the start of the iteration, the loop will stop executing. This means if the condition starts as false, your loop will never execute
-  - The final expression is executed at the end of each loop iteration, prior to the next condition check and is usually used to increment or decrement your loop counter
-  - Use a 'for` loop over a `while` loop when you know how many times the loop will run; otherwise, use a `while` loop.
-- *Nested for loops*: If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays
-- *Do...while loops*: it will first do one pass of the code inside the loop no matter what, and then continue to run the loop while the specified condition evaluates to true - a do...while loop ensures that the code inside the loop will run at least once
-- `forEach loops`: An array method that runs a callback function for each element in an array, `var.forEach(a, b, c) {code}` where `a` is the iterator, `b` is the index, and `c` is the actual array 
-- `map()`: used to return something different in a new array.
-- `for in`: for objects
-- `for of` loop: also for objects - 
-- `break`: use to break out of the loop like in switch statements.
-- `continue`: use to skip an iteration in a loop.
-- ***Recursion***: ???
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Miscellaneous
 
 Here are the best of my notes or tips and tricks:
 
-General:
-- Escaping: use a backslash (`\`) in front of the quote in a string: `\'` or `\"`
-- An algorithm is a series of step-by-step instructions that describe how to do something 
-- To write an effective algorithm, it helps to break a problem down into smaller parts and think carefully about how to solve each part with code
+**General**:
+
 - BREAK and CONTINUE are really important things to know for loops
 - if no `<` or `>` or other comparison symbol is used, the statement is considered `true` if the value is anything other than 0
-- `switch` statements: tests a value and can have many `case` statements which define various possible values. Statements are executed from the first matched `case` value until a `break` is encountered
-- `case` statements are tested with strick equality (`===`): `switch(check value(s)) {case value: varname = something; break; next case check…}`
-- `default` means `else` in a `switch` statement – you can also have multiple cases before a `break`
-- **Module** script: You need to create a script in your HTML document with a type of module: `<script type="module" src="filename.js"></script>`
-- Use the keywords `export` and `import` - 
-- When you export a variable or function, you can import it in another file and use it without having to rewrite the code 
-- Export multiple things: `export { thing1, thing2 };`
-- `import` allows you to choose which parts of a file or module to load: `import { add } from './math_functions.js'; `
-- Use `import *` to import everything from a file - 
-- Create an export fallback with `export default` - omit the curly brackets when you import a default export
 - Almost every value on its own in JavaScript evaluates to true, except what are known as the "falsy" values: `false`, `0`, `""`, `NaN`, `undefined`, and `null`
 - THIS IS HUGE: The **_comma operator_** (`, `) allows multiple expressions to be evaluated in a single statement and returns the result of the last expression: `function isLess(a, b) { return a <= b; }` AND `function isEqual(a, b) { return a === b; }`
 
 <br />
 
-Variables and values: 
+**Variables and values**: 
+
 - When JS variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN`
 - Variables which are declared without the `let` or `const` keywords are automatically created in the global scope
-- **_Falsy_** = [`false`, `0`, `""` or `''`, `NaN`, `undefined`, and `null`]. Make sure to filter falsy values out of an array. 
-- `let` is block scoped - A block is a chunk of code bounded by `{ }` - So a variable declared in a block with let is only available for use within that block
-- you do not want to declare a variable 2 times in the same scope - 
-- variables assigned using `const` should be uppercase: const WEATHER = "It's cold!";
+- `let` is block scoped - A block is a chunk of code bounded by `{ }` - So a variable declared in a block with `let` is only available for use within that block
 
 <br />
 
 Objects:
+
 - Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears is irrelevant when referencing or accessing that key
 - Constructors define properties and behaviors instead of returning a value as other functions might 
 - OBJECT ORIENTED PROGRAMMING: Functions inside of objects as opposed to in the global scope - in this case they are called METHODS – a Fx in an object `todo` called `add` or `edit` and you call it by `todo.add()` - or `todo.edit(id)`
-- `for in` loop: used for objects – create a user object > then for `(let x in user)` returns the names of the keys – user([x]) returns the values
 - OOP: constructors & the _this_ Keyword: the most important things in OOP are the `constructor` and the `this` keyword. If you want to create multiple instances of a certain type of object then you want to create a constructor
+- `for in` loop: used for objects – create a user object > then for `(let x in user)` returns the names of the keys – user([x]) returns the values
 - the `this` keyword refers to the **_current_** instance of the object, the function scope. To access a variable outside of the function nut in the same object, you have to use `this.varName`, where `this` is pertaining to the current object.
-- NOTE: constructors are really powerful when they have functions w\in them known as `methods`
 - each object in JS has a prototype – a prototype is an object itself – all objects inherit their properties and methods from their prototypes = Object.prototype vs Client.prototype 
 - `Object.prototype` – you can see its methods like hasOwnProperty, toString, valueOf
 - `Client.prototype` - when you are dealing with objects that were created thru a constructor
-- prevent object mutation: To ensure your data doesn't change, use the function `Object.freeze` to prevent data mutation. Once frozen, you can no longer add, update, or delete properties from that object
-
-<br />
-
-Syntax:
-- Bracket notation to find the Nth-to-last character: `string.length - n`, where `n` is a # from end
-- Another use of bracket notation on objects is to access a property which is stored as the value of a variable (?)
-- Use the spread operator to evaluate arrays, `Math.max(...arr);`
-- Use destructuring assignment to extract values from objects (?)
-- Use destructuring assignment w\ the rest parameter to reassign array elements
-
-<br />
-
-Functions:
-- The function passed to High Order Array Methods will run as many times as the # of items in the array it is called on 
-- FUNCTION EXPRESSIONS: it’s when a function is the value of a variable, usually they are anonymous: `let one = function() {...}`
-- Function expressions require an ending semicolon because they are the value of a variable, whereas normal functions do not require that.
-- There are times when there is no difference between a function declaration vs. expression, but there are times when expressions have benefits: hoisting closures, ...
-- Function closure: is a function that references variables in the outer scope from its inner scope.
-- inline functions - When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword `return` as well as the brackets surrounding the code: `const magic = () => new Date();`
-- WHENEVER YOU HAVE AN ANONYMOUS FUNCTION, YOU CAN CONVERT IT INTO AN ARROW FUNCTION
-- arrow function with arguments: `let myConcat = (arr1, arr2) => arr1.concat(arr2);`
-- arrow functions work great with higher order functions b\c they take functions as arguments (Arrow) - 
-- **Default parameters**: allow named parameters to be initialized with default values if no value or undefined is passed: `function fnName(parm1 = val1) {...}` or `function fnName(parm1, parm2 = val, ...) {...}`
-- **Rest parameter**: you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function: `(...args)`
-- The rest parameter eliminates the need to check the args array and allows us to apply `map()`, `filter()` and `reduce()` on the parameters array
-- Only the last parameter in a function definition can be a rest parameter
-- **Spread operator**: allows you to expand arrays and other expressions in places where multiple parameters or elements are expected. It expands an already existing array - it spreads it out intto its individual parts. You can only use it in an argument to a function or in an array literal 
-- **Array Literal**: An array literal is a list of zero or more expressions, each of which represents an array element - aka, an array.
-- Destructuring assignment - a special syntax for taking values from an object to a variable - it's a quicker way of assigning values from an object into variables - it's seems like the assignment is reversed with the var name to the right of `=` and the destructuring of the object to the left
-- IIFE: is an anonymous function you declare and run at the same time. To do that you need it to be an expression, and you make it an expression by enclosing it in parentheses (). 
-- IIFE's can also take in parameters. IIFE's are very useful with certain design patterns like the module pattern. 
-- Methods: you can put functions inside objects as well. 
 
 <br />
 
@@ -1019,18 +800,6 @@ if (id === 100)
 // or 
 if (id === 100) console.log("Equal");
 ```
-
-<br />
-
-Other:
-- template literals / template strings: 
-```js
-${ "vars or expressions/math or a function call or use conditionals / ternary op"  }
-```
-- **Event bubbling**: when an event happens in the DOM it will bubble up through its parents. If you put an event listener for all the parents with a console.log of their class, they will all fire off even though you did not click them.
-- <ins>**Event delegation**</ins>: The oppsite of event bubbling - you put the listener on a parent element, then you use logic inside of the event handler to target the element you want. If you have a list of items all with the same class,  your event listener will only fire for the first one, unless you use event delegation. Another situation where you need it is if you dynamiclly insert something into the DOM using JS.
-- for for the multiple list items, put the event listener on the parent or higher then put a condition to find the target. 
-- `localStorage`: an API that is part of the `window` object. You can set key-value pairs, but what you set as a value has to be a string. You can save objects and arrays but you have to turn them into a string using `JSON.stringify()`, then to use it use `JSON.parse().` 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 <!--  
