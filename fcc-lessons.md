@@ -202,9 +202,13 @@ function()    { return }  // equals
   (p1, p2) => { return }  // or 
 
 
-// spread:
+// Rest parameter (MUST always be the LAST parameter if more than 1 parameter):
 function(...args)
-// spread
+function(param, ...args)
+function(a, b, ...args)
+
+
+// Spread operator:
 [1, 2, ...nums, ...nums2, 9, 10]
 {..obj1, ...obj2}
 
@@ -492,7 +496,7 @@ Solutions:
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div> 
 
-update node:
+MISCELLANEOUS -> update node:
 
 ```js
 npm cache clean -f

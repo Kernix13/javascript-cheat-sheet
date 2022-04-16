@@ -731,6 +731,8 @@ async function getProcessedData(url) {
 
 ## Arrow functions
 
+Arrow functions have a lexical `this` keyword.
+
 Syntax and examples:
 ```js
 param => expression
