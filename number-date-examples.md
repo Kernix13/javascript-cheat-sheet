@@ -1318,6 +1318,8 @@ let today = new Date() // "202203-11T22:13:35.413Z" Codepen?
 let sameDay = new Date(today)
 let birthday = new Date(1995, 11, 17) // "1995-12-17T5:00:00.000Z"
 let birthday = new Date(1995, 11, 17, 13, 24, 0) // "1995-12-17T5:00:00.000Z"
+
+new Date().toLocaleString() // "4/17/2022, 6:52:35 PM"
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
