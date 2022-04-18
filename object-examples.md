@@ -929,6 +929,11 @@ const colors = ["yellow", "blue", "red", "green"];
 const [c1, c2, c3, c4] = colors;
 console.log(colors); // ["yellow","blue","red","green"]
 console.log(c1, c2, c3, c4); // "yellow" "blue" "red" "green"
+
+// Another example:
+const arr = [1,2,3,4,5]
+const [a, b] = arr
+console.log(b) // 2
 ```
 
 <br />

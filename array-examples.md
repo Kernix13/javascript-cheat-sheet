@@ -2026,6 +2026,13 @@ Destructuring examples:
 |                 | ({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}); |
 |                 |                                         |
 
+Destructuring an array example:
+```js
+const arr = [1,2,3,4,5]
+const [a, b] = arr
+console.log(b) // 2
+```
+
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Combinations of methods
