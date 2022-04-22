@@ -8,8 +8,8 @@ Notes on specifics in README and other important notes, definitions, concepts, t
 
 ```js
 const hasSameElements = (a, b) => {
-    return a.length === b.length && a.every((v,i) => v===b[i])
-}
+  return a.length === b.length && a.every((v, i) => v === b[i]);
+};
 // But do the elements need to be in the same order?
 ```
 
@@ -17,6 +17,7 @@ const hasSameElements = (a, b) => {
 
 ## Table of Contents
 
+1. [Miscellaneous](#miscellaneous)
 1. [Tips and Tricks](#tips-and-tricks)
    1. [Unique things](#unique-things)
 1. [Terms](#terms)
@@ -52,6 +53,12 @@ const hasSameElements = (a, b) => {
    1. [Other Events](#other-events)
 1. [Errors](#errors)
 
+<h2 id="miscellaneous" align="center">Miscellaneous</h2>
+
+- Linter: https://eslint.org/docs/user-guide/getting-started
+- https://eslint.org/docs/rules/padding-line-between-statements
+- Clean Variables: 1) Searchable, 2) Readable, 3) Understandable -
+
 <h2 id="tips-and-tricks" align="center">Tips and Tricks</h2>
 
 - === better than ==
@@ -70,7 +77,7 @@ const hasSameElements = (a, b) => {
 - destructuring assignment syntax
 - check performance with `performance.now()`
 - template literals with variables
-- ways to shorten if statements: ternary, &&, 
+- ways to shorten if statements: ternary, &&,
 - comma operator
 - spread operator to merge 2 objects
 - undefined (a variable that has not been assigned a value) vs null (intentional empty value)
@@ -78,12 +85,12 @@ const hasSameElements = (a, b) => {
 - use `array.slice(0, #);` to truncate an array
 - Destructuring Assignment for objects and arrays
 - short circuit operators
-- Dealing With Empty and Non-Empty Values: 
+- Dealing With Empty and Non-Empty Values:
 
 ```js
-   const arr = [0,1,2,null,undefined,"",false];
-   const nonEmptyValues = arr.filter(Boolean);
-   console.log("nonEmptyValues: ", nonEmptyValues); //[1, 2]
+const arr = [0, 1, 2, null, undefined, "", false];
+const nonEmptyValues = arr.filter(Boolean);
+console.log("nonEmptyValues: ", nonEmptyValues); //[1, 2]
 ```
 
 - **Excellent**: https://www.freecodecamp.org/news/how-to-learn-javascript-a-little-faster/
@@ -93,7 +100,9 @@ const hasSameElements = (a, b) => {
 - Good: https://www.jesssica.tech/post/Javascript-Tips-and-Tricks
 - Good: https://pratapsharma.in/javascript-tips-and-tricks
 - Good: https://github.com/wilfredinni/javascript-cheatsheet
-- Maybe: https://github.com/alhassy/JavaScriptCheatSheet 
+- Maybe: https://github.com/alhassy/JavaScriptCheatSheet
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Unique things
 
@@ -103,14 +112,14 @@ Things you don't see often:
 
 ```js
 const range = Array(max - min + 1)
-    .fill(0)
-    .map((_, i) => i + min);
+  .fill(0)
+  .map((_, i) => i + min);
 ```
 
 - Multiple function calls (a)(b)(c)...:
 
 ```js
-addTogether(5)(7)
+addTogether(5)(7);
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -259,41 +268,44 @@ Concepts, specific code syntax, ...
 
 # Sloppy notes
 
-Everything below here is a sloppy notebook: unordered notes, unclear notes, a true **_scratch-pad_**. 
+Everything below here is a sloppy notebook: unordered notes, unclear notes, a true **_scratch-pad_**.
 
 Important things I need to memorize and incorporate:
-- function statement vs var function: 
+
+- function statement vs var function:
 - arrow function: ( ) =>
-- new Date(): 
-- `${variable}`: 
-- the use of +=, -=, *=, /= with numbers
+- new Date():
+- `${variable}`:
+- the use of +=, -=, \*=, /= with numbers
 - Escaping single and double quotes (`\'\"`), new line and tab (`\n\t`)
-- Working with multi-dimensional arrays 
+- Working with multi-dimensional arrays
 - Great data structures article: https://www.educative.io/blog/javascript-data-structures
-  - my chord-intervals.json file is maybe a hash table or maybe a tre of some sort - 
+  - my chord-intervals.json file is maybe a hash table or maybe a tre of some sort -
 - Memorize and fully understand `JSON.stringify()` vs `JSON.parse()` - why would you use them with arrays?
 - Since ==, <, >, <=, >= do type coercion, you may need to include `&& typeof` == "type you want"
 - Remember not to use `=` in an if condition but use `==` or `===`
 - switch(), case, break, default - freeCodeCamp basic JS section, lessons: Golf Code and Counting Cards!
 - Learn shorthand for if statements: if (a, b) return a === b;
-- `freeCodeCamp`: 
-   - 25 escape sequences in strings, 
-   - 42 manipulate arrays with push ...45. manipulate arrays with unshift, 
-   - 73 golf code, 
-   - 74 selecting from many options with switch statements...77. replacing if else chains with switch, 
-   - 78 returning boolean values from functions
-   - 80 counting cards, 
-   - 84 accessing object properties with variables is really good and the reference to lookup tables => link https://dev.to/k_penguin_sato/use-lookup-tables-for-cleaning-up-your-js-ts-code-9gk - similar to setting city = "Philadelphia" then using city in weather app, 
-   - 86 add new properties to a js object - obj, newProp = "value"
-   - 87 delete properties from a js object: delete obj.propname
-   - 88 using objects for lookups - why does `lookup[val]` work but `lookup.val` does NOT? 
-   - 89 hasOwnProperty, 92. accessing nested arrays for nice []. notation, 93. record collection WOW,
-   - 96 iterate w\ js while loops 
+- `freeCodeCamp`:
+  - 25 escape sequences in strings,
+  - 42 manipulate arrays with push ...45. manipulate arrays with unshift,
+  - 73 golf code,
+  - 74 selecting from many options with switch statements...77. replacing if else chains with switch,
+  - 78 returning boolean values from functions
+  - 80 counting cards,
+  - 84 accessing object properties with variables is really good and the reference to lookup tables => link https://dev.to/k_penguin_sato/use-lookup-tables-for-cleaning-up-your-js-ts-code-9gk - similar to setting city = "Philadelphia" then using city in weather app,
+  - 86 add new properties to a js object - obj, newProp = "value"
+  - 87 delete properties from a js object: delete obj.propname
+  - 88 using objects for lookups - why does `lookup[val]` work but `lookup.val` does NOT?
+  - 89 hasOwnProperty, 92. accessing nested arrays for nice []. notation, 93. record collection WOW,
+  - 96 iterate w\ js while loops
 
 **Notes on Record Collection**:
-- 
 
-78) returning boolean values from functions:
+-
+
+78. returning boolean values from functions:
+
 ```js
 function isEqual(a, b) {
   if (a === b) {
@@ -307,6 +319,7 @@ function isEqual(a, b) {
   return a === b;
 }
 ```
+
 > Therefore, `return a === b` shorthand for entire if statement
 
 <div id="back-to-top"></div>
@@ -315,10 +328,10 @@ The best of my notes from Traversy Modern JS course:
 
 - 8 - primitive data types: string, number, boolean, null, undefined - stored directly in the location that the variables accesses - stored on the stack
 - reference types: arrays, object literals, functions, dates - accessed by reference, so the data isn’t actually stored in the variable – objects that are stored on the heap, the heap being dynalically alocated memory
-- typeof operator – used with the reference data types will return ‘object’ for all of them 
+- typeof operator – used with the reference data types will return ‘object’ for all of them
 - 9 - type conversion is where you change the datatype of a variable – e.g., data from a form will be a string by default but you may want to parse it
 - `length - 1`
-- 12 - template literals / template strings: ${ variables names or expressions/math or a function call or use conditionals / ternary op  }
+- 12 - template literals / template strings: ${ variables names or expressions/math or a function call or use conditionals / ternary op }
 - 13 - arr.sort() - great for strings but not the right result for a numbers based array
 - `find()` method which takes in a testing Fx: arr.find(functionName) where functionName does a simple comparison and it gets an argument which s\b your array items I think – it returns the first number that neets the criteria
 - the `this` keyword – trying to access another key in an object inside a Fx
@@ -327,71 +340,72 @@ The best of my notes from Traversy Modern JS course:
 - 16 - if (typeof thing !== 'undefined') – now you won’t get an error
 - 18 - FUNCTION EXPRESSIONS: it’s when a Fx is the value of a variable, usually they are anonymous
 - OBJECT ORIENTED PROGRAMMING: Functions inside of objects as opposed to in the global scope - in this case they are called METHODS – a Fx in an object `todo` called `add` or `edit` and you call it by `todo.add()` - or `todo.edit(id)`
-- 19 - array specific iteration with forEach and map 
+- 19 - array specific iteration with forEach and map
 - BREAK and CONTINUE are really important things to know for loops
 - forEach: takes in a callback function, an anonymous Fx – the anon Fx can take in 3 parameters, but you only need one – whatever you want to use as the current iteration, or the iterator -
-- the first of the 3 things the Fx takes in is the iterator – the next is the index which is the index for each item in the array – and you can also pass in array for the actual array 
+- the first of the 3 things the Fx takes in is the iterator – the next is the index which is the index for each item in the array – and you can also pass in array for the actual array
 - map: map can work in a few diff ways – it’s used to return something diff – to return a diff array
 - `for in` loop: often used for objects – create a user object > then for (let x in user) returns the names of the keys – user[x]) returns the values
 - 24 - DOM selectors (methods) for single elements: getElementById, querySelector, getElementsByClassName, getElementsByTagName, querySelectorAll
-- creating elements: className, setAttribute, appendChild, createTextNode, createElement, replaceChild, getAttribute, hasAttribute, removeAttribute, 
+- creating elements: className, setAttribute, appendChild, createTextNode, createElement, replaceChild, getAttribute, hasAttribute, removeAttribute,
 - 29 - NOTE: some elements have default behaviors – to stop the default behavior, pass a parm into the cb Fx and do e.preventDefault()
-- Event Target Element: can get `e.taget.className` or to get a collection change className to classList - TARGET is really important especially for event delegation 
+- Event Target Element: can get `e.taget.className` or to get a collection change className to classList - TARGET is really important especially for event delegation
 - 33 - localStorage: JSON.stringify, JSON.parse, clear, getItem, removeItem, setItem
-- SKIP 4) DOM Projects 
+- SKIP 4) DOM Projects
 - 44 - OOP: constructors & the _this_ Keyword: the most important things in OOP is the Constructor and the `this` keyword: if you want to create multiple instances of a certain type of object then you want to create a constructor
 - the `this` keyword refers to the current instance of the object, the function scope
 - NOTE: constructors are really powerful when they have functions w\in them known as methods
-- 46 - each object in JS has a prototype – a prototype is an object itself – all objects inherit their properties and methods from their prototypes = Object.prototype vs Client.prototype 
+- 46 - each object in JS has a prototype – a prototype is an object itself – all objects inherit their properties and methods from their prototypes = Object.prototype vs Client.prototype
 - Object.prototype – you can see its methods like hasOwnProperty, toString, valueOf
-- 47 - prototype inheritance: to have one object or one object type inherit from another 
-- use .call(a, b, c, ...) - `call()` is a fx that allows us to call another Fx from somewhere else in the current context 
-- 49 – ES6 classes: Any method you add inside the class gets added to the prototype and you still have Object.prototype 
+- 47 - prototype inheritance: to have one object or one object type inherit from another
+- use .call(a, b, c, ...) - `call()` is a fx that allows us to call another Fx from somewhere else in the current context
+- 49 – ES6 classes: Any method you add inside the class gets added to the prototype and you still have Object.prototype
 - Static Methods – ones you can use without instantiating a new object or instance
-- 50 inheritance and extending classes – or known as sub-classes 
+- 50 inheritance and extending classes – or known as sub-classes
 - when you instantiate a sub-class you want to call the class constructor and you do that with a Fx called super() - that calls the parent class constructor – you have to pass in the parameters in common
 
-7) Async JS, AJAX & Fetch API
-- ajax and the fetch api to make http requests to files, apis, and services whether they are your own or not - 
+7. Async JS, AJAX & Fetch API
+
+- ajax and the fetch api to make http requests to files, apis, and services whether they are your own or not -
 - asynchronous Fx’s – you pass in a callback Fx which is one method for handling asynchronous code
-- most async code you work with will come from an API or a library s\a AJAX and the XHR object – also jquery, libs like Axios, the fetch api, the Node.js filesystem (fs) module, XMLHttpRequest – these are all async technologies 
-- the ways to work w\ Async code: 1. Callbacks, 2. Promises, 3. Async/Await 
-- 58 Ajax – a set of web technologies to send and receeive data from the client & server asynchronously – done behind the scenes w\o having to relaod the page 
-- updating a section of the page is faster w\ AJAX than having to reload the page - this happens by making an asynchronous AJAX or JS call – it goes thru an AJAX engine and uses the XmlHttpRequest object 
-- the server returns the data usually in JSON format - then we parse and use that data in our application - 
-- when we send and receive requests it can be from something on out local machine or from a public API - these APIS must have permissions granted for us to be able to use them - they usually have CORS enabled which allows for cross domain communication meaning we can make requests to their API even though we are on a different domain name 
+- most async code you work with will come from an API or a library s\a AJAX and the XHR object – also jquery, libs like Axios, the fetch api, the Node.js filesystem (fs) module, XMLHttpRequest – these are all async technologies
+- the ways to work w\ Async code: 1. Callbacks, 2. Promises, 3. Async/Await
+- 58 Ajax – a set of web technologies to send and receeive data from the client & server asynchronously – done behind the scenes w\o having to relaod the page
+- updating a section of the page is faster w\ AJAX than having to reload the page - this happens by making an asynchronous AJAX or JS call – it goes thru an AJAX engine and uses the XmlHttpRequest object
+- the server returns the data usually in JSON format - then we parse and use that data in our application -
+- when we send and receive requests it can be from something on out local machine or from a public API - these APIS must have permissions granted for us to be able to use them - they usually have CORS enabled which allows for cross domain communication meaning we can make requests to their API even though we are on a different domain name
 - 59 - use new kw to instantiate a new instance of XMLHttpRequest which has properties like open()
 - SUMMARY: 1. an event listener that 2. calls a Fx which 3. creates a new instance of the xhr object, 4. .open() is called and we pass in 4a. the type of request and the 4b. url/filename and 4c. true for asynchronous, when ready, 5. onload is called where we 6. check for staus = 200, 7. we do something w\ the response text, 8. .send to make it work
 - there are also something called readyState values
-- 61 - if you built a full-stack app it can be from your own api or from an external api - .open(), .send(), .onload() - 
-- 62 - REST stands for REpresentational State Transfer – it’s a architecture style for designing networked applications – it works by relying on a stateless client-server communication protocol and is almost always HTTP 
+- 61 - if you built a full-stack app it can be from your own api or from an external api - .open(), .send(), .onload() -
+- 62 - REST stands for REpresentational State Transfer – it’s a architecture style for designing networked applications – it works by relying on a stateless client-server communication protocol and is almost always HTTP
 - REST was made to treat objects on the server side as resources that can be created, updated, read and deleted (CRUD)
-- what makes REST awesome is that since it operates using just HTTP requests and usually a standard like JSON 
+- what makes REST awesome is that since it operates using just HTTP requests and usually a standard like JSON
 - an API is the messenger and REST lets us use HTTP requests to format the message
-- a REST API takes in multiple types of HTTP requests → GET, POST, PUT, DELETE, HEAD, CONNECT, TRACE, OPTIONS, PATCH 
+- a REST API takes in multiple types of HTTP requests → GET, POST, PUT, DELETE, HEAD, CONNECT, TRACE, OPTIONS, PATCH
 - ENDPOINTS: the url’s that you access to do certain things
-- with POST, PUT and DELETE you will send data long w\ your rquest – the API needs to know what data to add, update or delete 
+- with POST, PUT and DELETE you will send data long w\ your rquest – the API needs to know what data to add, update or delete
 - 63 – callback Fxs: function that is passed in as a parameter to another function and is then ran inside the Fx body - the one in forEach is synchronous – setTimeout uses an asynchronous cb
-- 64, 65 - confusing 
-- 66 – ES6 promises: 
-- 67 – Fetch API: 
-- 68 – Error handling w\ Fetch: 
-- 69 – arrow Fxs: 
-- 71 – async & await: 
+- 64, 65 - confusing
+- 66 – ES6 promises:
+- 67 – Fetch API:
+- 68 – Error handling w\ Fetch:
+- 69 – arrow Fxs:
+- 71 – async & await:
 
 The best of my notes from Traversy 20 web projects with vanilla javascript course:
 
 - for a number input fied, using `typeof` shows it as a string - add a + symbol to turn it into a number
 - `console.log(e.target);` - gives you the exact element that is clicked on
-- the spread operator converts the nodes list into an array - then to map thru that use the high order array method called map() 
+- the spread operator converts the nodes list into an array - then to map thru that use the high order array method called map()
 - Fetch is built into the browser so you don’t need to use a CDN or install it
-- fetch runs asynchronously which means in the background and it returns a promise – when it’s done fetching it will return a promise – you catch that promise with .then() - .then() takes a function; res.json(); 
+- fetch runs asynchronously which means in the background and it returns a promise – when it’s done fetching it will return a promise – you catch that promise with .then() - .then() takes a function; res.json();
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Data structures
 
-Video: Data Structures and Algorithms in JavaScript 1:52:54 | 
+Video: Data Structures and Algorithms in JavaScript 1:52:54 |
 
 ### Stacks
 
@@ -405,43 +419,44 @@ Video: Data Structures and Algorithms in JavaScript 1:52:54 |
 - the Set data structure is like an array except there is no duplicate items and the values are in no particular order – the typical use for a set is to check for the existence of a particular item
 
 ### Queue
-- 19:24  – the queue data structure is a way to hold data – it’s similar to a stack, a stack is FILO (I think he means LIFO), a queue is FIFO – in JS you can implement a queue with an array, - think of store or bank line or print queue – 1. so have an array, 2. add to it (enqueue) with list.push(), 3. remove (dequeue) with return list.shift(), 4. see what is at the front of the queue with return list[0], 5. get the size of the array with return list.length, 6. check if the queue is empty with return (list.length === 0)
+
+- 19:24 – the queue data structure is a way to hold data – it’s similar to a stack, a stack is FILO (I think he means LIFO), a queue is FIFO – in JS you can implement a queue with an array, - think of store or bank line or print queue – 1. so have an array, 2. add to it (enqueue) with list.push(), 3. remove (dequeue) with return list.shift(), 4. see what is at the front of the queue with return list[0], 5. get the size of the array with return list.length, 6. check if the queue is empty with return (list.length === 0)
 
 ### Binary Search Tree
 
-- 26:03  – a way to hold data that when visualized looks like a tree (think corporate hierarchy) – all data points are called nodes – the top of the tree is called the root node (html tag) and then branches out into left and right, parent and child and sibling nodes, leaf nodes are nodes at the end of the tree that have no children – a binary search tree is a specific type of tree, …
-- 1) create 2 clsses with class Node w\ a constructor getting data, left, and right for the 1st and just constructor for the 2nd 2) for the 2nd have a method add(data) which is a huge function to add something to the tree, you see set the root node if the first with new Node(data), or use a recursive Fx to figure where to put the new Node – do not understand the left vs right thing – other methods are findMin(), findMax(), find(data), isPresent(), remove(data), 
+- 26:03 – a way to hold data that when visualized looks like a tree (think corporate hierarchy) – all data points are called nodes – the top of the tree is called the root node (html tag) and then branches out into left and right, parent and child and sibling nodes, leaf nodes are nodes at the end of the tree that have no children – a binary search tree is a specific type of tree, …
+- 1. create 2 clsses with class Node w\ a constructor getting data, left, and right for the 1st and just constructor for the 2nd 2) for the 2nd have a method add(data) which is a huge function to add something to the tree, you see set the root node if the first with new Node(data), or use a recursive Fx to figure where to put the new Node – do not understand the left vs right thing – other methods are findMin(), findMax(), find(data), isPresent(), remove(data),
 
 ### Hash Table
 
-- 53:20  – is used to implement associative arrays or mappings of key-value pairs – they are a common way to implement the map data structure or objects – they are widely used b\c of their effieciency – lookup time is fast, not a Fx of the # of elements – the way they work: 1. it takes a key input and runs it thru a hash fx – hash Fx → matches strings to #’s and usually the #’s correspond to indices in an array – a key is sent thru a hash Fx and it return the hash/index – a hash Fx needs to be consistent so that when you run a key thru it, it always gives the same # (no “collisions”) - 
-- hash tables are already built into JS and other languages – in JS they are used to implement objects, 56:27 as a manual example – this.add(), this.remove, this.lookup, 
-1:03:05 Linked List – elements are stored in a node – the node has 2 pcs of key info: 1) the element, 2) a reference (link) to the nex node – like arrays, linked lists can be used to implement many other data structures – they have advantages and disadvantages when compared to arrays – every linked list has a head/ head pointer that points to the 1st node – the last node points to null - 
-- this.element, this.next, info1 → link → info2 → link, ... 1) create a node, 2) then this.size return, this.head return, this.add element, this.remove element,  
+- 53:20 – is used to implement associative arrays or mappings of key-value pairs – they are a common way to implement the map data structure or objects – they are widely used b\c of their effieciency – lookup time is fast, not a Fx of the # of elements – the way they work: 1. it takes a key input and runs it thru a hash fx – hash Fx → matches strings to #’s and usually the #’s correspond to indices in an array – a key is sent thru a hash Fx and it return the hash/index – a hash Fx needs to be consistent so that when you run a key thru it, it always gives the same # (no “collisions”) -
+- hash tables are already built into JS and other languages – in JS they are used to implement objects, 56:27 as a manual example – this.add(), this.remove, this.lookup,
+  1:03:05 Linked List – elements are stored in a node – the node has 2 pcs of key info: 1) the element, 2) a reference (link) to the nex node – like arrays, linked lists can be used to implement many other data structures – they have advantages and disadvantages when compared to arrays – every linked list has a head/ head pointer that points to the 1st node – the last node points to null -
+- this.element, this.next, info1 → link → info2 → link, ... 1) create a node, 2) then this.size return, this.head return, this.add element, this.remove element,
 
 ### Trie
 
-- 1:15:00  – sometimes called a prefix tree, is a special type of tree used to store associative data structures – they store data in steps, each step is a node in the trie, is often used to store words – ex, to validate that a word is in a dictionary – each step/node would represent 1 letter of a word 
-- 1) this.keys = new Map(), too confusing
+- 1:15:00 – sometimes called a prefix tree, is a special type of tree used to store associative data structures – they store data in steps, each step is a node in the trie, is often used to store words – ex, to validate that a word is in a dictionary – each step/node would represent 1 letter of a word
+- 1. this.keys = new Map(), too confusing
 
 ### Heap
 
-- 1:27:29  – a binary heap is a partially ordered binary tree which satisfies the heap property – each node has at most 2 child nodes – indicates a specific property b\tw the parent and the child nodes – look into max heap and min heap for child node numbers < or > parent node numbers – left and node properties again – they are more often implemented as arrays – left child = i * 2, right child =  i * 2 + 1, parent = i / 2 – btw, no index 0 in a heap – it’s null - 
+- 1:27:29 – a binary heap is a partially ordered binary tree which satisfies the heap property – each node has at most 2 child nodes – indicates a specific property b\tw the parent and the child nodes – look into max heap and min heap for child node numbers < or > parent node numbers – left and node properties again – they are more often implemented as arrays – left child = i _ 2, right child = i _ 2 + 1, parent = i / 2 – btw, no index 0 in a heap – it’s null -
 
 ### Graphs
 
-- 1:42:08  – the graph data structure is a collection of things and the relationships/connections b\tw them – the data or braphs are called nodes or vertices – the connections b\tw the nodes ar called edges – a social netwrk is an example where the nodes are you and other people and the edges are whether you are friends – there are 2 typ: directed and undireted graphs – 3 ways to represent a graph: 1) adjacency list, 2)  adjacency matrix, 3) incidence matri
-Map – they store key-value pairs – in JS Object are maps – they provide rapid lookup of stored items - 
+- 1:42:08 – the graph data structure is a collection of things and the relationships/connections b\tw them – the data or braphs are called nodes or vertices – the connections b\tw the nodes ar called edges – a social netwrk is an example where the nodes are you and other people and the edges are whether you are friends – there are 2 typ: directed and undireted graphs – 3 ways to represent a graph: 1) adjacency list, 2) adjacency matrix, 3) incidence matri
+  Map – they store key-value pairs – in JS Object are maps – they provide rapid lookup of stored items -
 
 ## OOP
 
-Video: Intro to Object Oriented Programming - Crash Course | 
+Video: Intro to Object Oriented Programming - Crash Course |
 
 - grouping related variables together is important -
 - Definition: Objects = instances of a class | Class = templates for objects -
-  - Example: Chess pices, the Knight, white or black, captured or not, with current position, a Fx or method would be move() and would return the possible squares a knight can move to – so move(), position var, color var but do not initialize those vars – best to define them when you create the class rather than in the class itself – create the move fx in the class rather than in each obj you create - 
+  - Example: Chess pices, the Knight, white or black, captured or not, with current position, a Fx or method would be move() and would return the possible squares a knight can move to – so move(), position var, color var but do not initialize those vars – best to define them when you create the class rather than in the class itself – create the move fx in the class rather than in each obj you create -
 - when creating a knight object, you initialize its vars / attributes and its methods to contain info specific to that knight -
-  - the class Knight represents any given knight, a knight object represents a specific knight 
+  - the class Knight represents any given knight, a knight object represents a specific knight
   - OOP is the best tool to create complex programs by grouping together related data and functions
   - the 4 main princioles of OOP: 1) Encapsulation, 2) Abstraction, 3) Inheritance, 4) Polymorphism
 - Encapsulation: in OOP, refers to bundling data with methods that can operate on that data within a class. It is the idea of hiding data within a class, preventing anything outside that class from directly interacting with it. Members of other classes can interact with the attributes of another object through its methods: `get` and `set` methods. Also, you may want some attributes to be read-only from outside the class, which means you only have a getter emthod, no setter. Don't allow external classes to directly edit an object's attributes. Each piece should not have access to or rely on the inner workings of other sections of code (Information hiding)!!!
@@ -451,24 +466,26 @@ Video: Intro to Object Oriented Programming - Crash Course |
 - Private modifier can only be accessed from within the same class that the member is defined.
 - Protected modifiers can be access within the class it is defined, as well as subclasses of that class.
 - Polymorphism: in OOP, describes methods that are able to take on many forms. There are 2 types: Dynamic and Static. Dynamic polymorphism occurs during the runtime of the program. It describes when a method signature is in both a subclass and a superclass. They have the same name but different implementation, but the subclass overrides the superclass. This is because the form of the method is decided based on where in the class hierarchy it is called. This reduces the need for multiple if/else if statements. Static polymorphism occurs during complie time and refers to when multiple methods with the same name but different arguments are defined in the same class: either a different # of parameters, or or different typss, or in a different order. That is known as method overloading. Despite the methods having the same name, their signatures are different due to their arguments.
-- If you call methods with too many parameters, or parameters of the incorrect type, then you will get an error. 
+- If you call methods with too many parameters, or parameters of the incorrect type, then you will get an error.
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <h2 id="dates" align="center">Dates</h2>
 
 **DATE CHEAT SHEET TO GET REAL DATES AND TIMES**:
+
 - code examples from leafpickup.js:
 
 ```js
 // Get day of week for November 1st for the current year
 const d = new Date();
 const year = d.getFullYear();
-let currentNovFirst = '11/01/' + year;
+let currentNovFirst = "11/01/" + year;
 let novFirstDay = new Date(currentNovFirst).getDay();
 ```
+
 ```js
-// check the current year and update the startYr variable. 
+// check the current year and update the startYr variable.
 if (year < 2032) {
   let startYr = 2021;
 } else if (year >= 2032 && year <= 2042) {
@@ -477,14 +494,18 @@ if (year < 2032) {
 
 ```js
 /* CALCULATING AND FORMATTING THE MONDAY DATES FOR THE 6 WEEKS */
-let week1 = new Date(), week2 = new Date(), week3 = new Date(), 
-week4 = new Date(), week5 = new Date(), week6 = new Date();
+let week1 = new Date(),
+  week2 = new Date(),
+  week3 = new Date(),
+  week4 = new Date(),
+  week5 = new Date(),
+  week6 = new Date();
 
 const format = { year: "numeric", month: "short", day: "numeric" };
 
 week1.setTime(weekOne.getTime());
-week1Format = week1.toLocaleDateString('en-us', format);
-// weekOne is the output from a switch() statement which finds the day of the 
+week1Format = week1.toLocaleDateString("en-us", format);
+// weekOne is the output from a switch() statement which finds the day of the
 // week for the 1st of Nov then return the date for the first Monday in November
 ```
 
@@ -493,10 +514,10 @@ week1Format = week1.toLocaleDateString('en-us', format);
 - Parameters are variables that act as placeholders for the values that are to be input to a function when it is called
 - When a function is defined, it is typically defined along with one or more parameters
 - The actual values that are input (or "passed") into a function when it is called are known as arguments
-- *Parameters* are <ins>variables</ins>, *Arguments* are <ins>values</ins>
-- Scope:  refers to the visibility of variables
+- _Parameters_ are <ins>variables</ins>, _Arguments_ are <ins>values</ins>
+- Scope: refers to the visibility of variables
   - **Global scope** = defined outside of a function and are globally available
-  - Variables which are declared without the let or const keywords are automatically created in the global scope. 
+  - Variables which are declared without the let or const keywords are automatically created in the global scope.
   - This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with let or const
   - **Local scope** = variables are declared within a function, they are only visible within that function
 - **Return**: We can pass values into a function with arguments. You can use a `return` statement to send a value back out of a function
@@ -515,7 +536,7 @@ week1Format = week1.toLocaleDateString('en-us', format);
 - Equality operator (`==`) vs. strict equality operator (`===`): the strict equality operator compares both the data type and value
 - The same is true for the inequality operators: `!=` and `!==`
 - You can determine the type of a variable or a value with the typeof operator
-- And operator:  to test more than one thing at a time. The logical and operator (`&&`) returns `true` if and only if the operands to the left and right of it are true
+- And operator: to test more than one thing at a time. The logical and operator (`&&`) returns `true` if and only if the operands to the left and right of it are true
 - Or operator: The logical or operator (`||`) returns `true` if either of the operands is true
 - Ternary
 
@@ -524,8 +545,9 @@ week1Format = week1.toLocaleDateString('en-us', format);
 <h2 id="conditional-statements" align="center">Conditional Statements</h2>
 
 If, Else, Else If, Switch:
+
 - `else` statements: used when the condition in an `if` statement is not met and an alternate block of code is executed
-- `else if` statements:  If you have multiple conditions that need to be addressed, you can chain `if` statements together with `else if` statements; be careful of what statement comes first
+- `else if` statements: If you have multiple conditions that need to be addressed, you can chain `if` statements together with `else if` statements; be careful of what statement comes first
 - `switch` statements: tests a value and can have many `case` statements which define various possible values. Statements are executed from the first matched `case` value until a `break` is encountered
 - `case` statements are tested with strick equality (`===`): `switch(check value(s)) {case value: varname = something; break; next case check…}`
 - `default` means `else` in a `switch` statement – you can also have multiple cases before a `break`
@@ -541,23 +563,24 @@ If, Else, Else If, Switch:
   - Accumulators: The expression += is an just abreviation of x = x + i
 - Nested `for` loops: arrays inside another array
 - `do...while` loops: it will first `do` one pass of the code inside the loop no matter what, and then continue to run the loop `while` the specified condition evaluates to `true`
-- Conditional (ternary) operator: 	a ? b : c	
+- Conditional (ternary) operator: a ? b : c
 - Recursion: ???
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <h2 id="es6" align="center">ES6</h2>
 
-- Random numbers: 
+- Random numbers:
   - Random whole numbers: `Math.floor(Math.random() * 20); `
   - Random whole numbers within a range: `Math.floor(Math.random() * (max - min + 1)) + min`
 - The `parseInt()` function parses a string and returns an integer: `var a = parseInt("007");`
 - Conditional (ternary) operator: `a ? b : c`, where `a` is the condition, `b` is the code to run when the condition returns `true`, and `c` is the code to run when the condition returns `false`
 
 **Variables: var, let, const**:
+
 - **Hoisting** refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
 - Hoisting allows functions to be safely used in code before they are declared - variables and function declarations are moved to the top of their scope before code execution
-- When you declare a variable without a statement it is automatically declared as `var` 
+- When you declare a variable without a statement it is automatically declared as `var`
 - The scope is global when a `var` variable is declared outside a function
 - `let` vs `var`: `var` can be overwritten, `CONST` cannot
 - `let` is block scoped - A block is a chunk of code bounded by `{ }` - So a variable declared in a block with let is only available for use within that block
@@ -578,11 +601,11 @@ If, Else, Else If, Switch:
 - Mutate an array declared with `const`: Objects assigned to a variable using `const` are still mutable
 - prevent object mutation: To ensure your data doesn't change, use the function `Object.freeze` to prevent data mutation. Once frozen, you can no longer add, update, or delete properties from it: `Object.freeze(objName);`
 
-
 **Arrow functions, Rest parameter, Spread operator, Template literals**:
-- inline functions - When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword `return` as well as the brackets surrounding the code 
+
+- inline functions - When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword `return` as well as the brackets surrounding the code
 - If an arrow function has a single parameter, the parentheses enclosing the parameter may be omitted
-- Default parameters: allow named parameters to be initialized with default values if no value or undefined is passed: `function fnName(parm1 = val1) {```}` or `function fnName(parm1, parm2 = val, ...) {...}`
+- Default parameters: allow named parameters to be initialized with default values if no value or undefined is passed: ` function fnName(parm1 = val1) {```} ` or `function fnName(parm1, parm2 = val, ...) {...}`
 - **Rest parameter**: you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function: `(...args)`
 - The rest parameter eliminates the need to check the args array and allows us to apply `map()`, `filter()` and `reduce()` on the parameters array
 - Only the last parameter in a function definition can be a rest parameter
@@ -595,17 +618,17 @@ const maximus = Math.max(...arr);
 
 - `...arr` returns an unpacked array
 - the spread operator only works in-place, like in an argument to a function or in an array literal
-- **Template literals** allow you to create multi-line strings 
+- **Template literals** allow you to create multi-line strings
 - The `${variable}` syntax is a placeholder
 - **Object Literal**: ???
 - Class, constructor, new, setter, getter???
-- **Module** script: exporting parts of a file for use in one or more other files, and importing the parts you need, where you need them 
+- **Module** script: exporting parts of a file for use in one or more other files, and importing the parts you need, where you need them
 - You need to create a script in your HTML document with a type of module: `<script type="module" src="filename.js"></script>`
-- Use the keywords `export` and `import` - 
-- When you export a variable or function, you can import it in another file and use it without having to rewrite the code 
+- Use the keywords `export` and `import` -
+- When you export a variable or function, you can import it in another file and use it without having to rewrite the code
 - Export multiple things: `export { thing1, thing2 };`
 - `import` allows you to choose which parts of a file or module to load: `import { add } from './math_functions.js'; `
-- Use `import *` to import everything from a file - 
+- Use `import *` to import everything from a file -
 - Create an export fallback with `export default` - omit the curly brackets when you import a default export
 - SKIPPED PROMISES - DO NOT GET REST AND SPREAD
 
@@ -614,27 +637,28 @@ const maximus = Math.max(...arr);
 <h2 id="regex" align="center">RegEx</h2>
 
 Capture Groups, Lookaheads
-- 
+
+-
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <h2 id="debugging" align="center">Debugging</h2>
 
 `console.log()`, `typeof`, ONE OFF ERRORS, INDEXING, INFINITE LOOPS
+
 - JavaScript recognizes six primitive (immutable) data types: Boolean, Null, Undefined, Number, String, and Symbol (new with ES6) and one type for mutable items: Object. Note that in JavaScript, arrays are technically a type of object
 - Almost every value on its own in JavaScript evaluates to true, except what are known as the "falsy" values: `false`, `0`, `""`, `NaN`, `undefined`, and `null`
 - Use of assignment operator (`=`) instead of equality operator (`==` and `===`)
-- Thins *VS Code* catches: 1) typos of function and Variables names, 2) unclosed parentheses, bracket, braces, and quotes, 3) mixed usage of single and double quotes, 4) 
+- Thins _VS Code_ catches: 1) typos of function and Variables names, 2) unclosed parentheses, bracket, braces, and quotes, 3) mixed usage of single and double quotes, 4)
 - Things VS Code does not catch: 1) open and closing parentheses after a Function call, 2) argumants passed in the wrong order. 3) Off by one errors
 
 <h2 id="data-structures" align="center">Data Structures</h2>
 
 Window object:
+
 - close, window.outerheight, window.outerwidth, innerHeight and innerWidth, window.scrollY, window.scrollX, window.location, window.location.search, window.location.href, window.location.reload(), window.history.go(-2), window.history.length, window.navigator, window.navigator.geolocation.getCurrentPosition, navigator.language
 
 <h2 id="basic-algorithms" align="center">Basic Algorithms</h2>
-
-
 
 <h2 id="oop" align="center">OOP</h2>
 
@@ -646,8 +670,7 @@ MAP, FILTER, REDUCE, SORT, SPLIT
 
 REMEMBER LWC 10 DAYS OF JS
 
-
-# The DOM 
+# The DOM
 
 something here...
 
@@ -664,7 +687,7 @@ something here...
 - lastChild — The last child node of an element
 - nextSibling — Gives you the next node at the same node tree level
 - nodeName —Returns the name of a node
-- nodeType —  Returns the type of a node
+- nodeType — Returns the type of a node
 - nodeValue — Sets or returns the value of a node
 - ownerDocument — The top-level document object for this node
 - parentNode — Returns the parent node of an element
@@ -700,6 +723,7 @@ something here...
 Events are things that can happen to HTML elements and are performed by the user. The programming language can listen for these events and trigger actions in the code. No JavaScript cheat sheet would be complete without them.
 
 ### Mouse
+
 - onclick — The event occurs when the user clicks on an element
 - oncontextmenu — User right-clicks on an element to open a context menu
 - ondblclick — The user double-clicks on an element
@@ -730,7 +754,7 @@ Events are things that can happen to HTML elements and are performed by the user
 - onscroll — An element’s scrollbar is being scrolled
 - onunload — Event occurs when a page has unloaded
 
-### Form 
+### Form
 
 - onblur — When an element loses focus
 - onchange — The content of a form element changes (for <input>, <select> and <textarea>)
@@ -770,7 +794,7 @@ Events are things that can happen to HTML elements and are performed by the user
 - onerror — Happens when an error occurs while loading an external file
 - onloadeddata — Media data is loaded
 - onloadedmetadata — Metadata (like dimensions and duration) are loaded
-- onloadstart —  The browser starts looking for specified media
+- onloadstart — The browser starts looking for specified media
 - onpause — Media is paused either by the user or automatically
 - onplay — The media has been started or is no longer paused
 - onplaying — Media is playing after having been paused or stopped for buffering
@@ -811,17 +835,20 @@ Events are things that can happen to HTML elements and are performed by the user
 <h2 id="errors" align="center">Errors</h2>
 
 When working with JavaScript, different errors can occur. There are several ways of handling them:
+
 - try — Lets you define a block of code to test for errors
 - catch — Set up a block of code to execute in case of an error
 - throw — Create custom error messages instead of the standard JavaScript errors
 - finally — Lets you execute code, after try and catch, regardless of the result
 
 Error Name Values
+
 - JavaScript also has a built-in error object. It has two properties:
 - name — Sets or returns the error name
 - message — Sets or returns an error message in a string from
 
 The error property can return six different values as its name:
+
 - EvalError — An error has occurred in the eval() function
 - RangeError — A number is “out of range”
 - ReferenceError — An illegal reference has occurred
