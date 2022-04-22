@@ -23,7 +23,7 @@ Syntax and code examples for the most coomon array methods.
 
 ## Simple array methods
 
-Basic syntax for the most common methods. I skipped the foowing methods:
+Basic syntax for the most common methods. I skipped the following methods:
 
 - [at()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at): takes an integer value and returns the item at that index, allowing for positive and negative integers. Negative integers count back from the last item in the array. Not implemented in all browsers.
 - [copyWithin()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin): shallow copies part of an array to another location in the same array and returns it without modifying its length.
