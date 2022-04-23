@@ -238,10 +238,8 @@ isNaN(null); // false
 isNaN(37); // false
 isNaN("37"); // false: converted to 37
 
-let average = sum / nums.length;
-{
-  isNaN(average) ? 0 : average;
-} // checks for division by zero
+let average = review.reduce((a, b) => a + b.rating, 0) / review.length;
+isNaN(average) ? 0 : average; // checks for division by zero
 ```
 
 <div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN">MDN isNaN</a></div>

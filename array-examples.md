@@ -1318,10 +1318,10 @@ MDN syntax:
 
 ```js
 // Arrow function
-reduce((previousValue, currentValue) => {
+reduce((preVal, currVal) => {
   /* ... */
 });
-reduce((previousValue, currentValue, currentIndex) => {
+reduce((preVal, currVal, currIndex) => {
   /* ... */
 });
 
@@ -1330,10 +1330,10 @@ reduce(callbackFn);
 reduce(callbackFn, initialValue);
 
 // Inline callback function
-reduce(function (previousValue, currentValue) {
+reduce(function (preVal, currVal) {
   /* ... */
 });
-reduce(function (previousValue, currentValue, currentIndex) {
+reduce(function (preVal, currVal, currIndex) {
   /* ... */
 });
 ```
@@ -1346,7 +1346,7 @@ Basic / simple examples:
 //      MDN:
 const array1 = [1, 2, 3, 4];
 const initialValue = 0;
-const sumWithInitial = array1.reduce((previousValue, currentValue) => previousValue + currentValue, initialValue);
+const sumWithInitial = array1.reduce((preVal, currVal) => preVal + currVal, initialValue);
 console.log(sumWithInitial); // 10
 
 const getMax = (a, b) => Math.max(a, b);
@@ -1355,11 +1355,11 @@ const arr = [1, 100, 5, 72];
 console.log(arr.reduce(getMax, 50)); // 100
 
 // Sum all the values of an array
-let sum = [0, 1, 2, 3].reduce(function (previousValue, currentValue) {
-  return previousValue + currentValue;
+let sum = [0, 1, 2, 3].reduce(function (preVal, currVal) {
+  return preVal + currVal;
 }, 0);
 // sum is 6, or an arrow function:
-let total = [0, 1, 2, 3].reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+let total = [0, 1, 2, 3].reduce((preVal, currVal) => preVal + currVal, 0);
 
 // Bonding arrays contained in an array of objects using the
 // spread operator and initialValue
@@ -1370,8 +1370,8 @@ let friends = [
 ];
 
 let allbooks = friends.reduce(
-  function (previousValue, currentValue) {
-    return [...previousValue, ...currentValue.books];
+  function (preVal, currVal) {
+    return [...preVal, ...currVal.books];
   },
   ["Alphabet"]
 );
@@ -1452,12 +1452,12 @@ console.log(noDups); // ["a","b","c","e","d"]
 
 // Replace .filter().map() with .reduce()
 const numbers = [-5, 6, 2, 0];
-const doubledPositiveNumbers = numbers.reduce((previousValue, currentValue) => {
-  if (currentValue > 0) {
-    const doubled = currentValue * 2;
-    previousValue.push(doubled);
+const doubledPositiveNumbers = numbers.reduce((prevVal, currVal) => {
+  if (currVal > 0) {
+    const doubled = currVal * 2;
+    prevVal.push(doubled);
   }
-  return previousValue;
+  return prevVal;
 }, []);
 console.log(doubledPositiveNumbers); // [12, 4]
 
@@ -1487,7 +1487,7 @@ function reducer(previous, current, index, array) {
 }
 array.reduce(reducer);
 // With an initial value:
-array.reduce((previousValue, currentValue, currentIndex, array) => previousValue + currentValue, 10);
+array.reduce((prevVal, currVal, currIndex, array) => prevVal + currVal, 10);
 
 // Counting instances of values in an object
 let names = ["Alice", "Bob", "Tiff", "Bruce", "Alice"];
