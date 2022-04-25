@@ -1,4 +1,4 @@
-# All things React
+# MAIN CONCEPTS
 
 ### JSX
 
@@ -162,6 +162,249 @@ When using React, you generally don’t need to call `addEventListener` to add l
 
 Link: https://reactjs.org/docs/conditional-rendering.html
 
+In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.
+
+Conditional rendering in React works the same way conditions work in JavaScript. Use JavaScript operators like if or the conditional operator to create elements representing the current state, and let React update the UI to match them:
+
+```jsx
+function UserGreeting(props) {
+  return <h1>Welcome back!</h1>;
+}
+
+function GuestGreeting(props) {
+  return <h1>Please sign up.</h1>;
+}
+
+// Conditional
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
+}
+
+ReactDOM.render(
+  // Try changing to isLoggedIn={true}:
+  <Greeting isLoggedIn={false} />,
+  document.getElementById("root")
+);
+```
+
+## Lists and Keys
+
+Link: https://reactjs.org/docs/lists-and-keys.html
+
+How you transform lists in JavaScript: Given the code below, we use the `map()` function to take an array of _numbers_ and double their values. We assign the new array returned by `map()` to the variable _doubled_ and log it:
+
+```jsx
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(number => number * 2);
+console.log(doubled); // [2, 4, 6, 8, 10]
+```
+
+In React, transforming arrays into lists of elements is nearly identical. You can build collections of elements and include them in JSX using curly braces {}. Below, we loop through the numbers array using the JavaScript map() function. We return a <li> element for each item. Finally, we assign the resulting array of elements to listItems:
+
+```jsx
+<div id="root"></div>;
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map(number => <li>{number}</li>);
+ReactDOM.render(<ul>{listItems}</ul>, document.getElementById("root"));
+```
+
+Codepen settings for their version
+
+- JavaScript Preprocessor: Babel
+- Add External Scripts/Pens: https://unpkg.com/react/umd/react.development.js and https://unpkg.com/react-dom/umd/react-dom.development.js
+
+### Basic List Component
+
+Usually you would render lists inside a component. We can refactor the previous example into a component that accepts an array of numbers and outputs a list of elements.
+
+```jsx
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map(number => <li key={number.toString()}>{number}</li>);
+  return <ul>{listItems}</ul>;
+}
+
+const numbers = [1, 2, 3, 4, 5];
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<NumberList numbers={numbers} />);
+```
+
+A `key` is a special string attribute you need to include when creating lists of elements.
+
+### Keys
+
+Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity:
+
+```jsx
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map(number => <li key={number.toString()}>{number}</li>);
+```
+
+The best way to pick a key is to use a string that uniquely identifies a list item among its siblings. Most often you would use IDs from your data as keys:
+
+```js
+const todoItems = todos.map(todo => <li key={todo.id}>{todo.text}</li>);
+```
+
+When you don’t have stable IDs for rendered items, you may use the item index as a key as a last resort:
+
+```jsx
+const todoItems = todos.map((todo, index) => <li key={index}>{todo.text}</li>);
+```
+
+We don’t recommend using indexes for keys if the order of items may change. This can negatively impact performance and may cause issues with component state.
+
+### Extracting Components with Keys
+
+Keys only make sense in the context of the surrounding array. For example, if you extract a ListItem component, you should keep the key on the `<ListItem />` elements in the array rather than on the `<li>` element in the `ListItem` itself.
+
+```jsx
+function ListItem(props) {
+  // There is no need to specify the key here:
+  return <li>{props.value}</li>;
+}
+
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map(number => (
+    // Key should be specified inside the array.
+    <ListItem key={number.toString()} value={number} />
+  ));
+  return <ul>{listItems}</ul>;
+}
+```
+
+Keys used within arrays should be unique among their siblings. However, they don’t need to be globally unique. We can use the same keys when we produce two different arrays.
+
+## Forms
+
+Link: https://reactjs.org/docs/forms.html
+
+HTML form elements work a bit differently from other DOM elements in React, because form elements naturally keep some internal state.
+
+### Controlled Components
+
+Form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with `setState()`.
+
+NOTE: This is another example leading to classes - SKIP!
+
+...the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a _controlled component_.
+
+Notes on `input`, `textarea`, `select`, and `input type="file"`.
+
+### Handling Multiple Inputs
+
+When you need to handle multiple controlled `input` elements, you can add a `name` attribute to each element and let the handler function choose what to do based on the value of `event.target.name`.
+
+## Lifting State Up
+
+Link: https://reactjs.org/docs/lifting-state-up.html
+
+Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor. [READ LATER]
+
+## Composition vs Inheritance
+
+Link: https://reactjs.org/docs/composition-vs-inheritance.html [READ LATER]
+
+## Thinking in React
+
+Link: https://reactjs.org/docs/thinking-in-react.html
+
+- Step 1: Break The UI Into A Component Hierarchy
+- Step 2: Build A Static Version in React
+- Step 3: Identify The Minimal (but complete) Representation Of UI State
+- Step 4: Identify Where Your State Should Live
+- Step 5: Add Inverse Data Flow
+
+# ADVANCED GUIDES
+
+## Accessibility
+
+Link: https://reactjs.org/docs/accessibility.html
+
+## Code Splitting
+
+Link: https://reactjs.org/docs/code-splitting.html
+
+## Context
+
+Link: https://reactjs.org/docs/context.html
+
+## Error Boundaries
+
+Link: https://reactjs.org/docs/error-boundaries.html
+
+## Forwarding Refs
+
+Link: https://reactjs.org/docs/forwarding-refs.html
+
+## Fragments
+
+Link: https://reactjs.org/docs/fragments.html
+
+## Higher-Order Components
+
+Link: https://reactjs.org/docs/higher-order-components.html
+
+15 more sections: Integrating with Other Libraries, JSX In Depth (see below), Optimizing Performance, Portals, Profiler API, React Without ES6, React Without JSX, Reconciliation, Refs and the DOM, Render Props (see below), Static Type Checking, Strict Mode, Typechecking With PropTypes (see below), Uncontrolled Components, and Web Components.
+
+## JSX In Depth
+
+Link: https://reactjs.org/docs/jsx-in-depth.html
+
+`React.createElement(component, props, ...children)`
+
+```JSX
+// This:
+<MyButton color="blue" shadowSize={2}>
+  Click Me
+</MyButton>
+// Compiles into:
+React.createElement(
+  MyButton,
+  {color: 'blue', shadowSize: 2},
+  'Click Me'
+)
+
+// And this:
+<div className="sidebar" />
+// Complies into:
+React.createElement(
+  'div',
+  {className: 'sidebar'}
+)
+```
+
+### Specifying The React Element Type
+
+The first part of a JSX tag determines the type of the React element. Capitalized types indicate that the JSX tag is referring to a React component.
+
+Since JSX compiles into calls to `React.createElement`, the **React** library must also always be in scope from your JSX code...STOPPED HERE
+
+## Render Props
+
+Link: https://reactjs.org/docs/render-props.html
+
+## Typechecking With PropTypes
+
+Link: https://reactjs.org/docs/typechecking-with-proptypes.html
+
+# API REFERENCE
+
+Link: https://reactjs.org/docs/react-api.html
+
 ## React Component
 
 Link: https://reactjs.org/docs/react-component.html
+
+# HOOKS
+
+Link:
+
+# TESTING
+
+Link:
