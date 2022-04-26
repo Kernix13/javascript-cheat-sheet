@@ -372,7 +372,7 @@ React.createElement(
 
 // And this:
 <div className="sidebar" />
-// Complies into:
+// Compiles into:
 React.createElement(
   'div',
   {className: 'sidebar'}
@@ -383,7 +383,58 @@ React.createElement(
 
 The first part of a JSX tag determines the type of the React element. Capitalized types indicate that the JSX tag is referring to a React component.
 
-Since JSX compiles into calls to `React.createElement`, the **React** library must also always be in scope from your JSX code...STOPPED HERE
+Since JSX compiles into calls to `React.createElement`, the **React** library must also always be in scope from your JSX code. For example, both of the imports are necessary in this code, even though `React` and `CustomButton` are not directly referenced from JavaScript:
+
+```jsx
+import React from "react";
+import CustomButton from "./CustomButton";
+
+function WarningButton() {
+  // return React.createElement(CustomButton, {color: 'red'}, null);
+  return <CustomButton color="red" />;
+}
+```
+
+If you don’t use a JavaScript bundler and loaded React from a `<script>` tag, it is already in scope as the React global.
+
+- Using Dot Notation for JSX Type: if you have a single module that exports many React components
+
+### User-Defined Components Must Be Capitalized
+
+When an element type starts with a lowercase letter, it refers to a built-in component like `<div>` or `<span>` and results in a string 'div' or 'span' passed to React.createElement. Types that start with a capital letter like `<Foo />` compile to `React.createElement(Foo)` and correspond to a component defined or imported in your JavaScript file.
+
+You cannot use a general expression as the React element type. If you do want to use a general expression to indicate the type of the element, just assign it to a capitalized variable first. This often comes up when you want to render a different component based on a prop:
+
+```jsx
+import React from "react";
+import { PhotoStory, VideoStory } from "./stories";
+
+const components = {
+  photo: PhotoStory,
+  video: VideoStory
+};
+
+function Story(props) {
+  const SpecificStory = components[props.storyType];
+  return <SpecificStory story={props.story} />;
+}
+```
+
+### Props in JSX
+
+There are several different ways to specify props in JSX.
+
+#### JavaScript Expressions as Props
+
+You can pass any JavaScript expression as a prop, by surrounding it with {}. For example, in this JSX: `<MyComponent foo={1 + 2 + 3 + 4} />`
+
+`if` statements and `for` loops are not expressions in JavaScript, so they can’t be used in JSX directly.
+
+**String Literals**: You can pass a string literal as a prop
+
+### Spread Attributes
+
+stopped here https://reactjs.org/docs/jsx-in-depth.html#spread-attributes
 
 ## Render Props
 
