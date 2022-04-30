@@ -694,7 +694,6 @@ const tarpCos = Math.cos(tarpAngle * deg2Rad);
 console.log(tarpCos); // 0.8660254037844387
 ```
 
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 <div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cos">MDN Math.cos</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -717,7 +716,6 @@ const tarpSin = Math.sin(tarpAngle * deg2Rad);
 console.log(tarpSin); // 0.49999999999999994
 ```
 
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 <div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sin">MDN Math.sin</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -740,7 +738,6 @@ const tarpTan = Math.tan(tarpAngle * deg2Rad);
 console.log(tarpTan); // 0.5773502691896257
 ```
 
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 <div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tan">MDN Math.tan</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -1343,7 +1340,7 @@ No parameter
 | Math.random | Math.random() | Definitely use |
 | Math.max | Math.max() | Returns `-infinity`? |
 | Math.min | Math.min() | Returns `-infinity`? |
-| Math.PI | Math.PI | REturns the value of Pi |
+| Math.PI | Math.PI | Returns the value of Pi |
 
 <br />
 
