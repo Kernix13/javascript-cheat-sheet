@@ -15,7 +15,8 @@ Simple number, Math, and Date examples.
 |                                     | [random](#random)                     | [round](#round)                       | [sign](#sign)               |
 |                                     | [square root](#square-root)           | [truncate](#truncate)                 | [max](#max)                 |
 |                                     | [min](#min)                           | [power](#power)                       | [PI](#pi)                   |
-|                                     | [sqrt](#sqrt)                         |                                       |                             |
+|                                     | [sqrt](#sqrt)                         | [cosine](#cosine)                     | [sine](#sine)               |
+|                                     | [tangent](#tangent)                   |                                       |                             |
 | [Spread operator](#spread-operator) |                                       |                                       |                             |
 |   [Rest parameter](#rest-parameter) |                                       |                                       |                             |
 |     [Date examples](#date-examples) | [Date get methods](#date-get-methods) | [Date set methods](#date-set-methods) |                             |
@@ -307,7 +308,8 @@ Here are links to MDN docs for the most common Math methods:
 |    [MDN Math.abs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs)    |  [MDN Math.ceil](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil)  | [MDN Math.floor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor) |
 | [MDN Math.random](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) | [MDN Math.round](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round) |  [MDN Math.sign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign)  |
 |   [MDN Math.sqrt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt)   | [MDN Math.trunc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc) |   [MDN Math.max](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max)   |
-|    [MDN Math.min](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min)    |   [MDN Math.pow](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow)   |                                                                                                               |
+|    [MDN Math.min](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min)    |   [MDN Math.pow](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow)   |   [MDN Math.cos](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cos)   |
+|    [MDN Math.sin](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sin)    |   [MDN Math.tan](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tan)   |                                                                                                               |
 
 <br />
 
@@ -672,6 +674,74 @@ console.log(calcHypotenuse(0, 0)); // 0
 ```
 
 <div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt">MDN Math.sqrt</a></div>
+
+### cosine
+
+`Math.cos()`
+
+The `Math.cos()` method returns a numeric value between `-1` and `1`, which represents the cosine of the angle given in radians.
+
+**NOTE**: To convert degrees to radians multiply your degree value by PI / 180
+
+```js
+// syntax
+Math.cos(x);
+
+// Example for tarp configurations
+const tarpAngle = 30;
+const deg2Rad = Math.PI / 180;
+const tarpCos = Math.cos(tarpAngle * deg2Rad);
+console.log(tarpCos); // 0.8660254037844387
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cos">MDN Math.cos</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### sine
+
+`Math.sin()`
+
+The `Math.sin()` method returns a numeric value between `-1` and `1`, which represents the sine of the angle given in radians.
+
+**NOTE**: To convert degrees to radians multiply your degree value by PI / 180
+
+```js
+// syntax
+Math.sin(x);
+
+// Example for tarp configurations
+const tarpAngle = 30;
+const deg2Rad = Math.PI / 180;
+const tarpSin = Math.sin(tarpAngle * deg2Rad);
+console.log(tarpSin); // 0.49999999999999994
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sin">MDN Math.sin</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### tangent
+
+`Math.tan()`
+
+The `Math.tan()` method returns a numeric value that represents the tangent of the angle given in radians.
+
+**NOTE**: To convert degrees to radians multiply your degree value by PI / 180
+
+```js
+// syntax
+Math.tan(x);
+
+// Example for tarp configurations
+const tarpAngle = 30;
+const deg2Rad = Math.PI / 180;
+const tarpTan = Math.tan(tarpAngle * deg2Rad);
+console.log(tarpTan); // 0.5773502691896257
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+<div align="left">&#8675; <a href="#numbers" title="numbers">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tan">MDN Math.tan</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Spread operator
@@ -1296,6 +1366,9 @@ One parameter
 | Math.max | Math.max(value0) | Why use 1 value? |
 | Math.min | Math.min(value0) | Why use 1 value? |
 | Math.sqrt | Math.sqrt(x) | - |
+| Math.cos | Math.cos(x) | - |
+| Math.sin | Math.sin(x) | - |
+| Math.tan | Math.tan(x) | - |
 
 <br />
 
