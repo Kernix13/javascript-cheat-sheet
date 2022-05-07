@@ -8,6 +8,7 @@
 
 ## Table of contents
 
+1. [Boolean object](#boolean-object)
 1. [if else statements](#if-else-statements)
 1. [else if](#else-if)
 1. [Ternary operator](#ternary-operator)
@@ -16,22 +17,29 @@
 1. [Miscellaneous](#miscellaneous)
    1. [Notes](#notes)
 
+## Boolean object
+
+The value passed as the first parameter is converted to a boolean value, if necessary. If the value is omitted or is 0, -0, null, false, NaN, undefined, or the empty string (""), the object has an initial value of false. All other values, including any object, an empty array ([]), or the string "false", create an object with an initial value of true.
+
+Check out [MDN Boolean object docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) for specific do's and don'ts for this object.
+
 ## if else statements
 
 Syntax:
+
 ```js
 if (condition) {
-   statement1
+  statement1;
 } else {
-   statement2
+  statement2;
 }
 
 // example
 function strEntry(str) {
   if (str !== "") {
-   return str.split('');
+    return str.split("");
   } else {
-     return "Field is empty";
+    return "Field is empty";
   }
 }
 console.log(strEntry("string")); // ["s","t","r","i","n","g"]
@@ -42,6 +50,7 @@ console.log(strEntry("string")); // ["s","t","r","i","n","g"]
 ### else if
 
 Syntax:
+
 ```js
 if (condition1)
   statement1
@@ -54,7 +63,7 @@ else
   statementN
 ```
 
-To execute multiple statements within a clause, use a block statement ({ /* ... */ }) to group those statements. In general, it is a good practice to always use block statements, especially in code involving nested if statements:
+To execute multiple statements within a clause, use a block statement ({ /_ ... _/ }) to group those statements. In general, it is a good practice to always use block statements, especially in code involving nested if statements:
 
 ```js
 if (x > 50) {
@@ -71,22 +80,23 @@ if (x > 50) {
 ## Ternary operator
 
 Syntax:
+
 ```js
-condition ? exprIfTrue : exprIfFalse
-a ? b : c
+condition ? exprIfTrue : exprIfFalse;
+a ? b : c;
 
 // example:
 var age = 26;
-var beverage = (age >= 21) ? "Beer" : "Juice";
+var beverage = age >= 21 ? "Beer" : "Juice";
 console.log(beverage); // "Beer"
 
 // Handling null values
 let greeting = person => {
-    let name = person ? person.name : `stranger`
-    return `Howdy, ${name}`
-}
-console.log(greeting({name: `Alice`}));  // "Howdy, Alice"
-console.log(greeting(null));             // "Howdy, stranger"
+  let name = person ? person.name : `stranger`;
+  return `Howdy, ${name}`;
+};
+console.log(greeting({ name: `Alice` })); // "Howdy, Alice"
+console.log(greeting(null)); // "Howdy, stranger"
 ```
 
 ### Conditional chains
@@ -115,6 +125,7 @@ function example(…) {
 ## Switch
 
 Syntax:
+
 ```js
 switch (expression) {
   case value1:
@@ -140,26 +151,27 @@ switch (expression) {
 <br />
 
 Examples:
+
 ```js
 switch (expr) {
-  case 'Oranges':
-    console.log('Oranges are $0.59 a pound.');
+  case "Oranges":
+    console.log("Oranges are $0.59 a pound.");
     break;
-  case 'Apples':
-    console.log('Apples are $0.32 a pound.');
+  case "Apples":
+    console.log("Apples are $0.32 a pound.");
     break;
-  case 'Bananas':
-    console.log('Bananas are $0.48 a pound.');
+  case "Bananas":
+    console.log("Bananas are $0.48 a pound.");
     break;
-  case 'Cherries':
-    console.log('Cherries are $3.00 a pound.');
+  case "Cherries":
+    console.log("Cherries are $3.00 a pound.");
     break;
-  case 'Mangoes':
-  case 'Papayas':
-    console.log('Mangoes and papayas are $2.79 a pound.');
+  case "Mangoes":
+  case "Papayas":
+    console.log("Mangoes and papayas are $2.79 a pound.");
     break;
   default:
-    console.log('Sorry, we are out of ' + expr + '.');
+    console.log("Sorry, we are out of " + expr + ".");
 }
 console.log("Is there anything else you'd like?");
 
@@ -168,78 +180,80 @@ console.log("Is there anything else you'd like?");
 // Get day of week for November 1st for the current year
 const d = new Date();
 const year = d.getFullYear();
-let currentNovFirst = '11/01/' + year;
+let currentNovFirst = "11/01/" + year;
 let novFirstDay = new Date(currentNovFirst).getDay();
 
-// For the current year, find the day of the week for the 1st of November 
+// For the current year, find the day of the week for the 1st of November
 switch (novFirstDay) {
   case 0:
-    weekOne = new Date(`11/1/${year}`)
+    weekOne = new Date(`11/1/${year}`);
     break;
   case 1:
-    weekOne = new Date(`11/1/${year}`)
+    weekOne = new Date(`11/1/${year}`);
     break;
   case 2:
-    weekOne = new Date(`11/1/${year}`)
+    weekOne = new Date(`11/1/${year}`);
     break;
   case 3:
-    weekOne = new Date(`11/1/${year}`)
+    weekOne = new Date(`11/1/${year}`);
     break;
   case 4:
-    weekOne = new Date(`11/1/${year}`)
+    weekOne = new Date(`11/1/${year}`);
     break;
   case 5:
-    weekOne = new Date(`11/1/${year}`)
+    weekOne = new Date(`11/1/${year}`);
     break;
   case 6:
-    weekOne = new Date(`11/1/${year}`)
+    weekOne = new Date(`11/1/${year}`);
 }
 ```
 
 <br />
 
 Methods for multi-criteria case:
+
 ```js
-var Animal = 'Giraffe';
+var Animal = "Giraffe";
 switch (Animal) {
-  case 'Cow':
-  case 'Giraffe':
-  case 'Dog':
-  case 'Pig':
-    console.log('This animal is not extinct.');
+  case "Cow":
+  case "Giraffe":
+  case "Dog":
+  case "Pig":
+    console.log("This animal is not extinct.");
     break;
-  case 'Dinosaur':
+  case "Dinosaur":
   default:
-    console.log('This animal is extinct.');
+    console.log("This animal is extinct.");
 }
 ```
 
 <br />
 
 Multi-case : chained operations
+
 ```js
 var foo = 1;
-var output = 'Output: ';
+var output = "Output: ";
 switch (foo) {
   case 0:
-    output += 'So ';
+    output += "So ";
   case 1:
-    output += 'What ';
-    output += 'Is ';
+    output += "What ";
+    output += "Is ";
   case 2:
-    output += 'Your ';
+    output += "Your ";
   case 3:
-    output += 'Name';
+    output += "Name";
   case 4:
-    output += '?';
+    output += "?";
     console.log(output);
     break;
   case 5:
-    output += '!';
+    output += "!";
     console.log(output);
     break;
   default:
-    console.log('Please pick a number from 0 to 5!');
+    console.log("Please pick a number from 0 to 5!");
 }
 ```
 
@@ -256,7 +270,7 @@ Also: [Block-scope variables within switch statements](https://developer.mozilla
 
 A **switch** statement first evaluates its expression. It then looks for the first `case` clause whose expression evaluates to the same value as the result of the input expression (using the strict comparison, `===`) and transfers control to that clause, executing the associated statements. (If multiple cases match the provided value, the first `case` that matches is selected, even if the cases are not equal to each other.)
 
-If no matching `case` clause is found, the program looks for the optional `default` clause, and if found, transfers control to that clause, executing the associated statements. If no `default` clause is found, the program continues execution at the statement following the end of `switch`. By convention, the `default` clause is the last clause, 
+If no matching `case` clause is found, the program looks for the optional `default` clause, and if found, transfers control to that clause, executing the associated statements. If no `default` clause is found, the program continues execution at the statement following the end of `switch`. By convention, the `default` clause is the last clause,
 
 - expression: An expression whose result is matched against each `case` clause
 - `case valueN`: A `case` clause used to match against expression. If the expression matches the specified `valueN`, the statements inside the `case` clause are executed until either the end of the `switch` statement or a `break`
