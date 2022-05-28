@@ -6,19 +6,19 @@ Syntax and code examples for the most coomon string methods.
 
 ## Table of contents
 
-|                                             Topic | Sub-topic                              | Sub-topic             | Sub-topic                    | Sub-topic                       |
-| ------------------------------------------------: | :------------------------------------- | :-------------------- | :--------------------------- | :------------------------------ |
-|             1. [String methods](#string-methods): | i. [Skipped methods](#skipped-methods) | ii. [split](#split)   | iii. [substring](#substring) | iv. [repeat](#repeat)           |
-|                                                   | v. [endsWith](#endsWith)               | vi. [test](#test)     | vii. [charAt](#charat)       | viii. [charCodeAt](#charcodeat) |
-|                                                   | ix. [fromCharCode](#fromcharcode)      | x. [match](#match)    | xi. [replace](#replace)      | xii. [toString](#tostring)      |
-|                                                   | xiii. [Miscellaneous](#Miscellaneous)  |                       |                              |                                 |
-| 2. [Array string methods](#array-string-methods): | i. [String slice](#string-slice)       | ii. [concat](#concat) | iii. [indexOf](#indexof)     | iv. [lastIndexOf](#lastindexof) |
-|                                                   | i. [includes](#includes)               |                       |                              |                                 |
-|                3. [Syntax tables](#syntax-tables) |                                        |                       |                              |                                 |
+|                                             Topic | Sub-topic                              | Sub-topic                            | Sub-topic                    | Sub-topic                       |
+| ------------------------------------------------: | :------------------------------------- | :----------------------------------- | :--------------------------- | :------------------------------ |
+|             1. [String methods](#string-methods): | i. [Skipped methods](#skipped-methods) | ii. [split](#split)                  | iii. [substring](#substring) | iv. [repeat](#repeat)           |
+|                                                   | v. [endsWith](#endsWith)               | vi. [test](#test)                    | vii. [charAt](#charat)       | viii. [charCodeAt](#charcodeat) |
+|                                                   | ix. [fromCharCode](#fromcharcode)      | x. [match](#match)                   | xi. [replace](#replace)      | xii. [toString](#tostring)      |
+|                                                   | xiii. [trim](#trim)                    | xiv. [Miscellaneous](#Miscellaneous) |                              |                                 |
+| 2. [Array string methods](#array-string-methods): | i. [String slice](#string-slice)       | ii. [concat](#concat)                | iii. [indexOf](#indexof)     | iv. [lastIndexOf](#lastindexof) |
+|                                                   | i. [includes](#includes)               |                                      |                              |                                 |
+|                3. [Syntax tables](#syntax-tables) |                                        |                                      |                              |                                 |
 
 ## String methods
 
-`str.toLowerCase()`, `str.toUpperCase()`, and `str.trim()` are so basic that I am not providing examples. Just attach one of these methods to the variable name for your string, e.g.:
+`str.toLowerCase()`, and `str.toUpperCase()` are so basic that I am not providing examples. Just attach one of these methods to the variable name for your string, e.g.:
 
 ```js
 let badString = "   oOPS, caps LOCK ON. nEED TO FIX.   ";
@@ -384,6 +384,23 @@ console.log(typeof strObj, strObj) // "string" "1,2,3,hey,6"
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString">MDN toString</a></div>
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+### trim
+
+`trim()`: removes whitespace from both ends of a string and returns a new string, without modifying the original string.
+
+MDN syntax and examples:
+
+```js
+str.trim();
+
+const greeting = "   Hello world!   ";
+
+console.log(greeting.trim()); // "Hello world!";
+```
+
+<div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim">MDN trim</a></div>
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ### Miscellaneous
 
 typeof:
@@ -478,6 +495,8 @@ console.log(str2.concat(', ', str1)); // "World, Hello"
 
 let hello = 'Hello, '
 console.log(hello.concat('Kevin', '. Have a nice day.')) // Hello, Kevin. Have a nice day.
+
+"".concat(4, 5) // "45"
 ```
 
 <div align="left">&#8675; <a href="#syntax-tables" title="Syntax tables">To syntax tables</a> | &#10146; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat">MDN concat</a></div>
@@ -595,6 +614,7 @@ Common methods with NO arguments/parameters:
 | :---- | :---- | :----: |
 | split | str.split() | YES |
 | sort | str.sort() | YES\* |
+| trim | str.trim() | NO |
 
 **NOTE**: Use the rest paramter to not mutate the original source for `sort()` and `reverse()`.
 
