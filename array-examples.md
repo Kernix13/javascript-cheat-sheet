@@ -828,16 +828,16 @@ Basic / simple examples:
 //      MDN examples
 const arr = [1, 2, 3];
 const mapArr = arr.map(n => n * 3);
-console.log(mapArr);
-
-const array1 = [1, 4, 9, 16];
-const map1 = array1.map(x => x * 2);
-console.log(map1); // [2,8,18,32]
+console.log(mapArr); // [3, 6, 9]
 
 const numbers = [1, 4, 9];
-const roots = numbers.map(num => Math.sqrt(num)); // roots is now [1, 2, 3]
+const roots = numbers.map(num => Math.sqrt(num)); // [1, 2, 3]
 
-//      Other examples:
+const nums = [1, 2, 3, 4];
+const numsMap = nums.map(num => {
+  return Math.sqrt(num).toFixed(3) * 1;
+}); // [1, 1.414, 1.732, 2]
+
 const numArray = [1, 2, 3, 4, 5, 6];
 const divideNums = numArray.map(item => item / 2.5);
 console.log(divideNums); // [0.4, 0.8, 1.2, 1.6, 2, 2.4]
@@ -850,12 +850,44 @@ const numArray = [1, 2, 3, 4, 5, 6];
 const cubedNum = numArray.map(item => Math.pow(item, 3));
 console.log(cubedNum); // [1, 8, 27, 64, 125, 216]
 
-// cubed root
-const numArray = [8, 27, 1.61803];
-const cubedRoot = numArray.map(item => Math.pow(item, 1 / 3));
-console.log(cubedRoot); // [2, 3, 1.1739840320085808]
+// map with callback
+const numbers = [1, 2, 3, 4, 5];
+function square(number) {
+  return number * number;
+  // return Math.pow(number, 2);
+}
+const squared = numbers.map(square);
+console.log(squared); // [1. 4, 9, 16, 25]
 
 // working with objects
+// using Object.values
+const grades = { Math: 50, English: 70, Physics: 45, Geometry: 80 };
+let newGrades = Object.values(grades).map(score => score + 5);
+console.log(newGrades); // [55,75,50,80]
+// using Object.keys
+const grades = { Math: 50, English: 70, Physics: 45, Geometry: 80 };
+let newGrades = Object.keys(grades).map(score => score + " grade");
+console.log(newGrades); // ["Math grade","English grade","Physics grade","Geometry grade"]
+// using Object.entries
+const grades = { Math: 50, English: 70, Physics: 45, Geometry: 80 };
+let newGrades = Object.entries(grades).map(score => score);
+console.log(newGrades); // [["Math", 50], ["English", 75], ["Physics", 45], ["Geometry", 80]]
+
+// format the object
+const users = [
+  { firstName: "Jim", lastName: "Kernicky", age: 55 },
+  { firstName: "Buddy", lastName: "Boy", age: 10 },
+  { firstName: "Little", lastName: "Rascal", age: 8 }
+];
+
+const mapObj = users.map(obj => {
+  let newObj = {};
+  newObj[obj.firstName] = obj.age;
+  return newObj;
+});
+console.log(mapObj); // [{"Jim": 55}, {"Buddy": 10}, ...]
+
+// get different values
 const items = [
   { name: "Bike", price: 100 },
   { name: "TV", price: 200 },
@@ -880,6 +912,10 @@ console.log(firstName); // "Luke" "Darth" "Leia" "Anakin"
 const minFile = characters.map(item => ({ name: item.name, height: item.height }));
 console.log(minFile); // e.g.: {name: 'Darth Vader', height: 202}
 
+// map thru an obejct and assign key names!!!
+const minFile = characters.map(item => ({ name: item.name, height: item.height }));
+console.log(minFile); // e.g.: {name: 'Darth Vader', height: 202}
+
 // Examples from Traversy courses: Double eveyones money
 function doubleMoney() {
   data = data.map(user => {
@@ -887,33 +923,32 @@ function doubleMoney() {
   });
 }
 
-//      feeCodeCamp examples
-// Get object key values, similar to what Object.values does on a single object, but you can not use that because 'users' is an array of objects,
-// not a single object with multiple key-value pairs
-const users = [
-  { name: "John", age: 34 },
-  { name: "Amy", age: 20 },
-  { name: "camperCat", age: 10 }
-];
-const names = users.map(user => user.name);
-console.log(names); // ["John","Amy","camperCat"]
-```
+// Use map to output to DOM into <div id="map"></div>
+const mapCont = document.getElementById("map");
+const mapUser = users.map(user => {
+  const fullName = user.firstName + " " + user.lastName;
+  return `
+      <h3 class='name'>${fullName}</h3>
+      <p class="age">${user.age}</p>
+    `;
+});
+mapCont.innerHTML = mapUser.join("");
 
-This example by James Quick is so good for objects that I'm pulling it out of the code block above:
+// filter and map
+const filterUser = users
+  .filter(user => user.age < 50)
+  .map(user => {
+    // Let's add the firstname and lastname together
+    const fullName = user.firstName + " " + user.lastName;
 
-```js
-// map thru an obejct and assign key names
-const minFile = characters.map(item => ({ name: item.name, height: item.height }));
-console.log(minFile); // e.g.: {name: 'Darth Vader', height: 202}
-```
+    return `
+      <p class='name'>${fullName}<span class="age">: ${user.age}</span></p>
+    `;
+  });
 
-<br />
+filterCont.innerHTML = filterUser.join("");
 
-Difficult / advanced examples:
-
-```js
-//      MDN:
-// reformat objects in an array (WHY?)
+// reformat objects in an array
 const kvArray = [
   { key: 1, value: 10 },
   { key: 2, value: 20 },
