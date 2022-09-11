@@ -956,7 +956,6 @@ const kvArray = [
 ];
 const reformattedArray = kvArray.map(({ key, value }) => ({ [key]: value }));
 console.log(reformattedArray); // {"1": 10}, {"2": 20}, {"3": 30}
-// what is { key, value}? Destructuring?
 ```
 
 **NOTE**: Look into [**Array.from()**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from) and constrast with `.map()`. Check out [Stackoverflow: Array.from vs Array.prototype.map](https://stackoverflow.com/questions/26052699/array-from-vs-array-prototype-map).
