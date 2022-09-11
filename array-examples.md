@@ -858,22 +858,25 @@ function square(number) {
 }
 const squared = numbers.map(square);
 console.log(squared); // [1. 4, 9, 16, 25]
+```
 
-// working with objects
+Working with objects:
+
+```js
 // using Object.values
 const grades = { Math: 50, English: 70, Physics: 45, Geometry: 80 };
 let newGrades = Object.values(grades).map(score => score + 5);
 console.log(newGrades); // [55,75,50,80]
+
 // using Object.keys
-const grades = { Math: 50, English: 70, Physics: 45, Geometry: 80 };
 let newGrades = Object.keys(grades).map(score => score + " grade");
 console.log(newGrades); // ["Math grade","English grade","Physics grade","Geometry grade"]
+
 // using Object.entries
-const grades = { Math: 50, English: 70, Physics: 45, Geometry: 80 };
 let newGrades = Object.entries(grades).map(score => score);
 console.log(newGrades); // [["Math", 50], ["English", 75], ["Physics", 45], ["Geometry", 80]]
 
-// format the object
+// reformat the object
 const users = [
   { firstName: "Jim", lastName: "Kernicky", age: 55 },
   { firstName: "Buddy", lastName: "Boy", age: 10 },
@@ -887,7 +890,7 @@ const mapObj = users.map(obj => {
 });
 console.log(mapObj); // [{"Jim": 55}, {"Buddy": 10}, ...]
 
-// get different values
+// Grab a value from from a key-value-pair
 const items = [
   { name: "Bike", price: 100 },
   { name: "TV", price: 200 },
@@ -897,13 +900,13 @@ const items = [
   { name: "Computer", price: 1000 },
   { name: "Keyboard", price: 25 }
 ];
-const itemNames = items.map(item => {
+const itemValues = items.map(item => {
   // return item.name // ["Bike","TV","Album","Book","Phone","Computer","Keyboard"]
   return item.price;
 });
-console.log(itemNames); // [100,200,10,5,500,1000,25]
+console.log(itemValues); // [100,200,10,5,500,1000,25]
 // A shorter version is to lose the 'return keyword and curly brackets:
-const itemNames = items.map(item => item.price);
+const itemValues = items.map(item => item.price);
 
 // James Quick, example key: name: 'Anakin Skywalker',
 const firstName = characters.map(item => item.name.split(" ")[0]);
