@@ -920,6 +920,7 @@ const minFile = characters.map(item => ({ name: item.name, height: item.height }
 console.log(minFile); // e.g.: {name: 'Darth Vader', height: 202}
 
 // Examples from Traversy courses: Double eveyones money
+let data = [];
 function doubleMoney() {
   data = data.map(user => {
     return { ...user, money: user.money * 2 };
@@ -937,6 +938,19 @@ const mapUser = users.map(user => {
 });
 mapCont.innerHTML = mapUser.join("");
 
+// reformat objects in an array
+const kvArray = [
+  { key: 1, value: 10 },
+  { key: 2, value: 20 },
+  { key: 3, value: 30 }
+];
+const reformattedArray = kvArray.map(({ key, value }) => ({ [key]: value }));
+console.log(reformattedArray); // {"1": 10}, {"2": 20}, {"3": 30}
+```
+
+**Chaining methods together**: Using `filter()` with `map()`
+
+```js
 // filter and map
 const filterUser = users
   .filter(user => user.age < 50)
@@ -948,17 +962,8 @@ const filterUser = users
       <p class='name'>${fullName}<span class="age">: ${user.age}</span></p>
     `;
   });
-
+// using innerHTML with an array outputs a ',' chain on join()
 filterCont.innerHTML = filterUser.join("");
-
-// reformat objects in an array
-const kvArray = [
-  { key: 1, value: 10 },
-  { key: 2, value: 20 },
-  { key: 3, value: 30 }
-];
-const reformattedArray = kvArray.map(({ key, value }) => ({ [key]: value }));
-console.log(reformattedArray); // {"1": 10}, {"2": 20}, {"3": 30}
 ```
 
 **NOTE**: Look into [**Array.from()**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from) and constrast with `.map()`. Check out [Stackoverflow: Array.from vs Array.prototype.map](https://stackoverflow.com/questions/26052699/array-from-vs-array-prototype-map).
