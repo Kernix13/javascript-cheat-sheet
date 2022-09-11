@@ -962,7 +962,7 @@ const filterUser = users
       <p class='name'>${fullName}<span class="age">: ${user.age}</span></p>
     `;
   });
-// using innerHTML with an array outputs a ',' chain on join()
+// using innerHTML with an array outputs a ',' so chain on join() to get rid of it
 filterCont.innerHTML = filterUser.join("");
 ```
 
