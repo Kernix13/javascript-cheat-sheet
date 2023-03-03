@@ -135,9 +135,9 @@ JavaScript methods, conditionals, etc. that return `true` or `false`:
 Operators:
 | Type | Ex. 1 | Ex. 2 | Ex. 3 | Ex. 4 | Ex. 5 |
 | :--------- | :----- | :----- | :------ | :------ | :------ |
-| Assigment | = | += | -= | _= | /= |
+| Assigment | = | += | -= | \_= | /= |
 | Comparison | <, > | <=, >= | ==, === | !=, !== | |
-| Arithmetic | +, -, _, / | % | ++ | -- | \*\* |
+| Arithmetic | + - \* / | % | ++ | -- | \*\* |
 | Logical | && | \|\| | ! | , | |
 | Type | typeof | instanceof | | | |
 
@@ -800,9 +800,9 @@ Conditionals:
 - **_NOTE_**: the curly brackets `{}` in an if statement are optional, though are recommended. Here is an example wiiihout them:
 
 ```js
-if (id === 100) console.log("Equal");
+if (id === 100) console.log('Equal');
 // or
-if (id === 100) console.log("Equal");
+if (id === 100) console.log('Equal');
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
