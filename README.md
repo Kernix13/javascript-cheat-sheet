@@ -44,7 +44,7 @@ The following tables are for visual memorization. It is easy to see similarites 
 
 ### Data types
 
-JavaScript Primitive Data Types (data that is immutable, is not an object, and has no methods). Though most f them have object equivalents:
+JavaScript Primitive Data Types (data that is immutable, is not an object, and has no methods). Though most of them have object equivalents:
 
 | Name        |          Type          | Obj Equiv? |
 | :---------- | :--------------------: | :--------: |
